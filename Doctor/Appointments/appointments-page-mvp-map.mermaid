@@ -1,0 +1,158 @@
+flowchart TD
+    %% Entry Point
+    Dashboard[Dashboard] --> AppointmentsPage[Appointments Page<br/>📅 Appointment Management Hub]
+    
+    %% Main Page Structure
+    AppointmentsPage --> MainTable[Dynamic Appointments Table<br/>Real-time Data Grid]
+    AppointmentsPage --> Filters[Advanced Filter Panel<br/>Dynamic Query System]
+    AppointmentsPage --> BulkView[Bulk View Options<br/>Calendar Visualization]
+    AppointmentsPage --> LiveAlerts[Live Indicators System<br/>Real-time Updates]
+    
+    %% Appointments Table Components
+    MainTable --> TableRow[Each Appointment Row Contains:]
+    TableRow --> PatientInfo[Patient Profile<br/>Thumbnail + Name]
+    TableRow --> AppointmentData[Appointment Details<br/>Date/Time/Type/Status]
+    TableRow --> ActionButtons[Action Buttons<br/>Context-Sensitive]
+    
+    %% Patient Profile Interactions
+    PatientInfo -->|Click Profile| PatientRecordRedirect[Navigate to Patient Records<br/>Opens full medical history]
+    PatientRecordRedirect --> PatientRecordsPage[Patient Records Page<br/>Complete Medical View]
+    
+    %% Action Buttons
+    ActionButtons --> ViewButton[View Button<br/>Opens detail modal]
+    ActionButtons --> UpdateStatusButton[Update Status<br/>Status dropdown]
+    ActionButtons --> JoinConsultButton[Join Consultation<br/>Online sessions only]
+    
+    %% View Button Flow
+    ViewButton -->|Click| DetailModal[Appointment Detail Modal<br/>Comprehensive View]
+    DetailModal --> ModalContent[Modal Contains:]
+    ModalContent --> PatientInfoFull[Patient Information<br/>Name/Age/Gender/ID]
+    ModalContent --> ScheduleDetails[Schedule Details<br/>Time/Status/Type/Receptionist]
+    ModalContent --> GoogleMeetLink[Google Meet Link<br/>If online consultation]
+    ModalContent --> QuickActions[Quick Action Panel]
+    
+    %% Quick Actions in Modal
+    QuickActions --> ViewFullRecordBtn[View Full Record<br/>Patient history access]
+    QuickActions --> PreConsultNotesBtn[Add Pre-consultation Notes<br/>Notes editor]
+    QuickActions --> StartConsultBtn[Start Consultation<br/>Session initiation]
+    
+    ViewFullRecordBtn -->|Click| PatientRecordsPage
+    PreConsultNotesBtn -->|Click| NotesEditor[Notes Editor Modal<br/>Rich text interface]
+    StartConsultBtn -->|Click| ConsultationPage[Consultations Page<br/>Active session]
+    
+    %% Notes Editor Modal
+    NotesEditor --> NotesFeatures[Editor Features:]
+    NotesFeatures --> RichTextEditor[Rich Text Formatting<br/>Bold/Italic/Lists]
+    NotesFeatures --> KeywordTags[Keyword Tagging<br/>Clinical classifications]
+    NotesFeatures --> AutoSave[Auto-save Function<br/>Every 30 seconds]
+    NotesFeatures --> SaveCloseBtn[Save & Close<br/>Updates patient record]
+    
+    SaveCloseBtn -->|Updates| PatientRecordsSync[Syncs to Patient Records<br/>Real-time update]
+    
+    %% Update Status Flow
+    UpdateStatusButton -->|Click| StatusDropdown[Status Change Dropdown]
+    StatusDropdown --> StatusPending[Pending<br/>Default state]
+    StatusDropdown --> StatusOngoing[Ongoing<br/>Starts session]
+    StatusDropdown --> StatusCompleted[Completed<br/>Ends session]
+    StatusDropdown --> StatusCancelled[Cancelled<br/>Requires reason]
+    
+    StatusOngoing -->|Select| SessionTracker[Session Timer Starts<br/>Duration tracking]
+    StatusCompleted -->|Select| LockEdits[Lock Appointment<br/>No further edits]
+    StatusCancelled -->|Select| CancelModal[Cancellation Modal<br/>Reason required]
+    
+    CancelModal --> ReasonInput[Cancellation Reason<br/>Text input field]
+    CancelModal --> ConfirmCancel[Confirm Cancellation<br/>Final action]
+    ConfirmCancel -->|Updates| NotifySystem[System Notifications<br/>Alerts all stakeholders]
+    
+    %% Join Consultation Flow
+    JoinConsultButton -->|Click| GoogleMeetLaunch[Launch Google Meet<br/>New tab opens]
+    GoogleMeetLaunch --> UpdateStatusAuto[Auto-update Status<br/>Set to Ongoing]
+    UpdateStatusAuto --> ConsultationPage
+    
+    %% Advanced Filters
+    Filters --> DateFilter[Date Range Picker<br/>Calendar interface]
+    Filters --> StatusFilter[Status Multi-select<br/>Checkbox dropdown]
+    Filters --> PatientSearch[Patient Name Search<br/>Type-ahead autocomplete]
+    Filters --> ApplyFilters[Apply Filters Button<br/>AJAX update]
+    
+    DateFilter --> CalendarModal[Calendar Picker Modal<br/>Date selection UI]
+    CalendarModal --> SingleDate[Single Date<br/>Specific day]
+    CalendarModal --> DateRange[Date Range<br/>Start to end]
+    CalendarModal --> QuickSelects[Quick Selects<br/>Today/Week/Month]
+    
+    StatusFilter --> FilterOptions[Filter Options:]
+    FilterOptions --> AllStatuses[All<br/>Default view]
+    FilterOptions --> PendingOnly[Pending<br/>Upcoming appointments]
+    FilterOptions --> OngoingOnly[Ongoing<br/>Active sessions]
+    FilterOptions --> CompletedOnly[Completed<rahanlage sessions]
+    FilterOptions --> MissedOnly[Missed<br/>No-shows]
+    
+    PatientSearch --> SearchFeatures[Search Features:]
+    SearchFeatures --> AutoComplete[Auto-complete<br/>As you type]
+    SearchFeatures --> RecentPatients[Recent Patients<br/>Quick access list]
+    SearchFeatures --> ClearSearch[Clear Search<br/>Reset filter]
+    
+    ApplyFilters -->|AJAX Call| TableRefresh[Table Refresh<br/>Filtered results]
+    
+    %% Bulk View Options
+    BulkView --> ViewTabs[View Selection Tabs]
+    ViewTabs --> DayView[Day View<br/>Today's appointments]
+    ViewTabs --> WeekView[Week View<br/>7-day calendar]
+    ViewTabs --> MonthView[Month View<br/>Monthly calendar]
+    
+    BulkView --> ExportOptions[Export Functions]
+    ExportOptions --> ExportPDF[Export to PDF<br/>Formatted report]
+    ExportOptions --> PrintView[Print Preview<br/>Printer-friendly]
+    ExportOptions --> ExportCSV[Export to CSV<br/>Data export]
+    
+    %% Live Indicators
+    LiveAlerts --> ColorBadges[Status Color Badges]
+    ColorBadges --> GreenBadge[Green Badge<br/>Completed]
+    ColorBadges --> YellowBadge[Yellow Badge<br/>Ongoing]
+    ColorBadges --> RedBadge[Red Badge<br/>Missed/Urgent]
+    
+    LiveAlerts --> ToastNotifications[Toast Notifications<br/>Real-time alerts]
+    ToastNotifications --> TimeChangeAlert[Time Change Alert<br/>Schedule modification]
+    ToastNotifications --> NewAssignment[New Assignment<br/>Appointment added]
+    ToastNotifications --> MissedAlert[Missed Appointment<br/>No-show warning]
+    ToastNotifications --> PatientJoined[Patient Joined<br/>Online consultation]
+    
+    %% System Integrations
+    TimeChangeAlert -->|Navigate| AlertsPage[Alerts & Collaboration<br/>Full notification view]
+    NewAssignment -->|Navigate| Dashboard
+    MissedAlert -->|Action Required| PatientFollowUp[Patient Follow-up Modal<br/>Contact options]
+    
+    %% Cross-Page Synchronization
+    AppointmentsPage -.->|Real-time Sync| DashboardSync[Dashboard Updates<br/>Today's appointments]
+    AppointmentsPage -.->|Status Changes| PatientPortalSync[Patient Portal<br/>Appointment status]
+    AppointmentsPage -.->|Consultation Start| ConsultationSync[Consultation Page<br/>Active session]
+    AppointmentsPage -.->|Notes Added| RecordsSync[Patient Records<br/>Medical history]
+    
+    %% Navigation Back Options
+    AppointmentsPage --> BackToDashboard[Back to Dashboard<br/>Navigation link]
+    BackToDashboard --> Dashboard
+    
+    %% Access Control Indicators
+    AppointmentsPage --> AccessControl[Access Control<br/>Doctor permissions only]
+    AccessControl --> ViewOnly[Can View:<br/>Assigned appointments]
+    AccessControl --> CanUpdate[Can Update:<br/>Status & notes]
+    AccessControl --> CannotDo[Cannot:<br/>Book/Delete appointments]
+    
+    %% Responsive Design
+    AppointmentsPage --> ResponsiveView[Responsive Design]
+    ResponsiveView --> DesktopView[Desktop View<br/>Full table layout]
+    ResponsiveView --> TabletView[Tablet View<br/>Condensed table]
+    ResponsiveView --> MobileView[Mobile View<br/>Card-based layout]
+    
+    %% Styling
+    classDef pageStyle fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef modalStyle fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef actionStyle fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    classDef alertStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef syncStyle fill:#fce4ec,stroke:#880e4f,stroke-width:2px,stroke-dasharray: 5 5
+    
+    class AppointmentsPage,Dashboard,PatientRecordsPage,ConsultationPage,AlertsPage pageStyle
+    class DetailModal,NotesEditor,CalendarModal,CancelModal,PatientFollowUp modalStyle
+    class ViewButton,UpdateStatusButton,JoinConsultButton,StartConsultBtn,ApplyFilters,ExportPDF actionStyle
+    class LiveAlerts,ToastNotifications,TimeChangeAlert,NewAssignment,MissedAlert alertStyle
+    class DashboardSync,PatientPortalSync,ConsultationSync,RecordsSync syncStyle

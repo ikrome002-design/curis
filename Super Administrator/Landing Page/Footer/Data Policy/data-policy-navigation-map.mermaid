@@ -1,0 +1,209 @@
+flowchart TD
+    %% Main Data Policy Page
+    A[Super Administrator Dashboard] --> B[Data Policy Page]
+    
+    %% Main Navigation Elements
+    B --> C{Interactive Navigation Bar}
+    B --> D[Search Functionality]
+    B --> E[FAQ Section]
+    B --> F[Quick Links/Icons]
+    B --> G[Contact Information Section]
+
+    %% Interactive Navigation Bar Options
+    C --> C1[Introduction]
+    C --> C2[Information We Collect]
+    C --> C3[How We Use Information]
+    C --> C4[Information Sharing]
+    C --> C5[Data Security]
+    C --> C6[User Rights]
+    C --> C7[Cookies & Tracking]
+    C --> C8[Third-Party Links]
+    C --> C9[Data Retention]
+    C --> C10[Policy Changes]
+    C --> C11[Contact Us]
+    
+    %% Search Functionality
+    D --> D1[Search Box]
+    D1 --> D2[Enter Keywords]
+    D2 --> D3[View Search Results]
+    D3 --> D4{Select Result}
+    D4 --> C1
+    D4 --> C2
+    D4 --> C3
+    D4 --> C4
+    D4 --> C5
+    D4 --> C6
+    D4 --> C7
+    D4 --> C8
+    D4 --> C9
+    D4 --> C10
+    D4 --> C11
+    
+    %% FAQ Section
+    E --> E1[Common Questions List]
+    E1 --> E2{Expand Question}
+    E2 --> E3[View Answer]
+    E2 --> E4[Close Answer]
+    
+    %% Quick Links/Icons
+    F --> F1[Privacy Rights Icon]
+    F --> F2[Cookie Settings Icon]
+    F --> F3[Data Export Icon]
+    F --> F4[Security Measures Icon]
+    
+    F1 --> F1A[Privacy Rights Popup]
+    F1A --> F1B[View Rights Summary]
+    F1A --> F1C[GDPR Compliance]
+    F1A --> F1D[Close Popup]
+    
+    F2 --> F2A[Cookie Settings Popup]
+    F2A --> F2B[Essential Cookies Toggle]
+    F2A --> F2C[Analytics Cookies Toggle]
+    F2A --> F2D[Marketing Cookies Toggle]
+    F2A --> F2E[Save Settings Button]
+    F2A --> F2F[Cancel Button]
+    F2E --> F2G[Settings Saved Confirmation]
+    
+    F3 --> F3A[Data Export Popup]
+    F3A --> F3B[Select Data Categories]
+    F3B --> F3C[Choose Format]
+    F3C --> F3D[Export Button]
+    F3D --> F3E[Download Ready Notification]
+    
+    F4 --> F4A[Security Measures Popup]
+    F4A --> F4B[Encryption Information]
+    F4A --> F4C[Access Controls]
+    F4A --> F4D[Breach Protocol]
+    F4A --> F4E[Close Button]
+    
+    %% Contact Information Section
+    G --> G1[Email Support]
+    G --> G2[Phone Support]
+    G --> G3[Live Chat]
+    G --> G4[Feedback Form]
+    
+    G1 --> G1A[Email Form Popup]
+    G1A --> G1B[Fill Subject]
+    G1B --> G1C[Fill Message]
+    G1C --> G1D[Send Button]
+    G1D --> G1E[Confirmation Message]
+    
+    G4 --> G4A[Feedback Form Popup]
+    G4A --> G4B[Rate Experience]
+    G4A --> G4C[Add Comments]
+    G4A --> G4D[Submit Button]
+    G4D --> G4E[Thank You Message]
+    
+    %% Main Content Sections - Introduction
+    C1 --> I1[Policy Purpose]
+    I1 --> I2[Data Protection Commitment]
+    I1 --> I3[Last Updated Date]
+    
+    %% Information We Collect
+    C2 --> WC1[Personal Information]
+    C2 --> WC2[Non-Personal Information]
+    C2 --> WC3[Technical Information]
+    
+    WC1 --> WC1A[Names]
+    WC1 --> WC1B[Contact Information]
+    WC1 --> WC1C[Medical History]
+    WC1 --> WC1D[Payment Details]
+    
+    WC2 --> WC2A[Demographics]
+    WC2 --> WC2B[Usage Statistics]
+    
+    WC3 --> WC3A[IP Addresses]
+    WC3 --> WC3B[Device Information]
+    WC3 --> WC3C[Cookies]
+    WC3 --> WC3D[Session Data]
+    
+    %% How We Use Information
+    C3 --> U1[Service Improvement]
+    C3 --> U2[Personalized Experience]
+    C3 --> U3[Communication]
+    C3 --> U4[Legal Compliance]
+    C3 --> U5[Analytics]
+    
+    %% Information Sharing
+    C4 --> S1[Third-Party Services]
+    C4 --> S2[Legal Requirements]
+    C4 --> S3[Business Transfers]
+    C4 --> S4[With User Consent]
+    
+    S1 --> S1A[Service Providers List]
+    S1A --> S1B[Provider Privacy Policies]
+    
+    %% Data Security
+    C5 --> DS1[Encryption Methods]
+    C5 --> DS2[Access Controls]
+    C5 --> DS3[Regular Audits]
+    C5 --> DS4[Staff Training]
+    C5 --> DS5[Breach Response Plan]
+    
+    %% User Rights
+    C6 --> UR1[Access Rights]
+    C6 --> UR2[Correction Rights]
+    C6 --> UR3[Deletion Rights]
+    C6 --> UR4[Portability Rights]
+    C6 --> UR5[Objection Rights]
+    
+    UR1 --> UR1A[Request Data Access Form]
+    UR1A --> UR1B[Submit Request]
+    UR1B --> UR1C[Verification Process]
+    UR1C --> UR1D[Receive Data]
+    
+    UR3 --> UR3A[Delete Account Button]
+    UR3A --> UR3B[Confirmation Dialog]
+    UR3B --> UR3C[Verify Identity]
+    UR3C --> UR3D[Deletion Confirmation]
+    
+    %% Cookies & Tracking
+    C7 --> CT1[Cookie Types]
+    C7 --> CT2[Tracking Methods]
+    C7 --> CT3[Managing Preferences]
+    
+    CT3 --> CT3A[Open Cookie Settings]
+    CT3A --> F2A
+    
+    %% Third-Party Links
+    C8 --> TP1[External Websites Policy]
+    C8 --> TP2[Partner Services]
+    C8 --> TP3[Liability Disclaimer]
+    
+    %% Data Retention
+    C9 --> DR1[Retention Periods]
+    C9 --> DR2[Deletion Criteria]
+    C9 --> DR3[Data Anonymization]
+    
+    DR1 --> DR1A[Active Accounts]
+    DR1 --> DR1B[Inactive Accounts]
+    DR1 --> DR1C[Deleted Accounts]
+    
+    %% Policy Changes
+    C10 --> PC1[Update Notification Methods]
+    C10 --> PC2[Previous Versions]
+    
+    PC2 --> PC2A[Version History Popup]
+    PC2A --> PC2B[Select Version]
+    PC2B --> PC2C[View Old Policy]
+    
+    %% Contact Us
+    C11 --> CU1[Data Protection Officer]
+    C11 --> CU2[Support Team]
+    C11 --> CU3[Physical Address]
+    
+    CU1 --> CU1A[Send Message to DPO]
+    CU1A --> G1A
+
+    %% Style definitions
+    classDef mainPage fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef section fill:#bbf,stroke:#33f,stroke-width:1px;
+    classDef popup fill:#fbb,stroke:#f33,stroke-width:1px;
+    classDef button fill:#bfb,stroke:#3f3,stroke-width:1px;
+    classDef result fill:#ffb,stroke:#bb3,stroke-width:1px;
+    
+    class A,B mainPage;
+    class C,D,E,F,G,C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11 section;
+    class F1A,F2A,F3A,F4A,G1A,G4A,PC2A,UR1A,UR3B popup;
+    class F2E,F2F,F3D,F4E,G1D,G4D,UR1B,UR3A button;
+    class F2G,F3E,G1E,G4E,UR1D,UR3D result;

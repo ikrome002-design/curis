@@ -1,0 +1,140 @@
+graph TB
+    %% Billings & Payments Page Core
+    BillingPayPage[Billings & Payments Page<br/>Financial Management Hub]
+    
+    %% Main Features
+    BillingPayPage --> InvoiceMgmt[Invoice Management<br/>View & Create]
+    BillingPayPage --> MarkPaid[Mark As Paid<br/>Payment Recording]
+    BillingPayPage --> CurisFees[Curis Service Fees<br/>Platform Charges]
+    BillingPayPage --> ReceiptIssue[Receipt Issuance<br/>Proof of Payment]
+    BillingPayPage --> Outstanding[Outstanding Payments<br/>Follow-Up System]
+    BillingPayPage --> PaymentMethods[Payment Methods<br/>Instructions Display]
+    BillingPayPage --> PaymentLogs[Payment & Audit Logs<br/>Transaction History]
+    BillingPayPage --> PaymentAlerts[Payment Alerts<br/>Billing Notifications]
+    BillingPayPage --> ServiceTrail[Service Charge Trail<br/>Platform Fee Audit]
+    BillingPayPage --> PatientWallet[Patient Wallet<br/>Balance Management]
+    BillingPayPage --> ReportsAnalytics[Reports & Analytics<br/>Financial Insights]
+    BillingPayPage --> RefundAdjust[Refunds & Adjustments<br/>Correction System]
+    
+    %% Invoice Management Details (Enhanced with Insurance)
+    InvoiceMgmt --> |Click| InvoicePanel[Invoice Panel Interface<br/>━━━━━━━━━━━━━━━━━<br/>• Invoice table view<br/>• Search functionality<br/>• Pagination controls<br/>• Filter options<br/>• Create new button<br/>• Export capability<br/>• Insurance claims status<br/>• Employer billing option<br/>━━━━━━━━━━━━━━━━━<br/>Dynamic list]
+    
+    InvoicePanel --> |Filter| InvoiceFilter[Invoice Filters<br/>━━━━━━━━━━━━━━━━━<br/>• By Doctor<br/>• By Date Range<br/>• By Status<br/>  - Paid ✓<br/>  - Unpaid ✗<br/>  - Partial ⚠️<br/>  - Pending Claim 🏥<br/>• By Method<br/>  - Cash 💵<br/>  - M-Pesa 📱<br/>  - Insurance 🏥<br/>  - Corporate/Employer 🏢<br/>• Walk-in vs Scheduled<br/>• Installment Plans 📅]
+    
+    InvoicePanel --> |Create New| CreateInvoice[Create Invoice Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Patient selector<br/>  - Auto-complete<br/>  - Add new option<br/>• Service selector<br/>  - Dynamic catalog<br/>  - Unit prices<br/>• Line items<br/>• VAT calculation<br/>• Discount field<br/>  - Percent/Fixed<br/>  - Requires approval<br/>• Total auto-calc<br/>• Payment type selector<br/>  - Standard<br/>  - Insurance claim<br/>  - Corporate billing<br/>• Enable Installments<br/>  - Payment schedule<br/>  - Due dates<br/>━━━━━━━━━━━━━━━━━<br/>Ad-hoc billing]
+    
+    CreateInvoice --> |Insurance Selected| InsuranceClaim[Insurance Claim Process<br/>━━━━━━━━━━━━━━━━━<br/>• Attach claim form<br/>• Auto-fetch from Doctor:<br/>  - Diagnosis<br/>  - Prescriptions<br/>  - Medical report<br/>  - Referral letters<br/>• Add documents:<br/>  - Discharge summary<br/>  - NHIF/SHIF statements<br/>• Review auto-filled data<br/>• Generate PDF packets<br/>• Submit to insurer<br/>• Track status:<br/>  - Pending ⏳<br/>  - Approved ✓<br/>  - Rejected ✗]
+    
+    InsuranceClaim --> |Generate| PDFPackets[Insurance PDF Packets<br/>━━━━━━━━━━━━━━━━━<br/>• Claim Form PDF<br/>• Invoice & Discharge<br/>• Doctor's Report<br/>• Prescriptions PDF<br/>• Referral Letter<br/>• Proof of Payment<br/>• All watermarked<br/>• Tamper-proof<br/>• Timestamp embedded]
+    
+    CreateInvoice --> |Corporate| CorporateBilling[Corporate/Employer Billing<br/>━━━━━━━━━━━━━━━━━<br/>• Select Employer Account<br/>• Bulk invoice generation<br/>• Employer-specific claims<br/>• Summary reports<br/>• Batch processing<br/>• Export to PDF/CSV<br/>• Direct email option]
+    
+    CreateInvoice --> |Installments| InstallmentPlan[Installment Plans<br/>━━━━━━━━━━━━━━━━━<br/>• Define schedule<br/>  - # of payments<br/>  - Frequency<br/>• Calculate amounts<br/>• Set due dates<br/>• Auto-reminders<br/>• Track payments<br/>• Balance display]
+    
+    InvoicePanel --> |View Invoice| InvoiceDetail[Invoice Detail View<br/>━━━━━━━━━━━━━━━━━<br/>• Invoice ID<br/>• Itemized services<br/>• Doctor assigned<br/>• VAT & discounts<br/>• Invoice notes<br/>• Creator identity<br/>• Timestamp<br/>• Export PDF 📄<br/>• Actions menu:<br/>  - Request refund<br/>  - Adjustment<br/>  - Write-off<br/>  - View audit log]
+    
+    %% Refunds & Adjustments
+    InvoiceDetail --> |Actions| RefundAdjustModal[Refund/Adjustment Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Request type:<br/>  - Refund<br/>  - Billing correction<br/>  - Write-off<br/>• Refund method:<br/>  - Cash<br/>  - M-Pesa<br/>  - Bank transfer<br/>• Amount to adjust<br/>• Reason required<br/>• Submit for approval]
+    
+    RefundAdjustModal --> |Submit| ApprovalWorkflow[Approval Workflow<br/>━━━━━━━━━━━━━━━━━<br/>• Request submitted<br/>• Notification to owner<br/>• Status tracking:<br/>  - Pending review<br/>  - Approved ✓<br/>  - Rejected ✗<br/>• Comments thread<br/>• Audit trail<br/>• Auto-process if approved]
+    
+    ApprovalWorkflow --> |Approved| ProcessRefund[Process Refund<br/>━━━━━━━━━━━━━━━━━<br/>• Update invoice status<br/>• Process payment<br/>• Update wallet<br/>• Generate receipt<br/>• Log transaction<br/>• Notify patient<br/>• Update reports]
+    
+    %% Patient Wallet Management
+    PatientWallet --> |Manage| WalletPanel[Patient Wallet Panel<br/>━━━━━━━━━━━━━━━━━<br/>• Current balance<br/>• Transaction history<br/>• Add deposit<br/>• Apply to invoice<br/>• Transfer options<br/>• Statement export]
+    
+    WalletPanel --> |Add Deposit| DepositForm[Deposit Form<br/>━━━━━━━━━━━━━━━━━<br/>• Patient selector<br/>• Deposit amount<br/>• Payment method<br/>• Reference number<br/>• Purpose/notes<br/>• Receipt generation]
+    
+    WalletPanel --> |View| WalletHistory[Wallet History<br/>━━━━━━━━━━━━━━━━━<br/>• All transactions<br/>• Credits/debits<br/>• Running balance<br/>• Applied invoices<br/>• Date filtering<br/>• Export capability]
+    
+    %% Mark As Paid Details (Enhanced with Wallet)
+    MarkPaid --> |Select Invoice| PaymentForm[Manual Payment Form<br/>━━━━━━━━━━━━━━━━━<br/>• Amount received<br/>• Payment method<br/>  - Cash<br/>  - M-Pesa<br/>  - Insurance<br/>  - Wallet balance<br/>• Payment time<br/>• Transaction ref<br/>  (M-Pesa/Insurance)<br/>• Partial payment<br/>  - Balance calc<br/>• Overpayment handling<br/>━━━━━━━━━━━━━━━━━<br/>Payment recording]
+    
+    PaymentForm --> |Submit| PaymentProcess[Payment Processing<br/>━━━━━━━━━━━━━━━━━<br/>• Update status<br/>• Calculate balance<br/>• Check overpayment<br/>• Generate receipt<br/>• Log transaction<br/>• Notify patient<br/>• Update dashboard<br/>• Update wallet]
+    
+    PaymentProcess --> |Overpayment| OverpaymentHandler[Overpayment Handler<br/>━━━━━━━━━━━━━━━━━<br/>• Detect overpayment<br/>• Prompt action:<br/>  - Apply to wallet<br/>  - Refund excess<br/>  - Apply to next invoice<br/>• Update balance<br/>• Create credit note]
+    
+    PaymentForm --> |Partial Pay| PartialPayment[Partial Payment<br/>━━━━━━━━━━━━━━━━━<br/>• Amount paid<br/>• Remaining balance<br/>• Payment history<br/>• Next due date<br/>• Follow-up flag<br/>• Installment tracking]
+    
+    PaymentForm --> |Audit| PaymentAudit[Payment Audit Log<br/>━━━━━━━━━━━━━━━━━<br/>• User ID & role<br/>• Action type<br/>• Invoice ID<br/>• Timestamp<br/>• Method & ref<br/>• Amount details<br/>• Approval chain<br/>• Edit history]
+    
+    %% Reports & Analytics
+    ReportsAnalytics --> |View| ReportsDashboard[Reports Dashboard<br/>━━━━━━━━━━━━━━━━━<br/>• Daily Cashier Report<br/>• Revenue by Service<br/>• Revenue by Doctor<br/>• Platform payments<br/>• Outstanding balances<br/>• Insurance claims<br/>• Trend analysis<br/>• Custom date range]
+    
+    ReportsDashboard --> |Generate| DailyCashierReport[Daily Cashier Report<br/>━━━━━━━━━━━━━━━━━<br/>• Total by method:<br/>  - Cash collected<br/>  - M-Pesa received<br/>  - Insurance claims<br/>• Shift summary<br/>• User breakdown<br/>• Reconciliation<br/>• End-of-shift balance<br/>• Export PDF/CSV]
+    
+    ReportsDashboard --> |Revenue| RevenueAnalysis[Revenue Analysis<br/>━━━━━━━━━━━━━━━━━<br/>• By Service charts<br/>• By Doctor breakdown<br/>• Time trends<br/>• Comparison views<br/>• Projections<br/>• Export options<br/>• Email delivery]
+    
+    ReportsDashboard --> |Platform| PlatformPayments[Platform Payment Report<br/>━━━━━━━━━━━━━━━━━<br/>• Processed to Curis<br/>• Outstanding fees<br/>• Settlement status<br/>• Pie charts<br/>• Breakdown views<br/>• Reconciliation]
+    
+    %% Enhanced Receipt Issuance
+    ReceiptIssue --> |Auto/Manual| ReceiptModal[Receipt Generation<br/>━━━━━━━━━━━━━━━━━<br/>• Auto-generate<br/>  - Post-payment<br/>  - Instant create<br/>• Receipt details<br/>  - Invoice #<br/>  - Amount paid<br/>  - Method<br/>  - Patient name<br/>  - Clinic brand<br/>  - Timestamp<br/>• Watermark applied<br/>• Tamper-proof PDF<br/>• M-Pesa pay link<br/>• Send options<br/>━━━━━━━━━━━━━━━━━<br/>Proof of payment]
+    
+    ReceiptModal --> |Send| SendReceipt[Send Receipt Options<br/>━━━━━━━━━━━━━━━━━<br/>• SMS 📱<br/>  - With pay link<br/>• Email 📧<br/>  - Branded template<br/>• WhatsApp 💬<br/>  - Direct link<br/>• Print PDF 🖨️<br/>• Patient contact<br/>• Delivery status]
+    
+    %% Enhanced Outstanding Payments
+    Outstanding --> |View List| FollowUpPanel[Outstanding Invoices<br/>━━━━━━━━━━━━━━━━━<br/>• Overdue list<br/>  - 7+ days<br/>  - Amount due<br/>  - Patient info<br/>• Send reminders<br/>• Auto-reminder setup<br/>• Follow-up actions<br/>• Priority marking<br/>• Installment tracking<br/>━━━━━━━━━━━━━━━━━<br/>Payment tracking]
+    
+    FollowUpPanel --> |Send Reminder| ReminderOptions[Reminder Options<br/>━━━━━━━━━━━━━━━━━<br/>• Channel select<br/>  - WhatsApp<br/>  - SMS<br/>  - In-app alert<br/>• Template preview<br/>  "Invoice #[ID]<br/>  KES [amount] due<br/>  M-Pesa: [XXXX]"<br/>• Include pay link<br/>• Schedule automation<br/>• Send & track]
+    
+    ReminderOptions --> |Schedule| AutoReminders[Automated Reminders<br/>━━━━━━━━━━━━━━━━━<br/>• Set frequency<br/>  - Before due date<br/>  - On due date<br/>  - After overdue<br/>• Choose channels<br/>• Template selection<br/>• Active/inactive<br/>• Tracking logs]
+    
+    %% Curis Service Fees Details
+    CurisFees --> |View Fees| CurisPanel[Platform Fees Panel<br/>━━━━━━━━━━━━━━━━━<br/>• Fee invoice list<br/>  - Invoice ID<br/>  - Date<br/>  - Total due<br/>  - Paid amount<br/>  - Status<br/>• Payment alerts<br/>  - Due <3 days 🔴<br/>• Payment button<br/>• Settlement tracking<br/>━━━━━━━━━━━━━━━━━<br/>20% revenue share]
+    
+    %% Payment Methods Display
+    PaymentMethods --> |View Only| MethodsDisplay[Payment Instructions<br/>━━━━━━━━━━━━━━━━━<br/>• M-Pesa Details<br/>  - Paybill/Till<br/>  - Account ref<br/>  - Embedded links<br/>• Bank Transfer<br/>  - Account name<br/>  - Number<br/>  - Bank/Branch<br/>• Insurance<br/>  - Claim process<br/>  - Forms needed<br/>• Copy buttons 📋<br/>━━━━━━━━━━━━━━━━━<br/>Read-only display]
+    
+    %% Enhanced Payment & Audit Logs
+    PaymentLogs --> |View Logs| LogsView[Payment Log Table<br/>━━━━━━━━━━━━━━━━━<br/>• Comprehensive log<br/>  - Invoice ID<br/>  - Amount<br/>  - Method<br/>  - Payer<br/>  - Timestamp<br/>  - Staff ID & role<br/>  - Action history<br/>• Filter options<br/>• Export capability<br/>• M-Pesa/Bank sync<br/>━━━━━━━━━━━━━━━━━<br/>Full transparency]
+    
+    %% Enhanced Compliance & Security
+    BillingPayPage --> ComplianceSecurity[Compliance & Security<br/>━━━━━━━━━━━━━━━━━<br/>• Patient ID masking<br/>  - Partial display<br/>  - Role-based access<br/>• PDF watermarking<br/>• Tamper-proof docs<br/>• Timestamp embedding<br/>• Audit compliance<br/>• Data encryption]
+    
+    %% Workflow Controls
+    BillingPayPage --> WorkflowControls[Workflow Controls<br/>━━━━━━━━━━━━━━━━━<br/>• Multi-step approvals:<br/>  - Discounts<br/>  - Refunds<br/>  - Write-offs<br/>• Role-based limits<br/>• Approval chains<br/>• Notification system<br/>• Override logs]
+    
+    %% Permission Controls
+    BillingPayPage --> Permissions[Permission Controls<br/>━━━━━━━━━━━━━━━━━<br/>❌ Cannot modify:<br/>  - Fee percentages<br/>  - Service prices<br/>  - Payment channels<br/>  - Masked patient data<br/>✓ Can operate:<br/>  - Within assigned role<br/>  - View permissions<br/>  - Initiate approvals]
+    
+    %% Integration & Synchronization (Enhanced)
+    BillingPayPage -.->|Sync| DashboardSync[→ Dashboard Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Payment metrics<br/>• Overdue alerts<br/>• Collection totals<br/>• Task updates<br/>• Wallet balances]
+    
+    BillingPayPage -.->|Sync| DoctorAccountSync[→ Doctor Account Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Medical records<br/>• Diagnosis data<br/>• Prescriptions<br/>• Reports<br/>• Referrals<br/>• For insurance claims]
+    
+    BillingPayPage -.->|API| ExternalAPIs[→ External APIs<br/>━━━━━━━━━━━━━━━━━<br/>• M-Pesa integration<br/>• Bank APIs<br/>• Insurance portals<br/>• SMS gateways<br/>• WhatsApp Business<br/>• Email services]
+    
+    %% Navigation to Other Pages
+    BillingPayPage ==> MainNavigation[Main Navigation]
+    MainNavigation ==> Dashboard[← Dashboard]
+    MainNavigation ==> AppointmentsPage[→ Appointments]
+    MainNavigation ==> CheckInPage[→ Check-In]
+    MainNavigation ==> InboxAlertsPage[→ Inbox & Alerts]
+    MainNavigation ==> QueueFlowPage[→ Queue & Flow]
+    MainNavigation ==> PatientDirPage[→ Patient Directory]
+    
+    %% Styling
+    classDef billingCore fill:#059669,stroke:#047857,stroke-width:4px,color:#fff
+    classDef feature fill:#7C3AED,stroke:#6D28D9,stroke-width:3px,color:#fff
+    classDef modal fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
+    classDef process fill:#0891B2,stroke:#0E7490,stroke-width:2px,color:#fff
+    classDef sync fill:#F59E0B,stroke:#D97706,stroke-width:2px,color:#fff
+    classDef navigation fill:#EA580C,stroke:#C2410C,stroke-width:3px,color:#fff
+    classDef alert fill:#DC2626,stroke:#B91C1C,stroke-width:2px,color:#fff
+    classDef permission fill:#6B7280,stroke:#4B5563,stroke-width:2px,color:#fff
+    classDef money fill:#10B981,stroke:#059669,stroke-width:2px,color:#fff
+    classDef insurance fill:#3B82F6,stroke:#2563EB,stroke-width:2px,color:#fff
+    classDef wallet fill:#8B5CF6,stroke:#7C3AED,stroke-width:2px,color:#fff
+    classDef report fill:#F59E0B,stroke:#D97706,stroke-width:2px,color:#fff
+    
+    class BillingPayPage billingCore
+    class InvoiceMgmt,MarkPaid,CurisFees,ReceiptIssue,Outstanding,PaymentMethods,PaymentLogs,PaymentAlerts,ServiceTrail,PatientWallet,ReportsAnalytics,RefundAdjust feature
+    class InvoicePanel,PaymentForm,CurisPanel,ReceiptModal,FollowUpPanel,MethodsDisplay,LogsView,WalletPanel,RefundAdjustModal,ReportsDashboard modal
+    class InvoiceFilter,CreateInvoice,InvoiceDetail,PaymentProcess,PartialPayment,PaymentAudit,SendReceipt,ReminderOptions,DepositForm,WalletHistory,OverpaymentHandler,ApprovalWorkflow,ProcessRefund,DailyCashierReport,RevenueAnalysis,PlatformPayments,AutoReminders process
+    class DashboardSync,DoctorAccountSync,ExternalAPIs sync
+    class MainNavigation,Dashboard,AppointmentsPage,CheckInPage,InboxAlertsPage,QueueFlowPage,PatientDirPage navigation
+    class InsuranceClaim,PDFPackets,CorporateBilling insurance
+    class PatientWallet,WalletPanel,DepositForm,WalletHistory,OverpaymentHandler wallet
+    class ReportsAnalytics,ReportsDashboard,DailyCashierReport,RevenueAnalysis,PlatformPayments report
+    class ComplianceSecurity,WorkflowControls,Permissions permission
+    class InstallmentPlan money

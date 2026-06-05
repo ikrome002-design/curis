@@ -1,0 +1,151 @@
+graph TB
+    %% Main Login
+    SuperLogin[Super Admin Login] --> SuperDash[Super Admin Dashboard]
+    
+    %% Dashboard Features
+    SuperDash --> UserOverview[Real-Time User Overview]
+    SuperDash --> ApptMonitor[Appointment Activity Monitoring]
+    SuperDash --> FinSnapshot[Financial Snapshot]
+    SuperDash --> PlatformHealth[Platform Health & Settings]
+    SuperDash --> SecurityAlerts[Security & Compliance Alerts]
+    SuperDash --> SupportView[Support & Feedback Quick View]
+    SuperDash --> QuickActionsPanel[Quick Actions Panel]
+    
+    %% User Overview Features
+    UserOverview --> |Click| UserStats[User Statistics<br/>• Live counts by role<br/>• Active/Suspended/Pending<br/>• Add New User shortcut<br/>• Manage Roles button]
+    
+    %% Appointment Monitoring
+    ApptMonitor --> |Click| ApptSnapshot[Appointment Snapshot<br/>• Total today<br/>• Upcoming/Canceled/Completed<br/>• Force-canceled alerts<br/>• Doctor availability feed]
+    
+    %% Financial Snapshot
+    FinSnapshot --> |Click| FinDetails[Financial Details<br/>• Weekly/Monthly revenue<br/>• Outstanding balances<br/>• Top 5 owing clinics<br/>• Quick report buttons]
+    
+    %% Platform Health
+    PlatformHealth --> |Click| HealthStatus[System Status<br/>• App running status<br/>• Maintenance mode toggle<br/>• Session timeout summary<br/>• SMS/Email gateway status]
+    
+    %% Security Alerts
+    SecurityAlerts --> |Click| SecurityLog[Security Dashboard<br/>• Login attempts log<br/>• IP addresses<br/>• Brute-force warnings<br/>• Suspicious activity alerts]
+    
+    %% Support View
+    SupportView --> |Click| TicketOverview[Support Tickets<br/>• Open tickets count<br/>• Newest tickets list<br/>• Priority flagging<br/>• Status changes]
+    
+    %% Quick Actions
+    QuickActionsPanel --> AddUserQuick[Add New User]
+    QuickActionsPanel --> ViewApptQuick[View Appointments]
+    QuickActionsPanel --> AdjustChargesQuick[Adjust Service Charges]
+    QuickActionsPanel --> ViewTicketsQuick[View Support Tickets]
+    QuickActionsPanel --> MaintenanceQuick[Enter Maintenance Mode]
+    
+    %% Main Navigation
+    SuperDash --> MainNav{Main Navigation}
+    MainNav --> UsersPage[Curis Users Page]
+    MainNav --> ApptOversightPage[Appointment Oversight Page]
+    MainNav --> HealthPage[Health (High-Level) Page]
+    MainNav --> BillingAdminPage[Billings & Payments Page]
+    MainNav --> SettingsPage[Settings Page]
+    MainNav --> CompliancePage[Compliance Hub Page]
+    
+    %% Curis Users Page Features
+    UsersPage --> UserFilter[User Overview Panel]
+    UsersPage --> UserListMgmt[User List Management]
+    UsersPage --> UserDetailsMgmt[User Details Management]
+    UsersPage --> NotifAlertsMgmt[Notifications Management]
+    UsersPage --> RoleSpecific[Role-Specific Actions]
+    UsersPage --> UserAuditLogs[User Activity Logs]
+    UsersPage --> AddNewUser[Add New User]
+    UsersPage --> UserComm[User Communication]
+    UsersPage --> DeactivateUsers[User Deactivation]
+    
+    UserFilter --> |Click| FilterModal[Filter Options<br/>• By role<br/>• By status<br/>• By clinic<br/>• Search bar<br/>• Key metrics display]
+    
+    UserListMgmt --> |Click| UserTable[User Management Table<br/>• User ID/Name/Role<br/>• Status indicators<br/>• Bulk actions<br/>• Sort & filter<br/>• Last login info]
+    
+    UserDetailsMgmt --> |Click| UserProfile[User Profile Editor<br/>• View/Edit details<br/>• Change roles<br/>• Reset password<br/>• Suspend/Activate<br/>• Add suspension notes]
+    
+    AddNewUser --> |Click| CreateUserForm[User Creation Form<br/>• Select role<br/>• Input details<br/>• Clinic assignment<br/>• Set initial status<br/>• Batch upload CSV]
+    
+    UserComm --> |Click| CommPanel[Communication Panel<br/>• Direct messaging<br/>• Bulk emails/SMS<br/>• Template messages<br/>• Communication logs]
+    
+    %% Appointment Oversight Features
+    ApptOversightPage --> ClinicSelect[Select Clinic Owner]
+    ClinicSelect --> |Select| ClinicApptDash[Clinic Appointment Dashboard]
+    
+    ClinicApptDash --> ApptFilterSearch[Appointment Filter & Search]
+    ClinicApptDash --> ApptListView[Appointment List View]
+    ClinicApptDash --> ApptDetailsMgmt[Appointment Details]
+    ClinicApptDash --> DocAvailMgmt[Doctor Availability]
+    ClinicApptDash --> ForceCancel[Force-Cancel Appointments]
+    ClinicApptDash --> ApptNotif[Appointment Notifications]
+    ClinicApptDash --> ApptReports[Reports & Analytics]
+    ClinicApptDash --> ApptHistory[Appointment History]
+    
+    ApptFilterSearch --> |Click| FilterApptModal[Filter Panel<br/>• Date range<br/>• Status filter<br/>• Doctor filter<br/>• Patient search<br/>• Clinic-specific]
+    
+    ApptListView --> |Click| ApptGrid[Appointment Grid<br/>• Patient/Doctor info<br/>• Status indicators<br/>• Date/Time<br/>• Action buttons<br/>• Color coding]
+    
+    ForceCancel --> |Click| CancelApptModal[Force Cancel Modal<br/>• Cancellation reason<br/>• Auto-notifications<br/>• Patient alert<br/>• Doctor alert<br/>• Log entry]
+    
+    %% Health Page Features
+    HealthPage --> HealthClinicSelect[Select Clinic Owner]
+    HealthClinicSelect --> |Select| HealthDashboard[Health Records Dashboard]
+    
+    HealthDashboard --> MedicalAudit[Medical Records Audit]
+    HealthDashboard --> ComplianceCheck[Compliance Monitoring]
+    HealthDashboard --> PatientRecords[Patient Records Overview]
+    HealthDashboard --> HealthReports[Health Reports]
+    HealthDashboard --> HealthNotifications[Health Alerts]
+    
+    MedicalAudit --> |Click| AuditView[Audit View (Read-Only)<br/>• View prescriptions<br/>• Diagnosis history<br/>• Lab results<br/>• Access logs<br/>• No editing allowed]
+    
+    PatientRecords --> |Click| RecordView[Patient Record View<br/>• File number only<br/>• No personal info<br/>• Medical history<br/>• Treatment records<br/>• Privacy compliant]
+    
+    %% Billings & Payments Features
+    BillingAdminPage --> BillingDash[Dynamic Billing Dashboard]
+    BillingAdminPage --> InvoiceMgmtAdmin[Invoice Management]
+    BillingAdminPage --> ServiceConfig[Service Charge Config]
+    BillingAdminPage --> PaymentCycle[Payment Cycle Mgmt]
+    BillingAdminPage --> DisputeRefund[Dispute & Refund]
+    BillingAdminPage --> FinReporting[Financial Reporting]
+    BillingAdminPage --> BillingNotif[Billing Notifications]
+    BillingAdminPage --> ManualPayment[Manual Payment Controls]
+    BillingAdminPage --> BulkActions[Bulk Actions]
+    
+    BillingDash --> |Click| RevenueSummary[Revenue Overview<br/>• Total platform revenue<br/>• Service charges<br/>• Pending/Paid invoices<br/>• Failed transactions<br/>• Dynamic filters]
+    
+    ServiceConfig --> |Click| ChargeConfig[Charge Configuration<br/>• Percentage: 20/25/30%<br/>• Fixed: 2000/2500/3000<br/>• Weekly/Bi-weekly/Monthly<br/>• Per clinic settings<br/>• Global settings]
+    
+    InvoiceMgmtAdmin --> |Click| InvoicePanel[Invoice Management<br/>• Auto-generate invoices<br/>• Search & filter<br/>• Status override<br/>• Download PDF/CSV<br/>• Invoice breakdown]
+    
+    %% Settings Page Features
+    SettingsPage --> SiteSettings[Site-Wide Settings]
+    SettingsPage --> NotifTemplates[Notification Templates]
+    SettingsPage --> MaintenanceMode[Maintenance Mode]
+    SettingsPage --> ThirdPartyInt[Third-Party Integrations]
+    
+    SiteSettings --> |Click| SessionConfig[Session Configuration<br/>• Timeout durations<br/>• Role-based settings<br/>• Remember me toggle<br/>• Security policies<br/>• Dynamic updates]
+    
+    NotifTemplates --> |Click| TemplateEditor[Template Editor<br/>• Email/SMS templates<br/>• Multi-language support<br/>• Preview & test<br/>• Real-time updates<br/>• Custom layouts]
+    
+    MaintenanceMode --> |Click| MaintenancePanel[Maintenance Control<br/>• Enable/Disable mode<br/>• Custom message<br/>• Schedule maintenance<br/>• User notifications<br/>• Instant toggle]
+    
+    ThirdPartyInt --> |Click| IntegrationPanel[Integration Settings<br/>• SMS gateway config<br/>• Email settings<br/>• WhatsApp Business API<br/>• API keys/credentials<br/>• Provider redundancy]
+    
+    %% Compliance Hub Features
+    CompliancePage --> AuditLogAccess[Audit Log Access]
+    CompliancePage --> LoginMonitor[Login Attempt Monitoring]
+    
+    AuditLogAccess --> |Click| LogViewer[Comprehensive Log Viewer<br/>• User activities<br/>• Login attempts<br/>• Data access logs<br/>• IP tracking<br/>• Export CSV/PDF]
+    
+    LoginMonitor --> |Click| SecurityPanel[Security Configuration<br/>• Failed attempt limits<br/>• Account lockout rules<br/>• Captcha settings<br/>• Alert notifications<br/>• Automated locking]
+    
+    %% Styling
+    classDef mainPage fill:#1E3A5F,stroke:#0D1B2A,stroke-width:3px,color:#fff
+    classDef feature fill:#7B2CBF,stroke:#5A189A,stroke-width:2px,color:#fff
+    classDef popup fill:#FF6B35,stroke:#C73E1D,stroke-width:2px,color:#fff
+    classDef action fill:#06A77D,stroke:#045A3F,stroke-width:2px,color:#fff
+    classDef critical fill:#DC2626,stroke:#991B1B,stroke-width:2px,color:#fff
+    
+    class SuperDash,UsersPage,ApptOversightPage,HealthPage,BillingAdminPage,SettingsPage,CompliancePage mainPage
+    class UserOverview,ApptMonitor,FinSnapshot,PlatformHealth,SecurityAlerts,SupportView,QuickActionsPanel,UserFilter,UserListMgmt,UserDetailsMgmt,NotifAlertsMgmt,RoleSpecific,UserAuditLogs,AddNewUser,UserComm,DeactivateUsers,ClinicSelect,ApptFilterSearch,ApptListView,ApptDetailsMgmt,DocAvailMgmt,ForceCancel,ApptNotif,ApptReports,ApptHistory,HealthClinicSelect,MedicalAudit,ComplianceCheck,PatientRecords,HealthReports,HealthNotifications,BillingDash,InvoiceMgmtAdmin,ServiceConfig,PaymentCycle,DisputeRefund,FinReporting,BillingNotif,ManualPayment,BulkActions,SiteSettings,NotifTemplates,MaintenanceMode,ThirdPartyInt,AuditLogAccess,LoginMonitor feature
+    class UserStats,ApptSnapshot,FinDetails,HealthStatus,SecurityLog,TicketOverview,FilterModal,UserTable,UserProfile,CreateUserForm,CommPanel,FilterApptModal,ApptGrid,CancelApptModal,AuditView,RecordView,RevenueSummary,ChargeConfig,InvoicePanel,SessionConfig,TemplateEditor,MaintenancePanel,IntegrationPanel,LogViewer,SecurityPanel popup
+    class ForceCancel,DeactivateUsers critical

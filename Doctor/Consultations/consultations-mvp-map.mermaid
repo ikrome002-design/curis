@@ -1,0 +1,256 @@
+flowchart TD
+    %% Entry Points
+    Dashboard[Dashboard] --> ConsultationsPage[Consultations Page<br/>💬 Session Management Hub]
+    AppointmentsPage[Appointments Page] --> ConsultationsPage
+    AlertsPage[Alerts & Collaboration] --> ConsultationsPage
+    
+    %% Main Page Structure
+    ConsultationsPage --> ConsultListView[Consultation List View<br/>Structured Session Display]
+    ConsultationsPage --> SearchFilter[Search & Filter Tools<br/>Session Navigation]
+    ConsultationsPage --> SessionControls[Start/Join Consultation<br/>Session Initiation]
+    ConsultationsPage --> MedicalAccess[Medical Records Access<br/>Patient Context]
+    ConsultationsPage --> LiveDocumentation[Real-time Documentation<br/>Live Note-taking]
+    ConsultationsPage --> PostConsultSummary[Post-Consultation Summary<br/>Session Completion]
+    ConsultationsPage --> AlertsReminders[Alerts & Reminders<br/>Session Awareness]
+    
+    %% Consultation List View
+    ConsultListView --> ListView[Structured List Display]
+    ListView --> UpcomingTab[Upcoming Tab<br/>Future sessions]
+    ListView --> OngoingTab[Ongoing Tab<br/>Active sessions]
+    ListView --> CompletedTab[Completed Tab<br/>Finished sessions]
+    ListView --> MissedTab[Missed Tab<br/>No-show sessions]
+    
+    %% Each Consultation Entry
+    ListView --> ConsultEntry[Each Consultation Shows:]
+    ConsultEntry --> PatientInfoDisp[Patient Info<br/>Name & Photo]
+    ConsultEntry --> SessionDetails[Session Details<br/>Date/Time/Mode]
+    ConsultEntry --> StatusBadge[Status Badge<br/>Visual indicator]
+    ConsultEntry --> EntryActions[Entry Actions<br/>Quick buttons]
+    
+    PatientInfoDisp -->|Click| PatientRecordsNav[Navigate to Patient Records<br/>Full medical history]
+    PatientRecordsNav --> PatientRecordsPage[Patient Records Page]
+    
+    SessionDetails --> ConsultMode[Consultation Mode:]
+    ConsultMode --> OnlineMode[Online<br/>Google Meet]
+    ConsultMode --> InClinicMode[In-clinic<br/>Physical session]
+    
+    StatusBadge --> StatusTypes[Status Types:]
+    StatusTypes --> ScheduledStatus[Scheduled<br/>Blue badge]
+    StatusTypes --> OngoingStatus[Ongoing<br/>Yellow badge]
+    StatusTypes --> CompletedStatus[Completed<br/>Green badge]
+    StatusTypes --> MissedStatus[Missed<br/>Red badge]
+    
+    %% Search & Filter Tools
+    SearchFilter --> DateRangeFilter[Date Range Filter<br/>Period selection]
+    SearchFilter --> PatientNameSearch[Patient Name Search<br/>Quick lookup]
+    SearchFilter --> StatusFilter[Status Filter<br/>Session type filter]
+    
+    DateRangeFilter -->|Click| CalendarPicker[Calendar Picker Modal<br/>Date selection UI]
+    CalendarPicker --> DateOptions[Date Selection Options:]
+    DateOptions --> TodaySelect[Today<br/>Current date]
+    DateOptions --> WeekSelect[This Week<br/>7-day view]
+    DateOptions --> MonthSelect[This Month<br/>30-day view]
+    DateOptions --> CustomRange[Custom Range<br/>Start/End dates]
+    CalendarPicker --> ApplyDateFilter[Apply Filter<br/>Update list]
+    
+    PatientNameSearch --> SearchFeatures[Search Features:]
+    SearchFeatures --> AutoComplete[Auto-complete<br/>As you type]
+    SearchFeatures --> RecentSearches[Recent Searches<br/>Quick access]
+    SearchFeatures --> ClearSearch[Clear Search<br/>Reset filter]
+    
+    StatusFilter --> StatusDropdown[Status Dropdown<br/>Multi-select]
+    StatusDropdown --> FilterByScheduled[Scheduled Only]
+    StatusDropdown --> FilterByOngoing[Ongoing Only]
+    StatusDropdown --> FilterByCompleted[Completed Only]
+    StatusDropdown --> FilterByMissed[Missed Only]
+    StatusDropdown --> ApplyStatusFilter[Apply Filter<br/>Update results]
+    
+    %% Session Controls - Online Consultation
+    SessionControls --> OnlineConsult[Online Consultation<br/>Google Meet sessions]
+    OnlineConsult --> JoinConsultBtn[Join Consultation Button<br/>For scheduled sessions]
+    
+    JoinConsultBtn -->|Click| PreJoinChecks[Pre-Join Checks]
+    PreJoinChecks --> TimeCheck[Time Verification<br/>Is it time?]
+    PreJoinChecks --> PatientJoinedCheck[Patient Status<br/>Has patient joined?]
+    
+    TimeCheck -->|Valid Time| LaunchGoogleMeet[Launch Google Meet<br/>New tab opens]
+    LaunchGoogleMeet --> AutoStatusUpdate[Auto Status Update<br/>Set to Ongoing]
+    AutoStatusUpdate --> SessionTimer[Session Timer Start<br/>Duration tracking]
+    
+    PatientJoinedCheck -->|Patient Waiting| ShowAlert[Patient Waiting Alert<br/>Join now prompt]
+    
+    %% Session Controls - In-clinic Consultation
+    SessionControls --> InClinicConsult[In-clinic Consultation<br/>Physical sessions]
+    InClinicConsult --> StartConsultBtn[Start Consultation Button<br/>Begin session]
+    
+    StartConsultBtn -->|Click| StartSessionModal[Start Session Modal<br/>Confirmation dialog]
+    StartSessionModal --> ConfirmDetails[Confirm Session Details:]
+    ConfirmDetails --> PatientConfirm[Patient Name<br/>Verification]
+    ConfirmDetails --> TimeConfirm[Session Time<br/>Current time]
+    ConfirmDetails --> RoomNumber[Room Number<br/>Optional field]
+    StartSessionModal --> ConfirmStartBtn[Confirm Start<br/>Begin session]
+    
+    ConfirmStartBtn -->|Click| SessionActivation[Session Activation]
+    SessionActivation --> StatusToOngoing[Status → Ongoing<br/>Update badge]
+    SessionActivation --> StartTimer[Start Timer<br/>Track duration]
+    SessionActivation --> EnableNotes[Enable Live Notes<br/>Documentation ready]
+    
+    %% Medical Records Access
+    MedicalAccess --> AccessMethods[Access Methods During Session:]
+    AccessMethods --> SideDrawer[Side Drawer View<br/>Slide-in panel]
+    AccessMethods --> FullModal[Patient Data Modal<br/>Full overlay]
+    AccessMethods --> SplitView[Split View Mode<br/>Side-by-side]
+    
+    SideDrawer -->|Toggle| DrawerContent[Drawer Content:]
+    DrawerContent --> QuickSummary[Quick Summary<br/>Key patient info]
+    QuickSummary --> BasicInfo[Basic Info<br/>Age/Gender/ID]
+    QuickSummary --> ActiveConditions[Active Conditions<br/>Current ailments]
+    QuickSummary --> CurrentMeds[Current Medications<br/>Active prescriptions]
+    QuickSummary --> RecentVisits[Recent Visits<br/>Last 3 consultations]
+    
+    FullModal -->|Open| PatientDataModal[Patient Data Modal<br/>Comprehensive view]
+    PatientDataModal --> ModalTabs[Modal Navigation Tabs:]
+    ModalTabs --> MedHistoryTab[Medical History<br/>Past visits & diagnoses]
+    ModalTabs --> AllergyTab[Allergy Alerts<br/>Risk factors]
+    ModalTabs --> PrescriptionTab[Past Prescriptions<br/>Medication history]
+    ModalTabs --> ChronicTab[Chronic Conditions<br/>Long-term care]
+    ModalTabs --> PreviousNotesTab[Previous Notes<br/>Historical observations]
+    
+    MedHistoryTab --> HistoryList[History List<br/>Chronological]
+    AllergyTab --> AllergyWarnings[Allergy Warnings<br/>Red alerts]
+    PrescriptionTab --> MedTimeline[Medication Timeline<br/>Drug history]
+    ChronicTab --> ConditionMgmt[Condition Management<br/>Ongoing care]
+    PreviousNotesTab --> NotesArchive[Notes Archive<br/>Past observations]
+    
+    %% Real-time Documentation
+    LiveDocumentation --> NotesEditor[Notes Editor<br/>Live documentation]
+    NotesEditor --> EditorSections[Editor Sections:]
+    
+    EditorSections --> DiagnosisInput[Diagnosis Input<br/>Medical conditions]
+    DiagnosisInput --> ICDLookup[ICD-10 Lookup<br/>Code search]
+    DiagnosisInput --> CustomDiagnosis[Custom Entry<br/>Free text]
+    DiagnosisInput --> PrimarySecondary[Primary/Secondary<br/>Diagnosis ranking]
+    
+    EditorSections --> ObservationsField[Observations Field<br/>Clinical findings]
+    ObservationsField --> TemplateOptions[Template Options<br/>Quick fills]
+    ObservationsField --> FreeText[Free Text<br/>Custom notes]
+    ObservationsField --> VoiceToText[Voice-to-Text<br/>Dictation option]
+    
+    EditorSections --> VitalsRecording[Vitals Recording<br/>Patient measurements]
+    VitalsRecording --> VitalFields[Vital Sign Fields:]
+    VitalFields --> BloodPressure[Blood Pressure<br/>Systolic/Diastolic]
+    VitalFields --> Temperature[Temperature<br/>°C/°F toggle]
+    VitalFields --> HeartRate[Heart Rate<br/>BPM]
+    VitalFields --> RespiratoryRate[Respiratory Rate<br/>Per minute]
+    VitalFields --> OxygenSat[Oxygen Saturation<br/>SpO2 %]
+    VitalFields --> Weight[Weight<br/>kg/lbs]
+    VitalFields --> Height[Height<br/>cm/ft]
+    
+    EditorSections --> NextStepsPlanning[Next Steps Planning<br/>Treatment recommendations]
+    NextStepsPlanning --> FollowUpSchedule[Follow-up Schedule<br/>Next appointment]
+    NextStepsPlanning --> TestsRequired[Tests Required<br/>Lab/Imaging orders]
+    NextStepsPlanning --> Referrals[Referrals<br/>Specialist recommendations]
+    
+    NotesEditor --> AutoSaveFunction[Auto-save Function<br/>Every 30 seconds]
+    AutoSaveFunction --> SaveIndicator[Save Indicator<br/>Visual feedback]
+    AutoSaveFunction --> ConflictResolution[Conflict Resolution<br/>Version control]
+    
+    NotesEditor --> PatientRecordLink[Patient Record Link<br/>Direct integration]
+    PatientRecordLink -->|Syncs to| PatientRecordsPage
+    
+    %% Post-Consultation Summary
+    PostConsultSummary --> EndSessionBtn[End Session Button<br/>Complete consultation]
+    EndSessionBtn -->|Click| SummaryModal[Post-Consultation Modal<br/>Review & finalize]
+    
+    SummaryModal --> SummarySteps[Summary Steps:]
+    SummarySteps --> NotesReview[Notes Review<br/>Final check]
+    NotesReview --> EditOption[Edit Notes<br/>Last minute changes]
+    NotesReview --> ConfirmNotes[Confirm Notes<br/>Lock documentation]
+    
+    SummarySteps --> CompletionMarking[Completion Marking<br/>Status update]
+    CompletionMarking --> MarkComplete[Mark as Completed<br/>Session ended]
+    CompletionMarking --> MarkIncomplete[Mark as Incomplete<br/>Follow-up needed]
+    CompletionMarking --> AddReason[Add Completion Note<br/>Optional comment]
+    
+    SummarySteps --> FollowUpCreation[Follow-up Creation<br/>Next appointment]
+    FollowUpCreation --> ScheduleFollowUp[Schedule Follow-up<br/>Calendar picker]
+    FollowUpCreation --> FollowUpNotes[Follow-up Notes<br/>Reminder text]
+    FollowUpCreation --> NotifyReceptionist[Notify Receptionist<br/>Booking request]
+    
+    SummarySteps --> PrescriptionTrigger[Prescription Trigger<br/>Medication needed?]
+    PrescriptionTrigger -->|Yes| NavigateToPrescription[Navigate to Prescriptions<br/>Pre-filled patient]
+    NavigateToPrescription --> PrescriptionPage[Prescriptions Page]
+    
+    SummarySteps --> DocumentAttachment[Document Attachment<br/>Add files]
+    DocumentAttachment --> AttachLabs[Attach Lab Orders<br/>Test requests]
+    DocumentAttachment --> AttachReferrals[Attach Referrals<br/>Specialist letters]
+    DocumentAttachment --> AttachImages[Attach Images<br/>Clinical photos]
+    
+    SummaryModal --> FinalizeBtn[Finalize Consultation<br/>Complete all steps]
+    FinalizeBtn -->|Click| LockSession[Lock Session<br/>No further edits]
+    LockSession --> UpdateAllSystems[Update All Systems<br/>Sync everywhere]
+    
+    %% Alerts & Reminders
+    AlertsReminders --> CountdownTimers[Countdown Timers<br/>Upcoming sessions]
+    CountdownTimers --> FifteenMinAlert[15-Min Alert<br/>Prepare reminder]
+    CountdownTimers --> FiveMinAlert[5-Min Alert<br/>Ready prompt]
+    CountdownTimers --> NowAlert[Start Now Alert<br/>Session time]
+    
+    AlertsReminders --> MissedNotifications[Missed Session Notifications<br/>No-show tracking]
+    MissedNotifications --> AutoMissedStatus[Auto-Missed Status<br/>After 15 mins]
+    MissedNotifications --> FollowUpPrompt[Follow-up Prompt<br/>Contact patient?]
+    MissedNotifications --> RescheduleOption[Reschedule Option<br/>Quick booking]
+    
+    AlertsReminders --> PatientJoinAlerts[Patient Join Alerts<br/>Online sessions]
+    PatientJoinAlerts --> PatientWaitingToast[Patient Waiting Toast<br/>Join now prompt]
+    PatientJoinAlerts --> AudioAlert[Audio Alert<br/>Sound notification]
+    PatientJoinAlerts --> DesktopNotification[Desktop Notification<br/>System alert]
+    
+    %% Cross-Page Synchronization
+    ConsultationsPage -.->|Session Status| DashboardUpdate[Dashboard Update<br/>Consultation counter]
+    ConsultationsPage -.->|Notes Saved| RecordSync[Patient Records Sync<br/>Medical history update]
+    ConsultationsPage -.->|Prescription Need| PrescriptionPrep[Prescription Page Ready<br/>Patient pre-selected]
+    ConsultationsPage -.->|Alerts Generated| NotificationSync[Alerts Page Update<br/>New notifications]
+    
+    %% Navigation Options
+    ConsultationsPage --> NavigationMenu[Navigation Menu]
+    NavigationMenu --> BackToDashboard[Back to Dashboard<br/>Home link]
+    NavigationMenu --> ToAppointments[To Appointments<br/>Schedule view]
+    NavigationMenu --> ToPatientRecords[To Patient Records<br/>Medical history]
+    NavigationMenu --> ToPrescriptions[To Prescriptions<br/>Medication management]
+    NavigationMenu --> ToAlerts[To Alerts<br/>Notifications]
+    
+    %% Access Control & Limitations
+    ConsultationsPage --> AccessControl[Access Control<br/>Doctor limitations]
+    AccessControl --> CanDo[Can Do:]
+    CanDo --> ViewAssigned[View assigned consultations]
+    CanDo --> StartJoinSessions[Start/Join sessions]
+    CanDo --> DocumentNotes[Document notes]
+    CanDo --> CompleteConsults[Complete consultations]
+    
+    AccessControl --> CannotDo[Cannot Do:]
+    CannotDo --> NoReassign[Cannot reassign consultations]
+    CannotDo --> NoCancel[Cannot cancel (Owner/Receptionist only)]
+    CannotDo --> NoEditLocked[Cannot edit completed sessions]
+    CannotDo --> NoDeleteNotes[Cannot delete documentation]
+    
+    %% Responsive Design
+    ConsultationsPage --> ResponsiveDesign[Responsive Design]
+    ResponsiveDesign --> DesktopLayout[Desktop Layout<br/>Full features]
+    ResponsiveDesign --> TabletLayout[Tablet Layout<br/>Touch optimized]
+    ResponsiveDesign --> MobileLayout[Mobile Layout<br/>Essential features]
+    
+    %% Styling
+    classDef pageStyle fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef modalStyle fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef actionStyle fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    classDef alertStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef syncStyle fill:#fce4ec,stroke:#880e4f,stroke-width:2px,stroke-dasharray: 5 5
+    classDef accessStyle fill:#ffebee,stroke:#b71c1c,stroke-width:2px
+    
+    class ConsultationsPage,Dashboard,AppointmentsPage,PatientRecordsPage,PrescriptionPage,AlertsPage pageStyle
+    class CalendarPicker,StartSessionModal,PatientDataModal,SummaryModal modalStyle
+    class JoinConsultBtn,StartConsultBtn,EndSessionBtn,FinalizeBtn,ConfirmStartBtn actionStyle
+    class CountdownTimers,MissedNotifications,PatientJoinAlerts,ShowAlert alertStyle
+    class DashboardUpdate,RecordSync,PrescriptionPrep,NotificationSync syncStyle
+    class AccessControl,CannotDo accessStyle

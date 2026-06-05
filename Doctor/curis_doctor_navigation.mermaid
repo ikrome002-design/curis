@@ -1,0 +1,313 @@
+flowchart TD
+    A[Doctor Login] --> B{Account Activated?}
+    B -->|No| C[Account Pending<br/>Contact Clinic Owner]
+    B -->|Yes| D[Dashboard]
+    
+    %% Dashboard
+    D --> D1[Today's Appointments Panel<br/>Dynamic list view]
+    D1 --> D1a[Patient Profile Click<br/>Opens patient record]
+    D1 --> D1b[Start Consultation Button<br/>Launches consultation session]
+    D1 --> D1c[View Details Button<br/>Appointment detail modal]
+    D1c --> D1c1[Appointment Detail Modal<br/>Patient info/Time/Status/Notes]
+    D1c1 --> D1c1a[View Full Record Button<br/>Jump to Patient Records]
+    D1c1 --> D1c1b[Add Pre-consultation Notes<br/>Notes editor modal]
+    D1c1 --> D1c1c[Start Consultation Button<br/>Begin session]
+    
+    D --> D2[Pending Consultations Summary<br/>Next 3 upcoming + missed]
+    D2 --> D2a[No-show Alert<br/>Follow-up required notification]
+    D2 --> D2b[Missed Consultation Alert<br/>24+ hour unresolved warning]
+    
+    D --> D3[Quick Access Widgets<br/>Recent patients & stats]
+    D3 --> D3a[Recent Patients Tiles<br/>Name/Date/Quick actions]
+    D3a --> D3a1[Add Notes Button<br/>Quick notes editor]
+    D3a --> D3a2[View History Button<br/>Patient timeline modal]
+    D3 --> D3b[Prescriptions Summary<br/>Today's issued count]
+    D3b --> D3b1[View Full List Button<br/>All prescriptions page]
+    D3b --> D3b2[Duplicate Prescription<br/>Quick re-issue modal]
+    D3 --> D3c[Lab Results Alert<br/>New uploads notification]
+    D3c --> D3c1[View Lab Results<br/>Document viewer modal]
+    
+    D --> D4[Google Meet Links<br/>Embedded consultation access]
+    D4 --> D4a[Countdown Timer<br/>Next hour consultation alert]
+    D4 --> D4b[One-Click Join<br/>Direct Google Meet launch]
+    
+    D --> D5[Clinic Broadcasts<br/>Internal memos display]
+    D5 --> D5a[System Updates Alert<br/>Platform notifications]
+    D5 --> D5b[Schedule Changes<br/>Clinic hour modifications]
+    D5 --> D5c[Staff Meetings<br/>Team announcements]
+    
+    D --> D6[Activity Snapshot<br/>Daily statistics]
+    D6 --> D6a[Consultations Counter<br/>Today's appointments]
+    D6 --> D6b[Completion Status<br/>Finished appointments]
+    D6 --> D6c[Outstanding Records<br/>Pending updates alert]
+    D6 --> D6d[Prescription Summary<br/>Issued vs pending]
+    
+    D --> D7[Notification Center Preview<br/>Top 5 recent alerts]
+    D7 --> D7a[Appointment Changes<br/>Schedule modifications]
+    D7 --> D7b[Lab Result Uploads<br/>New document alerts]
+    D7 --> D7c[Staff Comments<br/>Collaboration notifications]
+    D7 --> D7d[Patient Follow-ups<br/>Care continuation requests]
+    
+    %% Main Navigation
+    D --> E[Appointments]
+    D --> F[Patient Records]
+    D --> G[Consultations]
+    D --> H[Prescriptions]
+    D --> I[Alerts & Collaboration]
+    
+    %% Appointments Page
+    E --> E1[Appointments Table<br/>Dynamic, scrollable, paginated]
+    E1 --> E1a[Patient Profile Thumbnail<br/>Click to open record]
+    E1 --> E1b[View Action Button<br/>Appointment details modal]
+    E1 --> E1c[Update Status Button<br/>Status change dropdown]
+    E1c --> E1c1[Status Change Modal<br/>Pending/Ongoing/Completed/Cancelled]
+    E1c1 --> E1c1a[Ongoing Selection<br/>Start session tracker]
+    E1c1 --> E1c1b[Completed Selection<br/>Lock appointment edits]
+    E1c1 --> E1c1c[Cancelled Selection<br/>Reason input required]
+    E1 --> E1d[Join Consultation Button<br/>Online session launcher]
+    
+    E --> E2[Advanced Filters<br/>Dynamic query system]
+    E2 --> E2a[Date Range Picker<br/>Calendar selection modal]
+    E2 --> E2b[Status Multi-select<br/>Filter dropdown]
+    E2 --> E2c[Patient Name Search<br/>Type-ahead autocomplete]
+    E2 --> E2d[Real-time Results<br/>AJAX-powered updates]
+    
+    E --> E3[Appointment Detail Modal<br/>Complete information view]
+    E3 --> E3a[Patient Info Display<br/>Name/Age/Gender/ID]
+    E3 --> E3b[Scheduling Details<br/>Time/Status/Type/Receptionist]
+    E3 --> E3c[Google Meet Link<br/>Online consultation access]
+    E3 --> E3d[Quick Action Buttons<br/>Record/Notes/Consultation]
+    E3d --> E3d1[View Full Record<br/>Patient Records navigation]
+    E3d --> E3d2[Add Pre-consultation Notes<br/>Notes editor]
+    E3d --> E3d3[Start Consultation<br/>Session initiation]
+    
+    E --> E4[Live Indicators<br/>Status badges & alerts]
+    E4 --> E4a[Color-coded Badges<br/>Green/Yellow/Red status]
+    E4 --> E4b[Toast Notifications<br/>Real-time updates]
+    E4b --> E4b1[Time Change Alert<br/>Receptionist modifications]
+    E4b --> E4b2[New Assignment Alert<br/>Appointment added]
+    E4b --> E4b3[Missed Appointment Warning<br/>No-show notification]
+    
+    E --> E5[Bulk View Options<br/>Calendar visualization]
+    E5 --> E5a[Day/Week Tabs<br/>Time period selection]
+    E5 --> E5b[Calendar View<br/>Visual appointment layout]
+    E5 --> E5c[Export Options<br/>PDF/Print functionality]
+    
+    %% Patient Records Page
+    F --> F1[Patient Search & Access<br/>Quick patient lookup]
+    F1 --> F1a[Autocomplete Search Bar<br/>Real-time patient matching]
+    F1 --> F1b[Filter Options<br/>Name/Gender/Age/History]
+    F1b --> F1b1[Filter Modal<br/>Advanced search criteria]
+    F1 --> F1c[Recently Accessed<br/>Quick access panel]
+    
+    F --> F2[Medical History View<br/>Chronological display]
+    F2 --> F2a[Expandable Entries<br/>Detailed history modal]
+    F2a --> F2a1[Past Consultations<br/>Session details view]
+    F2a --> F2a2[Diagnoses History<br/>Medical conditions log]
+    F2a --> F2a3[Prescriptions Issued<br/>Medication timeline]
+    F2a --> F2a4[Medical Notes<br/>Doctor observations]
+    
+    F --> F3[Clinical Notes Editor<br/>Diagnosis & observations]
+    F3 --> F3a[Rich Text Editor<br/>Formatted note creation]
+    F3 --> F3b[Keyword Tagging<br/>Chronic/Acute classification]
+    F3 --> F3c[Diagnosis Entry<br/>Structured diagnosis input]
+    F3 --> F3d[Symptoms Documentation<br/>Patient complaint logging]
+    F3 --> F3e[Treatment Plans<br/>Care strategy documentation]
+    
+    F --> F4[Document Attachments<br/>Lab results & scans]
+    F4 --> F4a[File Upload Modal<br/>Document attachment interface]
+    F4 --> F4b[Document Categories<br/>Lab/Scans/Referrals grouping]
+    F4b --> F4b1[Lab Results Viewer<br/>PDF/Image display]
+    F4b --> F4b2[Scan Viewer<br/>Medical imaging display]
+    F4b --> F4b3[Referral Letters<br/>External correspondence]
+    F4 --> F4c[Document Search<br/>Type/Date filtering]
+    
+    F --> F5[Prescription Overview<br/>Medication history]
+    F5 --> F5a[Prescription List<br/>All patient medications]
+    F5a --> F5a1[Prescription Details Modal<br/>Medication/Dosage/Duration/Notes]
+    F5 --> F5b[Re-issue Options<br/>Previous prescription duplication]
+    F5 --> F5c[Reference Access<br/>Historical prescription review]
+    
+    F --> F6[Allergies & Conditions Panel<br/>Risk awareness display]
+    F6 --> F6a[Allergy Management<br/>Known allergies editor]
+    F6 --> F6b[Chronic Conditions<br/>Long-term condition tracker]
+    F6b --> F6b1[Condition Editor Modal<br/>Diabetes/Hypertension management]
+    F6 --> F6c[Risk Alert Display<br/>Top-of-record warnings]
+    
+    F --> F7[Consultation Integration<br/>Live session connectivity]
+    F7 --> F7a[Quick Consultation Link<br/>If scheduled today]
+    F7 --> F7b[Split-view Access<br/>Real-time record updates]
+    
+    F --> F8[Activity Timeline<br/>Edit history & audit]
+    F8 --> F8a[Modification Log<br/>Who/What/When tracking]
+    F8 --> F8b[Compliance Tracking<br/>Accountability records]
+    
+    F --> F9[Collaboration Comments<br/>Team communication]
+    F9 --> F9a[Comment Thread<br/>Medical discussion]
+    F9 --> F9b[Doctor Tagging<br/>@mention notifications]
+    F9 --> F9c[Clinic Owner Tags<br/>Administrative mentions]
+    F9 --> F9d[Notification Triggers<br/>Alert system activation]
+    
+    %% Consultations Page
+    G --> G1[Consultation List View<br/>Session management hub]
+    G1 --> G1a[Structured List Display<br/>Upcoming/Ongoing/Completed/Missed]
+    G1a --> G1a1[Patient Info Display<br/>Name & photo]
+    G1a --> G1a2[Session Details<br/>Date/Time/Mode]
+    G1a --> G1a3[Status Badges<br/>Scheduled/Ongoing/Completed/Missed]
+    
+    G --> G2[Search & Filter Tools<br/>Session navigation]
+    G2 --> G2a[Date Range Filter<br/>Calendar picker]
+    G2 --> G2b[Patient Name Search<br/>Quick lookup]
+    G2 --> G2c[Status Filter<br/>Session type filtering]
+    
+    G --> G3[Start/Join Consultation<br/>Session initiation]
+    G3 --> G3a[Online Consultation<br/>Google Meet integration]
+    G3a --> G3a1[Join Consultation Button<br/>New tab Google Meet launch]
+    G3 --> G3b[In-clinic Consultation<br/>Physical session tracking]
+    G3b --> G3b1[Start Consultation Button<br/>Active session logging]
+    
+    G --> G4[Medical Records Access<br/>Patient context during session]
+    G4 --> G4a[Side Drawer View<br/>Medical history panel]
+    G4 --> G4b[Patient Data Modal<br/>Full record overlay]
+    G4b --> G4b1[Medical History<br/>Past visits & diagnoses]
+    G4b --> G4b2[Allergy Alerts<br/>Risk factor display]
+    G4b --> G4b3[Past Prescriptions<br/>Medication history]
+    G4b --> G4b4[Chronic Conditions<br/>Long-term care notes]
+    G4b --> G4b5[Previous Visit Notes<br/>Historical observations]
+    
+    G --> G5[Real-time Documentation<br/>Live note-taking]
+    G5 --> G5a[Notes Editor<br/>During-session documentation]
+    G5a --> G5a1[Diagnosis Input<br/>Medical condition entry]
+    G5a --> G5a2[Observations Field<br/>Clinical findings]
+    G5a --> G5a3[Vitals Recording<br/>Patient measurements]
+    G5a --> G5a4[Next Steps Planning<br/>Treatment recommendations]
+    G5 --> G5b[Auto-save Function<br/>Continuous note preservation]
+    G5 --> G5c[Patient Record Link<br/>Direct record integration]
+    
+    G --> G6[Post-Consultation Summary<br/>Session completion workflow]
+    G6 --> G6a[Notes Review<br/>Session documentation check]
+    G6 --> G6b[Completion Marking<br/>Status finalization]
+    G6 --> G6c[Follow-up Creation<br/>Next appointment scheduling]
+    G6 --> G6d[Prescription Trigger<br/>Medication prescription link]
+    G6 --> G6e[Document Attachment<br/>Lab results/referrals linking]
+    
+    G --> G7[Alerts & Reminders<br/>Session awareness system]
+    G7 --> G7a[Countdown Timers<br/>Upcoming session alerts]
+    G7 --> G7b[Missed Session Notifications<br/>No-show tracking]
+    G7 --> G7c[Patient Join Alerts<br/>Online session notifications]
+    
+    %% Prescriptions Page
+    H --> H1[Prescription Creation<br/>New medication interface]
+    H1 --> H1a[Patient Selection<br/>Linked patient assignment]
+    H1 --> H1b[Appointment Link<br/>Session-based prescription]
+    H1 --> H1c[Prescription Form<br/>Medication details entry]
+    H1c --> H1c1[Medication Selection<br/>Database dropdown/autocomplete]
+    H1c --> H1c2[Dosage Input<br/>Amount specification]
+    H1c --> H1c3[Frequency Setting<br/>Administration schedule]
+    H1c --> H1c4[Duration Input<br/>Treatment period]
+    H1c --> H1c5[Route Selection<br/>Administration method]
+    H1c --> H1c6[Additional Instructions<br/>Free text notes]
+    
+    H --> H2[Medication Database<br/>Clinic-defined drug library]
+    H2 --> H2a[Drug Selection Interface<br/>Centralized medication list]
+    H2 --> H2b[Autocomplete Assistance<br/>Quick drug lookup]
+    H2 --> H2c[Suggested Dosages<br/>Standard dose recommendations]
+    
+    H --> H3[Prescription Preview<br/>Verification before submission]
+    H3 --> H3a[Preview Modal<br/>Complete prescription display]
+    H3 --> H3b[Edit Options<br/>Pre-submission modifications]
+    H3 --> H3c[Confirmation Button<br/>Final prescription submission]
+    H3c --> H3c1[Time-stamp Application<br/>Submission logging]
+    H3c --> H3c2[Doctor Signature<br/>Digital authentication]
+    H3c --> H3c3[Patient Record Storage<br/>Medical history integration]
+    
+    H --> H4[Patient Portal Sync<br/>Automatic prescription delivery]
+    H4 --> H4a[Portal Push<br/>Patient account update]
+    H4 --> H4b[PDF Generation<br/>Downloadable prescription]
+    H4 --> H4c[QR Code Creation<br/>Pharmacy verification]
+    H4 --> H4d[Prescription ID<br/>Unique identifier assignment]
+    
+    H --> H5[Prescription History<br/>Patient medication log]
+    H5 --> H5a[Patient Prescription List<br/>All issued medications]
+    H5a --> H5a1[Prescription Details View<br/>Complete medication information]
+    H5 --> H5b[Re-issue Options<br/>Prescription duplication]
+    H5 --> H5c[Follow-up Updates<br/>Treatment continuation]
+    
+    H --> H6[Security & Integrity<br/>Prescription protection]
+    H6 --> H6a[Immutable Submissions<br/>No deletion after submission]
+    H6 --> H6b[Edit Authorization<br/>Supervisor approval required]
+    H6 --> H6c[Duplicate Prevention<br/>Redundancy blocking]
+    
+    %% Alerts & Collaboration Page
+    I --> I1[Real-time Notifications<br/>System event alerts]
+    I1 --> I1a[Automated Updates<br/>System-triggered notifications]
+    I1a --> I1a1[New Assignment Alert<br/>Receptionist/Owner appointments]
+    I1a --> I1a2[Upcoming Consultation<br/>15min/1hr reminders]
+    I1a --> I1a3[Medical Record Updates<br/>Lab results/other staff changes]
+    I1 --> I1b[Notification Categories<br/>Alert type classification]
+    I1b --> I1b1[Time-sensitive Alerts<br/>Urgency badges]
+    I1b --> I1b2[Info-only Updates<br/>Standard feed items]
+    I1 --> I1c[Read/Unread Tracking<br/>Notification status management]
+    I1 --> I1d[Filter Options<br/>Alert categorization]
+    I1d --> I1d1[All Notifications<br/>Complete feed view]
+    I1d --> I1d2[Unread Only<br/>New alerts filter]
+    I1d --> I1d3[Appointments Filter<br/>Schedule-related alerts]
+    I1d --> I1d4[Records Filter<br/>Medical record alerts]
+    I1d --> I1d5[Consultations Filter<br/>Session-related alerts]
+    
+    I --> I2[Team Collaboration<br/>Internal communication system]
+    I2 --> I2a[Medical Record Comments<br/>Patient-specific discussions]
+    I2a --> I2a1[Comment Thread<br/>Contextual medical discussions]
+    I2a --> I2a2[Doctor Mentions<br/>@tag other doctors]
+    I2a --> I2a3[Clinic Owner Tags<br/>Administrative mentions]
+    I2a --> I2a4[Threaded Replies<br/>Conversation continuity]
+    I2 --> I2b[Appointment Comments<br/>Session-specific notes]
+    I2 --> I2c[Doctor-Only Discussions<br/>Confidential team communication]
+    I2 --> I2d[Time-stamped Entries<br/>Decision flow tracking]
+    
+    I --> I3[Notification Preferences<br/>Alert customization]
+    I3 --> I3a[Preference Settings Modal<br/>Notification configuration]
+    I3a --> I3a1[Alert Type Toggles<br/>Email/In-app/Push selection]
+    I3a --> I3a2[Sensitivity Settings<br/>Assigned patients vs all changes]
+    I3a --> I3a3[Working Hours<br/>Mute during off-hours]
+    
+    I --> I4[Quick Actions<br/>Notification-triggered workflows]
+    I4 --> I4a[Direct Action Links<br/>Immediate response options]
+    I4a --> I4a1[Join Consultation<br/>Session access from alert]
+    I4a --> I4a2[Open Patient File<br/>Record access from notification]
+    I4 --> I4b[Status Indicators<br/>Action requirement display]
+    I4b --> I4b1[Join Now Button<br/>Immediate session access]
+    I4b --> I4b2[Awaiting Notes<br/>Documentation requirement]
+    
+    I --> I5[Audit Trail<br/>Collaboration tracking]
+    I5 --> I5a[Mentions Log<br/>Tagged discussion history]
+    I5 --> I5b[Discussion Assignments<br/>Shared case tracking]
+    I5 --> I5c[Accountability Records<br/>Team interaction logging]
+    
+    %% Profile & Settings (Limited)
+    D --> J[Profile Settings<br/>Limited doctor preferences]
+    J --> J1[Personal Information<br/>Basic profile management]
+    J1 --> J1a[Name Update<br/>Doctor name editing]
+    J1 --> J1b[Photo Upload<br/>Profile picture management]
+    J1 --> J1c[Specialization<br/>Medical specialty indication]
+    
+    J --> J2[Account Status<br/>Clinic linkage information]
+    J2 --> J2a[Clinic Assignment<br/>Current clinic display]
+    J2 --> J2b[Access Level<br/>Permission summary]
+    J2 --> J2c[Activation Status<br/>Account status display]
+    
+    %% Navigation flows back to main sections
+    E --> D
+    F --> D
+    G --> D
+    H --> D
+    I --> D
+    J --> D
+    
+    %% Cross-page integrations
+    D1c1a --> F
+    E3d1 --> F
+    G4b --> F
+    G6d --> H
+    F7a --> G
+    F9d --> I

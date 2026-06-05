@@ -1,0 +1,48 @@
+graph TD
+    Landing[Landing Page] --> Header
+    Landing --> Hero[Hero Section]
+    Landing --> Features[Features/Benefits]
+    Landing --> CTA[Call to Action]
+    Landing --> About[About Us]
+    Landing --> FAQ[FAQ Section]
+    Landing --> Footer
+
+    %% Header Section
+    Header --> Logo
+    Header --> Nav[Navigation Menu]
+    Header --> Search
+    Header --> UserMenu[User Menu]
+
+    %% Hero Section
+    Hero --> HeroTitle[Main Title]
+    Hero --> HeroDesc[Description]
+    Hero --> HeroImage[Platform Image]
+
+    %% Features Section
+    Features --> Feature1[Platform Management]
+    Features --> Feature2[User Analytics]
+    Features --> Feature3[Business Tools]
+    Features --> Feature4[Security Features]
+
+    %% CTA Section
+    CTA --> CreateAccount[Create Account]
+    CTA --> Login[Log In]
+    
+    CreateAccount --> RegistrationForm[Registration Form]
+    Login --> LoginForm[Login Form]
+
+    %% About Us Section
+    About --> Mission[Mission Statement]
+    About --> Vision[Vision]
+    About --> Team[Team Info]
+
+
+    %% Footer Section
+    Footer --> Links[Quick Links]
+    Footer --> Contact[Contact Info]
+    Footer --> Social[Social Media]
+    Footer --> Legal[Legal Info]
+
+    %% Styling
+    classDef sectionTitle fill:#f9f,stroke:#333,stroke-width:2px
+    class Landing,Header,Hero,Features,CTA,About,FAQ,Footer sectionTitle

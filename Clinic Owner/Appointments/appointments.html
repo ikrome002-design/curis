@@ -1,0 +1,2994 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags and Document Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curis by Citrus Appointments - Central Scheduling Hub">
+    <meta name="author" content="Citrus Labs">
+    <title>Appointments - Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="appointments.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- External JavaScript -->
+    <script src="appointments.js" defer></script>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="app-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                    class="logo-link">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo_1.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <!-- Dashboard -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <!-- Workforce Hub -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Workforce Hub\workforce_hub.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Workforce Hub</span>
+                        </a>
+                    </li>
+
+                    <!-- Clinic Services Hub -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Clinic Services Hub\clinic_services_hub.html"
+                            class="nav-link">
+                            <i class="fas fa-hospital"></i>
+                            <span>Clinic Services Hub</span>
+                        </a>
+                    </li>
+
+                    <!-- Appointments - Active Page -->
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+
+                    <!-- Billing & Payments -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Billing & Payments</span>
+                        </a>
+                    </li>
+
+                    <!-- Messaging -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Messaging\messaging.html"
+                            class="nav-link">
+                            <i class="fas fa-comments"></i>
+                            <span>Messaging</span>
+                        </a>
+                    </li>
+
+                    <!-- Health Data & Records -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Health Data and Records\health_data_and_records.html"
+                            class="nav-link">
+                            <i class="fas fa-file-medical"></i>
+                            <span>Health Data & Records</span>
+                        </a>
+                    </li>
+
+                    <!-- Insights & Performance -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Insights and Performance\insights_and_performance.html"
+                            class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Insights & Performance</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <!-- Breadcrumb Navigation -->
+                    <div class="breadcrumb">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                            class="breadcrumb-link">Dashboard</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span class="current-page">Appointments</span>
+                    </div>
+                    <h1 class="page-title">Appointments</h1>
+                    <p class="page-subtitle">Central Scheduling Hub - Manage all appointments and schedules</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- Calendar View Toggle -->
+                    <div class="view-toggle-container">
+                        <div class="view-toggle">
+                            <button class="view-btn active" data-view="day" id="dayViewBtn">
+                                <i class="fas fa-calendar-day"></i>
+                                Day
+                            </button>
+                            <button class="view-btn" data-view="week" id="weekViewBtn">
+                                <i class="fas fa-calendar-week"></i>
+                                Week
+                            </button>
+                            <button class="view-btn" data-view="month" id="monthViewBtn">
+                                <i class="fas fa-calendar"></i>
+                                Month
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Search Appointments -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="appointmentSearch"
+                            placeholder="Search appointments...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+
+                    <!-- New Appointment Button -->
+                    <button class="new-appointment-btn primary-btn" id="newAppointmentBtn">
+                        <i class="fas fa-plus"></i>
+                        <span>New Appointment</span>
+                    </button>
+
+                    <!-- Notifications -->
+                    <div class="notification-container">
+                        <button class="notification-btn" id="notificationBtn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">5</span>
+                        </button>
+                    </div>
+
+                    <!-- User Profile Section -->
+                    <div class="user-profile-container">
+                        <!-- User Profile Button -->
+                        <button class="user-profile-btn" id="userProfileBtn" aria-label="Toggle user menu">
+                            <img src="C:/Users/nderu/Documents/Development/Product/Curis/Technical Writings/Images/Icons/icons8-profile-picture-48.png"
+                                alt="User Profile Picture" class="profile-image">
+                            <span class="profile-name">Dr. Sarah Kimani</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+
+                        <!-- Dropdown Menu -->
+                        <div class="user-dropdown" id="userDropdown">
+                            <a href="C:/Users/nderu/Documents/Development/Product/Curis/Users/Clinic Owner/Settings/settings.html"
+                                class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                            <a href="C:/Users/nderu/Documents/Development/Product/Curis/Users/Clinic Owner/Landing Page/landing_page.html"
+                                class="dropdown-item">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+
+            <!-- Appointments Hub Container -->
+            <div class="appointments-hub-container">
+
+                <!-- Configuration Panel -->
+                <section class="configuration-panel">
+                    <div class="config-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-cog"></i>
+                            Quick Configuration
+                        </h2>
+                    </div>
+
+                    <div class="config-buttons">
+                        <button class="config-btn" id="schedulingConfigBtn">
+                            <i class="fas fa-clock"></i>
+                            <span>Scheduling Rules</span>
+                        </button>
+
+                        <button class="config-btn" id="policiesBtn">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>Policies</span>
+                        </button>
+
+                        <button class="config-btn" id="notificationConfigBtn">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                        </button>
+
+                        <button class="config-btn" id="analyticsBtn">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analytics</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Main Calendar and Filter Section -->
+                <section class="calendar-section">
+                    <div class="calendar-controls">
+                        <div class="calendar-navigation">
+                            <button class="nav-btn" id="prevPeriod">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <h3 class="current-period" id="currentPeriod">May 24, 2025</h3>
+                            <button class="nav-btn" id="nextPeriod">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button class="today-btn" id="todayBtn">Today</button>
+                        </div>
+
+                        <div class="calendar-filters">
+                            <button class="filter-btn" id="filterBtn">
+                                <i class="fas fa-filter"></i>
+                                Filters
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Calendar Display Area -->
+                    <div class="calendar-display" id="calendarDisplay">
+
+                        <!-- Day View -->
+                        <div class="calendar-view day-view active" id="dayView">
+                            <div class="time-column">
+                                <div class="time-slot">8:00 AM</div>
+                                <div class="time-slot">9:00 AM</div>
+                                <div class="time-slot">10:00 AM</div>
+                                <div class="time-slot">11:00 AM</div>
+                                <div class="time-slot">12:00 PM</div>
+                                <div class="time-slot">1:00 PM</div>
+                                <div class="time-slot">2:00 PM</div>
+                                <div class="time-slot">3:00 PM</div>
+                                <div class="time-slot">4:00 PM</div>
+                                <div class="time-slot">5:00 PM</div>
+                            </div>
+
+                            <div class="appointments-column">
+                                <!-- Appointment Slot 1 - Confirmed -->
+                                <div class="appointment-slot confirmed" data-appointment="APT001"
+                                    style="top: 120px; height: 60px;">
+                                    <div class="appointment-header">
+                                        <span class="status-indicator confirmed">
+                                            <i class="fas fa-circle"></i>
+                                        </span>
+                                        <span class="appointment-time">9:00 AM - 9:30 AM</span>
+                                    </div>
+                                    <div class="appointment-content">
+                                        <h4 class="patient-name">John Mwangi</h4>
+                                        <p class="service-name">General Consultation</p>
+                                        <p class="doctor-name">Dr. James Kamau</p>
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="action-btn" data-action="view" data-appointment="APT001">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Appointment Slot 2 - In Progress -->
+                                <div class="appointment-slot in-progress" data-appointment="APT002"
+                                    style="top: 240px; height: 60px;">
+                                    <div class="appointment-header">
+                                        <span class="status-indicator in-progress">
+                                            <i class="fas fa-circle"></i>
+                                        </span>
+                                        <span class="appointment-time">10:00 AM - 10:30 AM</span>
+                                    </div>
+                                    <div class="appointment-content">
+                                        <h4 class="patient-name">Grace Wanjiku</h4>
+                                        <p class="service-name">Blood Sugar Test</p>
+                                        <p class="doctor-name">Lab Technician</p>
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="action-btn" data-action="view" data-appointment="APT002">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Appointment Slot 3 - Pending -->
+                                <div class="appointment-slot pending" data-appointment="APT003"
+                                    style="top: 360px; height: 60px;">
+                                    <div class="appointment-header">
+                                        <span class="status-indicator pending">
+                                            <i class="fas fa-circle"></i>
+                                        </span>
+                                        <span class="appointment-time">11:00 AM - 11:15 AM</span>
+                                    </div>
+                                    <div class="appointment-content">
+                                        <h4 class="patient-name">Peter Kiprotich</h4>
+                                        <p class="service-name">Vaccination</p>
+                                        <p class="doctor-name">Nurse Mary</p>
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="action-btn" data-action="view" data-appointment="APT003">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Break Time Indicator -->
+                                <div class="break-time" style="top: 480px; height: 60px;">
+                                    <div class="break-content">
+                                        <i class="fas fa-coffee"></i>
+                                        <span>Lunch Break</span>
+                                        <small>12:00 PM - 1:00 PM</small>
+                                    </div>
+                                </div>
+
+                                <!-- Appointment Slot 4 - Completed -->
+                                <div class="appointment-slot completed" data-appointment="APT004"
+                                    style="top: 600px; height: 60px;">
+                                    <div class="appointment-header">
+                                        <span class="status-indicator completed">
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                        <span class="appointment-time">2:00 PM - 2:30 PM</span>
+                                    </div>
+                                    <div class="appointment-content">
+                                        <h4 class="patient-name">Sarah Njoki</h4>
+                                        <p class="service-name">Post-Surgery Follow-up</p>
+                                        <p class="doctor-name">Dr. Grace Wanjiru</p>
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="action-btn" data-action="view" data-appointment="APT004">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Appointment Slot 5 - Cancelled -->
+                                <div class="appointment-slot cancelled" data-appointment="APT005"
+                                    style="top: 720px; height: 60px;">
+                                    <div class="appointment-header">
+                                        <span class="status-indicator cancelled">
+                                            <i class="fas fa-times-circle"></i>
+                                        </span>
+                                        <span class="appointment-time">3:00 PM - 3:30 PM</span>
+                                    </div>
+                                    <div class="appointment-content">
+                                        <h4 class="patient-name">David Mwai</h4>
+                                        <p class="service-name">General Consultation</p>
+                                        <p class="doctor-name">Dr. James Kamau</p>
+                                        <small class="cancellation-reason">Patient cancelled - 2 hours notice</small>
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="action-btn" data-action="view" data-appointment="APT005">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Appointment Slot 6 - No Show -->
+                                <div class="appointment-slot no-show" data-appointment="APT006"
+                                    style="top: 840px; height: 60px;">
+                                    <div class="appointment-header">
+                                        <span class="status-indicator no-show">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                        </span>
+                                        <span class="appointment-time">4:00 PM - 4:30 PM</span>
+                                    </div>
+                                    <div class="appointment-content">
+                                        <h4 class="patient-name">Catherine Wawira</h4>
+                                        <p class="service-name">Blood Pressure Check</p>
+                                        <p class="doctor-name">Nurse Peter</p>
+                                        <small class="no-show-note">Patient did not show up</small>
+                                    </div>
+                                    <div class="appointment-actions">
+                                        <button class="action-btn" data-action="view" data-appointment="APT006">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Available Time Slots -->
+                                <div class="available-slot" style="top: 180px; height: 60px;">
+                                    <div class="available-content">
+                                        <i class="fas fa-plus"></i>
+                                        <span>9:30 AM - 10:00 AM Available</span>
+                                        <button class="book-slot-btn" data-time="9:30 AM">Book</button>
+                                    </div>
+                                </div>
+
+                                <div class="available-slot" style="top: 300px; height: 60px;">
+                                    <div class="available-content">
+                                        <i class="fas fa-plus"></i>
+                                        <span>10:30 AM - 11:00 AM Available</span>
+                                        <button class="book-slot-btn" data-time="10:30 AM">Book</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Week View (Hidden by default) -->
+                        <div class="calendar-view week-view" id="weekView" style="display: none;">
+                            <div class="week-header">
+                                <div class="day-header">Mon</div>
+                                <div class="day-header">Tue</div>
+                                <div class="day-header">Wed</div>
+                                <div class="day-header">Thu</div>
+                                <div class="day-header">Fri</div>
+                                <div class="day-header">Sat</div>
+                                <div class="day-header">Sun</div>
+                            </div>
+
+                            <div class="week-grid">
+                                <!-- Week view appointments will be dynamically loaded here -->
+                                <div class="week-day-column">
+                                    <div class="week-appointment">
+                                        <span class="appointment-time">9:00 AM</span>
+                                        <span class="patient-name">John M.</span>
+                                    </div>
+                                </div>
+                                <!-- Additional day columns... -->
+                            </div>
+                        </div>
+
+                        <!-- Month View (Hidden by default) -->
+                        <div class="calendar-view month-view" id="monthView" style="display: none;">
+                            <div class="month-grid">
+                                <!-- Month calendar grid will be generated here -->
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+
+        </main>
+
+        <!-- Quick Actions Panel (Right Sidebar) -->
+        <aside class="quick-actions-panel">
+            <h3 class="panel-title">Quick Actions</h3>
+
+            <div class="quick-actions-list">
+                <button class="quick-action-btn" id="printScheduleBtn">
+                    <i class="fas fa-print"></i>
+                    <span>Print Schedule</span>
+                    <small>Daily appointment list</small>
+                </button>
+
+                <button class="quick-action-btn" id="exportAppointmentsBtn">
+                    <i class="fas fa-download"></i>
+                    <span>Export Appointments</span>
+                    <small>CSV/PDF download</small>
+                </button>
+
+                <button class="quick-action-btn" id="bulkRemindersBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Bulk Reminders</span>
+                    <small>Send to all tomorrow's appointments</small>
+                </button>
+
+                <button class="quick-action-btn" id="blockSlotsBtn">
+                    <i class="fas fa-ban"></i>
+                    <span>Block Time Slots</span>
+                    <small>Emergency/Meeting blocks</small>
+                </button>
+
+                <button class="quick-action-btn" id="viewHistoryBtn">
+                    <i class="fas fa-history"></i>
+                    <span>View History</span>
+                    <small>Appointment logs & changes</small>
+                </button>
+
+                <button class="quick-action-btn" id="workloadManagementBtn">
+                    <i class="fas fa-users-cog"></i>
+                    <span>Workload Management</span>
+                    <small>Doctor assignments</small>
+                </button>
+            </div>
+
+            <!-- Sync Status Panel -->
+            <div class="sync-status-panel">
+                <h4 class="sync-title">System Status</h4>
+
+                <div class="sync-item">
+                    <div class="sync-indicator billing">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Billing Sync</span>
+                    </div>
+                    <span class="sync-status active">Active</span>
+                </div>
+
+                <div class="sync-item">
+                    <div class="sync-indicator notifications">
+                        <i class="fas fa-bell"></i>
+                        <span>Notification Queue</span>
+                    </div>
+                    <span class="sync-status">3 pending</span>
+                </div>
+
+                <div class="sync-item">
+                    <div class="sync-indicator staff">
+                        <i class="fas fa-users"></i>
+                        <span>Staff Updates</span>
+                    </div>
+                    <span class="sync-status active">Real-time</span>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <!-- Left Side - Dark Mode Toggle -->
+            <div class="footer-left">
+                <button class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Center - Social Media Links -->
+            <div class="footer-center">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" class="social-link twitter">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        class="social-link facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" class="social-link youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" class="social-link linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side - Corporate Info -->
+            <div class="footer-right">
+                <a href="https://citruslabs.co.ke/" target="_blank" class="corporate-link">citruslabs.co.ke</a>
+                <span class="copyright">© 2025 Citrus Labs. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Windows -->
+
+    <!-- New Appointment Modal (Multi-step) -->
+    <div class="modal" id="newAppointmentModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Manual Booking</h3>
+                <div class="step-indicator">
+                    <span class="step active" data-step="1">Patient</span>
+                    <span class="step" data-step="2">Service</span>
+                    <span class="step" data-step="3">Date & Time</span>
+                    <span class="step" data-step="4">Doctor</span>
+                </div>
+                <button class="modal-close" data-modal="newAppointmentModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <!-- Step 1: Patient Selection -->
+                <div class="step-content active" id="patientStep">
+                    <h4>Step 1: Patient Selection</h4>
+
+                    <div class="patient-search">
+                        <div class="search-input-group">
+                            <input type="text" class="form-control" id="patientSearchInput"
+                                placeholder="Search existing patient by name, phone, or ID">
+                            <button class="search-btn" id="searchPatientBtn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="search-results" id="patientSearchResults">
+                        <!-- Sample existing patients -->
+                        <div class="patient-result" data-patient="PAT001">
+                            <div class="patient-avatar">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Patient">
+                            </div>
+                            <div class="patient-info">
+                                <h5>John Mwangi</h5>
+                                <p>Phone: +254 712 345 678</p>
+                                <p>ID: PAT001</p>
+                            </div>
+                            <button class="select-patient-btn" data-patient="PAT001">Select</button>
+                        </div>
+
+                        <div class="patient-result" data-patient="PAT002">
+                            <div class="patient-avatar">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Patient">
+                            </div>
+                            <div class="patient-info">
+                                <h5>Grace Wanjiku</h5>
+                                <p>Phone: +254 723 456 789</p>
+                                <p>ID: PAT002</p>
+                            </div>
+                            <button class="select-patient-btn" data-patient="PAT002">Select</button>
+                        </div>
+                    </div>
+
+                    <div class="new-patient-section">
+                        <div class="divider">
+                            <span>OR</span>
+                        </div>
+
+                        <button class="new-patient-btn" id="newPatientBtn">
+                            <i class="fas fa-user-plus"></i>
+                            Register New Patient
+                        </button>
+
+                        <div class="new-patient-form" id="newPatientForm" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Full Name *</label>
+                                    <input type="text" class="form-control" name="patientName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number *</label>
+                                    <input type="tel" class="form-control" name="patientPhone" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" name="patientEmail">
+                                </div>
+                                <div class="form-group">
+                                    <label>Date of Birth</label>
+                                    <input type="date" class="form-control" name="patientDOB">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn-primary" id="nextToServiceBtn" disabled>Next: Select Service <i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Service Selection -->
+                <div class="step-content" id="serviceStep">
+                    <h4>Step 2: Service Selection</h4>
+
+                    <div class="service-selection">
+                        <div class="form-group">
+                            <label>Select Service *</label>
+                            <select class="form-control" name="selectedService" required>
+                                <option value="">Choose a service</option>
+                                <optgroup label="Consultations">
+                                    <option value="SVC001">General Consultation (30 mins) - KES. 1,500</option>
+                                    <option value="SVC007">Specialist Consultation (45 mins) - KES. 2,500</option>
+                                    <option value="SVC008">Emergency Consultation (20 mins) - KES. 3,000</option>
+                                </optgroup>
+                                <optgroup label="Lab Tests">
+                                    <option value="SVC002">Blood Sugar Test (15 mins) - KES. 800</option>
+                                    <option value="SVC006">Complete Blood Count (10 mins) - KES. 1,200</option>
+                                    <option value="SVC009">Urine Analysis (10 mins) - KES. 600</option>
+                                </optgroup>
+                                <optgroup label="Medical Procedures">
+                                    <option value="SVC004">Vaccination (15 mins) - KES. 1,200</option>
+                                    <option value="SVC010">Blood Pressure Check (10 mins) - KES. 500</option>
+                                    <option value="SVC003">Minor Surgery (90 mins) - KES. 8,500</option>
+                                </optgroup>
+                                <optgroup label="Follow-ups">
+                                    <option value="SVC005">Post-Surgery Follow-up (20 mins) - KES. 1,000</option>
+                                    <option value="SVC011">Medication Review (15 mins) - KES. 800</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="selected-services-list" id="selectedServicesList">
+                            <!-- Selected services will appear here -->
+                        </div>
+
+                        <button class="add-service-btn" id="addAnotherServiceBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Another Service
+                        </button>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn-secondary" id="backToPatientBtn"><i
+                                class="fas fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn-primary" id="nextToDateTimeBtn" disabled>Next: Date & Time <i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Date & Time Selection -->
+                <div class="step-content" id="dateTimeStep">
+                    <h4>Step 3: Date & Time Selection</h4>
+
+                    <div class="datetime-selection">
+                        <div class="date-selection">
+                            <label>Select Date *</label>
+                            <input type="date" class="form-control" name="appointmentDate" id="appointmentDatePicker"
+                                required>
+                        </div>
+
+                        <div class="time-slots-section">
+                            <h5>Available Time Slots</h5>
+                            <div class="time-slots-grid" id="timeSlotsGrid">
+                                <!-- Available time slots -->
+                                <button class="time-slot available" data-time="9:00 AM">9:00 AM</button>
+                                <button class="time-slot available" data-time="9:30 AM">9:30 AM</button>
+                                <button class="time-slot booked" data-time="10:00 AM" disabled>10:00 AM</button>
+                                <button class="time-slot available" data-time="10:30 AM">10:30 AM</button>
+                                <button class="time-slot available" data-time="11:00 AM">11:00 AM</button>
+                                <button class="time-slot available" data-time="11:30 AM">11:30 AM</button>
+                                <button class="time-slot break" disabled>12:00 PM - Lunch</button>
+                                <button class="time-slot available" data-time="1:00 PM">1:00 PM</button>
+                                <button class="time-slot available" data-time="1:30 PM">1:30 PM</button>
+                                <button class="time-slot available" data-time="2:00 PM">2:00 PM</button>
+                                <button class="time-slot available" data-time="2:30 PM">2:30 PM</button>
+                                <button class="time-slot booked" data-time="3:00 PM" disabled>3:00 PM</button>
+                                <button class="time-slot available" data-time="3:30 PM">3:30 PM</button>
+                                <button class="time-slot available" data-time="4:00 PM">4:00 PM</button>
+                                <button class="time-slot available" data-time="4:30 PM">4:30 PM</button>
+                            </div>
+
+                            <div class="slot-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color available"></span>
+                                    <span>Available</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color booked"></span>
+                                    <span>Booked</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color break"></span>
+                                    <span>Break Time</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn-secondary" id="backToServiceBtn"><i
+                                class="fas fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn-primary" id="nextToDoctorBtn" disabled>Next: Assign Doctor <i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Doctor Assignment -->
+                <div class="step-content" id="doctorStep">
+                    <h4>Step 4: Doctor Assignment</h4>
+
+                    <div class="doctor-assignment">
+                        <div class="assignment-options">
+                            <label class="radio-label">
+                                <input type="radio" name="assignmentMode" value="auto" checked>
+                                <span class="radio-mark"></span>
+                                <div class="option-info">
+                                    <span class="option-title">Auto-Assign</span>
+                                    <small>System assigns based on availability and workload</small>
+                                </div>
+                            </label>
+
+                            <label class="radio-label">
+                                <input type="radio" name="assignmentMode" value="manual">
+                                <span class="radio-mark"></span>
+                                <div class="option-info">
+                                    <span class="option-title">Manual Selection</span>
+                                    <small>Choose specific doctor for this appointment</small>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="manual-selection" id="manualDoctorSelection" style="display: none;">
+                            <h5>Available Doctors</h5>
+                            <div class="doctors-list">
+                                <div class="doctor-option" data-doctor="DOC001">
+                                    <input type="radio" name="selectedDoctor" value="DOC001" id="doc001">
+                                    <label for="doc001" class="doctor-label">
+                                        <div class="doctor-avatar">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                                alt="Dr. Kamau">
+                                        </div>
+                                        <div class="doctor-info">
+                                            <h6>Dr. James Kamau</h6>
+                                            <p>General Practice</p>
+                                            <span class="workload">6/8 appointments today</span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="doctor-option" data-doctor="DOC002">
+                                    <input type="radio" name="selectedDoctor" value="DOC002" id="doc002">
+                                    <label for="doc002" class="doctor-label">
+                                        <div class="doctor-avatar">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                                alt="Dr. Wanjiru">
+                                        </div>
+                                        <div class="doctor-info">
+                                            <h6>Dr. Grace Wanjiru</h6>
+                                            <p>Pediatrics</p>
+                                            <span class="workload">4/8 appointments today</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="appointment-summary">
+                        <h5>Appointment Summary</h5>
+                        <div class="summary-details">
+                            <div class="summary-item">
+                                <span class="label">Patient:</span>
+                                <span class="value" id="summaryPatient">John Mwangi</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Service:</span>
+                                <span class="value" id="summaryService">General Consultation</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Date & Time:</span>
+                                <span class="value" id="summaryDateTime">May 24, 2025 at 2:00 PM</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Duration:</span>
+                                <span class="value" id="summaryDuration">30 minutes</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Doctor:</span>
+                                <span class="value" id="summaryDoctor">Auto-assigned</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Total Cost:</span>
+                                <span class="value cost" id="summaryCost">KES. 1,500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn-secondary" id="backToDateTimeBtn"><i
+                                class="fas fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn-success" id="confirmBookingBtn">Confirm Booking <i
+                                class="fas fa-check"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Details Modal -->
+    <div class="modal" id="appointmentDetailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Appointment Details</h3>
+                <button class="modal-close" data-modal="appointmentDetailsModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="appointmentDetailsContent">
+                <!-- Content will be dynamically loaded -->
+                <div class="appointment-details">
+                    <div class="patient-section">
+                        <h4>Patient Information</h4>
+                        <div class="patient-details">
+                            <div class="patient-avatar">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                    alt="Patient">
+                            </div>
+                            <div class="patient-info">
+                                <h5 id="detailPatientName">John Mwangi</h5>
+                                <p id="detailPatientPhone">Phone: +254 712 345 678</p>
+                                <p id="detailPatientEmail">Email: john.mwangi@email.com</p>
+                                <p id="detailPatientID">Patient ID: PAT001</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-section">
+                        <h4>Service Information</h4>
+                        <div class="service-details">
+                            <p><strong>Service:</strong> <span id="detailServiceName">General Consultation</span></p>
+                            <p><strong>Duration:</strong> <span id="detailServiceDuration">30 minutes</span></p>
+                            <p><strong>Cost:</strong> <span id="detailServiceCost">KES. 1,500</span></p>
+                        </div>
+                    </div>
+
+                    <div class="appointment-section">
+                        <h4>Appointment Information</h4>
+                        <div class="appointment-info">
+                            <p><strong>Date:</strong> <span id="detailAppointmentDate">May 24, 2025</span></p>
+                            <p><strong>Time:</strong> <span id="detailAppointmentTime">9:00 AM - 9:30 AM</span></p>
+                            <p><strong>Doctor:</strong> <span id="detailDoctorName">Dr. James Kamau</span></p>
+                            <p><strong>Specialty:</strong> <span id="detailDoctorSpecialty">General Practice</span></p>
+                            <p><strong>Status:</strong>
+                                <span class="status-badge confirmed" id="detailStatus">
+                                    <i class="fas fa-circle"></i>
+                                    Confirmed
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="notes-section">
+                        <h4>Notes</h4>
+                        <textarea class="form-control" id="appointmentNotes" rows="3"
+                            placeholder="Add appointment notes..."></textarea>
+                    </div>
+                </div>
+
+                <div class="appointment-actions-section">
+                    <h4>Actions</h4>
+                    <div class="action-buttons">
+                        <button class="action-btn confirm-btn" id="confirmAppointmentBtn">
+                            <i class="fas fa-check"></i>
+                            Confirm
+                        </button>
+                        <button class="action-btn reschedule-btn" id="rescheduleAppointmentBtn">
+                            <i class="fas fa-redo-alt"></i>
+                            Reschedule
+                        </button>
+                        <button class="action-btn complete-btn" id="markCompleteBtn">
+                            <i class="fas fa-check-circle"></i>
+                            Mark Complete
+                        </button>
+                        <button class="action-btn cancel-btn" id="cancelAppointmentBtn">
+                            <i class="fas fa-times"></i>
+                            Cancel
+                        </button>
+                        <button class="action-btn no-show-btn" id="markNoShowBtn">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Mark No-show
+                        </button>
+                        <button class="action-btn invoice-btn" id="generateInvoiceBtn">
+                            <i class="fas fa-file-invoice"></i>
+                            Generate Invoice
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scheduling Configuration Modal -->
+    <div class="modal" id="schedulingConfigModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Scheduling Configuration</h3>
+                <button class="modal-close" data-modal="schedulingConfigModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="config-tabs">
+                    <button class="tab-btn active" data-tab="duration">Duration Settings</button>
+                    <button class="tab-btn" data-tab="rules">Clinic Rules</button>
+                    <button class="tab-btn" data-tab="availability">Doctor Availability</button>
+                    <button class="tab-btn" data-tab="buffer">Buffer Times</button>
+                </div>
+
+                <!-- Duration Settings Tab -->
+                <div class="tab-content" id="durationTab">
+                    <h4>Service Duration Settings</h4>
+                    <div class="duration-list">
+                        <div class="duration-item">
+                            <div class="service-info">
+                                <span class="service-name">General Consultation</span>
+                                <span class="current-duration">30 minutes</span>
+                            </div>
+                            <div class="duration-controls">
+                                <select class="duration-select">
+                                    <option value="15">15 minutes</option>
+                                    <option value="30" selected>30 minutes</option>
+                                    <option value="45">45 minutes</option>
+                                    <option value="60">60 minutes</option>
+                                    <option value="90">90 minutes</option>
+                                    <option value="120">120 minutes</option>
+                                </select>
+                                <button class="update-btn">Update</button>
+                            </div>
+                        </div>
+
+                        <div class="duration-item">
+                            <div class="service-info">
+                                <span class="service-name">Blood Sugar Test</span>
+                                <span class="current-duration">15 minutes</span>
+                            </div>
+                            <div class="duration-controls">
+                                <select class="duration-select">
+                                    <option value="10">10 minutes</option>
+                                    <option value="15" selected>15 minutes</option>
+                                    <option value="20">20 minutes</option>
+                                    <option value="30">30 minutes</option>
+                                </select>
+                                <button class="update-btn">Update</button>
+                            </div>
+                        </div>
+
+                        <div class="duration-item">
+                            <div class="service-info">
+                                <span class="service-name">Minor Surgery</span>
+                                <span class="current-duration">90 minutes</span>
+                            </div>
+                            <div class="duration-controls">
+                                <select class="duration-select">
+                                    <option value="60">60 minutes</option>
+                                    <option value="90" selected>90 minutes</option>
+                                    <option value="120">120 minutes</option>
+                                    <option value="180">180 minutes</option>
+                                </select>
+                                <button class="update-btn">Update</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bulk-actions">
+                        <button class="bulk-update-btn">
+                            <i class="fas fa-edit"></i>
+                            Bulk Update Durations
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Clinic Rules Tab -->
+                <div class="tab-content" id="rulesTab" style="display: none;">
+                    <h4>Clinic Operating Rules</h4>
+
+                    <div class="rules-section">
+                        <h5>Working Hours</h5>
+                        <div class="working-hours">
+                            <p><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM</p>
+                            <p><strong>Saturday:</strong> 9:00 AM - 2:00 PM</p>
+                            <p><strong>Sunday:</strong> Closed</p>
+                            <small>Synced from Settings</small>
+                        </div>
+
+                        <h5>Break Times Configuration</h5>
+                        <div class="break-times">
+                            <div class="break-item">
+                                <span class="break-name">Lunch Break</span>
+                                <div class="break-time">
+                                    <input type="time" value="12:00" class="time-input">
+                                    <span>to</span>
+                                    <input type="time" value="13:00" class="time-input">
+                                </div>
+                                <button class="save-break-btn">Save</button>
+                            </div>
+
+                            <div class="break-item">
+                                <span class="break-name">Tea Break</span>
+                                <div class="break-time">
+                                    <input type="time" value="10:30" class="time-input">
+                                    <span>to</span>
+                                    <input type="time" value="10:45" class="time-input">
+                                </div>
+                                <button class="save-break-btn">Save</button>
+                            </div>
+
+                            <button class="add-break-btn">
+                                <i class="fas fa-plus"></i>
+                                Add Custom Break
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor Availability Tab -->
+                <div class="tab-content" id="availabilityTab" style="display: none;">
+                    <h4>Doctor Availability Management</h4>
+
+                    <div class="doctors-availability">
+                        <div class="doctor-availability-card">
+                            <div class="doctor-header">
+                                <div class="doctor-avatar">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Dr. Kamau">
+                                </div>
+                                <div class="doctor-info">
+                                    <h5>Dr. James Kamau</h5>
+                                    <p>General Practice</p>
+                                </div>
+                                <button class="edit-availability-btn" data-doctor="DOC001">
+                                    <i class="fas fa-edit"></i>
+                                    Edit Schedule
+                                </button>
+                            </div>
+
+                            <div class="availability-summary">
+                                <div class="schedule-item">
+                                    <span class="day">Mon-Fri:</span>
+                                    <span class="hours">9:00 AM - 5:00 PM</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <span class="day">Saturday:</span>
+                                    <span class="hours">9:00 AM - 1:00 PM</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <span class="day">Sunday:</span>
+                                    <span class="hours">Off</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="doctor-availability-card">
+                            <div class="doctor-header">
+                                <div class="doctor-avatar">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Dr. Wanjiru">
+                                </div>
+                                <div class="doctor-info">
+                                    <h5>Dr. Grace Wanjiru</h5>
+                                    <p>Pediatrics</p>
+                                </div>
+                                <button class="edit-availability-btn" data-doctor="DOC002">
+                                    <i class="fas fa-edit"></i>
+                                    Edit Schedule
+                                </button>
+                            </div>
+
+                            <div class="availability-summary">
+                                <div class="schedule-item">
+                                    <span class="day">Mon-Wed-Fri:</span>
+                                    <span class="hours">8:00 AM - 4:00 PM</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <span class="day">Tue-Thu:</span>
+                                    <span class="hours">1:00 PM - 6:00 PM</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <span class="day">Weekend:</span>
+                                    <span class="hours">Off</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Buffer Times Tab -->
+                <div class="tab-content" id="bufferTab" style="display: none;">
+                    <h4>Buffer Time Settings</h4>
+
+                    <div class="buffer-settings">
+                        <div class="buffer-section">
+                            <h5>Global Buffer Time</h5>
+                            <p>Time between all appointments for cleaning and preparation</p>
+                            <div class="buffer-control">
+                                <select class="buffer-select" name="globalBuffer">
+                                    <option value="0">No Buffer</option>
+                                    <option value="5" selected>5 minutes</option>
+                                    <option value="10">10 minutes</option>
+                                    <option value="15">15 minutes</option>
+                                </select>
+                                <button class="save-buffer-btn">Save</button>
+                            </div>
+                        </div>
+
+                        <div class="buffer-section">
+                            <h5>Service-Specific Buffer</h5>
+                            <p>Additional buffer time for specific procedures</p>
+
+                            <div class="service-buffer-list">
+                                <div class="service-buffer-item">
+                                    <span class="service-name">Minor Surgery</span>
+                                    <div class="buffer-control">
+                                        <span class="buffer-label">Post-procedure rest:</span>
+                                        <select class="buffer-select">
+                                            <option value="15">15 minutes</option>
+                                            <option value="30" selected>30 minutes</option>
+                                            <option value="45">45 minutes</option>
+                                            <option value="60">60 minutes</option>
+                                        </select>
+                                        <button class="save-buffer-btn">Save</button>
+                                    </div>
+                                </div>
+
+                                <div class="service-buffer-item">
+                                    <span class="service-name">Lab Tests</span>
+                                    <div class="buffer-control">
+                                        <span class="buffer-label">Equipment cleaning:</span>
+                                        <select class="buffer-select">
+                                            <option value="5" selected>5 minutes</option>
+                                            <option value="10">10 minutes</option>
+                                            <option value="15">15 minutes</option>
+                                        </select>
+                                        <button class="save-buffer-btn">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Policies Management Modal -->
+    <div class="modal" id="policiesModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Policies Management</h3>
+                <button class="modal-close" data-modal="policiesModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="policies-tabs">
+                    <button class="tab-btn active" data-tab="cancellation">Cancellation Rules</button>
+                    <button class="tab-btn" data-tab="rescheduling">Rescheduling Rules</button>
+                    <button class="tab-btn" data-tab="noshow">No-show Management</button>
+                </div>
+
+                <!-- Cancellation Rules Tab -->
+                <div class="tab-content" id="cancellationTab">
+                    <h4>Cancellation Policy Settings</h4>
+
+                    <div class="policy-section">
+                        <h5>Cut-off Time</h5>
+                        <p>Minimum notice required for cancellations</p>
+                        <div class="cutoff-settings">
+                            <select class="policy-select" name="cancellationCutoff">
+                                <option value="2">2 hours</option>
+                                <option value="4">4 hours</option>
+                                <option value="6">6 hours</option>
+                                <option value="12">12 hours</option>
+                                <option value="24" selected>24 hours</option>
+                            </select>
+                            <span class="help-text">before appointment time</span>
+                        </div>
+                    </div>
+
+                    <div class="policy-section">
+                        <h5>Cancellation Fee</h5>
+                        <div class="fee-settings">
+                            <label class="toggle-switch">
+                                <input type="checkbox" name="enableCancellationFee">
+                                <span class="slider"></span>
+                            </label>
+                            <span class="toggle-label">Enable cancellation fee</span>
+                        </div>
+
+                        <div class="fee-amount-section" style="display: none;">
+                            <div class="fee-options">
+                                <label class="radio-label">
+                                    <input type="radio" name="feeType" value="fixed">
+                                    <span class="radio-mark"></span>
+                                    Fixed Amount: KES. <input type="number" class="fee-input" placeholder="500">
+                                </label>
+
+                                <label class="radio-label">
+                                    <input type="radio" name="feeType" value="percentage">
+                                    <span class="radio-mark"></span>
+                                    Percentage: <input type="number" class="fee-input" placeholder="25" max="100">%
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="policy-section">
+                        <h5>Grace Period</h5>
+                        <p>Allow cancellations within cut-off time in special circumstances</p>
+                        <div class="grace-settings">
+                            <label class="toggle-switch">
+                                <input type="checkbox" name="enableGracePeriod">
+                                <span class="slider"></span>
+                            </label>
+                            <span class="toggle-label">Enable manager approval for late cancellations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rescheduling Rules Tab -->
+                <div class="tab-content" id="reschedulingTab" style="display: none;">
+                    <h4>Rescheduling Policy Settings</h4>
+
+                    <div class="policy-section">
+                        <h5>Rescheduling Window</h5>
+                        <div class="window-settings">
+                            <div class="window-item">
+                                <span class="window-label">Minimum:</span>
+                                <select class="policy-select">
+                                    <option value="same-day" selected>Same day</option>
+                                    <option value="next-day">Next day</option>
+                                    <option value="2-days">2 days later</option>
+                                </select>
+                            </div>
+
+                            <div class="window-item">
+                                <span class="window-label">Maximum:</span>
+                                <select class="policy-select">
+                                    <option value="7">7 days</option>
+                                    <option value="14">14 days</option>
+                                    <option value="30" selected>30 days</option>
+                                    <option value="60">60 days</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="policy-section">
+                        <h5>Reschedule Limit</h5>
+                        <p>Maximum number of times an appointment can be rescheduled</p>
+                        <div class="limit-settings">
+                            <select class="policy-select" name="rescheduleLimit">
+                                <option value="1">1 time</option>
+                                <option value="2" selected>2 times</option>
+                                <option value="3">3 times</option>
+                                <option value="unlimited">Unlimited</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="policy-section">
+                        <h5>Reschedule Fee</h5>
+                        <div class="fee-settings">
+                            <label class="toggle-switch">
+                                <input type="checkbox" name="enableRescheduleFee">
+                                <span class="slider"></span>
+                            </label>
+                            <span class="toggle-label">Charge fee for rescheduling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No-show Management Tab -->
+                <div class="tab-content" id="noshowTab" style="display: none;">
+                    <h4>No-show Management Settings</h4>
+
+                    <div class="policy-section">
+                        <h5>No-show Penalty</h5>
+                        <div class="penalty-options">
+                            <label class="radio-label">
+                                <input type="radio" name="penaltyType" value="fee" checked>
+                                <span class="radio-mark"></span>
+                                <div class="penalty-info">
+                                    <span class="penalty-title">Charge Fee</span>
+                                    <input type="number" class="penalty-input" placeholder="1000" min="0">
+                                    <span>KES.</span>
+                                </div>
+                            </label>
+
+                            <label class="radio-label">
+                                <input type="radio" name="penaltyType" value="block">
+                                <span class="radio-mark"></span>
+                                <div class="penalty-info">
+                                    <span class="penalty-title">Temporary Block</span>
+                                    <select class="penalty-select">
+                                        <option value="7">7 days</option>
+                                        <option value="14">14 days</option>
+                                        <option value="30">30 days</option>
+                                    </select>
+                                </div>
+                            </label>
+
+                            <label class="radio-label">
+                                <input type="radio" name="penaltyType" value="both">
+                                <span class="radio-mark"></span>
+                                <span class="penalty-title">Both Fee and Block</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="policy-section">
+                        <h5>No-show Threshold</h5>
+                        <p>Number of no-shows before automatic penalty is applied</p>
+                        <div class="threshold-settings">
+                            <select class="policy-select" name="noshowThreshold">
+                                <option value="1">1 no-show</option>
+                                <option value="2">2 no-shows</option>
+                                <option value="3" selected>3 no-shows</option>
+                                <option value="5">5 no-shows</option>
+                            </select>
+                            <span class="help-text">within 30 days</span>
+                        </div>
+                    </div>
+
+                    <div class="policy-section">
+                        <h5>Grace Period for No-shows</h5>
+                        <p>Time after appointment before marking as no-show</p>
+                        <div class="grace-settings">
+                            <select class="policy-select" name="noshowGrace">
+                                <option value="15" selected>15 minutes</option>
+                                <option value="30">30 minutes</option>
+                                <option value="45">45 minutes</option>
+                                <option value="60">60 minutes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" data-action="close">Cancel</button>
+                    <button type="button" class="btn-primary" id="savePoliciesBtn">Save Policies</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar Filter Modal -->
+    <div class="modal" id="calendarFilterModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Calendar Filter Options</h3>
+                <button class="modal-close" data-modal="calendarFilterModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="filter-form">
+                    <div class="form-group">
+                        <label>Date Range</label>
+                        <div class="date-range-inputs">
+                            <input type="date" class="form-control" name="startDate">
+                            <span>to</span>
+                            <input type="date" class="form-control" name="endDate">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Doctor Filter</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="doctorFilter" value="DOC001" checked>
+                                <span class="checkmark"></span>
+                                Dr. James Kamau
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="doctorFilter" value="DOC002" checked>
+                                <span class="checkmark"></span>
+                                Dr. Grace Wanjiru
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="doctorFilter" value="DOC003" checked>
+                                <span class="checkmark"></span>
+                                Dr. Peter Mwangi
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Service Category</label>
+                        <select class="form-control" name="serviceCategory">
+                            <option value="">All Categories</option>
+                            <option value="consultations">Consultations</option>
+                            <option value="lab-tests">Lab Tests</option>
+                            <option value="procedures">Medical Procedures</option>
+                            <option value="followups">Follow-ups</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Status Filter</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="statusFilter" value="confirmed" checked>
+                                <span class="checkmark"></span>
+                                <span class="status-indicator confirmed"></span>
+                                Confirmed
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="statusFilter" value="pending" checked>
+                                <span class="checkmark"></span>
+                                <span class="status-indicator pending"></span>
+                                Pending
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="statusFilter" value="in-progress" checked>
+                                <span class="checkmark"></span>
+                                <span class="status-indicator in-progress"></span>
+                                In Progress
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="statusFilter" value="completed">
+                                <span class="checkmark"></span>
+                                <span class="status-indicator completed"></span>
+                                Completed
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="statusFilter" value="cancelled">
+                                <span class="checkmark"></span>
+                                <span class="status-indicator cancelled"></span>
+                                Cancelled
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="statusFilter" value="no-show">
+                                <span class="checkmark"></span>
+                                <span class="status-indicator no-show"></span>
+                                No-show
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="clearFiltersBtn">Clear All</button>
+                        <button type="button" class="btn-primary" id="applyCalendarFiltersBtn">Apply Filters</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Configuration Modal -->
+    <div class="modal" id="notificationConfigModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Notification Center Configuration</h3>
+                <button class="modal-close" data-modal="notificationConfigModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="notification-tabs">
+                    <button class="tab-btn active" data-tab="triggers">Notification Triggers</button>
+                    <button class="tab-btn" data-tab="channels">Delivery Channels</button>
+                    <button class="tab-btn" data-tab="templates">Message Templates</button>
+                </div>
+
+                <!-- Notification Triggers Tab -->
+                <div class="tab-content" id="triggersTab">
+                    <h4>Automated Notification Triggers</h4>
+
+                    <div class="triggers-list">
+                        <div class="trigger-item">
+                            <div class="trigger-info">
+                                <h5>Booking Confirmation</h5>
+                                <p>Send immediate confirmation when appointment is booked</p>
+                            </div>
+                            <div class="trigger-controls">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="bookingConfirmation" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="trigger-item">
+                            <div class="trigger-info">
+                                <h5>24-Hour Reminder</h5>
+                                <p>Remind patients 24 hours before their appointment</p>
+                            </div>
+                            <div class="trigger-controls">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="reminder24h" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="trigger-item">
+                            <div class="trigger-info">
+                                <h5>1-Hour Reminder</h5>
+                                <p>Final reminder 1 hour before appointment</p>
+                            </div>
+                            <div class="trigger-controls">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="reminder1h">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="trigger-item">
+                            <div class="trigger-info">
+                                <h5>Follow-up Suggestion</h5>
+                                <p>Suggest follow-up appointments after treatment</p>
+                            </div>
+                            <div class="trigger-controls">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="followupSuggestion" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <select class="followup-delay" style="margin-left: 10px;">
+                                    <option value="1">1 day later</option>
+                                    <option value="7" selected>1 week later</option>
+                                    <option value="30">1 month later</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="trigger-item">
+                            <div class="trigger-info">
+                                <h5>Cancellation Notification</h5>
+                                <p>Notify when appointments are cancelled or rescheduled</p>
+                            </div>
+                            <div class="trigger-controls">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="cancellationNotification" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Channels Tab -->
+                <div class="tab-content" id="channelsTab" style="display: none;">
+                    <h4>Notification Delivery Channels</h4>
+
+                    <div class="channels-list">
+                        <div class="channel-item">
+                            <div class="channel-info">
+                                <div class="channel-icon">
+                                    <i class="fas fa-sms"></i>
+                                </div>
+                                <div class="channel-details">
+                                    <h5>SMS Notifications</h5>
+                                    <p>Send text messages to patient mobile numbers</p>
+                                    <small>Cost: KES. 5 per SMS</small>
+                                </div>
+                            </div>
+                            <div class="channel-controls">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="smsEnabled" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="channel-item">
+                            <div class="channel-info">
+                                <div class="channel-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="channel-details">
+                                    <h5>Email Notifications</h5>
+                                    <p>Send detailed emails with appointment information</p>
+                                    <small>Free - Unlimited</small>
+                                </div>
+                            </div>
+                            <div class="channel-controls">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="emailEnabled" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="channel-item">
+                            <div class="channel-info">
+                                <div class="channel-icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div class="channel-details">
+                                    <h5>In-App Notifications</h5>
+                                    <p>Push notifications within the patient portal</p>
+                                    <small>Free - Real-time</small>
+                                </div>
+                            </div>
+                            <div class="channel-controls">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="inAppEnabled" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="channel-item">
+                            <div class="channel-info">
+                                <div class="channel-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="channel-details">
+                                    <h5>WhatsApp Messages</h5>
+                                    <p>Send messages via WhatsApp Business API</p>
+                                    <small>Coming Soon</small>
+                                </div>
+                            </div>
+                            <div class="channel-controls">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="whatsappEnabled" disabled>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="channel-settings">
+                        <h5>Channel Priority</h5>
+                        <p>Order of delivery when multiple channels are enabled</p>
+                        <div class="priority-list">
+                            <div class="priority-item" draggable="true">
+                                <i class="fas fa-grip-vertical"></i>
+                                <span>1. SMS</span>
+                            </div>
+                            <div class="priority-item" draggable="true">
+                                <i class="fas fa-grip-vertical"></i>
+                                <span>2. Email</span>
+                            </div>
+                            <div class="priority-item" draggable="true">
+                                <i class="fas fa-grip-vertical"></i>
+                                <span>3. In-App</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message Templates Tab -->
+                <div class="tab-content" id="templatesTab" style="display: none;">
+                    <h4>Message Templates Editor</h4>
+
+                    <div class="template-selector">
+                        <select class="template-select" id="templateSelector">
+                            <option value="confirmation">Booking Confirmation</option>
+                            <option value="reminder24h">24-Hour Reminder</option>
+                            <option value="reminder1h">1-Hour Reminder</option>
+                            <option value="followup">Follow-up Suggestion</option>
+                            <option value="cancellation">Cancellation Notice</option>
+                        </select>
+                    </div>
+
+                    <div class="template-editor">
+                        <div class="template-content" id="confirmationTemplate">
+                            <h5>Booking Confirmation Template</h5>
+                            <div class="editor-tabs">
+                                <button class="editor-tab active" data-format="sms">SMS</button>
+                                <button class="editor-tab" data-format="email">Email</button>
+                            </div>
+
+                            <div class="editor-content">
+                                <textarea class="template-textarea" rows="6" placeholder="Enter template content...">
+Hello {patient_name},
+
+Your appointment has been confirmed:
+📅 Date: {appointment_date}
+🕐 Time: {appointment_time}
+👨⚕️ Doctor: {doctor_name}
+🏥 Service: {service_name}
+
+Please arrive 15 minutes early.
+Contact us at {clinic_phone} for any changes.
+
+- Curis Medical Center</textarea>
+                            </div>
+
+                            <div class="template-placeholders">
+                                <h6>Available Placeholders:</h6>
+                                <div class="placeholder-tags">
+                                    <span class="placeholder-tag"
+                                        data-placeholder="{patient_name}">{patient_name}</span>
+                                    <span class="placeholder-tag"
+                                        data-placeholder="{appointment_date}">{appointment_date}</span>
+                                    <span class="placeholder-tag"
+                                        data-placeholder="{appointment_time}">{appointment_time}</span>
+                                    <span class="placeholder-tag" data-placeholder="{doctor_name}">{doctor_name}</span>
+                                    <span class="placeholder-tag"
+                                        data-placeholder="{service_name}">{service_name}</span>
+                                    <span class="placeholder-tag" data-placeholder="{clinic_name}">{clinic_name}</span>
+                                    <span class="placeholder-tag"
+                                        data-placeholder="{clinic_phone}">{clinic_phone}</span>
+                                </div>
+                            </div>
+
+                            <div class="template-preview">
+                                <h6>Preview:</h6>
+                                <div class="preview-content">
+                                    Hello John Mwangi,<br><br>
+                                    Your appointment has been confirmed:<br>
+                                    📅 Date: May 24, 2025<br>
+                                    🕐 Time: 9:00 AM<br>
+                                    👨⚕️ Doctor: Dr. James Kamau<br>
+                                    🏥 Service: General Consultation<br><br>
+                                    Please arrive 15 minutes early.<br>
+                                    Contact us at +254 700 000 000 for any changes.<br><br>
+                                    - Curis Medical Center
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="template-actions">
+                        <button class="btn-secondary" id="resetTemplateBtn">Reset to Default</button>
+                        <button class="btn-primary" id="saveTemplateBtn">Save Template</button>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" data-action="close">Cancel</button>
+                    <button type="button" class="btn-primary" id="saveNotificationSettingsBtn">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Performance Analytics Modal -->
+    <div class="modal" id="performanceAnalyticsModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Appointment Analytics Dashboard</h3>
+                <button class="modal-close" data-modal="performanceAnalyticsModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="analytics-controls">
+                    <div class="period-selector">
+                        <select class="period-select" id="analyticsPeriod">
+                            <option value="today">Today</option>
+                            <option value="week" selected>This Week</option>
+                            <option value="month">This Month</option>
+                            <option value="quarter">This Quarter</option>
+                            <option value="custom">Custom Range</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="analytics-tabs">
+                    <button class="tab-btn active" data-tab="volume">Booking Volume</button>
+                    <button class="tab-btn" data-tab="peakhours">Peak Hours</button>
+                    <button class="tab-btn" data-tab="services">Service Demand</button>
+                    <button class="tab-btn" data-tab="noshow">No-show Analysis</button>
+                </div>
+
+                <!-- Booking Volume Tab -->
+                <div class="tab-content" id="volumeTab">
+                    <div class="chart-container">
+                        <h4>Booking Volume Trends</h4>
+                        <canvas id="volumeChart" width="800" height="400"></canvas>
+                    </div>
+
+                    <div class="volume-metrics">
+                        <div class="metric-card">
+                            <div class="metric-value">156</div>
+                            <div class="metric-label">Total Appointments</div>
+                            <div class="metric-change positive">+12%</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-value">22.3</div>
+                            <div class="metric-label">Daily Average</div>
+                            <div class="metric-change positive">+8%</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-value">89%</div>
+                            <div class="metric-label">Completion Rate</div>
+                            <div class="metric-change negative">-3%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peak Hours Tab -->
+                <div class="tab-content" id="peakhoursTab" style="display: none;">
+                    <div class="heatmap-container">
+                        <h4>Booking Heatmap - Peak vs Quiet Periods</h4>
+                        <div class="heatmap-grid">
+                            <div class="heatmap-hour low">8 AM</div>
+                            <div class="heatmap-hour medium">9 AM</div>
+                            <div class="heatmap-hour high">10 AM</div>
+                            <div class="heatmap-hour high">11 AM</div>
+                            <div class="heatmap-hour low">12 PM</div>
+                            <div class="heatmap-hour medium">1 PM</div>
+                            <div class="heatmap-hour high">2 PM</div>
+                            <div class="heatmap-hour high">3 PM</div>
+                            <div class="heatmap-hour medium">4 PM</div>
+                            <div class="heatmap-hour low">5 PM</div>
+                        </div>
+
+                        <div class="heatmap-legend">
+                            <span class="legend-item low">Low</span>
+                            <span class="legend-item medium">Medium</span>
+                            <span class="legend-item high">High</span>
+                        </div>
+                    </div>
+
+                    <div class="peak-insights">
+                        <div class="insight-card">
+                            <h5>Peak Hours</h5>
+                            <p>10:00 AM - 11:00 AM</p>
+                            <p>2:00 PM - 3:00 PM</p>
+                        </div>
+
+                        <div class="insight-card">
+                            <h5>Quiet Hours</h5>
+                            <p>8:00 AM - 9:00 AM</p>
+                            <p>12:00 PM - 1:00 PM</p>
+                            <p>5:00 PM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Demand Tab -->
+                <div class="tab-content" id="servicesTab" style="display: none;">
+                    <div class="chart-container">
+                        <h4>Most Booked Services</h4>
+                        <canvas id="servicesChart" width="800" height="400"></canvas>
+                    </div>
+
+                    <div class="services-table">
+                        <table class="analytics-table">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Bookings</th>
+                                    <th>Revenue</th>
+                                    <th>Avg Duration</th>
+                                    <th>Growth</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>General Consultation</td>
+                                    <td>42</td>
+                                    <td>KES. 63,000</td>
+                                    <td>32 min</td>
+                                    <td class="positive">+8%</td>
+                                </tr>
+                                <tr>
+                                    <td>Vaccination</td>
+                                    <td>28</td>
+                                    <td>KES. 33,600</td>
+                                    <td>18 min</td>
+                                    <td class="positive">+15%</td>
+                                </tr>
+                                <tr>
+                                    <td>Blood Sugar Test</td>
+                                    <td>24</td>
+                                    <td>KES. 19,200</td>
+                                    <td>12 min</td>
+                                    <td class="negative">-5%</td>
+                                </tr>
+                                <tr>
+                                    <td>Post-Surgery Follow-up</td>
+                                    <td>18</td>
+                                    <td>KES. 18,000</td>
+                                    <td>22 min</td>
+                                    <td class="positive">+12%</td>
+                                </tr>
+                                <tr>
+                                    <td>Complete Blood Count</td>
+                                    <td>15</td>
+                                    <td>KES. 18,000</td>
+                                    <td>15 min</td>
+                                    <td class="positive">+20%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- No-show Analysis Tab -->
+                <div class="tab-content" id="noshowTab" style="display: none;">
+                    <div class="noshow-overview">
+                        <div class="noshow-metric-cards">
+                            <div class="metric-card">
+                                <div class="metric-icon warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <div class="metric-value">8%</div>
+                                    <div class="metric-label">No-show Rate</div>
+                                    <div class="metric-comparison">Industry Avg: 12%</div>
+                                </div>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-icon danger">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <div class="metric-value">12</div>
+                                    <div class="metric-label">Total No-shows</div>
+                                    <div class="metric-comparison">This week</div>
+                                </div>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-icon info">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <div class="metric-value">-2%</div>
+                                    <div class="metric-label">Trend</div>
+                                    <div class="metric-comparison positive">Decreasing</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="noshow-analysis">
+                        <div class="frequent-noshows">
+                            <h5>Frequent No-show Patients</h5>
+                            <div class="patient-list">
+                                <div class="patient-noshow-item">
+                                    <div class="patient-avatar">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Patient">
+                                    </div>
+                                    <div class="patient-info">
+                                        <h6>Catherine Wawira</h6>
+                                        <p>3 no-shows in 30 days</p>
+                                    </div>
+                                    <div class="patient-actions">
+                                        <button class="action-btn warning">Block Booking</button>
+                                        <button class="action-btn secondary">Contact</button>
+                                    </div>
+                                </div>
+
+                                <div class="patient-noshow-item">
+                                    <div class="patient-avatar">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Patient">
+                                    </div>
+                                    <div class="patient-info">
+                                        <h6>Michael Ochieng</h6>
+                                        <p>2 no-shows in 14 days</p>
+                                    </div>
+                                    <div class="patient-actions">
+                                        <button class="action-btn warning">Warning Letter</button>
+                                        <button class="action-btn secondary">Contact</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="noshow-patterns">
+                            <h5>No-show Patterns</h5>
+                            <div class="pattern-insights">
+                                <div class="insight-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Most no-shows occur during morning slots (9-11 AM)</span>
+                                </div>
+                                <div class="insight-item">
+                                    <i class="fas fa-calendar-day"></i>
+                                    <span>Mondays have 2x higher no-show rate</span>
+                                </div>
+                                <div class="insight-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Patients without confirmed phone numbers: 65% no-show rate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Success Modal -->
+    <div class="modal" id="bookingSuccessModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Appointment Created Successfully</h3>
+                <button class="modal-close" data-modal="bookingSuccessModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="success-content">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+
+                    <h4>Appointment Confirmed!</h4>
+                    <p>The appointment has been successfully created and saved to the system.</p>
+
+                    <div class="booking-summary">
+                        <div class="summary-item">
+                            <span class="label">Patient:</span>
+                            <span class="value">John Mwangi</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Service:</span>
+                            <span class="value">General Consultation</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Date & Time:</span>
+                            <span class="value">May 24, 2025 at 2:00 PM</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Doctor:</span>
+                            <span class="value">Dr. James Kamau</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Appointment ID:</span>
+                            <span class="value">APT007</span>
+                        </div>
+                    </div>
+
+                    <div class="notification-options">
+                        <h5>Send Confirmation to Patient?</h5>
+                        <div class="notification-choices">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="sendSMS" checked>
+                                <span class="checkmark"></span>
+                                SMS (+254 712 345 678)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="sendEmail" checked>
+                                <span class="checkmark"></span>
+                                Email (john.mwangi@email.com)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-actions">
+                    <button class="btn-secondary" data-action="close">Close</button>
+                    <button class="btn-primary" id="sendConfirmationBtn">Send Confirmation</button>
+                    <button class="btn-secondary" id="createAnotherBtn">Create Another</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment History Modal -->
+    <div class="modal" id="appointmentHistoryModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Appointment History & Logs</h3>
+                <button class="modal-close" data-modal="appointmentHistoryModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="history-filters">
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label>Date Range:</label>
+                            <select class="filter-select">
+                                <option value="7">Last 7 days</option>
+                                <option value="30" selected>Last 30 days</option>
+                                <option value="90">Last 90 days</option>
+                                <option value="custom">Custom range</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Status:</label>
+                            <select class="filter-select">
+                                <option value="all">All statuses</option>
+                                <option value="completed">Completed</option>
+                                <option value="cancelled">Cancelled</option>
+                                <option value="no-show">No-show</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Doctor:</label>
+                            <select class="filter-select">
+                                <option value="all">All doctors</option>
+                                <option value="DOC001">Dr. James Kamau</option>
+                                <option value="DOC002">Dr. Grace Wanjiru</option>
+                            </select>
+                        </div>
+
+                        <button class="apply-filters-btn">Apply</button>
+                    </div>
+                </div>
+
+                <div class="history-tabs">
+                    <button class="tab-btn active" data-tab="appointments">Appointment History</button>
+                    <button class="tab-btn" data-tab="modifications">Modification Log</button>
+                </div>
+
+                <!-- Appointment History Tab -->
+                <div class="tab-content" id="appointmentHistoryTab">
+                    <div class="history-table-container">
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Patient</th>
+                                    <th>Doctor</th>
+                                    <th>Service</th>
+                                    <th>Status</th>
+                                    <th>Revenue</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>May 24, 2025</td>
+                                    <td>2:00 PM</td>
+                                    <td>Sarah Njoki</td>
+                                    <td>Dr. Grace Wanjiru</td>
+                                    <td>Post-Surgery Follow-up</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>KES. 1,000</td>
+                                    <td>
+                                        <button class="view-details-btn" data-appointment="APT004">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>May 24, 2025</td>
+                                    <td>3:00 PM</td>
+                                    <td>David Mwai</td>
+                                    <td>Dr. James Kamau</td>
+                                    <td>General Consultation</td>
+                                    <td><span class="status-badge cancelled">Cancelled</span></td>
+                                    <td>KES. 0</td>
+                                    <td>
+                                        <button class="view-details-btn" data-appointment="APT005">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>May 24, 2025</td>
+                                    <td>4:00 PM</td>
+                                    <td>Catherine Wawira</td>
+                                    <td>Nurse Peter</td>
+                                    <td>Blood Pressure Check</td>
+                                    <td><span class="status-badge no-show">No-show</span></td>
+                                    <td>KES. 500</td>
+                                    <td>
+                                        <button class="view-details-btn" data-appointment="APT006">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>May 23, 2025</td>
+                                    <td>10:30 AM</td>
+                                    <td>Peter Kiprotich</td>
+                                    <td>Nurse Mary</td>
+                                    <td>Vaccination</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>KES. 1,200</td>
+                                    <td>
+                                        <button class="view-details-btn" data-appointment="APT007">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>May 23, 2025</td>
+                                    <td>2:15 PM</td>
+                                    <td>Grace Wanjiku</td>
+                                    <td>Lab Technician</td>
+                                    <td>Blood Sugar Test</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>KES. 800</td>
+                                    <td>
+                                        <button class="view-details-btn" data-appointment="APT008">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                        <span class="page-info">Page 1 of 5</span>
+                        <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Modification Log Tab -->
+                <div class="tab-content" id="modificationsTab" style="display: none;">
+                    <div class="modification-log">
+                        <div class="log-entry">
+                            <div class="log-timestamp">
+                                <span class="date">May 24, 2025</span>
+                                <span class="time">2:30 PM</span>
+                            </div>
+                            <div class="log-content">
+                                <div class="log-action">
+                                    <i class="fas fa-edit"></i>
+                                    <span class="action-type">Appointment Rescheduled</span>
+                                </div>
+                                <div class="log-details">
+                                    <p><strong>User:</strong> Reception Staff (Mary Wanjiku)</p>
+                                    <p><strong>Patient:</strong> David Mwai (PAT003)</p>
+                                    <p><strong>Change:</strong> From 10:00 AM → To 2:00 PM</p>
+                                    <p><strong>Reason:</strong> Patient request - work conflict</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="log-entry">
+                            <div class="log-timestamp">
+                                <span class="date">May 24, 2025</span>
+                                <span class="time">1:45 PM</span>
+                            </div>
+                            <div class="log-content">
+                                <div class="log-action">
+                                    <i class="fas fa-times"></i>
+                                    <span class="action-type">Appointment Cancelled</span>
+                                </div>
+                                <div class="log-details">
+                                    <p><strong>User:</strong> Patient Portal (Self-cancellation)</p>
+                                    <p><strong>Patient:</strong> Michael Ochieng (PAT004)</p>
+                                    <p><strong>Original Time:</strong> 3:30 PM</p>
+                                    <p><strong>Reason:</strong> Feeling unwell</p>
+                                    <p><strong>Notice:</strong> 2 hours advance</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="log-entry">
+                            <div class="log-timestamp">
+                                <span class="date">May 24, 2025</span>
+                                <span class="time">9:15 AM</span>
+                            </div>
+                            <div class="log-content">
+                                <div class="log-action">
+                                    <i class="fas fa-plus"></i>
+                                    <span class="action-type">New Appointment Created</span>
+                                </div>
+                                <div class="log-details">
+                                    <p><strong>User:</strong> Dr. Sarah Kimani (Clinic Owner)</p>
+                                    <p><strong>Patient:</strong> John Mwangi (PAT001)</p>
+                                    <p><strong>Service:</strong> General Consultation</p>
+                                    <p><strong>Time:</strong> 9:00 AM - 9:30 AM</p>
+                                    <p><strong>Doctor:</strong> Dr. James Kamau</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Workload Management Modal -->
+    <div class="modal" id="workloadManagementModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Doctor Workload Management</h3>
+                <button class="modal-close" data-modal="workloadManagementModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="workload-tabs">
+                    <button class="tab-btn active" data-tab="overview">Workload Overview</button>
+                    <button class="tab-btn" data-tab="assignment">Assignment Settings</button>
+                </div>
+
+                <!-- Workload Overview Tab -->
+                <div class="tab-content" id="workloadOverviewTab">
+                    <div class="workload-summary">
+                        <h4>Today's Workload Distribution</h4>
+                        <div class="doctors-workload-grid">
+
+                            <div class="doctor-workload-card">
+                                <div class="doctor-header">
+                                    <div class="doctor-avatar">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                            alt="Dr. Kamau">
+                                    </div>
+                                    <div class="doctor-info">
+                                        <h5>Dr. James Kamau</h5>
+                                        <p>General Practice</p>
+                                    </div>
+                                </div>
+
+                                <div class="workload-metrics">
+                                    <div class="capacity-indicator">
+                                        <div class="capacity-bar">
+                                            <div class="capacity-fill" style="width: 80%"></div>
+                                        </div>
+                                        <span class="capacity-text">8/10 slots filled (80%)</span>
+                                    </div>
+
+                                    <div class="workload-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Appointments:</span>
+                                            <span class="stat-value">8</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Total Hours:</span>
+                                            <span class="stat-value">6.5h</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Revenue:</span>
+                                            <span class="stat-value">KES. 12,800</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="workload-actions">
+                                    <button class="action-btn reassign-btn" data-doctor="DOC001">
+                                        <i class="fas fa-exchange-alt"></i>
+                                        Reassign
+                                    </button>
+                                    <button class="action-btn schedule-btn" data-doctor="DOC001">
+                                        <i class="fas fa-calendar"></i>
+                                        View Schedule
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="doctor-workload-card">
+                                <div class="doctor-header">
+                                    <div class="doctor-avatar">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                            alt="Dr. Wanjiru">
+                                    </div>
+                                    <div class="doctor-info">
+                                        <h5>Dr. Grace Wanjiru</h5>
+                                        <p>Pediatrics</p>
+                                    </div>
+                                </div>
+
+                                <div class="workload-metrics">
+                                    <div class="capacity-indicator">
+                                        <div class="capacity-bar">
+                                            <div class="capacity-fill" style="width: 50%"></div>
+                                        </div>
+                                        <span class="capacity-text">4/8 slots filled (50%)</span>
+                                    </div>
+
+                                    <div class="workload-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Appointments:</span>
+                                            <span class="stat-value">4</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Total Hours:</span>
+                                            <span class="stat-value">3.0h</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Revenue:</span>
+                                            <span class="stat-value">KES. 6,200</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="workload-actions">
+                                    <button class="action-btn reassign-btn" data-doctor="DOC002">
+                                        <i class="fas fa-exchange-alt"></i>
+                                        Reassign
+                                    </button>
+                                    <button class="action-btn schedule-btn" data-doctor="DOC002">
+                                        <i class="fas fa-calendar"></i>
+                                        View Schedule
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="doctor-workload-card">
+                                <div class="doctor-header">
+                                    <div class="doctor-avatar">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                            alt="Dr. Mwangi">
+                                    </div>
+                                    <div class="doctor-info">
+                                        <h5>Dr. Peter Mwangi</h5>
+                                        <p>Cardiology</p>
+                                    </div>
+                                </div>
+
+                                <div class="workload-metrics">
+                                    <div class="capacity-indicator">
+                                        <div class="capacity-bar">
+                                            <div class="capacity-fill" style="width: 25%"></div>
+                                        </div>
+                                        <span class="capacity-text">2/8 slots filled (25%)</span>
+                                    </div>
+
+                                    <div class="workload-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Appointments:</span>
+                                            <span class="stat-value">2</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Total Hours:</span>
+                                            <span class="stat-value">1.5h</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Revenue:</span>
+                                            <span class="stat-value">KES. 5,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="workload-actions">
+                                    <button class="action-btn reassign-btn" data-doctor="DOC003">
+                                        <i class="fas fa-exchange-alt"></i>
+                                        Reassign
+                                    </button>
+                                    <button class="action-btn schedule-btn" data-doctor="DOC003">
+                                        <i class="fas fa-calendar"></i>
+                                        View Schedule
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="workload-insights">
+                            <div class="insight-card">
+                                <h5>Load Balancing Recommendation</h5>
+                                <p>Dr. Kamau is at 80% capacity while Dr. Mwangi is at 25%. Consider reassigning 2
+                                    appointments for better distribution.</p>
+                                <button class="auto-balance-btn">
+                                    <i class="fas fa-balance-scale"></i>
+                                    Auto-Balance Workload
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assignment Settings Tab -->
+                <div class="tab-content" id="assignmentSettingsTab" style="display: none;">
+                    <div class="assignment-settings">
+                        <h4>Doctor Assignment Logic</h4>
+
+                        <div class="assignment-modes">
+                            <label class="radio-label">
+                                <input type="radio" name="assignmentMode" value="auto" checked>
+                                <span class="radio-mark"></span>
+                                <div class="mode-info">
+                                    <span class="mode-title">Automatic Assignment</span>
+                                    <small>System assigns based on availability and workload balance</small>
+                                </div>
+                            </label>
+
+                            <label class="radio-label">
+                                <input type="radio" name="assignmentMode" value="roundrobin">
+                                <span class="radio-mark"></span>
+                                <div class="mode-info">
+                                    <span class="mode-title">Round Robin</span>
+                                    <small>Appointments assigned in rotation among available doctors</small>
+                                </div>
+                            </label>
+
+                            <label class="radio-label">
+                                <input type="radio" name="assignmentMode" value="specialty">
+                                <span class="radio-mark"></span>
+                                <div class="mode-info">
+                                    <span class="mode-title">Specialty Based</span>
+                                    <small>Assign based on doctor specialization and service type</small>
+                                </div>
+                            </label>
+
+                            <label class="radio-label">
+                                <input type="radio" name="assignmentMode" value="manual">
+                                <span class="radio-mark"></span>
+                                <div class="mode-info">
+                                    <span class="mode-title">Manual Assignment Only</span>
+                                    <small>Reception staff manually selects doctor for each appointment</small>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="assignment-rules">
+                            <h5>Assignment Rules</h5>
+
+                            <div class="rule-item">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="respectSpecialty" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="rule-info">
+                                    <span class="rule-title">Respect Doctor Specialties</span>
+                                    <small>Only assign services that match doctor's specialty</small>
+                                </div>
+                            </div>
+
+                            <div class="rule-item">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="balanceWorkload" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="rule-info">
+                                    <span class="rule-title">Balance Workload</span>
+                                    <small>Distribute appointments evenly among available doctors</small>
+                                </div>
+                            </div>
+
+                            <div class="rule-item">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="considerPatientHistory">
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="rule-info">
+                                    <span class="rule-title">Consider Patient History</span>
+                                    <small>Prefer assigning patients to doctors they've seen before</small>
+                                </div>
+                            </div>
+
+                            <div class="rule-item">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="respectAvailability" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="rule-info">
+                                    <span class="rule-title">Respect Doctor Availability</span>
+                                    <small>Only assign to doctors who are marked as available</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="capacity-limits">
+                            <h5>Daily Capacity Limits</h5>
+                            <div class="capacity-settings">
+                                <div class="capacity-item">
+                                    <span class="doctor-name">Dr. James Kamau:</span>
+                                    <input type="number" class="capacity-input" value="10" min="1" max="20">
+                                    <span class="capacity-unit">appointments/day</span>
+                                </div>
+
+                                <div class="capacity-item">
+                                    <span class="doctor-name">Dr. Grace Wanjiru:</span>
+                                    <input type="number" class="capacity-input" value="8" min="1" max="20">
+                                    <span class="capacity-unit">appointments/day</span>
+                                </div>
+
+                                <div class="capacity-item">
+                                    <span class="doctor-name">Dr. Peter Mwangi:</span>
+                                    <input type="number" class="capacity-input" value="8" min="1" max="20">
+                                    <span class="capacity-unit">appointments/day</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" data-action="close">Cancel</button>
+                    <button type="button" class="btn-primary" id="saveWorkloadSettingsBtn">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patient Portal Settings Modal -->
+    <div class="modal" id="patientPortalSettingsModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Patient Portal Settings</h3>
+                <button class="modal-close" data-modal="patientPortalSettingsModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="portal-tabs">
+                    <button class="tab-btn active" data-tab="selfbooking">Self-booking Control</button>
+                    <button class="tab-btn" data-tab="restrictions">Restrictions</button>
+                </div>
+
+                <!-- Self-booking Control Tab -->
+                <div class="tab-content" id="selfbookingTab">
+                    <div class="selfbooking-settings">
+                        <div class="master-toggle">
+                            <label class="toggle-switch large">
+                                <input type="checkbox" name="enableSelfBooking" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <div class="toggle-info">
+                                <h4>Enable Patient Self-booking</h4>
+                                <p>Allow patients to book appointments through the online portal</p>
+                            </div>
+                        </div>
+
+                        <div class="booking-rules-section">
+                            <h5>Lead Time Rules</h5>
+                            <div class="lead-time-settings">
+                                <div class="time-setting">
+                                    <label>Minimum Lead Time:</label>
+                                    <select class="time-select">
+                                        <option value="1">1 hour</option>
+                                        <option value="6">6 hours</option>
+                                        <option value="24" selected>24 hours</option>
+                                        <option value="48">48 hours</option>
+                                    </select>
+                                    <span class="help-text">Advance booking required</span>
+                                </div>
+
+                                <div class="time-setting">
+                                    <label>Maximum Lead Time:</label>
+                                    <select class="time-select">
+                                        <option value="7">1 week</option>
+                                        <option value="14" selected>2 weeks</option>
+                                        <option value="30">1 month</option>
+                                        <option value="60">2 months</option>
+                                    </select>
+                                    <span class="help-text">Booking horizon limit</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="booking-limits-section">
+                            <h5>Booking Limits</h5>
+                            <div class="limits-settings">
+                                <div class="limit-setting">
+                                    <label>Daily Limit:</label>
+                                    <select class="limit-select">
+                                        <option value="1" selected>1 appointment</option>
+                                        <option value="2">2 appointments</option>
+                                        <option value="3">3 appointments</option>
+                                        <option value="unlimited">Unlimited</option>
+                                    </select>
+                                    <span class="help-text">Per patient per day</span>
+                                </div>
+
+                                <div class="limit-setting">
+                                    <label>Weekly Limit:</label>
+                                    <select class="limit-select">
+                                        <option value="2">2 appointments</option>
+                                        <option value="3" selected>3 appointments</option>
+                                        <option value="5">5 appointments</option>
+                                        <option value="unlimited">Unlimited</option>
+                                    </select>
+                                    <span class="help-text">Maximum per week</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="service-availability">
+                            <h5>Service Availability for Self-booking</h5>
+                            <div class="services-list">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="availableServices" value="general-consultation"
+                                        checked>
+                                    <span class="checkmark"></span>
+                                    General Consultation
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="availableServices" value="vaccination" checked>
+                                    <span class="checkmark"></span>
+                                    Vaccination
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="availableServices" value="blood-tests" checked>
+                                    <span class="checkmark"></span>
+                                    Blood Tests
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="availableServices" value="followup" checked>
+                                    <span class="checkmark"></span>
+                                    Follow-up Appointments
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="availableServices" value="minor-procedures">
+                                    <span class="checkmark"></span>
+                                    Minor Procedures
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restrictions Tab -->
+                <div class="tab-content" id="restrictionsTab" style="display: none;">
+                    <div class="restrictions-settings">
+                        <h4>Booking and Cancellation Restrictions</h4>
+
+                        <div class="restriction-section">
+                            <h5>Same-day Cancellation Policy</h5>
+                            <div class="policy-options">
+                                <label class="radio-label">
+                                    <input type="radio" name="samedayPolicy" value="not-allowed" checked>
+                                    <span class="radio-mark"></span>
+                                    <span class="policy-title">Not Allowed</span>
+                                </label>
+
+                                <label class="radio-label">
+                                    <input type="radio" name="samedayPolicy" value="clinic-approval">
+                                    <span class="radio-mark"></span>
+                                    <span class="policy-title">Clinic Approval Required</span>
+                                </label>
+
+                                <label class="radio-label">
+                                    <input type="radio" name="samedayPolicy" value="fee-applies">
+                                    <span class="radio-mark"></span>
+                                    <span class="policy-title">Allowed with Cancellation Fee</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="restriction-section">
+                            <h5>Reschedule Limitations</h5>
+                            <div class="reschedule-settings">
+                                <div class="setting-item">
+                                    <label>Maximum Reschedules:</label>
+                                    <select class="restriction-select">
+                                        <option value="1">1 time</option>
+                                        <option value="2" selected>2 times</option>
+                                        <option value="3">3 times</option>
+                                        <option value="unlimited">Unlimited</option>
+                                    </select>
+                                    <span class="help-text">Per appointment</span>
+                                </div>
+
+                                <div class="setting-item">
+                                    <label>Reschedule Notice:</label>
+                                    <select class="restriction-select">
+                                        <option value="2">2 hours</option>
+                                        <option value="6">6 hours</option>
+                                        <option value="24" selected>24 hours</option>
+                                    </select>
+                                    <span class="help-text">Minimum advance notice</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="restriction-section">
+                            <h5>Patient Blocking Rules</h5>
+                            <div class="blocking-settings">
+                                <div class="block-trigger">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="autoBlock" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <div class="block-info">
+                                        <span class="block-title">Automatic Blocking</span>
+                                        <small>Block patients after multiple no-shows or violations</small>
+                                    </div>
+                                </div>
+
+                                <div class="block-thresholds">
+                                    <div class="threshold-item">
+                                        <span class="threshold-label">No-show Threshold:</span>
+                                        <select class="threshold-select">
+                                            <option value="2">2 no-shows</option>
+                                            <option value="3" selected>3 no-shows</option>
+                                            <option value="5">5 no-shows</option>
+                                        </select>
+                                        <span class="threshold-period">within 30 days</span>
+                                    </div>
+
+                                    <div class="threshold-item">
+                                        <span class="threshold-label">Block Duration:</span>
+                                        <select class="threshold-select">
+                                            <option value="7">1 week</option>
+                                            <option value="30" selected>1 month</option>
+                                            <option value="90">3 months</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="restriction-section">
+                            <h5>Special Restrictions</h5>
+                            <div class="special-restrictions">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="specialRestrictions" value="new-patient-approval">
+                                    <span class="checkmark"></span>
+                                    Require approval for first-time patients
+                                </label>
+
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="specialRestrictions" value="weekend-restrictions">
+                                    <span class="checkmark"></span>
+                                    No weekend self-booking
+                                </label>
+
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="specialRestrictions" value="emergency-only">
+                                    <span class="checkmark"></span>
+                                    Emergency appointments require phone booking
+                                </label>
+
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="specialRestrictions" value="payment-verification"
+                                        checked>
+                                    <span class="checkmark"></span>
+                                    Verify payment method before booking
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" data-action="close">Cancel</button>
+                    <button type="button" class="btn-primary" id="savePortalSettingsBtn">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications Panel -->
+    <div class="notifications-panel" id="notificationsPanel">
+        <div class="notifications-header">
+            <h3 class="notifications-title">Notifications</h3>
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Notifications\notifications.html"
+                class="view-all-notifications">
+                View All
+            </a>
+        </div>
+        <div class="notifications-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-calendar-plus"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>New Appointment Booked</h5>
+                    <p>John Mwangi booked General Consultation for tomorrow 9:00 AM</p>
+                    <span class="notification-time">2 minutes ago</span>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-times-circle"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Appointment Cancelled</h5>
+                    <p>Grace Wanjiku cancelled Blood Test appointment for today 3:00 PM</p>
+                    <span class="notification-time">15 minutes ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Reminder Sent</h5>
+                    <p>24-hour reminders sent to 8 patients for tomorrow's appointments</p>
+                    <span class="notification-time">1 hour ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>No-show Alert</h5>
+                    <p>Catherine Wawira marked as no-show for 4:00 PM appointment</p>
+                    <span class="notification-time">2 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-redo-alt"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Appointment Rescheduled</h5>
+                    <p>Peter Kiprotich rescheduled from 11:00 AM to 2:00 PM today</p>
+                    <span class="notification-time">3 hours ago</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast Messages -->
+    <div class="toast-container" id="toastContainer">
+        <!-- Toast messages will be dynamically added here -->
+    </div>
+
+</body>
+
+</html>

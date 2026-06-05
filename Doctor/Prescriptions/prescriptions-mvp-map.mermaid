@@ -1,0 +1,248 @@
+flowchart TD
+    %% Entry Points
+    Dashboard[Dashboard] --> PrescriptionsPage[Prescriptions Page<br/>💊 Digital Medication Management]
+    ConsultationsPage[Consultations Page] --> PrescriptionsPage
+    PatientRecordsPage[Patient Records Page] --> PrescriptionsPage
+    
+    %% Main Page Structure
+    PrescriptionsPage --> PrescriptionCreation[Prescription Creation<br/>New Medication Interface]
+    PrescriptionsPage --> MedicationDB[Medication Database<br/>Drug Library Access]
+    PrescriptionsPage --> PrescriptionPreview[Prescription Preview<br/>Verification System]
+    PrescriptionsPage --> PatientPortalSync[Patient Portal Sync<br/>Auto-delivery System]
+    PrescriptionsPage --> PrescriptionHistory[Prescription History<br/>Medication Log]
+    PrescriptionsPage --> SecurityIntegrity[Security & Integrity<br/>Protection Systems]
+    
+    %% Prescription Creation Interface
+    PrescriptionCreation --> NewPrescriptionBtn[New Prescription Button<br/>Create medication order]
+    NewPrescriptionBtn -->|Click| PrescriptionModal[Prescription Creation Modal<br/>Full form interface]
+    
+    PrescriptionModal --> PatientSelection[Patient Selection<br/>Link to patient]
+    PatientSelection --> PatientSearch[Patient Search Field<br/>Auto-complete lookup]
+    PatientSelection --> RecentPatients[Recent Patients List<br/>Quick selection]
+    PatientSelection --> ActiveConsultPatient[Active Consultation Patient<br/>Auto-populated if in session]
+    
+    PatientSearch --> SearchResults[Search Results<br/>Matching patients]
+    SearchResults --> SelectPatient[Select Patient<br/>Confirm selection]
+    SelectPatient --> LoadPatientData[Load Patient Data<br/>Allergies/Conditions/History]
+    
+    LoadPatientData --> AllergyAlert[Allergy Alerts<br/>Red warning badges]
+    LoadPatientData --> DrugInteractionCheck[Drug Interaction Check<br/>Current medications]
+    LoadPatientData --> ChronicConditionAlert[Chronic Condition Alert<br/>Relevant conditions]
+    
+    PrescriptionModal --> AppointmentLink[Appointment Link<br/>Session association]
+    AppointmentLink --> AutoLinkConsult[Auto-link if Active<br/>Current consultation]
+    AppointmentLink --> ManualLinkOption[Manual Link Option<br/>Select appointment]
+    AppointmentLink --> NoLinkOption[No Link Option<br/>Standalone prescription]
+    
+    PrescriptionModal --> PrescriptionForm[Prescription Form<br/>Medication details]
+    
+    %% Prescription Form Details
+    PrescriptionForm --> MedicationSelection[Medication Selection<br/>Drug choice interface]
+    MedicationSelection --> DrugDropdown[Drug Dropdown<br/>Clinic formulary]
+    MedicationSelection --> DrugAutocomplete[Drug Autocomplete<br/>Type to search]
+    MedicationSelection --> GenericBrandToggle[Generic/Brand Toggle<br/>Name preference]
+    
+    DrugAutocomplete --> DrugSuggestions[Drug Suggestions<br/>Matching medications]
+    DrugSuggestions --> SelectMedication[Select Medication<br/>Choose drug]
+    SelectMedication --> LoadDrugInfo[Load Drug Info<br/>Default parameters]
+    
+    PrescriptionForm --> DosageInput[Dosage Input<br/>Amount specification]
+    DosageInput --> StrengthField[Strength Field<br/>e.g., 500mg]
+    DosageInput --> QuantityField[Quantity Field<br/>e.g., 2 tablets]
+    DosageInput --> UnitSelector[Unit Selector<br/>mg/ml/tablets/capsules]
+    
+    PrescriptionForm --> FrequencySettings[Frequency Settings<br/>Administration schedule]
+    FrequencySettings --> PresetFrequencies[Preset Frequencies<br/>Common schedules]
+    PresetFrequencies --> OnceDaily[Once Daily (OD)]
+    PresetFrequencies --> TwiceDaily[Twice Daily (BD)]
+    PresetFrequencies --> ThriceDaily[Thrice Daily (TDS)]
+    PresetFrequencies --> FourTimesDaily[Four Times Daily (QDS)]
+    PresetFrequencies --> AsNeeded[As Needed (PRN)]
+    PresetFrequencies --> CustomFrequency[Custom Frequency<br/>Specific timing]
+    
+    CustomFrequency --> CustomScheduleModal[Custom Schedule Modal<br/>Detailed timing]
+    CustomScheduleModal --> TimingInputs[Timing Inputs<br/>Specific hours]
+    CustomScheduleModal --> MealRelation[Meal Relation<br/>Before/After/With food]
+    CustomScheduleModal --> SpecialInstructions[Special Instructions<br/>Additional timing notes]
+    
+    PrescriptionForm --> DurationInput[Duration Input<br/>Treatment period]
+    DurationInput --> DurationField[Duration Field<br/>Number input]
+    DurationInput --> DurationUnit[Duration Unit<br/>Days/Weeks/Months]
+    DurationInput --> OngoingOption[Ongoing Option<br/>Continuous treatment]
+    DurationInput --> EndDateCalc[End Date Calculator<br/>Auto-calculate finish]
+    
+    PrescriptionForm --> RouteSelection[Route Selection<br/>Administration method]
+    RouteSelection --> RouteDropdown[Route Dropdown<br/>Common routes]
+    RouteDropdown --> OralRoute[Oral]
+    RouteDropdown --> TopicalRoute[Topical]
+    RouteDropdown --> InjectionRoute[Injection]
+    RouteDropdown --> InhalationRoute[Inhalation]
+    RouteDropdown --> OtherRoute[Other Routes]
+    
+    PrescriptionForm --> AdditionalInstructions[Additional Instructions<br/>Free text notes]
+    AdditionalInstructions --> InstructionTemplates[Instruction Templates<br/>Common phrases]
+    AdditionalInstructions --> FreeTextArea[Free Text Area<br/>Custom instructions]
+    AdditionalInstructions --> LanguageSelector[Language Selector<br/>Multi-language support]
+    
+    %% Medication Database Integration
+    MedicationDB --> ClinicFormulary[Clinic Formulary<br/>Approved drug list]
+    ClinicFormulary --> DrugCategories[Drug Categories<br/>Organized by type]
+    DrugCategories --> Antibiotics[Antibiotics]
+    DrugCategories --> Analgesics[Analgesics]
+    DrugCategories --> Cardiovascular[Cardiovascular]
+    DrugCategories --> Respiratory[Respiratory]
+    DrugCategories --> OtherCategories[Other Categories]
+    
+    MedicationDB --> DrugInfoPanel[Drug Information Panel<br/>Reference data]
+    DrugInfoPanel --> DrugDetails[Drug Details<br/>Active ingredients]
+    DrugInfoPanel --> Contraindications[Contraindications<br/>When not to use]
+    DrugInfoPanel --> SideEffects[Side Effects<br/>Common reactions]
+    DrugInfoPanel --> StandardDosages[Standard Dosages<br/>Recommended doses]
+    
+    StandardDosages --> AgeBasedDosing[Age-based Dosing<br/>Pediatric/Adult/Geriatric]
+    StandardDosages --> WeightBasedDosing[Weight-based Dosing<br/>mg/kg calculations]
+    StandardDosages --> ConditionBasedDosing[Condition-based Dosing<br/>Specific indications]
+    
+    %% Prescription Preview & Confirmation
+    PrescriptionForm --> PreviewBtn[Preview Prescription<br/>Review before submit]
+    PreviewBtn -->|Click| PreviewModal[Prescription Preview Modal<br/>Full prescription display]
+    
+    PreviewModal --> PreviewContent[Preview Content<br/>Complete prescription]
+    PreviewContent --> PatientInfoPreview[Patient Information<br/>Name/Age/ID]
+    PreviewContent --> MedicationDetailsPreview[Medication Details<br/>Drug/Dose/Frequency/Duration]
+    PreviewContent --> InstructionsPreview[Instructions Preview<br/>All instructions]
+    PreviewContent --> DoctorInfoPreview[Doctor Information<br/>Name/License/Signature]
+    PreviewContent --> DateTimePreview[Date & Time<br/>Prescription timestamp]
+    
+    PreviewModal --> PreviewActions[Preview Actions<br/>Available options]
+    PreviewActions --> EditBtn[Edit Prescription<br/>Return to form]
+    PreviewActions --> SaveDraftBtn[Save as Draft<br/>Complete later]
+    PreviewActions --> ConfirmBtn[Confirm & Issue<br/>Final submission]
+    
+    EditBtn -->|Click| ReturnToForm[Return to Form<br/>Modify details]
+    SaveDraftBtn -->|Click| SaveDraft[Save Draft<br/>Store incomplete]
+    
+    ConfirmBtn -->|Click| FinalValidation[Final Validation<br/>Last checks]
+    FinalValidation --> DuplicateCheck[Duplicate Check<br/>Active prescription exists?]
+    FinalValidation --> InteractionCheck[Interaction Check<br/>Drug conflicts?]
+    FinalValidation --> AllergyCheck[Allergy Check<br/>Patient allergies?]
+    
+    DuplicateCheck -->|Duplicate Found| DuplicateWarning[Duplicate Warning Modal<br/>Override option]
+    DuplicateWarning --> JustifyDuplicate[Justify Duplicate<br/>Reason required]
+    DuplicateWarning --> CancelDuplicate[Cancel<br/>Return to edit]
+    
+    FinalValidation -->|All Clear| SubmitPrescription[Submit Prescription<br/>Process order]
+    
+    %% Submission Process
+    SubmitPrescription --> TimestampApplication[Timestamp Application<br/>Record exact time]
+    SubmitPrescription --> DigitalSignature[Digital Signature<br/>Doctor authentication]
+    SubmitPrescription --> PatientRecordStorage[Patient Record Storage<br/>Add to medical history]
+    SubmitPrescription --> PrescriptionIDGen[Prescription ID Generation<br/>Unique identifier]
+    
+    %% Patient Portal Sync
+    PatientRecordStorage --> AutoSyncPortal[Auto-Sync to Portal<br/>Immediate delivery]
+    AutoSyncPortal --> PortalPush[Portal Push<br/>Real-time update]
+    PortalPush --> PatientNotification[Patient Notification<br/>SMS/Email alert]
+    PortalPush --> PortalDisplay[Portal Display<br/>Visible to patient]
+    
+    AutoSyncPortal --> PDFGeneration[PDF Generation<br/>Printable format]
+    PDFGeneration --> PDFTemplate[PDF Template<br/>Clinic branding]
+    PDFGeneration --> QRCodeGen[QR Code Generation<br/>Pharmacy scan]
+    PDFGeneration --> DigitalWatermark[Digital Watermark<br/>Security feature]
+    
+    %% Prescription History
+    PrescriptionHistory --> HistoryView[History View<br/>Past prescriptions]
+    HistoryView --> FilterOptions[Filter Options<br/>Search tools]
+    FilterOptions --> PatientFilter[Filter by Patient<br/>Specific patient]
+    FilterOptions --> DateFilter[Filter by Date<br/>Time range]
+    FilterOptions --> MedicationFilter[Filter by Medication<br/>Drug name]
+    FilterOptions --> StatusFilter[Filter by Status<br/>Active/Expired]
+    
+    HistoryView --> PrescriptionList[Prescription List<br/>Filtered results]
+    PrescriptionList --> ListEntry[Each Entry Shows:]
+    ListEntry --> BasicInfo[Basic Info<br/>Patient/Drug/Date]
+    ListEntry --> StatusBadge[Status Badge<br/>Active/Expired/Cancelled]
+    ListEntry --> QuickActions[Quick Actions<br/>View/Re-issue/Print]
+    
+    QuickActions --> ViewDetailsBtn[View Details<br/>Full prescription]
+    QuickActions --> ReissueBtn[Re-issue<br/>Duplicate prescription]
+    QuickActions --> PrintBtn[Print<br/>Generate PDF]
+    
+    ViewDetailsBtn -->|Click| PrescriptionDetailModal[Prescription Detail Modal<br/>Complete information]
+    PrescriptionDetailModal --> FullDetails[Full Prescription Details:]
+    FullDetails --> PatientDetails[Patient Details<br/>Complete demographics]
+    FullDetails --> MedicationFullDetails[Medication Details<br/>All parameters]
+    FullDetails --> PrescribingInfo[Prescribing Info<br/>Doctor/Date/ID]
+    FullDetails --> DispenseHistory[Dispense History<br/>Pharmacy records]
+    FullDetails --> ComplianceTracking[Compliance Tracking<br/>Refill patterns]
+    
+    ReissueBtn -->|Click| ReissueModal[Re-issue Modal<br/>Duplicate with edits]
+    ReissueModal --> PrefilledForm[Pre-filled Form<br/>Previous details]
+    ReissueModal --> ModifyOptions[Modify Options<br/>Change parameters]
+    ReissueModal --> ReissueReason[Re-issue Reason<br/>Documentation]
+    ReissueModal --> ConfirmReissue[Confirm Re-issue<br/>Create new prescription]
+    
+    %% Security & Integrity
+    SecurityIntegrity --> AccessControl[Access Control<br/>Permission system]
+    AccessControl --> PatientAccess[Patient Access<br/>Assigned patients only]
+    AccessControl --> PrescriptionViewing[Prescription Viewing<br/>Own prescriptions only]
+    AccessControl --> NoDeleteRights[No Delete Rights<br/>Immutable records]
+    
+    SecurityIntegrity --> EditAuthorization[Edit Authorization<br/>Modification rules]
+    EditAuthorization --> DraftEditing[Draft Editing<br/>Before submission only]
+    EditAuthorization --> PostSubmitEdit[Post-Submit Edit<br/>Supervisor approval needed]
+    EditAuthorization --> EditRequestModal[Edit Request Modal<br/>Justification required]
+    
+    EditRequestModal --> EditReason[Edit Reason<br/>Why modify?]
+    EditRequestModal --> SupervisorNotify[Supervisor Notify<br/>Alert clinic owner]
+    EditRequestModal --> ApprovalWait[Approval Wait<br/>Pending status]
+    
+    SecurityIntegrity --> AuditLogging[Audit Logging<br/>All actions tracked]
+    AuditLogging --> CreationLog[Creation Log<br/>Who prescribed when]
+    AuditLogging --> ViewLog[View Log<br/>Access tracking]
+    AuditLogging --> PrintLog[Print Log<br/>PDF generation track]
+    AuditLogging --> ModificationLog[Modification Log<br/>Edit history]
+    
+    %% Cross-Page Synchronization
+    PrescriptionsPage -.->|Prescription Count| DashboardWidget[Dashboard Widget<br/>Today's prescriptions]
+    PrescriptionsPage -.->|New Prescription| PatientRecordUpdate[Patient Record Update<br/>Medication history]
+    PrescriptionsPage -.->|From Consultation| ConsultationLink[Consultation Link<br/>Session reference]
+    PrescriptionsPage -.->|Prescription Issued| AlertsUpdate[Alerts Update<br/>Team notification]
+    
+    %% Navigation Options
+    PrescriptionsPage --> NavigationMenu[Navigation Menu]
+    NavigationMenu --> BackToDashboard[Back to Dashboard<br/>Home link]
+    NavigationMenu --> ToPatientRecords[To Patient Records<br/>Medical history]
+    NavigationMenu --> ToConsultations[To Consultations<br/>Session management]
+    NavigationMenu --> ToAppointments[To Appointments<br/>Schedule view]
+    
+    %% Quick Access from Dashboard
+    DashboardWidget --> QuickDuplicate[Quick Duplicate<br/>From dashboard]
+    QuickDuplicate -->|Click| QuickDuplicateModal[Quick Duplicate Modal<br/>Recent prescriptions]
+    QuickDuplicateModal --> SelectRecent[Select Recent<br/>Last 10 prescriptions]
+    QuickDuplicateModal --> ConfirmDuplicate[Confirm Duplicate<br/>One-click reissue]
+    
+    %% Compliance Features
+    PrescriptionsPage --> ComplianceCheck[Compliance Check<br/>Safety systems]
+    ComplianceCheck --> RefillTracking[Refill Tracking<br/>Medication adherence]
+    ComplianceCheck --> ExpiryAlerts[Expiry Alerts<br/>Prescription end dates]
+    ComplianceCheck --> ControlledSubstances[Controlled Substances<br/>Special handling]
+    
+    ControlledSubstances --> SpecialAuth[Special Authorization<br/>Additional verification]
+    ControlledSubstances --> ReportingReq[Reporting Requirements<br/>Regulatory compliance]
+    ControlledSubstances --> LimitChecks[Limit Checks<br/>Quantity restrictions]
+    
+    %% Styling
+    classDef pageStyle fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef modalStyle fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef actionStyle fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    classDef alertStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef syncStyle fill:#fce4ec,stroke:#880e4f,stroke-width:2px,stroke-dasharray: 5 5
+    classDef securityStyle fill:#ffebee,stroke:#b71c1c,stroke-width:2px
+    
+    class PrescriptionsPage,Dashboard,ConsultationsPage,PatientRecordsPage pageStyle
+    class PrescriptionModal,PreviewModal,CustomScheduleModal,DuplicateWarning,PrescriptionDetailModal,ReissueModal,EditRequestModal,QuickDuplicateModal modalStyle
+    class NewPrescriptionBtn,PreviewBtn,ConfirmBtn,ViewDetailsBtn,ReissueBtn,ConfirmReissue actionStyle
+    class AllergyAlert,DrugInteractionCheck,DuplicateCheck,ExpiryAlerts alertStyle
+    class DashboardWidget,PatientRecordUpdate,ConsultationLink,AlertsUpdate syncStyle
+    class SecurityIntegrity,AccessControl,EditAuthorization,AuditLogging securityStyle

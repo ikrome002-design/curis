@@ -1,0 +1,123 @@
+#### 1. **Health (High-Level Only)**
+
+
+The **Health (High-Level Only)** page provides **Super Administrators** with the ability to audit and monitor medical records within selected clinics. However, the Super Admin does not have editing permissions, ensuring that only the clinic owners and doctors can make actual changes. The following expanded functionalities outline how this access works, along with specific restrictions to maintain patient privacy.
+
+---
+
+### **a. Clinic Owner Selection and Health**
+- **Select a Clinic Owner**:  
+  - Before accessing medical records, the Super Admin must **select a specific clinic owner account** from a list or search bar. This action filters medical records and audit logs specific to the selected clinic.
+- **Real-Time Medical Record Overview**:  
+  - Once the clinic owner is selected, display a **real-time dashboard** summarizing key medical record activities within the clinic (e.g., total number of records accessed, number of records modified in the past week).
+
+**Dynamic:** The interface updates to show medical records for the selected clinic and allows the Super Admin to perform the functionalities mentioned below.
+
+---
+
+### **b. High-Level Audit of Medical Records**
+- **Audit Medical Records Without Editing**:  
+  - The Super Admin can **view** medical records (such as prescriptions, diagnosis history, lab results) without being able to make changes. This is important for maintaining data integrity.
+  - Medical records should be displayed in a **read-only** format to ensure the integrity of the information, with sensitive fields like patient history and prescriptions visible but non-editable.
+- **Access Permissions Log**:  
+  - The Super Admin can track who has accessed or viewed medical records. Logs should include:  
+    - User ID (Doctor, Receptionist, etc.)  
+    - Date and time of access  
+    - Specific records or data accessed  
+  - This ensures transparency and compliance with regulations regarding who viewed or interacted with medical records.
+
+**Dynamic:** Medical record views refresh based on the clinic selected and show up-to-date data, restricted to a read-only state.
+
+---
+
+### **c. Compliance Check and Monitoring of Record Changes**
+- **Change Logs for Medical Records**:  
+  - The Super Admin can view logs of all changes made to medical records within the clinic (e.g., updates to prescriptions, changes to diagnosis entries, etc.). This allows for compliance checks.
+  - **Audit Log Details**:  
+    - Timestamp of changes  
+    - User who made the change (Doctor, Receptionist, etc.)  
+    - Type of change (addition, update, deletion)
+- **Track Record Modifications**:  
+  - Display a list of all medical record changes made within the clinic. The Super Admin can search or filter this data by:  
+    - Date range (e.g., last week, last month)  
+    - Type of modification (e.g., prescription added, diagnosis updated)  
+    - User (who made the modification)
+
+**Dynamic:** Any change to medical records triggers an update in the change log, which is automatically reflected in the Super Admin's interface.
+
+---
+
+### **d. Patient Records Overview**
+- **Access Patient-Specific Medical Records**:  
+  - The Super Admin can **search for a specific patient’s medical record** within the selected clinic by using the patient’s medical record number (file number) or other identifiers.  
+  - The records presented include historical information such as:  
+    - **Prescriptions**  
+    - **Diagnoses**  
+    - **Lab Results**  
+    - **Treatment History**
+  - A **high-level summary** of a patient's history (e.g., latest prescriptions, most recent diagnosis) can be shown to the Super Admin without revealing too many details to maintain privacy.
+- **Restricted Personal Information Access**:  
+  - The Super Admin **cannot view** the patient's personal information such as:
+    - **Patient Name**
+    - **Phone Number**
+    - **Email Address**
+    - **Profile Picture**
+  - The Super Admin can only see the **patient's file number** (medical record number) associated with their medical records.
+- **Patient Access**:  
+  - **Patients** will only see their own medical records through their respective portal, and they will only be able to view the **file number** for identification and tracking purposes. Personal information (name, phone number, etc.) is not visible to the patient in their records.
+
+**Dynamic:** The medical records presented will omit personal information, adhering to strict privacy regulations.
+
+---
+
+### **e. Health Restrictions**
+- **Data Privacy Compliance**:  
+  - The Super Admin can **only access high-level information**, without the ability to modify patient data.  
+  - Strict control over what can be seen by the Super Admin ensures that sensitive data remains protected.
+- **Role-Based Access Control**:  
+  - The Super Admin’s access is **restricted** to high-level data only. Full access to edit or add entries is reserved for Clinic Owners and authorized doctors.
+  - Sensitive data (such as detailed diagnoses, treatments, etc.) will be redacted or minimized when viewed by the Super Admin, unless it’s absolutely necessary for audit or compliance purposes.
+
+**Dynamic:** The medical records presented will comply with the platform’s data privacy settings, ensuring no unauthorized editing or detailed access.
+
+---
+
+### **f. Reports & Analytics on Medical Record Activities**
+- **Generate Medical Record Reports**:  
+  - The Super Admin can **generate reports** showing:  
+    - **Access statistics**: How often records are viewed, by whom, and when.
+    - **Record modification trends**: How frequently records are being updated or changed within the clinic.
+    - **Audit summaries**: A high-level overview of who is accessing and modifying records, which is essential for **compliance monitoring**.
+- **Export Reports**:  
+  - Ability to export reports of medical record activities, changes, and audits to CSV or Excel for further analysis or reporting to regulatory authorities.
+
+**Dynamic:** Reports are generated based on the most recent data within the selected clinic and are exportable for transparency or further inspection.
+
+---
+
+### **g. Notifications & Alerts**
+- **Alert Notifications for Medical Record Changes**:  
+  - If a medical record is modified (e.g., a new prescription is added), the Super Admin should receive an automated **alert notification**.
+  - **Notification Details**:  
+    - What record was changed  
+    - Who made the change  
+    - The type of change (e.g., prescription added, diagnosis modified)
+- **Compliance and Policy Violations Alerts**:  
+  - If any actions related to medical records appear non-compliant (e.g., unauthorized access or unusual changes), the Super Admin receives an immediate **alert** for further investigation.
+
+**Dynamic:** Notifications are sent automatically upon changes to medical records, helping the Super Admin stay updated on compliance and audit needs.
+
+---
+
+### **h. Integration with Other Administrative Functions**
+- **Link with Billing & Invoices**:  
+  - Medical record audits can be linked to **billing and invoice data** to ensure all medical procedures or treatments documented are correctly billed.
+  - For example, if a prescription is updated, the system checks that the corresponding **charge is applied** to the patient’s invoice, ensuring accuracy.
+
+**Dynamic:** Medical records sync with other administrative areas such as billing and appointments, ensuring a cohesive flow of data and reducing the risk of discrepancies.
+
+---
+
+### **Summary**
+
+The **Health (High-Level Only)** page ensures the Super Administrator can monitor medical records for compliance and auditing purposes while maintaining high-level access only. Importantly, the Super Admin **cannot view personal patient information** such as their name, phone number, email, or profile picture. Patients are only presented with their **file number** when accessing their own records. Each feature is dynamic, adapting to the clinic selected, providing real-time data updates, and maintaining strict compliance with privacy standards.

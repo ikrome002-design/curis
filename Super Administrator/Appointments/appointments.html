@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="appointments.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Dashboard\dashboard.html"
+                    class="logo-link">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Curis Users\curis_users.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Curis Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Health\health.html"
+                            class="nav-link">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Health</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Compliance Hub\compliance_hub.html"
+                            class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Compliance Hub</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Notifications -->
+                <div class="notification-container">
+                    <button id="notificationBtn" class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">7</span>
+                    </button>
+                </div>
+
+                <!-- User Profile -->
+                <div class="user-profile-container">
+                    <button id="userProfileBtn" class="user-profile-btn">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-image">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- User Profile Dropdown -->
+    <div id="userProfileDropdown" class="user-dropdown hidden">
+        <ul class="dropdown-menu">
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Settings\settings.html"
+                    class="dropdown-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\landing_page.html"
+                    class="dropdown-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Notification Panel -->
+    <div id="notificationPanel" class="notification-panel hidden">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button id="closeNotifications" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-calendar-times"></i>
+                </div>
+                <div class="notification-content">
+                    <p class="notification-title">Appointment Canceled</p>
+                    <p class="notification-desc">Dr. Smith canceled appointment A045</p>
+                    <p class="notification-time">2 minutes ago</p>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-calendar-plus"></i>
+                </div>
+                <div class="notification-content">
+                    <p class="notification-title">New Appointment</p>
+                    <p class="notification-desc">John Doe scheduled for tomorrow 10:00 AM</p>
+                    <p class="notification-time">5 minutes ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="notification-footer">
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Notifications\notifications.html"
+                class="view-all-link">View All Notifications</a>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-title">
+                <h1>
+                    <i class="fas fa-calendar-check"></i>
+                    Appointment Oversight
+                </h1>
+                <p class="page-subtitle">Clinic-Specific Management</p>
+            </div>
+
+            <!-- Real-Time Status Indicator -->
+            <div class="realtime-status">
+                <div class="status-indicator active">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Real-Time Updates Active</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clinic Selection Section - Required First Step -->
+        <section class="clinic-selection-section" id="clinicSelectionSection">
+            <div class="selection-container">
+                <div class="selection-header">
+                    <i class="fas fa-hospital"></i>
+                    <h2>Select Clinic Owner</h2>
+                    <p class="selection-subtitle">Required First Step - Choose a clinic to manage appointments</p>
+                </div>
+
+                <div class="selection-actions">
+                    <button id="selectClinicBtn" class="btn-primary large">
+                        <i class="fas fa-search"></i>
+                        <span>Select Clinic Owner</span>
+                    </button>
+                </div>
+
+                <!-- Recent Clinics Quick Access -->
+                <div class="recent-clinics">
+                    <h3>Recent Clinics</h3>
+                    <div class="recent-clinic-cards">
+                        <button class="clinic-card" data-clinic-id="clinic-a">
+                            <div class="clinic-info">
+                                <div class="clinic-name">Nairobi Medical Center</div>
+                                <div class="clinic-owner">Dr. Sarah Johnson</div>
+                                <div class="clinic-meta">Last accessed: 2 hours ago</div>
+                            </div>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="clinic-card" data-clinic-id="clinic-b">
+                            <div class="clinic-info">
+                                <div class="clinic-name">Westlands Health Clinic</div>
+                                <div class="clinic-owner">Dr. Michael Brown</div>
+                                <div class="clinic-meta">Last accessed: Yesterday</div>
+                            </div>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="clinic-card" data-clinic-id="clinic-c">
+                            <div class="clinic-info">
+                                <div class="clinic-name">Karen Medical Center</div>
+                                <div class="clinic-owner">Dr. Emily Davis</div>
+                                <div class="clinic-meta">Last accessed: 2 days ago</div>
+                            </div>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Clinic Dashboard - Hidden by default -->
+        <section class="clinic-dashboard hidden" id="clinicDashboard">
+            <!-- Selected Clinic Header -->
+            <div class="selected-clinic-header">
+                <div class="clinic-identity">
+                    <div class="clinic-avatar">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="clinic-details">
+                        <h2 id="selectedClinicName">Nairobi Medical Center</h2>
+                        <p id="selectedClinicOwner">Dr. Sarah Johnson</p>
+                        <div class="clinic-stats-quick">
+                            <span class="stat-item">
+                                <i class="fas fa-user-md"></i>
+                                <span>5 Doctors</span>
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-calendar-day"></i>
+                                <span>23 Today</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clinic-actions">
+                    <button id="changeClinicBtn" class="btn-secondary">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Change Clinic</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Appointment Summary Panel -->
+            <div class="summary-panel">
+                <div class="panel-header">
+                    <h3>
+                        <i class="fas fa-chart-bar"></i>
+                        Appointment Summary
+                    </h3>
+                </div>
+                <div class="summary-stats">
+                    <div class="stat-card primary">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number">23</div>
+                            <div class="stat-label">Today's Appointments</div>
+                        </div>
+                    </div>
+
+                    <div class="stats-breakdown">
+                        <div class="breakdown-item scheduled">
+                            <i class="fas fa-circle"></i>
+                            <span>Scheduled: <strong>15</strong></span>
+                        </div>
+                        <div class="breakdown-item canceled">
+                            <i class="fas fa-circle"></i>
+                            <span>Canceled: <strong>3</strong></span>
+                        </div>
+                        <div class="breakdown-item completed">
+                            <i class="fas fa-circle"></i>
+                            <span>Completed: <strong>5</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="additional-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">This Week:</span>
+                            <span class="stat-value">127</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">This Month:</span>
+                            <span class="stat-value">456</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Avg Wait Time:</span>
+                            <span class="stat-value">12 mins</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">No-Show Rate:</span>
+                            <span class="stat-value">8.5%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Bar -->
+            <div class="action-bar">
+                <div class="action-left">
+                    <button id="filterSearchBtn" class="btn-secondary">
+                        <i class="fas fa-filter"></i>
+                        <span>Filter & Search</span>
+                    </button>
+                    <button id="calendarViewBtn" class="btn-secondary">
+                        <i class="fas fa-calendar"></i>
+                        <span>Calendar View</span>
+                    </button>
+                </div>
+                <div class="action-right">
+                    <button id="forceCancelBtn" class="btn-danger">
+                        <i class="fas fa-times-circle"></i>
+                        <span>Force Cancel</span>
+                    </button>
+                    <button id="reportsBtn" class="btn-secondary">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Reports</span>
+                    </button>
+                    <button id="historyBtn" class="btn-secondary">
+                        <i class="fas fa-history"></i>
+                        <span>History</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <div class="tab-container">
+                    <button class="tab-btn active" data-tab="scheduled">
+                        <i class="fas fa-circle scheduled"></i>
+                        <span>Scheduled</span>
+                        <span class="tab-count">15</span>
+                    </button>
+                    <button class="tab-btn" data-tab="completed">
+                        <i class="fas fa-circle completed"></i>
+                        <span>Completed</span>
+                        <span class="tab-count">5</span>
+                    </button>
+                    <button class="tab-btn" data-tab="canceled">
+                        <i class="fas fa-circle canceled"></i>
+                        <span>Canceled</span>
+                        <span class="tab-count">3</span>
+                    </button>
+                    <button class="tab-btn" data-tab="analytics">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Analytics</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Actions Panel -->
+            <div class="quick-actions-panel">
+                <div class="quick-actions-header">
+                    <h3>
+                        <i class="fas fa-bolt"></i>
+                        Quick Actions
+                    </h3>
+                </div>
+                <div class="quick-actions-grid">
+                    <button class="quick-action-btn" id="quickSchedule">
+                        <div class="action-icon">
+                            <i class="fas fa-calendar-plus"></i>
+                        </div>
+                        <div class="action-label">Quick Schedule</div>
+                    </button>
+                    <button class="quick-action-btn danger" id="quickCancel">
+                        <div class="action-icon">
+                            <i class="fas fa-calendar-times"></i>
+                        </div>
+                        <div class="action-label">Quick Cancel</div>
+                    </button>
+                    <button class="quick-action-btn" id="quickMessage">
+                        <div class="action-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="action-label">Send Message</div>
+                    </button>
+                    <button class="quick-action-btn" id="quickExport">
+                        <div class="action-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="action-label">Export Today</div>
+                    </button>
+                    <button class="quick-action-btn" id="doctorAvailability">
+                        <div class="action-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="action-label">Doctor Availability</div>
+                    </button>
+                    <button class="quick-action-btn" id="notificationSettings">
+                        <div class="action-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="action-label">Notifications</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Appointment List View -->
+            <div class="appointment-list-section">
+                <div class="table-container">
+                    <table class="appointment-table" id="appointmentTable">
+                        <thead>
+                            <tr>
+                                <th class="sortable" data-sort="id">
+                                    ID
+                                    <i class="fas fa-sort"></i>
+                                </th>
+                                <th class="sortable" data-sort="patient">
+                                    Patient
+                                    <i class="fas fa-sort"></i>
+                                </th>
+                                <th class="sortable" data-sort="doctor">
+                                    Doctor
+                                    <i class="fas fa-sort"></i>
+                                </th>
+                                <th class="sortable" data-sort="datetime">
+                                    Date/Time
+                                    <i class="fas fa-sort"></i>
+                                </th>
+                                <th class="sortable" data-sort="status">
+                                    Status
+                                    <i class="fas fa-sort"></i>
+                                </th>
+                                <th class="sortable" data-sort="location">
+                                    Location
+                                    <i class="fas fa-sort"></i>
+                                </th>
+                                <th class="actions-col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample Appointment Rows -->
+                            <tr class="appointment-row scheduled" data-appointment-id="A001">
+                                <td class="appointment-id">A001</td>
+                                <td class="patient-info">
+                                    <div class="patient-cell">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Patient" class="patient-avatar">
+                                        <div class="patient-details">
+                                            <span class="patient-name">John Doe</span>
+                                            <span class="patient-id">P12345</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="doctor-info">
+                                    <div class="doctor-cell">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Doctor" class="doctor-avatar">
+                                        <div class="doctor-details">
+                                            <span class="doctor-name">Dr. Lee</span>
+                                            <span class="doctor-specialty">General</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="appointment-datetime">
+                                    <div class="datetime-cell">
+                                        <span class="date">Today</span>
+                                        <span class="time">10:00 AM</span>
+                                    </div>
+                                </td>
+                                <td class="appointment-status">
+                                    <span class="status-badge scheduled">
+                                        <i class="fas fa-circle"></i>
+                                        Scheduled
+                                    </span>
+                                </td>
+                                <td class="appointment-location">Room 1</td>
+                                <td class="appointment-actions">
+                                    <div class="action-dropdown">
+                                        <button class="action-btn" data-appointment-id="A001">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="appointment-row canceled" data-appointment-id="A002">
+                                <td class="appointment-id">A002</td>
+                                <td class="patient-info">
+                                    <div class="patient-cell">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Patient" class="patient-avatar">
+                                        <div class="patient-details">
+                                            <span class="patient-name">Jane Smith</span>
+                                            <span class="patient-id">P12346</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="doctor-info">
+                                    <div class="doctor-cell">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Doctor" class="doctor-avatar">
+                                        <div class="doctor-details">
+                                            <span class="doctor-name">Dr. Park</span>
+                                            <span class="doctor-specialty">Cardiology</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="appointment-datetime">
+                                    <div class="datetime-cell">
+                                        <span class="date">Today</span>
+                                        <span class="time">11:00 AM</span>
+                                    </div>
+                                </td>
+                                <td class="appointment-status">
+                                    <span class="status-badge canceled">
+                                        <i class="fas fa-circle"></i>
+                                        Canceled
+                                    </span>
+                                </td>
+                                <td class="appointment-location">Room 2</td>
+                                <td class="appointment-actions">
+                                    <div class="action-dropdown">
+                                        <button class="action-btn" data-appointment-id="A002">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="appointment-row completed" data-appointment-id="A003">
+                                <td class="appointment-id">A003</td>
+                                <td class="patient-info">
+                                    <div class="patient-cell">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Patient" class="patient-avatar">
+                                        <div class="patient-details">
+                                            <span class="patient-name">Bob Wilson</span>
+                                            <span class="patient-id">P12347</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="doctor-info">
+                                    <div class="doctor-cell">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Doctor" class="doctor-avatar">
+                                        <div class="doctor-details">
+                                            <span class="doctor-name">Dr. Kim</span>
+                                            <span class="doctor-specialty">Orthopedic</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="appointment-datetime">
+                                    <div class="datetime-cell">
+                                        <span class="date">Today</span>
+                                        <span class="time">12:00 PM</span>
+                                    </div>
+                                </td>
+                                <td class="appointment-status">
+                                    <span class="status-badge completed">
+                                        <i class="fas fa-circle"></i>
+                                        Completed
+                                    </span>
+                                </td>
+                                <td class="appointment-location">Room 3</td>
+                                <td class="appointment-actions">
+                                    <div class="action-dropdown">
+                                        <button class="action-btn" data-appointment-id="A003">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Table Pagination -->
+                <div class="table-pagination">
+                    <div class="pagination-info">
+                        Showing 1-3 of 23 appointments
+                    </div>
+                    <div class="pagination-controls">
+                        <button class="page-btn" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <span class="page-dots">...</span>
+                        <button class="page-btn">8</button>
+                        <button class="page-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Overlays -->
+
+    <!-- Clinic Selection Modal -->
+    <div id="clinicSelectionModal" class="modal-overlay hidden">
+        <div class="modal-container large">
+            <div class="modal-header">
+                <h2>Select Clinic Owner</h2>
+                <button class="modal-close" data-modal="clinicSelectionModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="clinic-selection-content">
+                    <!-- Search Bar -->
+                    <div class="search-section">
+                        <div class="search-input-group">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="clinicSearchInput" class="search-input"
+                                placeholder="Search by Clinic Name or ID">
+                        </div>
+                    </div>
+
+                    <!-- Recent Clinics -->
+                    <div class="recent-clinics-section">
+                        <h3>Recent Clinics</h3>
+                        <div class="clinic-list">
+                            <button class="clinic-item" data-clinic-id="clinic-a">
+                                <div class="clinic-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="clinic-info">
+                                    <div class="clinic-name">Nairobi Medical Center</div>
+                                    <div class="clinic-owner">Dr. Sarah Johnson</div>
+                                    <div class="clinic-details">Nairobi, Kenya • 5 Doctors</div>
+                                </div>
+                            </button>
+                            <button class="clinic-item" data-clinic-id="clinic-b">
+                                <div class="clinic-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="clinic-info">
+                                    <div class="clinic-name">Westlands Health Clinic</div>
+                                    <div class="clinic-owner">Dr. Michael Brown</div>
+                                    <div class="clinic-details">Westlands, Kenya • 3 Doctors</div>
+                                </div>
+                            </button>
+                            <button class="clinic-item" data-clinic-id="clinic-c">
+                                <div class="clinic-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="clinic-info">
+                                    <div class="clinic-name">Karen Medical Center</div>
+                                    <div class="clinic-owner">Dr. Emily Davis</div>
+                                    <div class="clinic-details">Karen, Kenya • 4 Doctors</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- All Clinics List -->
+                    <div class="all-clinics-section">
+                        <div class="section-header">
+                            <h3>All Clinics</h3>
+                            <div class="filter-options">
+                                <select class="form-select" id="regionFilter">
+                                    <option value="">All Regions</option>
+                                    <option value="nairobi">Nairobi</option>
+                                    <option value="mombasa">Mombasa</option>
+                                    <option value="kisumu">Kisumu</option>
+                                </select>
+                                <select class="form-select" id="statusFilter">
+                                    <option value="">All Status</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="clinic-list scrollable">
+                            <button class="clinic-item" data-clinic-id="clinic-d">
+                                <div class="clinic-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="clinic-info">
+                                    <div class="clinic-name">Eastleigh Family Clinic</div>
+                                    <div class="clinic-owner">Dr. Ahmed Hassan</div>
+                                    <div class="clinic-details">Eastleigh, Kenya • 2 Doctors</div>
+                                </div>
+                            </button>
+                            <button class="clinic-item" data-clinic-id="clinic-e">
+                                <div class="clinic-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="clinic-info">
+                                    <div class="clinic-name">Kiambu District Hospital</div>
+                                    <div class="clinic-owner">Dr. Grace Wanjiku</div>
+                                    <div class="clinic-details">Kiambu, Kenya • 8 Doctors</div>
+                                </div>
+                            </button>
+                            <!-- More clinics would be listed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" data-modal="clinicSelectionModal">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Actions Dropdown -->
+    <div id="appointmentActionsMenu" class="actions-dropdown-menu hidden">
+        <ul class="actions-list">
+            <li>
+                <button class="action-item" data-action="view">
+                    <i class="fas fa-eye"></i>
+                    <span>View Details</span>
+                </button>
+            </li>
+            <li>
+                <button class="action-item" data-action="reschedule">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Reschedule</span>
+                </button>
+            </li>
+            <li>
+                <button class="action-item danger" data-action="force-cancel">
+                    <i class="fas fa-times-circle"></i>
+                    <span>Force Cancel</span>
+                </button>
+            </li>
+            <li>
+                <button class="action-item" data-action="history">
+                    <i class="fas fa-history"></i>
+                    <span>View History</span>
+                </button>
+            </li>
+            <li>
+                <button class="action-item" data-action="notification">
+                    <i class="fas fa-bell"></i>
+                    <span>Send Notification</span>
+                </button>
+            </li>
+            <li>
+                <button class="action-item" data-action="print">
+                    <i class="fas fa-print"></i>
+                    <span>Print Details</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Filter & Search Modal -->
+    <div id="filterModal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Advanced Filter Panel</h2>
+                <button class="modal-close" data-modal="filterModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="filter-content">
+                    <div class="filter-section">
+                        <h3>Date Range</h3>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="dateRange" value="today" checked>
+                                <span>Today</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="dateRange" value="this-week">
+                                <span>This Week</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="dateRange" value="last-week">
+                                <span>Last Week</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="dateRange" value="custom">
+                                <span>Custom</span>
+                            </label>
+                        </div>
+                        <div class="custom-date-range hidden" id="customDateRange">
+                            <div class="date-inputs">
+                                <div class="date-input">
+                                    <label for="dateFrom">From</label>
+                                    <input type="date" id="dateFrom" class="form-input">
+                                </div>
+                                <div class="date-input">
+                                    <label for="dateTo">To</label>
+                                    <input type="date" id="dateTo" class="form-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Status</h3>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="statusFilter" value="scheduled" checked>
+                                <i class="fas fa-circle scheduled"></i>
+                                <span>Scheduled</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="statusFilter" value="canceled" checked>
+                                <i class="fas fa-circle canceled"></i>
+                                <span>Canceled</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="statusFilter" value="completed" checked>
+                                <i class="fas fa-circle completed"></i>
+                                <span>Completed</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Doctor</h3>
+                        <select class="form-select" name="doctorFilter">
+                            <option value="">All Doctors</option>
+                            <option value="dr-lee">Dr. Lee (General)</option>
+                            <option value="dr-park">Dr. Park (Cardiology)</option>
+                            <option value="dr-kim">Dr. Kim (Orthopedic)</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Patient</h3>
+                        <div class="search-input-group">
+                            <i class="fas fa-search"></i>
+                            <input type="text" class="search-input" placeholder="Search by Name or Patient ID">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="applyFiltersBtn">
+                    <i class="fas fa-check"></i>
+                    Apply Filters
+                </button>
+                <button class="btn-secondary" id="clearFiltersBtn">
+                    <i class="fas fa-refresh"></i>
+                    Clear Filters
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Details Modal -->
+    <div id="appointmentDetailsModal" class="modal-overlay hidden">
+        <div class="modal-container large">
+            <div class="modal-header">
+                <h2>Appointment Details</h2>
+                <button class="modal-close" data-modal="appointmentDetailsModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="appointment-details">
+                    <div class="details-header">
+                        <div class="appointment-id-section">
+                            <h3>Appointment ID: <span class="highlight">A001</span></h3>
+                            <div class="status-badge scheduled">
+                                <i class="fas fa-circle"></i>
+                                Scheduled
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="details-grid">
+                        <div class="detail-section">
+                            <h4>
+                                <i class="fas fa-user"></i>
+                                Patient Information
+                            </h4>
+                            <div class="info-block">
+                                <div class="info-row">
+                                    <span class="label">Name:</span>
+                                    <span class="value">John Doe</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Patient ID:</span>
+                                    <span class="value">P12345</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">History:</span>
+                                    <button class="btn-link">View Medical History</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>
+                                <i class="fas fa-user-md"></i>
+                                Doctor Information
+                            </h4>
+                            <div class="info-block">
+                                <div class="info-row">
+                                    <span class="label">Name:</span>
+                                    <span class="value">Dr. Lee</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Specialty:</span>
+                                    <span class="value">General Medicine</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">License:</span>
+                                    <span class="value">ML12345</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>
+                                <i class="fas fa-calendar"></i>
+                                Schedule Information
+                            </h4>
+                            <div class="info-block">
+                                <div class="info-row">
+                                    <span class="label">Date:</span>
+                                    <span class="value">Today (Nov 27, 2024)</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Time:</span>
+                                    <span class="value">10:00 AM</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Duration:</span>
+                                    <span class="value">30 minutes</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Location Details
+                            </h4>
+                            <div class="info-block">
+                                <div class="info-row">
+                                    <span class="label">Room:</span>
+                                    <span class="value">Room 1</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Floor:</span>
+                                    <span class="value">Ground Floor</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Clinic:</span>
+                                    <span class="value">Nairobi Medical Center</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="appointment-notes">
+                        <h4>
+                            <i class="fas fa-sticky-note"></i>
+                            Notes & Comments
+                        </h4>
+                        <div class="notes-content">
+                            <p>Patient requested morning appointment. Follow-up for previous consultation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="editAvailabilityBtn">
+                    <i class="fas fa-edit"></i>
+                    Edit Availability
+                </button>
+                <button class="btn-primary" id="rescheduleAppointmentBtn">
+                    <i class="fas fa-calendar-alt"></i>
+                    Reschedule
+                </button>
+                <button class="btn-danger" id="cancelAppointmentBtn">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Force Cancel Modal -->
+    <div id="forceCancelModal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header danger">
+                <h2>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Force Cancel Appointment
+                </h2>
+                <button class="modal-close" data-modal="forceCancelModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="force-cancel-content">
+                    <div class="warning-message">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>This action will immediately cancel the appointment and cannot be undone.</p>
+                    </div>
+
+                    <div class="appointment-summary">
+                        <h3>Appointment Details</h3>
+                        <div class="summary-info">
+                            <div class="info-row">
+                                <span class="label">Appointment:</span>
+                                <span class="value">A001</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Patient:</span>
+                                <span class="value">John Doe</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Doctor:</span>
+                                <span class="value">Dr. Lee</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Time:</span>
+                                <span class="value">Today 10:00 AM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Reason for Cancellation <span class="required">*</span></h3>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="cancelReason" value="doctor-unavailable">
+                                <span>Doctor Unavailable</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="cancelReason" value="system-error">
+                                <span>System Error</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="cancelReason" value="emergency">
+                                <span>Emergency</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="cancelReason" value="other">
+                                <span>Other</span>
+                            </label>
+                        </div>
+                        <div class="form-group" id="otherReasonGroup" style="display: none;">
+                            <label for="otherCancelReason">Specify Reason</label>
+                            <input type="text" id="otherCancelReason" class="form-input"
+                                placeholder="Enter specific reason">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Additional Notes</h3>
+                        <div class="form-group">
+                            <textarea id="cancelNotes" class="form-textarea" rows="3"
+                                placeholder="Add any additional notes about this cancellation..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Notifications</h3>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="notifyPatient" checked>
+                                <i class="fas fa-envelope"></i>
+                                <span>Notify Patient (SMS/Email)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="notifyDoctor" checked>
+                                <i class="fas fa-user-md"></i>
+                                <span>Notify Doctor</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="notifyReception" checked>
+                                <i class="fas fa-user-tie"></i>
+                                <span>Notify Reception</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-danger" id="confirmForceCancelBtn">
+                    <i class="fas fa-times-circle"></i>
+                    Confirm Cancellation
+                </button>
+                <button class="btn-secondary" data-modal="forceCancelModal">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Doctor Availability Panel Modal -->
+    <div id="doctorAvailabilityModal" class="modal-overlay hidden">
+        <div class="modal-container large">
+            <div class="modal-header">
+                <h2>Doctor Availability Management</h2>
+                <button class="modal-close" data-modal="doctorAvailabilityModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="availability-content">
+                    <div class="doctor-selection">
+                        <h3>Select Doctor</h3>
+                        <select class="form-select" id="doctorSelect">
+                            <option value="dr-lee">Dr. Lee (General Medicine)</option>
+                            <option value="dr-park">Dr. Park (Cardiology)</option>
+                            <option value="dr-kim">Dr. Kim (Orthopedic)</option>
+                        </select>
+                    </div>
+
+                    <div class="calendar-section">
+                        <h3>Calendar View</h3>
+                        <div class="interactive-calendar">
+                            <div class="calendar-header">
+                                <button class="calendar-nav" id="prevMonth">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <h4 id="currentMonth">November 2024</h4>
+                                <button class="calendar-nav" id="nextMonth">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="calendar-grid">
+                                <div class="calendar-weekdays">
+                                    <span>Mon</span>
+                                    <span>Tue</span>
+                                    <span>Wed</span>
+                                    <span>Thu</span>
+                                    <span>Fri</span>
+                                    <span>Sat</span>
+                                    <span>Sun</span>
+                                </div>
+                                <div class="calendar-days">
+                                    <!-- Calendar days would be populated by JavaScript -->
+                                    <button class="calendar-day" data-date="2024-11-25">25</button>
+                                    <button class="calendar-day" data-date="2024-11-26">26</button>
+                                    <button class="calendar-day active" data-date="2024-11-27">27</button>
+                                    <button class="calendar-day" data-date="2024-11-28">28</button>
+                                    <button class="calendar-day" data-date="2024-11-29">29</button>
+                                    <button class="calendar-day" data-date="2024-11-30">30</button>
+                                    <button class="calendar-day" data-date="2024-12-01">1</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="availability-slots">
+                        <h3>Available Slots for <span id="selectedDate">Today</span></h3>
+                        <div class="slots-grid">
+                            <div class="slot-item available" data-slot="09:00">
+                                <div class="slot-time">9:00 - 10:00</div>
+                                <div class="slot-status">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Available</span>
+                                </div>
+                            </div>
+                            <div class="slot-item booked" data-slot="10:00">
+                                <div class="slot-time">10:00 - 11:00</div>
+                                <div class="slot-status">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span>Booked</span>
+                                </div>
+                            </div>
+                            <div class="slot-item available" data-slot="11:00">
+                                <div class="slot-time">11:00 - 12:00</div>
+                                <div class="slot-status">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Available</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="availability-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <button class="btn-secondary" id="blockTimeSlot">
+                                <i class="fas fa-ban"></i>
+                                Block Time Slot
+                            </button>
+                            <button class="btn-secondary" id="scheduleTimeOff">
+                                <i class="fas fa-calendar-times"></i>
+                                Schedule Time Off
+                            </button>
+                            <button class="btn-secondary" id="setUnavailable">
+                                <i class="fas fa-pause"></i>
+                                Set Unavailable
+                            </button>
+                            <button class="btn-warning" id="overrideSchedule">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Override Schedule
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="saveAvailabilityChanges">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+                <button class="btn-secondary" data-modal="doctorAvailabilityModal">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Configuration Modal -->
+    <div id="notificationConfigModal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Notification Configuration</h2>
+                <button class="modal-close" data-modal="notificationConfigModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="notification-config">
+                    <div class="config-section">
+                        <h3>Reminder Settings</h3>
+                        <div class="setting-row">
+                            <label for="reminderTime">Send Before</label>
+                            <select id="reminderTime" class="form-select">
+                                <option value="1">1 hour</option>
+                                <option value="2">2 hours</option>
+                                <option value="24" selected>24 hours</option>
+                                <option value="48">48 hours</option>
+                            </select>
+                        </div>
+                        <div class="setting-row">
+                            <label>Channels</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="channels" value="sms" checked>
+                                    <i class="fas fa-sms"></i>
+                                    <span>SMS</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="channels" value="email" checked>
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Email</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Templates</h3>
+                        <div class="template-list">
+                            <div class="template-item">
+                                <span class="template-name">Appointment Reminder</span>
+                                <button class="btn-link" id="editReminderTemplate">Edit Template</button>
+                            </div>
+                            <div class="template-item">
+                                <span class="template-name">Cancellation Notice</span>
+                                <button class="btn-link" id="editCancellationTemplate">Edit Template</button>
+                            </div>
+                            <div class="template-item">
+                                <span class="template-name">Reschedule Alert</span>
+                                <button class="btn-link" id="editRescheduleTemplate">Edit Template</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Auto-Notifications</h3>
+                        <div class="setting-list">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Confirmations</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <i class="fas fa-bell"></i>
+                                    <span>Reminders</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>Changes</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="saveNotificationSettings">
+                    <i class="fas fa-save"></i>
+                    Save Settings
+                </button>
+                <button class="btn-secondary" data-modal="notificationConfigModal">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reports Dashboard Modal -->
+    <div id="reportsModal" class="modal-overlay hidden">
+        <div class="modal-container large">
+            <div class="modal-header">
+                <h2>Reports & Analytics Dashboard</h2>
+                <button class="modal-close" data-modal="reportsModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="reports-content">
+                    <div class="report-configuration">
+                        <div class="config-row">
+                            <div class="config-group">
+                                <label for="reportType">Report Type</label>
+                                <select id="reportType" class="form-select">
+                                    <option value="appointment-history">Appointment History</option>
+                                    <option value="appointment-trends">Appointment Trends</option>
+                                    <option value="doctor-performance">Doctor Performance</option>
+                                    <option value="no-show-analysis">No-Show Analysis</option>
+                                </select>
+                            </div>
+                            <div class="config-group">
+                                <label for="reportDateFrom">Date Range</label>
+                                <div class="date-range-inputs">
+                                    <input type="date" id="reportDateFrom" class="form-input">
+                                    <span>to</span>
+                                    <input type="date" id="reportDateTo" class="form-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="config-row">
+                            <div class="config-group">
+                                <label>Filters</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="reportFilters" value="by-doctor">
+                                        <span>By Doctor</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="reportFilters" value="by-status">
+                                        <span>By Status</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="reportFilters" value="by-location">
+                                        <span>By Location</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="report-visualizations">
+                        <h3>Data Visualizations</h3>
+                        <div class="chart-container">
+                            <div class="chart-placeholder">
+                                <i class="fas fa-chart-bar"></i>
+                                <p>Chart will be generated based on selected parameters</p>
+                            </div>
+                        </div>
+                        <div class="chart-types">
+                            <button class="chart-type-btn active" data-chart="bar">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Bar Chart</span>
+                            </button>
+                            <button class="chart-type-btn" data-chart="line">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Line Graph</span>
+                            </button>
+                            <button class="chart-type-btn" data-chart="pie">
+                                <i class="fas fa-chart-pie"></i>
+                                <span>Pie Chart</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="export-options">
+                        <h3>Export Options</h3>
+                        <div class="export-buttons">
+                            <button class="export-btn" data-format="csv">
+                                <i class="fas fa-file-csv"></i>
+                                <span>CSV</span>
+                            </button>
+                            <button class="export-btn" data-format="pdf">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>PDF</span>
+                            </button>
+                            <button class="export-btn" data-format="excel">
+                                <i class="fas fa-file-excel"></i>
+                                <span>Excel</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="generateReportBtn">
+                    <i class="fas fa-chart-line"></i>
+                    Generate Report
+                </button>
+                <button class="btn-secondary" data-modal="reportsModal">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment History Log Modal -->
+    <div id="historyLogModal" class="modal-overlay hidden">
+        <div class="modal-container large">
+            <div class="modal-header">
+                <h2>Appointment History & Audit Log</h2>
+                <button class="modal-close" data-modal="historyLogModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="history-content">
+                    <div class="history-filters">
+                        <div class="filter-row">
+                            <div class="filter-group">
+                                <label for="historyDateFrom">Date Range</label>
+                                <div class="date-range-inputs">
+                                    <input type="date" id="historyDateFrom" class="form-input">
+                                    <span>to</span>
+                                    <input type="date" id="historyDateTo" class="form-input">
+                                </div>
+                            </div>
+                            <div class="filter-group">
+                                <label for="historyStatus">Status</label>
+                                <select id="historyStatus" class="form-select">
+                                    <option value="">All Status</option>
+                                    <option value="scheduled">Scheduled</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="canceled">Canceled</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="historyAction">Action</label>
+                                <select id="historyAction" class="form-select">
+                                    <option value="">All Actions</option>
+                                    <option value="created">Created</option>
+                                    <option value="modified">Modified</option>
+                                    <option value="canceled">Canceled</option>
+                                    <option value="completed">Completed</option>
+                                </select>
+                            </div>
+                            <button class="btn-primary" id="applyHistoryFilters">
+                                <i class="fas fa-filter"></i>
+                                Apply
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="history-entries">
+                        <div class="history-entry">
+                            <div class="entry-time">
+                                <i class="fas fa-clock"></i>
+                                <span>Today 09:45 AM</span>
+                            </div>
+                            <div class="entry-action created">
+                                <i class="fas fa-plus-circle"></i>
+                                <span>Appointment Scheduled</span>
+                            </div>
+                            <div class="entry-details">
+                                <div class="entry-user">by Reception Staff</div>
+                                <div class="entry-info">A001 - John Doe with Dr. Lee</div>
+                            </div>
+                            <div class="entry-audit">
+                                <div class="audit-detail">User: reception_001</div>
+                                <div class="audit-detail">IP: 192.168.1.45</div>
+                            </div>
+                        </div>
+
+                        <div class="history-entry">
+                            <div class="entry-time">
+                                <i class="fas fa-clock"></i>
+                                <span>Today 10:15 AM</span>
+                            </div>
+                            <div class="entry-action modified">
+                                <i class="fas fa-user-check"></i>
+                                <span>Patient Checked In</span>
+                            </div>
+                            <div class="entry-details">
+                                <div class="entry-user">by System</div>
+                                <div class="entry-info">Patient arrived on time</div>
+                            </div>
+                            <div class="entry-audit">
+                                <div class="audit-detail">User: system</div>
+                                <div class="audit-detail">Auto-generated</div>
+                            </div>
+                        </div>
+
+                        <div class="history-entry">
+                            <div class="entry-time">
+                                <i class="fas fa-clock"></i>
+                                <span>Today 10:30 AM</span>
+                            </div>
+                            <div class="entry-action completed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Appointment Completed</span>
+                            </div>
+                            <div class="entry-details">
+                                <div class="entry-user">by Dr. Lee</div>
+                                <div class="entry-info">Consultation completed successfully</div>
+                            </div>
+                            <div class="entry-audit">
+                                <div class="audit-detail">User: dr_lee_001</div>
+                                <div class="audit-detail">IP: 192.168.1.67</div>
+                            </div>
+                        </div>
+
+                        <div class="history-entry">
+                            <div class="entry-time">
+                                <i class="fas fa-clock"></i>
+                                <span>Yesterday 14:00 PM</span>
+                            </div>
+                            <div class="entry-action modified">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Appointment Rescheduled</span>
+                            </div>
+                            <div class="entry-details">
+                                <div class="entry-user">by Admin User</div>
+                                <div class="entry-info">Moved from 13:00 to 14:00</div>
+                            </div>
+                            <div class="entry-audit">
+                                <div class="audit-detail">User: admin_super</div>
+                                <div class="audit-detail">IP: 41.90.123.87</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="exportAuditLogBtn">
+                    <i class="fas fa-download"></i>
+                    Export Audit Log
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar View Modal -->
+    <div id="calendarViewModal" class="modal-overlay hidden">
+        <div class="modal-container extra-large">
+            <div class="modal-header">
+                <h2>Interactive Calendar View</h2>
+                <button class="modal-close" data-modal="calendarViewModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="calendar-view-content">
+                    <div class="calendar-controls">
+                        <div class="view-controls">
+                            <button class="view-btn" data-view="day">Day</button>
+                            <button class="view-btn active" data-view="week">Week</button>
+                            <button class="view-btn" data-view="month">Month</button>
+                        </div>
+                        <div class="navigation-controls">
+                            <button class="nav-btn" id="prevPeriod">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <h3 id="currentPeriod">November 2024</h3>
+                            <button class="nav-btn" id="nextPeriod">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="legend">
+                            <div class="legend-item">
+                                <div class="legend-color scheduled"></div>
+                                <span>Scheduled</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color canceled"></div>
+                                <span>Canceled</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color completed"></div>
+                                <span>Completed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calendar-display">
+                        <div class="calendar-week-view">
+                            <div class="time-column">
+                                <div class="time-slot">8:00</div>
+                                <div class="time-slot">9:00</div>
+                                <div class="time-slot">10:00</div>
+                                <div class="time-slot">11:00</div>
+                                <div class="time-slot">12:00</div>
+                                <div class="time-slot">13:00</div>
+                                <div class="time-slot">14:00</div>
+                                <div class="time-slot">15:00</div>
+                                <div class="time-slot">16:00</div>
+                                <div class="time-slot">17:00</div>
+                            </div>
+                            <div class="days-grid">
+                                <div class="day-column">
+                                    <div class="day-header">Mon 25</div>
+                                    <div class="appointment-slot scheduled" data-time="10:00">
+                                        <div class="appointment-info">
+                                            <div class="appointment-patient">Jane Doe</div>
+                                            <div class="appointment-doctor">Dr. Park</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="day-column">
+                                    <div class="day-header">Tue 26</div>
+                                    <div class="appointment-slot completed" data-time="11:00">
+                                        <div class="appointment-info">
+                                            <div class="appointment-patient">Bob Smith</div>
+                                            <div class="appointment-doctor">Dr. Kim</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="day-column active">
+                                    <div class="day-header">Wed 27 (Today)</div>
+                                    <div class="appointment-slot scheduled" data-time="10:00">
+                                        <div class="appointment-info">
+                                            <div class="appointment-patient">John Doe</div>
+                                            <div class="appointment-doctor">Dr. Lee</div>
+                                        </div>
+                                    </div>
+                                    <div class="appointment-slot canceled" data-time="11:00">
+                                        <div class="appointment-info">
+                                            <div class="appointment-patient">Jane Smith</div>
+                                            <div class="appointment-doctor">Dr. Park</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="day-column">
+                                    <div class="day-header">Thu 28</div>
+                                </div>
+                                <div class="day-column">
+                                    <div class="day-header">Fri 29</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calendar-instructions">
+                        <p>
+                            <i class="fas fa-info-circle"></i>
+                            Click on appointments for details • Drag to reschedule • Click empty slots to add new
+                            appointments
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Dark Mode Toggle -->
+            <div class="footer-section">
+                <button id="darkModeToggle" class="dark-mode-btn">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-section social-media">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                        class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer"
+                        class="social-link twitter">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer" class="social-link facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                        class="social-link youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                        class="social-link linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Corporate Website Link -->
+            <div class="footer-section">
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer" class="corporate-link">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Corporate Website</span>
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-section copyright">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="appointments.js"></script>
+</body>
+
+</html>

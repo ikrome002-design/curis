@@ -1,0 +1,71 @@
+#### 1. **Consultations**
+
+
+
+
+Here is a clear and direct expansion of the dynamic MVP features and functionalities within the "Consultations" page of the Doctor’s account in the Curis by Citrus SaaS platform:
+________________________________________
+1.	Consultations Hub – MVP Functional Overview
+
+
+The Consultations page serves as the Doctor’s centralized interface for managing and conducting both in-person and online consultations, integrating real-time access to patient data and seamless communication.
+________________________________________
+Core Functionalities
+
+
+a.	Consultation List View
+•	Displays a structured list of all consultations:
+o	Upcoming, Ongoing, Completed, and Missed
+•	Each entry shows:
+o	Patient name & photo
+o	Scheduled date/time
+o	Consultation mode (Online via Google Meet / In-clinic)
+o	Status badge (e.g., Scheduled, Ongoing, Completed, Missed)
+•	Supports search and filters by:
+o	Date range
+o	Patient name
+o	Status
+________________________________________
+b.	Start/Join Consultation
+•	For online appointments:
+o	"Join Consultation" button opens a Google Meet session in a new tab.
+•	For in-clinic:
+o	"Start Consultation" logs the session as active for tracking.
+________________________________________
+c.	Access to Medical Records
+•	While in a consultation, doctor can:
+o	Instantly view patient’s medical history, allergies, past prescriptions, chronic conditions, and previous visit notes.
+o	No need to switch tabs—data opens in a side drawer or modal.
+________________________________________
+d.	Real-time Notes & Observations
+•	Live editable note-taking during the session:
+o	Diagnosis
+o	Observations
+o	Vitals
+o	Next steps
+•	Notes are autosaved and directly linked to the patient’s record.
+________________________________________
+e.	Post-Consultation Summary
+•	Upon ending a session, doctor can:
+o	Review notes
+o	Mark the consultation as Completed
+o	Trigger follow-up creation or send prescription if needed
+o	Attach related documents or lab results
+________________________________________
+f.	Alerts & Reminders
+•	Smart reminders show:
+o	Countdown to upcoming consultations
+o	Notifications for missed consultations
+o	Alerts when a patient joins an online session
+________________________________________
+Role-Specific Limitations
+
+
+•	Doctor can only view/manage consultations assigned to them.
+•	Cannot reassign or cancel consultations (Clinic Owner or Receptionist has control).
+•	Consultation records are audit-locked once marked complete—can only be edited with permission from Clinic Owner.
+________________________________________
+This page ensures that doctors can seamlessly deliver consultations—both virtual and in-person—while having all relevant medical context and documentation tools at their fingertips, without breaching access boundaries set by the system.
+
+
+

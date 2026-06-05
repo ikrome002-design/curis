@@ -1,0 +1,173 @@
+flowchart TD
+    %% Dashboard Core
+    Dashboard[Doctor Dashboard<br/>Central Command Panel] --> TodayPanel[Today's Appointments Panel<br/>Real-time Dynamic List]
+    Dashboard --> PendingConsult[Pending Consultations Summary<br/>Upcoming & Missed]
+    Dashboard --> QuickAccess[Quick Access Widgets<br/>Recent Patients & Stats]
+    Dashboard --> GoogleMeet[Google Meet Links<br/>Embedded Access]
+    Dashboard --> Broadcasts[Clinic Broadcasts<br/>Internal Memos]
+    Dashboard --> ActivitySnap[Activity Snapshot<br/>Daily Statistics]
+    Dashboard --> NotifPreview[Notification Center Preview<br/>Top 5 Alerts]
+    
+    %% Today's Appointments Panel Details
+    TodayPanel --> TAP1[Patient Profile<br/>Name & Picture]
+    TAP1 -->|Click| OpenPatientRecord[Opens Patient Record Page<br/>Full Medical History]
+    
+    TodayPanel --> TAP2[Appointment Info<br/>Time/Type/Status/Reason]
+    TAP2 --> StatusDisplay[Status Badges<br/>Pending/Ongoing/Completed/Cancelled]
+    
+    TodayPanel --> TAP3[Action Buttons]
+    TAP3 --> StartConsultBtn[Start Consultation Button]
+    StartConsultBtn -->|Click| LaunchConsultation[Launch Consultation Session<br/>→ Consultations Page]
+    
+    TAP3 --> ViewDetailsBtn[View Details Button]
+    ViewDetailsBtn -->|Click| ApptDetailModal[Appointment Detail Modal<br/>Popup Window]
+    
+    %% Appointment Detail Modal
+    ApptDetailModal --> ADM1[Patient Information<br/>Name/Age/Gender/ID]
+    ApptDetailModal --> ADM2[Schedule Details<br/>Time/Status/Type/Receptionist]
+    ApptDetailModal --> ADM3[Consultation Link<br/>Google Meet URL if Online]
+    ApptDetailModal --> ADM4[Modal Actions]
+    
+    ADM4 --> ViewFullRecordBtn[View Full Record Button]
+    ViewFullRecordBtn -->|Click| PatientRecordsPage[→ Patient Records Page<br/>Complete Medical History]
+    
+    ADM4 --> PreConsultNotesBtn[Add Pre-consultation Notes]
+    PreConsultNotesBtn -->|Click| NotesEditorModal[Notes Editor Modal<br/>Rich Text Editor Popup]
+    NotesEditorModal --> SaveNotes[Save Notes<br/>Updates Patient Record]
+    
+    ADM4 --> StartFromModal[Start Consultation]
+    StartFromModal -->|Click| BeginSession[Begin Session<br/>→ Consultations Page]
+    
+    %% Pending Consultations Summary
+    PendingConsult --> PC1[Next 3 Upcoming<br/>Chronological List]
+    PC1 --> UpcomingDetails[Patient/Time/Type Display]
+    UpcomingDetails -->|Click Patient| OpenPatientRecord2[→ Patient Record Page]
+    
+    PendingConsult --> PC2[Missed Appointments<br/>Auto-updated List]
+    PC2 --> NoShowAlert[No-show Alert<br/>Follow-up Required Flag]
+    NoShowAlert -->|Click| FollowUpModal[Follow-up Notes Modal<br/>Required Action]
+    
+    PC2 --> MissedAlert[24+ Hour Alert<br/>Unresolved Warning]
+    MissedAlert -->|Click| ConsultationPage[→ Consultations Page<br/>Resolve Missed Session]
+    
+    %% Quick Access Widgets
+    QuickAccess --> RecentPatients[Recent Patients Tiles<br/>3-5 Patient Cards]
+    RecentPatients --> PatientTile[Patient Info<br/>Name/Visit Date]
+    PatientTile -->|Click| PatientRecordsQuick[→ Patient Records Page]
+    
+    RecentPatients --> QuickActions[Tile Actions]
+    QuickActions --> AddNotesQuick[Add Notes Button]
+    AddNotesQuick -->|Click| QuickNotesEditor[Quick Notes Editor<br/>Popup Form]
+    
+    QuickActions --> ViewHistoryBtn[View History Button]
+    ViewHistoryBtn -->|Click| TimelineModal[Patient Timeline Modal<br/>Chronological History]
+    
+    QuickAccess --> PrescriptionWidget[Prescriptions Summary<br/>Today's Count]
+    PrescriptionWidget --> PrescCount[Issued Count Display]
+    PrescCount -->|Click| ViewFullListBtn[View Full List Button]
+    ViewFullListBtn -->|Click| PrescriptionsPage[→ Prescriptions Page<br/>All Prescriptions]
+    
+    PrescriptionWidget --> DuplicatePresc[Duplicate Prescription]
+    DuplicatePresc -->|Click| ReissueModal[Quick Re-issue Modal<br/>Previous Prescription Copy]
+    ReissueModal --> ConfirmReissue[Confirm & Issue<br/>Creates New Prescription]
+    
+    QuickAccess --> LabResultsWidget[Lab Results Alert<br/>New Uploads]
+    LabResultsWidget --> LabNotification[Upload Count Badge]
+    LabNotification -->|Click| ViewLabsBtn[View Lab Results]
+    ViewLabsBtn -->|Click| DocumentViewer[Document Viewer ModalDisplays documents grouped by type (Lab/Scans/Referrals)]
+    DocumentViewer --> DownloadOption[Download/Print Options]
+    
+    %% Google Meet Integration
+    GoogleMeet --> CountdownTimer[Countdown Timer<br/>Next Hour Alert]
+    CountdownTimer --> TimeDisplay[Time Until Session<br/>Live Countdown]
+    
+    GoogleMeet --> OneClickJoin[One-Click Join Button]
+    OneClickJoin -->|Click| LaunchMeet[Launch Google Meet<br/>New Tab Opens]
+    LaunchMeet --> MeetSession[External Google Meet<br/>Video Consultation]
+    
+    %% Clinic Broadcasts
+    Broadcasts --> SystemUpdates[System Updates Alert<br/>Platform Notifications]
+    SystemUpdates -->|Click| UpdateDetails[Update Details Modal<br/>Change Information]
+    
+    Broadcasts --> ScheduleChanges[Schedule Changes<br/>Clinic Hours Modified]
+    ScheduleChanges -->|Click| ViewSchedule[Schedule Details Popup<br/>New Timing Info]
+    
+    Broadcasts --> StaffMeetings[Staff Meetings<br/>Team Announcements]
+    StaffMeetings -->|Click| MeetingDetails[Meeting Info Modal<br/>Date/Time/Agenda]
+    
+    %% Activity Snapshot
+    ActivitySnap --> ConsultCounter[Consultations Counter<br/>Today's Total]
+    ConsultCounter -->|Click| ConsultListToday[→ Appointments Page<br/>Filtered by Today]
+    
+    ActivitySnap --> CompletionStatus[Completion Status<br/>Finished Count]
+    CompletionStatus -->|Click| CompletedAppts[→ Appointments Page<br/>Filtered by Completed]
+    
+    ActivitySnap --> OutstandingRecords[Outstanding Records<br/>Pending Updates]
+    OutstandingRecords -->|Click| PendingRecordsList[Patient Records List<br/>Requiring Updates]
+    
+    ActivitySnap --> PrescSummary[Prescription Summary<br/>Issued vs Pending]
+    PrescSummary -->|Click| PrescriptionStats[→ Prescriptions Page<br/>Detailed View]
+    
+    %% Notification Center Preview
+    NotifPreview --> ApptChanges[Appointment Changes<br/>Schedule Modifications]
+    ApptChanges -->|Click| ApptChangeDetail[Change Detail Modal<br/>Old vs New Time]
+    ApptChangeDetail --> AcceptChange[Accept/Acknowledge]
+    
+    NotifPreview --> LabUploads[Lab Result Uploads<br/>New Documents]
+    LabUploads -->|Click| ViewNewLabs[Document Viewer<br/>Latest Uploads]
+    ViewNewLabs --> LinkToPatient[→ Patient Record<br/>With Document]
+    
+    NotifPreview --> StaffComments[Staff Comments<br/>Collaboration Notes]
+    StaffComments -->|Click| CommentThread[Comment Thread Modal<br/>Discussion View]
+    CommentThread --> ReplyOption[Reply to Thread]
+    
+    NotifPreview --> FollowUps[Patient Follow-ups<br/>Care Continuation]
+    FollowUps -->|Click| FollowUpDetails[Follow-up Details<br/>Required Actions]
+    FollowUpDetails --> CreateFollowUp[Create Appointment<br/>→ Request to Receptionist]
+    
+    NotifPreview --> ViewAllNotif[View All Button]
+    ViewAllNotif -->|Click| NotificationPage[→ Alerts & Collaboration Page<br/>Complete Notification Feed]
+    
+    %% Main Navigation Links
+    Dashboard --> MainNav[Main Navigation Menu]
+    MainNav --> NavAppt[Appointments]
+    NavAppt -->|Click| AppointmentsPage[→ Appointments Page]
+    
+    MainNav --> NavRecords[Patient Records]
+    NavRecords -->|Click| PatientRecordsMain[→ Patient Records Page]
+    
+    MainNav --> NavConsult[Consultations]
+    NavConsult -->|Click| ConsultationsPage[→ Consultations Page]
+    
+    MainNav --> NavPresc[Prescriptions]
+    NavPresc -->|Click| PrescriptionsMain[→ Prescriptions Page]
+    
+    MainNav --> NavAlerts[Alerts & Collaboration]
+    NavAlerts -->|Click| AlertsPage[→ Alerts & Collaboration Page]
+    
+    MainNav --> NavProfile[Profile Settings]
+    NavProfile -->|Click| ProfilePage[→ Profile Settings Page<br/>Limited Options]
+    
+    %% Real-time Synchronization Indicators
+    Dashboard --> RealTimeSync[Real-time Data Sync]
+    RealTimeSync --> AutoRefresh[Auto-refresh Every 30s<br/>Status Updates]
+    RealTimeSync --> LiveBadges[Live Status Badges<br/>Instant Updates]
+    RealTimeSync --> ToastNotif[Toast Notifications<br/>Important Changes]
+    
+    %% Access Control
+    Dashboard --> AccessControl[Access Control Layer]
+    AccessControl --> ClinicSpecific[Clinic-Specific Data Only]
+    AccessControl --> AssignedPatients[Assigned Patients Only]
+    AccessControl --> NoFinancial[No Financial Access]
+    AccessControl --> ReadOnlyBroadcasts[Read-only Broadcasts]
+    
+    %% Styling for clarity
+    classDef pageStyle fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef modalStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef actionStyle fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef alertStyle fill:#ffebee,stroke:#b71c1c,stroke-width:2px
+    
+    class Dashboard,AppointmentsPage,PatientRecordsMain,ConsultationsPage,PrescriptionsMain,AlertsPage,ProfilePage pageStyle
+    class ApptDetailModal,NotesEditorModal,FollowUpModal,TimelineModal,ReissueModal,DocumentViewer,UpdateDetails,ViewSchedule,MeetingDetails,ApptChangeDetail,CommentThread modalStyle
+    class StartConsultBtn,ViewDetailsBtn,ViewFullRecordBtn,PreConsultNotesBtn,AddNotesQuick,ViewHistoryBtn,ViewFullListBtn,ViewLabsBtn,OneClickJoin,ViewAllNotif actionStyle
+    class NoShowAlert,MissedAlert,CountdownTimer,OutstandingRecords alertStyle

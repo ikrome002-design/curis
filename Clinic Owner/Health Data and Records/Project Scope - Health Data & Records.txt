@@ -1,0 +1,98 @@
+CLINIC OWNER - CURIS.
+
+
+---
+
+For the Minimum Viable Product (MVP) of the **Health Data & Records** page within the **clinic account user** in *Curis by Citrus*, the focus is on providing structured tools that enable clinic owners to efficiently handle patient information, maintain medical histories, and ensure secure record-keeping for seamless healthcare delivery. This page is designed to facilitate organized patient data access while supporting operational efficiency and compliance with medical record standards. Here's a breakdown of the essential features available on this management page:  
+
+________________________________________  
+### **Core MVP Features of the Health Data & Records Page**
+
+
+Based on the outlined MVP structure for the Clinic Owner account in the Curis by Citrus platform, the "Health Data & Records" page within the MVP plays a foundational but dynamic role in enabling clinical efficiency and oversight. Here's an expanded breakdown of the dynamic features and functionalities of this section:
+________________________________________
+1. Patient Registration & Profile Management
+
+
+•	Manual Registration: Clinic Owner and authorized staff (e.g., Receptionist) can register new patients using a structured input form.
+•	Profile Fields Include:
+o	Full Name, Phone Number, Email
+o	Gender, Date of Birth, ID/Passport Number
+o	Emergency Contact Details
+o	Insurance Details (if applicable)
+•	Editable Basic Info: Patients can log in and update basic details (e.g., phone, email, address) without compromising medical data integrity.
+
+________________________________________
+2. Centralized Patient Directory
+
+
+•	Searchable List View of all registered patients by name, phone number, or patient ID.
+•	Filter & Sort Options:
+o	By last visit date, registration date, gender, or assigned doctor.
+•	Quick Actions: View patient profile, appointment history, or billing summary from the directory.
+
+________________________________________
+3. Medical History Access (High-Level Oversight)
+
+
+•	View-Only Access to Medical Records:
+o	Clinic Owner can see structured metadata such as:
+	Visit summaries
+	Diagnoses
+	Lab test types (not results)
+	Medications prescribed (not dosage instructions)
+o	No access to sensitive doctor notes or private consultations to maintain patient-doctor confidentiality.
+•	Record Timeline View:
+o	Chronological overview of medical interactions (appointments, procedures, prescriptions).
+
+________________________________________
+4. Appointment & Billing Linkage
+
+
+•	For each patient, view:
+o	Appointment History – Status, date, assigned staff, feedback.
+o	Invoices & Payments – Services availed, invoice totals, payment status (paid, unpaid, partially paid).
+
+________________________________________
+5. Patient Activity Monitoring
+
+
+•	Last Seen/Active timestamps
+•	Track number of visits, cancellations, and reschedules
+•	Feedback history and ratings (if enabled)
+
+________________________________________
+6. Patient Self-Service Sync
+
+
+•	Enable patients to:
+o	Update their contact details securely.
+o	View their medical summary and appointment records.
+o	Download their billing/invoice history.
+
+________________________________________
+7. Staff-Patient Relationship Overview
+
+
+•	See which Doctor or Receptionist has handled specific patients.
+•	Identify patient load per staff member for workload balancing.
+
+________________________________________
+8. Export & Data Portability
+
+
+•	Clinic Owner can export filtered patient records (non-sensitive data) in CSV or PDF format for reporting or backup.
+
+________________________________________
+Admin & Compliance Layer
+
+•	Audit Trail: Every modification or view of a patient record is logged and tied to the user who accessed or modified it.
+•	Role-Based Access Control:
+o	Only Clinic Owners and authorized staff can access patient profiles.
+o	Medical record visibility follows strict hierarchy: Clinic Owner (high-level only), Doctor (full access), Receptionist (limited view).
+________________________________________
+
+This dynamic Health Data & Records module ensures Clinic Owners maintain full administrative oversight without breaching clinical privacy, enabling streamlined workflows, better continuity of care, and real-time access to operational data tied to each patient.
+
+
+

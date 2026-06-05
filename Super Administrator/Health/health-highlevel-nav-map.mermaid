@@ -1,0 +1,98 @@
+graph TB
+    %% Main Health Page
+    HealthPage["🏥 Health (High-Level) Page<br/>Medical Records Audit & Compliance"]
+    
+    %% Back Navigation
+    HealthPage --> BackNav["← Back to Dashboard"]
+    BackNav --> Dashboard["🏠 Super Admin Dashboard"]
+    
+    %% Clinic Owner Selection (Required)
+    HealthPage --> ClinicSelect["🏥 Select Clinic Owner<br/>(Required First Step)"]
+    ClinicSelect --> |Click| ClinicSelector["Clinic Selection Modal<br/>──────────────<br/>🔍 Search: [Clinic Name/ID]<br/>• Recent Clinics:<br/>  - Clinic A (Dr. Smith)<br/>  - Clinic B (Dr. Jones)<br/>  - Clinic C (Dr. Brown)<br/>• All Clinics List:<br/>  📋 [Scrollable List]<br/>  □ Filter by Region<br/>  □ Filter by Status<br/>• Select Clinic ✓"]
+    
+    %% After Clinic Selection
+    ClinicSelector --> |Select| HealthDashboard["Health Records Dashboard<br/>─────────────────<br/>🏥 [Clinic Name] - [Owner Name]<br/>🔒 READ-ONLY ACCESS<br/>⚠️ No Personal Info Visible"]
+    
+    %% Medical Record Overview
+    HealthDashboard --> RecordOverview["📊 Medical Record Overview"]
+    RecordOverview --> |View| OverviewStats["Real-Time Statistics<br/>────────────<br/>• Total Records: [Count]<br/>• Records Accessed Today: [Count]<br/>• Records Modified (Week): [Count]<br/>• Active Doctors: [Count]<br/>• Recent Activity:<br/>  - New Prescriptions: [Count]<br/>  - Updated Diagnoses: [Count]<br/>  - Lab Results Added: [Count]"]
+    
+    %% Medical Records Audit
+    HealthDashboard --> MedicalAudit["🔍 Medical Records Audit"]
+    MedicalAudit --> |Access| AuditPanel["Audit Panel (READ-ONLY)<br/>──────────────<br/>🔒 View-Only Mode Active<br/>• Browse Records:<br/>  - Prescriptions 💊<br/>  - Diagnoses 🩺<br/>  - Lab Results 🧪<br/>  - Treatment Plans 📋<br/>• Filter by:<br/>  - Date Range<br/>  - Record Type<br/>  - Doctor<br/>• ⚠️ No Edit Buttons<br/>• Export Audit Report 📥"]
+    
+    %% Access Permissions Log
+    MedicalAudit --> AccessLog["Access Permissions Log<br/>─────────────<br/>• Who Accessed What:<br/>  🕐 Dr. Lee - File #12345 - 10:30<br/>  🕐 Nurse Kim - File #67890 - 11:15<br/>  🕐 Reception - File #11111 - 12:00<br/>• Access Details:<br/>  - User ID & Role<br/>  - Date/Time<br/>  - Records Viewed<br/>  - Duration<br/>  - IP Address<br/>• Export Access Log 📥"]
+    
+    %% Compliance Monitoring
+    HealthDashboard --> ComplianceCheck["⚖️ Compliance Monitoring"]
+    ComplianceCheck --> |Monitor| CompliancePanel["Compliance Dashboard<br/>──────────────<br/>• Change Logs:<br/>  - Prescription Updates<br/>  - Diagnosis Changes<br/>  - Record Deletions<br/>• Audit Trail:<br/>  🕐 [Timestamp] - [User] - [Action]<br/>  🕐 Today 09:45 - Dr. Lee - Added Rx<br/>  🕐 Today 10:30 - Dr. Park - Updated Dx<br/>• Filter by:<br/>  - Date Range<br/>  - Change Type<br/>  - User<br/>• Compliance Score: [%]<br/>• Generate Report 📊"]
+    
+    %% Patient Records Overview
+    HealthDashboard --> PatientRecords["👤 Patient Records Overview"]
+    PatientRecords --> |Search| PatientSearch["Patient Record Search<br/>─────────────<br/>🔍 Search by File Number:<br/>  [Enter File #]<br/>• ⚠️ Privacy Notice:<br/>  ❌ No Names Visible<br/>  ❌ No Phone Numbers<br/>  ❌ No Email Addresses<br/>  ❌ No Profile Pictures<br/>  ✅ File Numbers Only<br/>• Search ✓"]
+    
+    PatientSearch --> |View| RecordView["Patient Record View<br/>──────────────<br/>📁 File Number: #12345<br/>🔒 READ-ONLY MODE<br/>• Medical History:<br/>  - Recent Prescriptions 💊<br/>  - Diagnoses History 🩺<br/>  - Lab Results 🧪<br/>  - Treatment Records 📋<br/>• High-Level Summary:<br/>  - Last Visit: [Date]<br/>  - Primary Diagnosis: [Code]<br/>  - Active Medications: [Count]<br/>• ⚠️ Personal Info Hidden<br/>• Print Summary 🖨️"]
+    
+    %% Health Reports & Analytics
+    HealthDashboard --> HealthReports["📊 Health Reports"]
+    HealthReports --> |Generate| ReportsPanel["Health Analytics Panel<br/>──────────────<br/>• Report Types:<br/>  ○ Access Statistics<br/>  ○ Modification Trends<br/>  ○ Compliance Summary<br/>  ○ Audit Overview<br/>• Metrics:<br/>  - Record Access Frequency<br/>  - Peak Access Times<br/>  - User Activity Patterns<br/>  - Compliance Rates<br/>• Visualizations:<br/>  📊 [Bar Charts]<br/>  📈 [Trend Lines]<br/>  🥧 [Pie Charts]<br/>• Export:<br/>  📥 CSV | PDF | Excel"]
+    
+    %% Notifications & Alerts
+    HealthDashboard --> HealthAlerts["🔔 Health Alerts"]
+    HealthAlerts --> |Configure| AlertsPanel["Alert Configuration<br/>────────────<br/>• Alert Types:<br/>  ☑️ Record Modifications<br/>  ☑️ Unusual Access Patterns<br/>  ☑️ Compliance Violations<br/>  ☑️ Prescription Changes<br/>• Alert Details:<br/>  - What changed<br/>  - Who made change<br/>  - When it happened<br/>• Notification Channels:<br/>  ☑️ Dashboard Alert<br/>  ☑️ Email<br/>  ☑️ SMS<br/>• Alert History 📜"]
+    
+    %% Privacy & Restrictions Panel
+    HealthDashboard --> PrivacyPanel["🔐 Privacy & Restrictions"]
+    PrivacyPanel --> |View| PrivacyInfo["Access Restrictions<br/>─────────────<br/>🔒 Super Admin Limitations:<br/>• ❌ Cannot Edit Records<br/>• ❌ Cannot View Names<br/>• ❌ Cannot See Contact Info<br/>• ❌ Cannot Access Photos<br/>• ✅ Can View Medical Data<br/>• ✅ Can Audit Access<br/>• ✅ Can Monitor Compliance<br/>• ✅ Can Generate Reports<br/>─────────────<br/>⚠️ All Actions Logged"]
+    
+    %% Integration with Billing
+    HealthDashboard --> BillingLink["💰 Billing Integration"]
+    BillingLink --> |Check| BillingVerify["Billing Verification<br/>────────────<br/>• Cross-Reference:<br/>  - Medical Procedures<br/>  - Billing Records<br/>• Verify Charges:<br/>  ✅ Prescription → Invoice<br/>  ✅ Lab Test → Charge<br/>  ✅ Treatment → Bill<br/>• Discrepancies:<br/>  ⚠️ Unbilled Services: [Count]<br/>  ⚠️ Missing Charges: [List]<br/>• Generate Report 📊<br/>• → Go to Billing Page"]
+    
+    %% Quick Actions
+    HealthDashboard --> QuickActions["⚡ Quick Actions"]
+    QuickActions --> QuickAudit["🔍 Quick Audit"]
+    QuickActions --> QuickCompliance["⚖️ Compliance Check"]
+    QuickActions --> QuickExport["📥 Export Today's Log"]
+    QuickActions --> QuickAlert["🔔 View Alerts"]
+    
+    %% Tab Navigation
+    HealthDashboard --> TabNav["Tab Navigation"]
+    TabNav --> AuditTab["🔍 Audit Logs"]
+    TabNav --> ComplianceTab["⚖️ Compliance"]
+    TabNav --> RecordsTab["📁 Records"]
+    TabNav --> ReportsTab["📊 Reports"]
+    
+    %% Real-time Updates
+    HealthDashboard -.->|WebSocket| RealTimeSync["🔄 Real-Time Updates<br/>────────────<br/>• New record access<br/>• Record modifications<br/>• Compliance alerts<br/>• Access violations<br/>• Auto-refresh logs"]
+    
+    %% Integration with Other Pages
+    HealthPage --> MainNav["Main Navigation"]
+    MainNav --> UsersPage["→ Curis Users"]
+    MainNav --> ApptPage["→ Appointment Oversight"]
+    MainNav --> BillingPage["→ Billings & Payments"]
+    MainNav --> SettingsPage["→ Settings"]
+    MainNav --> CompliancePage["→ Compliance Hub"]
+    
+    %% Links from Billing
+    BillingVerify --> BillingPage
+    
+    %% Styling
+    classDef mainPage fill:#1E3A5F,stroke:#0D1B2A,stroke-width:4px,color:#fff,font-weight:bold
+    classDef selector fill:#FF6B35,stroke:#C73E1D,stroke-width:3px,color:#fff
+    classDef panel fill:#7B2CBF,stroke:#5A189A,stroke-width:2px,color:#fff
+    classDef modal fill:#FF6B35,stroke:#C73E1D,stroke-width:2px,color:#fff
+    classDef readonly fill:#6B7280,stroke:#4B5563,stroke-width:2px,color:#fff
+    classDef privacy fill:#DC2626,stroke:#991B1B,stroke-width:2px,color:#fff
+    classDef nav fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
+    classDef realtime fill:#10B981,stroke:#059669,stroke-width:2px,color:#fff
+    
+    class HealthPage,HealthDashboard mainPage
+    class ClinicSelect,ClinicSelector selector
+    class RecordOverview,MedicalAudit,ComplianceCheck,PatientRecords,HealthReports,HealthAlerts,BillingLink,TabNav,QuickActions panel
+    class OverviewStats,AuditPanel,AccessLog,CompliancePanel,PatientSearch,RecordView,ReportsPanel,AlertsPanel,BillingVerify modal
+    class AuditPanel,RecordView,AccessLog readonly
+    class PrivacyPanel,PrivacyInfo privacy
+    class MainNav,BackNav,Dashboard,UsersPage,ApptPage,BillingPage,SettingsPage,CompliancePage nav
+    class RealTimeSync realtime

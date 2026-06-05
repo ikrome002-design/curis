@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started | Curis</title>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="get_started.css">
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo-container">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Landing Page\landing_page.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <h1>Welcome Back to Curis</h1>
+                <h2>Your Clinic's Front Desk Powerhouse—Just One Click Away</h2>
+                <p class="welcome-text">You're just a few seconds away from a faster, smarter workday.<br>
+                    Log in to manage patients, schedule appointments, and stay ahead—all from one easy-to-use dashboard.
+                </p>
+            </section>
+
+            <!-- Login Process Container - Contains all login states -->
+            <section class="login-process">
+                <!-- Email Input Form - Initial State -->
+                <div id="login-page" class="login-state active">
+                    <div class="form-container">
+                        <div class="form-header">
+                            <h3>Access Your Account</h3>
+                            <p>Enter your work email to receive a verification code</p>
+                        </div>
+
+                        <form id="email-form" class="email-input-form">
+                            <div class="form-group">
+                                <label for="email">Work Email</label>
+                                <input type="email" id="email" name="email" placeholder="yourname@clinic.com" required>
+                                <div id="email-error" class="error-message"></div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" id="send-code-btn" class="primary-button">
+                                    <span class="button-text">Send Verification Code</span>
+                                    <span class="button-loader"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Verification Screen - Shows after email submission -->
+                <div id="verification-screen" class="login-state">
+                    <div class="form-container">
+                        <div class="form-header">
+                            <div class="success-icon"></div>
+                            <h3>Code Sent!</h3>
+                            <p>We've sent a verification code to <span id="user-email">your email</span></p>
+                            <p class="hint-text">Please check your inbox or spam folder for the 6-digit code.</p>
+                        </div>
+
+                        <form id="verification-form" class="verification-form">
+                            <div class="form-group">
+                                <label for="verification-code">Verification Code</label>
+                                <div class="code-input-container">
+                                    <input type="text" id="verification-code" name="code" placeholder="6-digit code"
+                                        maxlength="6" required>
+                                </div>
+                                <div id="code-error" class="error-message"></div>
+                                <div class="expiry-timer">
+                                    Code expires in: <span id="countdown-timer">10:00</span>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" id="verify-code-btn" class="primary-button">
+                                    <span class="button-text">Verify Code</span>
+                                    <span class="button-loader"></span>
+                                </button>
+                                <div class="secondary-actions">
+                                    <button type="button" id="resend-code-btn" class="text-button" disabled>
+                                        Resend Code (<span id="resend-timer">60</span>s)
+                                    </button>
+                                    <button type="button" id="change-email-btn" class="text-button">
+                                        Use Different Email
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Loading States - Used during transitions -->
+                <div id="loading-state" class="login-state">
+                    <div class="loader-container">
+                        <div class="spinner"></div>
+                        <p id="loading-message">Setting up your session...</p>
+                    </div>
+                </div>
+
+                <!-- Error State - General error display -->
+                <div id="error-state" class="login-state">
+                    <div class="error-container">
+                        <div class="error-icon"></div>
+                        <h3>Oops! Something went wrong</h3>
+                        <p id="error-message">We couldn't complete your request. Please try again.</p>
+                        <button type="button" id="retry-btn" class="primary-button">
+                            Try Again
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Security Information -->
+            <section class="security-info">
+                <h3>Secure Access</h3>
+                <div class="security-features">
+                    <div class="security-feature">
+                        <div class="feature-icon encryption-icon"></div>
+                        <div class="feature-text">
+                            <h4>End-to-End Encryption</h4>
+                            <p>Your data is protected with advanced encryption</p>
+                        </div>
+                    </div>
+                    <div class="security-feature">
+                        <div class="feature-icon session-icon"></div>
+                        <div class="feature-text">
+                            <h4>8-Hour Session</h4>
+                            <p>Work without interruptions with extended sessions</p>
+                        </div>
+                    </div>
+                    <div class="security-feature">
+                        <div class="feature-icon verification-icon"></div>
+                        <div class="feature-text">
+                            <h4>Two-Step Verification</h4>
+                            <p>Enhanced security for your clinic's data</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="mode-toggle">
+                    <!-- Dark Mode Icon -->
+                    <button id="dark-mode-toggle" class="dark-mode-button" aria-label="Toggle dark mode">
+                        <span class="dark-mode-icon"></span>
+                    </button>
+                </div>
+
+                <div class="social-links">
+                    <h4>Connect With Us</h4>
+                    <ul class="social-icons">
+                        <li><a href="https://www.instagram.com/@citruske" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a></li>
+                        <li><a href="https://x.com/LabsCitrus" aria-label="X (Twitter)">
+                                <i class="fab fa-x"></i>
+                            </a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100063778943426" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a></li>
+                        <li><a href="https://www.youtube.com/@citrus-labs" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a></li>
+                        <li><a href="https://linkedin.com/company/citrus-labs" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="footer-nav">
+                    <div class="footer-column legal">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a
+                                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Landing Page\Footer\Terms and Conditions\terms_and_conditions.html">Terms
+                                    of Service</a></li>
+                            <li><a
+                                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Landing Page\Footer\Privacy Policy\privacy_policy.html">Privacy
+                                    Policy</a></li>
+                            <li><a
+                                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Landing Page\Footer\Data Policy\data_policy.html">Data
+                                    Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column company">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="https://citruslabs.co.ke/" target="_blank" rel="noopener">Corporate Website</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Link -->
+    <script src="get_started.js"></script>
+</body>
+
+</html>

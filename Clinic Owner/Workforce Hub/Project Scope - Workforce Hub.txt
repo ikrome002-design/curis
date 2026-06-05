@@ -1,0 +1,79 @@
+CLINIC OWNER - CURIS.
+
+
+---
+
+For the Minimum Viable Product (MVP) of the **Clinic Workforce Hub** page within the **clinic account user** in *Curis by Citrus*, the focus is on equipping clinic owners with comprehensive tools to manage user accounts, monitor staff performance, and enforce operational efficiency. This page enables clinic owners to assign roles, track staff activities, and ensure seamless collaboration within the clinic. Here's a breakdown of the essential features available on this management page:
+
+________________________________________  
+### **Core MVP Features of the Clinic Workforce Hub Page**
+
+
+
+The Clinic Workforce Hub page is where the clinic account user (Clinic Owner) controls all staff-related operations. This includes user creation, access control, activity monitoring, and performance evaluation to ensure accountable and efficient clinic operations.
+
+________________________________________
+
+a.	Staff Account Creation & Assignment
+
+
+•	Create Doctor or Receptionist/Clinic Assistant accounts by entering essential details (name, contact, role).
+•	Assign staff to specific clinic departments or specialties (e.g., general consultation, lab, pediatrics).
+•	Set up login credentials and send system-generated invitations to onboard new users.
+
+
+b.	Role-Based Access Controls (RBAC)
+
+•	Configure role-specific permissions:
+o	Doctor Accounts: Access to patient medical records, appointment handling, and limited billing.
+o	Receptionist/Assistant Accounts: Appointment scheduling, patient registration, and invoicing.
+•	Restrict access to sensitive pages like billing history, financial reports, or full patient medical data.
+
+
+c.	Staff Activity Logs
+
+•	Real-time feed of user actions (e.g., "Dr. Wanjiru completed Consultation ID#1458", "Receptionist John rescheduled Patient #452").
+•	View timestamped logs filtered by staff member, action type, or time range.
+•	Activity insights cover appointments, payments, service creation, and communication logs.
+
+
+d.	Staff Performance Monitoring
+
+•	Performance metrics dashboard per staff member:
+o	Appointment volume handled (daily/weekly/monthly)
+o	Completion rate and punctuality
+o	Patient feedback score (e.g., 4.6/5)
+o	Service efficiency (time per appointment, patient satisfaction)
+•	Identify top performers and low-performing staff for decision-making or retraining.
+
+
+e.	Edit, Suspend, or Remove Staff Accounts
+
+•	Quick edit panel for updating roles, contact info, or permissions.
+•	Temporarily suspend accounts (e.g., during leave or disciplinary action).
+•	Remove staff permanently while retaining their historical activity data for accountability.
+
+
+f.	Search, Filter & Sort Functions
+
+•	Dynamic search bar for locating specific staff accounts instantly.
+•	Filter by role, performance score, last activity, or department.
+•	Sort users by most active, highest-rated, or newly added.
+
+
+g.	System Notifications for Oversight
+
+•	Alerts for:
+o	Inactive staff for a defined period
+o	Excessive appointment cancellations by a staff member
+o	Decline in patient feedback score
+•	Flagged users appear at the top for immediate action.
+
+________________________________________
+Key Outcomes of the Clinic Workforce Hub Page
+
+
+•	Ensures structured and secure staffing, aligned with clinic workflow.
+•	Enhances staff accountability through real-time monitoring and data-backed evaluations.
+•	Empowers clinic owners to make informed staffing decisions, improving overall service delivery and patient experience.
+•	Acts as a centralized HR-like control panel tailored to small and medium-sized clinic environments. 

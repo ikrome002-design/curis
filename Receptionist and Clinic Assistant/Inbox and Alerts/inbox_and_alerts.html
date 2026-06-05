@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curis - Inbox & Alerts | Communication Hub</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="inbox_and_alerts.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Check-In\check_in.html"
+                            class="nav-link">
+                            <i class="fas fa-user-check"></i>
+                            <span>Check-In</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Inbox and Alerts\inbox_and_alerts.html"
+                            class="nav-link">
+                            <i class="fas fa-inbox"></i>
+                            <span>Inbox & Alerts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Queue and Flow\queue_and_flow.html"
+                            class="nav-link">
+                            <i class="fas fa-list-check"></i>
+                            <span>Queue & Flow</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Patient Directory\patient_directory.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Patient Directory</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Inbox & Alerts</h1>
+                    <p class="subtitle">Communication Hub</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- User Profile -->
+                    <div class="user-profile" id="userProfile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-icon">
+                        <span class="user-name">Sarah Wanjiru</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Quick Stats Bar -->
+            <section class="stats-bar">
+                <div class="stat-item">
+                    <i class="fas fa-bell"></i>
+                    <div class="stat-content">
+                        <span class="stat-value">8</span>
+                        <span class="stat-label">Unread Alerts</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-comments"></i>
+                    <div class="stat-content">
+                        <span class="stat-value">5</span>
+                        <span class="stat-label">New Messages</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-paper-plane"></i>
+                    <div class="stat-content">
+                        <span class="stat-value">24</span>
+                        <span class="stat-label">Sent Today</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div class="stat-content">
+                        <span class="stat-value">2</span>
+                        <span class="stat-label">High Priority</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content Grid -->
+            <div class="inbox-grid">
+
+                <!-- Real-Time Alerts Feed -->
+                <section class="dashboard-card alerts-feed">
+                    <div class="card-header">
+                        <h2><i class="fas fa-bell"></i> Real-Time Alerts Feed</h2>
+                        <div class="header-actions">
+                            <button class="btn-filter" id="filterAlertsBtn">
+                                <i class="fas fa-filter"></i> Filter
+                            </button>
+                            <button class="btn-mark-read" id="markAllReadBtn">
+                                <i class="fas fa-check-double"></i> Mark All Read
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- Alert Filters -->
+                        <div class="alert-filters" id="alertFilters">
+                            <button class="filter-chip active" data-filter="all">All</button>
+                            <button class="filter-chip" data-filter="appointments">Appointments</button>
+                            <button class="filter-chip" data-filter="arrivals">Arrivals</button>
+                            <button class="filter-chip" data-filter="emergency">Emergency</button>
+                            <button class="filter-chip" data-filter="system">System</button>
+                            <button class="filter-chip" data-filter="unread">Unread Only</button>
+                        </div>
+
+                        <!-- Alerts List -->
+                        <div class="alerts-list">
+                            <!-- Emergency Alert -->
+                            <div class="alert-item emergency unread">
+                                <div class="alert-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <div class="alert-header">
+                                        <span class="alert-title">Emergency Broadcast</span>
+                                        <span class="alert-time">Just now</span>
+                                    </div>
+                                    <p class="alert-message">Dr. James Ochieng unavailable - Emergency call. All his
+                                        2PM-4PM appointments need rescheduling.</p>
+                                    <div class="alert-actions">
+                                        <button class="btn-action acknowledge">
+                                            <i class="fas fa-check"></i> Acknowledge
+                                        </button>
+                                        <button class="btn-action view-appointments">
+                                            <i class="fas fa-calendar"></i> View Appointments
+                                        </button>
+                                        <button class="btn-action notify-patients">
+                                            <i class="fas fa-bell"></i> Notify Patients
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- High Priority Alert -->
+                            <div class="alert-item high-priority unread">
+                                <div class="alert-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <div class="alert-header">
+                                        <span class="alert-title">Late Arrival</span>
+                                        <span class="alert-time">5 min ago</span>
+                                    </div>
+                                    <p class="alert-message">Patient John Kimani is 20 minutes late for his 2:00 PM
+                                        appointment with Dr. Mary Kamau.</p>
+                                    <div class="alert-actions">
+                                        <button class="btn-action acknowledge">
+                                            <i class="fas fa-check"></i> Acknowledge
+                                        </button>
+                                        <button class="btn-action contact">
+                                            <i class="fas fa-phone"></i> Contact
+                                        </button>
+                                        <button class="btn-action reschedule">
+                                            <i class="fas fa-calendar-alt"></i> Reschedule
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Patient Arrival Alert -->
+                            <div class="alert-item arrival">
+                                <div class="alert-icon">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <div class="alert-header">
+                                        <span class="alert-title">Patient Arrival</span>
+                                        <span class="alert-time">10 min ago</span>
+                                    </div>
+                                    <p class="alert-message">Grace Muthoni has arrived and checked in for her 2:30 PM
+                                        appointment. Assigned to Room 102.</p>
+                                    <div class="alert-actions">
+                                        <button class="btn-action acknowledge">
+                                            <i class="fas fa-check"></i> Acknowledge
+                                        </button>
+                                        <button class="btn-action notify-doctor">
+                                            <i class="fas fa-user-md"></i> Notify Doctor
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- New Booking Alert -->
+                            <div class="alert-item appointment">
+                                <div class="alert-icon">
+                                    <i class="fas fa-calendar-plus"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <div class="alert-header">
+                                        <span class="alert-title">New Booking</span>
+                                        <span class="alert-time">15 min ago</span>
+                                    </div>
+                                    <p class="alert-message">New appointment booked: Peter Wachira for tomorrow at 10:00
+                                        AM with Dr. James Ochieng.</p>
+                                    <div class="alert-actions">
+                                        <button class="btn-action acknowledge">
+                                            <i class="fas fa-check"></i> Acknowledge
+                                        </button>
+                                        <button class="btn-action confirm">
+                                            <i class="fas fa-paper-plane"></i> Send Confirmation
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- System Alert -->
+                            <div class="alert-item system">
+                                <div class="alert-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <div class="alert-header">
+                                        <span class="alert-title">System Update</span>
+                                        <span class="alert-time">1 hour ago</span>
+                                    </div>
+                                    <p class="alert-message">Platform maintenance scheduled for tonight 11 PM - 1 AM.
+                                        Services may be temporarily unavailable.</p>
+                                    <div class="alert-actions">
+                                        <button class="btn-action acknowledge">
+                                            <i class="fas fa-check"></i> Acknowledge
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cancellation Alert -->
+                            <div class="alert-item cancellation">
+                                <div class="alert-icon">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <div class="alert-content">
+                                    <div class="alert-header">
+                                        <span class="alert-title">Appointment Cancelled</span>
+                                        <span class="alert-time">2 hours ago</span>
+                                    </div>
+                                    <p class="alert-message">Patient Alice Wanjiku cancelled her 4:00 PM appointment
+                                        with Dr. Peter Mutua.</p>
+                                    <div class="alert-actions">
+                                        <button class="btn-action acknowledge">
+                                            <i class="fas fa-check"></i> Acknowledge
+                                        </button>
+                                        <button class="btn-action open-slot">
+                                            <i class="fas fa-calendar"></i> Open Slot
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Load More Button -->
+                        <div class="load-more">
+                            <button class="btn-load-more">
+                                <i class="fas fa-arrow-down"></i> Load More Alerts
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Internal Messaging -->
+                <section class="dashboard-card internal-messaging">
+                    <div class="card-header">
+                        <h2><i class="fas fa-comments"></i> Internal Messaging</h2>
+                        <button class="btn-new-message" id="newMessageBtn">
+                            <i class="fas fa-plus"></i> New Message
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <!-- Chat Threads List -->
+                        <div class="chat-container">
+                            <div class="chat-sidebar">
+                                <div class="chat-search">
+                                    <input type="text" placeholder="Search conversations..." class="search-input">
+                                    <i class="fas fa-search"></i>
+                                </div>
+
+                                <!-- Thread List -->
+                                <div class="thread-list">
+                                    <div class="thread-item active unread">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Dr. James" class="thread-avatar">
+                                        <div class="thread-info">
+                                            <div class="thread-header">
+                                                <span class="thread-name">Dr. James Ochieng</span>
+                                                <span class="thread-time">2 min</span>
+                                            </div>
+                                            <p class="thread-preview">Please prepare Lab Report for Patient...</p>
+                                            <span class="unread-count">2</span>
+                                        </div>
+                                        <span class="online-status online"></span>
+                                    </div>
+
+                                    <div class="thread-item">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Lab Dept" class="thread-avatar">
+                                        <div class="thread-info">
+                                            <div class="thread-header">
+                                                <span class="thread-name">Lab Department</span>
+                                                <span class="thread-time">10 min</span>
+                                            </div>
+                                            <p class="thread-preview">Results ready for collection</p>
+                                        </div>
+                                        <span class="online-status online"></span>
+                                    </div>
+
+                                    <div class="thread-item">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Dr. Mary" class="thread-avatar">
+                                        <div class="thread-info">
+                                            <div class="thread-header">
+                                                <span class="thread-name">Dr. Mary Kamau</span>
+                                                <span class="thread-time">30 min</span>
+                                            </div>
+                                            <p class="thread-preview">Patient ready in Room 102</p>
+                                        </div>
+                                        <span class="online-status away"></span>
+                                    </div>
+
+                                    <div class="thread-item">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Admin" class="thread-avatar">
+                                        <div class="thread-info">
+                                            <div class="thread-header">
+                                                <span class="thread-name">Clinic Owner</span>
+                                                <span class="thread-time">1 hour</span>
+                                            </div>
+                                            <p class="thread-preview">Daily report received, thank you</p>
+                                        </div>
+                                        <span class="online-status offline"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Chat Window -->
+                            <div class="chat-window">
+                                <div class="chat-header">
+                                    <div class="chat-user-info">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                            alt="User" class="chat-avatar">
+                                        <div class="chat-user-details">
+                                            <span class="chat-user-name">Dr. James Ochieng</span>
+                                            <span class="chat-user-status">
+                                                <i class="fas fa-circle"></i> Online - Last seen just now
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="chat-actions">
+                                        <button class="btn-icon" title="Search">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                        <button class="btn-icon" title="Info">
+                                            <i class="fas fa-info-circle"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Messages Area -->
+                                <div class="messages-area">
+                                    <div class="message received">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                            alt="Sender" class="message-avatar">
+                                        <div class="message-content">
+                                            <p class="message-text">Good afternoon Sarah. Please prepare the lab report
+                                                for Patient John Kimani (PAT-2025-145)</p>
+                                            <span class="message-time">2:15 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="message sent">
+                                        <div class="message-content">
+                                            <p class="message-text">Sure Dr. Ochieng. I'll get that ready right away.
+                                            </p>
+                                            <span class="message-time">2:17 PM <i
+                                                    class="fas fa-check-double read"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="message received">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                            alt="Sender" class="message-avatar">
+                                        <div class="message-content">
+                                            <p class="message-text">Also, please inform the patient that we need to
+                                                reschedule the follow-up to next week</p>
+                                            <span class="message-time">2:18 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="typing-indicator">
+                                        <span class="typing-text">Dr. James is typing...</span>
+                                    </div>
+                                </div>
+
+                                <!-- Message Composer -->
+                                <div class="message-composer">
+                                    <div class="composer-toolbar">
+                                        <button class="btn-icon" title="Attach">
+                                            <i class="fas fa-paperclip"></i>
+                                        </button>
+                                        <button class="btn-icon" title="Smart Reply">
+                                            <i class="fas fa-magic"></i>
+                                        </button>
+                                    </div>
+                                    <input type="text" placeholder="Type a message..." class="message-input">
+                                    <button class="btn-send">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+
+                                    <!-- Smart Replies -->
+                                    <div class="smart-replies">
+                                        <button class="smart-reply">Patient ready</button>
+                                        <button class="smart-reply">Rescheduled 3PM</button>
+                                        <button class="smart-reply">Doctor delayed</button>
+                                        <button class="smart-reply">Will check</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Patient Notification Panel -->
+                <section class="dashboard-card patient-notifications">
+                    <div class="card-header">
+                        <h2><i class="fas fa-paper-plane"></i> Patient Notification Panel</h2>
+                        <button class="btn-broadcast" id="broadcastBtn">
+                            <i class="fas fa-bullhorn"></i> Broadcast
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <!-- Quick Send Options -->
+                        <div class="quick-send-options">
+                            <button class="send-option active" data-channel="sms">
+                                <i class="fas fa-sms"></i>
+                                <span>SMS</span>
+                            </button>
+                            <button class="send-option" data-channel="whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </button>
+                            <button class="send-option" data-channel="email">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </button>
+                        </div>
+
+                        <!-- Compose Notification -->
+                        <div class="compose-notification">
+                            <div class="form-group">
+                                <label>Recipients</label>
+                                <div class="recipient-selector">
+                                    <input type="text" placeholder="Search patients or select group..."
+                                        class="form-input">
+                                    <button class="btn-select-all">Select All Today's Appointments</button>
+                                </div>
+                                <div class="selected-recipients">
+                                    <span class="recipient-chip">
+                                        John Kimani
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                    <span class="recipient-chip">
+                                        Grace Muthoni
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                    <span class="recipient-count">+3 more</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Message Template</label>
+                                <select class="form-select" id="messageTemplate">
+                                    <option value="">Select Template</option>
+                                    <option value="appointment-confirm">Appointment Confirmation</option>
+                                    <option value="reminder">Appointment Reminder</option>
+                                    <option value="delay">Doctor Delay Notice</option>
+                                    <option value="cancellation">Cancellation Notice</option>
+                                    <option value="clinic-update">Clinic Update</option>
+                                    <option value="custom">Custom Message</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea class="form-textarea" rows="4" placeholder="Type your message here...">Dear [Patient Name],
+
+This is a reminder for your appointment tomorrow at [Time] with [Doctor Name].
+
+Please arrive 10 minutes early for check-in.
+
+Reply STOP to unsubscribe.</textarea>
+                                <div class="character-count">
+                                    <span>120 / 160 characters (1 SMS)</span>
+                                </div>
+                            </div>
+
+                            <div class="send-actions">
+                                <button class="btn-preview">
+                                    <i class="fas fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-schedule">
+                                    <i class="fas fa-clock"></i> Schedule
+                                </button>
+                                <button class="btn-send-now">
+                                    <i class="fas fa-paper-plane"></i> Send Now
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Recent Sent Notifications -->
+                        <div class="recent-notifications">
+                            <h3>Recent Sent</h3>
+                            <div class="sent-list">
+                                <div class="sent-item">
+                                    <div class="sent-info">
+                                        <span class="sent-type">
+                                            <i class="fas fa-sms"></i> SMS
+                                        </span>
+                                        <span class="sent-recipients">To: 15 patients</span>
+                                        <span class="sent-time">10:00 AM</span>
+                                    </div>
+                                    <div class="sent-status">
+                                        <span class="status-success">
+                                            <i class="fas fa-check"></i> 14 Delivered
+                                        </span>
+                                        <span class="status-failed">
+                                            <i class="fas fa-times"></i> 1 Failed
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="sent-item">
+                                    <div class="sent-info">
+                                        <span class="sent-type">
+                                            <i class="fab fa-whatsapp"></i> WhatsApp
+                                        </span>
+                                        <span class="sent-recipients">To: David Maina</span>
+                                        <span class="sent-time">9:30 AM</span>
+                                    </div>
+                                    <div class="sent-status">
+                                        <span class="status-success">
+                                            <i class="fas fa-check-double"></i> Read
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Alerts History Log -->
+                <section class="dashboard-card alerts-history">
+                    <div class="card-header">
+                        <h2><i class="fas fa-history"></i> Alerts History Log</h2>
+                        <div class="header-actions">
+                            <input type="date" class="date-input" id="historyStartDate">
+                            <span>to</span>
+                            <input type="date" class="date-input" id="historyEndDate">
+                            <button class="btn-export" id="exportHistoryBtn">
+                                <i class="fas fa-download"></i> Export
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- History Filters -->
+                        <div class="history-filters">
+                            <select class="filter-select">
+                                <option value="">All Types</option>
+                                <option value="appointment">Appointment</option>
+                                <option value="emergency">Emergency</option>
+                                <option value="system">System</option>
+                                <option value="arrival">Arrival</option>
+                            </select>
+                            <select class="filter-select">
+                                <option value="">All Senders</option>
+                                <option value="system">System</option>
+                                <option value="doctor">Doctors</option>
+                                <option value="lab">Lab</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                            <select class="filter-select">
+                                <option value="">All Status</option>
+                                <option value="acknowledged">Acknowledged</option>
+                                <option value="resolved">Resolved</option>
+                                <option value="pending">Pending</option>
+                            </select>
+                        </div>
+
+                        <!-- History Table -->
+                        <div class="table-wrapper">
+                            <table class="history-table">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>Type</th>
+                                        <th>Alert</th>
+                                        <th>Sender</th>
+                                        <th>Recipient</th>
+                                        <th>Status</th>
+                                        <th>Response Time</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>29-09-2025 14:45:00</td>
+                                        <td><span class="type-badge emergency">Emergency</span></td>
+                                        <td>Doctor unavailable</td>
+                                        <td>Dr. James Ochieng</td>
+                                        <td>All Staff</td>
+                                        <td><span class="status-badge resolved">Resolved</span></td>
+                                        <td>2 min</td>
+                                        <td>
+                                            <button class="btn-view-details" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>29-09-2025 14:30:15</td>
+                                        <td><span class="type-badge arrival">Arrival</span></td>
+                                        <td>Patient check-in</td>
+                                        <td>System</td>
+                                        <td>Reception</td>
+                                        <td><span class="status-badge acknowledged">Acknowledged</span></td>
+                                        <td>30 sec</td>
+                                        <td>
+                                            <button class="btn-view-details" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>29-09-2025 14:00:00</td>
+                                        <td><span class="type-badge appointment">Appointment</span></td>
+                                        <td>New booking</td>
+                                        <td>System</td>
+                                        <td>Reception</td>
+                                        <td><span class="status-badge acknowledged">Acknowledged</span></td>
+                                        <td>5 min</td>
+                                        <td>
+                                            <button class="btn-view-details" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>29-09-2025 13:45:30</td>
+                                        <td><span class="type-badge system">System</span></td>
+                                        <td>Maintenance notice</td>
+                                        <td>Admin</td>
+                                        <td>All Users</td>
+                                        <td><span class="status-badge pending">Pending</span></td>
+                                        <td>-</td>
+                                        <td>
+                                            <button class="btn-view-details" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <button class="page-btn">Previous</button>
+                            <span class="page-info">Page 1 of 25</span>
+                            <button class="page-btn">Next</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Smart Filter & Prioritization -->
+                <section class="dashboard-card smart-filters">
+                    <div class="card-header">
+                        <h2><i class="fas fa-sliders-h"></i> Smart Filter & Prioritization</h2>
+                        <button class="btn-save-preset" id="savePresetBtn">
+                            <i class="fas fa-save"></i> Save Preset
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <!-- Priority Settings -->
+                        <div class="priority-settings">
+                            <h3>Priority Color Codes</h3>
+                            <div class="priority-list">
+                                <div class="priority-item">
+                                    <span class="priority-color emergency"></span>
+                                    <span class="priority-label">Emergency</span>
+                                    <span class="priority-description">Immediate action required</span>
+                                </div>
+                                <div class="priority-item">
+                                    <span class="priority-color high"></span>
+                                    <span class="priority-label">High Priority</span>
+                                    <span class="priority-description">Urgent - respond within 15 min</span>
+                                </div>
+                                <div class="priority-item">
+                                    <span class="priority-color normal"></span>
+                                    <span class="priority-label">Normal</span>
+                                    <span class="priority-description">Standard response time</span>
+                                </div>
+                                <div class="priority-item">
+                                    <span class="priority-color info"></span>
+                                    <span class="priority-label">Info Only</span>
+                                    <span class="priority-description">No action required</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filter Configuration -->
+                        <div class="filter-configuration">
+                            <h3>Alert Filter Setup</h3>
+                            <div class="filter-grid">
+                                <div class="filter-group">
+                                    <label>Alert Types</label>
+                                    <div class="checkbox-group">
+                                        <label>
+                                            <input type="checkbox" checked> Appointments
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" checked> Arrivals
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" checked> Emergency
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" checked> System
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <label>Time Range</label>
+                                    <select class="form-select">
+                                        <option>All Time</option>
+                                        <option>Last Hour</option>
+                                        <option>Today</option>
+                                        <option>This Week</option>
+                                    </select>
+                                </div>
+
+                                <div class="filter-group">
+                                    <label>Read Status</label>
+                                    <select class="form-select">
+                                        <option>All</option>
+                                        <option>Unread Only</option>
+                                        <option>Read Only</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Snooze Settings -->
+                        <div class="snooze-settings">
+                            <h3>Snooze & Follow-Up</h3>
+                            <div class="snooze-options">
+                                <button class="snooze-btn" data-duration="15">15 min</button>
+                                <button class="snooze-btn" data-duration="30">30 min</button>
+                                <button class="snooze-btn" data-duration="60">1 hour</button>
+                                <button class="snooze-btn custom">Custom</button>
+                            </div>
+                            <div class="follow-up-settings">
+                                <label>
+                                    <input type="checkbox"> Auto-escalate if no response
+                                </label>
+                                <label>
+                                    <input type="checkbox"> Set follow-up reminder
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Saved Presets -->
+                        <div class="saved-presets">
+                            <h3>Saved Filter Presets</h3>
+                            <div class="preset-list">
+                                <button class="preset-btn">Morning Routine</button>
+                                <button class="preset-btn">Emergency Only</button>
+                                <button class="preset-btn">End of Day</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- MODALS SECTION -->
+
+    <!-- New Message Modal -->
+    <div class="modal" id="newMessageModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-comment-medical"></i> New Message</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="newMessageForm">
+                    <div class="form-group">
+                        <label>To</label>
+                        <select class="form-select">
+                            <option value="">Select recipient...</option>
+                            <option value="dr-ochieng">Dr. James Ochieng</option>
+                            <option value="dr-kamau">Dr. Mary Kamau</option>
+                            <option value="dr-mutua">Dr. Peter Mutua</option>
+                            <option value="lab">Lab Department</option>
+                            <option value="admin">Clinic Owner</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea class="form-textarea" rows="5" placeholder="Type your message..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Attachments (Optional)</label>
+                        <button type="button" class="btn-attach">
+                            <i class="fas fa-paperclip"></i> Attach File
+                        </button>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="closeModal('newMessageModal')">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Broadcast Modal -->
+    <div class="modal" id="broadcastModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-bullhorn"></i> Broadcast Message</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="broadcastForm">
+                    <div class="form-section">
+                        <h4>Broadcast Type</h4>
+                        <div class="broadcast-types">
+                            <label class="radio-option">
+                                <input type="radio" name="broadcastType" value="clinic-wide">
+                                <span>Clinic-wide Announcement</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="broadcastType" value="holiday">
+                                <span>Holiday Closure</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="broadcastType" value="emergency">
+                                <span>Emergency Alert</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="broadcastType" value="service">
+                                <span>New Service Update</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4>Recipients</h4>
+                        <div class="recipient-options">
+                            <label>
+                                <input type="checkbox" checked> All Patients
+                            </label>
+                            <label>
+                                <input type="checkbox"> Today's Appointments Only
+                            </label>
+                            <label>
+                                <input type="checkbox"> Upcoming Week Appointments
+                            </label>
+                            <label>
+                                <input type="checkbox"> Custom Selection
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4>Message Content</h4>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" class="form-input" placeholder="Enter broadcast subject...">
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea class="form-textarea" rows="5"
+                                placeholder="Type your broadcast message..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4>Send Via</h4>
+                        <div class="send-channels">
+                            <label>
+                                <input type="checkbox" checked> SMS
+                            </label>
+                            <label>
+                                <input type="checkbox" checked> WhatsApp
+                            </label>
+                            <label>
+                                <input type="checkbox"> Email
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        This broadcast requires owner approval before sending.
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Submit for Approval
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="closeModal('broadcastModal')">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Detail Modal -->
+    <div class="modal" id="alertDetailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-bell"></i> Alert Details</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="alert-detail-content">
+                    <div class="detail-row">
+                        <span class="detail-label">Type:</span>
+                        <span class="detail-value">
+                            <span class="type-badge emergency">Emergency</span>
+                        </span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Time:</span>
+                        <span class="detail-value">29-09-2025 14:45:00</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">From:</span>
+                        <span class="detail-value">Dr. James Ochieng</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Message:</span>
+                        <span class="detail-value">Emergency call - unavailable for afternoon appointments. Please
+                            reschedule all patients from 2PM-4PM.</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Status:</span>
+                        <span class="detail-value">Acknowledged by Sarah Wanjiru at 14:47:00</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Actions Taken:</span>
+                        <ul class="action-list">
+                            <li>3 appointments rescheduled</li>
+                            <li>All patients notified via SMS</li>
+                            <li>Alternative doctor assigned for urgent cases</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-primary" onclick="closeModal('alertDetailModal')">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Template Library Modal -->
+    <div class="modal" id="templateLibraryModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-file-alt"></i> Message Templates</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="template-categories">
+                    <button class="category-btn active">Appointments</button>
+                    <button class="category-btn">Reminders</button>
+                    <button class="category-btn">Notifications</button>
+                    <button class="category-btn">Emergency</button>
+                    <button class="category-btn">Custom</button>
+                </div>
+
+                <div class="template-list">
+                    <div class="template-item">
+                        <h4>Appointment Confirmation</h4>
+                        <p class="template-preview">Dear [Patient Name], Your appointment with [Doctor Name] is
+                            confirmed for [Date] at [Time]. Please arrive 10 minutes early. Reply STOP to unsubscribe.
+                        </p>
+                        <div class="template-actions">
+                            <button class="btn-use-template">Use Template</button>
+                            <button class="btn-edit-template">Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="template-item">
+                        <h4>Appointment Reminder</h4>
+                        <p class="template-preview">Reminder: You have an appointment tomorrow at [Time] with [Doctor
+                            Name]. Location: [Clinic Address]. Call [Phone] to confirm.</p>
+                        <div class="template-actions">
+                            <button class="btn-use-template">Use Template</button>
+                            <button class="btn-edit-template">Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="template-item">
+                        <h4>Doctor Delay Notice</h4>
+                        <p class="template-preview">Dear [Patient Name], Dr. [Doctor Name] is running [X] minutes late.
+                            Your new estimated appointment time is [Time]. We apologize for the inconvenience.</p>
+                        <div class="template-actions">
+                            <button class="btn-use-template">Use Template</button>
+                            <button class="btn-edit-template">Edit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-create-new">
+                        <i class="fas fa-plus"></i> Create New Template
+                    </button>
+                    <button class="btn-secondary" onclick="closeModal('templateLibraryModal')">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Popup -->
+    <div class="profile-popup" id="profilePopup">
+        <div class="profile-popup-content">
+            <div class="profile-header">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                    alt="Profile" class="popup-profile-img">
+                <div class="profile-info">
+                    <h3>Sarah Wanjiru</h3>
+                    <p>Receptionist</p>
+                </div>
+            </div>
+            <div class="profile-menu">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\My Profile\my_profile.html"
+                    class="profile-menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Landing Page\landing_page.html"
+                    class="profile-menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="fixed-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <!-- Corporate Website Link -->
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer" class="corporate-link">
+                    Visit Citrus Labs
+                </a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Copyright -->
+                <p class="copyright">© 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="inbox_and_alerts.js"></script>
+</body>
+
+</html>

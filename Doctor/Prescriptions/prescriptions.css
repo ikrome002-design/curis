@@ -1,0 +1,2311 @@
+/* ========================================
+   CURIS PRESCRIPTIONS PAGE - COMPREHENSIVE CSS
+   Digital Medication Management Styling
+   ======================================== */
+
+/* ========================================
+   1. CSS VARIABLES & ROOT CONFIGURATION
+   ======================================== */
+:root {
+    /* Brand Colors */
+    --primary-navy: #1D2A3B;
+    --accent-teal: #00BFA5;
+    --secondary-orange: #FF6B35;
+    --soft-gray: #F5F5F7;
+    --charcoal-gray: #333333;
+
+    /* Extended Palette */
+    --white: #FFFFFF;
+    --light-teal: rgba(0, 191, 165, 0.1);
+    --light-orange: rgba(255, 107, 53, 0.1);
+    --dark-navy: #0F1823;
+    --medium-gray: #E0E0E2;
+    --light-gray: #FAFAFA;
+
+    /* Status Colors */
+    --success-green: #4CAF50;
+    --warning-yellow: #FFC107;
+    --danger-red: #F44336;
+    --info-blue: #2196F3;
+
+    /* Shadows & Effects */
+    --shadow-sm: 0 2px 4px rgba(29, 42, 59, 0.08);
+    --shadow-md: 0 4px 12px rgba(29, 42, 59, 0.12);
+    --shadow-lg: 0 8px 24px rgba(29, 42, 59, 0.16);
+    --shadow-xl: 0 12px 36px rgba(29, 42, 59, 0.2);
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 50%;
+
+    /* Transitions */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-medium: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Z-Index Layers */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-modal: 1050;
+    --z-tooltip: 1080;
+}
+
+/* ========================================
+   2. GLOBAL STYLES & RESET
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Poppins', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--charcoal-gray);
+    background: linear-gradient(135deg, var(--soft-gray) 0%, var(--light-gray) 100%);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ========================================
+   3. MAIN CONTAINER LAYOUT
+   ======================================== */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    background: var(--light-gray);
+}
+
+/* ========================================
+   4. SIDEBAR NAVIGATION
+   ======================================== */
+.sidebar {
+    width: 280px;
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: var(--z-sticky);
+    transition: var(--transition-medium);
+    border-right: 1px solid var(--medium-gray);
+}
+
+.logo-container {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--dark-navy) 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 191, 165, 0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.logo {
+    max-width: 120px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    filter: brightness(0) invert(1);
+    transition: var(--transition-medium);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation Menu */
+.main-navigation {
+    padding: var(--spacing-lg) 0;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-item {
+    margin: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: var(--charcoal-gray);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-fast);
+    text-decoration: none;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 0;
+    background: var(--accent-teal);
+    border-radius: 0 4px 4px 0;
+    transition: var(--transition-fast);
+}
+
+.nav-link:hover {
+    background: var(--light-teal);
+    color: var(--accent-teal);
+    transform: translateX(4px);
+}
+
+.nav-link:hover::before {
+    height: 70%;
+}
+
+.nav-item.active .nav-link {
+    background: linear-gradient(135deg, var(--accent-teal) 0%, rgba(0, 191, 165, 0.9) 100%);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-link i {
+    font-size: 1.25rem;
+    margin-right: var(--spacing-md);
+    width: 24px;
+    text-align: center;
+}
+
+.nav-link span {
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   5. MAIN CONTENT AREA
+   ======================================== */
+.main-content {
+    flex: 1;
+    margin-left: 280px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--light-gray) 0%, var(--soft-gray) 100%);
+}
+
+/* ========================================
+   6. TOP HEADER BAR
+   ======================================== */
+.top-header {
+    background: var(--white);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.page-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--primary-navy);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.page-title i {
+    color: var(--accent-teal);
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.875rem;
+    color: var(--charcoal-gray);
+    opacity: 0.7;
+}
+
+.breadcrumb a {
+    color: var(--accent-teal);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-navy);
+}
+
+.breadcrumb i {
+    font-size: 0.75rem;
+    opacity: 0.5;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+/* Prescription Stats */
+.prescription-stats {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.stat-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--light-teal);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent-teal);
+}
+
+.stat-badge i {
+    font-size: 1rem;
+}
+
+/* Notification Icon */
+.notification-icon {
+    position: relative;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-full);
+    background: var(--soft-gray);
+    transition: var(--transition-fast);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.notification-icon:hover {
+    background: var(--light-teal);
+    transform: scale(1.1);
+}
+
+.notification-icon i {
+    font-size: 1.25rem;
+    color: var(--charcoal-gray);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--secondary-orange);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: var(--radius-full);
+    min-width: 20px;
+    text-align: center;
+    animation: bounce 2s infinite;
+}
+
+/* User Profile */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-lg);
+    background: var(--soft-gray);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    position: relative;
+}
+
+.user-profile:hover {
+    background: var(--light-teal);
+    box-shadow: var(--shadow-md);
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    border: 3px solid var(--accent-teal);
+    object-fit: cover;
+}
+
+.profile-name {
+    font-weight: 600;
+    color: var(--primary-navy);
+    font-size: 0.95rem;
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + var(--spacing-sm));
+    right: 0;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    padding: var(--spacing-sm);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition-fast);
+    z-index: var(--z-dropdown);
+}
+
+.user-profile.active+.profile-dropdown,
+.profile-dropdown:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+    color: var(--charcoal-gray);
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.dropdown-item:hover {
+    background: var(--light-teal);
+    color: var(--accent-teal);
+    transform: translateX(4px);
+}
+
+.dropdown-item i {
+    width: 20px;
+    text-align: center;
+}
+
+/* ========================================
+   7. QUICK ACTIONS SECTION
+   ======================================== */
+.quick-actions-section {
+    padding: var(--spacing-xl);
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+/* Button Styles */
+.btn-primary,
+.btn-secondary,
+.btn-warning {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition-medium);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-teal) 0%, #00A693 100%);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--charcoal-gray);
+    border: 2px solid var(--medium-gray);
+}
+
+.btn-secondary:hover {
+    background: var(--light-teal);
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, var(--secondary-orange) 0%, #E65100 100%);
+    color: var(--white);
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   8. PRESCRIPTION HISTORY SECTION
+   ======================================== */
+.prescription-history-section {
+    padding: 0 var(--spacing-xl) var(--spacing-xl);
+}
+
+.section-header {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-bottom: 1px solid var(--medium-gray);
+    box-shadow: var(--shadow-md);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-navy);
+    margin: 0 0 var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.section-title i {
+    color: var(--accent-teal);
+}
+
+/* Filter Controls */
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.filter-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.filter-input,
+.filter-date,
+.filter-select {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    color: var(--charcoal-gray);
+    font-size: 0.875rem;
+    transition: var(--transition-fast);
+}
+
+.filter-input:focus,
+.filter-date:focus,
+.filter-select:focus {
+    outline: none;
+    border-color: var(--accent-teal);
+    box-shadow: 0 0 0 3px rgba(0, 191, 165, 0.1);
+}
+
+.filter-input {
+    padding-right: var(--spacing-xl);
+    min-width: 200px;
+}
+
+.filter-icon {
+    position: absolute;
+    right: var(--spacing-md);
+    color: var(--charcoal-gray);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.btn-filter-apply {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--accent-teal);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.btn-filter-apply:hover {
+    background: #00A693;
+}
+
+/* Prescription List */
+.prescription-list {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.prescription-entry {
+    display: grid;
+    grid-template-columns: 2fr 3fr 1.5fr auto 1.5fr;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--medium-gray);
+    align-items: center;
+    transition: var(--transition-fast);
+    position: relative;
+}
+
+.prescription-entry:hover {
+    background: var(--light-gray);
+    transform: translateX(4px);
+}
+
+.prescription-entry:last-child {
+    border-bottom: none;
+}
+
+/* Patient Info */
+.patient-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.patient-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--medium-gray);
+    object-fit: cover;
+}
+
+.patient-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.patient-name {
+    font-weight: 600;
+    color: var(--primary-navy);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.patient-id {
+    font-size: 0.813rem;
+    color: var(--charcoal-gray);
+    opacity: 0.6;
+}
+
+/* Medication Info */
+.medication-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.medication-name {
+    font-weight: 600;
+    color: var(--primary-navy);
+    margin: 0;
+    font-size: 1rem;
+}
+
+.medication-details {
+    display: flex;
+    gap: var(--spacing-md);
+    font-size: 0.813rem;
+    color: var(--charcoal-gray);
+}
+
+.medication-details span {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.medication-details i {
+    color: var(--accent-teal);
+    font-size: 0.875rem;
+}
+
+/* Prescription Meta */
+.prescription-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    font-size: 0.875rem;
+    color: var(--charcoal-gray);
+}
+
+.prescription-date {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.prescription-date i {
+    color: var(--accent-teal);
+}
+
+.prescription-id {
+    font-weight: 600;
+    color: var(--primary-navy);
+}
+
+/* Status Badges */
+.status-badge {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.813rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    justify-self: center;
+}
+
+.status-badge.active {
+    background: rgba(76, 175, 80, 0.1);
+    color: var(--success-green);
+}
+
+.status-badge.expired {
+    background: rgba(244, 67, 54, 0.1);
+    color: var(--danger-red);
+}
+
+.status-badge.cancelled {
+    background: rgba(158, 158, 158, 0.1);
+    color: #9E9E9E;
+}
+
+.status-badge.draft {
+    background: rgba(33, 150, 243, 0.1);
+    color: var(--info-blue);
+}
+
+/* Prescription Actions */
+.prescription-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-self: end;
+}
+
+.action-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-sm);
+    color: var(--charcoal-gray);
+    font-size: 0.813rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.action-btn:hover {
+    background: var(--light-teal);
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+.action-btn i {
+    font-size: 0.875rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--white);
+    margin-top: var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.pagination-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-sm);
+    color: var(--charcoal-gray);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: var(--light-teal);
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-numbers {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.page-number {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    border: 1px solid var(--medium-gray);
+    color: var(--charcoal-gray);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.page-number:hover {
+    background: var(--light-teal);
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+.page-number.active {
+    background: var(--accent-teal);
+    border-color: var(--accent-teal);
+    color: var(--white);
+}
+
+/* ========================================
+   9. COMPLIANCE SECTION
+   ======================================== */
+.compliance-section {
+    padding: 0 var(--spacing-xl) var(--spacing-xl);
+}
+
+.compliance-header {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.compliance-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary-navy);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.compliance-title i {
+    color: var(--danger-red);
+}
+
+.compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--white);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.compliance-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    color: var(--charcoal-gray);
+    transition: var(--transition-fast);
+}
+
+.compliance-item:hover {
+    background: rgba(244, 67, 54, 0.05);
+    transform: translateX(4px);
+}
+
+.compliance-item i {
+    font-size: 1.25rem;
+    color: var(--danger-red);
+    width: 24px;
+}
+
+/* ========================================
+   10. MODAL STYLES
+   ======================================== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(29, 42, 59, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: var(--z-modal);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s;
+}
+
+.modal-content.large {
+    max-width: 900px;
+}
+
+.modal-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--medium-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--soft-gray) 0%, transparent 100%);
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-navy);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.modal-title i {
+    color: var(--accent-teal);
+}
+
+.modal-close {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    background: transparent;
+    border: none;
+    color: var(--charcoal-gray);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.modal-close:hover {
+    background: var(--light-orange);
+    color: var(--secondary-orange);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: var(--spacing-lg);
+}
+
+.modal-footer {
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--medium-gray);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+    background: var(--soft-gray);
+}
+
+/* ========================================
+   11. PRESCRIPTION FORM STYLES
+   ======================================== */
+.prescription-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.form-section {
+    padding: var(--spacing-lg);
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+}
+
+.form-section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-navy);
+    margin: 0 0 var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--charcoal-gray);
+    margin-bottom: var(--spacing-xs);
+}
+
+.form-control {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    color: var(--charcoal-gray);
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent-teal);
+    box-shadow: 0 0 0 3px rgba(0, 191, 165, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* Patient Selection Styles */
+.active-consultation-alert {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--light-teal);
+    border-radius: var(--radius-md);
+    color: var(--accent-teal);
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.active-consultation-alert i {
+    font-size: 1.125rem;
+}
+
+.btn-link-consultation {
+    margin-left: auto;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--accent-teal);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.813rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-suggestions {
+    position: absolute;
+    top: calc(100% + var(--spacing-xs));
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 10;
+}
+
+.search-suggestions.active {
+    display: block;
+}
+
+/* Recent Patients */
+.recent-patient-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.patient-chip {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--white);
+    border: 1px solid var(--accent-teal);
+    border-radius: var(--radius-full);
+    color: var(--accent-teal);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.patient-chip:hover {
+    background: var(--accent-teal);
+    color: var(--white);
+}
+
+/* Selected Patient Info */
+.selected-patient-info {
+    margin-top: var(--spacing-md);
+}
+
+.patient-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--accent-teal);
+}
+
+.patient-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    border: 2px solid var(--accent-teal);
+}
+
+.patient-data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.patient-data h4 {
+    margin: 0;
+    color: var(--primary-navy);
+    font-weight: 600;
+}
+
+.patient-data span {
+    font-size: 0.875rem;
+    color: var(--charcoal-gray);
+}
+
+.change-patient-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: transparent;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-sm);
+    color: var(--charcoal-gray);
+    font-size: 0.813rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.change-patient-btn:hover {
+    border-color: var(--secondary-orange);
+    color: var(--secondary-orange);
+}
+
+/* Patient Alerts */
+.patient-alerts {
+    margin-top: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.allergy-alert,
+.condition-alert,
+.medication-alert {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 0.813rem;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.allergy-alert {
+    background: rgba(244, 67, 54, 0.1);
+    color: var(--danger-red);
+}
+
+.condition-alert {
+    background: rgba(255, 193, 7, 0.1);
+    color: var(--warning-yellow);
+}
+
+.medication-alert {
+    background: rgba(33, 150, 243, 0.1);
+    color: var(--info-blue);
+}
+
+/* Medication Input Group */
+.medication-input-group {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.generic-brand-toggle {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--light-teal);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--accent-teal);
+    font-size: 0.813rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    white-space: nowrap;
+}
+
+.generic-brand-toggle:hover {
+    background: var(--accent-teal);
+    color: var(--white);
+}
+
+/* Drug Info Panel */
+.drug-info-panel {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: rgba(33, 150, 243, 0.05);
+    border-left: 3px solid var(--info-blue);
+    border-radius: var(--radius-sm);
+}
+
+.drug-info-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    color: var(--info-blue);
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.drug-info-content p {
+    margin: var(--spacing-xs) 0;
+    font-size: 0.813rem;
+    color: var(--charcoal-gray);
+}
+
+/* Frequency Buttons */
+.frequency-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.freq-btn {
+    padding: var(--spacing-md);
+    background: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-sm);
+    color: var(--charcoal-gray);
+    font-size: 0.813rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    text-align: center;
+}
+
+.freq-btn:hover {
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+.freq-btn.selected {
+    background: var(--accent-teal);
+    border-color: var(--accent-teal);
+    color: var(--white);
+}
+
+/* Instruction Templates */
+.instruction-templates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.template-btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-full);
+    color: var(--charcoal-gray);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.template-btn:hover {
+    background: var(--light-teal);
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+/* Language Selector */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.language-selector label {
+    font-size: 0.813rem;
+    font-weight: 500;
+    color: var(--charcoal-gray);
+}
+
+.form-control-sm {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.813rem;
+}
+
+/* Checkbox Wrapper */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent-teal);
+    cursor: pointer;
+}
+
+.checkbox-wrapper label {
+    margin: 0;
+    cursor: pointer;
+}
+
+/* ========================================
+   12. PRESCRIPTION PREVIEW STYLES
+   ======================================== */
+.prescription-preview {
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border: 2px solid var(--medium-gray);
+    border-radius: var(--radius-md);
+}
+
+.clinic-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--primary-navy);
+    margin-bottom: var(--spacing-lg);
+}
+
+.clinic-logo {
+    width: 80px;
+    height: auto;
+}
+
+.clinic-info {
+    flex: 1;
+}
+
+.clinic-info h3 {
+    margin: 0;
+    color: var(--primary-navy);
+    font-size: 1.25rem;
+}
+
+.clinic-info p {
+    margin: var(--spacing-xs) 0;
+    font-size: 0.875rem;
+    color: var(--charcoal-gray);
+}
+
+.prescription-content {
+    padding: var(--spacing-md) 0;
+}
+
+.prescription-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-navy);
+    margin: var(--spacing-lg) 0;
+    letter-spacing: 2px;
+}
+
+.preview-section {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md);
+    background: var(--light-gray);
+    border-radius: var(--radius-sm);
+}
+
+.preview-section h5 {
+    margin: 0 0 var(--spacing-md);
+    color: var(--primary-navy);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.info-item {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.info-item label {
+    font-weight: 600;
+    color: var(--charcoal-gray);
+}
+
+.info-item span {
+    color: var(--primary-navy);
+}
+
+.medication-preview-box {
+    background: var(--white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--accent-teal);
+}
+
+.medication-preview-box h4 {
+    margin: 0 0 var(--spacing-md);
+    color: var(--accent-teal);
+    font-size: 1.125rem;
+}
+
+.medication-instructions p {
+    margin: var(--spacing-xs) 0;
+    font-size: 0.95rem;
+}
+
+.doctor-info p {
+    margin: var(--spacing-xs) 0;
+    font-size: 0.875rem;
+}
+
+.preview-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--medium-gray);
+}
+
+.qr-code {
+    text-align: center;
+}
+
+.qr-code-img {
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--medium-gray);
+    padding: var(--spacing-sm);
+    background: var(--white);
+}
+
+.qr-code p {
+    margin-top: var(--spacing-xs);
+    font-size: 0.75rem;
+    color: var(--charcoal-gray);
+}
+
+.digital-signature {
+    text-align: center;
+}
+
+.signature-line {
+    width: 200px;
+    height: 1px;
+    background: var(--charcoal-gray);
+    margin: 0 auto var(--spacing-xs);
+}
+
+.digital-signature p {
+    font-size: 0.875rem;
+    color: var(--charcoal-gray);
+    margin: var(--spacing-xs) 0;
+}
+
+/* ========================================
+   13. MEDICATION DATABASE MODAL
+   ======================================== */
+.drug-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.category-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-full);
+    color: var(--charcoal-gray);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.category-btn:hover {
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+.category-btn.active {
+    background: var(--accent-teal);
+    border-color: var(--accent-teal);
+    color: var(--white);
+}
+
+.drug-search-bar {
+    position: relative;
+    margin-bottom: var(--spacing-lg);
+}
+
+.drug-search-bar input {
+    width: 100%;
+    padding: var(--spacing-md);
+    padding-right: var(--spacing-2xl);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+}
+
+.drug-search-bar i {
+    position: absolute;
+    right: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--charcoal-gray);
+    opacity: 0.5;
+}
+
+.drug-list {
+    display: grid;
+    gap: var(--spacing-md);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.drug-item {
+    padding: var(--spacing-md);
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--medium-gray);
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.drug-item:hover {
+    background: var(--light-teal);
+    border-color: var(--accent-teal);
+}
+
+.drug-item h4 {
+    margin: 0 0 var(--spacing-xs);
+    color: var(--primary-navy);
+    font-size: 1rem;
+}
+
+.drug-category {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--accent-teal);
+    color: var(--white);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.drug-description {
+    font-size: 0.875rem;
+    color: var(--charcoal-gray);
+    margin: var(--spacing-xs) 0;
+}
+
+.drug-dosages {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+}
+
+.dosage-option {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    color: var(--charcoal-gray);
+}
+
+/* ========================================
+   14. QUICK DUPLICATE & REISSUE MODALS
+   ======================================== */
+.recent-prescriptions-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.recent-prescription-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+}
+
+.recent-prescription-item:hover {
+    background: var(--light-teal);
+}
+
+.prescription-info h5 {
+    margin: 0 0 var(--spacing-xs);
+    color: var(--primary-navy);
+    font-size: 0.95rem;
+}
+
+.prescription-info p {
+    margin: 0;
+    font-size: 0.813rem;
+    color: var(--charcoal-gray);
+}
+
+.prescription-date {
+    font-size: 0.75rem;
+    color: var(--charcoal-gray);
+    opacity: 0.6;
+}
+
+.duplicate-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--accent-teal);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.813rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.duplicate-btn:hover {
+    background: #00A693;
+}
+
+/* Reissue Options */
+.reissue-options {
+    margin-top: var(--spacing-lg);
+}
+
+.reissue-options h4 {
+    margin: 0 0 var(--spacing-md);
+    color: var(--primary-navy);
+    font-size: 1rem;
+}
+
+/* ========================================
+   15. WARNING & ALERT MODALS
+   ======================================== */
+.warning-message {
+    padding: var(--spacing-md);
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 3px solid var(--warning-yellow);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.warning-message i {
+    font-size: 2rem;
+    color: var(--warning-yellow);
+    margin-bottom: var(--spacing-sm);
+}
+
+.warning-message p {
+    font-size: 0.95rem;
+    color: var(--charcoal-gray);
+}
+
+.existing-prescription {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background: var(--white);
+    border-radius: var(--radius-sm);
+}
+
+.existing-prescription h5 {
+    margin: 0 0 var(--spacing-xs);
+    color: var(--primary-navy);
+    font-size: 0.875rem;
+}
+
+.existing-prescription p {
+    margin: var(--spacing-xs) 0;
+    font-size: 0.813rem;
+    color: var(--charcoal-gray);
+}
+
+/* Interaction Alert */
+.interaction-warning {
+    padding: var(--spacing-md);
+}
+
+.interaction-warning h4 {
+    margin: 0 0 var(--spacing-md);
+    color: var(--danger-red);
+    font-size: 1rem;
+}
+
+.interaction-details {
+    background: rgba(244, 67, 54, 0.05);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.interaction-item {
+    margin-bottom: var(--spacing-md);
+}
+
+.severity-badge {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-xs);
+}
+
+.severity-badge.moderate {
+    background: rgba(255, 193, 7, 0.1);
+    color: var(--warning-yellow);
+}
+
+.severity-badge.severe {
+    background: rgba(244, 67, 54, 0.1);
+    color: var(--danger-red);
+}
+
+.interaction-item p {
+    margin: var(--spacing-xs) 0;
+    font-size: 0.875rem;
+    color: var(--charcoal-gray);
+}
+
+.interaction-actions p {
+    font-weight: 600;
+    color: var(--primary-navy);
+}
+
+/* ========================================
+   16. PRESCRIPTION DETAIL MODAL
+   ======================================== */
+.prescription-full-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.detail-section {
+    padding: var(--spacing-md);
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+}
+
+.detail-section h4 {
+    margin: 0 0 var(--spacing-md);
+    color: var(--primary-navy);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.detail-item {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.detail-item label {
+    font-weight: 500;
+    color: var(--charcoal-gray);
+}
+
+.detail-item span {
+    color: var(--primary-navy);
+}
+
+.medication-full-info h5 {
+    margin: 0 0 var(--spacing-sm);
+    color: var(--accent-teal);
+    font-size: 1.125rem;
+}
+
+.medication-full-info p {
+    margin: var(--spacing-xs) 0;
+    font-size: 0.875rem;
+    color: var(--charcoal-gray);
+}
+
+.prescribing-info p,
+.compliance-info p {
+    margin: var(--spacing-xs) 0;
+    font-size: 0.875rem;
+    color: var(--charcoal-gray);
+}
+
+.dispense-history {
+    background: var(--white);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+}
+
+.dispense-entry {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-sm);
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.dispense-entry:last-child {
+    border-bottom: none;
+}
+
+.dispense-date,
+.pharmacy,
+.quantity-dispensed {
+    font-size: 0.813rem;
+    color: var(--charcoal-gray);
+}
+
+/* ========================================
+   17. CUSTOM SCHEDULE MODAL
+   ======================================== */
+.timing-inputs h4,
+.meal-relation h4,
+.special-instructions h4 {
+    margin: 0 0 var(--spacing-md);
+    color: var(--primary-navy);
+    font-size: 1rem;
+}
+
+.time-slots {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.time-slot {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.time-slot label {
+    font-weight: 500;
+    color: var(--charcoal-gray);
+}
+
+.add-time-slot {
+    grid-column: span 2;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: transparent;
+    border: 2px dashed var(--medium-gray);
+    border-radius: var(--radius-sm);
+    color: var(--charcoal-gray);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.add-time-slot:hover {
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+.meal-options {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.radio-option:hover {
+    background: var(--light-gray);
+}
+
+.radio-option input[type="radio"] {
+    accent-color: var(--accent-teal);
+}
+
+/* ========================================
+   18. FOOTER
+   ======================================== */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 280px;
+    right: 0;
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--dark-navy) 100%);
+    box-shadow: 0 -4px 12px rgba(29, 42, 59, 0.1);
+    z-index: var(--z-sticky);
+    padding: var(--spacing-md) var(--spacing-xl);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-medium);
+}
+
+.dark-mode-btn:hover {
+    background: var(--accent-teal);
+    border-color: var(--accent-teal);
+    transform: rotate(180deg);
+}
+
+.dark-mode-btn i {
+    font-size: 1.125rem;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.social-links a {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    transition: var(--transition-fast);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    background: var(--accent-teal);
+    transform: translateY(-4px);
+}
+
+/* Footer Info */
+.footer-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+}
+
+.corporate-link {
+    color: var(--accent-teal);
+    font-weight: 600;
+    transition: var(--transition-fast);
+    text-decoration: none;
+}
+
+.corporate-link:hover {
+    color: var(--white);
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ========================================
+   19. ANIMATIONS
+   ======================================== */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* ========================================
+   20. RESPONSIVE DESIGN
+   ======================================== */
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 240px;
+    }
+
+    .main-content {
+        margin-left: 240px;
+    }
+
+    .footer {
+        left: 240px;
+    }
+
+    .prescription-entry {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .compliance-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: 280px;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding-bottom: 120px;
+    }
+
+    .footer {
+        left: 0;
+        padding: var(--spacing-md);
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .top-header {
+        padding: var(--spacing-md);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .prescription-stats {
+        display: none;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: var(--spacing-md);
+    }
+
+    .modal-content.large {
+        max-width: 95%;
+    }
+
+    .frequency-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid,
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-footer {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        align-items: center;
+    }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.25rem;
+    }
+
+    .profile-name {
+        display: none;
+    }
+
+    .quick-actions-section {
+        padding: var(--spacing-md);
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .prescription-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ========================================
+   21. PRINT STYLES
+   ======================================== */
+@media print {
+
+    .sidebar,
+    .footer,
+    .notification-icon,
+    .profile-dropdown,
+    .quick-actions-section,
+    .filter-controls,
+    .pagination,
+    .modal,
+    .social-links {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding-bottom: 0;
+    }
+
+    .prescription-entry {
+        break-inside: avoid;
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    body {
+        font-size: 12pt;
+        color: #000;
+        background: #fff;
+    }
+
+    .prescription-preview {
+        border: none;
+        box-shadow: none;
+    }
+}
+
+/* ========================================
+   22. ACCESSIBILITY
+   ======================================== */
+/* Focus Styles */
+*:focus {
+    outline: 3px solid var(--accent-teal);
+    outline-offset: 2px;
+}
+
+/* Skip to Main Content */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-teal);
+    color: var(--white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    z-index: 9999;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+
+    .prescription-entry,
+    .modal-content {
+        border: 2px solid var(--primary-navy);
+    }
+
+    .action-btn {
+        border-width: 2px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

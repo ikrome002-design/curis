@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Appointments - Curis Scheduling Hub</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="appointments.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="appointments-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Check-In\check_in.html"
+                            class="nav-link">
+                            <i class="fas fa-user-check"></i>
+                            <span>Check-In</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Inbox and Alerts\inbox_and_alerts.html"
+                            class="nav-link">
+                            <i class="fas fa-inbox"></i>
+                            <span>Inbox & Alerts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Queue and Flow\queue_and_flow.html"
+                            class="nav-link">
+                            <i class="fas fa-list-check"></i>
+                            <span>Queue & Flow</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Patient Directory\patient_directory.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Patient Directory</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Appointments</h1>
+                    <p class="subtitle">Scheduling Hub</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- User Profile -->
+                    <div class="user-profile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-icon" id="profileIcon">
+                        <span class="user-name">Sarah Wanjiru</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Quick Actions Bar -->
+            <div class="quick-actions-bar">
+                <button class="action-btn primary" id="bookAppointmentBtn">
+                    <i class="fas fa-calendar-plus"></i>
+                    <span>Book Appointment</span>
+                </button>
+                <button class="action-btn" id="viewToggleBtn">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Calendar View</span>
+                </button>
+                <button class="action-btn" id="filterBtn">
+                    <i class="fas fa-filter"></i>
+                    <span>Filter</span>
+                </button>
+                <button class="action-btn" id="remindersBtn">
+                    <i class="fas fa-bell"></i>
+                    <span>Reminders</span>
+                </button>
+                <button class="action-btn" id="auditLogBtn">
+                    <i class="fas fa-history"></i>
+                    <span>Audit Log</span>
+                </button>
+            </div>
+
+            <!-- Appointments Grid Layout -->
+            <div class="appointments-grid">
+
+                <!-- Appointment Listings -->
+                <section class="appointments-card listings">
+                    <div class="card-header">
+                        <h2><i class="fas fa-calendar-check"></i> Appointment Listings</h2>
+                        <span class="subtitle">Upcoming & Past</span>
+                    </div>
+                    <div class="card-body">
+                        <!-- View Toggle -->
+                        <div class="view-controls">
+                            <button class="view-btn active" data-view="list">
+                                <i class="fas fa-list"></i> List View
+                            </button>
+                            <button class="view-btn" data-view="calendar">
+                                <i class="fas fa-calendar"></i> Calendar View
+                            </button>
+                        </div>
+
+                        <!-- Appointments List -->
+                        <div class="appointments-list" id="listView">
+                            <!-- Appointment Item -->
+                            <div class="appointment-item confirmed">
+                                <div class="appt-time">
+                                    <span class="time">09:00 AM</span>
+                                    <span class="duration">30 min</span>
+                                </div>
+                                <div class="appt-details">
+                                    <div class="patient-info">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                            alt="Patient" class="patient-avatar">
+                                        <div class="patient-details">
+                                            <span class="patient-name">John Mwangi</span>
+                                            <span class="visit-reason">General Consultation</span>
+                                        </div>
+                                    </div>
+                                    <div class="doctor-info">
+                                        <span class="doctor-name">Dr. James Ochieng</span>
+                                        <span class="room">Room 101</span>
+                                    </div>
+                                </div>
+                                <div class="appt-status">
+                                    <span class="status-badge confirmed">
+                                        <i class="fas fa-check-circle"></i> Confirmed
+                                    </span>
+                                </div>
+                                <div class="appt-actions">
+                                    <button class="action-icon" title="Check-in">
+                                        <i class="fas fa-user-check"></i>
+                                    </button>
+                                    <button class="action-icon" title="Reschedule">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </button>
+                                    <button class="action-icon" title="Cancel">
+                                        <i class="fas fa-times-circle"></i>
+                                    </button>
+                                    <button class="action-icon" title="More">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- More appointment items -->
+                            <div class="appointment-item pending">
+                                <div class="appt-time">
+                                    <span class="time">09:30 AM</span>
+                                    <span class="duration">45 min</span>
+                                </div>
+                                <div class="appt-details">
+                                    <div class="patient-info">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                            alt="Patient" class="patient-avatar">
+                                        <div class="patient-details">
+                                            <span class="patient-name">Mary Njeri</span>
+                                            <span class="visit-reason">Follow-up</span>
+                                        </div>
+                                    </div>
+                                    <div class="doctor-info">
+                                        <span class="doctor-name">Dr. Mary Kamau</span>
+                                        <span class="room">Room 102</span>
+                                    </div>
+                                </div>
+                                <div class="appt-status">
+                                    <span class="status-badge pending">
+                                        <i class="fas fa-clock"></i> Pending
+                                    </span>
+                                </div>
+                                <div class="appt-actions">
+                                    <button class="action-icon" title="Confirm">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="action-icon" title="Reschedule">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </button>
+                                    <button class="action-icon" title="Cancel">
+                                        <i class="fas fa-times-circle"></i>
+                                    </button>
+                                    <button class="action-icon" title="More">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="appointment-item completed">
+                                <div class="appt-time">
+                                    <span class="time">10:00 AM</span>
+                                    <span class="duration">30 min</span>
+                                </div>
+                                <div class="appt-details">
+                                    <div class="patient-info">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                            alt="Patient" class="patient-avatar">
+                                        <div class="patient-details">
+                                            <span class="patient-name">Peter Omondi</span>
+                                            <span class="visit-reason">Checkup</span>
+                                        </div>
+                                    </div>
+                                    <div class="doctor-info">
+                                        <span class="doctor-name">Dr. Peter Mutua</span>
+                                        <span class="room">Room 103</span>
+                                    </div>
+                                </div>
+                                <div class="appt-status">
+                                    <span class="status-badge completed">
+                                        <i class="fas fa-check-double"></i> Completed
+                                    </span>
+                                </div>
+                                <div class="appt-actions">
+                                    <button class="action-icon" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-icon" title="Generate Invoice">
+                                        <i class="fas fa-file-invoice"></i>
+                                    </button>
+                                    <button class="action-icon" title="More">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Calendar View (Hidden by default) -->
+                        <div class="calendar-view hidden" id="calendarView">
+                            <!-- Calendar implementation here -->
+                            <div class="calendar-header">
+                                <button class="calendar-nav prev"><i class="fas fa-chevron-left"></i></button>
+                                <span class="calendar-month">September 2025</span>
+                                <button class="calendar-nav next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="calendar-grid">
+                                <!-- Calendar grid implementation -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Doctor Availability -->
+                <section class="appointments-card doctor-availability">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user-doctor"></i> Doctor Availability</h2>
+                        <span class="subtitle">Real-Time Schedules</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="availability-grid">
+                            <div class="doctor-schedule">
+                                <div class="doctor-header">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Doctor" class="doctor-avatar">
+                                    <div class="doctor-info">
+                                        <span class="doctor-name">Dr. James Ochieng</span>
+                                        <span class="doctor-specialty">Cardiologist</span>
+                                    </div>
+                                    <span class="status-indicator available">
+                                        <i class="fas fa-circle"></i> Available
+                                    </span>
+                                </div>
+                                <div class="time-slots">
+                                    <button class="slot available">09:00</button>
+                                    <button class="slot booked">09:30</button>
+                                    <button class="slot booked">10:00</button>
+                                    <button class="slot available">10:30</button>
+                                    <button class="slot available">11:00</button>
+                                    <button class="slot break">12:00</button>
+                                    <button class="slot available">14:00</button>
+                                    <button class="slot available">14:30</button>
+                                </div>
+                                <div class="schedule-info">
+                                    <span class="room-assignment">Room 101</span>
+                                    <span class="patient-load">Queue: 3</span>
+                                </div>
+                            </div>
+
+                            <div class="doctor-schedule">
+                                <div class="doctor-header">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Doctor" class="doctor-avatar">
+                                    <div class="doctor-info">
+                                        <span class="doctor-name">Dr. Mary Kamau</span>
+                                        <span class="doctor-specialty">Pediatrician</span>
+                                    </div>
+                                    <span class="status-indicator consultation">
+                                        <i class="fas fa-circle"></i> In Consultation
+                                    </span>
+                                </div>
+                                <div class="time-slots">
+                                    <button class="slot booked">09:00</button>
+                                    <button class="slot booked">09:30</button>
+                                    <button class="slot booked">10:00</button>
+                                    <button class="slot available">10:30</button>
+                                    <button class="slot available">11:00</button>
+                                    <button class="slot break">12:00</button>
+                                    <button class="slot booked">14:00</button>
+                                    <button class="slot available">14:30</button>
+                                </div>
+                                <div class="schedule-info">
+                                    <span class="room-assignment">Room 102</span>
+                                    <span class="patient-load">Queue: 5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Manage Appointments -->
+                <section class="appointments-card manage-appointments">
+                    <div class="card-header">
+                        <h2><i class="fas fa-tasks"></i> Manage Appointments</h2>
+                        <span class="subtitle">Confirm/Reschedule/Cancel</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="management-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Pending Confirmations</span>
+                                <button class="stat-action">Confirm All</button>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Reschedule Requests</span>
+                                <button class="stat-action">Review</button>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">2</span>
+                                <span class="stat-label">Cancellations Today</span>
+                                <button class="stat-action">View</button>
+                            </div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="manage-btn confirm">
+                                <i class="fas fa-check"></i> One-Click Confirm
+                            </button>
+                            <button class="manage-btn reschedule">
+                                <i class="fas fa-calendar-alt"></i> Drag-Drop Reschedule
+                            </button>
+                            <button class="manage-btn cancel">
+                                <i class="fas fa-times"></i> Cancel & Notify
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Automated Reminders -->
+                <section class="appointments-card reminders-system">
+                    <div class="card-header">
+                        <h2><i class="fas fa-bell"></i> Automated Reminders</h2>
+                        <span class="subtitle">SMS/Email/WhatsApp</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="reminder-settings">
+                            <div class="reminder-option">
+                                <label class="reminder-toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">24hr Reminder</span>
+                                </label>
+                            </div>
+                            <div class="reminder-option">
+                                <label class="reminder-toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">1hr Reminder</span>
+                                </label>
+                            </div>
+                            <div class="reminder-option">
+                                <label class="reminder-toggle">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">Custom Timing</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="channel-selection">
+                            <button class="channel-btn active">
+                                <i class="fas fa-sms"></i> SMS
+                            </button>
+                            <button class="channel-btn active">
+                                <i class="fas fa-envelope"></i> Email
+                            </button>
+                            <button class="channel-btn">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </button>
+                        </div>
+                        <button class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Manual Reminder
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Conflict Detection -->
+                <section class="appointments-card conflict-detection">
+                    <div class="card-header">
+                        <h2><i class="fas fa-exclamation-triangle"></i> Conflict Detection</h2>
+                        <span class="subtitle">& Resolution</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="conflict-alerts">
+                            <div class="conflict-item warning">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <div class="conflict-details">
+                                    <span class="conflict-type">Double Booking Alert</span>
+                                    <span class="conflict-desc">Dr. Ochieng - 2:30 PM slot</span>
+                                </div>
+                                <button class="resolve-btn">Resolve</button>
+                            </div>
+                            <div class="conflict-item info">
+                                <i class="fas fa-info-circle"></i>
+                                <div class="conflict-details">
+                                    <span class="conflict-type">Buffer Time Issue</span>
+                                    <span class="conflict-desc">Back-to-back appointments</span>
+                                </div>
+                                <button class="resolve-btn">Adjust</button>
+                            </div>
+                        </div>
+                        <div class="conflict-stats">
+                            <span class="stat">0 Active Conflicts</span>
+                            <span class="stat">3 Resolved Today</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Audit Trail & Logs -->
+                <section class="appointments-card audit-trail">
+                    <div class="card-header">
+                        <h2><i class="fas fa-history"></i> Audit Trail & Logs</h2>
+                        <span class="subtitle">Action History</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="audit-entries">
+                            <div class="audit-entry">
+                                <span class="audit-time">10:45 AM</span>
+                                <div class="audit-details">
+                                    <span class="audit-action">Appointment Confirmed</span>
+                                    <span class="audit-user">by Sarah Wanjiru</span>
+                                    <span class="audit-target">Patient: John Mwangi</span>
+                                </div>
+                            </div>
+                            <div class="audit-entry">
+                                <span class="audit-time">10:30 AM</span>
+                                <div class="audit-details">
+                                    <span class="audit-action">Appointment Rescheduled</span>
+                                    <span class="audit-user">by Sarah Wanjiru</span>
+                                    <span class="audit-target">From 3PM to 4PM</span>
+                                </div>
+                            </div>
+                            <div class="audit-entry">
+                                <span class="audit-time">09:15 AM</span>
+                                <div class="audit-details">
+                                    <span class="audit-action">New Booking Created</span>
+                                    <span class="audit-user">by Sarah Wanjiru</span>
+                                    <span class="audit-target">Patient: Grace Muthoni</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="export-btn">
+                            <i class="fas fa-download"></i> Export Logs
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Real-Time Notifications -->
+                <section class="appointments-card realtime-notifications">
+                    <div class="card-header">
+                        <h2><i class="fas fa-bell-slash"></i> Real-Time Notifications</h2>
+                        <span class="subtitle">System Alerts</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="notification-list">
+                            <div class="notif-item new">
+                                <i class="fas fa-user-plus"></i>
+                                <div class="notif-content">
+                                    <span class="notif-message">New patient booking for tomorrow</span>
+                                    <span class="notif-time">Just now</span>
+                                </div>
+                            </div>
+                            <div class="notif-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="notif-content">
+                                    <span class="notif-message">Patient confirmed appointment</span>
+                                    <span class="notif-time">5 min ago</span>
+                                </div>
+                            </div>
+                            <div class="notif-item">
+                                <i class="fas fa-times-circle"></i>
+                                <div class="notif-content">
+                                    <span class="notif-message">Appointment cancelled by patient</span>
+                                    <span class="notif-time">15 min ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Inbox and Alerts\inbox_and_alerts.html"
+                            class="view-all-link">
+                            View All Notifications
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Patient Communication Tools -->
+                <section class="appointments-card patient-communication">
+                    <div class="card-header">
+                        <h2><i class="fas fa-comment-medical"></i> Patient Communication</h2>
+                        <span class="subtitle">Tools</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="comm-options">
+                            <button class="comm-btn">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Send Appointment Info</span>
+                            </button>
+                            <button class="comm-btn">
+                                <i class="fas fa-bell"></i>
+                                <span>Send Reminder</span>
+                            </button>
+                            <button class="comm-btn">
+                                <i class="fas fa-sync"></i>
+                                <span>Send Update</span>
+                            </button>
+                        </div>
+                        <div class="delivery-tracking">
+                            <h4>Delivery Status</h4>
+                            <div class="tracking-items">
+                                <div class="tracking-item">
+                                    <span class="patient">John Mwangi</span>
+                                    <span class="status delivered">
+                                        <i class="fas fa-check"></i> Delivered
+                                    </span>
+                                </div>
+                                <div class="tracking-item">
+                                    <span class="patient">Mary Njeri</span>
+                                    <span class="status read">
+                                        <i class="fas fa-check-double"></i> Read
+                                    </span>
+                                </div>
+                                <div class="tracking-item">
+                                    <span class="patient">Peter Omondi</span>
+                                    <span class="status failed">
+                                        <i class="fas fa-times"></i> Failed
+                                        <button class="retry-btn">Retry</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals Section -->
+
+    <!-- Book Appointment Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Book Appointment - Smart Scheduling</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="booking-form">
+                    <!-- Patient Selection -->
+                    <div class="form-section">
+                        <h4>Patient Selection</h4>
+                        <div class="form-group">
+                            <label>Search Existing Patient</label>
+                            <div class="patient-search">
+                                <input type="text" placeholder="Enter patient name or ID" class="form-input">
+                                <button class="search-btn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="divider">OR</div>
+                        <button class="btn-secondary" id="newPatientBtn">
+                            <i class="fas fa-user-plus"></i> Add New Patient
+                        </button>
+                    </div>
+
+                    <!-- Doctor Selection -->
+                    <div class="form-section">
+                        <h4>Doctor Selection</h4>
+                        <div class="form-group">
+                            <label>Specialization Filter</label>
+                            <select class="form-select">
+                                <option>All Specializations</option>
+                                <option>Cardiology</option>
+                                <option>Pediatrics</option>
+                                <option>Orthopedics</option>
+                                <option>General Medicine</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Select Doctor</label>
+                            <div class="doctor-selection-grid">
+                                <div class="doctor-option">
+                                    <input type="radio" name="doctor" id="doctor1">
+                                    <label for="doctor1">
+                                        <span class="doc-name">Dr. James Ochieng</span>
+                                        <span class="doc-spec">Cardiologist</span>
+                                        <span class="doc-available">Next: 2:00 PM</span>
+                                    </label>
+                                </div>
+                                <div class="doctor-option">
+                                    <input type="radio" name="doctor" id="doctor2">
+                                    <label for="doctor2">
+                                        <span class="doc-name">Dr. Mary Kamau</span>
+                                        <span class="doc-spec">Pediatrician</span>
+                                        <span class="doc-available">Next: 3:30 PM</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Time Slot Selection -->
+                    <div class="form-section">
+                        <h4>Time Slot Picker</h4>
+                        <div class="form-group">
+                            <label>Select Date</label>
+                            <input type="date" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Available Slots</label>
+                            <div class="time-slot-grid">
+                                <button class="time-slot available">09:00 AM</button>
+                                <button class="time-slot available">09:30 AM</button>
+                                <button class="time-slot unavailable">10:00 AM</button>
+                                <button class="time-slot available">10:30 AM</button>
+                                <button class="time-slot available">11:00 AM</button>
+                                <button class="time-slot unavailable">11:30 AM</button>
+                                <button class="time-slot available">02:00 PM</button>
+                                <button class="time-slot available">02:30 PM</button>
+                                <button class="time-slot available">03:00 PM</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Duration</label>
+                            <select class="form-select">
+                                <option>30 minutes</option>
+                                <option>45 minutes</option>
+                                <option>1 hour</option>
+                                <option>1.5 hours</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Visit Reason -->
+                    <div class="form-section">
+                        <h4>Visit Details</h4>
+                        <div class="form-group">
+                            <label>Visit Reason (Optional)</label>
+                            <textarea placeholder="Enter reason for visit..." class="form-textarea"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Auto-Suggest -->
+                    <div class="auto-suggest-section">
+                        <button class="btn-outline">
+                            <i class="fas fa-magic"></i> Auto-Suggest Best Slots
+                        </button>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button class="btn-primary">Confirm Booking</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Modal -->
+    <div class="modal" id="filterModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Filter & Search</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="filter-form">
+                    <div class="form-group">
+                        <label>Patient Name</label>
+                        <input type="text" placeholder="Search by patient name" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Doctor</label>
+                        <select class="form-select">
+                            <option>All Doctors</option>
+                            <option>Dr. James Ochieng</option>
+                            <option>Dr. Mary Kamau</option>
+                            <option>Dr. Peter Mutua</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Date Range</label>
+                        <div class="date-range">
+                            <input type="date" class="form-input">
+                            <span>to</span>
+                            <input type="date" class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <div class="status-filters">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>Confirmed</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>Pending</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span>Cancelled</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span>Completed</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Sort By</label>
+                        <select class="form-select">
+                            <option>Date (Newest First)</option>
+                            <option>Date (Oldest First)</option>
+                            <option>Patient Name</option>
+                            <option>Doctor Name</option>
+                            <option>Status</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary">Apply Filters</button>
+                        <button class="btn-secondary">Clear All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Registration Modal -->
+    <div class="modal" id="quickRegisterModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Quick Registration</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="registration-form">
+                    <div class="form-group">
+                        <label>Patient Name *</label>
+                        <input type="text" placeholder="Full name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" placeholder="+254..." class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="email@example.com" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <input type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <select class="form-select">
+                            <option>Select Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary">Create & Continue</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reminder Configuration Modal -->
+    <div class="modal" id="reminderConfigModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Reminder Settings</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="reminder-config">
+                    <div class="form-group">
+                        <label>Reminder Timings</label>
+                        <div class="timing-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>24 hours before</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>1 hour before</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span>Custom timing</span>
+                                <input type="number" placeholder="Hours" class="inline-input">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Message Template</label>
+                        <textarea class="form-textarea"
+                            rows="4">Dear [Patient Name], This is a reminder about your appointment with [Doctor Name] on [Date] at [Time]. Please arrive 15 minutes early. Reply CONFIRM to confirm or CANCEL to cancel.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Available Placeholders</label>
+                        <div class="placeholder-tags">
+                            <span class="tag">[Patient Name]</span>
+                            <span class="tag">[Doctor Name]</span>
+                            <span class="tag">[Date]</span>
+                            <span class="tag">[Time]</span>
+                            <span class="tag">[Clinic Name]</span>
+                            <span class="tag">[Room Number]</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Language</label>
+                        <select class="form-select">
+                            <option>English</option>
+                            <option>Kiswahili</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Retry Logic</label>
+                        <div class="retry-settings">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>Retry failed messages</span>
+                            </label>
+                            <label>
+                                <span>Max retries:</span>
+                                <input type="number" value="3" class="inline-input small">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary">Save Settings</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conflict Resolution Modal -->
+    <div class="modal" id="conflictModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Conflict Resolution</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="conflict-resolution">
+                    <div class="conflict-info">
+                        <h4>Conflict Details</h4>
+                        <p>Double booking detected for Dr. James Ochieng at 2:30 PM</p>
+                        <div class="affected-appointments">
+                            <div class="affected-appt">
+                                <span>Patient 1: John Mwangi</span>
+                                <span>Confirmed at: 10:00 AM</span>
+                            </div>
+                            <div class="affected-appt">
+                                <span>Patient 2: Grace Wanjiku</span>
+                                <span>Confirmed at: 11:30 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resolution-options">
+                        <h4>Suggested Alternatives</h4>
+                        <button class="resolution-option">
+                            <i class="fas fa-clock"></i>
+                            <span>Next Available Slot: 3:00 PM</span>
+                        </button>
+                        <button class="resolution-option">
+                            <i class="fas fa-user-md"></i>
+                            <span>Different Doctor: Dr. Mary Kamau at 2:30 PM</span>
+                        </button>
+                        <button class="resolution-option">
+                            <i class="fas fa-calendar"></i>
+                            <span>Different Day: Tomorrow at 2:30 PM</span>
+                        </button>
+                    </div>
+                    <div class="escalation-option">
+                        <button class="btn-outline">
+                            <i class="fas fa-arrow-up"></i> Escalate to Owner
+                        </button>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary">Apply Resolution</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audit Log Export Modal -->
+    <div class="modal" id="auditExportModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Export Audit Logs</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="export-options">
+                    <div class="form-group">
+                        <label>Date Range</label>
+                        <div class="date-range">
+                            <input type="date" class="form-input">
+                            <span>to</span>
+                            <input type="date" class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Export Format</label>
+                        <div class="format-options">
+                            <label class="radio-label">
+                                <input type="radio" name="format" checked>
+                                <span>CSV Format</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="format">
+                                <span>PDF Report</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email To</label>
+                        <input type="email" placeholder="owner@clinic.com" class="form-input">
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary">Export & Send</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Communication Panel Modal -->
+    <div class="modal" id="communicationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Patient Communication</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="communication-panel">
+                    <div class="form-group">
+                        <label>Message Type</label>
+                        <select class="form-select">
+                            <option>Appointment Information</option>
+                            <option>Reminder</option>
+                            <option>Update/Change Notification</option>
+                            <option>Custom Message</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Channel Selection</label>
+                        <div class="channel-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>In-app Alert</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>SMS</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span>Email</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span>WhatsApp</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Message Content</label>
+                        <textarea class="form-textarea" rows="5" placeholder="Type your message here..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Recipients</label>
+                        <div class="recipient-list">
+                            <span class="recipient-tag">John Mwangi <button class="remove">&times;</button></span>
+                            <span class="recipient-tag">Mary Njeri <button class="remove">&times;</button></span>
+                        </div>
+                        <button class="btn-outline">Add Recipients</button>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary">Send & Track</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Popup -->
+    <div class="profile-popup" id="profilePopup">
+        <div class="profile-popup-content">
+            <div class="profile-header">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                    alt="Profile" class="popup-profile-img">
+                <div class="profile-info">
+                    <h3>Sarah Wanjiru</h3>
+                    <p>Receptionist</p>
+                </div>
+            </div>
+            <div class="profile-menu">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\My Profile\my_profile.html"
+                    class="profile-menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Landing Page\landing_page.html"
+                    class="profile-menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="fixed-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <!-- Corporate Website Link -->
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer" class="corporate-link">
+                    Visit Citrus Labs
+                </a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Copyright -->
+                <p class="copyright">© 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="appointments.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+#### 1. **My Appointments**
+
+
+
+
+Based on the quoted features and functionalities of the Patient's Curis by Citrus web app, the dynamic MVP (Minimum Viable Product) features and functionalities within the "My Appointments" page are structured to ensure a seamless, family-centric healthcare scheduling experience. Here’s an in-depth breakdown of what this page enables dynamically:
+________________________________________
+My Appointments – MVP Features (Dynamic Functionalities)
+
+
+The "My Appointments" page serves as a centralized hub for patients to manage both their own and their dependents’ appointment schedules. It integrates real-time booking, clinic search, and comprehensive history tracking, enabling an intelligent and family-aware appointment management flow.
+________________________________________
+
+1.	 Real-Time Multi-Patient Appointment Booking
+•	Patients can book appointments for themselves or their underage dependents (children under 18) all within the same interface.
+•	A dropdown or switcher allows selection of the active family member (self or child).
+•	The system dynamically presents available services and doctor options based on the selected patient’s age (e.g., pediatricians for children).
+—
+2.	 Dynamic Clinic & Doctor Directory Search
+•	Filters include:
+o	Location (e.g., city, town, or region).
+o	Specialty (e.g., dermatology, pediatrics, dentistry).
+o	Availability (date/time-based real-time filtering).
+•	Advanced search allows:
+o	Lookup of a specific clinic by name, email, or phone number.
+o	Trace a clinic through an affiliated doctor, receptionist, or clinic assistant's listed contact.
+•	The directory results dynamically update based on chosen filters to ensure quick, intuitive access.
+—
+3.	 Real-Time Time Slot Booking Engine
+•	After selecting a clinic and doctor:
+o	A calendar interface presents available dates and times in real time.
+o	Users can view doctor's availability and select a preferred slot.
+•	On selecting a time:
+o	A confirmation modal dynamically displays the selected clinic, service, provider, date/time, and patient (self or dependent).
+o	Booking is finalized only after user confirms and the booking reference is generated.
+—
+4.	 Booking History & Upcoming Appointment Tracking
+•	Separate views for:
+o	Upcoming Appointments
+o	Past Appointments
+•	Filters include:
+o	Date range
+o	Patient (self or dependent)
+o	Clinic or doctor name
+•	For each appointment listed:
+o	Details include date, time, doctor, service, and clinic.
+o	Status tags (e.g., "Upcoming," "Completed," "Cancelled").
+o	Dynamic action buttons (e.g., "Reschedule," "Cancel" for upcoming appointments).
+—
+5.	Rescheduling & Cancellation Logic
+•	Users can reschedule or cancel appointments directly from the My Appointments page.
+•	Rules:
+o	Cancellation window (e.g., no cancellation within 12 hours of the appointment).
+o	Dynamic time-slot reallocation for rescheduling based on doctor availability.
+•	Updates reflect in real-time, with confirmation prompts to avoid accidental changes.
+—
+6.	 Integrated Notifications & Reminders
+•	System-generated alerts for:
+o	Upcoming appointments (email and/or SMS reminders).
+o	Reschedule confirmations or cancellations.
+•	These notifications dynamically adjust depending on patient preferences set in the Profile & Settings section.
+—
+7.	 Secure, Role-Based Family Management
+•	Parents (patients over 18) can:
+o	View, manage, and book for all dependents under their account.
+o	See appointment history segmented by family member.
+•	Age-based logic:
+o	Children 13–17 have more restricted visibility and control.
+o	Children 12 and under are entirely managed by the parent account.
+•	Each appointment entry dynamically reflects which family member it is associated with for clarity.
+—
+8.	 Integration with Medical Records & Billing
+•	Appointment records link to:
+o	Medical records (visit summaries, prescriptions).
+o	Billing & Payments (e.g., if an appointment generated an invoice).
+•	Clicking on an appointment allows the user to drill down into the linked visit, treatment details, and associated invoices.
+—
+Summary of UX/UI Dynamic Elements
+
+
+Dynamic Element	---- Description
+
+Family Switcher	---- Seamlessly toggle between self and dependent accounts
+Real-Time Slot Loader	---- Fetches doctor availability live during appointment booking
+Smart Search Filters	---- Filters clinics/doctors using relational and indexed data
+Contextual Action Buttons	---- Reschedule/Cancel only appear where applicable
+Status-Responsive Layout	---- Changes display based on booking status (e.g., greyed past appointments)
+Linked Data Modules	---- Appointments link to medical and billing data
+Notification Triggers	---- Automated alerts on key appointment events (booking, updates, reminders)
+
+
+—
+
+This dynamic appointment module ensures both flexibility and structure for families navigating healthcare, with strong privacy, accountability, and automation built into every user interaction.
+
+
+
+
+
+
+
+
+

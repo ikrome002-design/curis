@@ -1,0 +1,138 @@
+stateDiagram-v2
+    [*] --> EntryPoint: Click "Get Started"
+    [*] --> LandingPage: Click on Logo
+
+    EntryPoint --> GetStartedPage
+
+    GetStartedPage --> CreateAccountFlow: Create Account
+    GetStartedPage --> LoginFlow: Log In
+
+    state "Create Account Flow" as CreateAccountFlow {
+        [*] --> EmailInput
+        EmailInput --> PhoneInput: Enter Valid Email
+        PhoneInput --> PasswordCreate: Enter Phone Number
+        PasswordCreate --> VerifyEmail: Email Verification Link Sent
+        VerifyEmail --> SalesPersonnelConfirmation: Click Email Link
+        
+        state "Sales Personnel Confirmation" as SalesPersonnelConfirmation {
+            [*] --> CheckSalesCode
+            CheckSalesCode --> ValidCode: Sales code found
+            CheckSalesCode --> NoCode: No sales code detected
+            
+            state ValidCode {
+                [*] --> DisplayInfo
+                DisplayInfo --> ConfirmationPrompt
+            }
+            
+            state NoCode {
+                [*] --> ErrorMessage
+                ErrorMessage --> RequestCode
+            }
+            
+            ConfirmationPrompt --> Proceed: Click "Confirm and Proceed"
+            ConfirmationPrompt --> Back: Click "Back to Edit Details"
+            
+            Proceed --> ValidationCheck
+            ValidationCheck --> SalesPersonnelConfirmationComplete: Validation successful
+            ValidationCheck --> ErrorStates: Validation failed
+            
+            state "Error Handling" as ErrorStates {
+                NoSalesPersonnel: Display error message
+                InvalidCode: Show invalid code message
+                
+                NoSalesPersonnel --> RequestNewCode
+                InvalidCode --> RequestNewCode
+            }
+            
+            RequestNewCode --> CheckSalesCode
+            RequestCode --> CheckSalesCode
+            Back --> PreviousStep
+            PreviousStep --> [*]: Return to previous step
+        }
+        
+        SalesPersonnelConfirmation --> PolicyAgreement: Confirmation Complete
+        
+        state "Policy Agreement" as PolicyAgreement {
+            [*] --> PolicyDisplay
+            PolicyDisplay --> DataPolicy: View Data Policy
+            PolicyDisplay --> PrivacyPolicy: View Privacy Policy
+            PolicyDisplay --> TermsConditions: View Terms & Conditions
+            
+            DataPolicy --> PolicyDisplay
+            PrivacyPolicy --> PolicyDisplay
+            TermsConditions --> PolicyDisplay
+            
+            PolicyDisplay --> AgreeAll: Check "I Agree to All"
+            PolicyDisplay --> DeclineAll: Click "Decline All"
+            
+            AgreeAll --> AccountCreated
+            DeclineAll --> GetStartedPage: Return to start
+        }
+        
+        AccountCreated --> [*]: Redirect to Dashboard
+    }
+
+    state "Login Flow" as LoginFlow {
+        [*] --> LoginPage
+        
+        LoginPage --> EmailInput_Login: Enter Email
+        LoginPage --> PasswordInput: Enter Password
+        LoginPage --> ForgotPassword: Click Forgot Password
+        
+        EmailInput_Login --> ValidateEmail: Check Format
+        ValidateEmail --> EmailError: Invalid Format
+        ValidateEmail --> PasswordInput: Valid Format
+        EmailError --> EmailInput_Login: Try Again
+        
+        PasswordInput --> ValidateCredentials: Submit
+        ValidateCredentials --> AuthenticationError: Invalid Credentials
+        ValidateCredentials --> UserTypeCheck: Valid Credentials
+        AuthenticationError --> LoginPage: Return
+        
+        UserTypeCheck --> AdminDashboard: Administrator
+        UserTypeCheck --> StaffDashboard: Staff User
+        
+        AdminDashboard --> [*]: Successful Login
+        StaffDashboard --> [*]: Successful Login
+    }
+
+    state "Forgot Password Flow" as ForgotPassword {
+        [*] --> ResetEmailInput
+        ResetEmailInput --> ValidateResetEmail: Check Format
+        ValidateResetEmail --> ResetEmailError: Invalid Format
+        ValidateResetEmail --> SendResetLink: Valid Format
+        ResetEmailError --> ResetEmailInput: Try Again
+        
+        SendResetLink --> ResetLinkSent: Email Sent
+        ResetLinkSent --> ResetPasswordPage: Click Reset Link
+        ResetPasswordPage --> NewPasswordInput: Enter New Password
+        NewPasswordInput --> ConfirmPasswordInput: Confirm Password
+        ConfirmPasswordInput --> ValidateNewPassword: Submit
+        ValidateNewPassword --> PasswordResetError: Validation Failed
+        ValidateNewPassword --> PasswordResetSuccess: Valid Password
+        PasswordResetError --> NewPasswordInput: Try Again
+        PasswordResetSuccess --> LoginPage: Return to Login
+    }
+
+    note right of EmailInput
+        Required fields:
+        - Email address (must be valid format)
+        - Phone number
+        - Password (min 8 chars)
+    end note
+
+    note right of PolicyAgreement
+        User must agree to:
+        - Data Policy
+        - Privacy Policy
+        - Terms & Conditions
+        from Citrus Labs Limited
+    end note
+
+    note right of PasswordInput
+        Password requirements:
+        - Min 8 characters
+        - 1 uppercase letter
+        - 1 number
+        - 1 special character
+    end note

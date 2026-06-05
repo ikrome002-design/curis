@@ -1,0 +1,184 @@
+flowchart TD
+    %% Main Entry Points
+    Dashboard[Dashboard] --> BillingsMain[Billings & Payments<br/>Financial Control Center]
+    
+    %% Billings & Payments Main Hub
+    BillingsMain --> InvoiceGen[Invoice Generation & Tracking]
+    BillingsMain --> PaymentMethods[Payment Methods Management]
+    BillingsMain --> ServiceCharges[Curis Service Charges]
+    BillingsMain --> FinancialDash[Financial Performance Dashboard]
+    BillingsMain --> OutstandingMgmt[Outstanding Balance Management]
+    BillingsMain --> PaymentHistory[Payment History & Audit Trail]
+    BillingsMain --> ReceiptMgmt[Receipt Management]
+    
+    %% Invoice Generation & Tracking Branch
+    InvoiceGen --> AutoInvoice[Auto-Generate Invoice<br/>Post-Service Completion]
+    AutoInvoice --> InvoiceDetails[Invoice Details Modal<br/>Patient/Doctor/Service/DateTime]
+    
+    InvoiceGen --> ManualInvoice[Manual Invoice Creation<br/>Ad-hoc Services Button]
+    ManualInvoice --> ManualForm[Invoice Form Modal<br/>Service/Patient/Amount Input]
+    
+    InvoiceGen --> InvoiceStatus[Invoice Status Tracker]
+    InvoiceStatus --> StatusFilter[Status Filter Dropdown<br/>Paid/Pending/Overdue/Cancelled]
+    StatusFilter --> InvoiceList[Filtered Invoice List<br/>Sortable by Date/Amount/Patient]
+    
+    InvoiceGen --> ExportInvoices[Export Options Button]
+    ExportInvoices --> ExportModal[Export Modal<br/>PDF/CSV Selection]
+    ExportModal --> BulkExport[Bulk Export<br/>Date Range Selector]
+    
+    %% Payment Methods Management Branch
+    PaymentMethods --> MethodCategories[Payment Method Categories]
+    MethodCategories --> Insurance[Insurance Setup]
+    Insurance --> InsuranceModal[Insurance Config Modal<br/>NHIF/Private Insurers]
+    InsuranceModal --> InsuranceDetails[Provider Details Form<br/>Policy Numbers/Coverage]
+    
+    MethodCategories --> Digital[Digital Payments]
+    Digital --> DigitalModal[Digital Payment Modal]
+    DigitalModal --> MPesaConfig[M-Pesa Setup<br/>Paybill/Till Configuration]
+    DigitalModal --> BankConfig[Bank Transfer Setup<br/>Account Details Form]
+    DigitalModal --> PesaLinkConfig[PesaLink Configuration]
+    
+    MethodCategories --> CardPayments[Card Payments]
+    CardPayments --> CardModal[Card Setup Modal<br/>POS/Gateway Configuration]
+    
+    MethodCategories --> CashPayments[Cash Payments]
+    CashPayments --> CashModal[Cash Settings Modal<br/>Receipt Requirements]
+    
+    MethodCategories --> Corporate[Corporate Payments]
+    Corporate --> CorpModal[Corporate Setup Modal<br/>Company Agreements]
+    
+    PaymentMethods --> MethodEditor[Payment Method Editor]
+    MethodEditor --> AddMethod[Add New Method Button]
+    AddMethod --> MFAAuth[MFA Authentication<br/>Email Confirmation Required]
+    MFAAuth --> MethodSaved[Method Saved<br/>Update Invoice Templates]
+    
+    %% Curis Service Charges Branch
+    ServiceCharges --> EarningsSplit[Real-time Earnings Split Display]
+    EarningsSplit --> SplitCalc[Split Calculator<br/>Clinic Net/Curis Fee Display]
+    
+    ServiceCharges --> ServiceFeeDash[Service Fee Dashboard]
+    ServiceFeeDash --> PaymentFreq[Payment Frequency Display<br/>Weekly/Bi-weekly/Monthly]
+    ServiceFeeDash --> OutstandingFees[Outstanding Service Fees<br/>Current + Past Periods]
+    
+    ServiceCharges --> PaymentProcessing[Service Charge Payment]
+    PaymentProcessing --> PaymentOptions[Payment Options Modal<br/>Outstanding Balance Display]
+    PaymentOptions --> FullPayment[Full Payment Button]
+    PaymentOptions --> PartialPayment[Partial Payment Button]
+    
+    FullPayment --> TransactionConfirm[Transaction Confirmation Page]
+    PartialPayment --> AmountInput[Amount Input Modal]
+    AmountInput --> TransactionConfirm
+    
+    TransactionConfirm --> AutoMpesa[Automatic M-Pesa Option]
+    TransactionConfirm --> ManualMpesa[Manual M-Pesa Option]
+    
+    AutoMpesa --> PhoneModal[Phone Number Modal<br/>Default/Custom Selection]
+    PhoneModal --> STKPush[STK Push Sent<br/>Mobile Payment Prompt]
+    STKPush --> PaymentSuccess[Payment Successful Page<br/>Auto-reconciliation]
+    
+    ManualMpesa --> PaymentInstructions[Payment Instructions Modal<br/>Paybill/Account Display]
+    PaymentInstructions --> BackgroundRecon[Background Reconciliation<br/>Auto-monitoring System]
+    BackgroundRecon --> PaymentSuccess
+    
+    PaymentSuccess --> ReceiptGen[Auto Receipt Generation<br/>Multi-recipient Distribution]
+    ReceiptGen --> DistributeReceipt[Receipt Distribution<br/>Owner/Staff/SuperAdmin]
+    
+    %% Financial Dashboard Branch
+    FinancialDash --> KPIDisplay[KPI Display Panel]
+    KPIDisplay --> RevenueMetric[Total Revenue Card<br/>Period Selector]
+    KPIDisplay --> OutstandingMetric[Outstanding Payments Card<br/>Amount/Count Display]
+    KPIDisplay --> ProfitMetric[Net Profit Card<br/>After Curis Deductions]
+    
+    FinancialDash --> FilterControls[Filter Controls Panel]
+    FilterControls --> DateFilter[Date Range Picker]
+    FilterControls --> DoctorFilter[Doctor Filter Dropdown]
+    FilterControls --> ServiceFilter[Service Type Filter]
+    
+    %% Outstanding Balance Management Branch
+    OutstandingMgmt --> PatientList[Outstanding Patients List]
+    PatientList --> PatientDetails[Patient Details Modal<br/>Invoice History/Contact Info]
+    
+    OutstandingMgmt --> ReminderActions[Reminder Actions Panel]
+    ReminderActions --> SendReminder[Send Reminder Button]
+    SendReminder --> ReminderModal[Reminder Modal<br/>SMS/WhatsApp/Email/In-app]
+    ReminderModal --> TemplateSelect[Template Selection<br/>Customizable Messages]
+    
+    OutstandingMgmt --> ManualPaymentEntry[Manual Payment Entry Button]
+    ManualPaymentEntry --> OfflinePaymentModal[Offline Payment Modal<br/>Amount/Method/Reference]
+    
+    OutstandingMgmt --> PaymentAttempts[Payment History<br/>Attempt Tracking Display]
+    
+    %% Payment History Branch
+    PaymentHistory --> TransactionLog[Transaction Log View]
+    TransactionLog --> TransactionFilter[Advanced Filter Panel<br/>Date/Status/Method/Amount]
+    TransactionLog --> TransactionDetails[Transaction Details Modal<br/>Complete Payment Info]
+    
+    PaymentHistory --> DisputeVerify[Dispute Verification Tools]
+    DisputeVerify --> VerifyModal[Verification Modal<br/>Reference/Receipt Matching]
+    
+    %% Receipt Management Branch
+    ReceiptMgmt --> ReceiptDownload[Download Receipt Button<br/>PDF Generation]
+    ReceiptMgmt --> ReceiptDelivery[Receipt Delivery Options]
+    ReceiptDelivery --> DeliveryModal[Delivery Modal<br/>Email/WhatsApp/SMS Selection]
+    
+    ReceiptMgmt --> ReceiptReissue[Reissue Receipt Button]
+    ReceiptReissue --> HistoricalReceipts[Historical Receipts Access<br/>Search by Date/Patient/Invoice]
+    
+    %% Integration Points with Other Modules
+    
+    %% From Appointments
+    Appointments[Appointments Module] -.->|Service Completion Trigger| AutoInvoice
+    Appointments -.->|Service Details| InvoiceDetails
+    
+    %% To Dashboard
+    FinancialDash -.->|Quick Stats| Dashboard
+    PaymentSuccess -.->|Update Metrics| Dashboard
+    
+    %% From Workforce Hub
+    WorkforceHub[Workforce Hub] -.->|Staff Assignment| InvoiceDetails
+    WorkforceHub -.->|Performance Data| FinancialDash
+    
+    %% To/From Settings
+    Settings[Settings Module] <-.->|Payment Frequency Config| ServiceFeeDash
+    Settings <-.->|Payment Method Preferences| PaymentMethods
+    
+    %% To Insights & Performance
+    FinancialDash -.->|Detailed Analytics| InsightsPerf[Insights & Performance]
+    TransactionLog -.->|Historical Data| InsightsPerf
+    
+    %% From Health Data & Records
+    HealthRecords[Health Data & Records] -.->|Patient Info| InvoiceGen
+    HealthRecords -.->|Patient Contact| ReminderModal
+    
+    %% To Notifications
+    PaymentSuccess -.->|Success Alert| Notifications[Notifications Module]
+    STKPush -.->|Payment Request Alert| Notifications
+    OutstandingFees -.->|Due Date Alert| Notifications
+    ReminderModal -.->|Reminder Sent Alert| Notifications
+    
+    %% From Clinic Services
+    ClinicServices[Clinic Services Hub] -.->|Service Pricing| InvoiceDetails
+    ClinicServices -.->|Service Categories| ServiceFilter
+    
+    %% Navigation Back Options
+    InvoiceGen --> BillingsMain
+    PaymentMethods --> BillingsMain
+    ServiceCharges --> BillingsMain
+    FinancialDash --> BillingsMain
+    OutstandingMgmt --> BillingsMain
+    PaymentHistory --> BillingsMain
+    ReceiptMgmt --> BillingsMain
+    BillingsMain --> Dashboard
+    
+    %% Styling
+    classDef mainHub fill:#2563eb,stroke:#1e40af,stroke-width:3px,color:#fff
+    classDef subModule fill:#7c3aed,stroke:#6d28d9,stroke-width:2px,color:#fff
+    classDef modal fill:#059669,stroke:#047857,stroke-width:2px,color:#fff
+    classDef action fill:#dc2626,stroke:#b91c1c,stroke-width:2px,color:#fff
+    classDef integration fill:#f59e0b,stroke:#d97706,stroke-width:2px,stroke-dasharray: 5 5
+    
+    class BillingsMain mainHub
+    class InvoiceGen,PaymentMethods,ServiceCharges,FinancialDash,OutstandingMgmt,PaymentHistory,ReceiptMgmt subModule
+    class InvoiceDetails,ManualForm,ExportModal,InsuranceModal,DigitalModal,CardModal,CashModal,CorpModal,PhoneModal,PaymentInstructions,ReminderModal,OfflinePaymentModal,TransactionDetails,VerifyModal,DeliveryModal modal
+    class FullPayment,PartialPayment,SendReminder,ManualPaymentEntry,ReceiptDownload,ReceiptReissue action
+    class Dashboard,Appointments,WorkforceHub,Settings,InsightsPerf,HealthRecords,Notifications,ClinicServices integration

@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curis Users - Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="curis_users.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Dashboard\dashboard.html"
+                    class="logo-link">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Curis Users\curis_users.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Curis Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Health\health.html"
+                            class="nav-link">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Health</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Compliance Hub\compliance_hub.html"
+                            class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Compliance Hub</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Notifications -->
+                <div class="notification-container">
+                    <button id="notificationBtn" class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">5</span>
+                    </button>
+                </div>
+
+                <!-- User Profile -->
+                <div class="user-profile-container">
+                    <button id="userProfileBtn" class="user-profile-btn">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-image">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- User Profile Dropdown -->
+    <div id="userProfileDropdown" class="user-dropdown hidden">
+        <ul class="dropdown-menu">
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Settings\settings.html"
+                    class="dropdown-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\landing_page.html"
+                    class="dropdown-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Notification Panel -->
+    <div id="notificationPanel" class="notification-panel hidden">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button id="closeNotifications" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="notification-content">
+                    <p class="notification-title">New User Registration</p>
+                    <p class="notification-desc">Dr. Sarah Johnson registered as a doctor</p>
+                    <p class="notification-time">2 minutes ago</p>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-user-times"></i>
+                </div>
+                <div class="notification-content">
+                    <p class="notification-title">User Suspended</p>
+                    <p class="notification-desc">Patient account suspended for policy violation</p>
+                    <p class="notification-time">5 minutes ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="notification-footer">
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Notifications\notifications.html"
+                class="view-all-link">View All Notifications</a>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-title">
+                <h1>
+                    <i class="fas fa-users"></i>
+                    Curis Users
+                </h1>
+                <p class="page-subtitle">Central User Management Hub</p>
+            </div>
+
+            <!-- Real-Time Status Indicator -->
+            <div class="realtime-status">
+                <div class="status-indicator active">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Real-Time Sync Active</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Overview Panel -->
+        <section class="user-overview-panel">
+            <div class="panel-header">
+                <h2>
+                    <i class="fas fa-chart-bar"></i>
+                    User Overview Panel
+                </h2>
+                <div class="panel-actions">
+                    <button id="filterOptionsBtn" class="btn-secondary">
+                        <i class="fas fa-filter"></i>
+                        Filter & Search
+                    </button>
+                </div>
+            </div>
+
+            <!-- Key Metrics Display -->
+            <div class="metrics-display">
+                <div class="metric-card total">
+                    <div class="metric-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="metric-info">
+                        <div class="metric-number">1,247</div>
+                        <div class="metric-label">Total Users</div>
+                    </div>
+                </div>
+
+                <div class="metrics-breakdown">
+                    <div class="breakdown-section roles">
+                        <h3>By Role</h3>
+                        <div class="breakdown-items">
+                            <div class="breakdown-item">
+                                <i class="fas fa-user-injured"></i>
+                                <span>Patients: <strong>856</strong></span>
+                            </div>
+                            <div class="breakdown-item">
+                                <i class="fas fa-user-md"></i>
+                                <span>Doctors: <strong>142</strong></span>
+                            </div>
+                            <div class="breakdown-item">
+                                <i class="fas fa-user-pen"></i>
+                                <span>Receptionists: <strong>124</strong></span>
+                            </div>
+                            <div class="breakdown-item">
+                                <i class="fas fa-building"></i>
+                                <span>Clinic Owners: <strong>125</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="breakdown-section status">
+                        <h3>By Status</h3>
+                        <div class="breakdown-items">
+                            <div class="breakdown-item active">
+                                <i class="fas fa-circle"></i>
+                                <span>Active: <strong>1,198</strong></span>
+                            </div>
+                            <div class="breakdown-item suspended">
+                                <i class="fas fa-circle"></i>
+                                <span>Suspended: <strong>32</strong></span>
+                            </div>
+                            <div class="breakdown-item pending">
+                                <i class="fas fa-circle"></i>
+                                <span>Pending: <strong>17</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab Navigation -->
+        <section class="tab-navigation">
+            <div class="tab-container">
+                <button class="tab-btn active" data-tab="active">
+                    <i class="fas fa-circle active"></i>
+                    <span>Active Users</span>
+                    <span class="tab-count">1,198</span>
+                </button>
+                <button class="tab-btn" data-tab="suspended">
+                    <i class="fas fa-circle suspended"></i>
+                    <span>Suspended Users</span>
+                    <span class="tab-count">32</span>
+                </button>
+                <button class="tab-btn" data-tab="pending">
+                    <i class="fas fa-circle pending"></i>
+                    <span>Pending Verification</span>
+                    <span class="tab-count">17</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- User Management Actions -->
+        <section class="user-management-actions">
+            <div class="action-buttons">
+                <button id="addUserBtn" class="btn-primary">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Add New User</span>
+                </button>
+                <button id="batchUploadBtn" class="btn-secondary">
+                    <i class="fas fa-upload"></i>
+                    <span>Batch Upload</span>
+                </button>
+                <button id="auditLogsBtn" class="btn-secondary">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Activity Logs</span>
+                </button>
+                <button id="communicationBtn" class="btn-secondary">
+                    <i class="fas fa-comments"></i>
+                    <span>User Communication</span>
+                </button>
+                <button id="notificationMgmtBtn" class="btn-secondary">
+                    <i class="fas fa-bell-slash"></i>
+                    <span>Notification Settings</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Bulk Actions Panel -->
+        <section class="bulk-actions-panel hidden" id="bulkActionsPanel">
+            <div class="bulk-header">
+                <div class="bulk-info">
+                    <i class="fas fa-check-square"></i>
+                    <span id="selectedCount">0</span> users selected
+                </div>
+                <div class="bulk-actions">
+                    <button class="bulk-btn suspend">
+                        <i class="fas fa-pause"></i>
+                        <span>Suspend Selected</span>
+                    </button>
+                    <button class="bulk-btn activate">
+                        <i class="fas fa-play"></i>
+                        <span>Activate Selected</span>
+                    </button>
+                    <button class="bulk-btn delete">
+                        <i class="fas fa-trash"></i>
+                        <span>Delete Selected</span>
+                    </button>
+                    <button class="bulk-btn role">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Change Roles</span>
+                    </button>
+                    <button class="bulk-btn export">
+                        <i class="fas fa-download"></i>
+                        <span>Export Selected</span>
+                    </button>
+                    <button class="bulk-btn message">
+                        <i class="fas fa-envelope"></i>
+                        <span>Send Message</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- User List Management Table -->
+        <section class="user-list-section">
+            <div class="table-container">
+                <table class="user-table" id="userTable">
+                    <thead>
+                        <tr>
+                            <th class="checkbox-col">
+                                <input type="checkbox" id="selectAll" class="table-checkbox">
+                            </th>
+                            <th class="sortable" data-sort="id">
+                                User ID
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th class="sortable" data-sort="name">
+                                Name
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th class="sortable" data-sort="role">
+                                Role
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th class="sortable" data-sort="status">
+                                Status
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th class="sortable" data-sort="clinic">
+                                Clinic
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th class="sortable" data-sort="created">
+                                Created
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th class="sortable" data-sort="login">
+                                Last Login
+                                <i class="fas fa-sort"></i>
+                            </th>
+                            <th class="actions-col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample User Rows -->
+                        <tr class="user-row" data-user-id="U001">
+                            <td>
+                                <input type="checkbox" class="row-checkbox" data-user-id="U001">
+                            </td>
+                            <td class="user-id">U001</td>
+                            <td class="user-name">
+                                <div class="name-cell">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Profile" class="user-avatar">
+                                    <div class="name-info">
+                                        <span class="name">Dr. John Doe</span>
+                                        <span class="email">john.doe@example.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="user-role">
+                                <span class="role-badge doctor">
+                                    <i class="fas fa-user-md"></i>
+                                    Doctor
+                                </span>
+                            </td>
+                            <td class="user-status">
+                                <span class="status-badge active">
+                                    <i class="fas fa-circle"></i>
+                                    Active
+                                </span>
+                            </td>
+                            <td class="user-clinic">Nairobi Medical Center</td>
+                            <td class="user-created">01/01/2024</td>
+                            <td class="user-login">
+                                <span class="login-time recent">Today</span>
+                            </td>
+                            <td class="user-actions">
+                                <div class="action-dropdown">
+                                    <button class="action-btn" data-user-id="U001">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="user-row" data-user-id="U002">
+                            <td>
+                                <input type="checkbox" class="row-checkbox" data-user-id="U002">
+                            </td>
+                            <td class="user-id">U002</td>
+                            <td class="user-name">
+                                <div class="name-cell">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Profile" class="user-avatar">
+                                    <div class="name-info">
+                                        <span class="name">Jane Smith</span>
+                                        <span class="email">jane.smith@example.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="user-role">
+                                <span class="role-badge patient">
+                                    <i class="fas fa-user-injured"></i>
+                                    Patient
+                                </span>
+                            </td>
+                            <td class="user-status">
+                                <span class="status-badge suspended">
+                                    <i class="fas fa-circle"></i>
+                                    Suspended
+                                </span>
+                            </td>
+                            <td class="user-clinic">-</td>
+                            <td class="user-created">02/01/2024</td>
+                            <td class="user-login">
+                                <span class="login-time old">5 days ago</span>
+                            </td>
+                            <td class="user-actions">
+                                <div class="action-dropdown">
+                                    <button class="action-btn" data-user-id="U002">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="user-row" data-user-id="U003">
+                            <td>
+                                <input type="checkbox" class="row-checkbox" data-user-id="U003">
+                            </td>
+                            <td class="user-id">U003</td>
+                            <td class="user-name">
+                                <div class="name-cell">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Profile" class="user-avatar">
+                                    <div class="name-info">
+                                        <span class="name">Bob Johnson</span>
+                                        <span class="email">bob.johnson@clinic.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="user-role">
+                                <span class="role-badge clinic-owner">
+                                    <i class="fas fa-building"></i>
+                                    Clinic Owner
+                                </span>
+                            </td>
+                            <td class="user-status">
+                                <span class="status-badge active">
+                                    <i class="fas fa-circle"></i>
+                                    Active
+                                </span>
+                            </td>
+                            <td class="user-clinic">Westlands Health Clinic</td>
+                            <td class="user-created">03/01/2024</td>
+                            <td class="user-login">
+                                <span class="login-time recent">Yesterday</span>
+                            </td>
+                            <td class="user-actions">
+                                <div class="action-dropdown">
+                                    <button class="action-btn" data-user-id="U003">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="user-row" data-user-id="U004">
+                            <td>
+                                <input type="checkbox" class="row-checkbox" data-user-id="U004">
+                            </td>
+                            <td class="user-id">U004</td>
+                            <td class="user-name">
+                                <div class="name-cell">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Profile" class="user-avatar">
+                                    <div class="name-info">
+                                        <span class="name">Sarah Wilson</span>
+                                        <span class="email">sarah.wilson@clinic.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="user-role">
+                                <span class="role-badge receptionist">
+                                    <i class="fas fa-user-pen"></i>
+                                    Receptionist
+                                </span>
+                            </td>
+                            <td class="user-status">
+                                <span class="status-badge pending">
+                                    <i class="fas fa-circle"></i>
+                                    Pending
+                                </span>
+                            </td>
+                            <td class="user-clinic">Karen Medical Center</td>
+                            <td class="user-created">04/01/2024</td>
+                            <td class="user-login">
+                                <span class="login-time never">Never</span>
+                            </td>
+                            <td class="user-actions">
+                                <div class="action-dropdown">
+                                    <button class="action-btn" data-user-id="U004">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table Pagination -->
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Showing 1-4 of 1,247 users
+                </div>
+                <div class="pagination-controls">
+                    <button class="page-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <span class="page-dots">...</span>
+                    <button class="page-btn">312</button>
+                    <button class="page-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Overlays -->
+
+    <!-- Filter Options Modal -->
+    <div id="filterModal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Filter & Search Options</h2>
+                <button class="modal-close" data-modal="filterModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="filter-section">
+                    <h3>Role Filter</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="roleFilter" value="patients" checked>
+                            <i class="fas fa-user-injured"></i>
+                            <span>Patients</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="roleFilter" value="doctors" checked>
+                            <i class="fas fa-user-md"></i>
+                            <span>Doctors</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="roleFilter" value="receptionists" checked>
+                            <i class="fas fa-user-pen"></i>
+                            <span>Receptionists</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="roleFilter" value="clinic-owners" checked>
+                            <i class="fas fa-building"></i>
+                            <span>Clinic Owners</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Status Filter</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="statusFilter" value="active" checked>
+                            <i class="fas fa-circle active"></i>
+                            <span>Active</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="statusFilter" value="suspended" checked>
+                            <i class="fas fa-circle suspended"></i>
+                            <span>Suspended</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="statusFilter" value="pending" checked>
+                            <i class="fas fa-circle pending"></i>
+                            <span>Pending</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Clinic Filter</h3>
+                    <select class="form-select" name="clinicFilter">
+                        <option value="">All Clinics</option>
+                        <option value="nairobi-medical">Nairobi Medical Center</option>
+                        <option value="westlands-health">Westlands Health Clinic</option>
+                        <option value="karen-medical">Karen Medical Center</option>
+                        <option value="eastleigh-family">Eastleigh Family Clinic</option>
+                    </select>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Search</h3>
+                    <div class="search-input-group">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="search-input" placeholder="Search by Name, ID, or Email">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="applyFiltersBtn">
+                    <i class="fas fa-check"></i>
+                    Apply Filters
+                </button>
+                <button class="btn-secondary" id="clearFiltersBtn">
+                    <i class="fas fa-times"></i>
+                    Clear All
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Actions Dropdown Menu -->
+    <div id="userActionsMenu" class="actions-dropdown-menu hidden">
+        <ul class="actions-list">
+            <li>
+                <button class="action-item" data-action="view">
+                    <i class="fas fa-eye"></i>
+                    <span>View Profile</span>
+                </button>
+            </li>
+            <li>
+                <button class="action-item" data-action="edit">
+                    <i class="fas fa-edit"></i>
+                    <span>Edit Details</span>
+                </button>
+            </li>
+            <li>
+                <button class="action-item" data-action="change-role">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Change Role</span>
+                </button>
+            </li>
+            <li>
+                <button class="action-item" data-action="reset-password">
+                    <i class="fas fa-key"></i>
+                    <span>Reset Password</span>
+                </button>
+            </li>
+            <li>
+                <button class="action-item" data-action="suspend">
+                    <i class="fas fa-pause"></i>
+                    <span>Suspend/Activate</span>
+                </button>
+            </li>
+            <li>
+                <button class="action-item danger" data-action="delete">
+                    <i class="fas fa-trash"></i>
+                    <span>Delete User</span>
+                </button>
+            </li>
+            <li>
+                <button class="action-item" data-action="activity-log">
+                    <i class="fas fa-chart-line"></i>
+                    <span>View Activity Log</span>
+                </button>
+            </li>
+            <li>
+                <button class="action-item" data-action="send-message">
+                    <i class="fas fa-comments"></i>
+                    <span>Send Message</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- User Profile Editor Modal -->
+    <div id="userProfileModal" class="modal-overlay hidden">
+        <div class="modal-container large">
+            <div class="modal-header">
+                <h2>User Profile Editor</h2>
+                <button class="modal-close" data-modal="userProfileModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="profile-editor">
+                    <div class="profile-picture-section">
+                        <div class="profile-picture">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                                alt="Profile Picture" id="profilePicture">
+                            <button class="edit-picture-btn">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="profile-form">
+                        <div class="form-section">
+                            <h3>Personal Information</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="userName">Name</label>
+                                    <input type="text" id="userName" class="form-input" value="Dr. John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userEmail">Email</label>
+                                    <input type="email" id="userEmail" class="form-input" value="john.doe@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userPhone">Phone</label>
+                                    <input type="tel" id="userPhone" class="form-input" value="+254712345678">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Account Information</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="userId">User ID</label>
+                                    <input type="text" id="userId" class="form-input" value="U001" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userRole">Role</label>
+                                    <select id="userRole" class="form-select">
+                                        <option value="patient">Patient</option>
+                                        <option value="doctor" selected>Doctor</option>
+                                        <option value="receptionist">Receptionist</option>
+                                        <option value="clinic-owner">Clinic Owner</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userStatus">Status</label>
+                                    <div class="toggle-group">
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" id="userStatus" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                        <span class="toggle-label">Active</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userClinic">Clinic</label>
+                                    <select id="userClinic" class="form-select">
+                                        <option value="">No Clinic</option>
+                                        <option value="nairobi-medical" selected>Nairobi Medical Center</option>
+                                        <option value="westlands-health">Westlands Health Clinic</option>
+                                        <option value="karen-medical">Karen Medical Center</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Notes</h3>
+                            <div class="form-group">
+                                <label for="userNotes">Admin Notes</label>
+                                <textarea id="userNotes" class="form-textarea" rows="4"
+                                    placeholder="Add admin notes about this user..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="saveUserChanges">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+                <button class="btn-warning" id="resetUserPassword">
+                    <i class="fas fa-key"></i>
+                    Reset Password
+                </button>
+                <button class="btn-secondary" id="addUserNote">
+                    <i class="fas fa-sticky-note"></i>
+                    Add Note
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Suspension Modal -->
+    <div id="suspensionModal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header warning">
+                <h2>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Suspend User Account
+                </h2>
+                <button class="modal-close" data-modal="suspensionModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="suspension-form">
+                    <div class="form-section">
+                        <h3>Reason for Suspension <span class="required">*</span></h3>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="suspensionReason" value="policy-violation">
+                                <span>Policy Violation</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="suspensionReason" value="payment-issues">
+                                <span>Payment Issues</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="suspensionReason" value="security-concern">
+                                <span>Security Concern</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="suspensionReason" value="other">
+                                <span>Other</span>
+                            </label>
+                        </div>
+                        <div class="form-group" id="otherReasonGroup" style="display: none;">
+                            <label for="otherReason">Specify Reason</label>
+                            <input type="text" id="otherReason" class="form-input" placeholder="Enter specific reason">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Duration</h3>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="suspensionDuration" value="temporary">
+                                <span>Temporary</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="suspensionDuration" value="indefinite">
+                                <span>Indefinite</span>
+                            </label>
+                        </div>
+                        <div class="form-group" id="dateRangeGroup" style="display: none;">
+                            <div class="date-range">
+                                <div class="date-input">
+                                    <label for="suspensionStart">From</label>
+                                    <input type="date" id="suspensionStart" class="form-input">
+                                </div>
+                                <div class="date-input">
+                                    <label for="suspensionEnd">To</label>
+                                    <input type="date" id="suspensionEnd" class="form-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Additional Notes</h3>
+                        <div class="form-group">
+                            <textarea id="suspensionNotes" class="form-textarea" rows="4"
+                                placeholder="Add any additional notes about this suspension..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Notifications</h3>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="notifyUser" value="email" checked>
+                                <i class="fas fa-envelope"></i>
+                                <span>Notify via Email</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="notifyUser" value="sms" checked>
+                                <i class="fas fa-sms"></i>
+                                <span>Notify via SMS</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-danger" id="confirmSuspension">
+                    <i class="fas fa-ban"></i>
+                    Confirm Suspension
+                </button>
+                <button class="btn-secondary" data-modal="suspensionModal">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create User Form Modal -->
+    <div id="createUserModal" class="modal-overlay hidden">
+        <div class="modal-container large">
+            <div class="modal-header">
+                <h2>Create New User</h2>
+                <button class="modal-close" data-modal="createUserModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="create-user-form">
+                    <div class="form-section">
+                        <h3>Select Role <span class="required">*</span></h3>
+                        <div class="role-selection">
+                            <label class="role-card">
+                                <input type="radio" name="newUserRole" value="patient">
+                                <div class="role-card-content">
+                                    <i class="fas fa-user-injured"></i>
+                                    <span>Patient</span>
+                                </div>
+                            </label>
+                            <label class="role-card">
+                                <input type="radio" name="newUserRole" value="doctor">
+                                <div class="role-card-content">
+                                    <i class="fas fa-user-md"></i>
+                                    <span>Doctor</span>
+                                </div>
+                            </label>
+                            <label class="role-card">
+                                <input type="radio" name="newUserRole" value="receptionist">
+                                <div class="role-card-content">
+                                    <i class="fas fa-user-pen"></i>
+                                    <span>Receptionist</span>
+                                </div>
+                            </label>
+                            <label class="role-card">
+                                <input type="radio" name="newUserRole" value="clinic-owner">
+                                <div class="role-card-content">
+                                    <i class="fas fa-building"></i>
+                                    <span>Clinic Owner</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>User Details</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="newUserName">Name <span class="required">*</span></label>
+                                <input type="text" id="newUserName" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newUserEmail">Email <span class="required">*</span></label>
+                                <input type="email" id="newUserEmail" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newUserPhone">Phone <span class="required">*</span></label>
+                                <input type="tel" id="newUserPhone" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newUserPassword">Password</label>
+                                <div class="password-input-group">
+                                    <input type="password" id="newUserPassword" class="form-input">
+                                    <button type="button" class="password-toggle" id="togglePassword">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="autoGeneratePassword" checked>
+                                    <span>Auto-generate secure password</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Clinic Assignment</h3>
+                        <div class="form-group">
+                            <label for="newUserClinic">Select Clinic</label>
+                            <select id="newUserClinic" class="form-select">
+                                <option value="">No Clinic Assignment</option>
+                                <option value="nairobi-medical">Nairobi Medical Center</option>
+                                <option value="westlands-health">Westlands Health Clinic</option>
+                                <option value="karen-medical">Karen Medical Center</option>
+                                <option value="eastleigh-family">Eastleigh Family Clinic</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Initial Status</h3>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="newUserStatus" value="active" checked>
+                                <span>Active</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="newUserStatus" value="pending">
+                                <span>Pending Verification</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="createUserBtn">
+                    <i class="fas fa-user-plus"></i>
+                    Create User
+                </button>
+                <button class="btn-secondary" data-modal="createUserModal">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Batch Upload Modal -->
+    <div id="batchUploadModal" class="modal-overlay hidden">
+        <div class="modal-container large">
+            <div class="modal-header">
+                <h2>Batch Upload Users</h2>
+                <button class="modal-close" data-modal="batchUploadModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="batch-upload-section">
+                    <div class="upload-instructions">
+                        <h3>Upload CSV File</h3>
+                        <p>Upload a CSV file containing user information. Make sure your file follows the required
+                            format.</p>
+
+                        <div class="template-download">
+                            <button class="btn-secondary" id="downloadTemplate">
+                                <i class="fas fa-download"></i>
+                                Download Template
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="file-upload-area">
+                        <div class="upload-dropzone" id="uploadDropzone">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag and drop your CSV file here, or</p>
+                            <button class="btn-primary" id="selectFileBtn">
+                                <i class="fas fa-folder-open"></i>
+                                Browse Files
+                            </button>
+                            <input type="file" id="csvFileInput" accept=".csv" style="display: none;">
+                        </div>
+                    </div>
+
+                    <div class="upload-preview hidden" id="uploadPreview">
+                        <h3>Preview Data</h3>
+                        <div class="preview-table-container">
+                            <table class="preview-table" id="previewTable">
+                                <thead id="previewTableHead">
+                                    <!-- Will be populated by JavaScript -->
+                                </thead>
+                                <tbody id="previewTableBody">
+                                    <!-- Will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="validation-results">
+                            <h4>Validation Results</h4>
+                            <div class="validation-summary">
+                                <div class="validation-item success">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span id="validRecords">0 valid records</span>
+                                </div>
+                                <div class="validation-item error">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span id="errorRecords">0 errors</span>
+                                    <button class="btn-link" id="viewErrors">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary hidden" id="importUsersBtn">
+                    <i class="fas fa-upload"></i>
+                    Import Users
+                </button>
+                <button class="btn-secondary" data-modal="batchUploadModal">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Log Viewer Modal -->
+    <div id="auditLogModal" class="modal-overlay hidden">
+        <div class="modal-container large">
+            <div class="modal-header">
+                <h2>User Activity Logs</h2>
+                <button class="modal-close" data-modal="auditLogModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="log-filters">
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="logUserFilter">User</label>
+                            <select id="logUserFilter" class="form-select">
+                                <option value="">All Users</option>
+                                <option value="U001">Dr. John Doe</option>
+                                <option value="U002">Jane Smith</option>
+                                <option value="U003">Bob Johnson</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="logDateFrom">From Date</label>
+                            <input type="date" id="logDateFrom" class="form-input">
+                        </div>
+                        <div class="filter-group">
+                            <label for="logDateTo">To Date</label>
+                            <input type="date" id="logDateTo" class="form-input">
+                        </div>
+                        <div class="filter-group">
+                            <label for="logActionType">Action Type</label>
+                            <select id="logActionType" class="form-select">
+                                <option value="">All Actions</option>
+                                <option value="login">Login</option>
+                                <option value="logout">Logout</option>
+                                <option value="profile-update">Profile Update</option>
+                                <option value="password-change">Password Change</option>
+                                <option value="suspension">Suspension</option>
+                            </select>
+                        </div>
+                        <button class="btn-primary" id="applyLogFilters">
+                            <i class="fas fa-filter"></i>
+                            Apply
+                        </button>
+                    </div>
+                </div>
+
+                <div class="log-entries">
+                    <div class="log-entry">
+                        <div class="log-time">
+                            <i class="fas fa-clock"></i>
+                            <span>Today 10:30 AM</span>
+                        </div>
+                        <div class="log-action success">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Login Success</span>
+                        </div>
+                        <div class="log-user">Dr. John Doe (U001)</div>
+                        <div class="log-details">IP: 197.248.15.42</div>
+                    </div>
+
+                    <div class="log-entry">
+                        <div class="log-time">
+                            <i class="fas fa-clock"></i>
+                            <span>Today 10:45 AM</span>
+                        </div>
+                        <div class="log-action info">
+                            <i class="fas fa-user-edit"></i>
+                            <span>Profile Updated</span>
+                        </div>
+                        <div class="log-user">Dr. John Doe (U001)</div>
+                        <div class="log-details">Updated phone number</div>
+                    </div>
+
+                    <div class="log-entry">
+                        <div class="log-time">
+                            <i class="fas fa-clock"></i>
+                            <span>Today 11:00 AM</span>
+                        </div>
+                        <div class="log-action warning">
+                            <i class="fas fa-key"></i>
+                            <span>Password Changed</span>
+                        </div>
+                        <div class="log-user">Jane Smith (U002)</div>
+                        <div class="log-details">Password reset by admin</div>
+                    </div>
+
+                    <div class="log-entry">
+                        <div class="log-time">
+                            <i class="fas fa-clock"></i>
+                            <span>Yesterday 3:30 PM</span>
+                        </div>
+                        <div class="log-action danger">
+                            <i class="fas fa-ban"></i>
+                            <span>User Suspended</span>
+                        </div>
+                        <div class="log-user">Jane Smith (U002)</div>
+                        <div class="log-details">Reason: Policy violation</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="exportLogsBtn">
+                    <i class="fas fa-download"></i>
+                    Export Logs
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Communication Panel Modal -->
+    <div id="communicationModal" class="modal-overlay hidden">
+        <div class="modal-container large">
+            <div class="modal-header">
+                <h2>User Communication</h2>
+                <button class="modal-close" data-modal="communicationModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="communication-form">
+                    <div class="form-section">
+                        <h3>Recipients</h3>
+                        <div class="recipient-options">
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="recipientType" value="individual">
+                                    <span>Individual User</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="recipientType" value="group">
+                                    <span>User Group</span>
+                                </label>
+                            </div>
+
+                            <div class="recipient-selection" id="individualSelection" style="display: none;">
+                                <select class="form-select">
+                                    <option value="">Select User</option>
+                                    <option value="U001">Dr. John Doe</option>
+                                    <option value="U002">Jane Smith</option>
+                                    <option value="U003">Bob Johnson</option>
+                                </select>
+                            </div>
+
+                            <div class="recipient-selection" id="groupSelection" style="display: none;">
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="userGroup" value="doctors">
+                                        <i class="fas fa-user-md"></i>
+                                        <span>All Doctors</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="userGroup" value="patients">
+                                        <i class="fas fa-user-injured"></i>
+                                        <span>All Patients</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="userGroup" value="clinic-owners">
+                                        <i class="fas fa-building"></i>
+                                        <span>All Clinic Owners</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="userGroup" value="custom">
+                                        <i class="fas fa-users"></i>
+                                        <span>Custom Selection</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Message Type</h3>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="messageType" value="email">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="messageType" value="sms">
+                                <i class="fas fa-sms"></i>
+                                <span>SMS</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="messageType" value="both">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Both</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Message Content</h3>
+                        <div class="form-group">
+                            <label for="messageTemplate">Template</label>
+                            <select id="messageTemplate" class="form-select">
+                                <option value="">Select Template</option>
+                                <option value="welcome">Welcome Message</option>
+                                <option value="suspension">Account Suspension</option>
+                                <option value="password-reset">Password Reset</option>
+                                <option value="maintenance">Maintenance Notice</option>
+                                <option value="custom">Custom Message</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="messageSubject">Subject</label>
+                            <input type="text" id="messageSubject" class="form-input"
+                                placeholder="Enter message subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="messageContent">Message</label>
+                            <textarea id="messageContent" class="form-textarea" rows="6"
+                                placeholder="Type your message here..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Schedule</h3>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="messageSchedule" value="now" checked>
+                                <span>Send Now</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="messageSchedule" value="schedule">
+                                <span>Schedule</span>
+                            </label>
+                        </div>
+                        <div class="schedule-datetime" id="scheduleDateTime" style="display: none;">
+                            <div class="datetime-inputs">
+                                <input type="date" class="form-input">
+                                <input type="time" class="form-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="sendMessageBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message
+                </button>
+                <button class="btn-secondary" data-modal="communicationModal">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Management Modal -->
+    <div id="notificationSettingsModal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Notification Settings</h2>
+                <button class="modal-close" data-modal="notificationSettingsModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="notification-settings">
+                    <div class="settings-section">
+                        <h3>Auto-Notifications</h3>
+                        <div class="settings-list">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span>Account Creation</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <i class="fas fa-ban"></i>
+                                    <span>Suspension/Activation</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <i class="fas fa-key"></i>
+                                    <span>Password Reset</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>Role Change</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Notification Channels</h3>
+                        <div class="settings-list">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Email</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <i class="fas fa-sms"></i>
+                                    <span>SMS</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Custom Rules</h3>
+                        <div class="custom-rules">
+                            <button class="btn-secondary" id="addCustomRule">
+                                <i class="fas fa-plus"></i>
+                                Add Rule
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="saveNotificationSettings">
+                    <i class="fas fa-save"></i>
+                    Save Settings
+                </button>
+                <button class="btn-secondary" data-modal="notificationSettingsModal">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deactivation Modal -->
+    <div id="deactivationModal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header danger">
+                <h2>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Critical Action Required
+                </h2>
+                <button class="modal-close" data-modal="deactivationModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="deactivation-form">
+                    <div class="warning-message">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>This action will affect user access and data. Please proceed with caution.</p>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Action Type</h3>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="actionType" value="deactivate">
+                                <span>Deactivate (Reversible)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="actionType" value="delete">
+                                <span>Delete (Permanent)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Selected Users</h3>
+                        <div class="selected-users-list">
+                            <div class="user-item">Dr. John Doe (U001)</div>
+                            <div class="user-item">Jane Smith (U002)</div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Data Retention</h3>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="dataRetention" value="medical" checked>
+                                <i class="fas fa-heartbeat"></i>
+                                <span>Preserve Medical Records</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="dataRetention" value="billing" checked>
+                                <i class="fas fa-credit-card"></i>
+                                <span>Preserve Billing History</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Confirmation</h3>
+                        <div class="form-group">
+                            <label for="confirmationText">Type 'CONFIRM' to proceed</label>
+                            <input type="text" id="confirmationText" class="form-input" placeholder="CONFIRM">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-danger" id="proceedDeactivation" disabled>
+                    <i class="fas fa-trash"></i>
+                    Proceed with Action
+                </button>
+                <button class="btn-secondary" data-modal="deactivationModal">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Dark Mode Toggle -->
+            <div class="footer-section">
+                <button id="darkModeToggle" class="dark-mode-btn">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-section social-media">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                        class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer"
+                        class="social-link twitter">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer" class="social-link facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                        class="social-link youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                        class="social-link linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Corporate Website Link -->
+            <div class="footer-section">
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer" class="corporate-link">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Corporate Website</span>
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-section copyright">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="curis_users.js"></script>
+</body>
+
+</html>

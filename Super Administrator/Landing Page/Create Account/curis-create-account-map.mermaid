@@ -1,0 +1,122 @@
+graph TB
+    Start([Start]) --> Header{Header Section}
+    Header --> Logo[Website Logo]
+    Header --> NavLinks[Navigation Links]
+    
+    Logo -->|Click| LandingPage[Redirect to Landing Page]
+    NavLinks -->|Click Home| LandingPage
+    NavLinks -->|Click Login| LoginPage[Login Page]
+    
+    Header --> AccountForm{Account Creation Form}
+    
+    %% Personal Information Section
+    AccountForm --> PersonalInfo[Personal Information Section]
+    PersonalInfo --> FirstName[First Name Field]
+    PersonalInfo --> LastName[Last Name Field]
+    PersonalInfo --> StaffID[Staff ID Field]
+    PersonalInfo --> WorkEmail[Work Email Field]
+    PersonalInfo --> JobTitle[Job Title Field]
+    PersonalInfo --> Department[Department Field]
+    
+    %% Email Verification Process
+    WorkEmail -->|Input| EmailValidation{Validate Email}
+    EmailValidation -->|Valid Company Email| ValidEmail[Verified: Shows Checkmark]
+    EmailValidation -->|Invalid Email| InvalidEmail[Error: Must be valid Citrus Labs email]
+    
+    %% Security Information Section
+    AccountForm --> SecurityInfo[Security Information Section]
+    SecurityInfo --> Password[Password Field]
+    SecurityInfo --> PasswordStrength{Password Strength}
+    PasswordStrength -->|Weak| WeakIndicator[Red Strength Bar]
+    PasswordStrength -->|Medium| MediumIndicator[Yellow Strength Bar]
+    PasswordStrength -->|Strong| StrongIndicator[Green Strength Bar]
+    SecurityInfo --> ConfirmPass[Confirm Password Field]
+    SecurityInfo --> PasswordMatch{Passwords Match?}
+    PasswordMatch -->|Yes| MatchConfirmed[Verified: Shows Checkmark]
+    PasswordMatch -->|No| MatchError[Error: Passwords don't match]
+    
+    SecurityInfo --> SecurityQ[Security Questions]
+    SecurityQ --> Question1[Question 1 Dropdown]
+    SecurityQ --> Answer1[Answer 1 Field]
+    SecurityQ --> Question2[Question 2 Dropdown]
+    SecurityQ --> Answer2[Answer 2 Field]
+    
+    SecurityInfo --> Captcha[CAPTCHA Verification]
+    Captcha -->|Completed| CaptchaVerified[Verified]
+    Captcha -->|Failed/Skipped| CaptchaError[Error: Complete CAPTCHA]
+    
+    %% Legal Agreements Section
+    AccountForm --> Legal{Legal Agreements Section}
+    Legal --> Terms[Terms & Conditions Checkbox]
+    Terms -->|Click| TermsModal[Opens Terms & Conditions Modal]
+    TermsModal -->|Close| Terms
+    
+    Legal --> Privacy[Privacy Policy Checkbox]
+    Privacy -->|Click| PrivacyModal[Opens Privacy Policy Modal]
+    PrivacyModal -->|Close| Privacy
+    
+    Legal --> DataPolicy[Data Policy Checkbox]
+    DataPolicy -->|Click| DataPolicyModal[Opens Data Policy Modal]
+    DataPolicyModal -->|Close| DataPolicy
+    
+    %% Form Validation Process
+    Legal --> Validation{Form Validation}
+    
+    Validation -->|Missing Fields| ShowErrors[Display Error Messages]
+    ShowErrors --> RequiredFieldErrors[Highlight Required Fields]
+    RequiredFieldErrors -->|Fix Errors| AccountForm
+    
+    Validation -->|Invalid Format| FormatErrors[Display Format Error Messages]
+    FormatErrors --> EmailFormatError[Email Format Error]
+    FormatErrors --> PasswordFormatError[Password Format Error]
+    FormatErrors -->|Fix Errors| AccountForm
+    
+    Validation -->|Unchecked Legal| LegalErrors[Display Legal Agreement Errors]
+    LegalErrors --> AccountForm
+    
+    %% Submit Process
+    Validation -->|All Valid| CreateButton[Create Account Button]
+    CreateButton -->|Click| SubmitForm[Submit Form]
+    SubmitForm --> LoadingIndicator[Display Loading Indicator]
+    LoadingIndicator --> AdminReview[Awaiting Admin Approval Page]
+    
+    %% Admin Review Outcomes
+    AdminReview --> ReviewMessage[Display "Account Pending Approval" Message]
+    ReviewMessage --> EmailNotification[Send Email Notification]
+    AdminReview -->|Approved by Admin| SuccessEmail[Approval Email Sent]
+    SuccessEmail --> Success([Account Created Successfully])
+    Success --> LoginRedirect[Redirect to Login Page]
+    
+    AdminReview -->|Rejected by Admin| RejectionEmail[Rejection Email Sent]
+    RejectionEmail --> Reject([Account Rejected])
+    Reject --> RejectionReason[Display Rejection Reason]
+    RejectionReason --> ContactSupport[Option to Contact Support]
+    
+    %% Existing User Redirection
+    ExistingUser[Existing User Section] --> LoginRedirect[Login Page Link]
+    LoginRedirect --> LoginPage
+    
+    %% Help and Support
+    AccountForm --> SupportLink[Help & Support Link]
+    SupportLink -->|Click| SupportOptions[Support Options Popup]
+    SupportOptions --> FAQLink[FAQ Page Link]
+    SupportOptions --> ContactLink[Contact Support Form]
+    SupportOptions --> LiveChatOption[Live Chat Option]
+    
+    %% Error Handling
+    CreateButton -->|Server Error| ErrorPage[Error Page]
+    ErrorPage --> RetryButton[Retry Button]
+    RetryButton --> AccountForm
+    
+    %% Style Classes
+    classDef section fill:#f9f,stroke:#333,stroke-width:2px;
+    class Header,AccountForm,PersonalInfo,SecurityInfo,Legal,Validation,AdminReview section;
+    
+    classDef action fill:#cdf,stroke:#333,stroke-width:1px;
+    class CreateButton,SubmitForm,LoadingIndicator,RetryButton action;
+    
+    classDef error fill:#fcc,stroke:#f66,stroke-width:1px;
+    class ShowErrors,FormatErrors,LegalErrors,ErrorPage,RejectionReason error;
+    
+    classDef success fill:#cfc,stroke:#393,stroke-width:1px;
+    class Success,SuccessEmail,ValidEmail,CaptchaVerified,MatchConfirmed success;

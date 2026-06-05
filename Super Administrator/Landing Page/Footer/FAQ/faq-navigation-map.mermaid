@@ -1,0 +1,327 @@
+flowchart TD
+    %% Main FAQ Page
+    A[Super Administrator Dashboard] --> B[FAQ Page]
+    
+    %% Main Navigation Elements
+    B --> C[Expandable Categories]
+    B --> D[Search Bar]
+    B --> E[Popular Questions Highlight]
+    B --> F[Interactive Icons]
+    B --> G[Quick Links]
+    B --> H[Feedback Button]
+
+
+    %% Expandable Categories
+    C --> C1[General Information]
+    C --> C2[Account Management]
+    C --> C3[Billing and Payments]
+    C --> C4[Features and Functionality]
+    C --> C5[Technical Support]
+    C --> C6[Privacy and Security]
+    C --> C7[Terms and Conditions]
+    C --> C8[Updates and Changes]
+    C --> C9[Contact and Support]
+    
+    %% Category Expansion Process
+    C1 --> C1A{Toggle Expansion}
+    C1A --> C1B[Show Questions List]
+    C1A --> C1C[Hide Questions List]
+    
+    C1B --> C1D{Select Question}
+    C1D --> C1E[Show Answer]
+    C1E --> C1F[Hide Answer Button]
+    C1F --> C1B
+    
+    %% Search Bar
+    D --> D1[Enter Search Term]
+    D1 --> D2[View Search Results]
+    D2 --> D3{Select Result}
+    D3 --> C1E
+    D3 --> C2E
+    D3 --> C3E
+    D3 --> C4E
+    D3 --> C5E
+    D3 --> C6E
+    D3 --> C7E
+    D3 --> C8E
+    D3 --> C9E
+    
+    %% Popular Questions Highlight
+    E --> E1[Top 5 FAQ List]
+    E1 --> E2{Select Popular Question}
+    E2 --> E3[Show Answer]
+    E3 --> E4[Was This Helpful?]
+    E4 --> E5[Yes Button]
+    E4 --> E6[No Button]
+    E5 --> E7[Thanks for Feedback Message]
+    E6 --> E8[Sorry Message with Support Link]
+    
+    %% Interactive Icons
+    F --> F1[Platform Icon]
+    F --> F2[Account Icon]
+    F --> F3[Billing Icon]
+    F --> F4[Features Icon]
+    F --> F5[Support Icon]
+    F --> F6[Security Icon]
+    F --> F7[Terms Icon]
+    F --> F8[Updates Icon]
+    F --> F9[Contact Icon]
+    
+    F1 --> C1
+    F2 --> C2
+    F3 --> C3
+    F4 --> C4
+    F5 --> C5
+    F6 --> C6
+    F7 --> C7
+    F8 --> C8
+    F9 --> C9
+    
+    %% Quick Links
+    G --> G1[Contact Support Link]
+    G --> G2[Terms & Conditions Link]
+    G --> G3[Privacy Policy Link]
+    G --> G4[User Guide Link]
+    G --> G5[Submit Ticket Link]
+    
+    G1 --> G1A[Support Contact Page]
+    G2 --> G2A[Terms Page]
+    G3 --> G3A[Privacy Policy Page]
+    G4 --> G4A[User Guide Page]
+    G5 --> G5A[Ticket Submission Form]
+    
+    
+    %% Feedback Button
+    H --> H1[Feedback Form Popup]
+    H1 --> H2[Rate FAQ Helpfulness]
+    H1 --> H3[Suggestion Field]
+    H1 --> H4[Missing FAQ Field]
+    H1 --> H5[Submit Button]
+    H5 --> H6[Thank You Message]
+    H1 --> H7[Close Button]
+
+    
+    %% General Information Section Questions
+    C1B --> C1G["What is Curis by Citrus?"]
+    C1B --> C1H["How does the platform work?"]
+    C1B --> C1I["Which user roles are available?"]
+    C1B --> C1J["What types of clinics can use Curis?"]
+    C1B --> C1K["How do I get started?"]
+    
+    C1G --> C1E
+    C1H --> C1E
+    C1I --> C1E
+    C1J --> C1E
+    C1K --> C1E
+    
+    %% Account Management Section
+    C2 --> C2A{Toggle Expansion}
+    C2A --> C2B[Show Questions List]
+    C2A --> C2C[Hide Questions List]
+    
+    C2B --> C2D{Select Question}
+    C2D --> C2E[Show Answer]
+    C2E --> C2F[Hide Answer Button]
+    C2F --> C2B
+    
+    %% Account Management Questions
+    C2B --> C2G["How do I create a new clinic?"]
+    C2B --> C2H["How do I manage user accounts?"]
+    C2B --> C2I["How do I reset user passwords?"]
+    C2B --> C2J["How do I suspend or delete accounts?"]
+    C2B --> C2K["How do I manage roles and permissions?"]
+    
+    C2G --> C2E
+    C2H --> C2E
+    C2I --> C2E
+    C2J --> C2E
+    C2K --> C2E
+    
+    %% Billing and Payments Section
+    C3 --> C3A{Toggle Expansion}
+    C3A --> C3B[Show Questions List]
+    C3A --> C3C[Hide Questions List]
+    
+    C3B --> C3D{Select Question}
+    C3D --> C3E[Show Answer]
+    C3E --> C3F[Hide Answer Button]
+    C3F --> C3B
+    
+    %% Billing Questions
+    C3B --> C3G["What subscription plans are available?"]
+    C3B --> C3H["How do I change a clinic's subscription?"]
+    C3B --> C3I["How are clinics billed?"]
+    C3B --> C3J["How do I view payment history?"]
+    C3B --> C3K["How do I handle disputed charges?"]
+    
+    C3G --> C3E
+    C3H --> C3E
+    C3I --> C3E
+    C3J --> C3E
+    C3K --> C3E
+    
+    %% Features and Functionality Section
+    C4 --> C4A{Toggle Expansion}
+    C4A --> C4B[Show Questions List]
+    C4A --> C4C[Hide Questions List]
+    
+    C4B --> C4D{Select Question}
+    C4D --> C4E[Show Answer]
+    C4E --> C4F[Hide Answer Button]
+    C4F --> C4B
+    
+    %% Features Questions
+    C4B --> C4G["How do I enable/disable platform features?"]
+    C4B --> C4H["How do I customize clinic settings?"]
+    C4B --> C4I["How do I set up system notifications?"]
+    C4B --> C4J["How do I manage appointment types?"]
+    C4B --> C4K["How do I configure workflows?"]
+    
+    C4G --> C4E
+    C4H --> C4E
+    C4I --> C4E
+    C4J --> C4E
+    C4K --> C4E
+    
+    %% Technical Support Section
+    C5 --> C5A{Toggle Expansion}
+    C5A --> C5B[Show Questions List]
+    C5A --> C5C[Hide Questions List]
+    
+    C5B --> C5D{Select Question}
+    C5D --> C5E[Show Answer]
+    C5E --> C5F[Hide Answer Button]
+    C5F --> C5B
+    
+    %% Technical Support Questions
+    C5B --> C5G["How do I troubleshoot login issues?"]
+    C5B --> C5H["What do I do if a clinic reports downtime?"]
+    C5B --> C5I["How do I restore data from backups?"]
+    C5B --> C5J["How do I resolve integration errors?"]
+    C5B --> C5K["How do I check system status?"]
+    
+    C5G --> C5E
+    C5H --> C5E
+    C5I --> C5E
+    C5J --> C5E
+    C5K --> C5E
+    
+    %% Privacy and Security Section
+    C6 --> C6A{Toggle Expansion}
+    C6A --> C6B[Show Questions List]
+    C6A --> C6C[Hide Questions List]
+    
+    C6B --> C6D{Select Question}
+    C6D --> C6E[Show Answer]
+    C6E --> C6F[Hide Answer Button]
+    C6F --> C6B
+    
+    %% Privacy Questions
+    C6B --> C6G["How is patient data secured?"]
+    C6B --> C6H["What compliance standards does Curis meet?"]
+    C6B --> C6I["How do I handle a data breach?"]
+    C6B --> C6J["How are user access logs maintained?"]
+    C6B --> C6K["How do I set up two-factor authentication?"]
+    
+    C6G --> C6E
+    C6H --> C6E
+    C6I --> C6E
+    C6J --> C6E
+    C6K --> C6E
+    
+    %% Terms and Conditions Section
+    C7 --> C7A{Toggle Expansion}
+    C7A --> C7B[Show Questions List]
+    C7A --> C7C[Hide Questions List]
+    
+    C7B --> C7D{Select Question}
+    C7D --> C7E[Show Answer]
+    C7E --> C7F[Hide Answer Button]
+    C7F --> C7B
+    
+    %% Terms Questions
+    C7B --> C7G["Where can I find the platform's Terms of Service?"]
+    C7B --> C7H["How do I update Terms for all clinics?"]
+    C7B --> C7I["What are clinic owner responsibilities?"]
+    C7B --> C7J["What are the platform usage limits?"]
+    C7B --> C7K["How do I handle policy violations?"]
+    
+    C7G --> C7E
+    C7H --> C7E
+    C7I --> C7E
+    C7J --> C7E
+    C7K --> C7E
+    
+    %% Updates and Changes Section
+    C8 --> C8A{Toggle Expansion}
+    C8A --> C8B[Show Questions List]
+    C8A --> C8C[Hide Questions List]
+    
+    C8B --> C8D{Select Question}
+    C8D --> C8E[Show Answer]
+    C8E --> C8F[Hide Answer Button]
+    C8F --> C8B
+    
+    %% Updates Questions
+    C8B --> C8G["How are platform updates managed?"]
+    C8B --> C8H["How do I notify clinics about changes?"]
+    C8B --> C8I["When are maintenance windows scheduled?"]
+    C8B --> C8J["How do I access release notes?"]
+    C8B --> C8K["How do I enroll in beta features?"]
+    
+    C8G --> C8E
+    C8H --> C8E
+    C8I --> C8E
+    C8J --> C8E
+    C8K --> C8E
+    
+    %% Contact and Support Section
+    C9 --> C9A{Toggle Expansion}
+    C9A --> C9B[Show Questions List]
+    C9A --> C9C[Hide Questions List]
+    
+    C9B --> C9D{Select Question}
+    C9D --> C9E[Show Answer]
+    C9E --> C9F[Hide Answer Button]
+    C9F --> C9B
+    
+    %% Contact Questions
+    C9B --> C9G["How do I contact technical support?"]
+    C9B --> C9H["What are support hours?"]
+    C9B --> C9I["How do I escalate urgent issues?"]
+    C9B --> C9J["How do I submit feature requests?"]
+    C9B --> C9K["How do I report bugs?"]
+    
+    C9G --> C9E
+    C9H --> C9E
+    C9I --> C9E
+    C9J --> C9E
+    C9K --> C9E
+    
+    %% Additional Interactive Elements - Answer Helpfulness
+    C1E --> C1L[Was This Helpful?]
+    C1L --> C1M[Yes Button]
+    C1L --> C1N[No Button]
+    C1M --> C1O[Thanks Message]
+    C1N --> C1P[Support Contact Link]
+    
+    %% Interactive Support Within Answers
+    C5E --> C5L[View Tutorial Video Button]
+    C5L --> C5M[Video Player Popup]
+    C5M --> C5N[Close Video Button]
+    
+    C5E --> C5O[Open Knowledge Base Link]
+    C5O --> C5P[Knowledge Base Article]
+    
+    %% Style definitions
+    classDef mainPage fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef section fill:#bbf,stroke:#33f,stroke-width:1px;
+    classDef popup fill:#fbb,stroke:#f33,stroke-width:1px;
+    classDef button fill:#bfb,stroke:#3f3,stroke-width:1px;
+    classDef result fill:#ffb,stroke:#bb3,stroke-width:1px;
+    
+    class A,B mainPage;
+    class C,D,E,F,G,H,I,C1,C2,C3,C4,C5,C6,C7,C8,C9 section;
+    class I1,C5M popup;
+    class E5,E6,I5,I7,C1F,C1M,C1N,C5L,C5N button;
+    class E7,E8,I6,C1O,C1P,C5P result;

@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Curis by Citrus - Patient Notifications Center for managing alerts, updates, and important health information">
+    <title>Notifications | Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Notifications\notifications.css">
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Appointments\my_appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>My Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Health Care\my_health_care.html"
+                            class="nav-link">
+                            <i class="fas fa-heart-pulse"></i>
+                            <span>My Health Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Emergency Care\emergency_care.html"
+                            class="nav-link">
+                            <i class="fas fa-ambulance"></i>
+                            <span>Emergency Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Medical Cover\my_medical_cover.html"
+                            class="nav-link">
+                            <i class="fas fa-shield-heart"></i>
+                            <span>My Medical Cover</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Messaging\messaging.html"
+                            class="nav-link">
+                            <i class="fas fa-comments"></i>
+                            <span>Messaging</span>
+                            <span class="badge">3</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Notifications</h1>
+                    <p class="page-subtitle">Centralized Alert Management</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- Notifications Icon -->
+                    <div class="notification-icon">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Notifications\notifications.html"
+                            class="icon-btn active">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">12</span>
+                        </a>
+                    </div>
+
+                    <!-- User Profile Icon with Dropdown -->
+                    <div class="user-profile-dropdown">
+                        <button class="profile-btn" id="profileBtn">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                                alt="User Profile" class="profile-img">
+                        </button>
+
+                        <!-- Profile Dropdown Menu -->
+                        <div class="profile-menu" id="profileMenu">
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Profile\my_profile.html"
+                                class="profile-menu-item">
+                                <i class="fas fa-user"></i>
+                                <span>My Profile</span>
+                            </a>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\landing_page.html"
+                                class="profile-menu-item logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Notifications Content -->
+            <section class="notifications-content">
+
+                <!-- Notifications Overview Cards -->
+                <div class="overview-cards-grid">
+                    <div class="overview-card">
+                        <div class="card-icon emergency">
+                            <i class="fas fa-bell-exclamation"></i>
+                        </div>
+                        <div class="card-stats">
+                            <h3 class="stat-number">3</h3>
+                            <p class="stat-label">Unread Urgent</p>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <div class="card-icon appointments">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="card-stats">
+                            <h3 class="stat-number">5</h3>
+                            <p class="stat-label">Appointment Alerts</p>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <div class="card-icon medical">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div class="card-stats">
+                            <h3 class="stat-number">2</h3>
+                            <p class="stat-label">Medical Updates</p>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <div class="card-icon billing">
+                            <i class="fas fa-receipt"></i>
+                        </div>
+                        <div class="card-stats">
+                            <h3 class="stat-number">2</h3>
+                            <p class="stat-label">Billing Notices</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification Actions Bar -->
+                <div class="notification-actions-bar">
+                    <div class="actions-left">
+                        <button class="action-btn" id="markAllReadBtn">
+                            <i class="fas fa-check-double"></i>
+                            <span>Mark All Read</span>
+                        </button>
+                        <button class="action-btn" id="refreshNotificationsBtn">
+                            <i class="fas fa-rotate"></i>
+                            <span>Refresh</span>
+                        </button>
+                        <button class="action-btn" id="notificationSettingsBtn">
+                            <i class="fas fa-gear"></i>
+                            <span>Settings</span>
+                        </button>
+                    </div>
+                    <div class="actions-right">
+                        <button class="filter-toggle-btn" id="filterToggleBtn">
+                            <i class="fas fa-filter"></i>
+                            <span>Filters</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Notification Filters Panel -->
+                <div class="filters-panel" id="filtersPanel">
+                    <div class="filters-section">
+                        <h3 class="filter-section-title">
+                            <i class="fas fa-layer-group"></i>
+                            Category Filters
+                        </h3>
+                        <div class="filter-buttons-group">
+                            <button class="filter-btn active" data-filter="all">
+                                <i class="fas fa-list"></i>
+                                All
+                            </button>
+                            <button class="filter-btn" data-filter="appointments">
+                                <i class="fas fa-calendar-check"></i>
+                                Appointments
+                            </button>
+                            <button class="filter-btn" data-filter="medical">
+                                <i class="fas fa-file-medical"></i>
+                                Medical Records
+                            </button>
+                            <button class="filter-btn" data-filter="billing">
+                                <i class="fas fa-receipt"></i>
+                                Billing
+                            </button>
+                            <button class="filter-btn" data-filter="emergency">
+                                <i class="fas fa-triangle-exclamation"></i>
+                                Emergency
+                            </button>
+                            <button class="filter-btn" data-filter="system">
+                                <i class="fas fa-gear"></i>
+                                System
+                            </button>
+                            <button class="filter-btn" data-filter="insurance">
+                                <i class="fas fa-shield-heart"></i>
+                                Insurance
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="filters-section">
+                        <h3 class="filter-section-title">
+                            <i class="fas fa-clock"></i>
+                            Time Filters
+                        </h3>
+                        <div class="filter-buttons-group">
+                            <button class="filter-btn active" data-time-filter="today">
+                                <i class="fas fa-calendar-day"></i>
+                                Today
+                            </button>
+                            <button class="filter-btn" data-time-filter="week">
+                                <i class="fas fa-calendar-week"></i>
+                                This Week
+                            </button>
+                            <button class="filter-btn" data-time-filter="month">
+                                <i class="fas fa-calendar"></i>
+                                This Month
+                            </button>
+                            <button class="filter-btn" data-time-filter="custom">
+                                <i class="fas fa-calendar-range"></i>
+                                Custom Range
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="filters-section">
+                        <h3 class="filter-section-title">
+                            <i class="fas fa-flag"></i>
+                            Priority Filters
+                        </h3>
+                        <div class="filter-buttons-group">
+                            <button class="filter-btn" data-priority-filter="emergency">
+                                <i class="fas fa-circle"></i>
+                                Emergency
+                            </button>
+                            <button class="filter-btn" data-priority-filter="high">
+                                <i class="fas fa-circle"></i>
+                                High
+                            </button>
+                            <button class="filter-btn" data-priority-filter="normal">
+                                <i class="fas fa-circle"></i>
+                                Normal
+                            </button>
+                            <button class="filter-btn" data-priority-filter="low">
+                                <i class="fas fa-circle"></i>
+                                Low
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="filters-section">
+                        <h3 class="filter-section-title">
+                            <i class="fas fa-eye"></i>
+                            Read Status
+                        </h3>
+                        <div class="filter-buttons-group">
+                            <button class="filter-btn active" data-status-filter="all">
+                                All
+                            </button>
+                            <button class="filter-btn" data-status-filter="unread">
+                                Unread Only
+                            </button>
+                            <button class="filter-btn" data-status-filter="read">
+                                Read Only
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="filters-section">
+                        <h3 class="filter-section-title">
+                            <i class="fas fa-users"></i>
+                            Family Member
+                        </h3>
+                        <div class="filter-buttons-group">
+                            <button class="filter-btn active" data-family-filter="all">
+                                All Members
+                            </button>
+                            <button class="filter-btn" data-family-filter="self">
+                                John Kamau (Self)
+                            </button>
+                            <button class="filter-btn" data-family-filter="spouse">
+                                Jane Kamau (Spouse)
+                            </button>
+                            <button class="filter-btn" data-family-filter="daughter">
+                                Mary Kamau (Daughter)
+                            </button>
+                            <button class="filter-btn" data-family-filter="son">
+                                David Kamau (Son)
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="filters-actions">
+                        <button class="btn-secondary" id="clearFiltersBtn">
+                            <i class="fas fa-eraser"></i>
+                            Clear Filters
+                        </button>
+                        <button class="btn-primary" id="applyFiltersBtn">
+                            <i class="fas fa-check"></i>
+                            Apply Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Notification Feed -->
+                <div class="notification-feed">
+                    <div class="feed-header">
+                        <h2 class="feed-title">
+                            <i class="fas fa-bell"></i>
+                            Real-time Activity Stream
+                        </h2>
+                        <span class="feed-count" id="feedCount">12 notifications</span>
+                    </div>
+
+                    <div class="feed-content" id="feedContent">
+
+                        <!-- Emergency Alert Notification -->
+                        <div class="notification-card emergency unread" data-notification-id="1"
+                            data-category="emergency" data-priority="emergency">
+                            <div class="notification-indicator emergency"></div>
+                            <div class="notification-header">
+                                <div class="notification-icon emergency">
+                                    <i class="fas fa-triangle-exclamation"></i>
+                                </div>
+                                <div class="notification-meta">
+                                    <h3 class="notification-title">Abnormal Test Results - Immediate Attention Required
+                                    </h3>
+                                    <div class="notification-info">
+                                        <span class="notification-category">
+                                            <i class="fas fa-tag"></i>
+                                            Emergency Alert
+                                        </span>
+                                        <span class="notification-time">
+                                            <i class="fas fa-clock"></i>
+                                            15 minutes ago
+                                        </span>
+                                        <span class="notification-patient">
+                                            <i class="fas fa-user"></i>
+                                            John Kamau (Self)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="action-icon-btn" title="Mark as read">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="action-icon-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-body">
+                                <p class="notification-message">
+                                    Your recent blood test results show abnormal values that require immediate medical
+                                    attention.
+                                    Please contact Dr. Sarah Wanjiru urgently.
+                                </p>
+                                <div class="notification-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-user-doctor"></i>
+                                        <span>Dr. Sarah Wanjiru - General Practice</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-hospital"></i>
+                                        <span>Nairobi Health Center</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-phone"></i>
+                                        <span>+254 700 123 456</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <button class="btn-primary btn-sm">
+                                    <i class="fas fa-file-medical"></i>
+                                    View Test Results
+                                </button>
+                                <button class="btn-danger btn-sm">
+                                    <i class="fas fa-phone"></i>
+                                    Call Doctor Now
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Appointment Reminder Notification -->
+                        <div class="notification-card appointments unread" data-notification-id="2"
+                            data-category="appointments" data-priority="high">
+                            <div class="notification-indicator high"></div>
+                            <div class="notification-header">
+                                <div class="notification-icon appointments">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="notification-meta">
+                                    <h3 class="notification-title">Appointment Reminder - Tomorrow at 10:00 AM</h3>
+                                    <div class="notification-info">
+                                        <span class="notification-category">
+                                            <i class="fas fa-tag"></i>
+                                            Appointment
+                                        </span>
+                                        <span class="notification-time">
+                                            <i class="fas fa-clock"></i>
+                                            1 hour ago
+                                        </span>
+                                        <span class="notification-patient">
+                                            <i class="fas fa-user"></i>
+                                            John Kamau (Self)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="action-icon-btn" title="Mark as read">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="action-icon-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-body">
+                                <p class="notification-message">
+                                    You have a general consultation scheduled for tomorrow, October 5, 2025 at 10:00 AM.
+                                </p>
+                                <div class="notification-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-user-doctor"></i>
+                                        <span>Dr. Sarah Wanjiru</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-hospital"></i>
+                                        <span>Nairobi Health Center - Westlands</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-location-dot"></i>
+                                        <span>In-Person Visit</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <button class="btn-primary btn-sm">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Add to Calendar
+                                </button>
+                                <button class="btn-secondary btn-sm">
+                                    <i class="fas fa-calendar"></i>
+                                    Reschedule
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- New Lab Results Notification -->
+                        <div class="notification-card medical unread" data-notification-id="3" data-category="medical"
+                            data-priority="high">
+                            <div class="notification-indicator high"></div>
+                            <div class="notification-header">
+                                <div class="notification-icon medical">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <div class="notification-meta">
+                                    <h3 class="notification-title">New Lab Results Available</h3>
+                                    <div class="notification-info">
+                                        <span class="notification-category">
+                                            <i class="fas fa-tag"></i>
+                                            Medical Records
+                                        </span>
+                                        <span class="notification-time">
+                                            <i class="fas fa-clock"></i>
+                                            2 hours ago
+                                        </span>
+                                        <span class="notification-patient">
+                                            <i class="fas fa-user"></i>
+                                            Mary Kamau (Daughter)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="action-icon-btn" title="Mark as read">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="action-icon-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-body">
+                                <p class="notification-message">
+                                    Complete Blood Count (CBC) test results for Mary Kamau are now available for review.
+                                </p>
+                                <div class="test-results-summary">
+                                    <div class="result-item normal">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>All values within normal range</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <button class="btn-primary btn-sm">
+                                    <i class="fas fa-file-medical"></i>
+                                    View Full Report
+                                </button>
+                                <button class="btn-secondary btn-sm">
+                                    <i class="fas fa-download"></i>
+                                    Download PDF
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Payment Confirmation Notification -->
+                        <div class="notification-card billing read" data-notification-id="4" data-category="billing"
+                            data-priority="normal">
+                            <div class="notification-indicator normal"></div>
+                            <div class="notification-header">
+                                <div class="notification-icon billing">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="notification-meta">
+                                    <h3 class="notification-title">Payment Verified - Receipt Available</h3>
+                                    <div class="notification-info">
+                                        <span class="notification-category">
+                                            <i class="fas fa-tag"></i>
+                                            Billing
+                                        </span>
+                                        <span class="notification-time">
+                                            <i class="fas fa-clock"></i>
+                                            3 hours ago
+                                        </span>
+                                        <span class="notification-patient">
+                                            <i class="fas fa-user"></i>
+                                            John Kamau (Self)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="action-icon-btn" title="Mark as unread">
+                                        <i class="fas fa-envelope"></i>
+                                    </button>
+                                    <button class="action-icon-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-body">
+                                <p class="notification-message">
+                                    Your payment of KES.. 12,500 for Invoice #INV-2025-001234 has been verified and
+                                    processed successfully.
+                                </p>
+                                <div class="notification-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-money-bill"></i>
+                                        <span>Amount: KES.. 12,500</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-hashtag"></i>
+                                        <span>Transaction: QGH7X8Y9Z0</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-hospital"></i>
+                                        <span>Nairobi Health Center</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <button class="btn-primary btn-sm">
+                                    <i class="fas fa-receipt"></i>
+                                    View Receipt
+                                </button>
+                                <button class="btn-secondary btn-sm">
+                                    <i class="fas fa-download"></i>
+                                    Download Receipt
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- New Invoice Alert -->
+                        <div class="notification-card billing unread" data-notification-id="5" data-category="billing"
+                            data-priority="high">
+                            <div class="notification-indicator high"></div>
+                            <div class="notification-header">
+                                <div class="notification-icon billing">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                </div>
+                                <div class="notification-meta">
+                                    <h3 class="notification-title">New Invoice Generated - Payment Due</h3>
+                                    <div class="notification-info">
+                                        <span class="notification-category">
+                                            <i class="fas fa-tag"></i>
+                                            Billing
+                                        </span>
+                                        <span class="notification-time">
+                                            <i class="fas fa-clock"></i>
+                                            5 hours ago
+                                        </span>
+                                        <span class="notification-patient">
+                                            <i class="fas fa-user"></i>
+                                            Jane Kamau (Spouse)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="action-icon-btn" title="Mark as read">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="action-icon-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-body">
+                                <p class="notification-message">
+                                    A new invoice has been generated for Jane Kamau's recent consultation at Westlands
+                                    Medical Clinic.
+                                </p>
+                                <div class="notification-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-hashtag"></i>
+                                        <span>Invoice: INV-2025-001567</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-money-bill"></i>
+                                        <span>Amount: KES.. 8,750</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>Due Date: October 19, 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <button class="btn-primary btn-sm">
+                                    <i class="fas fa-credit-card"></i>
+                                    Pay Now
+                                </button>
+                                <button class="btn-secondary btn-sm">
+                                    <i class="fas fa-file-invoice"></i>
+                                    View Invoice
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Prescription Update Notification -->
+                        <div class="notification-card medical unread" data-notification-id="6" data-category="medical"
+                            data-priority="normal">
+                            <div class="notification-indicator normal"></div>
+                            <div class="notification-header">
+                                <div class="notification-icon medical">
+                                    <i class="fas fa-pills"></i>
+                                </div>
+                                <div class="notification-meta">
+                                    <h3 class="notification-title">New Prescription Added</h3>
+                                    <div class="notification-info">
+                                        <span class="notification-category">
+                                            <i class="fas fa-tag"></i>
+                                            Medical Records
+                                        </span>
+                                        <span class="notification-time">
+                                            <i class="fas fa-clock"></i>
+                                            1 day ago
+                                        </span>
+                                        <span class="notification-patient">
+                                            <i class="fas fa-user"></i>
+                                            John Kamau (Self)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="action-icon-btn" title="Mark as read">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="action-icon-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-body">
+                                <p class="notification-message">
+                                    Dr. Sarah Wanjiru has prescribed Amoxicillin 500mg for your recent consultation.
+                                </p>
+                                <div class="prescription-summary">
+                                    <div class="prescription-item">
+                                        <strong>Medication:</strong> Amoxicillin 500mg
+                                    </div>
+                                    <div class="prescription-item">
+                                        <strong>Dosage:</strong> Take 1 capsule three times daily after meals
+                                    </div>
+                                    <div class="prescription-item">
+                                        <strong>Duration:</strong> 7 days
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <button class="btn-primary btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                    View Prescription
+                                </button>
+                                <button class="btn-secondary btn-sm">
+                                    <i class="fas fa-bell"></i>
+                                    Set Reminders
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Booking Confirmation Notification -->
+                        <div class="notification-card appointments read" data-notification-id="7"
+                            data-category="appointments" data-priority="normal">
+                            <div class="notification-indicator normal"></div>
+                            <div class="notification-header">
+                                <div class="notification-icon appointments">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="notification-meta">
+                                    <h3 class="notification-title">Appointment Confirmed</h3>
+                                    <div class="notification-info">
+                                        <span class="notification-category">
+                                            <i class="fas fa-tag"></i>
+                                            Appointment
+                                        </span>
+                                        <span class="notification-time">
+                                            <i class="fas fa-clock"></i>
+                                            2 days ago
+                                        </span>
+                                        <span class="notification-patient">
+                                            <i class="fas fa-user"></i>
+                                            David Kamau (Son)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="action-icon-btn" title="Mark as unread">
+                                        <i class="fas fa-envelope"></i>
+                                    </button>
+                                    <button class="action-icon-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-body">
+                                <p class="notification-message">
+                                    Your appointment booking for David Kamau has been confirmed successfully.
+                                </p>
+                                <div class="notification-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-hashtag"></i>
+                                        <span>Reference: APT-2025-456789</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>Date: October 8, 2025 at 2:00 PM</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-user-doctor"></i>
+                                        <span>Dr. James Omondi - Pediatrics</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <button class="btn-primary btn-sm">
+                                    <i class="fas fa-calendar-check"></i>
+                                    View Appointment
+                                </button>
+                                <button class="btn-secondary btn-sm">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Add to Calendar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Insurance Claim Update Notification -->
+                        <div class="notification-card insurance unread" data-notification-id="8"
+                            data-category="insurance" data-priority="normal">
+                            <div class="notification-indicator normal"></div>
+                            <div class="notification-header">
+                                <div class="notification-icon insurance">
+                                    <i class="fas fa-shield-heart"></i>
+                                </div>
+                                <div class="notification-meta">
+                                    <h3 class="notification-title">Insurance Claim Approved</h3>
+                                    <div class="notification-info">
+                                        <span class="notification-category">
+                                            <i class="fas fa-tag"></i>
+                                            Insurance
+                                        </span>
+                                        <span class="notification-time">
+                                            <i class="fas fa-clock"></i>
+                                            2 days ago
+                                        </span>
+                                        <span class="notification-patient">
+                                            <i class="fas fa-user"></i>
+                                            John Kamau (Self)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="action-icon-btn" title="Mark as read">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button class="action-icon-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-body">
+                                <p class="notification-message">
+                                    Your insurance claim for recent medical consultation has been approved.
+                                </p>
+                                <div class="notification-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-hashtag"></i>
+                                        <span>Claim Number: CLM-2025-789012</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-money-bill"></i>
+                                        <span>Approved Amount: KES.. 10,000</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-building"></i>
+                                        <span>Provider: AAR Health Insurance</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <button class="btn-primary btn-sm">
+                                    <i class="fas fa-file-invoice"></i>
+                                    View Claim Details
+                                </button>
+                                <button class="btn-secondary btn-sm">
+                                    <i class="fas fa-download"></i>
+                                    Download Report
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Health Advisory Notification -->
+                        <div class="notification-card emergency read" data-notification-id="9" data-category="emergency"
+                            data-priority="high">
+                            <div class="notification-indicator high"></div>
+                            <div class="notification-header">
+                                <div class="notification-icon emergency">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div class="notification-meta">
+                                    <h3 class="notification-title">Public Health Advisory - Dengue Fever Alert</h3>
+                                    <div class="notification-info">
+                                        <span class="notification-category">
+                                            <i class="fas fa-tag"></i>
+                                            Health Advisory
+                                        </span>
+                                        <span class="notification-time">
+                                            <i class="fas fa-clock"></i>
+                                            3 days ago
+                                        </span>
+                                        <span class="notification-patient">
+                                            <i class="fas fa-users"></i>
+                                            All Family Members
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="action-icon-btn" title="Mark as unread">
+                                        <i class="fas fa-envelope"></i>
+                                    </button>
+                                    <button class="action-icon-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-body">
+                                <p class="notification-message">
+                                    The Ministry of Health has issued an alert regarding increased dengue fever cases in
+                                    Nairobi County.
+                                    Take necessary precautions and seek medical attention if symptoms develop.
+                                </p>
+                                <div class="health-advisory-info">
+                                    <h4>Preventive Measures:</h4>
+                                    <ul>
+                                        <li>Use mosquito repellent</li>
+                                        <li>Eliminate standing water around your home</li>
+                                        <li>Wear protective clothing</li>
+                                        <li>Seek immediate medical attention if fever develops</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <button class="btn-primary btn-sm">
+                                    <i class="fas fa-circle-info"></i>
+                                    More Information
+                                </button>
+                                <button class="btn-secondary btn-sm">
+                                    <i class="fas fa-hospital"></i>
+                                    Find Nearest Clinic
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- System Notification - Security Alert -->
+                        <div class="notification-card system read" data-notification-id="10" data-category="system"
+                            data-priority="normal">
+                            <div class="notification-indicator normal"></div>
+                            <div class="notification-header">
+                                <div class="notification-icon system">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div class="notification-meta">
+                                    <h3 class="notification-title">Security Alert - New Device Login</h3>
+                                    <div class="notification-info">
+                                        <span class="notification-category">
+                                            <i class="fas fa-tag"></i>
+                                            System
+                                        </span>
+                                        <span class="notification-time">
+                                            <i class="fas fa-clock"></i>
+                                            4 days ago
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="action-icon-btn" title="Mark as unread">
+                                        <i class="fas fa-envelope"></i>
+                                    </button>
+                                    <button class="action-icon-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-body">
+                                <p class="notification-message">
+                                    Your account was accessed from a new device. If this wasn't you, please secure your
+                                    account immediately.
+                                </p>
+                                <div class="notification-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-mobile-screen"></i>
+                                        <span>Device: iPhone 13 Pro</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-location-dot"></i>
+                                        <span>Location: Nairobi, Kenya</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Time: October 1, 2025 at 9:30 AM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <button class="btn-primary btn-sm">
+                                    <i class="fas fa-check"></i>
+                                    This Was Me
+                                </button>
+                                <button class="btn-danger btn-sm">
+                                    <i class="fas fa-shield"></i>
+                                    Secure Account
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Appointment Cancellation Notice -->
+                        <div class="notification-card appointments read" data-notification-id="11"
+                            data-category="appointments" data-priority="high">
+                            <div class="notification-indicator high"></div>
+                            <div class="notification-header">
+                                <div class="notification-icon appointments">
+                                    <i class="fas fa-calendar-xmark"></i>
+                                </div>
+                                <div class="notification-meta">
+                                    <h3 class="notification-title">Appointment Cancelled by Clinic</h3>
+                                    <div class="notification-info">
+                                        <span class="notification-category">
+                                            <i class="fas fa-tag"></i>
+                                            Appointment
+                                        </span>
+                                        <span class="notification-time">
+                                            <i class="fas fa-clock"></i>
+                                            5 days ago
+                                        </span>
+                                        <span class="notification-patient">
+                                            <i class="fas fa-user"></i>
+                                            Mary Kamau (Daughter)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="action-icon-btn" title="Mark as unread">
+                                        <i class="fas fa-envelope"></i>
+                                    </button>
+                                    <button class="action-icon-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-body">
+                                <p class="notification-message">
+                                    Your appointment scheduled for October 3, 2025 has been cancelled due to doctor
+                                    unavailability.
+                                </p>
+                                <div class="notification-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-circle-info"></i>
+                                        <span>Reason: Doctor emergency leave</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-hospital"></i>
+                                        <span>Karen Medical Centre</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <button class="btn-primary btn-sm">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Rebook Appointment
+                                </button>
+                                <button class="btn-secondary btn-sm">
+                                    <i class="fas fa-phone"></i>
+                                    Contact Clinic
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Profile Update Confirmation -->
+                        <div class="notification-card system read" data-notification-id="12" data-category="system"
+                            data-priority="low">
+                            <div class="notification-indicator low"></div>
+                            <div class="notification-header">
+                                <div class="notification-icon system">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div class="notification-meta">
+                                    <h3 class="notification-title">Profile Information Updated</h3>
+                                    <div class="notification-info">
+                                        <span class="notification-category">
+                                            <i class="fas fa-tag"></i>
+                                            System
+                                        </span>
+                                        <span class="notification-time">
+                                            <i class="fas fa-clock"></i>
+                                            1 week ago
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="action-icon-btn" title="Mark as unread">
+                                        <i class="fas fa-envelope"></i>
+                                    </button>
+                                    <button class="action-icon-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-body">
+                                <p class="notification-message">
+                                    Your profile information has been successfully updated. Changes include contact
+                                    phone number.
+                                </p>
+                            </div>
+                            <div class="notification-footer">
+                                <button class="btn-primary btn-sm">
+                                    <i class="fas fa-user"></i>
+                                    View Profile
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Empty State (Hidden by default) -->
+                    <div class="empty-state" id="emptyState" style="display: none;">
+                        <div class="empty-icon">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <h3 class="empty-title">No Notifications</h3>
+                        <p class="empty-message">You're all caught up! Check back later for new updates.</p>
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="load-more-section">
+                        <button class="btn-secondary" id="loadMoreBtn">
+                            <i class="fas fa-chevron-down"></i>
+                            Load More Notifications
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <p class="copyright">&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer"
+                    class="corporate-link">citruslabs.co.ke</a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer" aria-label="X">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Notification Preferences Modal -->
+    <div class="modal" id="notificationPreferencesModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Notification Preferences</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <!-- Channel Preferences Section -->
+                <div class="preferences-section">
+                    <h4 class="section-title">
+                        <i class="fas fa-broadcast-tower"></i>
+                        Channel Preferences
+                    </h4>
+                    <p class="section-description">Choose how you want to receive notifications</p>
+
+                    <div class="preference-item">
+                        <div class="preference-header">
+                            <div class="preference-info">
+                                <i class="fas fa-mobile-screen"></i>
+                                <div>
+                                    <h5>In-App Notifications</h5>
+                                    <p>Receive notifications within the platform</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="preference-item">
+                        <div class="preference-header">
+                            <div class="preference-info">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h5>Email Notifications</h5>
+                                    <p>Receive alerts via email</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="preference-options">
+                            <input type="email" class="form-control" placeholder="Primary Email"
+                                value="john.kamau@example.com">
+                        </div>
+                    </div>
+
+                    <div class="preference-item">
+                        <div class="preference-header">
+                            <div class="preference-info">
+                                <i class="fas fa-comment-sms"></i>
+                                <div>
+                                    <h5>SMS Notifications</h5>
+                                    <p>Receive text message alerts</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="preference-options">
+                            <input type="tel" class="form-control" placeholder="Phone Number" value="+254 700 123 456">
+                        </div>
+                    </div>
+
+                    <div class="preference-item">
+                        <div class="preference-header">
+                            <div class="preference-info">
+                                <i class="fab fa-whatsapp"></i>
+                                <div>
+                                    <h5>WhatsApp Notifications</h5>
+                                    <p>Receive alerts via WhatsApp</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="preference-item">
+                        <div class="preference-header">
+                            <div class="preference-info">
+                                <i class="fas fa-bell"></i>
+                                <div>
+                                    <h5>Push Notifications</h5>
+                                    <p>Browser and mobile push alerts</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frequency Settings Section -->
+                <div class="preferences-section">
+                    <h4 class="section-title">
+                        <i class="fas fa-clock"></i>
+                        Frequency Settings
+                    </h4>
+                    <p class="section-description">Control when and how often you receive notifications</p>
+
+                    <div class="preference-item">
+                        <label class="preference-label">Notification Frequency</label>
+                        <select class="form-control">
+                            <option value="immediate">Immediate - Real-time notifications</option>
+                            <option value="daily">Daily Summary - Once per day</option>
+                            <option value="weekly">Weekly Summary - Once per week</option>
+                            <option value="custom">Custom Schedule</option>
+                        </select>
+                    </div>
+
+                    <div class="preference-item">
+                        <div class="preference-header">
+                            <div class="preference-info">
+                                <i class="fas fa-moon"></i>
+                                <div>
+                                    <h5>Do Not Disturb Mode</h5>
+                                    <p>Set quiet hours to pause notifications</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="dndToggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="preference-options" id="dndOptions" style="display: none;">
+                            <div class="time-range">
+                                <div class="time-input-group">
+                                    <label>From</label>
+                                    <input type="time" class="form-control" value="22:00">
+                                </div>
+                                <div class="time-input-group">
+                                    <label>To</label>
+                                    <input type="time" class="form-control" value="07:00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Preferences Section -->
+                <div class="preferences-section">
+                    <h4 class="section-title">
+                        <i class="fas fa-sliders"></i>
+                        Content Preferences
+                    </h4>
+                    <p class="section-description">Choose which types of notifications you want to receive</p>
+
+                    <div class="notification-types">
+                        <div class="notification-type-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span class="checkbox-custom"></span>
+                                <div class="type-info">
+                                    <i class="fas fa-calendar-check"></i>
+                                    <span>Appointment Reminders & Updates</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="notification-type-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span class="checkbox-custom"></span>
+                                <div class="type-info">
+                                    <i class="fas fa-file-medical"></i>
+                                    <span>Medical Records & Lab Results</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="notification-type-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span class="checkbox-custom"></span>
+                                <div class="type-info">
+                                    <i class="fas fa-receipt"></i>
+                                    <span>Billing & Payment Notifications</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="notification-type-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span class="checkbox-custom"></span>
+                                <div class="type-info">
+                                    <i class="fas fa-triangle-exclamation"></i>
+                                    <span>Emergency & Health Advisories</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="notification-type-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span class="checkbox-custom"></span>
+                                <div class="type-info">
+                                    <i class="fas fa-shield-heart"></i>
+                                    <span>Insurance Claim Updates</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="notification-type-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span class="checkbox-custom"></span>
+                                <div class="type-info">
+                                    <i class="fas fa-bullhorn"></i>
+                                    <span>Marketing & Promotional Messages</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Override Settings -->
+                <div class="preferences-section emergency-section">
+                    <h4 class="section-title">
+                        <i class="fas fa-siren"></i>
+                        Emergency Override Settings
+                    </h4>
+                    <p class="section-description">Critical alerts will always be delivered regardless of other settings
+                    </p>
+
+                    <div class="emergency-info">
+                        <i class="fas fa-circle-info"></i>
+                        <p>Emergency notifications including abnormal test results, urgent health advisories,
+                            and critical appointment changes will bypass Do Not Disturb and frequency settings.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="savePreferencesBtn">
+                    <i class="fas fa-save"></i>
+                    Save Preferences
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Date Range Modal -->
+    <div class="modal" id="customDateRangeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Custom Date Range</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="applyDateRangeBtn">
+                    <i class="fas fa-check"></i>
+                    Apply Range
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Details Modal -->
+    <div class="modal" id="notificationDetailsModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Notification Details</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="notificationDetailsBody">
+                <!-- Content will be dynamically loaded -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- External JavaScript -->
+    <script
+        src="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Notifications\notifications.js"></script>
+
+</body>
+
+</html>

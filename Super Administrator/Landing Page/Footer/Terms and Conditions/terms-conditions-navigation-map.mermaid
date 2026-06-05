@@ -1,0 +1,213 @@
+flowchart TD
+    %% Main Terms and Conditions Page
+    A[Super Administrator Dashboard] --> B[Terms and Conditions Page]
+    
+    %% Main Navigation Elements
+    B --> C[Clickable Table of Contents]
+    B --> D[Expandable Sections]
+    B --> E[Search Functionality]
+    B --> F[Highlight Updates]
+    B --> H[Printable Format]
+    B --> I[Contact Us Button]
+
+    %% Clickable Table of Contents
+    C --> C1[Introduction]
+    C --> C2[Acceptance of Terms]
+    C --> C3[Eligibility]
+    C --> C4[Usage Guidelines]
+    C --> C5[Intellectual Property]
+    C --> C6[User Content]
+    C --> C7[Disclaimers]
+    C --> C8[Limitation of Liability]
+    C --> C9[Modification of Terms]
+    C --> C10[Termination]
+    C --> C11[Governing Law]
+    C --> C12[Contact Information]
+    
+    %% Expandable Sections
+    D --> D1{Toggle Section}
+    D1 --> D2[Expand Section]
+    D1 --> D3[Collapse Section]
+    
+    %% Search Functionality
+    E --> E1[Enter Search Term]
+    E1 --> E2[View Search Results]
+    E2 --> E3{Click Result}
+    E3 --> C1
+    E3 --> C2
+    E3 --> C3
+    E3 --> C4
+    E3 --> C5
+    E3 --> C6
+    E3 --> C7
+    E3 --> C8
+    E3 --> C9
+    E3 --> C10
+    E3 --> C11
+    E3 --> C12
+    
+    %% Highlight Updates
+    F --> F1[Updated Terms Indicator]
+    F1 --> F2{Click Indicator}
+    F2 --> F3[Change Summary Popup]
+    F3 --> F4[Previous Version Comparison]
+    F3 --> F5[Close Button]
+    
+    %% Printable Format
+    H --> H1[PDF Download Button]
+    H --> H2[Print Version Button]
+    
+    H1 --> H1A[Download Confirmation]
+    H1A --> H1B[Save File Dialog]
+    
+    H2 --> H2A[Print-Friendly Page]
+    H2A --> H2B[Browser Print Dialog]
+    
+    %% Contact Us Button
+    I --> I1[Contact Form Popup]
+    I1 --> I2[Name Field]
+    I1 --> I3[Email Field]
+    I1 --> I4[Subject Dropdown]
+    I4 --> I4A[Terms Clarification]
+    I4 --> I4B[Report Issue]
+    I4 --> I4C[Other Inquiry]
+    I1 --> I5[Message Field]
+    I1 --> I8[Close Button]
+    
+    %% Main Content Sections - Introduction
+    C1 --> INT1[Purpose of Terms]
+    INT1 --> INT2[Scope of Agreement]
+    INT1 --> INT3[Last Updated Date]
+    INT1 --> INT4[Platform Overview]
+    
+    %% Acceptance of Terms
+    C2 --> AT1[Acceptance Methods]
+    AT1 --> AT2[Electronic Consent]
+    AT1 --> AT3[Implied Consent]
+    AT1 --> AT4[Account Creation]
+    
+    %% Eligibility
+    C3 --> EL1[Age Requirements]
+    C3 --> EL2[Professional Requirements]
+    EL2 --> EL2A[Doctor Credentials]
+    EL2 --> EL2B[Clinic Owner Requirements]
+    C3 --> EL3[Geographic Restrictions]
+    C3 --> EL4[Account Verification]
+    
+    %% Usage Guidelines
+    C4 --> UG1[Permitted Uses]
+    C4 --> UG2[Prohibited Activities]
+    C4 --> UG3[Account Security]
+    C4 --> UG4[Data Entry Standards]
+    
+    UG2 --> UG2A[Illegal Activities]
+    UG2 --> UG2B[Platform Misuse]
+    UG2 --> UG2C[Security Violations]
+    UG2 --> UG2D[Content Restrictions]
+    
+    UG3 --> UG3A[Password Requirements]
+    UG3 --> UG3B[Authentication Protocols]
+    UG3 --> UG3C[Account Sharing Policy]
+    
+    %% Intellectual Property
+    C5 --> IP1[Platform Ownership]
+    C5 --> IP2[User License]
+    C5 --> IP3[Trademark Rights]
+    C5 --> IP4[Content Permissions]
+    
+    IP2 --> IP2A[License Scope]
+    IP2 --> IP2B[License Limitations]
+    IP2 --> IP2C[License Termination]
+    
+    %% User Content
+    C6 --> UC1[Content Ownership]
+    C6 --> UC2[Content License Grant]
+    C6 --> UC3[Content Removal Rights]
+    C6 --> UC4[Content Standards]
+    
+    UC3 --> UC3A[Removal Conditions]
+    UC3 --> UC3B[Removal Process]
+    UC3 --> UC3C[Appeals Process]
+    UC3B --> UC3B1[Removal Request Button]
+    UC3B1 --> UC3B2[Request Form Popup]
+    UC3B2 --> UC3B3[Content Identifier Field]
+    UC3B2 --> UC3B4[Reason Dropdown]
+    UC3B2 --> UC3B5[Submit Button]
+    UC3B5 --> UC3B6[Request Confirmation]
+    
+    %% Disclaimers
+    C7 --> DI1[Service Availability]
+    C7 --> DI2[Medical Disclaimer]
+    C7 --> DI3[Third-Party Services]
+    C7 --> DI4[Accuracy of Information]
+    
+    DI2 --> DI2A[Not Medical Advice Warning]
+    DI2 --> DI2B[Emergency Care Disclaimer]
+    DI2 --> DI2C[Provider Responsibility]
+    
+    %% Limitation of Liability
+    C8 --> LL1[Liability Scope]
+    C8 --> LL2[Damage Types Excluded]
+    C8 --> LL3[Indemnification]
+    C8 --> LL4[Force Majeure]
+    
+    %% Modification of Terms
+    C9 --> MT1[Update Process]
+    C9 --> MT2[Notification Methods]
+    C9 --> MT3[Acceptance of Changes]
+    C9 --> MT4[Version History]
+    
+    MT4 --> MT4A[Version History Button]
+    MT4A --> MT4B[Version List Popup]
+    MT4B --> MT4C{Select Version}
+    MT4C --> MT4D[View Historical Terms]
+    MT4B --> MT4E[Close Button]
+    
+    %% Termination
+    C10 --> TE1[Termination by Platform]
+    C10 --> TE2[Termination by User]
+    C10 --> TE3[Effect of Termination]
+    C10 --> TE4[Data After Termination]
+    
+    TE2 --> TE2A[Account Deletion Process]
+    TE2A --> TE2B[Deletion Request Form]
+    TE2B --> TE2C[Confirmation Step]
+    TE2C --> TE2D[Final Deletion Button]
+    TE2D --> TE2E[Deletion Confirmation]
+    
+    TE4 --> TE4A[Data Retention Period]
+    TE4 --> TE4B[Data Export Options]
+    TE4B --> TE4C[Export Request Button]
+    TE4C --> TE4D[Export Format Selection]
+    TE4D --> TE4E[Generate Export Button]
+    TE4E --> TE4F[Download Link]
+    
+    %% Governing Law
+    C11 --> GL1[Applicable Jurisdiction]
+    C11 --> GL2[Dispute Resolution]
+    C11 --> GL3[Class Action Waiver]
+    C11 --> GL4[Severability]
+    
+    GL2 --> GL2A[Arbitration Process]
+    GL2 --> GL2B[Legal Proceedings]
+    GL2 --> GL2C[Informal Resolution]
+    
+    %% Contact Information
+    C12 --> CI1[Legal Department]
+    C12 --> CI2[Technical Support]
+    
+    CI1 --> CI1A[Email Legal Team]
+    CI1A --> I1
+    
+    %% Style definitions
+    classDef mainPage fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef section fill:#bbf,stroke:#33f,stroke-width:1px;
+    classDef popup fill:#fbb,stroke:#f33,stroke-width:1px;
+    classDef button fill:#bfb,stroke:#3f3,stroke-width:1px;
+    classDef result fill:#ffb,stroke:#bb3,stroke-width:1px;
+    
+    class A,B mainPage;
+    class C,D,E,F,H,I,C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11,C12 section;
+    class F3,I1,MT4B,UC3B2 popup;
+    class F5,H1,H2,I8,MT4A,MT4E,TE2D,TE4E button;
+    class H1A,H2A,MT4D,TE2E,TE4F result;

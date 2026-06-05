@@ -1,0 +1,245 @@
+flowchart TD
+    %% Entry Point
+    Dashboard[Dashboard] --> WorkforceMain[Workforce Hub<br/>Staff Control Center]
+    
+    %% Workforce Hub Main Components
+    WorkforceMain --> StaffCreation[Staff Account Creation<br/>Doctor/Receptionist Forms]
+    WorkforceMain --> AccessControls[Access Controls<br/>Role-Based Permissions]
+    WorkforceMain --> ActivityLogs[Activity Logs<br/>Real-time Staff Monitoring]
+    WorkforceMain --> PerfDashboard[Performance Dashboard<br/>Staff Metrics]
+    WorkforceMain --> StaffMgmtActions[Staff Management Actions<br/>Edit/Suspend/Remove]
+    WorkforceMain --> SearchFilter[Search & Filter Tools<br/>Staff Directory Navigation]
+    WorkforceMain --> SystemAlerts[System Alerts<br/>Staff Oversight Notifications]
+    
+    %% Staff Account Creation Branch
+    StaffCreation --> CreateButton[Create New Staff Button]
+    CreateButton --> RoleSelection[Role Selection Modal]
+    RoleSelection --> DoctorOption[Doctor Account Option]
+    RoleSelection --> ReceptionistOption[Receptionist/Assistant Option]
+    
+    DoctorOption --> DoctorForm[Doctor Registration Form]
+    ReceptionistOption --> ReceptionistForm[Receptionist Registration Form]
+    
+    DoctorForm --> BasicDetails[Basic Details Input]
+    ReceptionistForm --> BasicDetails
+    BasicDetails --> NameInput[Full Name Field<br/>Required]
+    BasicDetails --> ContactInput[Contact Details<br/>Phone/Email]
+    BasicDetails --> IDInput[Staff ID Generation<br/>Auto-generated]
+    
+    DoctorForm --> RoleAssignment[Role Assignment Modal]
+    RoleAssignment --> DeptSelection[Department/Specialty Selection]
+    DeptSelection --> GeneralConsult[General Consultation]
+    DeptSelection --> LabDept[Lab Department] 
+    DeptSelection --> Pediatrics[Pediatrics]
+    DeptSelection --> OtherSpecialty[Other Specialties<br/>Dropdown List]
+    
+    RoleAssignment --> CredentialsSetup[Credentials Setup]
+    CredentialsSetup --> UsernameGen[Username Generation<br/>Auto-create]
+    CredentialsSetup --> TempPassword[Temporary Password<br/>System Generated]
+    CredentialsSetup --> AccessLevel[Access Level Assignment<br/>Based on Role]
+    
+    CredentialsSetup --> InvitationSend[Invitation Send Modal]
+    InvitationSend --> EmailOption[Email Notification<br/>Login Credentials]
+    InvitationSend --> SMSOption[SMS Notification<br/>Login Link]
+    InvitationSend --> BothOption[Both Email & SMS]
+    InvitationSend --> SendButton[Send Invitation Button]
+    SendButton --> ConfirmationMsg[Invitation Sent<br/>Success Message]
+    
+    %% Access Controls Branch
+    AccessControls --> PermissionMatrix[Permission Matrix Button]
+    PermissionMatrix --> RBACModal[RBAC Configuration Modal]
+    RBACModal --> DoctorPerms[Doctor Permissions]
+    DoctorPerms --> MedicalRecords[Patient Medical Records<br/>Full Access Toggle]
+    DoctorPerms --> AppointmentHandling[Appointment Handling<br/>View/Edit Toggle]
+    DoctorPerms --> LimitedBilling[Limited Billing<br/>View Only Toggle]
+    
+    RBACModal --> ReceptionistPerms[Receptionist Permissions]
+    ReceptionistPerms --> AppointmentScheduling[Appointment Scheduling<br/>Full Access Toggle]
+    ReceptionistPerms --> PatientRegistration[Patient Registration<br/>Create/Edit Toggle]
+    ReceptionistPerms --> InvoicingAccess[Invoicing<br/>Create/View Toggle]
+    
+    AccessControls --> SensitiveData[Sensitive Data Restrictions]
+    SensitiveData --> RestrictionsModal[Access Level Settings Modal]
+    RestrictionsModal --> BillingHistory[Billing History<br/>Restrict/Allow]
+    RestrictionsModal --> FinancialReports[Financial Reports<br/>Restrict/Allow]
+    RestrictionsModal --> FullPatientData[Full Patient Medical Data<br/>Restrict/Allow]
+    RestrictionsModal --> SavePermissions[Save Permissions Button]
+    
+    %% Activity Logs Branch
+    ActivityLogs --> LiveFeed[Real-time Activity Feed]
+    LiveFeed --> FeedEntry1[Dr. Wanjiru completed<br/>Consultation ID#1458]
+    LiveFeed --> FeedEntry2[Receptionist John<br/>rescheduled Patient #452]
+    LiveFeed --> FeedEntry3[Dr. Kamau updated<br/>Patient #789 record]
+    
+    ActivityLogs --> ActionDetails[View Details Button]
+    ActionDetails --> DetailsModal[Action Details Modal]
+    DetailsModal --> Timestamp[Timestamp Display<br/>Date/Time]
+    DetailsModal --> UserInfo[User Information<br/>Name/Role/ID]
+    DetailsModal --> ActionType[Action Type<br/>Category Display]
+    DetailsModal --> ActionDesc[Action Description<br/>Detailed Info]
+    DetailsModal --> IPAddress[IP Address<br/>Location Tracking]
+    
+    ActivityLogs --> FilterControls[Filter Controls Panel]
+    FilterControls --> StaffFilter[Staff Member Filter<br/>Multi-select Dropdown]
+    FilterControls --> ActionFilter[Action Type Filter]
+    ActionFilter --> AppointmentActions[Appointment Actions]
+    ActionFilter --> PaymentActions[Payment Actions]
+    ActionFilter --> ServiceActions[Service Creation]
+    ActionFilter --> CommunicationLogs[Communication Logs]
+    
+    FilterControls --> TimeFilter[Time Filter]
+    TimeFilter --> TodayFilter[Today Only]
+    TimeFilter --> WeekFilter[This Week]
+    TimeFilter --> MonthFilter[This Month]
+    TimeFilter --> CustomRange[Custom Date Range]
+    
+    %% Performance Dashboard Branch
+    PerfDashboard --> MetricCards[Performance Metric Cards]
+    MetricCards --> AppointmentVolume[Appointments Handled<br/>Count Display]
+    AppointmentVolume --> VolumeDetails[Volume Details Button]
+    VolumeDetails --> VolumeModal[Volume Breakdown Modal]
+    VolumeModal --> DailyVolume[Daily Average]
+    VolumeModal --> WeeklyVolume[Weekly Total]
+    VolumeModal --> MonthlyVolume[Monthly Total]
+    
+    MetricCards --> CompletionRate[Completion Rate<br/>Percentage Display]
+    MetricCards --> Punctuality[Punctuality Score<br/>On-time Percentage]
+    MetricCards --> FeedbackScore[Patient Feedback<br/>Average Rating]
+    
+    PerfDashboard --> IndividualStaff[Individual Staff Button]
+    IndividualStaff --> StaffModal[Detailed Performance Modal]
+    StaffModal --> StaffSelector[Staff Member Selector<br/>Dropdown]
+    StaffModal --> DetailedMetrics[Detailed Metrics Display]
+    DetailedMetrics --> ServiceEfficiency[Service Efficiency<br/>Time per Appointment]
+    DetailedMetrics --> PatientSatisfaction[Patient Satisfaction<br/>Rating Breakdown]
+    DetailedMetrics --> AttendanceRecord[Attendance Record<br/>Presence Tracking]
+    
+    StaffModal --> FeedbackDisplay[Patient Feedback Display]
+    FeedbackDisplay --> RatingAggregation[Rating Aggregation<br/>1-5 Stars]
+    FeedbackDisplay --> CommentView[Patient Comments<br/>Recent Feedback]
+    FeedbackDisplay --> TrendAnalysis[Feedback Trend<br/>Historical Chart]
+    
+    PerfDashboard --> TopPerformers[Top Performers List]
+    TopPerformers --> PerformanceRanking[Weekly/Monthly Rankings]
+    TopPerformers --> RecognitionBadge[Recognition Badges<br/>Achievement Display]
+    
+    %% Staff Management Actions Branch
+    StaffMgmtActions --> StaffList[Staff Directory List]
+    StaffList --> StaffCard[Staff Member Card]
+    StaffCard --> QuickActions[Quick Actions Menu]
+    
+    QuickActions --> EditButton[Edit Button]
+    EditButton --> QuickEditPanel[Quick Edit Panel]
+    QuickEditPanel --> RoleUpdate[Role Update<br/>Dropdown Selection]
+    QuickEditPanel --> ContactUpdate[Contact Info Update<br/>Phone/Email]
+    QuickEditPanel --> DeptUpdate[Department Update<br/>Reassignment]
+    QuickEditPanel --> SaveChanges[Save Changes Button]
+    
+    QuickActions --> SuspendButton[Suspend Button]
+    SuspendButton --> SuspensionModal[Suspension Modal]
+    SuspensionModal --> SuspendReason[Suspension Reason<br/>Dropdown/Text]
+    SuspensionModal --> SuspendDuration[Duration Selection<br/>Date Range]
+    SuspensionModal --> LeaveType[Leave Type<br/>Medical/Disciplinary/Other]
+    SuspensionModal --> ConfirmSuspend[Confirm Suspension]
+    ConfirmSuspend --> AccountDisabled[Account Temporarily Disabled]
+    
+    QuickActions --> RemoveButton[Remove Button]
+    RemoveButton --> RemovalConfirm[Removal Confirmation Modal]
+    RemovalConfirm --> DataRetention[Data Retention Warning<br/>Historical Data Preserved]
+    RemovalConfirm --> ReassignPatients[Reassign Patients Option<br/>Transfer Workload]
+    RemovalConfirm --> FinalConfirm[Final Confirmation<br/>Type Staff Name]
+    FinalConfirm --> StaffRemoved[Staff Permanently Removed]
+    
+    %% Search & Filter Tools Branch
+    SearchFilter --> SearchBar[Dynamic Search Bar]
+    SearchBar --> InstantSearch[Instant Search Results<br/>As You Type]
+    
+    SearchFilter --> AdvancedFilter[Advanced Filter Button]
+    AdvancedFilter --> FilterModal[Advanced Search Modal]
+    FilterModal --> RoleFilter[Filter by Role<br/>Doctor/Receptionist]
+    FilterModal --> PerfFilter[Performance Score Filter<br/>Rating Range]
+    FilterModal --> ActivityFilter[Last Activity Filter<br/>Active/Inactive]
+    FilterModal --> DeptFilter[Department Filter<br/>Multi-select]
+    
+    SearchFilter --> SortOptions[Sort Options Dropdown]
+    SortOptions --> SortActive[Most Active First]
+    SortOptions --> SortRating[Highest Rated First]
+    SortOptions --> SortRecent[Recently Added First]
+    SortOptions --> SortName[Alphabetical Order]
+    
+    %% System Alerts Branch
+    SystemAlerts --> AlertPanel[Alert Notification Panel]
+    AlertPanel --> InactiveAlert[Staff Inactive Alert<br/>7+ Days No Login]
+    AlertPanel --> CancellationAlert[Excessive Cancellations<br/>Above Threshold]
+    AlertPanel --> FeedbackAlert[Declining Feedback<br/>Rating Drop Alert]
+    
+    SystemAlerts --> AlertAction[Alert Action Button]
+    AlertAction --> ActionModal[Alert Action Modal]
+    ActionModal --> IssueDetails[Issue Details Display]
+    ActionModal --> ResolutionOptions[Resolution Options]
+    ResolutionOptions --> ContactStaff[Contact Staff Member]
+    ResolutionOptions --> ScheduleMeeting[Schedule Meeting]
+    ResolutionOptions --> SuspendAccess[Suspend Access]
+    ResolutionOptions --> DismissAlert[Dismiss Alert]
+    
+    SystemAlerts --> FlaggedUsers[Flagged Users Display<br/>Priority List]
+    FlaggedUsers --> UserPriority[High Priority Users<br/>Immediate Action Required]
+    
+    %% Data Integration Points
+    
+    %% From Dashboard
+    Dashboard -.->|Quick Add Staff| StaffCreation
+    Dashboard -.->|Staff Activity| ActivityLogs
+    Dashboard -.->|Top Performers| TopPerformers
+    
+    %% To/From Appointments
+    Appointments[Appointments Module] -.->|Doctor Availability| RoleAssignment
+    AppointmentVolume -.->|Appointment Data| Appointments
+    
+    %% To/From Health Data & Records
+    HealthData[Health Data & Records] -.->|Patient Load| StaffModal
+    ReassignPatients -.->|Patient Transfer| HealthData
+    
+    %% To/From Settings
+    Settings[Settings Module] <-.->|Access Permissions| AccessControls
+    Settings <-.->|Staff Limits| SensitiveData
+    
+    %% To/From Billings & Payments
+    Billings[Billings & Payments] -.->|Invoice Actions| ActivityLogs
+    LimitedBilling -.->|Billing Access| Billings
+    
+    %% To/From Insights & Performance
+    DetailedMetrics -.->|Performance Data| InsightsPerf[Insights & Performance]
+    InsightsPerf -.->|Staff Analytics| PerfDashboard
+    
+    %% To Notifications
+    InvitationSend -.->|Send Notification| Notifications[Notifications Module]
+    SystemAlerts -.->|Alert Trigger| Notifications
+    FlaggedUsers -.->|Priority Alert| Notifications
+    
+    %% From Clinic Services
+    ClinicServices[Clinic Services Hub] -.->|Service Assignment| RoleAssignment
+    
+    %% From Registration & Setup
+    Registration[Registration & Setup] -.->|First Staff Prompt| StaffCreation
+    
+    %% Navigation Back
+    WorkforceMain --> BackToDashboard[Back to Dashboard]
+    BackToDashboard --> Dashboard
+    
+    %% Styling
+    classDef mainHub fill:#2563eb,stroke:#1e40af,stroke-width:3px,color:#fff
+    classDef subModule fill:#7c3aed,stroke:#6d28d9,stroke-width:2px,color:#fff
+    classDef modal fill:#059669,stroke:#047857,stroke-width:2px,color:#fff
+    classDef action fill:#dc2626,stroke:#b91c1c,stroke-width:2px,color:#fff
+    classDef integration fill:#f59e0b,stroke:#d97706,stroke-width:2px,stroke-dasharray: 5 5
+    classDef alert fill:#ef4444,stroke:#dc2626,stroke-width:2px,color:#fff
+    classDef form fill:#06b6d4,stroke:#0891b2,stroke-width:2px,color:#fff
+    
+    class WorkforceMain mainHub
+    class StaffCreation,AccessControls,ActivityLogs,PerfDashboard,StaffMgmtActions,SearchFilter,SystemAlerts subModule
+    class RoleSelection,RBACModal,DetailsModal,VolumeModal,StaffModal,QuickEditPanel,SuspensionModal,RemovalConfirm,FilterModal,ActionModal modal
+    class CreateButton,PermissionMatrix,ActionDetails,EditButton,SuspendButton,RemoveButton,AdvancedFilter,AlertAction action
+    class Dashboard,Appointments,HealthData,Settings,Billings,InsightsPerf,Notifications,ClinicServices,Registration integration
+    class InactiveAlert,CancellationAlert,FeedbackAlert,FlaggedUsers alert
+    class DoctorForm,ReceptionistForm,BasicDetails form

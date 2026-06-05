@@ -1,0 +1,105 @@
+graph TB
+    %% Inbox & Alerts Page Core
+    InboxAlertsPage[Inbox & Alerts Page<br/>Communication Hub]
+    
+    %% Main Features
+    InboxAlertsPage --> AlertsFeed[Real-Time Alerts Feed<br/>Live Notifications]
+    InboxAlertsPage --> InternalMsg[Internal Messaging<br/>Clinic Chat]
+    InboxAlertsPage --> PatNotif[Patient Notification Panel<br/>Outbound Messages]
+    InboxAlertsPage --> AlertHistory[Alerts History Log<br/>Archive & Audit]
+    InboxAlertsPage --> SmartFilters[Smart Filter & Prioritization<br/>Organization Tools]
+    
+    %% Real-Time Alerts Feed Details
+    AlertsFeed --> |Click| AlertsView[Alerts Dashboard<br/>━━━━━━━━━━━━━━━━━<br/>• Live appointment alerts<br/>  - New bookings 📅<br/>  - Reschedules 🔄<br/>  - Cancellations ❌<br/>  - Late arrivals ⏰<br/>• Emergency broadcasts<br/>• Arrival notifications<br/>• System alerts<br/>━━━━━━━━━━━━━━━━━<br/>Real-time updates]
+    
+    AlertsView --> |View Alert| AlertDetail[Alert Detail View<br/>━━━━━━━━━━━━━━━━━<br/>• Full alert content<br/>• Urgency level<br/>  - [Normal] 🟢<br/>  - [High] 🟡<br/>  - [System Alert] 🔴<br/>• Related patient/doctor<br/>• Timestamp<br/>• Action buttons]
+    
+    AlertDetail --> |Take Action| AlertActions[Alert Actions<br/>━━━━━━━━━━━━━━━━━<br/>• Acknowledge ✓<br/>• Snooze 🕐<br/>• Respond 💬<br/>• Navigate to source<br/>• Mark as resolved]
+    
+    AlertsView --> |Emergency| EmergencyBroadcast[Emergency Broadcast<br/>━━━━━━━━━━━━━━━━━<br/>• Doctor unavailable<br/>• System outage<br/>• Fire drill<br/>• Clinic emergency<br/>• Priority override<br/>━━━━━━━━━━━━━━━━━<br/>All-staff alert]
+    
+    AlertsView --> |Arrival| ArrivalAlert[Patient Arrival Alert<br/>━━━━━━━━━━━━━━━━━<br/>• Patient name<br/>• Check-in time<br/>• Assigned doctor<br/>• Queue position<br/>• Room assignment]
+    
+    %% Internal Messaging Details
+    InternalMsg --> |Click| ChatInterface[Chat System Interface<br/>━━━━━━━━━━━━━━━━━<br/>• Role-based threads<br/>  - Reception–Doctor<br/>  - Reception–Lab<br/>  - Reception–Owner<br/>• Direct messages<br/>• Smart replies<br/>• Read receipts<br/>━━━━━━━━━━━━━━━━━<br/>Real-time chat]
+    
+    ChatInterface --> |Select Thread| ThreadView[Thread View<br/>━━━━━━━━━━━━━━━━━<br/>• Message history<br/>• Participants list<br/>• Online status 🟢<br/>• Typing indicators<br/>• Last seen time]
+    
+    ThreadView --> |Send Message| MessageComposer[Message Composer<br/>━━━━━━━━━━━━━━━━━<br/>• Text input<br/>• Smart replies<br/>  - "Patient ready"<br/>  - "Rescheduled 3PM"<br/>  - "Doctor delayed"<br/>• Attachments 📎<br/>• Send options]
+    
+    MessageComposer --> |Attach| AttachmentModal[Attachment Options<br/>━━━━━━━━━━━━━━━━━<br/>• Internal notes<br/>• Schedules 📅<br/>• Patient status<br/>• System links<br/>  - Invoice ref<br/>  - Task ref<br/>• File size limit]
+    
+    ThreadView --> |View Receipt| ReadReceipts[Read Receipt Details<br/>━━━━━━━━━━━━━━━━━<br/>• Delivered ✓<br/>• Read ✓✓<br/>• Read by whom<br/>• Timestamp<br/>• Delivery status]
+    
+    %% Patient Notification Panel Details
+    PatNotif --> |Click| NotifPanel[Notification Panel<br/>━━━━━━━━━━━━━━━━━<br/>• Send methods<br/>  - SMS 📱<br/>  - WhatsApp 💬<br/>  - Email 📧<br/>• Bulk/Individual<br/>• Templates<br/>• Broadcast setup<br/>━━━━━━━━━━━━━━━━━<br/>Multi-channel]
+    
+    NotifPanel --> |Compose| ComposeNotif[Compose Notification<br/>━━━━━━━━━━━━━━━━━<br/>• Select recipients<br/>  - Individual<br/>  - Bulk selection<br/>  - Filter groups<br/>• Choose template<br/>• Customize message<br/>• Preview before send]
+    
+    ComposeNotif --> |Templates| TemplateLibrary[Template Library<br/>━━━━━━━━━━━━━━━━━<br/>• Appointment confirm<br/>  "Appt at [Time]"<br/>• Reminder templates<br/>• Delay notifications<br/>• Clinic updates<br/>• Custom templates<br/>━━━━━━━━━━━━━━━━━<br/>Editable fields]
+    
+    ComposeNotif --> |Broadcast| BroadcastSetup[Broadcast Setup<br/>━━━━━━━━━━━━━━━━━<br/>• Clinic-wide message<br/>• Holiday closures<br/>• New services<br/>• Emergency alerts<br/>• Owner approval<br/>━━━━━━━━━━━━━━━━━<br/>Mass communication]
+    
+    NotifPanel --> |Send| SendTracking[Send & Track<br/>━━━━━━━━━━━━━━━━━<br/>• Sending progress<br/>• Delivery status<br/>  - Sent ✓<br/>  - Failed ✗<br/>• Retry failed<br/>• View report]
+    
+    %% Alerts History Log Details
+    AlertHistory --> |View| HistoryLog[History Log View<br/>━━━━━━━━━━━━━━━━━<br/>• All past alerts<br/>• Searchable list<br/>• Date range<br/>• Alert types<br/>• Sender info<br/>━━━━━━━━━━━━━━━━━<br/>Complete archive]
+    
+    HistoryLog --> |Filter| HistoryFilter[Filter Options<br/>━━━━━━━━━━━━━━━━━<br/>• By date<br/>  - Today<br/>  - This week<br/>  - Custom range<br/>• By type<br/>  - Appointment<br/>  - Emergency<br/>  - System<br/>• By sender<br/>• By status]
+    
+    HistoryLog --> |View Trail| AuditTrail[Audit Trail<br/>━━━━━━━━━━━━━━━━━<br/>• Who sent/received<br/>• Response time<br/>• Actions taken<br/>• Resolution status<br/>• Accountability log]
+    
+    HistoryLog --> |Export| ExportHistory[Export Options<br/>━━━━━━━━━━━━━━━━━<br/>• Date range<br/>• Export format<br/>  - CSV<br/>  - PDF<br/>• Email report<br/>• Schedule export]
+    
+    %% Smart Filters & Prioritization Details
+    SmartFilters --> |Configure| FilterPanel[Filter & Priority Panel<br/>━━━━━━━━━━━━━━━━━<br/>• Alert filters<br/>• Priority settings<br/>• Color coding<br/>• Snooze options<br/>• Follow-up setup<br/>━━━━━━━━━━━━━━━━━<br/>Customization]
+    
+    FilterPanel --> |Set Filters| AlertFilters[Alert Filter Setup<br/>━━━━━━━━━━━━━━━━━<br/>• By type<br/>• By time<br/>• Read/Unread<br/>• By urgency<br/>• By source<br/>• Save presets]
+    
+    FilterPanel --> |Priority| PriorityTags[Priority & Color Codes<br/>━━━━━━━━━━━━━━━━━<br/>• Emergency 🔴<br/>• High priority 🟡<br/>• Normal 🟢<br/>• Info only 🔵<br/>• Custom tags<br/>━━━━━━━━━━━━━━━━━<br/>Visual indicators]
+    
+    FilterPanel --> |Snooze| SnoozeSettings[Snooze & Follow-Up<br/>━━━━━━━━━━━━━━━━━<br/>• Snooze duration<br/>  - 15 minutes<br/>  - 30 minutes<br/>  - 1 hour<br/>  - Custom<br/>• Follow-up reminder<br/>• Auto-escalate]
+    
+    %% Integration & Synchronization
+    InboxAlertsPage -.->|Sync| DashboardIntegration[→ Dashboard Integration<br/>━━━━━━━━━━━━━━━━━<br/>• Unread count badge<br/>• Priority alerts<br/>• Quick preview<br/>• Message indicators]
+    
+    InboxAlertsPage -.->|Sync| AppointmentSync[→ Appointments Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Booking alerts<br/>• Schedule changes<br/>• Cancellations<br/>• Confirmations]
+    
+    InboxAlertsPage -.->|Sync| CheckInSync[→ Check-In Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Arrival alerts<br/>• Walk-in notifs<br/>• Queue updates<br/>• Doctor assigns]
+    
+    InboxAlertsPage -.->|Sync| QueueSync[→ Queue Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Wait time alerts<br/>• Queue changes<br/>• Patient ready<br/>• Room updates]
+    
+    InboxAlertsPage -.->|Sync| BillingSync[→ Billing Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Payment alerts<br/>• Overdue notices<br/>• Receipt confirms<br/>• Fee reminders]
+    
+    %% Quick Actions from Alerts
+    AlertDetail --> |Quick Action| QuickActions[Quick Actions<br/>━━━━━━━━━━━━━━━━━<br/>• Go to appointment<br/>• Check-in patient<br/>• View queue<br/>• Send message<br/>• Create task]
+    
+    QuickActions --> |Navigate| DirectNavigation[→ Direct Navigation<br/>• To source page<br/>• With context<br/>• Auto-focus item]
+    
+    %% Navigation to Other Pages
+    InboxAlertsPage ==> MainNavigation[Main Navigation]
+    MainNavigation ==> Dashboard[← Dashboard]
+    MainNavigation ==> AppointmentsPage[→ Appointments]
+    MainNavigation ==> CheckInPage[→ Check-In]
+    MainNavigation ==> QueueFlowPage[→ Queue & Flow]
+    MainNavigation ==> PatientDirPage[→ Patient Directory]
+    MainNavigation ==> BillingPayPage[→ Billings & Payments]
+    
+    %% Styling
+    classDef inboxCore fill:#DC2626,stroke:#B91C1C,stroke-width:4px,color:#fff
+    classDef feature fill:#7C3AED,stroke:#6D28D9,stroke-width:3px,color:#fff
+    classDef modal fill:#0891B2,stroke:#0E7490,stroke-width:2px,color:#fff
+    classDef process fill:#059669,stroke:#047857,stroke-width:2px,color:#fff
+    classDef sync fill:#F59E0B,stroke:#D97706,stroke-width:2px,color:#fff
+    classDef navigation fill:#EA580C,stroke:#C2410C,stroke-width:3px,color:#fff
+    classDef alert fill:#EF4444,stroke:#DC2626,stroke-width:2px,color:#fff
+    classDef action fill:#10B981,stroke:#059669,stroke-width:2px,color:#fff
+    
+    class InboxAlertsPage inboxCore
+    class AlertsFeed,InternalMsg,PatNotif,AlertHistory,SmartFilters feature
+    class AlertsView,ChatInterface,NotifPanel,HistoryLog,FilterPanel modal
+    class AlertDetail,ThreadView,MessageComposer,ComposeNotif,TemplateLibrary,BroadcastSetup,SendTracking,HistoryFilter,AuditTrail,ExportHistory,AlertFilters,PriorityTags,SnoozeSettings process
+    class DashboardIntegration,AppointmentSync,CheckInSync,QueueSync,BillingSync,DirectNavigation sync
+    class MainNavigation,Dashboard,AppointmentsPage,CheckInPage,QueueFlowPage,PatientDirPage,BillingPayPage navigation
+    class EmergencyBroadcast,AlertActions alert
+    class QuickActions,AttachmentModal,ReadReceipts,ArrivalAlert action

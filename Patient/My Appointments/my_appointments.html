@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Curis by Citrus - Manage your medical appointments, book consultations, and track your healthcare visits">
+    <title>My Appointments | Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Appointments\my_appointments.css">
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Appointments\my_appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>My Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Health Care\my_health_care.html"
+                            class="nav-link">
+                            <i class="fas fa-heart-pulse"></i>
+                            <span>My Health Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Emergency Care\emergency_care.html"
+                            class="nav-link">
+                            <i class="fas fa-ambulance"></i>
+                            <span>Emergency Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Medical Cover\my_medical_cover.html"
+                            class="nav-link">
+                            <i class="fas fa-shield-heart"></i>
+                            <span>My Medical Cover</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">My Appointments</h1>
+                </div>
+
+                <div class="header-right">
+                    <!-- Notifications Icon -->
+                    <div class="notification-icon">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Notifications\notifications.html"
+                            class="icon-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">5</span>
+                        </a>
+                    </div>
+
+                    <!-- User Profile Icon with Dropdown -->
+                    <div class="user-profile-dropdown">
+                        <button class="profile-btn" id="profileBtn">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                                alt="User Profile" class="profile-img">
+                        </button>
+
+                        <!-- Profile Dropdown Menu -->
+                        <div class="profile-menu" id="profileMenu">
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Profile\my_profile.html"
+                                class="profile-menu-item">
+                                <i class="fas fa-user"></i>
+                                <span>My Profile</span>
+                            </a>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\landing_page.html"
+                                class="profile-menu-item logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Appointments Content -->
+            <section class="appointments-content">
+
+                <!-- Quick Actions Bar -->
+                <div class="quick-actions-bar">
+                    <button class="quick-action-btn primary" id="bookNewBtn">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Book New Appointment</span>
+                    </button>
+                    <button class="quick-action-btn secondary" id="findDoctorBtn">
+                        <i class="fas fa-user-doctor"></i>
+                        <span>Find Doctor</span>
+                    </button>
+                    <button class="quick-action-btn emergency" id="emergencyBookingBtn">
+                        <i class="fas fa-ambulance"></i>
+                        <span>Emergency Booking</span>
+                    </button>
+                    <button class="quick-action-btn settings" id="notificationSettingsBtn">
+                        <i class="fas fa-bell"></i>
+                        <span>Notification Settings</span>
+                    </button>
+                </div>
+
+                <!-- Family Member Switcher -->
+                <div class="family-switcher">
+                    <div class="current-profile">
+                        <span class="label">Booking appointments for:</span>
+                        <button class="profile-selector" id="profileSelector">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                alt="Current Profile" class="profile-avatar">
+                            <span class="profile-name">John Kamau (Self)</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Search & Filter Section -->
+                <div class="search-section">
+                    <div class="search-header">
+                        <h2 class="section-title">Find Clinics & Doctors</h2>
+                        <button class="advanced-search-btn" id="advancedSearchBtn">
+                            <i class="fas fa-sliders"></i>
+                            <span>Advanced Search</span>
+                        </button>
+                    </div>
+
+                    <!-- Search Filters Panel -->
+                    <div class="filters-panel">
+                        <div class="filter-group">
+                            <label class="filter-label">
+                                <i class="fas fa-location-dot"></i>
+                                Location
+                            </label>
+                            <select class="filter-select" id="locationFilter">
+                                <option value="">All Locations</option>
+                                <option value="nairobi">Nairobi</option>
+                                <option value="mombasa">Mombasa</option>
+                                <option value="kisumu">Kisumu</option>
+                                <option value="nakuru">Nakuru</option>
+                                <option value="eldoret">Eldoret</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">
+                                <i class="fas fa-stethoscope"></i>
+                                Specialty
+                            </label>
+                            <select class="filter-select" id="specialtyFilter">
+                                <option value="">All Specialties</option>
+                                <option value="general">General Practice</option>
+                                <option value="pediatrics">Pediatrics</option>
+                                <option value="dermatology">Dermatology</option>
+                                <option value="dentistry">Dentistry</option>
+                                <option value="cardiology">Cardiology</option>
+                                <option value="orthopedics">Orthopedics</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">
+                                <i class="fas fa-calendar"></i>
+                                Availability
+                            </label>
+                            <input type="date" class="filter-input" id="availabilityFilter" min="2025-10-01">
+                        </div>
+
+                        <div class="filter-actions">
+                            <button class="btn-secondary" id="clearFiltersBtn">
+                                <i class="fas fa-rotate-left"></i>
+                                Clear Filters
+                            </button>
+                            <button class="btn-primary" id="applyFiltersBtn">
+                                <i class="fas fa-search"></i>
+                                Search
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Search Results Grid -->
+                    <div class="search-results" id="searchResults">
+                        <!-- Loading State -->
+                        <div class="loading-state" id="loadingState" style="display: none;">
+                            <div class="spinner"></div>
+                            <p>Searching for available providers...</p>
+                        </div>
+
+                        <!-- Clinic Cards -->
+                        <div class="clinic-cards-grid" id="clinicCardsGrid">
+
+                            <!-- Clinic Card 1 -->
+                            <div class="clinic-card" data-clinic-id="1">
+                                <div class="clinic-header">
+                                    <div class="clinic-logo">
+                                        <i class="fas fa-hospital"></i>
+                                    </div>
+                                    <div class="clinic-info">
+                                        <h3 class="clinic-name">Nairobi Health Center</h3>
+                                        <p class="clinic-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Westlands, Nairobi
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="clinic-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-user-doctor"></i>
+                                        <span>5 Doctors Available</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Next Available: Tomorrow 9:00 AM</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-phone"></i>
+                                        <span>+254 700 123 456</span>
+                                    </div>
+                                </div>
+
+                                <div class="clinic-specialties">
+                                    <span class="specialty-tag">General Practice</span>
+                                    <span class="specialty-tag">Pediatrics</span>
+                                    <span class="specialty-tag">Dentistry</span>
+                                </div>
+
+                                <button class="btn-primary book-clinic-btn" data-clinic-id="1">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Book Appointment
+                                </button>
+                            </div>
+
+                            <!-- Clinic Card 2 -->
+                            <div class="clinic-card" data-clinic-id="2">
+                                <div class="clinic-header">
+                                    <div class="clinic-logo">
+                                        <i class="fas fa-hospital"></i>
+                                    </div>
+                                    <div class="clinic-info">
+                                        <h3 class="clinic-name">Westlands Medical Clinic</h3>
+                                        <p class="clinic-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Westlands, Nairobi
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="clinic-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-user-doctor"></i>
+                                        <span>8 Doctors Available</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Next Available: Today 2:00 PM</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-phone"></i>
+                                        <span>+254 700 789 012</span>
+                                    </div>
+                                </div>
+
+                                <div class="clinic-specialties">
+                                    <span class="specialty-tag">Dermatology</span>
+                                    <span class="specialty-tag">Cardiology</span>
+                                    <span class="specialty-tag">Orthopedics</span>
+                                </div>
+
+                                <button class="btn-primary book-clinic-btn" data-clinic-id="2">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Book Appointment
+                                </button>
+                            </div>
+
+                            <!-- Clinic Card 3 -->
+                            <div class="clinic-card" data-clinic-id="3">
+                                <div class="clinic-header">
+                                    <div class="clinic-logo">
+                                        <i class="fas fa-hospital"></i>
+                                    </div>
+                                    <div class="clinic-info">
+                                        <h3 class="clinic-name">Karen Medical Centre</h3>
+                                        <p class="clinic-location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Karen, Nairobi
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="clinic-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-user-doctor"></i>
+                                        <span>3 Doctors Available</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Next Available: Oct 3, 10:00 AM</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-phone"></i>
+                                        <span>+254 700 345 678</span>
+                                    </div>
+                                </div>
+
+                                <div class="clinic-specialties">
+                                    <span class="specialty-tag">General Practice</span>
+                                    <span class="specialty-tag">Pediatrics</span>
+                                </div>
+
+                                <button class="btn-primary book-clinic-btn" data-clinic-id="3">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Book Appointment
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <!-- Empty State -->
+                        <div class="empty-state" id="emptyState" style="display: none;">
+                            <i class="fas fa-search"></i>
+                            <p>No clinics found matching your criteria</p>
+                            <button class="btn-secondary" id="clearSearchBtn">Clear Filters</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appointment History Section -->
+                <div class="history-section">
+                    <div class="history-header">
+                        <h2 class="section-title">Appointment History</h2>
+                        <button class="filter-btn" id="historyFilterBtn">
+                            <i class="fas fa-filter"></i>
+                            <span>Filter</span>
+                        </button>
+                    </div>
+
+                    <!-- History Tabs -->
+                    <div class="history-tabs">
+                        <button class="tab-btn active" data-tab="upcoming">
+                            <i class="fas fa-calendar-days"></i>
+                            Upcoming Appointments
+                        </button>
+                        <button class="tab-btn" data-tab="past">
+                            <i class="fas fa-history"></i>
+                            Past Appointments
+                        </button>
+                    </div>
+
+                    <!-- Upcoming Appointments Tab Content -->
+                    <div class="tab-content active" id="upcomingTab">
+                        <div class="appointments-list">
+
+                            <!-- Appointment Card 1 -->
+                            <div class="appointment-card" data-appointment-id="1">
+                                <div class="appointment-header">
+                                    <div class="appointment-date-badge">
+                                        <span class="date">15</span>
+                                        <span class="month">Oct</span>
+                                        <span class="year">2025</span>
+                                    </div>
+                                    <div class="appointment-info">
+                                        <h3 class="appointment-title">General Consultation</h3>
+                                        <p class="appointment-clinic">
+                                            <i class="fas fa-hospital"></i>
+                                            Nairobi Health Center
+                                        </p>
+                                        <p class="appointment-doctor">
+                                            <i class="fas fa-user-doctor"></i>
+                                            Dr. Sarah Wanjiru - General Practice
+                                        </p>
+                                        <p class="appointment-time">
+                                            <i class="fas fa-clock"></i>
+                                            10:00 AM - 10:30 AM
+                                        </p>
+                                    </div>
+                                    <div class="appointment-status">
+                                        <span class="status-badge upcoming">Upcoming</span>
+                                        <span class="appointment-type in-person">In-Person</span>
+                                    </div>
+                                </div>
+
+                                <div class="appointment-details">
+                                    <div class="detail-row">
+                                        <span class="detail-label">Patient:</span>
+                                        <span class="detail-value">John Kamau (Self)</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Booking Reference:</span>
+                                        <span class="detail-value">APT-2025-001234</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Location:</span>
+                                        <span class="detail-value">Westlands, Nairobi</span>
+                                    </div>
+                                </div>
+
+                                <div class="appointment-actions">
+                                    <button class="action-btn view-details" data-appointment-id="1">
+                                        <i class="fas fa-eye"></i>
+                                        View Details
+                                    </button>
+                                    <button class="action-btn reschedule" data-appointment-id="1">
+                                        <i class="fas fa-calendar"></i>
+                                        Reschedule
+                                    </button>
+                                    <button class="action-btn cancel" data-appointment-id="1">
+                                        <i class="fas fa-times"></i>
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Appointment Card 2 -->
+                            <div class="appointment-card" data-appointment-id="2">
+                                <div class="appointment-header">
+                                    <div class="appointment-date-badge">
+                                        <span class="date">18</span>
+                                        <span class="month">Oct</span>
+                                        <span class="year">2025</span>
+                                    </div>
+                                    <div class="appointment-info">
+                                        <h3 class="appointment-title">Follow-up Consultation</h3>
+                                        <p class="appointment-clinic">
+                                            <i class="fas fa-hospital"></i>
+                                            Westlands Medical Clinic
+                                        </p>
+                                        <p class="appointment-doctor">
+                                            <i class="fas fa-user-doctor"></i>
+                                            Dr. James Omondi - Pediatrics
+                                        </p>
+                                        <p class="appointment-time">
+                                            <i class="fas fa-clock"></i>
+                                            2:00 PM - 2:30 PM
+                                        </p>
+                                    </div>
+                                    <div class="appointment-status">
+                                        <span class="status-badge upcoming">Upcoming</span>
+                                        <span class="appointment-type virtual">Virtual</span>
+                                    </div>
+                                </div>
+
+                                <div class="appointment-details">
+                                    <div class="detail-row">
+                                        <span class="detail-label">Patient:</span>
+                                        <span class="detail-value">Mary Kamau (Daughter)</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Booking Reference:</span>
+                                        <span class="detail-value">APT-2025-001235</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Meeting Link:</span>
+                                        <span class="detail-value">
+                                            <a href="#" class="meeting-link">Join Video Call</a>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="appointment-actions">
+                                    <button class="action-btn view-details" data-appointment-id="2">
+                                        <i class="fas fa-eye"></i>
+                                        View Details
+                                    </button>
+                                    <button class="action-btn reschedule" data-appointment-id="2">
+                                        <i class="fas fa-calendar"></i>
+                                        Reschedule
+                                    </button>
+                                    <button class="action-btn cancel" data-appointment-id="2">
+                                        <i class="fas fa-times"></i>
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Empty State for Upcoming -->
+                            <div class="empty-state" style="display: none;">
+                                <i class="fas fa-calendar-times"></i>
+                                <p>No upcoming appointments</p>
+                                <button class="btn-primary" id="bookFirstAppointment">Book Your First
+                                    Appointment</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Past Appointments Tab Content -->
+                    <div class="tab-content" id="pastTab">
+                        <div class="appointments-list">
+
+                            <!-- Past Appointment Card 1 -->
+                            <div class="appointment-card" data-appointment-id="3">
+                                <div class="appointment-header">
+                                    <div class="appointment-date-badge">
+                                        <span class="date">28</span>
+                                        <span class="month">Sep</span>
+                                        <span class="year">2025</span>
+                                    </div>
+                                    <div class="appointment-info">
+                                        <h3 class="appointment-title">Annual Check-up</h3>
+                                        <p class="appointment-clinic">
+                                            <i class="fas fa-hospital"></i>
+                                            Nairobi Health Center
+                                        </p>
+                                        <p class="appointment-doctor">
+                                            <i class="fas fa-user-doctor"></i>
+                                            Dr. Sarah Wanjiru - General Practice
+                                        </p>
+                                        <p class="appointment-time">
+                                            <i class="fas fa-clock"></i>
+                                            3:00 PM - 3:30 PM
+                                        </p>
+                                    </div>
+                                    <div class="appointment-status">
+                                        <span class="status-badge completed">Completed</span>
+                                        <span class="appointment-type in-person">In-Person</span>
+                                    </div>
+                                </div>
+
+                                <div class="appointment-details">
+                                    <div class="detail-row">
+                                        <span class="detail-label">Patient:</span>
+                                        <span class="detail-value">John Kamau (Self)</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Booking Reference:</span>
+                                        <span class="detail-value">APT-2025-001200</span>
+                                    </div>
+                                </div>
+
+                                <div class="appointment-actions">
+                                    <button class="action-btn view-details" data-appointment-id="3">
+                                        <i class="fas fa-eye"></i>
+                                        View Details
+                                    </button>
+                                    <button class="action-btn view-records">
+                                        <i class="fas fa-file-medical"></i>
+                                        Medical Records
+                                    </button>
+                                    <button class="action-btn rebook">
+                                        <i class="fas fa-redo"></i>
+                                        Book Again
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Past Appointment Card 2 -->
+                            <div class="appointment-card" data-appointment-id="4">
+                                <div class="appointment-header">
+                                    <div class="appointment-date-badge">
+                                        <span class="date">15</span>
+                                        <span class="month">Sep</span>
+                                        <span class="year">2025</span>
+                                    </div>
+                                    <div class="appointment-info">
+                                        <h3 class="appointment-title">Dental Cleaning</h3>
+                                        <p class="appointment-clinic">
+                                            <i class="fas fa-hospital"></i>
+                                            Karen Medical Centre
+                                        </p>
+                                        <p class="appointment-doctor">
+                                            <i class="fas fa-user-doctor"></i>
+                                            Dr. Peter Mwangi - Dentistry
+                                        </p>
+                                        <p class="appointment-time">
+                                            <i class="fas fa-clock"></i>
+                                            11:00 AM - 11:45 AM
+                                        </p>
+                                    </div>
+                                    <div class="appointment-status">
+                                        <span class="status-badge cancelled">Cancelled</span>
+                                        <span class="appointment-type in-person">In-Person</span>
+                                    </div>
+                                </div>
+
+                                <div class="appointment-details">
+                                    <div class="detail-row">
+                                        <span class="detail-label">Patient:</span>
+                                        <span class="detail-value">Jane Kamau (Spouse)</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Booking Reference:</span>
+                                        <span class="detail-value">APT-2025-001180</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Cancellation Reason:</span>
+                                        <span class="detail-value">Rescheduled by patient</span>
+                                    </div>
+                                </div>
+
+                                <div class="appointment-actions">
+                                    <button class="action-btn view-details" data-appointment-id="4">
+                                        <i class="fas fa-eye"></i>
+                                        View Details
+                                    </button>
+                                    <button class="action-btn rebook">
+                                        <i class="fas fa-redo"></i>
+                                        Book Again
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <p class="copyright">&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer"
+                    class="corporate-link">citruslabs.co.ke</a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer" aria-label="X">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Family Profile Selector Modal -->
+    <div class="modal" id="familyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Family Member</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Choose the family member you want to book an appointment for:</p>
+                <div class="family-list">
+                    <div class="family-member active" data-member-id="self" data-age="45">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="John Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>John Kamau</h4>
+                            <p>Self - 45 years</p>
+                        </div>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="family-member" data-member-id="spouse" data-age="42">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="Jane Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>Jane Kamau</h4>
+                            <p>Spouse - 42 years</p>
+                        </div>
+                    </div>
+                    <div class="family-member" data-member-id="daughter" data-age="12">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="Mary Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>Mary Kamau</h4>
+                            <p>Daughter - 12 years</p>
+                        </div>
+                    </div>
+                    <div class="family-member" data-member-id="son" data-age="8">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="David Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>David Kamau</h4>
+                            <p>Son - 8 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advanced Search Modal -->
+    <div class="modal" id="advancedSearchModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Advanced Search</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="advanced-search-form" id="advancedSearchForm">
+                    <div class="form-group">
+                        <label for="clinicNameSearch">Clinic Name</label>
+                        <input type="text" id="clinicNameSearch" class="form-control" placeholder="Enter clinic name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="doctorNameSearch">Doctor Name</label>
+                        <input type="text" id="doctorNameSearch" class="form-control" placeholder="Enter doctor name">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="emailSearch">Email</label>
+                            <input type="email" id="emailSearch" class="form-control" placeholder="clinic@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phoneSearch">Phone Number</label>
+                            <input type="tel" id="phoneSearch" class="form-control" placeholder="+254 700 000 000">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceTypeSearch">Service Type</label>
+                        <select id="serviceTypeSearch" class="form-control">
+                            <option value="">All Services</option>
+                            <option value="consultation">General Consultation</option>
+                            <option value="followup">Follow-up Visit</option>
+                            <option value="diagnostic">Diagnostic Tests</option>
+                            <option value="vaccination">Vaccination</option>
+                            <option value="emergency">Emergency Care</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Insurance Accepted</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="nhif">
+                                <span>NHIF</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="aaa">
+                                <span>AAR Insurance</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="jubilee">
+                                <span>Jubilee Insurance</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="madison">
+                                <span>Madison Insurance</span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="executeAdvancedSearch">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Time Slot Booking Modal -->
+    <div class="modal" id="timeSlotModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Select Appointment Time</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="booking-info">
+                    <p><strong>Clinic:</strong> <span id="selectedClinic">Nairobi Health Center</span></p>
+                    <p><strong>Patient:</strong> <span id="selectedPatient">John Kamau (Self)</span></p>
+                </div>
+
+                <!-- Doctor Selection -->
+                <div class="doctor-selection">
+                    <label>Select Doctor</label>
+                    <div class="doctor-list">
+                        <div class="doctor-option" data-doctor-id="1">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                alt="Doctor" class="doctor-avatar">
+                            <div class="doctor-info">
+                                <h4>Dr. Sarah Wanjiru</h4>
+                                <p>General Practice</p>
+                            </div>
+                            <input type="radio" name="doctor" value="1" checked>
+                        </div>
+                        <div class="doctor-option" data-doctor-id="2">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                alt="Doctor" class="doctor-avatar">
+                            <div class="doctor-info">
+                                <h4>Dr. James Omondi</h4>
+                                <p>Pediatrics</p>
+                            </div>
+                            <input type="radio" name="doctor" value="2">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calendar Interface -->
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button class="calendar-nav prev" id="prevMonth">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <h4 class="calendar-title" id="calendarTitle">October 2025</h4>
+                        <button class="calendar-nav next" id="nextMonth">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar will be populated by JavaScript -->
+                        <div class="calendar-day-header">Sun</div>
+                        <div class="calendar-day-header">Mon</div>
+                        <div class="calendar-day-header">Tue</div>
+                        <div class="calendar-day-header">Wed</div>
+                        <div class="calendar-day-header">Thu</div>
+                        <div class="calendar-day-header">Fri</div>
+                        <div class="calendar-day-header">Sat</div>
+                    </div>
+                </div>
+
+                <!-- Time Slots -->
+                <div class="time-slots-container" id="timeSlotsContainer">
+                    <h4 class="slots-title">Available Time Slots</h4>
+                    <p class="selected-date-display" id="selectedDateDisplay">Select a date to view available times</p>
+
+                    <div class="time-slots-grid" id="timeSlotsGrid">
+                        <!-- Morning Slots -->
+                        <div class="time-slot-section">
+                            <h5 class="slot-section-title">
+                                <i class="fas fa-sun"></i>
+                                Morning (8:00 AM - 12:00 PM)
+                            </h5>
+                            <div class="slots-row">
+                                <button class="time-slot available" data-time="08:00">8:00 AM</button>
+                                <button class="time-slot available" data-time="09:00">9:00 AM</button>
+                                <button class="time-slot available" data-time="10:00">10:00 AM</button>
+                                <button class="time-slot available" data-time="11:00">11:00 AM</button>
+                            </div>
+                        </div>
+
+                        <!-- Afternoon Slots -->
+                        <div class="time-slot-section">
+                            <h5 class="slot-section-title">
+                                <i class="fas fa-cloud-sun"></i>
+                                Afternoon (12:00 PM - 5:00 PM)
+                            </h5>
+                            <div class="slots-row">
+                                <button class="time-slot available" data-time="12:00">12:00 PM</button>
+                                <button class="time-slot available" data-time="14:00">2:00 PM</button>
+                                <button class="time-slot available" data-time="15:00">3:00 PM</button>
+                                <button class="time-slot booked" data-time="16:00" disabled>4:00 PM</button>
+                            </div>
+                        </div>
+
+                        <!-- Evening Slots -->
+                        <div class="time-slot-section">
+                            <h5 class="slot-section-title">
+                                <i class="fas fa-moon"></i>
+                                Evening (5:00 PM - 8:00 PM)
+                            </h5>
+                            <div class="slots-row">
+                                <button class="time-slot available" data-time="17:00">5:00 PM</button>
+                                <button class="time-slot available" data-time="18:00">6:00 PM</button>
+                                <button class="time-slot booked" data-time="19:00" disabled>7:00 PM</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Type Selection -->
+                <div class="service-selection">
+                    <label for="serviceType">Service Type</label>
+                    <select id="serviceType" class="form-control">
+                        <option value="consultation">General Consultation</option>
+                        <option value="followup">Follow-up Visit</option>
+                        <option value="diagnostic">Diagnostic Tests</option>
+                        <option value="vaccination">Vaccination</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="confirmBooking" disabled>
+                    <i class="fas fa-check"></i>
+                    Confirm Booking
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Confirmation Modal -->
+    <div class="modal" id="bookingConfirmationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirm Your Appointment</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="confirmation-summary">
+                    <div class="summary-icon success">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span class="summary-label">Clinic:</span>
+                            <span class="summary-value" id="confirmClinicName">Nairobi Health Center</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Doctor:</span>
+                            <span class="summary-value" id="confirmDoctorName">Dr. Sarah Wanjiru</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Specialty:</span>
+                            <span class="summary-value" id="confirmSpecialty">General Practice</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Date & Time:</span>
+                            <span class="summary-value" id="confirmDateTime">October 15, 2025 at 10:00 AM</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Patient:</span>
+                            <span class="summary-value" id="confirmPatientName">John Kamau (Self)</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Service:</span>
+                            <span class="summary-value" id="confirmServiceType">General Consultation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="confirmation-notes">
+                    <h4>Important Notes:</h4>
+                    <ul>
+                        <li>Please arrive 15 minutes before your appointment time</li>
+                        <li>Bring your ID and any relevant medical documents</li>
+                        <li>You will receive a confirmation SMS and email</li>
+                        <li>Cancellations must be made at least 24 hours in advance</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Go Back</button>
+                <button class="btn-primary" id="finalConfirmBooking">
+                    <i class="fas fa-check-circle"></i>
+                    Confirm Appointment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reschedule Appointment Modal -->
+    <div class="modal" id="rescheduleModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Reschedule Appointment</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="current-appointment-info">
+                    <h4>Current Appointment</h4>
+                    <p><strong>Date:</strong> October 15, 2025 at 10:00 AM</p>
+                    <p><strong>Doctor:</strong> Dr. Sarah Wanjiru</p>
+                    <p><strong>Clinic:</strong> Nairobi Health Center</p>
+                </div>
+
+                <div class="reschedule-form">
+                    <div class="form-group">
+                        <label for="rescheduleDate">Select New Date</label>
+                        <input type="date" id="rescheduleDate" class="form-control" min="2025-10-02">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Available Time Slots</label>
+                        <div class="time-slots-grid">
+                            <button class="time-slot available">9:00 AM</button>
+                            <button class="time-slot available">10:00 AM</button>
+                            <button class="time-slot available">11:00 AM</button>
+                            <button class="time-slot available">2:00 PM</button>
+                            <button class="time-slot available">3:00 PM</button>
+                            <button class="time-slot available">4:00 PM</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="confirmReschedule">
+                    <i class="fas fa-check"></i>
+                    Confirm Reschedule
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cancel Appointment Modal -->
+    <div class="modal" id="cancelModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Cancel Appointment</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="warning-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>Are you sure you want to cancel this appointment?</p>
+                </div>
+
+                <div class="appointment-summary">
+                    <p><strong>Date:</strong> October 15, 2025 at 10:00 AM</p>
+                    <p><strong>Doctor:</strong> Dr. Sarah Wanjiru</p>
+                    <p><strong>Clinic:</strong> Nairobi Health Center</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="cancellationReason">Reason for Cancellation (Optional)</label>
+                    <select id="cancellationReason" class="form-control">
+                        <option value="">Select a reason</option>
+                        <option value="schedule">Schedule conflict</option>
+                        <option value="recovered">Health improved</option>
+                        <option value="emergency">Emergency situation</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="cancellation-policy">
+                    <p class="policy-warning">
+                        <i class="fas fa-info-circle"></i>
+                        Cancellations made less than 24 hours before the appointment may incur a fee.
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Keep Appointment</button>
+                <button class="btn-danger" id="confirmCancel">
+                    <i class="fas fa-times-circle"></i>
+                    Yes, Cancel Appointment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Details Modal -->
+    <div class="modal" id="appointmentDetailsModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Appointment Details</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="details-section">
+                    <h4>Appointment Information</h4>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Booking Reference:</span>
+                            <span class="detail-value">APT-2025-001234</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Date & Time:</span>
+                            <span class="detail-value">October 15, 2025 at 10:00 AM</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Duration:</span>
+                            <span class="detail-value">30 minutes</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Status:</span>
+                            <span class="detail-value"><span class="status-badge upcoming">Upcoming</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details-section">
+                    <h4>Provider Information</h4>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Clinic:</span>
+                            <span class="detail-value">Nairobi Health Center</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Doctor:</span>
+                            <span class="detail-value">Dr. Sarah Wanjiru</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Specialty:</span>
+                            <span class="detail-value">General Practice</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Contact:</span>
+                            <span class="detail-value">+254 700 123 456</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details-section">
+                    <h4>Location</h4>
+                    <p>Westlands, Nairobi</p>
+                    <button class="btn-secondary">
+                        <i class="fas fa-map-marked-alt"></i>
+                        View on Map
+                    </button>
+                </div>
+
+                <div class="details-section">
+                    <h4>Linked Records</h4>
+                    <div class="linked-records">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Health Care\my_health_care.html"
+                            class="record-link">
+                            <i class="fas fa-file-medical"></i>
+                            View Medical Records
+                        </a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Billings and Payments\billings_and_payments.html"
+                            class="record-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            View Related Invoices
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Filter Modal -->
+    <div class="modal" id="historyFilterModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Filter Appointments</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="filter-form">
+                    <div class="form-group">
+                        <label>Date Range</label>
+                        <div class="date-range">
+                            <input type="date" class="form-control" id="filterStartDate" placeholder="From">
+                            <span class="date-separator">to</span>
+                            <input type="date" class="form-control" id="filterEndDate" placeholder="To">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Quick Date Ranges</label>
+                        <div class="quick-ranges">
+                            <button type="button" class="quick-range-btn" data-range="week">Last Week</button>
+                            <button type="button" class="quick-range-btn" data-range="month">Last Month</button>
+                            <button type="button" class="quick-range-btn" data-range="year">Last Year</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="filterPatient">Patient</label>
+                        <select id="filterPatient" class="form-control">
+                            <option value="all">All Family Members</option>
+                            <option value="self">Self Only</option>
+                            <option value="spouse">Jane Kamau (Spouse)</option>
+                            <option value="daughter">Mary Kamau (Daughter)</option>
+                            <option value="son">David Kamau (Son)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="filterProvider">Provider</label>
+                        <select id="filterProvider" class="form-control">
+                            <option value="all">All Providers</option>
+                            <option value="clinic1">Nairobi Health Center</option>
+                            <option value="clinic2">Westlands Medical Clinic</option>
+                            <option value="clinic3">Karen Medical Centre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="filterStatus">Status</label>
+                        <select id="filterStatus" class="form-control">
+                            <option value="all">All Statuses</option>
+                            <option value="upcoming">Upcoming</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                            <option value="noshow">No-show</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="clearHistoryFilters">Clear All</button>
+                <button class="btn-primary" id="applyHistoryFilters">
+                    <i class="fas fa-filter"></i>
+                    Apply Filters
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Settings Modal -->
+    <div class="modal" id="notificationSettingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Notification Preferences</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-section">
+                    <h4>Reminder Settings</h4>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Email Reminders</label>
+                            <p>Receive appointment reminders via email</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>SMS Reminders</label>
+                            <p>Receive appointment reminders via SMS</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reminderTiming">Reminder Timing</label>
+                        <select id="reminderTiming" class="form-control">
+                            <option value="1">1 hour before</option>
+                            <option value="24" selected>24 hours before</option>
+                            <option value="48">48 hours before</option>
+                            <option value="72">3 days before</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h4>Confirmation Alerts</h4>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Booking Confirmations</label>
+                            <p>Get notified when appointments are booked</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Reschedule Alerts</label>
+                            <p>Get notified when appointments are rescheduled</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Cancellation Alerts</label>
+                            <p>Get notified when appointments are cancelled</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h4>Preferences Scope</h4>
+                    <div class="form-group">
+                        <label>
+                            <input type="radio" name="scope" value="global" checked>
+                            Apply to all family members
+                        </label>
+                        <label>
+                            <input type="radio" name="scope" value="individual">
+                            Set individual preferences per member
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="saveNotificationSettings">
+                    <i class="fas fa-save"></i>
+                    Save Settings
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- External JavaScript -->
+    <script
+        src="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Appointments\my_appointments.js"></script>
+
+</body>
+
+</html>

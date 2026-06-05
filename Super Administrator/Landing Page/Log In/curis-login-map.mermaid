@@ -1,0 +1,140 @@
+stateDiagram-v2
+    [*] --> LoginPage: Super Admin accesses login page
+
+    state LoginPage {
+        [*] --> EmailInputForm
+
+        note right of EmailInputForm
+            Super Administrator enters authorized Citrus email
+            Real-time email validation
+            Branded with Curis & Citrus logo
+            "Send Verification Code" button
+        end note
+
+        EmailInputForm --> FormValidation: Clicks "Send Verification Code"
+    }
+
+    state FormValidation {
+        [*] --> ValidatingEmail
+        ValidatingEmail --> EmailValid
+        ValidatingEmail --> EmailInvalid
+
+        note right of ValidatingEmail
+            Verifies email format and authorized domain
+            Displays inline error if invalid
+        end note
+    }
+
+    FormValidation --> LoginPage: Error shown if invalid
+    FormValidation --> SendVerification: Email valid
+       
+    state SendVerification {
+        [*] --> GeneratingCode
+        GeneratingCode --> SendingEmail
+        SendingEmail --> EmailSent
+        SendingEmail --> SendingFailed
+
+        note right of GeneratingCode
+            Unique 6-digit code generated
+            10-minute expiry set
+            Code linked to Super Admin email
+        end note
+    }
+
+    SendVerification --> VerificationScreen: On success
+    SendVerification --> LoginPage: On failure
+
+    state VerificationScreen {
+        [*] --> SuccessMessage
+        SuccessMessage --> CodeEntryForm
+
+        note right of SuccessMessage
+            Confirmation message and email address
+            Instructions to check inbox/spam
+        end note
+
+        state CodeEntryForm {
+            [*] --> CodeInput
+            CodeInput --> VerifyButton
+            CodeInput --> ResendButton
+
+            note right of CodeInput
+                Enter 6-digit verification code
+                "Verify" button
+                "Resend Code" link (after 60s)
+                Countdown timer
+            end note
+        }
+    }
+
+    VerificationScreen --> TokenValidation: Clicks "Verify"
+    VerificationScreen --> SendVerification: Clicks "Resend Code"
+
+    state TokenValidation {
+        [*] --> ValidatingToken
+        ValidatingToken --> TokenValid
+        ValidatingToken --> TokenInvalid
+        ValidatingToken --> TokenExpired
+
+        note right of ValidatingToken
+            Validates code accuracy and expiry
+            Ensures code is single-use
+        end note
+    }
+
+    TokenValidation --> VerificationScreen: Invalid or incorrect code
+    TokenValidation --> LoginPage: Expired code
+    TokenValidation --> SessionCreation: Valid code
+
+    state SessionCreation {
+        [*] --> EstablishingSession
+        EstablishingSession --> SettingPermissions
+        SettingPermissions --> SessionEstablished
+
+        note right of EstablishingSession
+            JWT session initialized
+            Super Admin role loaded
+            8-hour timeout enforced
+        end note
+    }
+
+    SessionCreation --> AdminDashboard: Redirect to dashboard
+
+    state AdminDashboard {
+        [*] --> LoadingDashboard
+        LoadingDashboard --> DashboardReady
+
+        note right of DashboardReady
+            View and manage all clinics
+            Access platform-wide settings
+            Monitor system health & security
+        end note
+    }
+
+    AdminDashboard --> ActiveSession
+
+    state ActiveSession {
+        [*] --> UserActive
+        UserActive --> UserIdle
+        UserIdle --> UserActive
+        UserActive --> LogoutRequested
+
+        note right of UserActive
+            Monitors user activity
+            Ensures session security
+        end note
+    }
+
+    ActiveSession --> SessionValidation
+
+    state SessionValidation {
+        [*] --> CheckingToken
+        CheckingToken --> SessionValid
+        CheckingToken --> SessionInvalid
+        CheckingToken --> SessionRevoked
+    }
+
+    SessionValidation --> ActiveSession: Valid
+    SessionValidation --> LoginPage: Expired or revoked
+
+    ActiveSession --> [*]: Logout complete

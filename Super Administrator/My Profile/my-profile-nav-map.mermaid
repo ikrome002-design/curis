@@ -1,0 +1,90 @@
+graph TB
+    %% Main Profile Management Page
+    ProfileHome["👤 Profile Management Page<br/>Super Admin Account Center"]
+    
+    %% Access from Header
+    HeaderProfile["User Profile Button"] --> |Click| ProfileHome
+    Dashboard["🏠 Super Admin Dashboard"] --> HeaderProfile
+    
+    %% Back Navigation
+    ProfileHome --> BackNav["← Back to Dashboard"]
+    BackNav --> Dashboard
+    
+    %% Profile Sections
+    ProfileHome --> PersonalInfo["📝 Personal Information"]
+    ProfileHome --> AccountSettings["⚙️ Account Settings"]
+    ProfileHome --> SecuritySettings["🔐 Security & 2FA"]
+    ProfileHome --> ActivityLog["📊 My Activity Log"]
+    ProfileHome --> NotifPrefs["🔔 Notification Preferences"]
+    ProfileHome --> SessionMgmt["💻 Session Management"]
+    
+    %% Personal Information Section
+    PersonalInfo --> |Edit| PersonalPanel["Personal Information Panel<br/>──────────────<br/>📷 Profile Picture:<br/>  [Current Photo]<br/>  [Change Photo 📸]<br/>  [Remove Photo ❌]<br/>👤 Basic Info:<br/>  • Name: [Super Admin]<br/>  • Email: admin@curis.com<br/>  • Phone: +254 XXX XXX<br/>  • Role: Super Administrator<br/>  • Employee ID: SA001<br/>📍 Contact Details:<br/>  • Department: Platform Admin<br/>  • Office: HQ Nairobi<br/>  • Extension: 1001<br/>• Edit Information ✏️"]
+    
+    PersonalPanel --> |Edit| EditInfoModal["Edit Information Modal<br/>─────────────<br/>✏️ Update Details:<br/>• Full Name: [____]<br/>• Email: [____]<br/>• Phone: [____]<br/>• Alternative Email: [____]<br/>• Emergency Contact: [____]<br/>📸 Profile Picture:<br/>  [Upload New Photo]<br/>  Max size: 5MB<br/>  Format: JPG/PNG<br/>• Save Changes ✓<br/>• Cancel ❌"]
+    
+    %% Account Settings Section
+    AccountSettings --> |Configure| AccountPanel["Account Settings Panel<br/>──────────────<br/>🌐 Language & Region:<br/>  • Language: [English ▼]<br/>  • Timezone: [GMT+3 ▼]<br/>  • Date Format: [DD/MM/YYYY ▼]<br/>  • Currency: [KES ▼]<br/>🎨 Display Preferences:<br/>  • Theme: ○ Light ● Dark<br/>  • Sidebar: ☑️ Expanded<br/>  • Notifications: ☑️ Show Badge<br/>  • Density: ○ Compact ● Normal<br/>⌨️ Shortcuts:<br/>  • Quick Actions: ☑️ Enabled<br/>  • Keyboard Shortcuts: [View]<br/>• Save Preferences ✓"]
+    
+    %% Security Section with 2FA
+    SecuritySettings --> |Manage| SecurityPanel["Security Settings Panel<br/>──────────────<br/>🛡️ Two-Factor Auth (2FA):<br/>  • Status: Enabled ✅<br/>  • Method: Email (admin@citruslabs.co.ke)<br/>  [Configure 2FA]<br/>🔐 Security Questions:<br/>  • Set: 3/3 ✓<br/>  [Update Questions]<br/>📱 Trusted Devices:<br/>  • Chrome/Windows - This Device<br/>  • Safari/Mac - Office<br/>  [Manage Devices]<br/>🚨 Security Alerts:<br/>  ☑️ Login from new device<br/>  ☑️ Suspicious activity"]
+    
+    %% 2FA Configuration
+    SecurityPanel --> |Configure 2FA| TwoFactorModal["2FA Configuration Modal<br/>─────────────<br/>🛡️ Setup 2FA:<br/>• Method:<br/>  ● Work Email Only (@citruslabs.co.ke)<br/>📧 Verification Email Sent To:<br/>  admin@citruslabs.co.ke<br/>• Verify Code:<br/>  Enter 6-digit code: [______]<br/>🔄 Backup Codes:<br/>  • Generate backup codes<br/>  • Download codes 📥<br/>• Enable 2FA ✓"]
+    
+    %% Activity Log Section
+    ActivityLog --> |View| ActivityPanel["My Activity Log Panel<br/>──────────────<br/>📅 Activity Timeline:<br/>Time | Action | Details | IP | Location<br/>────────────────────────<br/>10:45 | Login | Dashboard Access | 192.x.x.x | Nairobi<br/>10:30 | User Created | Added Dr.Smith | 192.x.x.x | Nairobi<br/>09:15 | Settings Changed | 2FA Enabled | 192.x.x.x | Nairobi<br/>Yesterday | Report Generated | Financial Report | 192.x.x.x | Nairobi<br/>─────────────<br/>🔍 Filter Activity:<br/>  • Date Range: [Last 7 days ▼]<br/>  • Action Type: [All ▼]<br/>  • Show: [50 per page ▼]<br/>• Export Activity Log 📥"]
+    
+    %% Notification Preferences
+    NotifPrefs --> |Customize| NotifPanel["Notification Preferences<br/>──────────────<br/>📧 Email Notifications:<br/>  ☑️ Security alerts<br/>  ☑️ System updates<br/>  ☑️ User account changes<br/>  ☑️ Financial reports<br/>  ☐ Marketing emails<br/>📱 SMS Notifications:<br/>  ☑️ Critical alerts only<br/>  ☑️ Login attempts<br/>  ☐ Daily summaries<br/>🔔 In-App Notifications:<br/>  ☑️ All activities<br/>  ☑️ Real-time updates<br/>  ☑️ Sound alerts<br/>📊 Report Schedule:<br/>  • Daily Summary: [6:00 AM ▼]<br/>  • Weekly Report: [Monday ▼]<br/>  • Monthly Report: [1st ▼]<br/>• Save Preferences ✓"]
+    
+    %% Session Management
+    SessionMgmt --> |Manage| SessionPanel["Active Sessions Panel<br/>──────────────<br/>💻 Current Sessions:<br/>Device | Location | Login Time | Status | Action<br/>───────────────────────────<br/>Chrome/Win | Nairobi | 2hr ago | Current 🟢 | -<br/>Safari/Mac | Mombasa | Yesterday | Active 🟢 | [End]<br/>Mobile App | Kisumu | 3 days ago | Idle 🟡 | [End]<br/>─────────────<br/>🔐 Session Security:<br/>  • Timeout: 2 hours<br/>  • Max Sessions: 3<br/>  • Remember Me: Disabled<br/>⚡ Quick Actions:<br/>  • End All Other Sessions 🚫<br/>  • Refresh Current Session 🔄<br/>  • View Session Details 👁️"]
+    
+    %% Quick Actions
+    ProfileHome --> QuickActions["⚡ Quick Profile Actions"]
+    QuickActions --> DownloadData["📥 Download My Data"]
+    QuickActions --> PrintProfile["🖨️ Print Profile"]
+    QuickActions --> ExportActivity["📊 Export Activity"]
+    QuickActions --> LogoutAll["🚪 Logout All Devices"]
+    
+    %% Data Download Modal
+    DownloadData --> |Click| DataModal["Download My Data<br/>────────────<br/>📦 Data Package:<br/>  ☑️ Profile Information<br/>  ☑️ Activity Logs<br/>  ☑️ Settings & Preferences<br/>  ☑️ Session History<br/>  ☐ Audit Reports<br/>📄 Format:<br/>  ○ JSON<br/>  ○ CSV<br/>  ● PDF<br/>🔒 Security:<br/>  ☑️ Encrypt before download<br/>• Download Package 📥"]
+    
+    %% Profile Completion
+    ProfileHome --> ProfileCompletion["Profile Completion: 95%<br/>─────────────────<br/>✅ Basic Information<br/>✅ Security Settings<br/>✅ 2FA Enabled<br/>⚠️ Emergency Contact Missing<br/>✅ Notification Preferences"]
+    
+    %% Real-time Updates
+    ProfileHome -.->|WebSocket| RealTimeSync["🔄 Real-Time Updates<br/>────────────<br/>• Login notifications<br/>• Security alerts<br/>• Setting changes<br/>• Session updates<br/>• Activity tracking"]
+    
+    %% Integration with Other Pages
+    ProfileHome --> MainNav["Main Navigation"]
+    MainNav --> UsersPage["→ Curis Users"]
+    MainNav --> ApptPage["→ Appointment Oversight"]
+    MainNav --> HealthPage["→ Health (High-Level)"]
+    MainNav --> BillingPage["→ Billings & Payments"]
+    MainNav --> SettingsPage["→ Settings"]
+    MainNav --> CompliancePage["→ Compliance Hub"]
+    
+    %% Links to Related Settings
+    AccountPanel --> |Advanced| SettingsPage
+    SecurityPanel --> |Security Config| CompliancePage
+    
+    %% Styling
+    classDef mainPage fill:#1E3A5F,stroke:#0D1B2A,stroke-width:4px,color:#fff,font-weight:bold
+    classDef panel fill:#7B2CBF,stroke:#5A189A,stroke-width:2px,color:#fff
+    classDef modal fill:#FF6B35,stroke:#C73E1D,stroke-width:2px,color:#fff
+    classDef security fill:#DC2626,stroke:#991B1B,stroke-width:2px,color:#fff
+    classDef action fill:#06A77D,stroke:#045A3F,stroke-width:2px,color:#fff
+    classDef nav fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
+    classDef realtime fill:#10B981,stroke:#059669,stroke-width:2px,color:#fff
+    classDef completion fill:#F59E0B,stroke:#D97706,stroke-width:2px,color:#fff
+    
+    class ProfileHome mainPage
+    class PersonalInfo,AccountSettings,SecuritySettings,ActivityLog,NotifPrefs,SessionMgmt,QuickActions panel
+    class PersonalPanel,EditInfoModal,AccountPanel,SecurityPanel,TwoFactorModal,ActivityPanel,NotifPanel,SessionPanel,DataModal modal
+    class TwoFactorModal,SecurityPanel security
+    class DownloadData,PrintProfile,ExportActivity,LogoutAll action
+    class MainNav,BackNav,Dashboard,UsersPage,ApptPage,HealthPage,BillingPage,SettingsPage,CompliancePage nav
+    class RealTimeSync realtime
+    class ProfileCompletion completion

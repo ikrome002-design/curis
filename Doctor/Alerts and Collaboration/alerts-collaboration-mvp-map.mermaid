@@ -1,0 +1,408 @@
+flowchart TD
+    %% Entry Points
+    Dashboard[Dashboard] --> AlertsCollabPage[Alerts & Collaboration Page<br/>🔔 Command Center]
+    PatientRecordsPage[Patient Records] --> AlertsCollabPage
+    AppointmentsPage[Appointments] --> AlertsCollabPage
+    ConsultationsPage[Consultations] --> AlertsCollabPage
+    PrescriptionsPage[Prescriptions] --> AlertsCollabPage
+    
+    %% Main Page Structure
+    AlertsCollabPage --> NotificationsFeed[Real-time Notifications Feed<br/>System Event Alerts]
+    AlertsCollabPage --> CollaborationPanel[Team Collaboration Panel<br/>Internal Communication Hub]
+    AlertsCollabPage --> NotificationPrefs[Notification Preferences<br/>Alert Customization]
+    AlertsCollabPage --> QuickActions[Quick Actions<br/>Direct Workflows]
+    AlertsCollabPage --> AuditTrail[Audit Trail & Mentions<br/>Activity Tracking]
+    
+    %% Real-time Notifications Feed
+    NotificationsFeed --> NotificationList[Notification List<br/>Chronological feed]
+    NotificationList --> NotificationEntry[Each Notification Shows:]
+    NotificationEntry --> NotifIcon[Notification Icon<br/>Type indicator]
+    NotificationEntry --> NotifContent[Content Preview<br/>Brief description]
+    NotificationEntry --> NotifTimestamp[Timestamp<br/>When occurred]
+    NotificationEntry --> NotifStatus[Read/Unread Status<br/>Visual indicator]
+    NotificationEntry --> NotifActions[Action Buttons<br/>Context-specific]
+    
+    %% Automated Notification Types
+    NotificationsFeed --> AutomatedUpdates[Automated Updates<br/>System triggers]
+    AutomatedUpdates --> NewAssignment[New Appointment Assignment<br/>From Receptionist/Owner]
+    AutomatedUpdates --> UpcomingConsult[Upcoming Consultation<br/>Time-based alerts]
+    AutomatedUpdates --> RecordUpdates[Medical Record Updates<br/>Staff changes]
+    AutomatedUpdates --> LabResults[Lab Results Available<br/>New uploads]
+    AutomatedUpdates --> CommentMentions[Comment Mentions<br/>@doctor tags]
+    AutomatedUpdates --> DiscussionActivity[Discussion Activity<br/>New threads/replies]
+    
+    NewAssignment --> AssignmentDetails[Assignment Alert Details:]
+    AssignmentDetails --> PatientName[Patient Name<br/>Who]
+    AssignmentDetails --> AppointmentTime[Appointment Time<br/>When]
+    AssignmentDetails --> AssignedBy[Assigned By<br/>Receptionist/Owner name]
+    AssignmentDetails --> ViewAppointmentBtn[View Appointment<br/>Navigate to details]
+    
+    ViewAppointmentBtn -->|Click| NavigateToAppointment[Navigate to Appointments<br/>Specific appointment]
+    NavigateToAppointment --> AppointmentsPage
+    
+    UpcomingConsult --> ConsultReminders[Consultation Reminders:]
+    ConsultReminders --> FifteenMinReminder[15-Minute Alert<br/>Prepare reminder]
+    ConsultReminders --> OneHourReminder[1-Hour Alert<br/>Upcoming notice]
+    ConsultReminders --> NowReminder[Start Now Alert<br/>Session time]
+    ConsultReminders --> JoinConsultBtn[Join Consultation<br/>Quick access]
+    
+    JoinConsultBtn -->|Click| LaunchConsultation[Launch Consultation<br/>Direct session start]
+    LaunchConsultation --> ConsultationsPage
+    
+    RecordUpdates --> UpdateTypes[Update Types:]
+    UpdateTypes --> LabAdded[Lab Results Added<br/>New documents]
+    UpdateTypes --> NotesUpdated[Clinical Notes Updated<br/>Staff edits]
+    UpdateTypes --> DocsAttached[Documents Attached<br/>New files]
+    UpdateTypes --> ViewRecordBtn[View Record<br/>Open patient file]
+    
+    ViewRecordBtn -->|Click| NavigateToRecord[Navigate to Patient Records<br/>Updated record]
+    NavigateToRecord --> PatientRecordsPage
+    
+    %% Notification Categories
+    NotificationsFeed --> NotifCategories[Notification Categories<br/>Classification system]
+    NotifCategories --> TimeSensitive[Time-sensitive Alerts<br/>Urgent items]
+    NotifCategories --> InfoOnly[Info-only Updates<br/>Standard notices]
+    
+    TimeSensitive --> UrgencyBadge[Urgency Badge<br/>Red indicator]
+    TimeSensitive --> PrioritySort[Priority Sorting<br/>Top of feed]
+    TimeSensitive --> SoundAlert[Sound Alert<br/>Audio notification]
+    
+    %% Read/Unread Tracking
+    NotificationsFeed --> ReadUnreadTracking[Read/Unread Tracking<br/>Status management]
+    ReadUnreadTracking --> UnreadCount[Unread Count Badge<br/>Number display]
+    ReadUnreadTracking --> MarkAsRead[Mark as Read<br/>Single/Bulk action]
+    ReadUnreadTracking --> MarkAllRead[Mark All Read<br/>Clear all button]
+    
+    MarkAsRead -->|Click| UpdateStatus[Update Status<br/>Change to read]
+    MarkAllRead -->|Click| ClearAllModal[Clear All Modal<br/>Confirmation dialog]
+    ClearAllModal --> ConfirmClearAll[Confirm Clear All<br/>Mark everything read]
+    ClearAllModal --> CancelClear[Cancel<br/>Keep current status]
+    
+    %% Filter Options
+    NotificationsFeed --> FilterOptions[Filter Options<br/>View controls]
+    FilterOptions --> FilterDropdown[Filter Dropdown<br/>Category selection]
+    
+    FilterDropdown --> AllNotifications[All Notifications<br/>Complete feed]
+    FilterDropdown --> UnreadOnly[Unread Only<br/>New alerts]
+    FilterDropdown --> AppointmentFilter[Appointments<br/>Schedule alerts]
+    FilterDropdown --> RecordsFilter[Patient Records<br/>Medical updates]
+    FilterDropdown --> ConsultationFilter[Consultations<br/>Session alerts]
+    FilterDropdown --> CollaborationFilter[Collaboration<br/>Team mentions]
+    
+    FilterDropdown --> ApplyFilter[Apply Filter<br/>Update view]
+    ApplyFilter -->|Updates| FilteredView[Filtered View<br/>Matching notifications]
+    
+    %% ========================================
+    %% ENHANCED TEAM COLLABORATION PANEL
+    %% ========================================
+    CollaborationPanel --> CollabSections[Collaboration Sections<br/>Communication types]
+    CollaborationPanel --> NewDiscussionBtn[🆕 New Discussion Button<br/>Start a new thread]
+    CollaborationPanel --> AppointmentNotesIcon[📝 Appointment Notes Icon<br/>Quick session access]
+    CollaborationPanel --> DoctorDiscussionIcon[👥 Doctor Discussions Icon<br/>Private forum access]
+    
+    CollabSections --> RecordComments[Medical Record Comments<br/>Patient discussions]
+    CollabSections --> AppointmentComments[Appointment Comments<br/>Session notes]
+    CollabSections --> DoctorDiscussions[Doctor-Only Discussions<br/>Private threads]
+    
+    %% --- NEW DISCUSSION BUTTON FLOW ---
+    NewDiscussionBtn -->|Click| NewDiscussionModal[New Discussion Modal<br/>Full editor interface]
+    NewDiscussionModal --> DiscussionFields[Discussion Fields:]
+    DiscussionFields --> TitleInput[Title Input<br/>Discussion subject]
+    DiscussionFields --> RichTextEditorNew[Rich Text Editor<br/>Full formatting tools]
+    DiscussionFields --> MentionSystemNew[@Mention System<br/>Tag staff members]
+    DiscussionFields --> AttachContextNew[Attach Context<br/>Patient/Appointment link]
+    DiscussionFields --> PrioritySelector[Priority Selector<br/>Normal/Urgent]
+    
+    AttachContextNew --> PatientSelection[Patient Selection<br/>Link to patient]
+    AttachContextNew --> AppointmentLink[Appointment Link<br/>Session reference]
+    AttachContextNew --> RecordSection[Record Section<br/>Specific area]
+    
+    NewDiscussionModal --> DiscussionActions[Discussion Actions:]
+    DiscussionActions --> PostDiscussionBtn[Post Discussion<br/>Publish immediately]
+    DiscussionActions --> SaveDraftBtnNew[Save Draft<br/>Keep unfinished]
+    DiscussionActions --> CancelDiscussionBtn[Cancel<br/>Discard changes]
+    
+    PostDiscussionBtn -->|Click| NewThread[New Thread Created<br/>Appears in collaboration panel]
+    NewThread --> NotifyTagged[Notify Tagged Users<br/>Real-time alerts]
+    NewThread --> CrossPageSync[Cross-page Sync<br/>Patient/Appointment records]
+    NewThread --> UpdateActivityFeed[Update Activity Feed<br/>Show in notifications]
+    
+    SaveDraftBtnNew -->|Click| DraftSaved[Draft Saved<br/>Can resume later]
+    DraftSaved --> DraftsList[Drafts List<br/>Unpublished discussions]
+    
+    %% --- APPOINTMENT NOTES ICON FLOW ---
+    AppointmentNotesIcon -->|Click| AppointmentNotesModal[Appointment Notes Modal<br/>Context-bound notes interface]
+    AppointmentNotesModal --> NotesView[Notes View Options:]
+    NotesView --> TodayAppointmentNotes[Today's Appointments<br/>Current schedule notes]
+    NotesView --> RecentAppointmentNotes[Recent Appointments<br/>Past 7 days notes]
+    NotesView --> SearchAppointmentNotes[Search Appointments<br/>Find specific session]
+    
+    AppointmentNotesModal --> NotesList[Notes List<br/>Chronological entries]
+    NotesList --> ExistingNotes[Existing Notes<br/>Previous entries]
+    ExistingNotes --> PreConsultNotes[Pre-Consultation Notes<br/>Preparation notes]
+    ExistingNotes --> DuringConsultNotes[During Consultation<br/>Live session notes]
+    ExistingNotes --> PostConsultNotes[Post-Consultation<br/>Summary notes]
+    
+    AppointmentNotesModal --> AddNoteField[Add Note Field<br/>Rich text + files]
+    AddNoteField --> NoteEditor[Note Editor Interface:]
+    NoteEditor --> NoteTypeSelect[Note Type Selection<br/>Pre/During/Post]
+    NoteEditor --> RichTextNotes[Rich Text Editor<br/>Formatted notes]
+    NoteEditor --> AttachFiles[Attach Files<br/>Supporting documents]
+    NoteEditor --> MentionDoctors[@Mention Doctors<br/>Targeted notifications]
+    
+    AppointmentNotesModal --> NoteActions[Note Actions:]
+    NoteActions --> SaveNoteBtn[Save Note<br/>Add to record]
+    NoteActions --> EditNoteBtn[Edit Note<br/>Modify own note]
+    NoteActions --> DeleteNoteBtn[Delete Note<br/>Remove own note]
+    NoteActions --> ReplyNoteBtn[Reply to Note<br/>Threaded comment]
+    
+    SaveNoteBtn -->|Click| AppointmentNoteAdded[Appointment Note Added<br/>Updates feed + record]
+    AppointmentNoteAdded --> RecordSync[Patient Record Sync<br/>Linked entry]
+    AppointmentNoteAdded --> AuditTrailUpdate[Audit Trail Update<br/>Track authorship]
+    AppointmentNoteAdded --> NotifyMentionedDocs[Notify Mentioned Doctors<br/>Send alerts]
+    
+    ReplyNoteBtn -->|Click| ReplyInterface[Reply Interface<br/>Inline response]
+    ReplyInterface --> QuickReplyNote[Quick Reply<br/>Simple text]
+    ReplyInterface --> DetailedReplyNote[Detailed Reply<br/>Full editor]
+    
+    %% --- DOCTOR DISCUSSIONS ICON FLOW ---
+    DoctorDiscussionIcon -->|Click| PrivateThreadsList[Private Threads List<br/>Doctor-only discussions]
+    PrivateThreadsList --> ThreadCategories[Thread Categories:]
+    ThreadCategories --> ActiveThreads[Active Threads<br/>Ongoing discussions]
+    ThreadCategories --> MyThreads[My Threads<br/>Started by me]
+    ThreadCategories --> MentionedThreads[Mentioned Threads<br/>Where I'm tagged]
+    ThreadCategories --> ArchivedThreads[Archived Threads<br/>Closed discussions]
+    
+    PrivateThreadsList --> ViewThread[View Thread<br/>Open conversation]
+    ViewThread --> DoctorThreadUI[Doctor Thread UI<br/>Full discussion interface]
+    DoctorThreadUI --> ThreadHeader[Thread Header<br/>Title/Participants/Status]
+    DoctorThreadUI --> ThreadMessages[Thread Messages<br/>Chronological posts]
+    DoctorThreadUI --> ThreadReplies[Threaded Replies<br/>Nested conversations]
+    DoctorThreadUI --> ThreadAttachments[Attachments<br/>Shared files]
+    
+    PrivateThreadsList --> CreatePrivateThreadBtn[Create Private Thread<br/>New confidential discussion]
+    CreatePrivateThreadBtn -->|Click| PrivateThreadModal[Private Thread Modal<br/>Setup interface]
+    PrivateThreadModal --> ThreadSetup[Thread Setup:]
+    ThreadSetup --> ThreadTitle[Thread Title<br/>Topic input]
+    ThreadSetup --> SelectParticipants[Select Participants<br/>Doctors only]
+    ThreadSetup --> OptionalPatientLink[Optional Patient Link<br/>Attach to case]
+    ThreadSetup --> ConfidentialToggle[Confidential Toggle<br/>Restrict visibility]
+    ThreadSetup --> ThreadCategory[Thread Category<br/>Clinical/Admin/Educational]
+    
+    PrivateThreadModal --> ThreadActions[Thread Actions:]
+    ThreadActions --> CreateThreadBtn[Create Thread<br/>Start private discussion]
+    ThreadActions --> CancelThreadBtn[Cancel<br/>Abort setup]
+    
+    CreateThreadBtn -->|Click| NewPrivateThread[New Private Thread Created<br/>Doctor-only space]
+    NewPrivateThread --> NotifyDoctors[Notify Selected Doctors<br/>Direct alerts]
+    NewPrivateThread --> ConfidentialLog[Confidential Audit Log<br/>Restricted visibility]
+    NewPrivateThread --> AddToPrivateList[Add to Private List<br/>Update threads view]
+    
+    %% EXISTING RECORD COMMENTS (Enhanced)
+    RecordComments --> CommentInterface[Comment Interface<br/>Discussion tools]
+    CommentInterface --> AddCommentBtn[Add Comment Button<br/>New discussion]
+    
+    AddCommentBtn -->|Click| CommentModal[Comment Modal<br/>Full editor]
+    CommentModal --> CommentEditor[Comment Editor:]
+    CommentEditor --> RichTextEditor[Rich Text Editor<br/>Formatting tools]
+    CommentEditor --> MentionSystem[@Mention System<br/>Tag colleagues]
+    CommentEditor --> AttachContext[Attach Context<br/>Link to record section]
+    CommentEditor --> PriorityLevel[Priority Level<br/>Normal/Urgent]
+    
+    MentionSystem --> MentionDropdown[Mention Dropdown<br/>User search]
+    MentionDropdown --> DoctorSearch[Doctor Search<br/>Type to find]
+    MentionDropdown --> ClinicOwnerOption[Clinic Owner<br/>Admin mention]
+    MentionDropdown --> SelectMention[Select User<br/>Add @tag]
+    
+    SelectMention -->|Triggers| MentionNotification[Mention Notification<br/>Alert tagged user]
+    
+    CommentModal --> CommentActions[Comment Actions:]
+    CommentActions --> PostCommentBtn[Post Comment<br/>Submit discussion]
+    CommentActions --> SaveDraftBtn[Save Draft<br/>Continue later]
+    CommentActions --> CancelCommentBtn[Cancel<br/>Discard changes]
+    
+    PostCommentBtn -->|Click| PublishComment[Publish Comment<br/>Add to thread]
+    PublishComment --> UpdateThread[Update Thread<br/>Show new comment]
+    PublishComment --> NotifyMentioned[Notify Mentioned<br/>Send alerts]
+    
+    RecordComments --> CommentThread[Comment Thread<br/>Discussion view]
+    CommentThread --> ThreadedView[Threaded View<br/>Conversation structure]
+    ThreadedView --> ParentComment[Parent Comment<br/>Original post]
+    ThreadedView --> ChildReplies[Child Replies<br/>Nested responses]
+    
+    ParentComment --> CommentDetails[Comment Details:]
+    CommentDetails --> AuthorInfo[Author Info<br/>Name/Photo/Role]
+    CommentDetails --> CommentText[Comment Text<br/>Formatted content]
+    CommentDetails --> CommentTime[Timestamp<br/>When posted]
+    CommentDetails --> CommentActions2[Actions<br/>Reply/Edit/Delete]
+    
+    CommentActions2 --> ReplyBtn[Reply Button<br/>Add response]
+    CommentActions2 --> EditBtn[Edit Button<br/>Modify comment]
+    CommentActions2 --> DeleteBtn[Delete Button<br/>Remove comment]
+    
+    ReplyBtn -->|Click| ReplyEditor[Reply Editor<br/>Inline response]
+    ReplyEditor --> QuickReply[Quick Reply<br/>Simple text]
+    ReplyEditor --> DetailedReply[Detailed Reply<br/>Full editor]
+    
+    %% EXISTING APPOINTMENT COMMENTS (Enhanced)
+    AppointmentComments --> AppointmentCommentInterface[Appointment Comment Interface]
+    AppointmentCommentInterface --> ViewAppointmentComments[View Comments<br/>Session discussions]
+    AppointmentCommentInterface --> AddAppointmentComment[Add Comment<br/>New note]
+    
+    %% EXISTING DOCTOR DISCUSSIONS (Enhanced)
+    DoctorDiscussions --> PrivateThreads[Private Threads<br/>Confidential discussions]
+    PrivateThreads --> ExistingThreads[Existing Threads<br/>Active discussions]
+    PrivateThreads --> CreateNewThread[Create New Thread<br/>Start discussion]
+    
+    %% Time-stamped Entries
+    CollaborationPanel --> TimestampedEntries[Time-stamped Entries<br/>Chronological tracking]
+    TimestampedEntries --> EntryLog[Entry Log<br/>All activities]
+    EntryLog --> DecisionTracking[Decision Tracking<br/>Clinical choices]
+    EntryLog --> InputHistory[Input History<br/>Who said what when]
+    EntryLog --> DiscussionHistory[Discussion History<br/>Thread activity]
+    
+    %% Notification Preferences
+    NotificationPrefs --> PrefsButton[Preferences Button<br/>Settings access]
+    PrefsButton -->|Click| PrefsModal[Preferences Modal<br/>Configuration interface]
+    
+    PrefsModal --> AlertTypeToggles[Alert Type Toggles<br/>Channel selection]
+    AlertTypeToggles --> EmailToggle[Email Notifications<br/>On/Off]
+    AlertTypeToggles --> InAppToggle[In-App Notifications<br/>On/Off]
+    AlertTypeToggles --> PushToggle[Push Notifications<br/>On/Off if supported]
+    AlertTypeToggles --> SMSToggle[SMS Alerts<br/>Critical only]
+    
+    PrefsModal --> SensitivitySettings[Sensitivity Settings<br/>Alert scope]
+    SensitivitySettings --> AssignedOnly[Assigned Patients Only<br/>My patients]
+    SensitivitySettings --> AllPatients[All Patient Changes<br/>Clinic-wide]
+    SensitivitySettings --> TeamMentions[Team Mentions<br/>When tagged]
+    SensitivitySettings --> SystemAlerts[System Alerts<br/>Platform updates]
+    SensitivitySettings --> DiscussionAlerts[Discussion Alerts<br/>Thread activity]
+    
+    PrefsModal --> WorkingHours[Working Hours<br/>Schedule settings]
+    WorkingHours --> ActiveHours[Active Hours<br/>When to receive]
+    WorkingHours --> MuteSchedule[Mute Schedule<br/>Off-hours silence]
+    WorkingHours --> WeekendSettings[Weekend Settings<br/>Different rules]
+    WorkingHours --> EmergencyOverride[Emergency Override<br/>Critical alerts always]
+    
+    PrefsModal --> SavePrefsBtn[Save Preferences<br/>Apply changes]
+    SavePrefsBtn -->|Click| UpdatePreferences[Update Preferences<br/>Apply settings]
+    
+    %% Quick Actions (Enhanced)
+    QuickActions --> ActionLinks[Direct Action Links<br/>From notifications]
+    ActionLinks --> NotificationActions[Notification Actions<br/>Context-specific]
+    
+    NotificationActions --> JoinNowBtn[Join Now Button<br/>Consultation start]
+    NotificationActions --> OpenFileBtn[Open Patient File<br/>Record access]
+    NotificationActions --> ViewLabBtn[View Lab Results<br/>Document viewer]
+    NotificationActions --> ReplyCommentBtn[Reply to Comment<br/>Quick response]
+    NotificationActions --> JoinDiscussionBtn[Join Discussion<br/>Thread participation]
+    NotificationActions --> ViewAppointmentNotesBtn[View Appointment Notes<br/>Session notes]
+    
+    JoinNowBtn -->|Click| QuickJoinConsult[Quick Join Consultation<br/>Immediate access]
+    QuickJoinConsult --> ConsultationsPage
+    
+    OpenFileBtn -->|Click| QuickOpenRecord[Quick Open Record<br/>Direct navigation]
+    QuickOpenRecord --> PatientRecordsPage
+    
+    ViewLabBtn -->|Click| LabViewerModal[Lab Viewer Modal<br/>Document display]
+    LabViewerModal --> PDFViewer[PDF Viewer<br/>Full screen view]
+    LabViewerModal --> DownloadOption[Download Option<br/>Save locally]
+    LabViewerModal --> PrintOption[Print Option<br/>Physical copy]
+    
+    JoinDiscussionBtn -->|Click| QuickJoinThread[Quick Join Thread<br/>Direct to discussion]
+    QuickJoinThread --> DoctorThreadUI
+    
+    ViewAppointmentNotesBtn -->|Click| QuickViewNotes[Quick View Notes<br/>Session notes modal]
+    QuickViewNotes --> AppointmentNotesModal
+    
+    %% Status Indicators
+    QuickActions --> StatusIndicators[Status Indicators<br/>Action requirements]
+    StatusIndicators --> AwaitingNotes[Awaiting Notes<br/>Documentation needed]
+    StatusIndicators --> PendingReview[Pending Review<br/>Check required]
+    StatusIndicators --> UrgentAction[Urgent Action<br/>Immediate attention]
+    StatusIndicators --> NewDiscussions[New Discussions<br/>Unread threads]
+    
+    %% Audit Trail & Mentions Log (Enhanced)
+    AuditTrail --> MentionsLog[Mentions Log<br/>Tag history]
+    MentionsLog --> MentionsList[Mentions List<br/>Where tagged]
+    MentionsList --> MentionEntry[Each Mention Shows:]
+    MentionEntry --> MentionContext[Context<br/>Where mentioned]
+    MentionEntry --> MentionedBy[Mentioned By<br/>Who tagged]
+    MentionEntry --> MentionDate[Date<br/>When tagged]
+    MentionEntry --> GoToMention[Go to Mention<br/>View context]
+    
+    GoToMention -->|Click| NavigateToMention[Navigate to Context<br/>Original location]
+    
+    AuditTrail --> DiscussionAssignments[Discussion Assignments<br/>Shared cases]
+    DiscussionAssignments --> AssignedCases[Assigned Cases<br/>Active discussions]
+    AssignedCases --> CaseDetails[Case Details<br/>Patient/Topic/Status]
+    AssignedCases --> ParticipantList[Participants<br/>Who's involved]
+    AssignedCases --> LastActivity[Last Activity<br/>Recent updates]
+    
+    AuditTrail --> AccountabilityRecords[Accountability Records<br/>Team interactions]
+    AccountabilityRecords --> InteractionLog[Interaction Log<br/>Communication history]
+    InteractionLog --> ViewFullLog[View Full Log<br/>Complete history]
+    InteractionLog --> DiscussionLog[Discussion Log<br/>Thread participation]
+    
+    %% Cross-Page Synchronization (Enhanced)
+    AlertsCollabPage -.->|New Notifications| DashboardPreview[Dashboard Preview<br/>Top 5 alerts]
+    AlertsCollabPage -.->|Comment Added| RecordCommentSync[Record Comment Sync<br/>Update patient file]
+    AlertsCollabPage -.->|Appointment Comment| AppointmentSync[Appointment Sync<br/>Update schedule]
+    AlertsCollabPage -.->|Consultation Alert| ConsultationSync[Consultation Sync<br/>Session updates]
+    AlertsCollabPage -.->|Discussion Created| TeamNotificationSync[Team Notification Sync<br/>Alert participants]
+    AlertsCollabPage -.->|Note Added| PatientTimelineSync[Patient Timeline Sync<br/>Update history]
+    
+    %% Navigation Options
+    AlertsCollabPage --> NavigationMenu[Navigation Menu]
+    NavigationMenu --> BackToDashboard[Back to Dashboard<br/>Home link]
+    NavigationMenu --> ToPatientRecords[To Patient Records<br/>Medical files]
+    NavigationMenu --> ToAppointments[To Appointments<br/>Schedule]
+    NavigationMenu --> ToConsultations[To Consultations<br/>Sessions]
+    NavigationMenu --> ToPrescriptions[To Prescriptions<br/>Medications]
+    
+    %% Real-time Updates (Enhanced)
+    AlertsCollabPage --> RealtimeEngine[Real-time Engine<br/>Live updates]
+    RealtimeEngine --> WebSocketConnection[WebSocket Connection<br/>Persistent link]
+    RealtimeEngine --> PollingFallback[Polling Fallback<br/>If WebSocket fails]
+    RealtimeEngine --> NotificationQueue[Notification Queue<br/>Message buffer]
+    RealtimeEngine --> DiscussionUpdates[Discussion Updates<br/>Thread activity stream]
+    
+    %% Notification Badge System (Enhanced)
+    AlertsCollabPage --> BadgeSystem[Badge System<br/>Visual indicators]
+    BadgeSystem --> UnreadBadge[Unread Badge<br/>Count display]
+    BadgeSystem --> UrgentBadge[Urgent Badge<br/>Red alert]
+    BadgeSystem --> MentionBadge[Mention Badge<br/>@ indicator]
+    BadgeSystem --> DiscussionBadge[Discussion Badge<br/>New thread activity]
+    
+    %% Search Functionality (Enhanced)
+    AlertsCollabPage --> SearchBar[Search Bar<br/>Find notifications/discussions]
+    SearchBar --> SearchFilters[Search Filters:]
+    SearchFilters --> KeywordSearch[Keyword Search<br/>Text matching]
+    SearchFilters --> DateSearch[Date Search<br/>Time range]
+    SearchFilters --> TypeSearch[Type Search<br/>Category filter]
+    SearchFilters --> UserSearch[User Search<br/>By sender]
+    SearchFilters --> DiscussionSearch[Discussion Search<br/>Thread content]
+    
+    %% Export Options
+    AlertsCollabPage --> ExportOptions[Export Options<br/>Data download]
+    ExportOptions --> ExportNotifications[Export Notifications<br/>CSV/PDF]
+    ExportOptions --> ExportComments[Export Comments<br/>Discussion archive]
+    ExportOptions --> ExportAudit[Export Audit Trail<br/>Activity log]
+    ExportOptions --> ExportDiscussions[Export Discussions<br/>Thread archive]
+    
+    %% Styling
+    classDef pageStyle fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef modalStyle fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef actionStyle fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    classDef alertStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef syncStyle fill:#fce4ec,stroke:#880e4f,stroke-width:2px,stroke-dasharray: 5 5
+    classDef collaborationStyle fill:#e8eaf6,stroke:#283593,stroke-width:2px
+    classDef keyFeatureStyle fill:#ffeb3b,stroke:#f57c00,stroke-width:4px
+    
+    class AlertsCollabPage,Dashboard,PatientRecordsPage,AppointmentsPage,ConsultationsPage,PrescriptionsPage pageStyle
+    class CommentModal,PrefsModal,ClearAllModal,PrivateThreadModal,LabViewerModal,NewDiscussionModal,AppointmentNotesModal modalStyle
+    class AddCommentBtn,PostCommentBtn,JoinNowBtn,OpenFileBtn,SavePrefsBtn,CreateThreadBtn,PostDiscussionBtn,SaveNoteBtn,EditNoteBtn,DeleteNoteBtn,ReplyNoteBtn actionStyle
+    class TimeSensitive,UrgencyBadge,UrgentAction,NewAssignment,UpcomingConsult alertStyle
+    class DashboardPreview,RecordCommentSync,AppointmentSync,ConsultationSync,TeamNotificationSync,PatientTimelineSync syncStyle
+    class CollaborationPanel,RecordComments,DoctorDiscussions,CommentThread,AppointmentComments collaborationStyle
+    class NewDiscussionBtn,AppointmentNotesIcon,DoctorDiscussionIcon keyFeatureStyle

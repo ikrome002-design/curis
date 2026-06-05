@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Curis by Citrus - Patient Dashboard for managing appointments, health records, and billing">
+    <title>Dashboard | Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.css">
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Appointments\my_appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>My Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Health Care\my_health_care.html"
+                            class="nav-link">
+                            <i class="fas fa-heart-pulse"></i>
+                            <span>My Health Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Emergency Care\emergency_care.html"
+                            class="nav-link">
+                            <i class="fas fa-ambulance"></i>
+                            <span>Emergency Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Medical Cover\my_medical_cover.html"
+                            class="nav-link">
+                            <i class="fas fa-shield-heart"></i>
+                            <span>My Medical Cover</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Messaging\messaging.html"
+                            class="nav-link">
+                            <i class="fas fa-comments"></i>
+                            <span>Messaging</span>
+                            <span class="badge">3</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Dashboard</h1>
+                </div>
+
+                <div class="header-right">
+                    <!-- Notifications Icon -->
+                    <div class="notification-icon">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Notifications\notifications.html"
+                            class="icon-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">5</span>
+                        </a>
+                    </div>
+
+                    <!-- User Profile Icon with Dropdown -->
+                    <div class="user-profile-dropdown">
+                        <button class="profile-btn" id="profileBtn">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                                alt="User Profile" class="profile-img">
+                        </button>
+
+                        <!-- Profile Dropdown Menu -->
+                        <div class="profile-menu" id="profileMenu">
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Profile\my_profile.html"
+                                class="profile-menu-item">
+                                <i class="fas fa-user"></i>
+                                <span>My Profile</span>
+                            </a>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\landing_page.html"
+                                class="profile-menu-item logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Notifications Banner -->
+            <div class="notifications-banner" id="notificationsBanner">
+                <div class="notification-item urgent">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>You have an upcoming appointment with Dr. Wanjiru tomorrow at 10:00 AM</p>
+                    <button class="close-notification" aria-label="Close notification">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <section class="dashboard-content">
+
+                <!-- Personalized Greeting Section -->
+                <div class="greeting-section">
+                    <h2 class="greeting-text" id="greetingText">Good Morning, John!</h2>
+                    <p class="greeting-subtext">Welcome back to your health dashboard</p>
+                </div>
+
+                <!-- Family User Switcher -->
+                <div class="family-switcher">
+                    <div class="current-profile">
+                        <span class="label">Viewing profile for:</span>
+                        <button class="profile-selector" id="profileSelector">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                alt="Current Profile" class="profile-avatar">
+                            <span class="profile-name">John Kamau (Self)</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation Cards -->
+                <div class="quick-nav-grid">
+                    <div class="quick-nav-card">
+                        <div class="card-icon teal">
+                            <i class="fas fa-calendar-plus"></i>
+                        </div>
+                        <h3 class="card-title">Book Appointment</h3>
+                        <p class="card-description">Schedule a visit with your healthcare provider</p>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Appointments\my_appointments.html"
+                            class="card-link">
+                            <span>Book Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="quick-nav-card">
+                        <div class="card-icon navy">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <h3 class="card-title">Medical Records</h3>
+                        <p class="card-description">Access your health history and documents</p>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Health Care\my_health_care.html"
+                            class="card-link">
+                            <span>View Records</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="quick-nav-card">
+                        <div class="card-icon orange">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3 class="card-title">Payments</h3>
+                        <p class="card-description">Manage your bills and payment history</p>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Billings and Payments\billings_and_payments.html"
+                            class="card-link">
+                            <span>View Payments</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="quick-nav-card">
+                        <div class="card-icon teal">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="card-title">Messages</h3>
+                        <p class="card-description">Communicate with your healthcare team</p>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Messaging\messaging.html"
+                            class="card-link">
+                            <span>Open Messages</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Main Dashboard Grid -->
+                <div class="dashboard-grid">
+
+                    <!-- Live Appointments Widget -->
+                    <div class="dashboard-widget appointments-widget">
+                        <div class="widget-header">
+                            <h3 class="widget-title">
+                                <i class="fas fa-calendar-alt"></i>
+                                Upcoming Appointments
+                            </h3>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Appointments\my_appointments.html"
+                                class="view-all-link">View All</a>
+                        </div>
+                        <div class="widget-content">
+                            <!-- Appointment Card 1 -->
+                            <div class="appointment-card">
+                                <div class="appointment-date">
+                                    <span class="date">15</span>
+                                    <span class="month">Oct</span>
+                                </div>
+                                <div class="appointment-details">
+                                    <h4 class="appointment-title">General Consultation</h4>
+                                    <p class="appointment-doctor">
+                                        <i class="fas fa-user-doctor"></i>
+                                        Dr. Sarah Wanjiru
+                                    </p>
+                                    <p class="appointment-clinic">
+                                        <i class="fas fa-hospital"></i>
+                                        Nairobi Health Center
+                                    </p>
+                                    <p class="appointment-time">
+                                        <i class="fas fa-clock"></i>
+                                        10:00 AM - 10:30 AM
+                                    </p>
+                                    <div class="appointment-tags">
+                                        <span class="tag in-person">In-Person</span>
+                                        <span class="tag patient-self">Self</span>
+                                    </div>
+                                </div>
+                                <div class="appointment-actions">
+                                    <button class="action-btn reschedule" data-appointment-id="1">
+                                        <i class="fas fa-calendar"></i>
+                                        Reschedule
+                                    </button>
+                                    <button class="action-btn cancel" data-appointment-id="1">
+                                        <i class="fas fa-times"></i>
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Appointment Card 2 -->
+                            <div class="appointment-card">
+                                <div class="appointment-date">
+                                    <span class="date">18</span>
+                                    <span class="month">Oct</span>
+                                </div>
+                                <div class="appointment-details">
+                                    <h4 class="appointment-title">Follow-up Consultation</h4>
+                                    <p class="appointment-doctor">
+                                        <i class="fas fa-user-doctor"></i>
+                                        Dr. James Omondi
+                                    </p>
+                                    <p class="appointment-clinic">
+                                        <i class="fas fa-hospital"></i>
+                                        Westlands Medical Clinic
+                                    </p>
+                                    <p class="appointment-time">
+                                        <i class="fas fa-clock"></i>
+                                        2:00 PM - 2:30 PM
+                                    </p>
+                                    <div class="appointment-tags">
+                                        <span class="tag virtual">Virtual</span>
+                                        <span class="tag patient-dependent">Mary Kamau (Daughter)</span>
+                                    </div>
+                                </div>
+                                <div class="appointment-actions">
+                                    <button class="action-btn reschedule" data-appointment-id="2">
+                                        <i class="fas fa-calendar"></i>
+                                        Reschedule
+                                    </button>
+                                    <button class="action-btn cancel" data-appointment-id="2">
+                                        <i class="fas fa-times"></i>
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Empty State (Hidden by default) -->
+                            <div class="empty-state" style="display: none;">
+                                <i class="fas fa-calendar-times"></i>
+                                <p>No upcoming appointments</p>
+                                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Appointments\my_appointments.html"
+                                    class="btn-primary">Book Appointment</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prescription Update Card -->
+                    <div class="dashboard-widget prescriptions-widget">
+                        <div class="widget-header">
+                            <h3 class="widget-title">
+                                <i class="fas fa-pills"></i>
+                                Recent Prescriptions
+                            </h3>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Health Care\my_health_care.html"
+                                class="view-all-link">View All</a>
+                        </div>
+                        <div class="widget-content">
+                            <!-- Prescription Card -->
+                            <div class="prescription-card">
+                                <div class="prescription-header">
+                                    <span class="new-badge">New</span>
+                                    <span class="prescription-date">
+                                        <i class="fas fa-calendar"></i>
+                                        October 1, 2025
+                                    </span>
+                                </div>
+                                <h4 class="prescription-title">Amoxicillin 500mg</h4>
+                                <p class="prescription-doctor">
+                                    <i class="fas fa-user-md"></i>
+                                    Prescribed by Dr. Sarah Wanjiru
+                                </p>
+                                <p class="prescription-instructions">Take 1 capsule three times daily after meals</p>
+                                <div class="prescription-actions">
+                                    <button class="btn-secondary view-details">
+                                        <i class="fas fa-eye"></i>
+                                        View Details
+                                    </button>
+                                    <button class="btn-primary refill-request">
+                                        <i class="fas fa-rotate"></i>
+                                        Request Refill
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="prescription-card">
+                                <div class="prescription-header">
+                                    <span class="prescription-date">
+                                        <i class="fas fa-calendar"></i>
+                                        September 28, 2025
+                                    </span>
+                                </div>
+                                <h4 class="prescription-title">Paracetamol 500mg</h4>
+                                <p class="prescription-doctor">
+                                    <i class="fas fa-user-md"></i>
+                                    Prescribed by Dr. James Omondi
+                                </p>
+                                <p class="prescription-instructions">Take 2 tablets every 6 hours as needed for pain</p>
+                                <div class="prescription-actions">
+                                    <button class="btn-secondary view-details">
+                                        <i class="fas fa-eye"></i>
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Invoice Alert Panel -->
+                    <div class="dashboard-widget invoices-widget">
+                        <div class="widget-header">
+                            <h3 class="widget-title">
+                                <i class="fas fa-receipt"></i>
+                                Outstanding Invoices
+                            </h3>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Billings and Payments\billings_and_payments.html"
+                                class="view-all-link">View All</a>
+                        </div>
+                        <div class="widget-content">
+                            <!-- Invoice Card 1 -->
+                            <div class="invoice-card">
+                                <div class="invoice-header">
+                                    <div class="invoice-info">
+                                        <h4 class="invoice-patient">John Kamau (Self)</h4>
+                                        <p class="invoice-clinic">Nairobi Health Center</p>
+                                    </div>
+                                    <div class="invoice-status overdue">
+                                        <span>Overdue</span>
+                                    </div>
+                                </div>
+                                <div class="invoice-amount">
+                                    <span class="label">Amount Due:</span>
+                                    <span class="amount">KES. 12,500</span>
+                                </div>
+                                <div class="invoice-actions">
+                                    <button class="btn-secondary view-invoice" data-invoice-id="1">
+                                        <i class="fas fa-file-invoice"></i>
+                                        View Invoice
+                                    </button>
+                                    <button class="btn-primary pay-now" data-invoice-id="1">
+                                        <i class="fas fa-credit-card"></i>
+                                        Pay Now
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Invoice Card 2 -->
+                            <div class="invoice-card">
+                                <div class="invoice-header">
+                                    <div class="invoice-info">
+                                        <h4 class="invoice-patient">Mary Kamau (Daughter)</h4>
+                                        <p class="invoice-clinic">Westlands Medical Clinic</p>
+                                    </div>
+                                    <div class="invoice-status due">
+                                        <span>Due</span>
+                                    </div>
+                                </div>
+                                <div class="invoice-amount">
+                                    <span class="label">Amount Due:</span>
+                                    <span class="amount">KES. 8,750</span>
+                                </div>
+                                <div class="invoice-actions">
+                                    <button class="btn-secondary view-invoice" data-invoice-id="2">
+                                        <i class="fas fa-file-invoice"></i>
+                                        View Invoice
+                                    </button>
+                                    <button class="btn-primary pay-now" data-invoice-id="2">
+                                        <i class="fas fa-credit-card"></i>
+                                        Pay Now
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Empty State for No Invoices (Hidden by default) -->
+                            <div class="empty-state" style="display: none;">
+                                <i class="fas fa-check-circle"></i>
+                                <p>All invoices are paid</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <p class="copyright">&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer"
+                    class="corporate-link">citruslabs.co.ke</a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer" aria-label="X">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Family Profile Selector Modal -->
+    <div class="modal" id="familyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Family Member</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="family-list">
+                    <div class="family-member active" data-member-id="self">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="John Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>John Kamau</h4>
+                            <p>Self - 45 years</p>
+                        </div>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="family-member" data-member-id="spouse">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="Jane Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>Jane Kamau</h4>
+                            <p>Spouse - 42 years</p>
+                        </div>
+                    </div>
+                    <div class="family-member" data-member-id="daughter">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="Mary Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>Mary Kamau</h4>
+                            <p>Daughter - 12 years</p>
+                        </div>
+                    </div>
+                    <div class="family-member" data-member-id="son">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="David Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>David Kamau</h4>
+                            <p>Son - 8 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reschedule Appointment Modal -->
+    <div class="modal" id="rescheduleModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Reschedule Appointment</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="appointment-summary">
+                    <p><strong>Current Appointment:</strong> October 15, 2025 at 10:00 AM</p>
+                    <p><strong>Doctor:</strong> Dr. Sarah Wanjiru</p>
+                </div>
+                <div class="reschedule-form">
+                    <div class="form-group">
+                        <label for="newDate">Select New Date</label>
+                        <input type="date" id="newDate" class="form-control" min="2025-10-02">
+                    </div>
+                    <div class="form-group">
+                        <label>Available Time Slots</label>
+                        <div class="time-slots">
+                            <button class="time-slot">9:00 AM</button>
+                            <button class="time-slot">10:00 AM</button>
+                            <button class="time-slot">11:00 AM</button>
+                            <button class="time-slot">2:00 PM</button>
+                            <button class="time-slot">3:00 PM</button>
+                            <button class="time-slot">4:00 PM</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="confirmReschedule">Confirm Reschedule</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cancel Appointment Modal -->
+    <div class="modal" id="cancelModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Cancel Appointment</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to cancel this appointment?</p>
+                <div class="appointment-summary">
+                    <p><strong>Date:</strong> October 15, 2025 at 10:00 AM</p>
+                    <p><strong>Doctor:</strong> Dr. Sarah Wanjiru</p>
+                </div>
+                <p class="warning-text">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Cancellations made less than 24 hours before the appointment may incur a fee.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Keep Appointment</button>
+                <button class="btn-danger" id="confirmCancel">Yes, Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Invoice Details Modal -->
+    <div class="modal" id="invoiceModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Invoice Details</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="invoice-details">
+                    <div class="invoice-meta">
+                        <p><strong>Invoice Number:</strong> INV-2025-001234</p>
+                        <p><strong>Date Issued:</strong> September 30, 2025</p>
+                        <p><strong>Due Date:</strong> October 15, 2025</p>
+                        <p><strong>Patient:</strong> John Kamau</p>
+                        <p><strong>Clinic:</strong> Nairobi Health Center</p>
+                    </div>
+                    <table class="invoice-table">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Quantity</th>
+                                <th>Unit Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>General Consultation</td>
+                                <td>1</td>
+                                <td>KES. 3,000</td>
+                                <td>KES. 3,000</td>
+                            </tr>
+                            <tr>
+                                <td>Blood Test - Complete Blood Count</td>
+                                <td>1</td>
+                                <td>KES. 2,500</td>
+                                <td>KES. 2,500</td>
+                            </tr>
+                            <tr>
+                                <td>Medication - Amoxicillin 500mg</td>
+                                <td>2</td>
+                                <td>KES. 3,500</td>
+                                <td>KES. 7,000</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3"><strong>Total Amount Due</strong></td>
+                                <td><strong>KES. 12,500</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="downloadInvoice">
+                    <i class="fas fa-download"></i>
+                    Download PDF
+                </button>
+                <button class="btn-primary pay-now">
+                    <i class="fas fa-credit-card"></i>
+                    Pay Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Submit Payment Proof</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-summary">
+                    <p><strong>Invoice Number:</strong> INV-2025-001234</p>
+                    <p><strong>Amount Due:</strong> KES. 12,500</p>
+                </div>
+                <form class="payment-form" id="paymentForm">
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method Used</label>
+                        <select id="paymentMethod" class="form-control" required>
+                            <option value="">Select Payment Method</option>
+                            <option value="mpesa">M-Pesa</option>
+                            <option value="bank">Bank Transfer</option>
+                            <option value="card">Credit/Debit Card</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="transactionCode">Transaction Reference Number</label>
+                        <input type="text" id="transactionCode" class="form-control" placeholder="e.g., QGH7X8Y9Z0"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="receiptUpload">Upload Payment Receipt/Screenshot</label>
+                        <input type="file" id="receiptUpload" class="form-control" accept="image/*,.pdf" required>
+                        <small class="form-text">Accepted formats: JPG, PNG, PDF (Max 5MB)</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentNotes">Additional Notes (Optional)</label>
+                        <textarea id="paymentNotes" class="form-control" rows="3"
+                            placeholder="Any additional information about this payment"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="submitPayment">Submit for Review</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- External JavaScript -->
+    <script src="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.js"></script>
+
+</body>
+
+</html>

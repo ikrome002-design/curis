@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights & Performance - Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS and JavaScript Links -->
+    <link rel="stylesheet" href="insights_and_performance.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                class="logo-link">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo_1.png"
+                    alt="Curis by Citrus Logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Primary Navigation Menu -->
+        <div class="main-navigation">
+            <ul class="nav-menu">
+                <!-- Dashboard -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                        class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <!-- Workforce Hub -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Workforce Hub\workforce_hub.html"
+                        class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Workforce Hub</span>
+                    </a>
+                </li>
+
+                <!-- Clinic Services Hub -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Clinic Services Hub\clinic_services_hub.html"
+                        class="nav-link">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>Clinic Services Hub</span>
+                    </a>
+                </li>
+
+                <!-- Appointments -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Appointments\appointments.html"
+                        class="nav-link">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Appointments</span>
+                    </a>
+                </li>
+
+                <!-- Billing & Payments -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Billings and Payments\billings_and_payments.html"
+                        class="nav-link">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Billing & Payments</span>
+                    </a>
+                </li>
+
+                <!-- Messaging -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Messaging\messaging.html"
+                        class="nav-link">
+                        <i class="fas fa-comments"></i>
+                        <span>Messaging</span>
+                    </a>
+                </li>
+
+                <!-- Health Data & Records -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Health Data and Records\health_data_and_records.html"
+                        class="nav-link">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Health Data & Records</span>
+                    </a>
+                </li>
+
+                <!-- Insights & Performance (Active) -->
+                <li class="nav-item active">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Insights and Performance\insights_and_performance.html"
+                        class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Insights & Performance</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header Section -->
+        <header class="top-header">
+            <div class="header-left">
+                <h1>Insights & Performance</h1>
+                <p class="page-subtitle">Analytics Command Center - Comprehensive business intelligence and performance
+                    metrics</p>
+            </div>
+
+            <div class="header-right">
+                <!-- Notifications -->
+                <div class="notification-container">
+                    <button class="notification-btn" id="notificationBtn" title="Notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">5</span>
+                    </button>
+                </div>
+
+                <!-- User Profile -->
+                <div class="user-profile-container">
+                    <!-- Button with dropdown toggle and redirect -->
+                    <button id="userProfileBtn" class="user-profile-btn" aria-label="User profile menu">
+                        <img src="file:///C:/Users/nderu/Documents/Development/Product/Curis/Technical%20Writings/Images/Icons/icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-image">
+                        <span class="profile-name">Dr. Sarah Wanjiku</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+
+                    <!-- User Dropdown menu -->
+                    <div id="userDropdown" class="user-dropdown" style="display: none;">
+                        <a href="file:///C:/Users/nderu/Documents/Development/Product/Curis/Users/Clinic%20Owner/My%20Profile/my_profile.html"
+                            class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="file:///C:/Users/nderu/Documents/Development/Product/Curis/Users/Clinic%20Owner/Settings/settings.html"
+                            class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                        <a href="file:///C:/Users/nderu/Documents/Development/Product/Curis/Users/Clinic%20Owner/Landing%20Page/landing_page.html"
+                            class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Insights & Performance Dashboard -->
+        <div class="dashboard-container">
+            <!-- Financial Performance Reports Section -->
+            <section class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-chart-line"></i>
+                        Financial Performance Reports
+                    </h3>
+                    <button class="btn-primary" id="downloadReportsBtn">
+                        <i class="fas fa-download"></i>
+                        Download Reports
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <!-- Financial Metrics Grid -->
+                    <div class="financial-metrics">
+                        <div class="metric-card" id="incomeOverviewCard">
+                            <div class="metric-icon income">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h4>Total Income Overview</h4>
+                                <div class="metric-value">KES. 2,450,000</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>12.5% vs last month</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="metric-card" id="serviceChargeCard">
+                            <div class="metric-icon deduction">
+                                <i class="fas fa-minus-circle"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h4>Service Charge Deductions</h4>
+                                <div class="metric-value">KES. 122,500</div>
+                                <div class="metric-change neutral">
+                                    <i class="fas fa-equals"></i>
+                                    <span>5% platform fee</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="metric-card" id="outstandingCard">
+                            <div class="metric-icon outstanding">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h4>Outstanding Balances</h4>
+                                <div class="metric-value">KES. 185,750</div>
+                                <div class="metric-change negative">
+                                    <i class="fas fa-arrow-down"></i>
+                                    <span>23 unpaid invoices</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="metric-card" id="revenueByServiceCard">
+                            <div class="metric-icon service-revenue">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h4>Revenue by Service Type</h4>
+                                <div class="metric-value">8 Categories</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-star"></i>
+                                    <span>Consultations leading</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Revenue Breakdown -->
+                    <div class="service-breakdown">
+                        <h4>Top Revenue Generating Services</h4>
+                        <div class="service-list">
+                            <div class="service-item">
+                                <span class="service-name">General Consultation</span>
+                                <div class="service-metrics">
+                                    <span class="service-revenue">KES. 890,000</span>
+                                    <span class="service-percentage">36.3%</span>
+                                </div>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-name">Laboratory Tests</span>
+                                <div class="service-metrics">
+                                    <span class="service-revenue">KES. 578,000</span>
+                                    <span class="service-percentage">23.6%</span>
+                                </div>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-name">Specialist Consultation</span>
+                                <div class="service-metrics">
+                                    <span class="service-revenue">KES. 465,000</span>
+                                    <span class="service-percentage">19.0%</span>
+                                </div>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-name">Minor Procedures</span>
+                                <div class="service-metrics">
+                                    <span class="service-revenue">KES. 320,000</span>
+                                    <span class="service-percentage">13.1%</span>
+                                </div>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-name">Immunizations</span>
+                                <div class="service-metrics">
+                                    <span class="service-revenue">KES. 197,000</span>
+                                    <span class="service-percentage">8.0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appointment Analytics Section -->
+            <section class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-calendar-alt"></i>
+                        Appointment Analytics
+                    </h3>
+                    <div class="analytics-controls">
+                        <select id="analyticsTimeframe" class="timeframe-selector">
+                            <option value="daily">Daily</option>
+                            <option value="weekly" selected>Weekly</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <!-- Appointment Metrics -->
+                    <div class="appointment-analytics">
+                        <div class="analytics-card" id="bookingTrendsCard">
+                            <div class="analytics-header">
+                                <h4>Booking Trends Analysis</h4>
+                                <span class="trend-indicator positive">
+                                    <i class="fas fa-trending-up"></i>
+                                    +18.2%
+                                </span>
+                            </div>
+                            <div class="analytics-content">
+                                <div class="trend-chart">
+                                    <div class="chart-placeholder">
+                                        <canvas id="bookingTrendsChart"></canvas>
+                                    </div>
+                                </div>
+                                <div class="peak-times">
+                                    <h5>Peak Booking Times</h5>
+                                    <div class="time-slots">
+                                        <span class="time-slot high">9:00 AM - 11:00 AM</span>
+                                        <span class="time-slot medium">2:00 PM - 4:00 PM</span>
+                                        <span class="time-slot low">4:00 PM - 6:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-card" id="cancellationMetricsCard">
+                            <div class="analytics-header">
+                                <h4>Cancellation & Reschedule Metrics</h4>
+                                <span class="metrics-summary">
+                                    <span class="cancellation-rate">8.3% cancel rate</span>
+                                </span>
+                            </div>
+                            <div class="analytics-content">
+                                <div class="cancellation-breakdown">
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">Cancelled</span>
+                                        <div class="breakdown-bar">
+                                            <div class="bar-fill cancellation" style="width: 8.3%"></div>
+                                        </div>
+                                        <span class="breakdown-value">67</span>
+                                    </div>
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">Rescheduled</span>
+                                        <div class="breakdown-bar">
+                                            <div class="bar-fill reschedule" style="width: 12.1%"></div>
+                                        </div>
+                                        <span class="breakdown-value">98</span>
+                                    </div>
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">Completed</span>
+                                        <div class="breakdown-bar">
+                                            <div class="bar-fill completed" style="width: 79.6%"></div>
+                                        </div>
+                                        <span class="breakdown-value">645</span>
+                                    </div>
+                                </div>
+
+                                <div class="cancellation-reasons">
+                                    <h5>Top Cancellation Reasons</h5>
+                                    <div class="reason-list">
+                                        <div class="reason-item">
+                                            <span class="reason">Personal Emergency</span>
+                                            <span class="reason-count">23</span>
+                                        </div>
+                                        <div class="reason-item">
+                                            <span class="reason">Schedule Conflict</span>
+                                            <span class="reason-count">18</span>
+                                        </div>
+                                        <div class="reason-item">
+                                            <span class="reason">Feeling Better</span>
+                                            <span class="reason-count">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-card" id="noShowAnalysisCard">
+                            <div class="analytics-header">
+                                <h4>No-Show Analysis</h4>
+                                <span class="no-show-rate alert">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    5.7% no-show rate
+                                </span>
+                            </div>
+                            <div class="analytics-content">
+                                <div class="no-show-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Total No-Shows</span>
+                                        <span class="metric-value">46</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Revenue Impact</span>
+                                        <span class="metric-value">KES. 138,000</span>
+                                    </div>
+                                </div>
+
+                                <div class="repeat-offenders">
+                                    <h5>Frequent No-Shows</h5>
+                                    <div class="offender-list">
+                                        <div class="offender-item">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                                alt="Patient" class="patient-avatar">
+                                            <div class="offender-info">
+                                                <span class="patient-name">John Doe</span>
+                                                <span class="no-show-count">4 no-shows</span>
+                                            </div>
+                                        </div>
+                                        <div class="offender-item">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                                alt="Patient" class="patient-avatar">
+                                            <div class="offender-info">
+                                                <span class="patient-name">Jane Smith</span>
+                                                <span class="no-show-count">3 no-shows</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-card" id="utilizationRateCard">
+                            <div class="analytics-header">
+                                <h4>Utilization Rate Tracking</h4>
+                                <span class="utilization-score excellent">
+                                    <i class="fas fa-check-circle"></i>
+                                    82.4% efficiency
+                                </span>
+                            </div>
+                            <div class="analytics-content">
+                                <div class="utilization-overview">
+                                    <div class="utilization-chart">
+                                        <div class="chart-container">
+                                            <canvas id="utilizationChart"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="utilization-details">
+                                        <div class="detail-item">
+                                            <span class="detail-label">Available Slots</span>
+                                            <span class="detail-value">984</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Booked Slots</span>
+                                            <span class="detail-value">811</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Utilization Rate</span>
+                                            <span class="detail-value">82.4%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="doctor-utilization">
+                                    <h5>Doctor-wise Utilization</h5>
+                                    <div class="doctor-list">
+                                        <div class="doctor-item">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                                alt="Doctor" class="doctor-avatar">
+                                            <div class="doctor-info">
+                                                <span class="doctor-name">Dr. Johnson</span>
+                                                <div class="utilization-bar">
+                                                    <div class="bar-fill" style="width: 89%"></div>
+                                                </div>
+                                                <span class="utilization-percentage">89%</span>
+                                            </div>
+                                        </div>
+                                        <div class="doctor-item">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                                alt="Doctor" class="doctor-avatar">
+                                            <div class="doctor-info">
+                                                <span class="doctor-name">Dr. Smith</span>
+                                                <div class="utilization-bar">
+                                                    <div class="bar-fill" style="width: 76%"></div>
+                                                </div>
+                                                <span class="utilization-percentage">76%</span>
+                                            </div>
+                                        </div>
+                                        <div class="doctor-item">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                                alt="Doctor" class="doctor-avatar">
+                                            <div class="doctor-info">
+                                                <span class="doctor-name">Dr. Brown</span>
+                                                <div class="utilization-bar">
+                                                    <div class="bar-fill" style="width: 82%"></div>
+                                                </div>
+                                                <span class="utilization-percentage">82%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Clinic Service Performance Section -->
+            <section class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-stethoscope"></i>
+                        Clinic Service Performance
+                    </h3>
+                    <button class="btn-secondary" id="serviceAnalysisBtn">
+                        <i class="fas fa-chart-bar"></i>
+                        Detailed Analysis
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <!-- Service Performance Tabs -->
+                    <div class="service-tabs">
+                        <button class="tab-btn active" data-tab="retention">Patient Retention</button>
+                        <button class="tab-btn" data-tab="utilization">Service Utilization</button>
+                        <button class="tab-btn" data-tab="correlation">Revenue Correlation</button>
+                    </div>
+
+                    <!-- Patient Retention Tab -->
+                    <div class="tab-content retention-tab active" id="retentionTab">
+                        <div class="retention-tracking">
+                            <div class="retention-overview">
+                                <div class="retention-metric">
+                                    <h4>Patient Retention Rate</h4>
+                                    <div class="retention-score">
+                                        <span class="score-value">74.8%</span>
+                                        <span class="score-change positive">
+                                            <i class="fas fa-arrow-up"></i>
+                                            +3.2%
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="patient-breakdown">
+                                    <div class="breakdown-chart">
+                                        <div class="pie-chart">
+                                            <canvas id="retentionPieChart"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="breakdown-legend">
+                                        <div class="legend-item">
+                                            <span class="legend-color new"></span>
+                                            <span class="legend-label">New Patients (25.2%)</span>
+                                            <span class="legend-value">204</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color returning"></span>
+                                            <span class="legend-label">Returning Patients (74.8%)</span>
+                                            <span class="legend-value">606</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="loyalty-metrics">
+                                <h4>Patient Loyalty Scoring</h4>
+                                <div class="loyalty-tiers">
+                                    <div class="tier-item platinum">
+                                        <div class="tier-icon">
+                                            <i class="fas fa-crown"></i>
+                                        </div>
+                                        <div class="tier-info">
+                                            <span class="tier-name">Platinum (10+ visits)</span>
+                                            <span class="tier-count">89 patients</span>
+                                        </div>
+                                    </div>
+                                    <div class="tier-item gold">
+                                        <div class="tier-icon">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="tier-info">
+                                            <span class="tier-name">Gold (5-9 visits)</span>
+                                            <span class="tier-count">187 patients</span>
+                                        </div>
+                                    </div>
+                                    <div class="tier-item silver">
+                                        <div class="tier-icon">
+                                            <i class="fas fa-medal"></i>
+                                        </div>
+                                        <div class="tier-info">
+                                            <span class="tier-name">Silver (2-4 visits)</span>
+                                            <span class="tier-count">330 patients</span>
+                                        </div>
+                                    </div>
+                                    <div class="tier-item bronze">
+                                        <div class="tier-icon">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <div class="tier-info">
+                                            <span class="tier-name">New (1 visit)</span>
+                                            <span class="tier-count">204 patients</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Utilization Tab -->
+                    <div class="tab-content utilization-tab" id="utilizationTab">
+                        <div class="service-utilization">
+                            <div class="top-services">
+                                <h4>Top 5 Most Used Services</h4>
+                                <div class="service-ranking">
+                                    <div class="rank-item">
+                                        <span class="rank-number">1</span>
+                                        <div class="service-details">
+                                            <span class="service-name">General Consultation</span>
+                                            <span class="usage-count">412 bookings</span>
+                                        </div>
+                                        <div class="usage-bar">
+                                            <div class="bar-fill" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rank-item">
+                                        <span class="rank-number">2</span>
+                                        <div class="service-details">
+                                            <span class="service-name">Laboratory Tests</span>
+                                            <span class="usage-count">298 bookings</span>
+                                        </div>
+                                        <div class="usage-bar">
+                                            <div class="bar-fill" style="width: 72%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rank-item">
+                                        <span class="rank-number">3</span>
+                                        <div class="service-details">
+                                            <span class="service-name">Specialist Consultation</span>
+                                            <span class="usage-count">186 bookings</span>
+                                        </div>
+                                        <div class="usage-bar">
+                                            <div class="bar-fill" style="width: 45%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rank-item">
+                                        <span class="rank-number">4</span>
+                                        <div class="service-details">
+                                            <span class="service-name">Immunizations</span>
+                                            <span class="usage-count">134 bookings</span>
+                                        </div>
+                                        <div class="usage-bar">
+                                            <div class="bar-fill" style="width: 33%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rank-item">
+                                        <span class="rank-number">5</span>
+                                        <div class="service-details">
+                                            <span class="service-name">Minor Procedures</span>
+                                            <span class="usage-count">89 bookings</span>
+                                        </div>
+                                        <div class="usage-bar">
+                                            <div class="bar-fill" style="width: 22%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="underused-services">
+                                <h4>Opportunity Analysis - Underutilized Services</h4>
+                                <div class="opportunity-list">
+                                    <div class="opportunity-item">
+                                        <div class="service-info">
+                                            <span class="service-name">Physiotherapy</span>
+                                            <span class="usage-stats">Only 12 bookings this month</span>
+                                        </div>
+                                        <div class="opportunity-actions">
+                                            <span class="suggestion">Consider promotional campaigns</span>
+                                            <button class="action-btn">
+                                                <i class="fas fa-lightbulb"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="opportunity-item">
+                                        <div class="service-info">
+                                            <span class="service-name">Nutrition Counseling</span>
+                                            <span class="usage-stats">Only 8 bookings this month</span>
+                                        </div>
+                                        <div class="opportunity-actions">
+                                            <span class="suggestion">Partner with fitness centers</span>
+                                            <button class="action-btn">
+                                                <i class="fas fa-lightbulb"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Revenue Correlation Tab -->
+                    <div class="tab-content correlation-tab" id="correlationTab">
+                        <div class="revenue-correlation">
+                            <div class="correlation-analysis">
+                                <h4>Revenue vs Utilization Analysis</h4>
+                                <div class="correlation-chart">
+                                    <canvas id="correlationScatterChart"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="pricing-insights">
+                                <div class="insight-card premium">
+                                    <h5>High Revenue / Low Usage</h5>
+                                    <p>Premium Services with High Margins</p>
+                                    <div class="service-examples">
+                                        <div class="example-item">
+                                            <span class="service-name">Specialist Consultation</span>
+                                            <span class="margin">67% margin</span>
+                                        </div>
+                                        <div class="example-item">
+                                            <span class="service-name">Advanced Diagnostics</span>
+                                            <span class="margin">72% margin</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="insight-card volume">
+                                    <h5>High Usage / Moderate Revenue</h5>
+                                    <p>Volume Services with Growth Potential</p>
+                                    <div class="service-examples">
+                                        <div class="example-item">
+                                            <span class="service-name">General Consultation</span>
+                                            <span class="suggestion">Consider package deals</span>
+                                        </div>
+                                        <div class="example-item">
+                                            <span class="service-name">Basic Lab Tests</span>
+                                            <span class="suggestion">Bundle with consultations</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Staff Efficiency Metrics Section -->
+            <section class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-users-cog"></i>
+                        Staff Efficiency Metrics
+                    </h3>
+                    <button class="btn-secondary" id="staffAnalysisBtn">
+                        <i class="fas fa-user-chart"></i>
+                        Full Analysis
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <!-- Staff Performance Overview -->
+                    <div class="staff-performance">
+                        <div class="performance-card appointments-handled">
+                            <div class="card-header">
+                                <h4>Appointments Handled</h4>
+                                <span class="period-selector">This Month</span>
+                            </div>
+                            <div class="card-content">
+                                <div class="staff-metrics">
+                                    <div class="staff-item">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Doctor" class="staff-avatar">
+                                        <div class="staff-info">
+                                            <span class="staff-name">Dr. Johnson</span>
+                                            <span class="staff-role">General Practitioner</span>
+                                        </div>
+                                        <div class="staff-stats">
+                                            <div class="stat-item">
+                                                <span class="stat-label">Appointments</span>
+                                                <span class="stat-value">234</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-label">Completion Rate</span>
+                                                <span class="stat-value">94.2%</span>
+                                            </div>
+                                        </div>
+                                        <div class="performance-score excellent">
+                                            <span class="score">A+</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="staff-item">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Doctor" class="staff-avatar">
+                                        <div class="staff-info">
+                                            <span class="staff-name">Dr. Smith</span>
+                                            <span class="staff-role">Specialist</span>
+                                        </div>
+                                        <div class="staff-stats">
+                                            <div class="stat-item">
+                                                <span class="stat-label">Appointments</span>
+                                                <span class="stat-value">156</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-label">Completion Rate</span>
+                                                <span class="stat-value">91.7%</span>
+                                            </div>
+                                        </div>
+                                        <div class="performance-score good">
+                                            <span class="score">A</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="staff-item">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Staff" class="staff-avatar">
+                                        <div class="staff-info">
+                                            <span class="staff-name">Sarah Johnson</span>
+                                            <span class="staff-role">Receptionist</span>
+                                        </div>
+                                        <div class="staff-stats">
+                                            <div class="stat-item">
+                                                <span class="stat-label">Registrations</span>
+                                                <span class="stat-value">89</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-label">Response Time</span>
+                                                <span class="stat-value">2.3 min</span>
+                                            </div>
+                                        </div>
+                                        <div class="performance-score excellent">
+                                            <span class="score">A+</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="performance-card feedback-scores">
+                            <div class="card-header">
+                                <h4>Patient Feedback Scores</h4>
+                                <span class="average-rating">
+                                    <i class="fas fa-star"></i>
+                                    4.7 / 5.0
+                                </span>
+                            </div>
+                            <div class="card-content">
+                                <div class="feedback-breakdown">
+                                    <div class="rating-distribution">
+                                        <div class="rating-bar">
+                                            <span class="stars">5 <i class="fas fa-star"></i></span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 68%"></div>
+                                            </div>
+                                            <span class="percentage">68%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span class="stars">4 <i class="fas fa-star"></i></span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 23%"></div>
+                                            </div>
+                                            <span class="percentage">23%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span class="stars">3 <i class="fas fa-star"></i></span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 7%"></div>
+                                            </div>
+                                            <span class="percentage">7%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span class="stars">2 <i class="fas fa-star"></i></span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 2%"></div>
+                                            </div>
+                                            <span class="percentage">2%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span class="stars">1 <i class="fas fa-star"></i></span>
+                                            <div class="bar">
+                                                <div class="fill" style="width: 0%"></div>
+                                            </div>
+                                            <span class="percentage">0%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="top-performers">
+                                    <h5>Top Performing Staff</h5>
+                                    <div class="performer-list">
+                                        <div class="performer-item">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                                alt="Staff" class="performer-avatar">
+                                            <div class="performer-info">
+                                                <span class="performer-name">Dr. Johnson</span>
+                                                <div class="performer-rating">
+                                                    <span class="rating-score">4.9</span>
+                                                    <div class="stars-small">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="recognition-badge">
+                                                <i class="fas fa-trophy"></i>
+                                            </span>
+                                        </div>
+                                        <div class="performer-item">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                                alt="Staff" class="performer-avatar">
+                                            <div class="performer-info">
+                                                <span class="performer-name">Sarah Johnson</span>
+                                                <div class="performer-rating">
+                                                    <span class="rating-score">4.8</span>
+                                                    <div class="stars-small">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="recognition-badge">
+                                                <i class="fas fa-medal"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="performance-card response-times">
+                            <div class="card-header">
+                                <h4>Response Time Analysis</h4>
+                                <span class="efficiency-score">
+                                    <i class="fas fa-clock"></i>
+                                    92% efficient
+                                </span>
+                            </div>
+                            <div class="card-content">
+                                <div class="response-metrics">
+                                    <div class="metric-item">
+                                        <div class="metric-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <div class="metric-details">
+                                            <span class="metric-name">Appointment Confirmation</span>
+                                            <span class="metric-time">Avg: 1.8 minutes</span>
+                                        </div>
+                                        <div class="metric-status excellent">
+                                            <i class="fas fa-thumbs-up"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="metric-item">
+                                        <div class="metric-icon">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </div>
+                                        <div class="metric-details">
+                                            <span class="metric-name">Reschedule Processing</span>
+                                            <span class="metric-time">Avg: 3.2 minutes</span>
+                                        </div>
+                                        <div class="metric-status good">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="metric-item">
+                                        <div class="metric-icon">
+                                            <i class="fas fa-phone"></i>
+                                        </div>
+                                        <div class="metric-details">
+                                            <span class="metric-name">Phone Response</span>
+                                            <span class="metric-time">Avg: 45 seconds</span>
+                                        </div>
+                                        <div class="metric-status excellent">
+                                            <i class="fas fa-thumbs-up"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="efficiency-breakdown">
+                                    <h5>Daily Efficiency Trends</h5>
+                                    <div class="trend-chart-mini">
+                                        <canvas id="efficiencyTrendChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Visual Dashboards Section -->
+            <section class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Visual Dashboards
+                    </h3>
+                    <div class="dashboard-controls">
+                        <button class="btn-secondary" id="chartConfigBtn">
+                            <i class="fas fa-cog"></i>
+                            Configure Charts
+                        </button>
+                        <button class="btn-secondary" id="filterToolsBtn">
+                            <i class="fas fa-filter"></i>
+                            Advanced Filters
+                        </button>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <!-- Chart Configuration Panel -->
+                    <div class="chart-config-panel" id="chartConfigPanel">
+                        <h4>Chart Type Selection</h4>
+                        <div class="chart-options">
+                            <button class="chart-option active" data-chart="line">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Line Graphs</span>
+                            </button>
+                            <button class="chart-option" data-chart="bar">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Bar Charts</span>
+                            </button>
+                            <button class="chart-option" data-chart="pie">
+                                <i class="fas fa-chart-pie"></i>
+                                <span>Pie Charts</span>
+                            </button>
+                            <button class="chart-option" data-chart="custom">
+                                <i class="fas fa-tools"></i>
+                                <span>Custom Builder</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Filter Panel -->
+                    <div class="filter-tools-panel" id="filterToolsPanel">
+                        <div class="filter-section">
+                            <h5>Date Range Selection</h5>
+                            <div class="date-inputs">
+                                <input type="date" id="dashboardDateStart" class="date-input">
+                                <span class="date-separator">to</span>
+                                <input type="date" id="dashboardDateEnd" class="date-input">
+                            </div>
+                            <div class="quick-ranges">
+                                <button class="range-btn" data-range="7">Last 7 Days</button>
+                                <button class="range-btn" data-range="30">Last 30 Days</button>
+                                <button class="range-btn" data-range="90">Last 3 Months</button>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h5>Staff & Service Filters</h5>
+                            <div class="multi-select-filters">
+                                <div class="filter-group">
+                                    <label>Staff Members:</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> Dr. Johnson
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> Dr. Smith
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> Dr. Brown
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> Sarah Johnson
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <label>Service Types:</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> General Consultation
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> Laboratory Tests
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> Specialist Consultation
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" checked> Minor Procedures
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h5>Patient Segmentation</h5>
+                            <div class="segmentation-options">
+                                <label class="radio-item">
+                                    <input type="radio" name="patientType" value="all" checked>
+                                    <span>All Patients</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="patientType" value="new">
+                                    <span>New Patients Only</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="patientType" value="returning">
+                                    <span>Returning Patients Only</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Dashboard Charts -->
+                    <div class="dashboard-charts">
+                        <div class="chart-container large">
+                            <div class="chart-header">
+                                <h4>Revenue Trends Analysis</h4>
+                                <div class="chart-controls">
+                                    <button class="control-btn" id="compareBtn">
+                                        <i class="fas fa-balance-scale"></i>
+                                        Compare Periods
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="chart-canvas">
+                                <canvas id="revenueTrendsChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-container medium">
+                            <div class="chart-header">
+                                <h4>Service Distribution</h4>
+                            </div>
+                            <div class="chart-canvas">
+                                <canvas id="serviceDistributionChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-container medium">
+                            <div class="chart-header">
+                                <h4>Staff Performance Comparison</h4>
+                            </div>
+                            <div class="chart-canvas">
+                                <canvas id="staffPerformanceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comparative Analysis Panel -->
+                    <div class="comparative-analysis" id="comparativeAnalysis">
+                        <h4>Period-over-Period Analysis</h4>
+                        <div class="comparison-options">
+                            <button class="comparison-btn active" data-comparison="month">
+                                This Month vs Last Month
+                            </button>
+                            <button class="comparison-btn" data-comparison="year">
+                                Year-over-Year Analysis
+                            </button>
+                            <button class="comparison-btn" data-comparison="custom">
+                                Custom Period Comparison
+                            </button>
+                        </div>
+
+                        <div class="comparison-results">
+                            <div class="comparison-metric">
+                                <span class="metric-name">Total Revenue</span>
+                                <span class="current-value">KES. 2,450,000</span>
+                                <span class="comparison-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    +12.5% vs last month
+                                </span>
+                            </div>
+                            <div class="comparison-metric">
+                                <span class="metric-name">Patient Visits</span>
+                                <span class="current-value">810</span>
+                                <span class="comparison-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    +8.3% vs last month
+                                </span>
+                            </div>
+                            <div class="comparison-metric">
+                                <span class="metric-name">Average Revenue per Visit</span>
+                                <span class="current-value">KES. 3,025</span>
+                                <span class="comparison-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    +3.8% vs last month
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Report Export & Sharing Section -->
+            <section class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-share-alt"></i>
+                        Report Export & Sharing
+                    </h3>
+                    <button class="btn-primary" id="exportConfigBtn">
+                        <i class="fas fa-cog"></i>
+                        Export Configuration
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <!-- Export Options -->
+                    <div class="export-configuration">
+                        <div class="export-formats">
+                            <h4>Available Export Formats</h4>
+                            <div class="format-options">
+                                <div class="format-card" data-format="pdf">
+                                    <div class="format-icon">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </div>
+                                    <div class="format-info">
+                                        <h5>PDF Summary Reports</h5>
+                                        <p>Executive formatted summaries with charts and insights</p>
+                                    </div>
+                                    <button class="format-btn">
+                                        Generate PDF
+                                    </button>
+                                </div>
+
+                                <div class="format-card" data-format="csv">
+                                    <div class="format-icon">
+                                        <i class="fas fa-file-csv"></i>
+                                    </div>
+                                    <div class="format-info">
+                                        <h5>CSV Raw Data Tables</h5>
+                                        <p>Complete dataset export for further analysis</p>
+                                    </div>
+                                    <button class="format-btn">
+                                        Export CSV
+                                    </button>
+                                </div>
+
+                                <div class="format-card future-feature" data-format="excel">
+                                    <div class="format-icon">
+                                        <i class="fas fa-file-excel"></i>
+                                    </div>
+                                    <div class="format-info">
+                                        <h5>Excel Format</h5>
+                                        <p>Coming soon - Advanced formatting with pivot tables</p>
+                                    </div>
+                                    <button class="format-btn disabled">
+                                        Coming Soon
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Exports -->
+                        <div class="recent-exports">
+                            <h4>Recent Exports</h4>
+                            <div class="export-history">
+                                <div class="export-item">
+                                    <div class="export-icon">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </div>
+                                    <div class="export-info">
+                                        <span class="export-name">Financial_Performance_Jan_2024.pdf</span>
+                                        <span class="export-date">Generated: Jan 31, 2024 at 10:30 AM</span>
+                                        <span class="export-size">2.4 MB</span>
+                                    </div>
+                                    <div class="export-actions">
+                                        <button class="action-btn download">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                        <button class="action-btn share">
+                                            <i class="fas fa-share"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="export-item">
+                                    <div class="export-icon">
+                                        <i class="fas fa-file-csv"></i>
+                                    </div>
+                                    <div class="export-info">
+                                        <span class="export-name">Appointment_Data_Jan_2024.csv</span>
+                                        <span class="export-date">Generated: Jan 30, 2024 at 3:15 PM</span>
+                                        <span class="export-size">890 KB</span>
+                                    </div>
+                                    <div class="export-actions">
+                                        <button class="action-btn download">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                        <button class="action-btn share">
+                                            <i class="fas fa-share"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="export-item">
+                                    <div class="export-icon">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </div>
+                                    <div class="export-info">
+                                        <span class="export-name">Staff_Performance_Q4_2023.pdf</span>
+                                        <span class="export-date">Generated: Jan 15, 2024 at 2:45 PM</span>
+                                        <span class="export-size">1.8 MB</span>
+                                    </div>
+                                    <div class="export-actions">
+                                        <button class="action-btn download">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                        <button class="action-btn share">
+                                            <i class="fas fa-share"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Automated Delivery (Future Feature) -->
+                        <div class="automated-delivery future-feature">
+                            <h4>
+                                Automated Delivery
+                                <span class="feature-badge">Coming Soon</span>
+                            </h4>
+                            <p class="feature-description">
+                                Set up scheduled report delivery to your email or team members. Configure weekly or
+                                monthly automated reports to stay updated on clinic performance.
+                            </p>
+                            <div class="delivery-options disabled">
+                                <div class="delivery-card">
+                                    <div class="delivery-icon">
+                                        <i class="fas fa-calendar-week"></i>
+                                    </div>
+                                    <div class="delivery-info">
+                                        <h5>Weekly Reports</h5>
+                                        <p>Every Monday at 9:00 AM</p>
+                                    </div>
+                                </div>
+
+                                <div class="delivery-card">
+                                    <div class="delivery-icon">
+                                        <i class="fas fa-calendar"></i>
+                                    </div>
+                                    <div class="delivery-info">
+                                        <h5>Monthly Reports</h5>
+                                        <p>First day of each month</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Application Footer -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" class="social-link instagram" target="_blank"
+                        title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" class="social-link twitter" target="_blank" title="X (Twitter)">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" class="social-link facebook"
+                        target="_blank" title="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" class="social-link youtube" target="_blank"
+                        title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" class="social-link linkedin" target="_blank"
+                        title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <a href="https://citruslabs.co.ke/" class="corporate-link" target="_blank">citruslabs.co.ke</a>
+                <span class="copyright">© 2025 Citrus Labs. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notifications Panel -->
+    <div class="notifications-panel" id="notificationsPanel">
+        <div class="notifications-header">
+            <h3 class="notifications-title">Notifications</h3>
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Notifications\notifications.html"
+                class="view-all-notifications">View All</a>
+        </div>
+        <div class="notifications-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>High No-Show Rate Alert</h5>
+                    <p>No-show rate has increased to 5.7% this week. Consider implementing reminder calls.</p>
+                    <span class="notification-time">15 minutes ago</span>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Staff Recognition Update</h5>
+                    <p>Dr. Johnson achieved the highest patient satisfaction rating this month (4.9/5.0).</p>
+                    <span class="notification-time">1 hour ago</span>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Outstanding Payment Alert</h5>
+                    <p>KES. 185,750 in outstanding balances requires attention. 23 unpaid invoices.</p>
+                    <span class="notification-time">2 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Monthly Report Generated</h5>
+                    <p>Financial performance report for January 2024 is ready for download.</p>
+                    <span class="notification-time">1 day ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Optimization Suggestion</h5>
+                    <p>Consider promotional campaigns for underutilized services like Physiotherapy.</p>
+                    <span class="notification-time">2 days ago</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Income Overview Modal -->
+    <div class="modal" id="incomeOverviewModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Total Income Overview</h3>
+                <button class="modal-close" id="closeIncomeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="income-analysis">
+                    <div class="timeframe-selector">
+                        <h4>Timeframe Selection</h4>
+                        <div class="timeframe-options">
+                            <button class="timeframe-btn" data-period="daily">Daily</button>
+                            <button class="timeframe-btn active" data-period="weekly">Weekly</button>
+                            <button class="timeframe-btn" data-period="monthly">Monthly</button>
+                            <button class="timeframe-btn" data-period="yearly">Yearly</button>
+                        </div>
+                    </div>
+
+                    <div class="service-breakdown-detailed">
+                        <h4>Service Revenue Breakdown</h4>
+                        <div class="breakdown-chart">
+                            <canvas id="serviceBreakdownChart"></canvas>
+                        </div>
+                        <div class="breakdown-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Service Type</th>
+                                        <th>Revenue</th>
+                                        <th>Percentage</th>
+                                        <th>Growth</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>General Consultation</td>
+                                        <td>KES. 890,000</td>
+                                        <td>36.3%</td>
+                                        <td class="positive">+8.5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Laboratory Tests</td>
+                                        <td>KES. 578,000</td>
+                                        <td>23.6%</td>
+                                        <td class="positive">+12.3%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Specialist Consultation</td>
+                                        <td>KES. 465,000</td>
+                                        <td>19.0%</td>
+                                        <td class="positive">+15.7%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Minor Procedures</td>
+                                        <td>KES. 320,000</td>
+                                        <td>13.1%</td>
+                                        <td class="positive">+6.2%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Immunizations</td>
+                                        <td>KES. 197,000</td>
+                                        <td>8.0%</td>
+                                        <td class="negative">-2.1%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="trend-analysis">
+                        <h4>Revenue Trend Analysis</h4>
+                        <div class="trend-indicators">
+                            <div class="indicator-card positive">
+                                <div class="indicator-icon">
+                                    <i class="fas fa-arrow-trend-up"></i>
+                                </div>
+                                <div class="indicator-info">
+                                    <h5>Growth Trend</h5>
+                                    <p>Revenue has increased consistently over the past 3 months</p>
+                                    <span class="indicator-value">+12.5% monthly growth</span>
+                                </div>
+                            </div>
+
+                            <div class="indicator-card warning">
+                                <div class="indicator-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="indicator-info">
+                                    <h5>Seasonal Decline Risk</h5>
+                                    <p>Immunization services showing decline - flu season ending</p>
+                                    <span class="indicator-value">-2.1% decrease</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Configuration Modal -->
+    <div class="modal" id="exportConfigModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Export Configuration</h3>
+                <button class="modal-close" id="closeExportModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="export-wizard">
+                    <div class="wizard-step active" data-step="1">
+                        <h4>Select Data Range</h4>
+                        <div class="date-range-selector">
+                            <div class="date-input-group">
+                                <label>Start Date:</label>
+                                <input type="date" id="exportStartDate" class="form-control">
+                            </div>
+                            <div class="date-input-group">
+                                <label>End Date:</label>
+                                <input type="date" id="exportEndDate" class="form-control">
+                            </div>
+                        </div>
+                        <div class="quick-date-options">
+                            <button class="quick-date-btn" data-range="7">Last 7 Days</button>
+                            <button class="quick-date-btn" data-range="30">Last 30 Days</button>
+                            <button class="quick-date-btn" data-range="90">Last 3 Months</button>
+                            <button class="quick-date-btn" data-range="365">Last Year</button>
+                        </div>
+                    </div>
+
+                    <div class="wizard-step" data-step="2">
+                        <h4>Select Report Types</h4>
+                        <div class="report-types">
+                            <label class="report-type-option">
+                                <input type="checkbox" checked>
+                                <div class="option-content">
+                                    <h5>Financial Performance</h5>
+                                    <p>Revenue, expenses, and profitability metrics</p>
+                                </div>
+                            </label>
+                            <label class="report-type-option">
+                                <input type="checkbox" checked>
+                                <div class="option-content">
+                                    <h5>Appointment Analytics</h5>
+                                    <p>Booking trends, cancellations, and utilization</p>
+                                </div>
+                            </label>
+                            <label class="report-type-option">
+                                <input type="checkbox">
+                                <div class="option-content">
+                                    <h5>Staff Performance</h5>
+                                    <p>Individual metrics and efficiency scores</p>
+                                </div>
+                            </label>
+                            <label class="report-type-option">
+                                <input type="checkbox">
+                                <div class="option-content">
+                                    <h5>Patient Analytics</h5>
+                                    <p>Retention, satisfaction, and demographics</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="wizard-step" data-step="3">
+                        <h4>Choose Format & Options</h4>
+                        <div class="format-selection">
+                            <label class="format-option">
+                                <input type="radio" name="exportFormat" value="pdf" checked>
+                                <div class="format-content">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <h5>PDF Summary</h5>
+                                    <p>Executive report with charts and insights</p>
+                                </div>
+                            </label>
+                            <label class="format-option">
+                                <input type="radio" name="exportFormat" value="csv">
+                                <div class="format-content">
+                                    <i class="fas fa-file-csv"></i>
+                                    <h5>CSV Data Export</h5>
+                                    <p>Raw data for further analysis</p>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="export-options">
+                            <label class="option-checkbox">
+                                <input type="checkbox" checked>
+                                <span>Include charts and visualizations</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox">
+                                <span>Include detailed patient data</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox">
+                                <span>Include staff performance details</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wizard-navigation">
+                    <button class="btn-secondary" id="wizardPrevBtn" disabled>
+                        <i class="fas fa-arrow-left"></i>
+                        Previous
+                    </button>
+                    <div class="step-indicators">
+                        <span class="step-indicator active"></span>
+                        <span class="step-indicator"></span>
+                        <span class="step-indicator"></span>
+                    </div>
+                    <button class="btn-primary" id="wizardNextBtn">
+                        Next
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Sync Indicator -->
+    <div class="auto-refresh-indicator" id="autoRefreshIndicator">
+        <i class="fas fa-sync-alt"></i>
+        <span>Updating analytics...</span>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="insights_and_performance.js"></script>
+</body>
+
+</html>

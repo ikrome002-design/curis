@@ -1,0 +1,154 @@
+graph TB
+    %% Main Navigation Entry Points
+    RecepDash[Receptionist Dashboard] --> MainNav{Main Navigation Menu}
+    MainNav --> MyProfilePage[My Profile Page<br/>Staff Identity & Settings Hub]
+    
+    %% Profile Page Header Section (Enhanced)
+    MyProfilePage --> ProfileHeader[Profile Header Section]
+    ProfileHeader --> ProfileAvatar[Profile Avatar/Photo<br/>Visual Identity]
+    ProfileHeader --> BasicInfo[Basic Info Display]
+    ProfileHeader --> RoleIndicator[Role & Permissions Badge<br/>Read-Only Scope]
+    ProfileHeader --> IconActions[Profile Action Icons]
+    
+    %% Profile Avatar Actions
+    ProfileAvatar --> |Click| AvatarModal[Avatar Management<br/>━━━━━━━━━━━━━━━━━<br/>• Upload new photo<br/>• Remove current photo<br/>• Crop & resize tool<br/>• File format validation<br/>• Max size limit check<br/>• Auto-sync across platform<br/>━━━━━━━━━━━━━━━━━<br/>Immediate update]
+    
+    %% Basic Info Display (Enhanced)
+    BasicInfo --> |View| InfoDisplay[Information Display<br/>━━━━━━━━━━━━━━━━━<br/>• Full name<br/>• Employee ID<br/>• Role designation<br/>  - Receptionist/Assistant<br/>• Department assignment<br/>• Join date<br/>• Last login timestamp<br/>• Profile completion %<br/>• Verification badge ✓<br/>━━━━━━━━━━━━━━━━━<br/>Core identity]
+    
+    %% Profile Action Icons (New Enhanced Feature)
+    IconActions --> ViewProfileIcon[View Profile Icon<br/>Full Info Modal]
+    IconActions --> QuickActionsIcon[Quick Actions Icon<br/>Shortcuts Menu]
+    IconActions --> WalkInVerifyIcon[Walk-in Verification Icon<br/>ID Check]
+    IconActions --> ContactConfirmIcon[Contact Confirmation Icon<br/>Test Messages]
+    IconActions --> FollowUpIcon[Follow-up Scheduling Icon<br/>Staff Tasks]
+    IconActions --> PaymentRemindIcon[Payment Reminders Icon<br/>Billing Sync]
+    IconActions --> QueueCheckIcon[Queue Checking Icon<br/>Live Status]
+    
+    %% Icon Actions Details
+    ViewProfileIcon --> |Click| FullProfileModal[Full Profile Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Personal info (read-only)<br/>• Contact details<br/>• Emergency contacts<br/>• Address info<br/>• Bio section<br/>❌ Medical data hidden<br/>  "Restricted: No access"<br/>━━━━━━━━━━━━━━━━━<br/>Complete view]
+    
+    QuickActionsIcon --> |Click| QuickActionsDropdown[Quick Actions Dropdown<br/>━━━━━━━━━━━━━━━━━<br/>• Request Contact Change<br/>• View Activity Logs<br/>• Download Profile PDF<br/>• Contact Support<br/>• View permissions<br/>• System status<br/>━━━━━━━━━━━━━━━━━<br/>One-click access]
+    
+    WalkInVerifyIcon --> |Click| IDCheckModal[ID Verification Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Profile ID display<br/>• System registration<br/>• Role confirmation<br/>  "Verified: Receptionist"<br/>• Badge display<br/>• Timestamp log<br/>━━━━━━━━━━━━━━━━━<br/>Staff verification]
+    
+    ContactConfirmIcon --> |Click| ContactTestModal[Contact Test Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Listed contacts show<br/>• Send SMS test<br/>• Send Email test<br/>• WhatsApp verify<br/>• Delivery status<br/>  "Sent to +2547..."<br/>━━━━━━━━━━━━━━━━━<br/>Verification tools]
+    
+    FollowUpIcon --> |Click| StaffTaskRedirect[Staff Task Redirect<br/>━━━━━━━━━━━━━━━━━<br/>→ To Appointments Page<br/>• Pre-filled creator<br/>  "Created by [Name]"<br/>• Personal tasks<br/>• Follow-up calls<br/>• Staff reminders<br/>━━━━━━━━━━━━━━━━━<br/>Task scheduling]
+    
+    PaymentRemindIcon --> |Click| BillingSyncModal[Billing Sync Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Invoice shortcuts<br/>• Pre-filled sender<br/>  "Sent by [Name]"<br/>• One-click SMS<br/>• WhatsApp reminder<br/>• Audit trail entry<br/>━━━━━━━━━━━━━━━━━<br/>Quick reminders]
+    
+    QueueCheckIcon --> |Click| QueueStatusModal[Queue Status Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Real-time queue<br/>• Staff on duty<br/>  "[Name] on duty"<br/>• Patient positions<br/>• Check-In sync<br/>• Role confirmation<br/>━━━━━━━━━━━━━━━━━<br/>Live monitoring]
+    
+    %% Main Profile Sections (Enhanced with Request Workflow)
+    MyProfilePage --> PersonalDetails[Personal Details Section<br/>View-Only + Edit Request]
+    MyProfilePage --> ContactInfo[Contact Information Section<br/>View-Only + Edit Request]
+    MyProfilePage --> AccountSettings[Account Information Section<br/>Read-Only Display]
+    MyProfilePage --> NotificationPrefs[Notification Preferences Section]
+    MyProfilePage --> SecuritySettings[Security & Privacy Section<br/>View-Only Info]
+    MyProfilePage --> ActivityLogs[Activity & Audit Logs Section]
+    MyProfilePage --> SystemAccess[System Access & Permissions Section<br/>Role-Based Display]
+    
+    %% Personal Details Section (Enhanced with Request Workflow)
+    PersonalDetails --> |Click Edit| RequestModal[Edit Request Modal<br/>━━━━━━━━━━━━━━━━━<br/>⚠️ Cannot directly change<br/>• Select field to edit<br/>• Enter desired change<br/>• Add reason (optional)<br/>• Submit request<br/>━━━━━━━━━━━━━━━━━<br/>Approval required]
+    
+    RequestModal --> |Submit| RequestWorkflow[Request Workflow<br/>━━━━━━━━━━━━━━━━━<br/>• Request created<br/>• Routed to Clinic Owner<br/>• Status: Pending 🔄<br/>• Email notification sent<br/>• Tracking ID generated<br/>━━━━━━━━━━━━━━━━━<br/>Approval process]
+    
+    RequestWorkflow --> ApprovalStatus[Approval Status<br/>━━━━━━━━━━━━━━━━━<br/>• Pending ⏳<br/>• Under Review 👀<br/>• Approved ✅<br/>• Denied ❌<br/>• Comments from owner<br/>━━━━━━━━━━━━━━━━━<br/>Status tracking]
+    
+    ApprovalStatus --> |Approved| ApprovedUpdate[Approved Update<br/>━━━━━━━━━━━━━━━━━<br/>• Field updated<br/>• Notification received<br/>• Change logged<br/>• Profile refreshed<br/>• Confirmation email<br/>━━━━━━━━━━━━━━━━━<br/>Auto-update]
+    
+    ApprovalStatus --> |Denied| DeniedNotification[Denial Notification<br/>━━━━━━━━━━━━━━━━━<br/>• Reason provided<br/>• Owner comments<br/>• Alternative suggested<br/>• Can resubmit<br/>• Support contact<br/>━━━━━━━━━━━━━━━━━<br/>Feedback loop]
+    
+    %% Contact Information Section (Enhanced with Request Workflow)
+    ContactInfo --> |Click Edit| ContactRequestModal[Contact Edit Request<br/>━━━━━━━━━━━━━━━━━<br/>⚠️ Requires approval<br/>• Primary phone<br/>• Secondary phone<br/>• WhatsApp number<br/>• Email (login) read-only<br/>• Preferred contact<br/>• SMS consent<br/>━━━━━━━━━━━━━━━━━<br/>Request submission]
+    
+    ContactRequestModal --> |Submit| ContactRequestFlow[Contact Request Flow<br/>━━━━━━━━━━━━━━━━━<br/>• Request details<br/>• Verification needed<br/>• Owner notification<br/>• Status: Pending<br/>• Tracking enabled<br/>━━━━━━━━━━━━━━━━━<br/>Approval routing]
+    
+    ContactRequestFlow --> RequestWorkflow
+    
+    %% Account Settings Section (Enhanced - Read Only)
+    AccountSettings --> |Click| AccountModal[Account Information Panel<br/>━━━━━━━━━━━━━━━━━<br/>• Username (auto-generated)<br/>• Account creation date<br/>• Role assignment<br/>  - Receptionist/Assistant<br/>• Profile completion %<br/>• Verification badge ✓<br/>❌ No email change<br/>  "Contact Clinic Owner"<br/>❌ No password settings<br/>━━━━━━━━━━━━━━━━━<br/>Read-only display]
+    
+    %% Notification Preferences Section
+    NotificationPrefs --> EmailNotifs[Email Notifications]
+    NotificationPrefs --> SMSNotifs[SMS Notifications]
+    NotificationPrefs --> InAppNotifs[In-App Notifications]
+    NotificationPrefs --> SoundAlerts[Sound & Alert Settings]
+    
+    EmailNotifs --> |Click| EmailModal[Email Notification Settings<br/>━━━━━━━━━━━━━━━━━<br/>• New appointment alerts<br/>• Patient arrival notifications<br/>• Payment confirmations<br/>• Request status updates<br/>• System updates<br/>• Frequency settings<br/>• Unsubscribe options]
+    
+    SMSNotifs --> |Click| SMSModal[SMS Notification Settings<br/>━━━━━━━━━━━━━━━━━<br/>• Urgent alerts only<br/>• All notifications<br/>• Custom time windows<br/>• Weekend settings<br/>• Cost acknowledgment<br/>• Opt-out options]
+    
+    InAppNotifs --> |Click| InAppModal[In-App Notification Settings<br/>━━━━━━━━━━━━━━━━━<br/>• Pop-up preferences<br/>• Sound notifications<br/>• Badge counters<br/>• Auto-dismiss timing<br/>• Priority filtering<br/>• Do not disturb hours]
+    
+    SoundAlerts --> |Click| SoundModal[Sound & Alert Settings<br/>━━━━━━━━━━━━━━━━━<br/>• Notification sounds<br/>• Volume levels<br/>• Alert tones selection<br/>• Vibration settings<br/>• Silent mode schedule<br/>• Custom sound upload]
+    
+    %% Security & Privacy Section (Enhanced - View Only)
+    SecuritySettings --> |Click| SecurityModal[Security Information Panel<br/>━━━━━━━━━━━━━━━━━<br/>• Current security status<br/>• Last password change<br/>  - Via email link only<br/>• Account security tips<br/>• Two-factor status<br/>• Session management<br/>❌ Cannot change here<br/>  "Contact admin"<br/>• Security policy link<br/>━━━━━━━━━━━━━━━━━<br/>Information only]
+    
+    %% Activity & Audit Logs Section (Enhanced)
+    ActivityLogs --> LoginHistory[Login History<br/>Email Link Access]
+    ActivityLogs --> ActionLogs[Action & Change Logs]
+    ActivityLogs --> SystemActivity[System Activity Tracking]
+    ActivityLogs --> ExportLogs[Export & Download Logs]
+    
+    LoginHistory --> |Click| LoginModal[Login History Details<br/>━━━━━━━━━━━━━━━━━<br/>• Email link timestamps<br/>• Device information<br/>• IP addresses<br/>• Location data<br/>• Session duration<br/>• Logout method<br/>• Failed attempts<br/>• Security alerts<br/>━━━━━━━━━━━━━━━━━<br/>Access tracking]
+    
+    ActionLogs --> |Click| ActionModal[Action Log Details<br/>━━━━━━━━━━━━━━━━━<br/>• Profile changes<br/>• Request submissions<br/>• Patient bookings<br/>• Invoice reminders<br/>• Queue management<br/>• Settings modifications<br/>• Timestamp details<br/>• Change descriptions<br/>━━━━━━━━━━━━━━━━━<br/>Complete audit]
+    
+    SystemActivity --> |Click| SystemModal[System Activity Overview<br/>━━━━━━━━━━━━━━━━━<br/>• Pages visited<br/>• Features used<br/>• Time spent metrics<br/>• Search queries<br/>• Export activities<br/>• Performance data<br/>• Module access<br/>• Peak usage times<br/>━━━━━━━━━━━━━━━━━<br/>Usage analytics]
+    
+    ExportLogs --> |Click| ExportModal[Export Options<br/>━━━━━━━━━━━━━━━━━<br/>• Date range selection<br/>• Activity type filters<br/>• Export to PDF only<br/>  ❌ No sensitive data<br/>• Admin audit ready<br/>• File size limits<br/>• Email delivery<br/>━━━━━━━━━━━━━━━━━<br/>Controlled export]
+    
+    %% System Access & Permissions Section (Enhanced)
+    SystemAccess --> |Click| PermissionsModal[Permissions Display<br/>━━━━━━━━━━━━━━━━━<br/>• Role: Receptionist/Assistant<br/>• Permissions summary:<br/>  ✓ View non-clinical data<br/>  ✓ Manage appointments<br/>  ✓ Process payments<br/>  ✓ Send reminders<br/>  ❌ Edit medical records<br/>  ❌ View clinical data<br/>• Access level badge<br/>• Policy documentation<br/>  "Contact Owner for changes"<br/>━━━━━━━━━━━━━━━━━<br/>Role-based access]
+    
+    PermissionsModal --> PermissionDetails[Permission Details<br/>━━━━━━━━━━━━━━━━━<br/>• Module access list<br/>• Feature restrictions<br/>• Data visibility scope<br/>• Time-based access<br/>• Override requests<br/>━━━━━━━━━━━━━━━━━<br/>Detailed breakdown]
+    
+    %% Integration with Main Dashboard
+    MyProfilePage --> |Return to| RecepDash
+    MyProfilePage --> QuickAccessPanel[Quick Access Panel]
+    QuickAccessPanel --> |Quick Actions| QuickActions[Quick Profile Actions<br/>━━━━━━━━━━━━━━━━━<br/>• Request changes<br/>• Update notifications<br/>• View activity logs<br/>• Download profile PDF<br/>• Check request status<br/>• Contact support<br/>━━━━━━━━━━━━━━━━━<br/>Shortcuts menu]
+    
+    %% Request Management System (New)
+    MyProfilePage --> RequestManager[Request Management<br/>View & Track Changes]
+    RequestManager --> ActiveRequests[Active Requests<br/>━━━━━━━━━━━━━━━━━<br/>• Pending approvals<br/>• Under review items<br/>• Recent submissions<br/>• Status tracking<br/>• Cancel option<br/>━━━━━━━━━━━━━━━━━<br/>Request dashboard]
+    
+    ActiveRequests --> RequestDetails[Request Details<br/>━━━━━━━━━━━━━━━━━<br/>• Request ID<br/>• Submission date<br/>• Field requested<br/>• Current status<br/>• Owner comments<br/>• Action history<br/>━━━━━━━━━━━━━━━━━<br/>Full tracking]
+    
+    %% Save & Update Actions (Enhanced with Workflow)
+    PersonalModal --> |Cannot Save Directly| RequestWorkflow
+    ContactModal --> |Cannot Save Directly| ContactRequestFlow
+    AccountModal --> |View Only| NoEditAllowed[No Direct Edit<br/>━━━━━━━━━━━━━━━━━<br/>❌ Changes restricted<br/>• Must request approval<br/>• Owner manages accounts<br/>• Security policy<br/>━━━━━━━━━━━━━━━━━<br/>Read-only]
+    
+    %% Dashboard Integration Notifications
+    ApprovedUpdate --> |Auto-sync| DashboardUpdate[Dashboard Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Profile info update<br/>• Navigation refresh<br/>• Cache clearance<br/>• Session validation<br/>• Real-time sync<br/>• Module notifications<br/>━━━━━━━━━━━━━━━━━<br/>Platform-wide sync]
+    
+    %% Support and Help Integration (Enhanced)
+    MyProfilePage --> HelpSupport[Help & Support Section]
+    HelpSupport --> |View| SupportInfo[Support Information Display<br/>━━━━━━━━━━━━━━━━━<br/>• Clinic Owner contact<br/>• Email: owner@clinic<br/>• Phone: support line<br/>• Platform user guide<br/>• Video tutorials<br/>• Support ticket creation<br/>• System status check<br/>• FAQ section<br/>━━━━━━━━━━━━━━━━━<br/>Complete support]
+    
+    SupportInfo --> CreateTicket[Create Support Ticket<br/>━━━━━━━━━━━━━━━━━<br/>• Issue category<br/>• Description field<br/>• Screenshot upload<br/>• Priority level<br/>• Submit to Owner<br/>• Ticket tracking<br/>━━━━━━━━━━━━━━━━━<br/>Help system]
+    
+    %% Styling Classes
+    classDef mainPage fill:#2E86AB,stroke:#023047,stroke-width:3px,color:#fff
+    classDef section fill:#A23B72,stroke:#780116,stroke-width:2px,color:#fff
+    classDef modal fill:#F18F01,stroke:#C73E1D,stroke-width:2px,color:#fff
+    classDef process fill:#6A994E,stroke:#386641,stroke-width:2px,color:#fff
+    classDef error fill:#DC2626,stroke:#991B1B,stroke-width:2px,color:#fff
+    classDef success fill:#059669,stroke:#047857,stroke-width:2px,color:#fff
+    classDef request fill:#7C3AED,stroke:#6D28D9,stroke-width:2px,color:#fff
+    classDef restricted fill:#6B7280,stroke:#4B5563,stroke-width:2px,color:#fff
+    classDef icon fill:#0891B2,stroke:#0E7490,stroke-width:2px,color:#fff
+    
+    class MyProfilePage,RecepDash mainPage
+    class ProfileHeader,PersonalDetails,ContactInfo,AccountSettings,NotificationPrefs,SecuritySettings,ActivityLogs,SystemAccess,HelpSupport,RequestManager section
+    class AvatarModal,PersonalModal,ContactModal,AccountModal,EmailModal,SMSModal,InAppModal,SoundModal,SecurityModal,LoginModal,ActionModal,SystemModal,ExportModal,RequestModal,ContactRequestModal,PermissionsModal,FullProfileModal modal
+    class ValidationCheck,ContactValidation,UpdateProcess,UpdateValidation,DashboardUpdate,RequestWorkflow,ContactRequestFlow,ApprovalStatus process
+    class ErrorDisplay,ContactError,UpdateError,DeniedNotification,NoEditAllowed error
+    class SuccessNotification,ApprovedUpdate success
+    class SupportInfo,CreateTicket,ActiveRequests,RequestDetails,PermissionDetails process
+    class RequestModal,ContactRequestModal,RequestWorkflow,ContactRequestFlow,ApprovalStatus,ActiveRequests request
+    class NoEditAllowed,PermissionsModal,SecurityModal restricted
+    class IconActions,ViewProfileIcon,QuickActionsIcon,WalkInVerifyIcon,ContactConfirmIcon,FollowUpIcon,PaymentRemindIcon,QueueCheckIcon icon

@@ -1,0 +1,74 @@
+#### 1. **Inbox & Alerts**
+
+
+
+
+1. Inbox & Alerts – Dynamic MVP Features & Functionalities
+(Receptionist & Clinic Assistant Account — Curis by Citrus)
+
+
+The Inbox & Alerts page is the central hub for real-time communication and operational notifications. It empowers Receptionists and Clinic Assistants to stay updated, coordinate smoothly, and ensure timely responses to clinic events without accessing sensitive patient data. Below is a breakdown of its core dynamic MVP functionalities:
+________________________________________
+a.	Real-Time Alerts Feed
+•	Live Appointment Notifications
+o	Instant alerts for new bookings, reschedules, cancellations, and late arrivals.
+o	Notifications are tagged by urgency: [Normal], [High] (e.g., walk-in emergency), and [System Alert] (e.g., service interruptions).
+•	Emergency Broadcasts
+o	High-priority updates from Clinic Owner or system admin (e.g., doctor unavailable, system outage, fire drill).
+•	Patient Arrival Alerts
+o	Auto-prompted notification when a patient completes self-check-in or is manually checked in by staff.
+________________________________________
+b.	Internal Messaging (Clinic Chat)
+•	Role-Based Messaging Threads
+o	Chat groups segmented by roles: Reception–Doctor, Reception–Lab, Reception–Clinic Owner.
+o	1-on-1 direct chats between staff for quick coordination.
+•	Contextual Smart Replies
+o	One-tap response suggestions for common tasks (e.g., “Patient is ready”, “Rescheduled for 3PM”).
+•	Attachment Support
+o	Send internal notes, documents (e.g., appointment schedules, patient status), and system-generated links (e.g., invoice or task references).
+•	Read Receipts & Timestamps
+o	Tracks when messages are delivered and read for accountability and workflow visibility.
+________________________________________
+c.	Patient Notification Panel
+•	Outbound Announcements
+o	Send bulk or individual appointment reminders, confirmations, and delay notifications via:
+	SMS
+	WhatsApp
+	Email
+•	Broadcast Messages
+o	Clinic-wide updates (e.g., holiday closures, new services) configured and sent under Clinic Owner guidance.
+•	Template Library
+o	Pre-set message templates editable for use cases such as:
+	“Your appointment is confirmed for [Time] with Dr. [Name].”
+	“Clinic is temporarily closed today due to [Reason].”
+________________________________________
+d.	Alerts History Log
+•	Notification Archive
+o	Track past alerts and messages.
+o	Filterable by:
+	Date
+	Type (Appointment, Emergency, System)
+	Sender
+•	Audit Trail
+o	Displays who sent or responded to a notification, ensuring traceability and accountability.
+________________________________________
+e.	Smart Filter & Prioritization Tools
+•	Alert Filters
+o	Quickly sort alerts by type, time, or read/unread status.
+•	Urgency Tags & Color Codes
+o	High-priority items are visually highlighted (e.g., red banner for emergencies, blue for confirmations).
+•	Snooze & Follow-Up Reminders
+o	Temporarily snooze non-urgent alerts.
+o	Set follow-up notifications (e.g., remind me in 30 minutes to call the patient).
+________________________________________
+Value Delivered
+
+•	Real-time visibility into front-desk operations and clinic events.
+•	Streamlined coordination across clinic staff without the need for external apps.
+•	Timely patient communication enhances service experience and reduces no-shows.
+•	Accountability through audit logs and role-based access.
+________________________________________
+
+
+
+

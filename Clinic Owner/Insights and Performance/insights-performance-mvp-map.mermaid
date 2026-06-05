@@ -1,0 +1,207 @@
+flowchart TD
+    %% Main Entry Points
+    Dashboard[Dashboard] --> InsightsMain[Insights & Performance<br/>Analytics Command Center]
+    
+    %% Insights & Performance Main Hub
+    InsightsMain --> FinancialReports[Financial Performance Reports]
+    InsightsMain --> AppointmentAnalytics[Appointment Analytics]
+    InsightsMain --> ServicePerformance[Clinic Service Performance]
+    InsightsMain --> StaffEfficiency[Staff Efficiency Metrics]
+    InsightsMain --> VisualDashboards[Visual Dashboards]
+    InsightsMain --> ReportSharing[Report Export & Sharing]
+    
+    %% Financial Performance Reports Branch
+    FinancialReports --> IncomeOverview[Total Income Overview]
+    IncomeOverview --> IncomeModal[Income Overview Modal]
+    IncomeModal --> TimeframeSelector[Timeframe Selection<br/>Daily/Weekly/Monthly]
+    IncomeModal --> ServiceBreakdown[Service Revenue Breakdown<br/>Consultations/Labs/Procedures]
+    IncomeModal --> TrendAnalysis[Revenue Trend Analysis<br/>Growth/Decline Indicators]
+    
+    FinancialReports --> ServiceChargeDisplay[Service Charge Deductions]
+    ServiceChargeDisplay --> DeductionModal[Platform Deduction Tracking Modal]
+    DeductionModal --> FrequencyView[Payment Frequency View<br/>Weekly/Bi-weekly/Monthly]
+    DeductionModal --> DeductionHistory[Historical Deductions<br/>Period Comparison]
+    
+    FinancialReports --> OutstandingReports[Outstanding Balances]
+    OutstandingReports --> OutstandingModal[Unpaid Invoice Analysis Modal]
+    OutstandingModal --> PatientFilter[Filter by Patient<br/>Name/ID Search]
+    OutstandingModal --> DateFilter[Filter by Service Date<br/>Date Range Picker]
+    OutstandingModal --> AmountSort[Sort by Amount Due<br/>High to Low]
+    
+    FinancialReports --> RevenueByService[Revenue by Service Type]
+    RevenueByService --> ServiceRevenueModal[Category Performance Modal]
+    ServiceRevenueModal --> CategoryChart[Service Category Chart<br/>Bar/Pie Visualization]
+    ServiceRevenueModal --> TopServices[Top Earning Services<br/>Ranked List]
+    ServiceRevenueModal --> ServiceComparison[Period Comparison<br/>Service Growth Analysis]
+    
+    FinancialReports --> ReportExport[Download Reports]
+    ReportExport --> ExportModal[Export Options Modal]
+    ExportModal --> CSVExport[CSV Export<br/>Raw Data Tables]
+    ExportModal --> PDFExport[PDF Export<br/>Formatted Summaries]
+    
+    %% Appointment Analytics Branch
+    AppointmentAnalytics --> BookingTrends[Booking Trends Analysis]
+    BookingTrends --> TrendsModal[Booking Trends Modal]
+    TrendsModal --> VolumeChart[Volume Analysis Chart<br/>Daily/Weekly/Monthly]
+    TrendsModal --> PeakTimeAnalysis[Peak Traffic Analysis<br/>Heatmap Display]
+    TrendsModal --> BookingPatterns[Booking Pattern Detection<br/>Predictive Insights]
+    
+    AppointmentAnalytics --> CancellationMetrics[Cancellation & Reschedule Metrics]
+    CancellationMetrics --> CancellationModal[Drop-off Tracking Modal]
+    CancellationModal --> CancelReasons[Cancellation Reasons<br/>Categorized Display]
+    CancellationModal --> RescheduleFreq[Reschedule Frequency<br/>By Patient/Service]
+    CancellationModal --> ImpactAnalysis[Revenue Impact Analysis<br/>Lost Income Calculation]
+    
+    AppointmentAnalytics --> NoShowAnalysis[No-Show Analysis]
+    NoShowAnalysis --> NoShowModal[Missed Appointment Rates Modal]
+    NoShowModal --> NoShowRate[No-Show Percentage<br/>Real-time Calculation]
+    NoShowModal --> PatientHistory[Repeat Offenders List<br/>Patient No-Show History]
+    NoShowModal --> FollowUpStrategy[Follow-up Planning Tool<br/>Overbooking Suggestions]
+    
+    AppointmentAnalytics --> UtilizationRate[Utilization Rate Tracking]
+    UtilizationRate --> UtilizationModal[Slot Efficiency Tracking Modal]
+    UtilizationModal --> SlotAnalysis[Booked vs Available Slots<br/>Percentage Display]
+    UtilizationModal --> DoctorUtilization[Doctor-wise Utilization<br/>Individual Metrics]
+    UtilizationModal --> OptimizationTips[Optimization Recommendations<br/>AI-powered Suggestions]
+    
+    %% Clinic Service Performance Branch
+    ServicePerformance --> PatientRetention[Patient Retention Tracking]
+    PatientRetention --> RetentionModal[Retention Analysis Modal]
+    RetentionModal --> NewVsReturning[New vs Returning Patients<br/>Percentage Breakdown]
+    RetentionModal --> RetentionTrend[Retention Trend Chart<br/>Historical View]
+    RetentionModal --> LoyaltyMetrics[Patient Loyalty Score<br/>Engagement Metrics]
+    
+    ServicePerformance --> ServiceUtilization[Service Utilization Analysis]
+    ServiceUtilization --> UtilizationDashboard[Service Usage Dashboard]
+    UtilizationDashboard --> TopServices[Top 5 Most Used Services<br/>Ranking Display]
+    UtilizationDashboard --> UnderusedServices[Least Used Services<br/>Opportunity Analysis]
+    UtilizationDashboard --> ServiceGrowth[Service Growth Trends<br/>Month-over-Month]
+    
+    ServicePerformance --> RevenueCorrelation[Revenue vs Utilization]
+    RevenueCorrelation --> CorrelationModal[Correlation Analysis Modal]
+    CorrelationModal --> HighRevenueLowUsage[High Revenue/Low Usage<br/>Premium Services]
+    CorrelationModal --> PricingStrategy[Pricing Strategy Insights<br/>Optimization Suggestions]
+    CorrelationModal --> PromotionOpportunities[Promotion Opportunities<br/>Underperforming Services]
+    
+    %% Staff Efficiency Metrics Branch
+    StaffEfficiency --> AppointmentsHandled[Appointments Handled]
+    AppointmentsHandled --> StaffPerformanceModal[Staff Performance Modal]
+    StaffPerformanceModal --> IndividualMetrics[Individual Staff Metrics<br/>Doctor/Receptionist]
+    StaffPerformanceModal --> VolumeTracking[Consultation Volume<br/>Daily/Weekly/Monthly]
+    StaffPerformanceModal --> CompletionRate[Completion Rate<br/>Punctuality Metrics]
+    
+    StaffEfficiency --> ServiceRatings[Patient Feedback Scores]
+    ServiceRatings --> RatingsModal[Rating Aggregation Modal]
+    RatingsModal --> StarRatings[Star Rating Display<br/>1-5 Scale]
+    RatingsModal --> FeedbackTrends[Feedback Trend Analysis<br/>Improvement/Decline]
+    RatingsModal --> TopPerformers[Top Performing Staff<br/>Recognition List]
+    
+    StaffEfficiency --> ResponseTimes[Response Time Analysis]
+    ResponseTimes --> ResponseModal[Action Speed Metrics Modal]
+    ResponseModal --> ConfirmationSpeed[Appointment Confirmation Time]
+    ResponseModal --> RescheduleSpeed[Reschedule Processing Time]
+    ResponseModal --> EfficiencyScore[Overall Efficiency Score]
+    
+    StaffEfficiency --> ActionLogs[Staff Action Overview]
+    ActionLogs --> ActionSummaryModal[Staff Activity Summary Modal]
+    ActionSummaryModal --> ActionTypes[Action Type Breakdown<br/>Invoice/Appointment/Patient]
+    ActionSummaryModal --> ActivityHeatmap[Activity Heatmap<br/>Busiest Times]
+    ActionSummaryModal --> ProductivityMetrics[Productivity Scoring<br/>Benchmarking]
+    
+    %% Visual Dashboards Branch
+    VisualDashboards --> ChartConfig[Chart Configuration]
+    ChartConfig --> ChartModal[Graph Type Selection Modal]
+    ChartModal --> LineGraphs[Line Graphs<br/>Trend Analysis]
+    ChartModal --> BarCharts[Bar Charts<br/>Comparative Display]
+    ChartModal --> PieCharts[Pie Charts<br/>Distribution View]
+    ChartModal --> CustomCharts[Custom Visualizations<br/>Drag-and-Drop Builder]
+    
+    VisualDashboards --> FilterTools[Advanced Filtering]
+    FilterTools --> FilterPanel[Filter Tools Panel]
+    FilterPanel --> DateRangePicker[Date Range Selection<br/>Custom Periods]
+    FilterPanel --> StaffServiceFilter[Staff/Service Filters<br/>Multi-select Options]
+    FilterPanel --> PatientSegments[Patient Segmentation<br/>New vs Returning]
+    
+    VisualDashboards --> ComparativeViews[Comparative Analysis]
+    ComparativeViews --> ComparisonModal[Period-over-Period Analysis Modal]
+    ComparisonModal --> MonthComparison[This Month vs Last Month]
+    ComparisonModal --> YearComparison[Year-over-Year Analysis]
+    ComparisonModal --> CustomComparison[Custom Period Comparison]
+    
+    %% Report Export & Sharing Branch
+    ReportSharing --> ExportOptions[Export Configuration]
+    ExportOptions --> FormatModal[Export Format Modal]
+    FormatModal --> PDFSummary[PDF Summary Snapshots<br/>Executive Reports]
+    FormatModal --> CSVRawData[CSV Raw Data Tables<br/>Full Dataset Export]
+    FormatModal --> ExcelFormat[Excel Format<br/>Future Enhancement]
+    
+    ReportSharing --> ScheduledDelivery[Automated Delivery]
+    ScheduledDelivery --> ScheduleModal[Scheduled Delivery Modal<br/>Future Feature]
+    ScheduleModal --> WeeklyReports[Weekly Report Schedule]
+    ScheduleModal --> MonthlyReports[Monthly Report Schedule]
+    ScheduleModal --> EmailConfig[Email Configuration<br/>Recipients List]
+    
+    %% Integration Points with Other Modules
+    
+    %% From Dashboard
+    Dashboard -.->|Quick Stats Request| InsightsMain
+    IncomeOverview -.->|Summary Data| Dashboard
+    
+    %% From Billings & Payments
+    Billings[Billings & Payments] -.->|Financial Data| FinancialReports
+    Billings -.->|Invoice Status| OutstandingReports
+    Billings -.->|Payment History| ServiceChargeDisplay
+    
+    %% From Appointments
+    Appointments[Appointments Module] -.->|Booking Data| AppointmentAnalytics
+    Appointments -.->|Schedule Data| UtilizationRate
+    Appointments -.->|No-show Data| NoShowAnalysis
+    
+    %% From Workforce Hub
+    WorkforceHub[Workforce Hub] -.->|Staff Performance| StaffEfficiency
+    WorkforceHub -.->|Activity Logs| ActionLogs
+    WorkforceHub -.->|Staff Metrics| IndividualMetrics
+    
+    %% From Health Data & Records
+    HealthData[Health Data & Records] -.->|Patient Metrics| PatientRetention
+    HealthData -.->|Visit Data| ServiceUtilization
+    
+    %% From Clinic Services
+    ClinicServices[Clinic Services Hub] -.->|Service Data| ServicePerformance
+    ClinicServices -.->|Pricing Data| RevenueByService
+    ClinicServices -.->|Usage Stats| ServiceUtilization
+    
+    %% From Settings
+    Settings[Settings Module] -.->|Export Preferences| ScheduledDelivery
+    Settings -.->|Report Config| ExportOptions
+    
+    %% To Notifications
+    NoShowRate -.->|Alert Triggers| Notifications[Notifications Module]
+    TopPerformers -.->|Recognition Alerts| Notifications
+    OutstandingModal -.->|Payment Alerts| Notifications
+    
+    %% Navigation Back Options
+    FinancialReports --> InsightsMain
+    AppointmentAnalytics --> InsightsMain
+    ServicePerformance --> InsightsMain
+    StaffEfficiency --> InsightsMain
+    VisualDashboards --> InsightsMain
+    ReportSharing --> InsightsMain
+    InsightsMain --> Dashboard
+    
+    %% Styling
+    classDef mainHub fill:#2563eb,stroke:#1e40af,stroke-width:3px,color:#fff
+    classDef subModule fill:#7c3aed,stroke:#6d28d9,stroke-width:2px,color:#fff
+    classDef modal fill:#059669,stroke:#047857,stroke-width:2px,color:#fff
+    classDef action fill:#dc2626,stroke:#b91c1c,stroke-width:2px,color:#fff
+    classDef integration fill:#f59e0b,stroke:#d97706,stroke-width:2px,stroke-dasharray: 5 5
+    classDef futureFeature fill:#94a3b8,stroke:#64748b,stroke-width:2px,color:#fff
+    classDef chart fill:#06b6d4,stroke:#0891b2,stroke-width:2px,color:#fff
+    
+    class InsightsMain mainHub
+    class FinancialReports,AppointmentAnalytics,ServicePerformance,StaffEfficiency,VisualDashboards,ReportSharing subModule
+    class IncomeModal,DeductionModal,OutstandingModal,ServiceRevenueModal,ExportModal,TrendsModal,CancellationModal,NoShowModal,UtilizationModal,RetentionModal,CorrelationModal,StaffPerformanceModal,RatingsModal,ResponseModal,ActionSummaryModal,ChartModal,FilterPanel,ComparisonModal,FormatModal,ScheduleModal modal
+    class CSVExport,PDFExport,DateRangePicker,TopPerformers,OptimizationTips action
+    class Dashboard,Billings,Appointments,WorkforceHub,HealthData,ClinicServices,Settings,Notifications integration
+    class ScheduledDelivery,ExcelFormat,WeeklyReports,MonthlyReports futureFeature
+    class LineGraphs,BarCharts,PieCharts,VolumeChart,CategoryChart,RetentionTrend,ActivityHeatmap chart

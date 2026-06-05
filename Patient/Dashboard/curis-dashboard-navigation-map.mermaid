@@ -1,0 +1,233 @@
+flowchart TD
+    %% Dashboard Core Components
+    D[Dashboard] --> D1[Personalized Greeting<br/>Time-based welcome]
+    D1 --> D1a[Good Morning/Afternoon/Evening<br/>Patient Name Display]
+    D1 --> D1b[Family Member Context<br/>Currently Selected Profile]
+    
+    D --> D2[Family User Switcher<br/>Profile Management]
+    D2 --> D2a{Profile Dropdown Click}
+    D2a --> D2a1[Profile List Modal<br/>Family Members Display]
+    D2a1 --> D2a1a[Profile Images & Names<br/>Age indicators]
+    D2a1 --> D2a1b[Selection Action<br/>Switch active profile]
+    D2a1b --> D2a1c[Context Refresh<br/>All widgets update]
+    D2a1c --> D2a1c1[Appointments refresh<br/>Selected member's data]
+    D2a1c --> D2a1c2[Prescriptions refresh<br/>Selected member's data]
+    D2a1c --> D2a1c3[Invoices refresh<br/>Selected member's data]
+    D2a1c --> D2a1c4[Messages refresh<br/>Selected member's data]
+    
+    %% Quick Navigation Cards
+    D --> D3[Quick Navigation Cards<br/>Action Shortcuts]
+    D3 --> D3a{Book Appointment Card Click}
+    D3a --> F[My Appointments Page]
+    D3a --> F1[Family-aware Booking<br/>Pre-selected member]
+    
+    D3 --> D3b{Medical Records Card Click}
+    D3b --> G[My Health Care Page]
+    D3b --> G1[Profile-filtered Records<br/>Selected member's data]
+    
+    D3 --> D3c{Payments Card Click}
+    D3c --> H[Billings & Payments Page]
+    D3c --> H1[Filtered Invoice View<br/>Selected member's bills]
+    
+    D3 --> D3d{Messages Card Click}
+    D3d --> MSG[Messages Center<br/>Communication Hub]
+    MSG --> MSG1[Clinic Messages<br/>Per profile]
+    MSG --> MSG2[Unread Counter<br/>Dynamic badge]
+    MSG --> MSG3[Message Thread View<br/>Conversation history]
+    
+    %% Live Appointments Widget
+    D --> D4[Live Appointments Widget<br/>Upcoming Schedule]
+    D4 --> D4a[Appointment Cards<br/>Scrollable feed]
+    D4a --> D4a1[Date & Time Display<br/>Countdown timer]
+    D4a --> D4a2[Doctor & Clinic Info<br/>Contact details]
+    D4a --> D4a3[Appointment Type Tag<br/>Virtual/In-person]
+    D4a --> D4a4[Patient Tag<br/>Self/Dependent name]
+    
+    %% ENHANCED: Reschedule Flow with Toast Notifications
+    D4 --> D4b{Reschedule Button Click}
+    D4b --> D4b1[Reschedule Modal Opens<br/>Calendar interface]
+    D4b1 --> D4b1a[Doctor Availability Grid<br/>Real-time slot display]
+    D4b1 --> D4b1b[Interactive Date Calendar<br/>Visual date picker]
+    D4b1 --> D4b1c[Time Slot Selection<br/>Available times grid]
+    D4b1 --> D4b1d{Pick New Date & Time}
+    D4b1d --> D4b1e[Confirm Reschedule Button<br/>Final confirmation]
+    D4b1e --> D4b1f[System Updates Appointment<br/>Database transaction]
+    D4b1f --> D4b1g[Toast Success Notification<br/>Visual feedback appears]
+    D4b1g --> D4b1h[Email/SMS Confirmation Sent<br/>Multi-channel alert]
+    D4b1h --> D4b1i[Dashboard Widget Refreshes<br/>Instant UI update]
+    D4b1i --> D4b1j[Updated Appointment Display<br/>New date/time shown]
+    
+    %% ENHANCED: Cancel Flow with Policy Validation
+    D4 --> D4c{Cancel Button Click}
+    D4c --> D4c1[Cancel Modal Opens<br/>Confirmation dialog]
+    D4c1 --> D4c1a{System Checks Policy<br/>Cancellation rules validation}
+    D4c1a -->|Within Time Limit| D4c1b[Cancellation Allowed<br/>Policy check passed]
+    D4c1a -->|Past Time Limit| D4c1c[Cancellation Blocked<br/>Policy restriction]
+    D4c1c --> D4c1c1[Error Message Display<br/>'Cancellation not permitted<br/>at this time']
+    D4c1c1 --> D4c1c2[Modal Closes<br/>Action prevented]
+    D4c1b --> D4c1d[Confirm Cancellation<br/>Patient confirms action]
+    D4c1d --> D4c1e[Status Changed to Cancelled<br/>Database update]
+    D4c1e --> D4c1f[Appointment Removed from List<br/>UI refresh]
+    D4c1f --> D4c1g[Notification Sent<br/>Patient & Clinic alerted]
+    D4c1g --> D4c1g1[Patient SMS/Email<br/>Cancellation confirmation]
+    D4c1g --> D4c1g2[Clinic Alert<br/>Staff notification]
+    
+    %% ENHANCED: Prescription Update Card with Refill Option
+    D --> D5[Prescription Update Card<br/>Latest Medications]
+    D5 --> D5a[Recent Prescription Display<br/>Doctor/Date/Title]
+    D5a --> D5a1[Doctor Name<br/>Prescriber info]
+    D5a --> D5a2[Prescription Title<br/>Medication name]
+    D5a --> D5a3[Issue Date<br/>Prescription date]
+    D5a --> D5a4[New Badge<br/>Unread indicator]
+    
+    D5 --> D5b{View Details Click}
+    D5b --> G2[Redirects to Medical Records<br/>Prescription Section]
+    D5b --> G2a[Expanded Prescription View<br/>Full details display]
+    G2a --> G2a1[Doctor Name<br/>Prescriber credentials]
+    G2a --> G2a2[Medication Details<br/>Drug name & strength]
+    G2a --> G2a3[Dosage Instructions<br/>Usage guidelines]
+    G2a --> G2a4[Issue Date<br/>Prescription timestamp]
+    G2a --> G2a5[Renewal Information<br/>Refill eligibility]
+    G2a --> G2a6{Quick Refill Option<br/>If available}
+    G2a6 -->|Available| QA2[Quick Refill Click]
+    QA2 --> QA2a[Refill Request Modal<br/>Prescription renewal]
+    QA2a --> QA2a1[Select Pharmacy<br/>Partner list]
+    QA2a --> QA2a2[Confirm Details<br/>Medication verification]
+    QA2a --> QA2a3[Submit Request<br/>Sent to Clinic/Doctor]
+    QA2a3 --> QA2a4[Doctor Notification<br/>Refill alert sent]
+    
+    %% ENHANCED: Invoice Alert Panel with Detailed Modal
+    D --> D6[Invoice Alert Panel<br/>Outstanding Balances]
+    D6 --> D6a[Outstanding Balance Cards<br/>Per-person breakdown]
+    D6a --> D6a1[Patient Name<br/>Self/Dependent]
+    D6a --> D6a2[Amount Due<br/>Total outstanding]
+    D6a --> D6a3[Due Status Indicator<br/>Due/Overdue flag]
+    
+    D6 --> D6b{View Invoice Click}
+    D6b --> D6b1[Invoice Modal Opens<br/>Detailed breakdown view]
+    D6b1 --> D6b1a[Line Item Breakdown<br/>Service details]
+    D6b1a --> D6b1a1[Consultation Fees<br/>Doctor visit charges]
+    D6b1a --> D6b1a2[Lab Services<br/>Test charges]
+    D6b1a --> D6b1a3[Medications/Drugs<br/>Prescription costs]
+    D6b1 --> D6b1b[Provider/Clinic Details<br/>Billing entity info]
+    D6b1 --> D6b1c[Payment Status Display<br/>Due/Overdue indicator]
+    D6b1 --> D6b1d[Download PDF Option<br/>Invoice export]
+    D6b1d --> D6b1d1[Generate PDF<br/>Document creation]
+    D6b1d --> D6b1d2[Download to Device<br/>File save]
+    D6b1 --> D6b1e[Pay Now Button<br/>Payment initiation]
+    
+    %% ENHANCED: Pay Now Flow with Offline Payment Processing
+    D6 --> D6c{Pay Now Click<br/>From Alert or Modal}
+    D6c --> H3[Payment Processing Form Opens<br/>Offline payment workflow]
+    H3 --> H3a[View Offline Payment Methods<br/>Available options display]
+    H3a --> H3a1[M-Pesa Option<br/>Mobile money]
+    H3a --> H3a2[Bank Transfer Option<br/>Direct deposit]
+    H3a --> H3a3[Other Payment Methods<br/>Alternative options]
+    H3 --> H3b[Specify Payment Mode<br/>Payee selection]
+    H3b --> H3b1[Select Mode Used<br/>M-Pesa/Bank/Other]
+    H3 --> H3c[Upload Receipt/Screenshot<br/>Payment evidence]
+    H3c --> H3c1[File Upload Interface<br/>Image/PDF picker]
+    H3c --> H3c2[Receipt Preview<br/>Verification display]
+    H3 --> H3d[Enter Transaction Code<br/>Reference number]
+    H3d --> H3d1[M-Pesa Reference<br/>Transaction ID]
+    H3d --> H3d2[Bank Reference<br/>Transfer code]
+    H3 --> H3e[Submit for Clinic Review<br/>Payment verification request]
+    H3e --> H3e1[Pending Confirmation Status<br/>Invoice status update]
+    H3e --> H3e2[Submission Trigger<br/>Notification dispatch]
+    H3e2 --> H3e2a[Alert to Receptionist<br/>Clinic Assistant notified]
+    H3e2 --> H3e2b[Alert to Clinic Owner<br/>Owner account notified]
+    H3e1 --> H3f{Clinic Reviews Payment<br/>Verification process}
+    H3f -->|Verified| H3g[Invoice Status: Paid<br/>Payment confirmed]
+    H3f -->|Rejected| H3h[Payment Rejected<br/>Resubmission needed]
+    H3g --> H3g1[Dashboard Refreshes<br/>Updated invoice status]
+    H3g --> H3g2[Confirmation SMS/Email Sent<br/>Patient notification]
+    H3g2 --> H3g2a[Payment Receipt Email<br/>Official confirmation]
+    H3g2 --> H3g2b[SMS Notification<br/>Quick alert]
+    
+    %% Notifications Banner
+    D --> D7[Notifications Banner<br/>Real-time Alerts]
+    D7 --> D7a[New Messages Alert<br/>Clinic communications]
+    D7a --> D7a1{Click Notification}
+    D7a1 --> MSG[Messages Center]
+    
+    D7 --> D7b[Appointment Reminders<br/>Upcoming visits]
+    D7b --> D7b1{Click Reminder}
+    D7b1 --> F[My Appointments]
+    
+    D7 --> D7c[Health Advisories<br/>Urgent notices]
+    D7c --> D7c1{Click Advisory}
+    D7c1 --> D7c1a[Advisory Modal<br/>Full notice display]
+    D7c1a --> D7c1a1[Advisory Title<br/>Alert heading]
+    D7c1a --> D7c1a2[Advisory Content<br/>Detailed message]
+    D7c1a --> D7c1a3[Action Buttons<br/>Acknowledge/Contact]
+    
+    %% Main Navigation Links
+    D --> NAV[Main Navigation Menu<br/>Primary sections]
+    NAV --> F[My Appointments]
+    NAV --> G[My Health Care]
+    NAV --> H[Billings & Payments]
+    NAV --> I[Emergency Care]
+    NAV --> J[My Medical Cover]
+    NAV --> K[My Profile]
+    
+    %% Integration Points
+    F --> F_INT[Appointment Integration<br/>Cross-page sync]
+    F_INT --> D4[Updates Dashboard Widget]
+    F_INT --> G7[Links to Medical Records]
+    F_INT --> H[Links to Billing]
+    
+    G --> G_INT[Health Records Integration<br/>Data synchronization]
+    G_INT --> D5[Updates Prescription Card]
+    G_INT --> J[Links to Insurance Claims]
+    
+    H --> H_INT[Billing Integration<br/>Payment sync]
+    H_INT --> D6[Updates Invoice Alert]
+    H_INT --> J[Links to Insurance]
+    
+    %% Real-time Sync Indicators
+    D --> RT[Real-time Sync Engine<br/>Live data updates]
+    RT --> RT1[Appointment Changes<br/>Instant refresh]
+    RT --> RT2[New Prescriptions<br/>Badge notifications]
+    RT --> RT3[Invoice Updates<br/>Payment status]
+    RT --> RT4[Message Alerts<br/>Unread counts]
+    
+    %% Responsive Behaviors
+    D --> RES[Responsive Layout<br/>Device adaptation]
+    RES --> RES1[Mobile View<br/>Stacked cards]
+    RES --> RES2[Tablet View<br/>2-column grid]
+    RES --> RES3[Desktop View<br/>Full grid layout]
+    
+    %% Error States
+    D --> ERR[Error Handling<br/>Graceful fallbacks]
+    ERR --> ERR1[No Appointments<br/>Empty state message]
+    ERR --> ERR2[No Prescriptions<br/>Healthcare prompt]
+    ERR --> ERR3[No Invoices<br/>All paid message]
+    ERR --> ERR4[Loading States<br/>Skeleton loaders]
+    
+    %% Security Context
+    D --> SEC[Security Layer<br/>Access control]
+    SEC --> SEC1[Session Management<br/>Auto-logout timer]
+    SEC --> SEC2[Profile Permissions<br/>Age-based access]
+    SEC2 --> SEC2a[Under 13<br/>Parent full control]
+    SEC2 --> SEC2b[13-17<br/>Limited visibility]
+    SEC2 --> SEC2c[18+<br/>Independent access]
+    
+    %% Quick Actions - Appointment Details
+    D4a --> QA1{Quick View Click}
+    QA1 --> QA1a[Appointment Details Modal<br/>Full appointment info]
+    QA1a --> QA1a1[Service Details<br/>Treatment type]
+    QA1a --> QA1a2[Clinic Location<br/>Address/Map]
+    QA1a --> QA1a3[Doctor Profile<br/>Credentials]
+    QA1a --> QA1a4[Preparation Notes<br/>Pre-visit instructions]
+    
+    %% Data Caching
+    D --> CACHE[Local Data Cache<br/>Offline support]
+    CACHE --> CACHE1[Recent Appointments<br/>Offline view]
+    CACHE --> CACHE2[Basic Profile Info<br/>Cached data]
+    CACHE --> CACHE3[Last Sync Time<br/>Data freshness]
+    
+    %% Analytics Events
+    D --> ANALYTICS[Usage Analytics<br/>Interaction tracking]
+    ANALYTICS --> AN1[Card Clicks<br/>Navigation patterns]
+    ANALYTICS --> AN2[Profile Switches<br/>Family usage]
+    ANALYTICS --> AN3[Action Completion<br/>Task success rates]

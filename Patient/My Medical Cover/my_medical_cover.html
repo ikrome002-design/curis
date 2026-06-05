@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Curis by Citrus - My Medical Cover for managing insurance claims, coverage, and medical reimbursements">
+    <title>My Medical Cover | Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Medical Cover\my_medical_cover.css">
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Appointments\my_appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>My Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Health Care\my_health_care.html"
+                            class="nav-link">
+                            <i class="fas fa-heart-pulse"></i>
+                            <span>My Health Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Emergency Care\emergency_care.html"
+                            class="nav-link">
+                            <i class="fas fa-ambulance"></i>
+                            <span>Emergency Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Medical Cover\my_medical_cover.html"
+                            class="nav-link">
+                            <i class="fas fa-shield-heart"></i>
+                            <span>My Medical Cover</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">My Medical Cover</h1>
+                </div>
+
+                <div class="header-right">
+                    <!-- Notifications Icon -->
+                    <div class="notification-icon">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Notifications\notifications.html"
+                            class="icon-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">5</span>
+                        </a>
+                    </div>
+
+                    <!-- User Profile Icon with Dropdown -->
+                    <div class="user-profile-dropdown">
+                        <button class="profile-btn" id="profileBtn">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                                alt="User Profile" class="profile-img">
+                        </button>
+
+                        <!-- Profile Dropdown Menu -->
+                        <div class="profile-menu" id="profileMenu">
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Profile\my_profile.html"
+                                class="profile-menu-item">
+                                <i class="fas fa-user"></i>
+                                <span>My Profile</span>
+                            </a>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\landing_page.html"
+                                class="profile-menu-item logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Medical Cover Content -->
+            <section class="medical-cover-content">
+
+                <!-- Family Member Switcher -->
+                <div class="family-switcher">
+                    <div class="switcher-header">
+                        <span class="label">Viewing insurance information for:</span>
+                        <button class="profile-selector" id="profileSelector">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                alt="Current Profile" class="profile-avatar">
+                            <span class="profile-name">John Kamau (Self)</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Coverage Eligibility Alert Banner (if missing info) -->
+                <div class="coverage-alert-banner" id="coverageAlertBanner" style="display: none;">
+                    <div class="alert-content">
+                        <div class="alert-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="alert-message">
+                            <h3 class="alert-title">Incomplete Insurance Information</h3>
+                            <p class="alert-description">Some family members are missing insurance policy details.
+                                Complete
+                                their information to enable claims processing.</p>
+                        </div>
+                        <button class="alert-action-btn" id="addPolicyInfoBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Policy Information
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Claim Statistics Cards -->
+                <div class="claim-statistics-section">
+                    <div class="statistics-grid">
+                        <div class="stat-card pending-claims">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-label">Pending Claims</span>
+                                <span class="stat-value">3</span>
+                                <span class="stat-subtext">Under review</span>
+                            </div>
+                        </div>
+                        <div class="stat-card approved-claims">
+                            <div class="stat-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-label">Approved Claims</span>
+                                <span class="stat-value">12</span>
+                                <span class="stat-subtext">Completed this year</span>
+                            </div>
+                        </div>
+                        <div class="stat-card total-claims">
+                            <div class="stat-icon">
+                                <i class="fas fa-file-invoice"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-label">Total Claims</span>
+                                <span class="stat-value">15</span>
+                                <span class="stat-subtext">All submissions</span>
+                            </div>
+                        </div>
+                        <div class="stat-card claim-value">
+                            <div class="stat-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-label">Total Claimed</span>
+                                <span class="stat-value">KES. 145,500</span>
+                                <span class="stat-subtext">This year</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Bar -->
+                <div class="quick-actions-bar">
+                    <button class="quick-action-btn btn-primary" id="newClaimBtn">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Create New Claim</span>
+                    </button>
+                    <button class="quick-action-btn" id="trackClaimsBtn">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Track My Claims</span>
+                    </button>
+                    <button class="quick-action-btn" id="insuranceProvidersBtn">
+                        <i class="fas fa-building"></i>
+                        <span>Insurance Providers</span>
+                    </button>
+                    <button class="quick-action-btn" id="claimGuideBtn">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Claim Guide</span>
+                    </button>
+                </div>
+
+                <!-- Search and Filter Section -->
+                <div class="claims-search-section">
+                    <div class="search-header">
+                        <h2 class="section-main-title">My Claims</h2>
+                    </div>
+                    <div class="search-filter-wrapper">
+                        <div class="search-input-wrapper">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="claimSearchInput" class="search-input"
+                                placeholder="Search claims by provider, patient name, or claim ID...">
+                        </div>
+                        <div class="filter-controls">
+                            <select id="statusFilter" class="filter-select">
+                                <option value="all">All Statuses</option>
+                                <option value="submitted">Submitted</option>
+                                <option value="under-review">Under Review</option>
+                                <option value="approved">Approved</option>
+                                <option value="rejected">Rejected</option>
+                                <option value="paid">Paid</option>
+                            </select>
+                            <select id="providerFilter" class="filter-select">
+                                <option value="all">All Providers</option>
+                                <option value="aaa">AAA Insurance</option>
+                                <option value="britam">Britam</option>
+                                <option value="apa">APA Insurance</option>
+                                <option value="jubilee">Jubilee Insurance</option>
+                            </select>
+                            <button class="filter-btn" id="advancedFilterBtn">
+                                <i class="fas fa-filter"></i>
+                                <span>Advanced Filters</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Claims Table/Dashboard -->
+                <div class="claims-dashboard-section">
+                    <div class="claims-table-wrapper">
+                        <table class="claims-table">
+                            <thead>
+                                <tr>
+                                    <th>Claim ID</th>
+                                    <th>Patient Name</th>
+                                    <th>Insurance Provider</th>
+                                    <th>Claim Type</th>
+                                    <th>Claim Amount</th>
+                                    <th>Submission Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Claim Row 1 - Approved -->
+                                <tr class="claim-row">
+                                    <td class="claim-id">CLM-2025-001</td>
+                                    <td class="patient-name">
+                                        <div class="patient-info">
+                                            <span class="name">John Kamau</span>
+                                            <span class="relationship">(Self)</span>
+                                        </div>
+                                    </td>
+                                    <td class="provider-name">AAA Insurance</td>
+                                    <td class="claim-type">
+                                        <span class="type-badge outpatient">
+                                            <i class="fas fa-clinic-medical"></i>
+                                            Outpatient
+                                        </span>
+                                    </td>
+                                    <td class="claim-amount">KES. 12,500</td>
+                                    <td class="submission-date">Sep 28, 2025</td>
+                                    <td class="claim-status">
+                                        <span class="status-badge status-approved">
+                                            <i class="fas fa-check-circle"></i>
+                                            Approved
+                                        </span>
+                                    </td>
+                                    <td class="claim-actions">
+                                        <button class="action-btn view-claim" data-claim-id="CLM-2025-001">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn download-claim" data-claim-id="CLM-2025-001">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Claim Row 2 - Under Review -->
+                                <tr class="claim-row">
+                                    <td class="claim-id">CLM-2025-002</td>
+                                    <td class="patient-name">
+                                        <div class="patient-info">
+                                            <span class="name">Mary Kamau</span>
+                                            <span class="relationship">(Daughter)</span>
+                                        </div>
+                                    </td>
+                                    <td class="provider-name">Britam Health</td>
+                                    <td class="claim-type">
+                                        <span class="type-badge specialist">
+                                            <i class="fas fa-user-doctor"></i>
+                                            Specialist
+                                        </span>
+                                    </td>
+                                    <td class="claim-amount">KES. 8,750</td>
+                                    <td class="submission-date">Oct 1, 2025</td>
+                                    <td class="claim-status">
+                                        <span class="status-badge status-under-review">
+                                            <i class="fas fa-clock"></i>
+                                            Under Review
+                                        </span>
+                                    </td>
+                                    <td class="claim-actions">
+                                        <button class="action-btn view-claim" data-claim-id="CLM-2025-002">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn download-claim" data-claim-id="CLM-2025-002">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Claim Row 3 - Submitted -->
+                                <tr class="claim-row">
+                                    <td class="claim-id">CLM-2025-003</td>
+                                    <td class="patient-name">
+                                        <div class="patient-info">
+                                            <span class="name">John Kamau</span>
+                                            <span class="relationship">(Self)</span>
+                                        </div>
+                                    </td>
+                                    <td class="provider-name">APA Insurance</td>
+                                    <td class="claim-type">
+                                        <span class="type-badge lab">
+                                            <i class="fas fa-flask"></i>
+                                            Lab/Diagnostic
+                                        </span>
+                                    </td>
+                                    <td class="claim-amount">KES. 5,200</td>
+                                    <td class="submission-date">Oct 2, 2025</td>
+                                    <td class="claim-status">
+                                        <span class="status-badge status-submitted">
+                                            <i class="fas fa-paper-plane"></i>
+                                            Submitted
+                                        </span>
+                                    </td>
+                                    <td class="claim-actions">
+                                        <button class="action-btn view-claim" data-claim-id="CLM-2025-003">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn download-claim" data-claim-id="CLM-2025-003">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Claim Row 4 - Paid -->
+                                <tr class="claim-row">
+                                    <td class="claim-id">CLM-2025-004</td>
+                                    <td class="patient-name">
+                                        <div class="patient-info">
+                                            <span class="name">David Kamau</span>
+                                            <span class="relationship">(Son)</span>
+                                        </div>
+                                    </td>
+                                    <td class="provider-name">Jubilee Insurance</td>
+                                    <td class="claim-type">
+                                        <span class="type-badge medication">
+                                            <i class="fas fa-pills"></i>
+                                            Medication
+                                        </span>
+                                    </td>
+                                    <td class="claim-amount">KES. 3,500</td>
+                                    <td class="submission-date">Sep 15, 2025</td>
+                                    <td class="claim-status">
+                                        <span class="status-badge status-paid">
+                                            <i class="fas fa-money-bill-wave"></i>
+                                            Paid
+                                        </span>
+                                    </td>
+                                    <td class="claim-actions">
+                                        <button class="action-btn view-claim" data-claim-id="CLM-2025-004">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn download-claim" data-claim-id="CLM-2025-004">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Empty State (Hidden by default) -->
+                    <div class="empty-state" style="display: none;">
+                        <i class="fas fa-file-medical"></i>
+                        <p>No insurance claims submitted yet</p>
+                        <button class="btn-primary" id="createFirstClaimBtn">
+                            <i class="fas fa-plus"></i>
+                            Create Your First Claim
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Help Section -->
+                <div class="help-section">
+                    <div class="help-cards-grid">
+                        <div class="help-card">
+                            <div class="help-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3 class="help-title">Claim Guide</h3>
+                            <p class="help-description">Learn how to submit insurance claims step-by-step</p>
+                            <button class="help-link-btn">
+                                <span>Read Guide</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="help-card">
+                            <div class="help-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3 class="help-title">Insurance Providers</h3>
+                            <p class="help-description">View supported insurance companies and their requirements</p>
+                            <button class="help-link-btn" id="viewProvidersBtn">
+                                <span>View Providers</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="help-card">
+                            <div class="help-icon">
+                                <i class="fas fa-circle-question"></i>
+                            </div>
+                            <h3 class="help-title">FAQs</h3>
+                            <p class="help-description">Find answers to common questions about medical claims</p>
+                            <button class="help-link-btn">
+                                <span>View FAQs</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <p class="copyright">&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer"
+                    class="corporate-link">citruslabs.co.ke</a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer" aria-label="X">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Family Member Selector Modal -->
+    <div class="modal" id="familyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Family Member</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="family-list">
+                    <div class="family-member active" data-member-id="self">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="John Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>John Kamau</h4>
+                            <p>Self - 45 years</p>
+                            <div class="policy-info">
+                                <i class="fas fa-shield-halved"></i>
+                                <span>AAA Insurance - Policy #123456</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="family-member" data-member-id="spouse">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="Jane Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>Jane Kamau</h4>
+                            <p>Spouse - 42 years</p>
+                            <div class="policy-info">
+                                <i class="fas fa-shield-halved"></i>
+                                <span>AAA Insurance - Policy #123456</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="family-member" data-member-id="daughter">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="Mary Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>Mary Kamau</h4>
+                            <p>Daughter - 12 years</p>
+                            <div class="policy-info">
+                                <i class="fas fa-shield-halved"></i>
+                                <span>Britam Health - Policy #789012</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="family-member" data-member-id="son">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="David Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>David Kamau</h4>
+                            <p>Son - 8 years</p>
+                            <div class="policy-info warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>No policy information</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create New Claim Modal - Step 1: Patient & Claim Type Selection -->
+    <div class="modal" id="createClaimModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Create Insurance Claim - Step 1 of 4</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <!-- Step Progress Indicator -->
+                <div class="step-progress">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <span class="step-label">Patient & Type</span>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <span class="step-label">Provider</span>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <span class="step-label">Invoices</span>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <span class="step-label">Documents</span>
+                    </div>
+                </div>
+
+                <form class="claim-form" id="claimFormStep1">
+
+                    <!-- Patient Selection -->
+                    <div class="form-group">
+                        <label for="claimPatient">Select Patient *</label>
+                        <select id="claimPatient" class="form-control" required>
+                            <option value="">Choose family member</option>
+                            <option value="self">John Kamau (Self)</option>
+                            <option value="spouse">Jane Kamau (Spouse)</option>
+                            <option value="daughter">Mary Kamau (Daughter)</option>
+                            <option value="son">David Kamau (Son)</option>
+                        </select>
+                    </div>
+
+                    <!-- Claim Type Selection Grid -->
+                    <div class="form-group">
+                        <label>Select Claim Type *</label>
+                        <div class="claim-type-grid">
+                            <div class="claim-type-card" data-type="outpatient">
+                                <div class="type-icon">
+                                    <i class="fas fa-clinic-medical"></i>
+                                </div>
+                                <h4 class="type-title">Outpatient</h4>
+                                <p class="type-description">Regular clinic visits and consultations</p>
+                                <div class="type-checkbox">
+                                    <input type="radio" name="claimType" value="outpatient" id="typeOutpatient">
+                                    <label for="typeOutpatient"></label>
+                                </div>
+                            </div>
+                            <div class="claim-type-card" data-type="inpatient">
+                                <div class="type-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <h4 class="type-title">Inpatient</h4>
+                                <p class="type-description">Hospital admissions and overnight stays</p>
+                                <div class="type-checkbox">
+                                    <input type="radio" name="claimType" value="inpatient" id="typeInpatient">
+                                    <label for="typeInpatient"></label>
+                                </div>
+                            </div>
+                            <div class="claim-type-card" data-type="specialist">
+                                <div class="type-icon">
+                                    <i class="fas fa-user-doctor"></i>
+                                </div>
+                                <h4 class="type-title">Specialist</h4>
+                                <p class="type-description">Specialized medical consultations</p>
+                                <div class="type-checkbox">
+                                    <input type="radio" name="claimType" value="specialist" id="typeSpecialist">
+                                    <label for="typeSpecialist"></label>
+                                </div>
+                            </div>
+                            <div class="claim-type-card" data-type="lab">
+                                <div class="type-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <h4 class="type-title">Lab/Diagnostic</h4>
+                                <p class="type-description">Laboratory tests and diagnostic procedures</p>
+                                <div class="type-checkbox">
+                                    <input type="radio" name="claimType" value="lab" id="typeLab">
+                                    <label for="typeLab"></label>
+                                </div>
+                            </div>
+                            <div class="claim-type-card" data-type="medication">
+                                <div class="type-icon">
+                                    <i class="fas fa-pills"></i>
+                                </div>
+                                <h4 class="type-title">Medication</h4>
+                                <p class="type-description">Prescription drugs and pharmacy costs</p>
+                                <div class="type-checkbox">
+                                    <input type="radio" name="claimType" value="medication" id="typeMedication">
+                                    <label for="typeMedication"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="claimStep1Next">
+                    Next Step
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Claim Modal - Step 2: Insurance Provider Selection -->
+    <div class="modal" id="claimProviderModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Create Insurance Claim - Step 2 of 4</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <!-- Step Progress Indicator -->
+                <div class="step-progress">
+                    <div class="step completed">
+                        <div class="step-number"><i class="fas fa-check"></i></div>
+                        <span class="step-label">Patient & Type</span>
+                    </div>
+                    <div class="step active">
+                        <div class="step-number">2</div>
+                        <span class="step-label">Provider</span>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <span class="step-label">Invoices</span>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <span class="step-label">Documents</span>
+                    </div>
+                </div>
+
+                <div class="provider-selection-section">
+                    <h4 class="section-subtitle">Select Your Insurance Provider</h4>
+
+                    <!-- Insurance Provider Cards -->
+                    <div class="provider-cards-grid">
+
+                        <!-- Provider Card 1 - AAA Insurance -->
+                        <div class="provider-card" data-provider="aaa">
+                            <div class="provider-header">
+                                <div class="provider-logo">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="provider-info">
+                                    <h4 class="provider-name">AAA Insurance</h4>
+                                    <p class="provider-type">Health Insurance</p>
+                                </div>
+                                <div class="provider-checkbox">
+                                    <input type="radio" name="insuranceProvider" value="aaa" id="providerAAA">
+                                    <label for="providerAAA"></label>
+                                </div>
+                            </div>
+                            <div class="provider-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>claims@aaainsurance.co.ke</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+254 20 222 2000</span>
+                                </div>
+                                <div class="coverage-indicators">
+                                    <span class="coverage-badge covered">
+                                        <i class="fas fa-check"></i>
+                                        Outpatient
+                                    </span>
+                                    <span class="coverage-badge covered">
+                                        <i class="fas fa-check"></i>
+                                        Inpatient
+                                    </span>
+                                    <span class="coverage-badge covered">
+                                        <i class="fas fa-check"></i>
+                                        Specialist
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Provider Card 2 - Britam Health -->
+                        <div class="provider-card" data-provider="britam">
+                            <div class="provider-header">
+                                <div class="provider-logo">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="provider-info">
+                                    <h4 class="provider-name">Britam Health</h4>
+                                    <p class="provider-type">Medical Insurance</p>
+                                </div>
+                                <div class="provider-checkbox">
+                                    <input type="radio" name="insuranceProvider" value="britam" id="providerBritam">
+                                    <label for="providerBritam"></label>
+                                </div>
+                            </div>
+                            <div class="provider-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>health.claims@britam.com</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+254 709 940 000</span>
+                                </div>
+                                <div class="coverage-indicators">
+                                    <span class="coverage-badge covered">
+                                        <i class="fas fa-check"></i>
+                                        Outpatient
+                                    </span>
+                                    <span class="coverage-badge covered">
+                                        <i class="fas fa-check"></i>
+                                        Lab/Diagnostic
+                                    </span>
+                                    <span class="coverage-badge partial">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        Medication (Partial)
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Provider Card 3 - APA Insurance -->
+                        <div class="provider-card" data-provider="apa">
+                            <div class="provider-header">
+                                <div class="provider-logo">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="provider-info">
+                                    <h4 class="provider-name">APA Insurance</h4>
+                                    <p class="provider-type">Health Cover</p>
+                                </div>
+                                <div class="provider-checkbox">
+                                    <input type="radio" name="insuranceProvider" value="apa" id="providerAPA">
+                                    <label for="providerAPA"></label>
+                                </div>
+                            </div>
+                            <div class="provider-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>medicalclaims@apainsurance.org</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+254 20 289 8000</span>
+                                </div>
+                                <div class="coverage-indicators">
+                                    <span class="coverage-badge covered">
+                                        <i class="fas fa-check"></i>
+                                        All Types
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Policy Details Auto-fill -->
+                    <div class="policy-autofill-section" id="policyAutofillSection" style="display: none;">
+                        <h5 class="autofill-title">
+                            <i class="fas fa-check-circle"></i>
+                            Policy Information (Auto-filled)
+                        </h5>
+                        <div class="autofill-details">
+                            <div class="autofill-item">
+                                <span class="label">Policy Number:</span>
+                                <span class="value" id="policyNumber">123456789</span>
+                            </div>
+                            <div class="autofill-item">
+                                <span class="label">Policy Holder:</span>
+                                <span class="value" id="policyHolder">John Kamau</span>
+                            </div>
+                            <div class="autofill-item">
+                                <span class="label">Valid Until:</span>
+                                <span class="value" id="policyValidity">December 31, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="claimStep2Back">
+                    <i class="fas fa-arrow-left"></i>
+                    Back
+                </button>
+                <button class="btn-primary" id="claimStep2Next">
+                    Next Step
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Claim Modal - Step 3: Invoice Selection -->
+    <div class="modal" id="claimInvoiceModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Create Insurance Claim - Step 3 of 4</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <!-- Step Progress Indicator -->
+                <div class="step-progress">
+                    <div class="step completed">
+                        <div class="step-number"><i class="fas fa-check"></i></div>
+                        <span class="step-label">Patient & Type</span>
+                    </div>
+                    <div class="step completed">
+                        <div class="step-number"><i class="fas fa-check"></i></div>
+                        <span class="step-label">Provider</span>
+                    </div>
+                    <div class="step active">
+                        <div class="step-number">3</div>
+                        <span class="step-label">Invoices</span>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <span class="step-label">Documents</span>
+                    </div>
+                </div>
+
+                <div class="invoice-selection-section">
+                    <h4 class="section-subtitle">Select Paid Invoices to Include in Claim</h4>
+
+                    <!-- Invoice Filters -->
+                    <div class="invoice-filters">
+                        <select class="filter-select" id="invoiceDateFilter">
+                            <option value="all">All Dates</option>
+                            <option value="30">Last 30 Days</option>
+                            <option value="60">Last 60 Days</option>
+                            <option value="90">Last 90 Days</option>
+                        </select>
+                        <select class="filter-select" id="invoiceClinicFilter">
+                            <option value="all">All Clinics</option>
+                            <option value="nairobi">Nairobi Health Center</option>
+                            <option value="westlands">Westlands Medical Clinic</option>
+                        </select>
+                    </div>
+
+                    <!-- Available Invoices List -->
+                    <div class="invoices-checklist">
+
+                        <!-- Invoice Checkbox Item 1 -->
+                        <div class="invoice-checkbox-item">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="invoice1" value="INV-2025-001234">
+                                <label for="invoice1"></label>
+                            </div>
+                            <div class="invoice-item-details">
+                                <div class="invoice-header">
+                                    <span class="invoice-number">INV-2025-001234</span>
+                                    <span class="invoice-date">Sep 28, 2025</span>
+                                    <span class="invoice-amount">KES. 12,500</span>
+                                </div>
+                                <div class="invoice-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-hospital"></i>
+                                        <span>Nairobi Health Center</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-user-doctor"></i>
+                                        <span>Dr. Sarah Wanjiru</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-notes-medical"></i>
+                                        <span>General Consultation & Lab Tests</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Invoice Checkbox Item 2 -->
+                        <div class="invoice-checkbox-item">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="invoice2" value="INV-2025-001456">
+                                <label for="invoice2"></label>
+                            </div>
+                            <div class="invoice-item-details">
+                                <div class="invoice-header">
+                                    <span class="invoice-number">INV-2025-001456</span>
+                                    <span class="invoice-date">Oct 1, 2025</span>
+                                    <span class="invoice-amount">KES. 8,750</span>
+                                </div>
+                                <div class="invoice-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-hospital"></i>
+                                        <span>Westlands Medical Clinic</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-user-doctor"></i>
+                                        <span>Dr. James Omondi</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-notes-medical"></i>
+                                        <span>Pediatric Check-up & Vaccination</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Total Selected Summary -->
+                    <div class="selection-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">Invoices Selected:</span>
+                            <span class="summary-value" id="selectedInvoiceCount">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Total Claim Amount:</span>
+                            <span class="summary-value" id="totalClaimAmount">KES. 0</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="claimStep3Back">
+                    <i class="fas fa-arrow-left"></i>
+                    Back
+                </button>
+                <button class="btn-primary" id="claimStep3Next">
+                    Next Step
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Claim Modal - Step 4: Document Review & Submission -->
+    <div class="modal" id="claimDocumentModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Create Insurance Claim - Step 4 of 4</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <!-- Step Progress Indicator -->
+                <div class="step-progress">
+                    <div class="step completed">
+                        <div class="step-number"><i class="fas fa-check"></i></div>
+                        <span class="step-label">Patient & Type</span>
+                    </div>
+                    <div class="step completed">
+                        <div class="step-number"><i class="fas fa-check"></i></div>
+                        <span class="step-label">Provider</span>
+                    </div>
+                    <div class="step completed">
+                        <div class="step-number"><i class="fas fa-check"></i></div>
+                        <span class="step-label">Invoices</span>
+                    </div>
+                    <div class="step active">
+                        <div class="step-number">4</div>
+                        <span class="step-label">Documents</span>
+                    </div>
+                </div>
+
+                <div class="document-review-section">
+                    <h4 class="section-subtitle">Review Auto-Attached Documents</h4>
+
+                    <!-- Auto-Attached Documents -->
+                    <div class="auto-attached-docs">
+                        <div class="docs-header">
+                            <i class="fas fa-check-circle"></i>
+                            <span>The following documents have been automatically attached from your medical
+                                records:</span>
+                        </div>
+
+                        <div class="attached-docs-list">
+                            <!-- Document Item 1 - Invoice -->
+                            <div class="document-item">
+                                <div class="doc-icon">
+                                    <i class="fas fa-file-invoice"></i>
+                                </div>
+                                <div class="doc-info">
+                                    <h5 class="doc-name">Official Invoice - INV-2025-001234</h5>
+                                    <p class="doc-description">Nairobi Health Center | KES. 12,500</p>
+                                </div>
+                                <div class="doc-actions">
+                                    <button class="doc-action-btn preview-doc">
+                                        <i class="fas fa-eye"></i>
+                                        Preview
+                                    </button>
+                                    <button class="doc-action-btn remove-doc">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Document Item 2 - Consultation Summary -->
+                            <div class="document-item">
+                                <div class="doc-icon">
+                                    <i class="fas fa-file-medical"></i>
+                                </div>
+                                <div class="doc-info">
+                                    <h5 class="doc-name">Consultation Summary</h5>
+                                    <p class="doc-description">Visit on Sep 28, 2025 | Dr. Sarah Wanjiru</p>
+                                </div>
+                                <div class="doc-actions">
+                                    <button class="doc-action-btn preview-doc">
+                                        <i class="fas fa-eye"></i>
+                                        Preview
+                                    </button>
+                                    <button class="doc-action-btn remove-doc">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Document Item 3 - Lab Results -->
+                            <div class="document-item">
+                                <div class="doc-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <div class="doc-info">
+                                    <h5 class="doc-name">Lab Results - Lipid Profile</h5>
+                                    <p class="doc-description">Test Date: Sep 28, 2025</p>
+                                </div>
+                                <div class="doc-actions">
+                                    <button class="doc-action-btn preview-doc">
+                                        <i class="fas fa-eye"></i>
+                                        Preview
+                                    </button>
+                                    <button class="doc-action-btn remove-doc">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Document Item 4 - Doctor Notes -->
+                            <div class="document-item">
+                                <div class="doc-icon">
+                                    <i class="fas fa-notes-medical"></i>
+                                </div>
+                                <div class="doc-info">
+                                    <h5 class="doc-name">Doctor's Clinical Notes</h5>
+                                    <p class="doc-description">Hypertension Management | Dr. Sarah Wanjiru</p>
+                                </div>
+                                <div class="doc-actions">
+                                    <button class="doc-action-btn preview-doc">
+                                        <i class="fas fa-eye"></i>
+                                        Preview
+                                    </button>
+                                    <button class="doc-action-btn remove-doc">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Document Item 5 - Clinic Credentials -->
+                            <div class="document-item">
+                                <div class="doc-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="doc-info">
+                                    <h5 class="doc-name">Provider Credentials</h5>
+                                    <p class="doc-description">Nairobi Health Center License & Accreditation</p>
+                                </div>
+                                <div class="doc-actions">
+                                    <button class="doc-action-btn preview-doc">
+                                        <i class="fas fa-eye"></i>
+                                        Preview
+                                    </button>
+                                    <button class="doc-action-btn remove-doc">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manual File Addition Section -->
+                    <div class="manual-upload-section">
+                        <h5 class="upload-section-title">Add Additional Documents (Optional)</h5>
+                        <div class="upload-area" id="manualUploadArea">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag and drop additional files here, or click to browse</p>
+                            <p class="upload-hint">Referral forms, doctor letters, or other supporting documents</p>
+                            <input type="file" id="manualFileUpload" multiple accept=".pdf,.jpg,.png" hidden>
+                        </div>
+                    </div>
+
+                    <!-- Claim Summary -->
+                    <div class="claim-summary-box">
+                        <h5 class="summary-title">Claim Summary</h5>
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span class="label">Patient:</span>
+                                <span class="value" id="summaryPatient">John Kamau (Self)</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="label">Claim Type:</span>
+                                <span class="value" id="summaryClaimType">Outpatient</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="label">Insurance Provider:</span>
+                                <span class="value" id="summaryProvider">AAA Insurance</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="label">Total Amount:</span>
+                                <span class="value highlight" id="summaryAmount">KES. 12,500</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="label">Documents Attached:</span>
+                                <span class="value" id="summaryDocCount">5 files</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="claimStep4Back">
+                    <i class="fas fa-arrow-left"></i>
+                    Back
+                </button>
+                <button class="btn-primary btn-large" id="submitClaimBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Claim
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Claim Details Modal -->
+    <div class="modal" id="viewClaimModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Claim Details</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <!-- Claim Header Info -->
+                <div class="claim-detail-header">
+                    <div class="claim-id-section">
+                        <span class="claim-id-label">Claim ID:</span>
+                        <span class="claim-id-value">CLM-2025-001</span>
+                    </div>
+                    <span class="status-badge status-approved">
+                        <i class="fas fa-check-circle"></i>
+                        Approved
+                    </span>
+                </div>
+
+                <!-- Claim Information Grid -->
+                <div class="claim-info-grid">
+                    <div class="info-section">
+                        <h5 class="section-title">Patient Information</h5>
+                        <div class="info-details">
+                            <div class="info-row">
+                                <span class="label">Name:</span>
+                                <span class="value">John Kamau (Self)</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Age:</span>
+                                <span class="value">45 years</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h5 class="section-title">Insurance Details</h5>
+                        <div class="info-details">
+                            <div class="info-row">
+                                <span class="label">Provider:</span>
+                                <span class="value">AAA Insurance</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Policy Number:</span>
+                                <span class="value">123456789</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h5 class="section-title">Claim Information</h5>
+                        <div class="info-details">
+                            <div class="info-row">
+                                <span class="label">Type:</span>
+                                <span class="value">Outpatient</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Amount:</span>
+                                <span class="value">KES. 12,500</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Submitted:</span>
+                                <span class="value">Sep 28, 2025</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Approved:</span>
+                                <span class="value">Sep 30, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attached Documents -->
+                <div class="claim-documents-section">
+                    <h5 class="section-title">Attached Documents</h5>
+                    <div class="documents-list">
+                        <div class="doc-list-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Claim_Summary_CLM-2025-001.pdf</span>
+                            <button class="download-doc-btn">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                        <div class="doc-list-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Invoice_INV-2025-001234.pdf</span>
+                            <button class="download-doc-btn">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                        <div class="doc-list-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Medical_Records.pdf</span>
+                            <button class="download-doc-btn">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Close</button>
+                <button class="btn-primary">
+                    <i class="fas fa-download"></i>
+                    Download All Documents
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Insurance Providers Directory Modal -->
+    <div class="modal" id="providersDirectoryModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Insurance Providers Directory</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="providers-directory">
+
+                    <!-- Provider Detail Card 1 -->
+                    <div class="provider-detail-card">
+                        <div class="provider-card-header">
+                            <div class="provider-logo-large">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="provider-title-section">
+                                <h4 class="provider-name">AAA Insurance</h4>
+                                <p class="provider-subtitle">Health & Medical Insurance</p>
+                            </div>
+                        </div>
+                        <div class="provider-card-body">
+                            <div class="contact-section">
+                                <h5>Submission Contact</h5>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>claims@aaainsurance.co.ke</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+254 20 222 2000</span>
+                                </div>
+                            </div>
+                            <div class="coverage-section">
+                                <h5>Coverage Categories</h5>
+                                <div class="coverage-list">
+                                    <span class="coverage-item covered">
+                                        <i class="fas fa-check-circle"></i>
+                                        Outpatient Services
+                                    </span>
+                                    <span class="coverage-item covered">
+                                        <i class="fas fa-check-circle"></i>
+                                        Inpatient Services
+                                    </span>
+                                    <span class="coverage-item covered">
+                                        <i class="fas fa-check-circle"></i>
+                                        Specialist Consultations
+                                    </span>
+                                    <span class="coverage-item covered">
+                                        <i class="fas fa-check-circle"></i>
+                                        Lab & Diagnostics
+                                    </span>
+                                    <span class="coverage-item partial">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        Medication (80% coverage)
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="instructions-section">
+                                <h5>Claim Submission Instructions</h5>
+                                <ol class="instructions-list">
+                                    <li>Submit claims within 30 days of service</li>
+                                    <li>Include official invoice with clinic stamp</li>
+                                    <li>Attach detailed medical reports</li>
+                                    <li>Provide doctor's prescription for medications</li>
+                                    <li>Processing time: 7-14 business days</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Provider Detail Card 2 -->
+                    <div class="provider-detail-card">
+                        <div class="provider-card-header">
+                            <div class="provider-logo-large">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="provider-title-section">
+                                <h4 class="provider-name">Britam Health</h4>
+                                <p class="provider-subtitle">Medical & Wellness Insurance</p>
+                            </div>
+                        </div>
+                        <div class="provider-card-body">
+                            <div class="contact-section">
+                                <h5>Submission Contact</h5>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>health.claims@britam.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+254 709 940 000</span>
+                                </div>
+                            </div>
+                            <div class="coverage-section">
+                                <h5>Coverage Categories</h5>
+                                <div class="coverage-list">
+                                    <span class="coverage-item covered">
+                                        <i class="fas fa-check-circle"></i>
+                                        Outpatient Services
+                                    </span>
+                                    <span class="coverage-item covered">
+                                        <i class="fas fa-check-circle"></i>
+                                        Lab & Diagnostics
+                                    </span>
+                                    <span class="coverage-item partial">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        Specialist (Pre-authorization required)
+                                    </span>
+                                    <span class="coverage-item not-covered">
+                                        <i class="fas fa-times-circle"></i>
+                                        Cosmetic Procedures
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="instructions-section">
+                                <h5>Claim Submission Instructions</h5>
+                                <ol class="instructions-list">
+                                    <li>Online submission preferred via portal</li>
+                                    <li>Include policy number on all documents</li>
+                                    <li>Pre-authorization required for specialist visits</li>
+                                    <li>Submit within 60 days of treatment</li>
+                                    <li>Processing time: 5-10 business days</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unpaid Invoice Warning Modal -->
+    <div class="modal" id="unpaidInvoiceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Payment Required</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="warning-content">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h4>Cannot Submit Claim for Unpaid Invoice</h4>
+                    <p>This invoice must be paid before you can submit an insurance claim. Insurance claims can only be
+                        processed for invoices that have been fully paid.</p>
+                    <div class="invoice-info-box">
+                        <p><strong>Invoice:</strong> INV-2025-001234</p>
+                        <p><strong>Amount Due:</strong> KES. 12,500</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="goToPaymentBtn">
+                    <i class="fas fa-credit-card"></i>
+                    Go to Billing & Payments
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p id="loadingText">Processing claim...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- External JavaScript -->
+    <script
+        src="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Medical Cover\my_medical_cover.js"></script>
+
+</body>
+
+</html>

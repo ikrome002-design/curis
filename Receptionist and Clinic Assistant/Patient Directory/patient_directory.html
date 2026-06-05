@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Patient Directory - Curis Receptionist Portal</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="patient_directory.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Check-In\check_in.html"
+                            class="nav-link">
+                            <i class="fas fa-user-check"></i>
+                            <span>Check-In</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Inbox and Alerts\inbox_and_alerts.html"
+                            class="nav-link">
+                            <i class="fas fa-inbox"></i>
+                            <span>Inbox & Alerts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Queue and Flow\queue_and_flow.html"
+                            class="nav-link">
+                            <i class="fas fa-list-check"></i>
+                            <span>Queue & Flow</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Patient Directory\patient_directory.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Patient Directory</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Patient Directory</h1>
+                    <p class="subtitle">Patient Records & Engagement Hub</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- Notifications Icon -->
+                    <button class="notification-btn" id="notificationBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+
+                    <!-- User Profile -->
+                    <div class="user-profile" id="userProfile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-icon">
+                        <span class="user-name">Sarah Wanjiru</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Search and Filter Interface -->
+            <section class="search-filter-section">
+                <div class="search-container">
+                    <!-- Smart Search Bar -->
+                    <div class="search-wrapper">
+                        <input type="text" placeholder="Search patients by name, ID number, phone, or email..."
+                            class="smart-search-input" id="patientSearchInput">
+                        <button class="voice-input-btn" title="Voice Search">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+
+                    <!-- Filter Options -->
+                    <div class="filter-controls">
+                        <button class="filter-toggle-btn" id="filterToggle">
+                            <i class="fas fa-filter"></i>
+                            Advanced Filters
+                        </button>
+
+                        <div class="sort-controls">
+                            <label for="sortSelect">Sort by:</label>
+                            <select id="sortSelect" class="sort-select">
+                                <option value="name-asc">Name A-Z</option>
+                                <option value="name-desc">Name Z-A</option>
+                                <option value="lastvisit-desc">Last Visit (Recent)</option>
+                                <option value="lastvisit-asc">Last Visit (Oldest)</option>
+                                <option value="registration-desc">Registration Date</option>
+                            </select>
+                        </div>
+
+                        <div class="view-controls">
+                            <button class="view-btn grid-view active" title="Grid View">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn list-view" title="List View">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Filter Panel (Hidden by default) -->
+                <div class="advanced-filter-panel" id="advancedFilterPanel" style="display: none;">
+                    <div class="filter-group">
+                        <label>Visit Frequency:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="frequency" value="weekly"> Weekly</label>
+                            <label><input type="checkbox" name="frequency" value="monthly"> Monthly</label>
+                            <label><input type="checkbox" name="frequency" value="rarely"> Rarely</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Age Range:</label>
+                        <input type="number" placeholder="Min" class="age-input" min="0" max="150">
+                        <span>to</span>
+                        <input type="number" placeholder="Max" class="age-input" min="0" max="150">
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Gender:</label>
+                        <select class="gender-select">
+                            <option value="">All</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Insurance Status:</label>
+                        <select class="insurance-select">
+                            <option value="">All</option>
+                            <option value="active">Active</option>
+                            <option value="expired">Expired</option>
+                            <option value="none">No Insurance</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Outstanding Bills:</label>
+                        <select class="bills-select">
+                            <option value="">All</option>
+                            <option value="yes">Has Outstanding</option>
+                            <option value="no">Fully Paid</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-actions">
+                        <button class="apply-filter-btn">Apply Filters</button>
+                        <button class="clear-filter-btn">Clear All</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions Panel -->
+            <section class="quick-actions-panel">
+                <div class="quick-action-buttons">
+                    <button class="quick-btn" onclick="openWalkInModal()">
+                        <i class="fas fa-user-check"></i>
+                        <span>Walk-in Verification</span>
+                    </button>
+                    <button class="quick-btn" onclick="openContactConfirmModal()">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Contact Confirmation</span>
+                    </button>
+                    <button class="quick-btn" onclick="openFollowUpModal()">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Follow-up Scheduling</span>
+                    </button>
+                    <button class="quick-btn" onclick="openPaymentReminderModal()">
+                        <i class="fas fa-bell-dollar"></i>
+                        <span>Payment Reminders</span>
+                    </button>
+                    <button class="quick-btn" onclick="openQueueCheckModal()">
+                        <i class="fas fa-users-line"></i>
+                        <span>Queue Checking</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Patient List Results -->
+            <section class="patient-list-section">
+                <div class="results-header">
+                    <span class="results-count">Showing <strong>1-20</strong> of <strong>248</strong> patients</span>
+                    <div class="items-per-page">
+                        <label>Items per page:</label>
+                        <select id="itemsPerPage">
+                            <option value="10">10</option>
+                            <option value="20" selected>20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Patient Cards Grid -->
+                <div class="patient-grid" id="patientGrid">
+                    <!-- Patient Card 1 -->
+                    <div class="patient-card">
+                        <div class="patient-card-header">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-80.png"
+                                alt="Patient" class="patient-avatar">
+                            <div class="patient-basic-info">
+                                <h3 class="patient-name">John Kamau</h3>
+                                <p class="patient-id">ID: PAT-2025-001</p>
+                                <p class="patient-contact">0722-123-456</p>
+                            </div>
+                        </div>
+                        <div class="patient-card-body">
+                            <div class="info-row">
+                                <span class="info-label">Last Visit:</span>
+                                <span class="info-value">Sept 15, 2025</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Age:</span>
+                                <span class="info-value">34 years</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Insurance:</span>
+                                <span class="insurance-status active">Active</span>
+                            </div>
+                        </div>
+                        <div class="patient-card-actions">
+                            <button class="action-icon" onclick="viewPatientProfile('PAT-2025-001')"
+                                title="View Profile">
+                                <i class="fas fa-user"></i>
+                            </button>
+                            <button class="action-icon" onclick="showQuickActions('PAT-2025-001')"
+                                title="Quick Actions">
+                                <i class="fas fa-bolt"></i>
+                            </button>
+                            <button class="action-icon" onclick="verifyWalkIn('PAT-2025-001')" title="Walk-in Verify">
+                                <i class="fas fa-check-circle"></i>
+                            </button>
+                            <button class="action-icon" onclick="updateContact('PAT-2025-001')" title="Update Contact">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="action-icon" onclick="scheduleFollowUp('PAT-2025-001')" title="Follow-up">
+                                <i class="fas fa-calendar"></i>
+                            </button>
+                            <button class="action-icon" onclick="sendReminder('PAT-2025-001')" title="Send Reminder">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                            <button class="action-icon" onclick="checkQueue('PAT-2025-001')" title="Queue Status">
+                                <i class="fas fa-users"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Patient Card 2 -->
+                    <div class="patient-card">
+                        <div class="patient-card-header">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-80.png"
+                                alt="Patient" class="patient-avatar">
+                            <div class="patient-basic-info">
+                                <h3 class="patient-name">Grace Wanjiru</h3>
+                                <p class="patient-id">ID: PAT-2025-002</p>
+                                <p class="patient-contact">0733-456-789</p>
+                            </div>
+                        </div>
+                        <div class="patient-card-body">
+                            <div class="info-row">
+                                <span class="info-label">Last Visit:</span>
+                                <span class="info-value">Sept 28, 2025</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Age:</span>
+                                <span class="info-value">28 years</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Insurance:</span>
+                                <span class="insurance-status active">Active</span>
+                            </div>
+                        </div>
+                        <div class="patient-card-actions">
+                            <button class="action-icon" onclick="viewPatientProfile('PAT-2025-002')"
+                                title="View Profile">
+                                <i class="fas fa-user"></i>
+                            </button>
+                            <button class="action-icon" onclick="showQuickActions('PAT-2025-002')"
+                                title="Quick Actions">
+                                <i class="fas fa-bolt"></i>
+                            </button>
+                            <button class="action-icon" onclick="verifyWalkIn('PAT-2025-002')" title="Walk-in Verify">
+                                <i class="fas fa-check-circle"></i>
+                            </button>
+                            <button class="action-icon" onclick="updateContact('PAT-2025-002')" title="Update Contact">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="action-icon" onclick="scheduleFollowUp('PAT-2025-002')" title="Follow-up">
+                                <i class="fas fa-calendar"></i>
+                            </button>
+                            <button class="action-icon" onclick="sendReminder('PAT-2025-002')" title="Send Reminder">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                            <button class="action-icon" onclick="checkQueue('PAT-2025-002')" title="Queue Status">
+                                <i class="fas fa-users"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Patient Card 3 -->
+                    <div class="patient-card">
+                        <div class="patient-card-header">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-80.png"
+                                alt="Patient" class="patient-avatar">
+                            <div class="patient-basic-info">
+                                <h3 class="patient-name">Peter Ochieng</h3>
+                                <p class="patient-id">ID: PAT-2025-003</p>
+                                <p class="patient-contact">0712-987-654</p>
+                            </div>
+                        </div>
+                        <div class="patient-card-body">
+                            <div class="info-row">
+                                <span class="info-label">Last Visit:</span>
+                                <span class="info-value">Aug 10, 2025</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Age:</span>
+                                <span class="info-value">45 years</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Insurance:</span>
+                                <span class="insurance-status expired">Expired</span>
+                            </div>
+                            <div class="info-row warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>Outstanding: KES. 3,500</span>
+                            </div>
+                        </div>
+                        <div class="patient-card-actions">
+                            <button class="action-icon" onclick="viewPatientProfile('PAT-2025-003')"
+                                title="View Profile">
+                                <i class="fas fa-user"></i>
+                            </button>
+                            <button class="action-icon" onclick="showQuickActions('PAT-2025-003')"
+                                title="Quick Actions">
+                                <i class="fas fa-bolt"></i>
+                            </button>
+                            <button class="action-icon" onclick="verifyWalkIn('PAT-2025-003')" title="Walk-in Verify">
+                                <i class="fas fa-check-circle"></i>
+                            </button>
+                            <button class="action-icon" onclick="updateContact('PAT-2025-003')" title="Update Contact">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="action-icon" onclick="scheduleFollowUp('PAT-2025-003')" title="Follow-up">
+                                <i class="fas fa-calendar"></i>
+                            </button>
+                            <button class="action-icon alert" onclick="sendReminder('PAT-2025-003')"
+                                title="Payment Reminder">
+                                <i class="fas fa-bell-dollar"></i>
+                            </button>
+                            <button class="action-icon" onclick="checkQueue('PAT-2025-003')" title="Queue Status">
+                                <i class="fas fa-users"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Patient Card 4 -->
+                    <div class="patient-card">
+                        <div class="patient-card-header">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-80.png"
+                                alt="Patient" class="patient-avatar">
+                            <div class="patient-basic-info">
+                                <h3 class="patient-name">Mary Njeri</h3>
+                                <p class="patient-id">ID: PAT-2025-004</p>
+                                <p class="patient-contact">0724-555-123</p>
+                            </div>
+                        </div>
+                        <div class="patient-card-body">
+                            <div class="info-row">
+                                <span class="info-label">Last Visit:</span>
+                                <span class="info-value">Sept 29, 2025</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Age:</span>
+                                <span class="info-value">52 years</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Insurance:</span>
+                                <span class="insurance-status active">Active</span>
+                            </div>
+                        </div>
+                        <div class="patient-card-actions">
+                            <button class="action-icon" onclick="viewPatientProfile('PAT-2025-004')"
+                                title="View Profile">
+                                <i class="fas fa-user"></i>
+                            </button>
+                            <button class="action-icon" onclick="showQuickActions('PAT-2025-004')"
+                                title="Quick Actions">
+                                <i class="fas fa-bolt"></i>
+                            </button>
+                            <button class="action-icon" onclick="verifyWalkIn('PAT-2025-004')" title="Walk-in Verify">
+                                <i class="fas fa-check-circle"></i>
+                            </button>
+                            <button class="action-icon" onclick="updateContact('PAT-2025-004')" title="Update Contact">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="action-icon" onclick="scheduleFollowUp('PAT-2025-004')" title="Follow-up">
+                                <i class="fas fa-calendar"></i>
+                            </button>
+                            <button class="action-icon" onclick="sendReminder('PAT-2025-004')" title="Send Reminder">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                            <button class="action-icon" onclick="checkQueue('PAT-2025-004')" title="Queue Status">
+                                <i class="fas fa-users"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination Controls -->
+                <div class="pagination-controls">
+                    <button class="pagination-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="page-number active">1</button>
+                    <button class="page-number">2</button>
+                    <button class="page-number">3</button>
+                    <button class="page-number">4</button>
+                    <button class="page-number">5</button>
+                    <span class="page-dots">...</span>
+                    <button class="page-number">13</button>
+                    <button class="pagination-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="jump-to-page">
+                        <label>Jump to:</label>
+                        <input type="number" min="1" max="13" placeholder="Page">
+                        <button class="go-btn">Go</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals -->
+
+    <!-- Patient Profile View Modal -->
+    <div class="modal" id="patientProfileModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Patient Profile Details</h3>
+                <span class="modal-subtitle">Read-Only Access</span>
+                <button class="close-modal" onclick="closeModal('patientProfileModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="profile-container">
+                    <!-- Patient Photo and Basic Info -->
+                    <div class="profile-header-section">
+                        <div class="patient-photo-container">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                                alt="Patient Photo" class="patient-photo-large">
+                            <button class="view-photo-btn" onclick="viewFullPhoto()">
+                                <i class="fas fa-search-plus"></i> View Full Size
+                            </button>
+                        </div>
+                        <div class="basic-info-section">
+                            <h2 id="modalPatientName">John Kamau</h2>
+                            <p class="patient-id-display">Patient ID: <strong>PAT-2025-001</strong></p>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Gender:</label>
+                                    <span>Male</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Date of Birth:</label>
+                                    <span>15/03/1991</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Age:</label>
+                                    <span>34 years</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Registration Date:</label>
+                                    <span>12/01/2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="profile-section">
+                        <h4><i class="fas fa-phone"></i> Contact Details</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Mobile Number:</label>
+                                <span>0722-123-456 <i class="fas fa-check-circle verified"></i></span>
+                            </div>
+                            <div class="info-item">
+                                <label>Email:</label>
+                                <span>john.kamau@email.com <i class="fas fa-check-circle verified"></i></span>
+                            </div>
+                            <div class="info-item">
+                                <label>Alternative Contact:</label>
+                                <span>0733-987-654</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="profile-section">
+                        <h4><i class="fas fa-user-shield"></i> Emergency Contact</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Name:</label>
+                                <span>Jane Kamau</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Relationship:</label>
+                                <span>Spouse</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Phone:</label>
+                                <span>0722-555-666</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Insurance Information -->
+                    <div class="profile-section">
+                        <h4><i class="fas fa-shield-alt"></i> Insurance Details</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Provider:</label>
+                                <span>Jubilee Insurance</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Policy Number:</label>
+                                <span>JUB-2025-45678</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Valid Until:</label>
+                                <span>31/12/2025</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Status:</label>
+                                <span class="insurance-status active">Active</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Access Restriction Notice -->
+                    <div class="restriction-notice">
+                        <i class="fas fa-lock"></i>
+                        <p><strong>Restricted Access:</strong> Medical records, diagnoses, prescriptions, lab results,
+                            and clinical notes are not accessible from this interface.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('patientProfileModal')">Close</button>
+                <button class="btn-primary" onclick="openQuickActionsFromProfile()">Quick Actions</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment History Modal -->
+    <div class="modal" id="appointmentHistoryModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Appointment History Timeline</h3>
+                <button class="close-modal" onclick="closeModal('appointmentHistoryModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="history-filters">
+                    <input type="date" placeholder="From Date" class="date-filter">
+                    <input type="date" placeholder="To Date" class="date-filter">
+                    <select class="doctor-filter">
+                        <option value="">All Doctors</option>
+                        <option value="dr-ochieng">Dr. James Ochieng</option>
+                        <option value="dr-kamau">Dr. Mary Kamau</option>
+                        <option value="dr-mutua">Dr. Peter Mutua</option>
+                    </select>
+                    <select class="status-filter">
+                        <option value="">All Status</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                        <option value="no-show">No-show</option>
+                        <option value="rescheduled">Rescheduled</option>
+                    </select>
+                    <button class="filter-btn">Apply Filters</button>
+                </div>
+
+                <div class="appointment-timeline">
+                    <!-- Upcoming Appointments -->
+                    <div class="timeline-section">
+                        <h4 class="timeline-header">Upcoming Appointments</h4>
+                        <div class="timeline-item upcoming">
+                            <div class="timeline-marker">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="appointment-card">
+                                    <div class="appointment-header">
+                                        <span class="appointment-date">Oct 5, 2025</span>
+                                        <span class="appointment-time">10:00 AM</span>
+                                        <span class="status-badge scheduled">Scheduled</span>
+                                    </div>
+                                    <div class="appointment-details">
+                                        <p><strong>Doctor:</strong> Dr. James Ochieng - Cardiologist</p>
+                                        <p><strong>Service:</strong> Follow-up Consultation</p>
+                                        <p><strong>Booking Source:</strong> Reception</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Past Visits -->
+                    <div class="timeline-section">
+                        <h4 class="timeline-header">Past Visits</h4>
+                        <div class="timeline-item past">
+                            <div class="timeline-marker">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="appointment-card">
+                                    <div class="appointment-header">
+                                        <span class="appointment-date">Sept 15, 2025</span>
+                                        <span class="appointment-time">2:30 PM</span>
+                                        <span class="status-badge completed">Completed</span>
+                                    </div>
+                                    <div class="appointment-details">
+                                        <p><strong>Doctor:</strong> Dr. James Ochieng - Cardiologist</p>
+                                        <p><strong>Check-in Time:</strong> 2:15 PM</p>
+                                        <p><strong>Completion Time:</strong> 3:10 PM</p>
+                                        <p><strong>Payment Status:</strong> <span class="paid-status">Paid</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item past">
+                            <div class="timeline-marker">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="appointment-card">
+                                    <div class="appointment-header">
+                                        <span class="appointment-date">Aug 20, 2025</span>
+                                        <span class="appointment-time">11:00 AM</span>
+                                        <span class="status-badge cancelled">Cancelled</span>
+                                    </div>
+                                    <div class="appointment-details">
+                                        <p><strong>Doctor:</strong> Dr. Mary Kamau - Pediatrician</p>
+                                        <p><strong>Reason:</strong> Patient requested cancellation</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('appointmentHistoryModal')">Close</button>
+                <button class="btn-primary" onclick="scheduleFollowUpFromHistory()">Schedule Follow-up</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions Modal -->
+    <div class="modal" id="quickActionsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Quick Actions Panel</h3>
+                <button class="close-modal" onclick="closeModal('quickActionsModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="quick-actions-grid">
+                    <button class="quick-action-card" onclick="openBookingModal()">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Book Appointment</span>
+                    </button>
+                    <button class="quick-action-card" onclick="openReminderModal()">
+                        <i class="fas fa-bell"></i>
+                        <span>Send Reminder</span>
+                    </button>
+                    <button class="quick-action-card" onclick="openUpdateContactModal()">
+                        <i class="fas fa-edit"></i>
+                        <span>Update Contact</span>
+                    </button>
+                    <button class="quick-action-card" onclick="viewInvoices()">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span>View Invoices</span>
+                    </button>
+                    <button class="quick-action-card" onclick="checkQueueStatus()">
+                        <i class="fas fa-users"></i>
+                        <span>Check Queue Status</span>
+                    </button>
+                    <button class="quick-action-card" onclick="openWalkInVerification()">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Walk-in Verify</span>
+                    </button>
+                    <button class="quick-action-card" onclick="openFollowUpScheduler()">
+                        <i class="fas fa-sync"></i>
+                        <span>Follow-up Schedule</span>
+                    </button>
+                    <button class="quick-action-card" onclick="viewAppointmentHistory()">
+                        <i class="fas fa-history"></i>
+                        <span>View History</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Walk-in Verification Modal -->
+    <div class="modal" id="walkInModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Walk-In Patient Flow</h3>
+                <span class="modal-subtitle">Unscheduled Patient Verification</span>
+                <button class="close-modal" onclick="closeModal('walkInModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="walk-in-steps">
+                    <!-- Step 1: Search Patient -->
+                    <div class="step active" id="walkInStep1">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h4>Search Patient</h4>
+                        </div>
+                        <div class="step-content">
+                            <div class="search-form">
+                                <input type="text" placeholder="Enter patient name, ID number, or phone..."
+                                    class="walk-in-search">
+                                <button class="search-btn">
+                                    <i class="fas fa-search"></i> Search
+                                </button>
+                            </div>
+                            <div class="recent-visitors">
+                                <h5>Recent Visitors</h5>
+                                <div class="visitor-list">
+                                    <div class="visitor-item">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Patient">
+                                        <span>John Kamau - 0722-123-456</span>
+                                        <button class="select-btn">Select</button>
+                                    </div>
+                                    <div class="visitor-item">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Patient">
+                                        <span>Grace Wanjiru - 0733-456-789</span>
+                                        <button class="select-btn">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Verify Identity -->
+                    <div class="step" id="walkInStep2">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h4>Verify Identity</h4>
+                        </div>
+                        <div class="step-content">
+                            <div class="identity-verification">
+                                <div class="photo-comparison">
+                                    <div class="photo-box">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                                            alt="On File">
+                                        <span>Photo on File</span>
+                                    </div>
+                                    <div class="vs-indicator">VS</div>
+                                    <div class="photo-box">
+                                        <div class="live-photo-placeholder">
+                                            <i class="fas fa-user"></i>
+                                            <span>Physical Verification</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="verification-options">
+                                    <button class="verify-btn match">
+                                        <i class="fas fa-check"></i> Confirm Match
+                                    </button>
+                                    <button class="verify-btn no-match">
+                                        <i class="fas fa-times"></i> No Match
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Check History -->
+                    <div class="step" id="walkInStep3">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h4>Check History</h4>
+                        </div>
+                        <div class="step-content">
+                            <div class="history-check">
+                                <div class="history-item">
+                                    <label>Last Visit:</label>
+                                    <span>Sept 15, 2025 - Dr. James Ochieng</span>
+                                </div>
+                                <div class="history-item">
+                                    <label>Previous Doctor:</label>
+                                    <span>Dr. James Ochieng - Cardiologist</span>
+                                </div>
+                                <div class="history-item">
+                                    <label>Medical Alerts:</label>
+                                    <span class="alert-none">None</span>
+                                </div>
+                                <div class="history-item">
+                                    <label>Payment Status:</label>
+                                    <span class="status-clear">All Clear</span>
+                                </div>
+                                <div class="history-item">
+                                    <label>Insurance:</label>
+                                    <span class="insurance-status active">Active - Jubilee</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Quick Check-in -->
+                    <div class="step" id="walkInStep4">
+                        <div class="step-header">
+                            <span class="step-number">4</span>
+                            <h4>Quick Check-in</h4>
+                        </div>
+                        <div class="step-content">
+                            <div class="check-in-form">
+                                <div class="form-group">
+                                    <label>Select Service:</label>
+                                    <select class="service-select">
+                                        <option>Consultation</option>
+                                        <option>Follow-up</option>
+                                        <option>Emergency</option>
+                                        <option>Lab Test</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Assign to Doctor:</label>
+                                    <select class="doctor-select">
+                                        <option>Dr. James Ochieng - Available</option>
+                                        <option>Dr. Mary Kamau - Busy (Queue: 3)</option>
+                                        <option>Dr. Peter Mutua - Available</option>
+                                    </select>
+                                </div>
+                                <div class="check-in-summary">
+                                    <h5>Check-in Summary</h5>
+                                    <p><strong>Patient:</strong> John Kamau</p>
+                                    <p><strong>Service:</strong> Consultation</p>
+                                    <p><strong>Doctor:</strong> Dr. James Ochieng</p>
+                                    <p><strong>Queue Position:</strong> #4</p>
+                                    <p><strong>Estimated Wait:</strong> 45 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-navigation">
+                    <button class="step-nav-btn prev" onclick="previousStep()" disabled>
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <button class="step-nav-btn next" onclick="nextStep()">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="step-nav-btn complete" onclick="completeWalkIn()" style="display:none;">
+                        <i class="fas fa-check"></i> Complete Check-in
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Confirmation Modal -->
+    <div class="modal" id="contactConfirmModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Confirmation Flow</h3>
+                <button class="close-modal" onclick="closeModal('contactConfirmModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="current-contact-info">
+                    <h4>Current Contact Information</h4>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <label>Phone:</label>
+                            <span>0722-123-456</span>
+                        </div>
+                        <div class="contact-item">
+                            <label>Email:</label>
+                            <span>john.kamau@email.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <label>Alternative:</label>
+                            <span>0733-987-654</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="update-contact-form">
+                    <h4>Update Contact Details</h4>
+                    <div class="form-group">
+                        <label>New Phone Number:</label>
+                        <input type="tel" placeholder="07XX-XXX-XXX" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>New Email:</label>
+                        <input type="email" placeholder="email@example.com" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Alternative Contact:</label>
+                        <input type="tel" placeholder="07XX-XXX-XXX" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Address:</label>
+                        <textarea placeholder="Enter address..." class="form-textarea"></textarea>
+                    </div>
+
+                    <div class="otp-verification">
+                        <button class="send-otp-btn">
+                            <i class="fas fa-mobile-alt"></i> Send OTP
+                        </button>
+                        <div class="otp-input-group" style="display:none;">
+                            <input type="text" placeholder="Enter OTP" class="otp-input">
+                            <button class="verify-otp-btn">Verify</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('contactConfirmModal')">Cancel</button>
+                <button class="btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Follow-up Scheduling Modal -->
+    <div class="modal" id="followUpModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Follow-Up Flow</h3>
+                <span class="modal-subtitle">Continuity of Care</span>
+                <button class="close-modal" onclick="closeModal('followUpModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="last-visit-summary">
+                    <h4>Last Visit Summary</h4>
+                    <div class="visit-info">
+                        <p><strong>Visit Date:</strong> Sept 15, 2025</p>
+                        <p><strong>Doctor Seen:</strong> Dr. James Ochieng - Cardiologist</p>
+                        <p><strong>Services Rendered:</strong> Consultation</p>
+                        <p><strong>Follow-up Notes:</strong> Recommended follow-up in 2-3 weeks</p>
+                    </div>
+                </div>
+
+                <div class="follow-up-scheduling">
+                    <h4>Schedule Follow-up</h4>
+                    <div class="form-group">
+                        <label>Doctor Selection:</label>
+                        <div class="doctor-options">
+                            <label class="radio-option">
+                                <input type="radio" name="doctor" checked>
+                                <span>Same Doctor - Dr. James Ochieng</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="doctor">
+                                <span>Alternative Doctor</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Date:</label>
+                        <input type="date" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Available Slots:</label>
+                        <div class="time-slots">
+                            <button class="time-slot">9:00 AM</button>
+                            <button class="time-slot">10:00 AM</button>
+                            <button class="time-slot">11:00 AM</button>
+                            <button class="time-slot">2:00 PM</button>
+                            <button class="time-slot">3:00 PM</button>
+                            <button class="time-slot">4:00 PM</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Service Type:</label>
+                        <select class="form-select">
+                            <option>Follow-up Consultation</option>
+                            <option>Regular Consultation</option>
+                            <option>Lab Test Review</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('followUpModal')">Cancel</button>
+                <button class="btn-primary">Book Follow-up</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Reminder Modal -->
+    <div class="modal" id="paymentReminderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Payment Reminder Flow</h3>
+                <span class="modal-subtitle">Automated Notices</span>
+                <button class="close-modal" onclick="closeModal('paymentReminderModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="outstanding-bills">
+                    <h4>Outstanding Invoices</h4>
+                    <div class="bill-selection">
+                        <div class="bill-item">
+                            <input type="checkbox" id="bill1" checked>
+                            <label for="bill1">
+                                <span class="invoice-number">INV-2025-0834</span>
+                                <span class="amount">KES. 3,500</span>
+                                <span class="due-date">Due: Sept 1, 2025</span>
+                                <span class="overdue-badge">Overdue</span>
+                            </label>
+                        </div>
+                        <div class="bill-item">
+                            <input type="checkbox" id="bill2">
+                            <label for="bill2">
+                                <span class="invoice-number">INV-2025-0912</span>
+                                <span class="amount">KES. 1,200</span>
+                                <span class="due-date">Due: Sept 20, 2025</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="total-amount">
+                        <strong>Total Selected: KES. 4,700</strong>
+                    </div>
+                </div>
+
+                <div class="reminder-settings">
+                    <h4>Reminder Settings</h4>
+                    <div class="form-group">
+                        <label>Channel Selection:</label>
+                        <div class="channel-options">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="channel" value="sms" checked>
+                                <i class="fas fa-sms"></i> SMS
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="channel" value="email">
+                                <i class="fas fa-envelope"></i> Email
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="channel" value="whatsapp">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="message-preview">
+                        <h5>Message Preview</h5>
+                        <div class="preview-box">
+                            <p>Dear John Kamau,</p>
+                            <p>This is a reminder that you have an outstanding balance of <strong>KES. 4,700</strong>
+                                with our clinic.</p>
+                            <p>Payment Options:</p>
+                            <ul>
+                                <li>M-Pesa Till: 123456</li>
+                                <li>Bank Transfer: ACC 0100123456789</li>
+                            </ul>
+                            <p>Click here to pay now: [Payment Link]</p>
+                            <p>Thank you,<br>Curis Medical Center</p>
+                        </div>
+                        <button class="edit-message-btn">
+                            <i class="fas fa-edit"></i> Edit Message
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('paymentReminderModal')">Cancel</button>
+                <button class="btn-primary">Send Reminder</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Queue Check Modal -->
+    <div class="modal" id="queueCheckModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Queue Status Check</h3>
+                <span class="modal-subtitle">Live Monitoring</span>
+                <button class="close-modal" onclick="closeModal('queueCheckModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="queue-status-panel">
+                    <div class="patient-queue-info">
+                        <h4>Patient: John Kamau</h4>
+                        <div class="queue-details">
+                            <div class="queue-stat">
+                                <i class="fas fa-hashtag"></i>
+                                <div>
+                                    <span class="stat-label">Current Position</span>
+                                    <span class="stat-value">3</span>
+                                </div>
+                            </div>
+                            <div class="queue-stat">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <span class="stat-label">Total in Queue</span>
+                                    <span class="stat-value">8</span>
+                                </div>
+                            </div>
+                            <div class="queue-stat">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <span class="stat-label">Estimated Wait</span>
+                                    <span class="stat-value">30 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="queue-assignment">
+                        <p><strong>Doctor Assigned:</strong> Dr. James Ochieng</p>
+                        <p><strong>Room Number:</strong> Room 101</p>
+                        <p><strong>Service:</strong> Consultation</p>
+                    </div>
+
+                    <div class="queue-notification">
+                        <h5>Send Notification</h5>
+                        <div class="notification-options">
+                            <button class="notify-btn">
+                                <i class="fas fa-mobile-alt"></i>
+                                SMS: "You're 3rd in line"
+                            </button>
+                            <button class="notify-btn">
+                                <i class="fas fa-bell"></i>
+                                Push Notification
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="queue-actions">
+                        <button class="queue-action-btn">
+                            <i class="fas fa-arrow-up"></i> Move Up
+                        </button>
+                        <button class="queue-action-btn">
+                            <i class="fas fa-arrow-down"></i> Move Down
+                        </button>
+                        <button class="queue-action-btn">
+                            <i class="fas fa-pause"></i> Hold
+                        </button>
+                        <button class="queue-action-btn">
+                            <i class="fas fa-exchange-alt"></i> Transfer Doctor
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('queueCheckModal')">Close</button>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Queue and Flow\queue_and_flow.html"
+                    class="btn-primary">Go to Queue Management</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Send Reminder Modal -->
+    <div class="modal" id="sendReminderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Send Reminder</h3>
+                <button class="close-modal" onclick="closeModal('sendReminderModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Reminder Type:</label>
+                    <select class="form-select" id="reminderType">
+                        <option value="appointment">Appointment Reminder</option>
+                        <option value="payment">Payment Reminder</option>
+                        <option value="followup">Follow-up Reminder</option>
+                        <option value="queue">Queue Position Update</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Send Via:</label>
+                    <div class="channel-selection">
+                        <label class="checkbox-option">
+                            <input type="checkbox" value="sms" checked>
+                            <i class="fas fa-sms"></i> SMS
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" value="email">
+                            <i class="fas fa-envelope"></i> Email
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" value="whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Message:</label>
+                    <textarea class="form-textarea"
+                        rows="5">Dear Patient, this is a reminder about your upcoming appointment tomorrow at 10:00 AM with Dr. James Ochieng. Please arrive 15 minutes early. Reply CONFIRM to confirm or CANCEL to cancel.</textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('sendReminderModal')">Cancel</button>
+                <button class="btn-primary">Send Reminder</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update Contact Modal -->
+    <div class="modal" id="updateContactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Update Contact Information</h3>
+                <button class="close-modal" onclick="closeModal('updateContactModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="update-contact-form">
+                    <div class="form-group">
+                        <label>Phone Number:</label>
+                        <input type="tel" value="0722-123-456" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address:</label>
+                        <input type="email" value="john.kamau@email.com" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Alternative Contact:</label>
+                        <input type="tel" value="0733-987-654" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Address:</label>
+                        <textarea class="form-textarea" rows="3">123 Westlands, Nairobi</textarea>
+                    </div>
+
+                    <div class="verification-section">
+                        <button type="button" class="send-otp-btn">Send Verification OTP</button>
+                        <div class="otp-verification-group" style="display:none;">
+                            <input type="text" placeholder="Enter OTP Code" class="otp-input">
+                            <button type="button" class="verify-btn">Verify</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('updateContactModal')">Cancel</button>
+                <button class="btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Popup -->
+    <div class="profile-popup" id="profilePopup">
+        <div class="profile-popup-content">
+            <div class="profile-header">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                    alt="Profile" class="popup-profile-img">
+                <div class="profile-info">
+                    <h3>Sarah Wanjiru</h3>
+                    <p>Receptionist</p>
+                </div>
+            </div>
+            <div class="profile-menu">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\My Profile\my_profile.html"
+                    class="profile-menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Landing Page\landing_page.html"
+                    class="profile-menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audit Log Notification (Hidden, for system tracking) -->
+    <div class="audit-notification" id="auditNotification" style="display:none;">
+        <p>All actions are being logged for audit purposes</p>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="fixed-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <!-- Corporate Website Link -->
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer" class="corporate-link">
+                    Visit Citrus Labs
+                </a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Copyright -->
+                <p class="copyright">© 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="patient_directory.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+#### 1. **Appointment**
+
+
+
+
+Here is a firm and direct breakdown of the dynamic MVP features and functionalities within the "Appointments" page of the Receptionist & Clinic Assistant account on the Curis by Citrus platform:
+________________________________________
+2. APPOINTMENTS – Dynamic MVP Page Functionalities
+
+This page serves as the operational hub for managing patient scheduling and streamlining clinic flow without requiring access to confidential medical records.
+________________________________________
+a.	Appointment Listings (Upcoming & Past)
+•	Live search and filter options (by patient name, doctor, date, time, status).
+•	Sort by appointment date, status, or doctor for quick access.
+•	Color-coded status tags (e.g., Confirmed, Pending, Cancelled, Completed).
+________________________________________
+b.	Booking Appointments
+•	Interactive calendar view for doctor availability.
+•	Smart form to book new appointments:
+o	Select patient (existing or register new).
+o	Choose doctor based on available time slots.
+o	Input reason for visit (optional).
+o	Auto-suggest next available slots.
+________________________________________
+c.	Confirming, Rescheduling, or Cancelling Appointments
+•	One-click confirmation toggle with SMS/email confirmation sent to patient.
+•	Drag-and-drop rescheduling in calendar or use dropdown time-picker.
+•	Cancellation options include reason input and automatic patient notification.
+________________________________________
+d.	Doctor Availability Management
+•	View real-time doctor schedules.
+•	Highlight double-booking conflicts.
+•	Display off-duty/unavailable time slots (read-only, set by Clinic Owner/Doctor).
+________________________________________
+e.	Automated Reminders System
+•	Auto-triggered SMS/email reminders:
+o	24 hours and 1 hour before appointments.
+o	Custom reminders for specific services if enabled by clinic.
+•	Retry logic for failed reminders.
+________________________________________
+f.	Conflict Detection & Resolution
+•	Warn users of schedule overlaps or unavailable slots.
+•	Suggest nearest alternative slots.
+•	Option to escalate unresolvable conflicts to Clinic Owner.
+________________________________________
+g.	Audit Trail & Logs
+•	Each appointment action (create, edit, cancel) is timestamped and user-logged.
+•	Logs available to Clinic Owner for oversight.
+________________________________________
+h.	Real-Time Notifications
+•	System notifies Receptionist:
+o	When new bookings are made by patients (if enabled).
+o	When patients confirm or cancel from their end.
+o	If doctors manually update their schedules.
+________________________________________
+i.	Patient Communication Tools
+•	Send appointment info/reminders via:
+o	In-app alerts
+o	WhatsApp (if configured)
+o	SMS or email
+•	Predefined message templates for speed and consistency.
+________________________________________
+Key Outcome
+
+
+This page equips receptionists with a centralized, efficient, and audit-secure interface to manage patient appointments accurately, optimize scheduling, and ensure timely communication with patients and doctors—while remaining within their permitted access boundaries.
+________________________________________
+
+
+
+

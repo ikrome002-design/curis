@@ -1,0 +1,109 @@
+#### 1. **Billings & Payments**
+
+
+
+The **Billings & Payments** module equips the Super Administrator with full visibility and control over the financial interactions between the platform and the Clinic Owner accounts, which act as primary merchant entities. The Super Admin has the authority to configure service charges, enforce billing rules, monitor transactions, and manage revenue collections across all clinics.
+
+---
+
+### **a. **Dynamic Billing Dashboard**
+- Real-time financial overview showing:
+  - **Total Platform Revenue** (aggregated from all clinics)
+  - **Total Service Charges Collected**
+  - **Pending vs Paid Invoices**
+  - **Failed Transactions**
+- Dynamic filters to display data **by clinic owner**, **payment frequency**, **region**, or **time period**.
+
+---
+
+### **b. **Automated Invoice Management**
+- **Auto-generate invoices** for each clinic based on:
+  - Selected **service charge type** (fixed amount or percentage-based)
+  - Chosen **payment frequency** (weekly, bi-weekly, or monthly)
+- Set default invoice settings globally or override them for specific clinic accounts.
+- Features:
+  - Searchable and filterable **invoice table** (by status, date, clinic)
+  - **Manual invoice status override** (mark as paid, unpaid, under review)
+  - Downloadable in **PDF** or **CSV**
+  - View breakdown of each invoice: patient services rendered + attached service charge
+
+---
+
+### **c. **Service Charge Configuration Panel**
+Super Admin can dynamically manage:
+- **Charge Model Options**:
+  - **Percentage Increment**:
+    - Weekly: 20%
+    - Bi-weekly: 25%
+    - Monthly: 30%
+  - **Fixed Amount**:
+    - Weekly: KES. 2,000
+    - Bi-weekly: KES. 2,500
+    - Monthly: KES. 3,000
+- **Flexible Editing**: Fixed amounts can be adjusted any time by Super Admin.
+- Apply settings **per clinic owner** or **globally across all clinics**.
+- Display clinic owner’s current service charge setting and next billing date.
+
+---
+
+### **d. **Payment Cycle Management**
+- Monitor **accumulated service charges** per clinic:
+  - View upcoming charges
+  - Payment cycle status: Active / Overdue / Settled
+- Highlight delinquent accounts and generate alerts
+- Integration-ready with **M-PESA**, **Stripe**, or **Bank Transfer tracking**
+- Status Indicators: Paid, Partially Paid, Failed, Awaiting Manual Payment
+
+---
+
+### **e. **Dispute & Refund Handling**
+- Log and track **billing disputes** submitted by clinic owners
+- Allow Super Admin to:
+  - **Adjust or waive** service charges for specific cases
+  - **Initiate refunds** for duplicate or erroneous charges
+- Full **audit trail** attached to all financial adjustments
+
+---
+
+### **f. **Advanced Financial Reporting**
+- Generate downloadable reports segmented by:
+  - Clinic
+  - Charge Type (Fixed/Percentage)
+  - Payment Frequency
+  - Revenue trends (monthly, quarterly)
+- Report types:
+  - **Total Platform Earnings**
+  - **Service Charges Collected**
+  - **Clinic Owner Balances**
+  - **Unpaid/Overdue Invoices**
+
+---
+
+### **g. **Automated Notifications**
+- Configure and trigger email/SMS alerts for:
+  - Upcoming invoice due dates
+  - Invoice generation confirmations
+  - Failed payments or overdue notices
+  - Changes to billing terms (e.g., service charge adjustments)
+
+---
+
+### **h. **Manual Payment & Audit Controls**
+- Mark offline payments manually when a clinic pays outside the system
+- View **complete transaction history per clinic**, including:
+  - Consultation revenue
+  - Prescription payments
+  - Service charges applied
+  - Past refunds/disputes
+- Built-in logs for compliance audits and reconciliation
+
+---
+
+### **i. **Bulk Actions & Global Settings**
+- Bulk-update service charge settings for multiple clinic accounts
+- Export complete billing logs for external accounting software
+- Set platform-wide rules: e.g., payment grace periods, notification frequency
+
+---
+
+This MVP ensures the Super Administrator maintains **centralized control** over all revenue streams, **enforces financial policies**, and **streamlines billing operations** without dependency on external accounting tools.

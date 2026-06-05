@@ -1,0 +1,170 @@
+#### 1. **My Profile**
+
+
+
+
+Here’s a direct and detailed breakdown of the dynamic MVP features and functionalities within the “My Profile” page for a Patient's Curis by Citrus account:
+________________________________________
+My Profile – Dynamic MVP Features (Patient Account)
+
+
+The My Profile section is a centralized and interactive page where patients—especially those managing family accounts—can update and control key personal and dependent information. It adapts dynamically based on the type of user (adult patient vs. child/dependent) and family management settings.
+________________________________________
+a.	Editable Personal Information
+•	Dynamic Fields Displayed:
+o	Full Name
+o	Email
+o	Phone Number
+o	Gender
+o	Date of Birth (DOB)
+•	Phone Number & Email Update Process:
+o	Editable only after OTP/email verification for security.
+•	Auto-format & Validation:
+o	Input fields auto-format (e.g., phone mask: +254 XXX XXX XXX)
+o	Date pickers for DOB with min/max year restrictions (e.g., no future dates)
+________________________________________
+b.	Dependent Management (For Patients 18+)
+•	Add New Dependent:
+o	Full name, DOB, gender.
+o	Relationship (e.g., son, daughter).
+o	System auto-detects if the dependent is eligible (under 13 = linked only).
+•	View/Edit Existing Dependents:
+o	Update gender, DOB.
+o	Modify or remove dependent from account.
+o	Restrictions:
+	Cannot remove a dependent with ongoing appointments or unpaid invoices.
+•	Dependent Privacy Rules Enforced:
+o	If a child is aged 13–17, sensitive medical fields are hidden on this page and across the platform.
+________________________________________
+c.	Password Management
+•	Change Own Password:
+o	Requires current password + new password (with validation for strength).
+•	Reset Dependent Login Credentials (For Children 13–17):
+o	If a teen dependent has their own login (account auto-created at 13), the parent can reset:
+	Login email
+	Password (with email notification sent to teen)
+•	Two-Factor Authentication (Optional Future Expansion):
+o	Placeholder section for 2FA toggle (e.g., via email or OTP login security)
+________________________________________
+d.	Profile Picture Upload
+•	Upload or change profile picture.
+•	Crop and preview before saving.
+•	Uses default avatar if none is uploaded.
+________________________________________
+e.	Family Summary Panel
+•	Interactive list view of all linked family members:
+o	Name, age (auto-calculated from DOB), gender.
+o	Quick switch button to view profile or medical dashboard for each dependent.
+•	Color-coded access level:
+o	Green: Under 12 (full access by parent)
+o	Yellow: 13–17 (limited access)
+o	Gray: 18+ (requires dependent to create own account)
+________________________________________
+f.	Activity Log Snapshot
+•	Show latest:
+o	Last login (date & time)
+o	Devices used (optional)
+o	Recent profile updates (e.g., "Changed phone number on May 10")
+•	Ensures traceability for critical account changes.
+________________________________________
+g.	Account Management
+
+The Account Management section within the Profile Page allows patients to temporarily deactivate, permanently close, or reactivate their Curis account while maintaining security and compliance with healthcare data policies.  
+
+i.	Location in the Web App  
+
+•	Accessible via Profile & Settings > Account Management in the Patient’s account.  
+•	Includes options for temporary deactivation, permanent account closure, and reactivation.  
+
+ii.	Deactivation Workflow  
+
+1)	Temporary Deactivation  
+
+•	Patients can pause their account without deleting data.  
+•	Profile remains inactive, restricting login access.  
+•	Medical records, invoices, and appointments are stored but cannot be accessed until reactivation.  
+•	Patients can reactivate anytime by logging in and verifying their identity.  
+
+2)	Permanent Account Deactivation  
+
+•	Irreversible account deletion from the Curis system.  
+•	Medical records, invoices, and dependent-linked profiles are permanently deleted.  
+•	Patients must confirm their decision via a final warning prompt.  
+•	If there are pending payments or active treatments, deactivation is restricted until resolution.  
+
+---
+
+iii.	Account Reactivation  
+
+•	For temporarily deactivated accounts: Patients can log in and press "Reactivate Account" to restore access.  
+•	Upon reactivation, all previous records, invoices, and appointment history become accessible again.  
+•	Patients receive an email & WhatsApp confirmation for successful reactivation.  
+•	Permanent deactivation accounts CANNOT be reactivated, as all data is erased.  
+
+---
+
+iv.	Confirmation & Security Measures  
+
+•	Upon clicking Deactivate Account, a warning popup appears, explaining the consequences.  
+•	Patients must verify via password input or OTP authentication before proceeding.  
+•	For permanent deletion, patients receive a final confirmation email before execution.  
+
+---
+
+v.	Notifications & Record Handling  
+
+•	Temporary Deactivation: Account remains in system but flagged as inactive.  
+•	Reactivation: Instant restoration of account, medical records, and appointments.  
+•	Permanent Deactivation: Data is erased, and patients receive a final confirmation email.  
+
+---
+
+Key Benefits of Deactivation & Reactivation Features
+  
+•	Gives patients full control over pausing, restoring, or permanently deleting their account.  
+•	Ensures security and verification for account status changes.  
+•	Provides reactivation flexibility for temporarily inactive accounts.  
+•	Prevents accidental data loss with strong confirmation steps.  
+
+---
+
+This updated setup ensures smooth deactivation, reactivation, and privacy compliance while maintaining flexible account management for patient users. 
+
+________________________________________
+Security & Privacy Logic
+
+•	All edits are locked behind OTP verification or email confirmation where applicable.
+•	Dependents aged 13–17 have privacy enforcement, so parents have limited visibility and edit rights.
+•	Clinic staff cannot access or edit this page—it is strictly patient-controlled.
+________________________________________
+Summary of Key Dynamic Behaviors:
+
+
+Action  -----  Visibility  -----  Editable  -----  Notes
+
+1.	Own contact info  -----  Always  -----  Yes  -----  Requires OTP verification
+2.	Dependents under 13  -----  Always  -----  Yes  -----  Full control
+3.	Dependents 13–17  -----  Yes  -----  Partial  -----  Limited fields editable
+4.	Password reset (own)  -----  Always  -----  Yes  -----  Must input current password
+5.	Password reset (dependents)  -----  If 13–17  -----  Yes  -----  Email alert sent
+6.	Account created by staff  -----  Limited initially  -----  Yes (after activation)  -----  Activation required via secure link
+
+
+
+________________________________________
+
+This My Profile setup ensures full control by the patient, strict privacy for minors, and dynamic functionality that adapts to family-based healthcare management—all essential pillars of the Curis by Citrus platform.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

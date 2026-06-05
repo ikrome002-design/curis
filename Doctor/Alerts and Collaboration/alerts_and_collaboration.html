@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curis by Citrus - Alerts & Collaboration Center for Healthcare Teams">
+    <title>Alerts & Collaboration - Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="alerts_and_collaboration.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-list">
+                    <!-- Dashboard -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <!-- Appointments -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+
+                    <!-- Patient Records -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                            class="nav-link">
+                            <i class="fas fa-user-injured"></i>
+                            <span>Patient Records</span>
+                        </a>
+                    </li>
+
+                    <!-- Consultations -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Consultations\consultations.html"
+                            class="nav-link">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Consultations</span>
+                        </a>
+                    </li>
+
+                    <!-- Prescriptions -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Prescriptions\prescriptions.html"
+                            class="nav-link">
+                            <i class="fas fa-prescription"></i>
+                            <span>Prescriptions</span>
+                        </a>
+                    </li>
+
+                    <!-- Alerts & Collaboration - Active -->
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Alerts and Collaboration\alerts_and_collaboration.html"
+                            class="nav-link">
+                            <i class="fas fa-bell"></i>
+                            <span>Alerts & Collaboration</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">
+                        <i class="fas fa-bell"></i>
+                        Alerts & Collaboration
+                    </h1>
+                    <!-- Subtitle -->
+                    <p class="page-subtitle">Command Center for Team Communication</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- Quick Action Buttons -->
+                    <button class="quick-action-btn" id="newDiscussionBtn" title="Start New Discussion">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>New Discussion</span>
+                    </button>
+
+                    <button class="quick-action-btn" id="appointmentNotesBtn" title="Quick Appointment Notes">
+                        <i class="fas fa-sticky-note"></i>
+                    </button>
+
+                    <button class="quick-action-btn" id="doctorDiscussionsBtn" title="Doctor-Only Discussions">
+                        <i class="fas fa-user-md"></i>
+                    </button>
+
+                    <!-- User Profile -->
+                    <div class="user-profile" id="userProfile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="Profile" class="profile-pic">
+                        <span class="profile-name">Dr. Sarah Wanjiru</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+
+                    <!-- Profile Dropdown Menu -->
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\My Profile\my_profile.html"
+                            class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Landing Page\landing_page.html"
+                            class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Alert & Collaboration Grid -->
+            <div class="alerts-collab-container">
+
+                <!-- Left Column: Notifications Feed -->
+                <div class="notifications-column">
+
+                    <!-- Notifications Header with Filters -->
+                    <div class="notifications-header">
+                        <div class="header-top">
+                            <h2 class="section-title">
+                                <i class="fas fa-bell"></i>
+                                Real-time Notifications
+                                <span class="unread-badge">12</span>
+                            </h2>
+                            <div class="header-actions">
+                                <!-- Filter Dropdown -->
+                                <select class="filter-dropdown" id="notificationFilter">
+                                    <option value="all">All Notifications</option>
+                                    <option value="unread">Unread Only</option>
+                                    <option value="appointments">Appointments</option>
+                                    <option value="records">Patient Records</option>
+                                    <option value="consultations">Consultations</option>
+                                    <option value="collaboration">Collaboration</option>
+                                </select>
+
+                                <!-- Mark All Read Button -->
+                                <button class="mark-all-read-btn" id="markAllReadBtn">
+                                    <i class="fas fa-check-double"></i>
+                                    Mark All Read
+                                </button>
+
+                                <!-- Notification Preferences -->
+                                <button class="preferences-btn" id="preferencesBtn" title="Notification Settings">
+                                    <i class="fas fa-cog"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Feed -->
+                    <div class="notifications-feed" id="notificationsFeed">
+
+                        <!-- Time-Sensitive Alert (New Assignment) -->
+                        <div class="notification-item unread time-sensitive">
+                            <div class="notification-icon assignment">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4 class="notification-title">New Appointment Assignment</h4>
+                                <p class="notification-text">
+                                    <strong>James Mwangi</strong> has been assigned to you by Receptionist Jane Njoki
+                                </p>
+                                <p class="notification-meta">
+                                    <span class="time-badge">
+                                        <i class="fas fa-clock"></i> 10:30 AM Today
+                                    </span>
+                                    <span class="assigned-by">Assigned by: Jane Njoki</span>
+                                </p>
+                                <div class="notification-actions">
+                                    <button class="action-btn primary"
+                                        onclick="window.location.href='C:\\Users\\nderu\\Documents\\Development\\Product\\Curis\\1.0\\Users\\Doctor\\Appointments\\appointments.html'">
+                                        View Appointment
+                                    </button>
+                                    <button class="action-btn secondary mark-read">Mark as Read</button>
+                                </div>
+                            </div>
+                            <span class="urgency-indicator">URGENT</span>
+                        </div>
+
+                        <!-- Upcoming Consultation Reminder -->
+                        <div class="notification-item unread time-sensitive">
+                            <div class="notification-icon consultation">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4 class="notification-title">Consultation Starting in 15 Minutes</h4>
+                                <p class="notification-text">
+                                    Video consultation with <strong>Mary Wambui</strong> - Initial Consultation
+                                </p>
+                                <p class="notification-meta">
+                                    <span class="time-badge">
+                                        <i class="fas fa-clock"></i> 11:15 AM
+                                    </span>
+                                </p>
+                                <div class="notification-actions">
+                                    <button class="action-btn primary"
+                                        onclick="window.location.href='C:\\Users\\nderu\\Documents\\Development\\Product\\Curis\\1.0\\Users\\Doctor\\Consultations\\consultations.html'">
+                                        Join Consultation
+                                    </button>
+                                    <button class="action-btn secondary">View Patient File</button>
+                                </div>
+                            </div>
+                            <span class="urgency-indicator">15 MIN</span>
+                        </div>
+
+                        <!-- Lab Results Available -->
+                        <div class="notification-item unread">
+                            <div class="notification-icon lab-results">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4 class="notification-title">Lab Results Available</h4>
+                                <p class="notification-text">
+                                    Blood work results for <strong>Peter Ochieng</strong> have been uploaded
+                                </p>
+                                <p class="notification-meta">
+                                    <span class="time">2 hours ago</span>
+                                    <span class="document-type">CBC, Lipid Panel</span>
+                                </p>
+                                <div class="notification-actions">
+                                    <button class="action-btn primary view-lab-btn">View Lab Results</button>
+                                    <button class="action-btn secondary">Open Patient Record</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment Mention -->
+                        <div class="notification-item unread">
+                            <div class="notification-icon mention">
+                                <i class="fas fa-at"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4 class="notification-title">You were mentioned in a comment</h4>
+                                <p class="notification-text">
+                                    <strong>Dr. Johnson Ndung'u</strong> mentioned you: "@Dr. Sarah, please review the
+                                    updated treatment plan for Grace Njeri..."
+                                </p>
+                                <p class="notification-meta">
+                                    <span class="time">3 hours ago</span>
+                                    <span class="context">Patient: Grace Njeri</span>
+                                </p>
+                                <div class="notification-actions">
+                                    <button class="action-btn primary">View Comment</button>
+                                    <button class="action-btn secondary">Reply</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Medical Record Update -->
+                        <div class="notification-item">
+                            <div class="notification-icon record-update">
+                                <i class="fas fa-file-medical"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4 class="notification-title">Medical Record Updated</h4>
+                                <p class="notification-text">
+                                    Clinical notes added by Nurse Alice Mutua for <strong>Ruth Chebet</strong>
+                                </p>
+                                <p class="notification-meta">
+                                    <span class="time">Yesterday at 4:30 PM</span>
+                                    <span class="update-type">Vital Signs, Nursing Assessment</span>
+                                </p>
+                                <div class="notification-actions">
+                                    <button class="action-btn primary">View Record</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- New Discussion Thread -->
+                        <div class="notification-item">
+                            <div class="notification-icon discussion">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4 class="notification-title">New Discussion Thread</h4>
+                                <p class="notification-text">
+                                    <strong>Dr. Michael Oduor</strong> started a discussion: "Post-operative care
+                                    protocols for cardiac patients"
+                                </p>
+                                <p class="notification-meta">
+                                    <span class="time">Yesterday at 2:15 PM</span>
+                                    <span class="thread-type">Clinical Discussion</span>
+                                </p>
+                                <div class="notification-actions">
+                                    <button class="action-btn primary">Join Discussion</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Team Collaboration Panel -->
+                <div class="collaboration-column">
+
+                    <!-- Collaboration Tabs -->
+                    <div class="collaboration-tabs">
+                        <button class="tab-btn active" data-tab="comments">
+                            <i class="fas fa-comment-medical"></i>
+                            Medical Record Comments
+                        </button>
+                        <button class="tab-btn" data-tab="appointments">
+                            <i class="fas fa-calendar-alt"></i>
+                            Appointment Notes
+                        </button>
+                        <button class="tab-btn" data-tab="discussions">
+                            <i class="fas fa-user-friends"></i>
+                            Doctor Discussions
+                        </button>
+                        <button class="tab-btn" data-tab="audit">
+                            <i class="fas fa-history"></i>
+                            Audit Trail
+                        </button>
+                    </div>
+
+                    <!-- Tab Content Container -->
+                    <div class="tab-content-container">
+
+                        <!-- Medical Record Comments Tab -->
+                        <div class="tab-content active" id="commentsTab">
+                            <div class="section-header">
+                                <h3 class="section-subtitle">Patient Discussion Threads</h3>
+                                <button class="add-comment-btn" id="addCommentBtn">
+                                    <i class="fas fa-plus"></i>
+                                    Add Comment
+                                </button>
+                            </div>
+
+                            <!-- Comment Threads -->
+                            <div class="comments-thread">
+                                <!-- Parent Comment -->
+                                <div class="comment-item parent">
+                                    <div class="comment-author">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Dr. Johnson" class="author-avatar">
+                                        <div class="author-info">
+                                            <span class="author-name">Dr. Johnson Ndung'u</span>
+                                            <span class="author-role">Cardiologist</span>
+                                        </div>
+                                        <span class="comment-time">2 hours ago</span>
+                                    </div>
+                                    <div class="comment-content">
+                                        <p>
+                                            <span class="mention">@Dr. Sarah</span> Please review the updated treatment
+                                            plan for Grace Njeri.
+                                            I've adjusted the medication dosage based on the latest lab results. The
+                                            patient has shown
+                                            improvement in cardiac function.
+                                        </p>
+                                        <div class="comment-context">
+                                            <i class="fas fa-user"></i> Patient: Grace Njeri
+                                            <i class="fas fa-folder"></i> Section: Treatment Plan
+                                        </div>
+                                    </div>
+                                    <div class="comment-actions">
+                                        <button class="reply-btn">
+                                            <i class="fas fa-reply"></i> Reply
+                                        </button>
+                                        <button class="edit-btn">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
+                                    </div>
+
+                                    <!-- Child Reply -->
+                                    <div class="comment-replies">
+                                        <div class="comment-item reply">
+                                            <div class="comment-author">
+                                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                                    alt="Dr. Sarah" class="author-avatar">
+                                                <div class="author-info">
+                                                    <span class="author-name">Dr. Sarah Wanjiru</span>
+                                                    <span class="author-role">Internal Medicine</span>
+                                                </div>
+                                                <span class="comment-time">1 hour ago</span>
+                                            </div>
+                                            <div class="comment-content">
+                                                <p>
+                                                    Thank you <span class="mention">@Dr. Johnson</span>. I've reviewed
+                                                    the changes and agree
+                                                    with the dosage adjustment. Will monitor the patient closely during
+                                                    tomorrow's follow-up.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Another Parent Comment -->
+                                <div class="comment-item parent">
+                                    <div class="comment-author">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Nurse Alice" class="author-avatar">
+                                        <div class="author-info">
+                                            <span class="author-name">Nurse Alice Mutua</span>
+                                            <span class="author-role">Head Nurse</span>
+                                        </div>
+                                        <span class="comment-time">Yesterday at 4:30 PM</span>
+                                    </div>
+                                    <div class="comment-content">
+                                        <p>
+                                            Patient Ruth Chebet's vital signs have stabilized. BP: 120/80, Pulse: 72,
+                                            Temp: 36.8°C.
+                                            She's responding well to the current treatment regimen.
+                                        </p>
+                                        <div class="comment-attachments">
+                                            <span class="attachment">
+                                                <i class="fas fa-paperclip"></i> Vitals_Chart_RC.pdf
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="comment-actions">
+                                        <button class="reply-btn">
+                                            <i class="fas fa-reply"></i> Reply
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Appointment Notes Tab -->
+                        <div class="tab-content" id="appointmentsTab">
+                            <div class="section-header">
+                                <h3 class="section-subtitle">Appointment Notes & Comments</h3>
+                                <div class="appointment-filter">
+                                    <select class="appointment-select">
+                                        <option>Today's Appointments</option>
+                                        <option>Recent Appointments (7 days)</option>
+                                        <option>Search Appointments</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Appointment Notes List -->
+                            <div class="appointment-notes-list">
+                                <!-- Today's Appointment Note -->
+                                <div class="appointment-note-item">
+                                    <div class="appointment-header">
+                                        <span class="appointment-patient">
+                                            <i class="fas fa-user"></i> John Kamau
+                                        </span>
+                                        <span class="appointment-time">10:30 AM - Follow-up</span>
+                                    </div>
+
+                                    <!-- Pre-Consultation Notes -->
+                                    <div class="note-section">
+                                        <h4 class="note-type">
+                                            <i class="fas fa-clipboard-check"></i> Pre-Consultation Notes
+                                        </h4>
+                                        <p class="note-content">
+                                            Patient reports improvement in symptoms. Review latest X-ray results and
+                                            discuss
+                                            continuing current medication regimen.
+                                        </p>
+                                        <span class="note-author">Added by Dr. Sarah Wanjiru - 9:45 AM</span>
+                                    </div>
+
+                                    <!-- During Consultation Notes -->
+                                    <div class="note-section">
+                                        <h4 class="note-type">
+                                            <i class="fas fa-stethoscope"></i> During Consultation
+                                        </h4>
+                                        <div class="note-entry-field">
+                                            <textarea placeholder="Add notes during consultation..."
+                                                class="live-note-input"></textarea>
+                                            <button class="save-note-btn">
+                                                <i class="fas fa-save"></i> Save Note
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Another Appointment Note -->
+                                <div class="appointment-note-item">
+                                    <div class="appointment-header">
+                                        <span class="appointment-patient">
+                                            <i class="fas fa-user"></i> Mary Wambui
+                                        </span>
+                                        <span class="appointment-time">11:15 AM - Initial Consultation</span>
+                                    </div>
+
+                                    <div class="note-section">
+                                        <h4 class="note-type">
+                                            <i class="fas fa-clipboard-check"></i> Pre-Consultation Notes
+                                        </h4>
+                                        <p class="note-content">
+                                            New patient referral from Dr. Ochieng. Review medical history and perform
+                                            comprehensive examination. Focus on reported chest pain episodes.
+                                        </p>
+                                        <span class="note-author">Added by Dr. Sarah Wanjiru - Today at 8:30 AM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Doctor Discussions Tab -->
+                        <div class="tab-content" id="discussionsTab">
+                            <div class="section-header">
+                                <h3 class="section-subtitle">Doctor-Only Discussion Threads</h3>
+                                <button class="create-thread-btn" id="createThreadBtn">
+                                    <i class="fas fa-plus"></i>
+                                    Create Private Thread
+                                </button>
+                            </div>
+
+                            <!-- Thread Categories Filter -->
+                            <div class="thread-filters">
+                                <button class="filter-btn active">Active Threads</button>
+                                <button class="filter-btn">My Threads</button>
+                                <button class="filter-btn">Mentioned</button>
+                                <button class="filter-btn">Archived</button>
+                            </div>
+
+                            <!-- Discussion Threads List -->
+                            <div class="discussion-threads">
+                                <!-- Private Thread Item -->
+                                <div class="thread-item active">
+                                    <div class="thread-header">
+                                        <h4 class="thread-title">
+                                            <i class="fas fa-lock"></i>
+                                            Post-operative care protocols for cardiac patients
+                                        </h4>
+                                        <span class="thread-category clinical">Clinical</span>
+                                    </div>
+                                    <div class="thread-meta">
+                                        <span class="thread-starter">
+                                            Started by Dr. Michael Oduor
+                                        </span>
+                                        <span class="thread-participants">
+                                            <i class="fas fa-users"></i> 5 participants
+                                        </span>
+                                        <span class="thread-activity">
+                                            Last activity: 30 min ago
+                                        </span>
+                                    </div>
+                                    <div class="thread-preview">
+                                        <p>Discussing updated protocols for post-op cardiac patient care, particularly
+                                            focusing on...</p>
+                                    </div>
+                                    <div class="thread-actions">
+                                        <button class="view-thread-btn">View Thread</button>
+                                        <span class="unread-indicator">3 new messages</span>
+                                    </div>
+                                </div>
+
+                                <!-- Another Thread -->
+                                <div class="thread-item">
+                                    <div class="thread-header">
+                                        <h4 class="thread-title">
+                                            <i class="fas fa-lock"></i>
+                                            New diagnostic equipment training schedule
+                                        </h4>
+                                        <span class="thread-category admin">Administrative</span>
+                                    </div>
+                                    <div class="thread-meta">
+                                        <span class="thread-starter">
+                                            Started by Dr. Sarah Wanjiru
+                                        </span>
+                                        <span class="thread-participants">
+                                            <i class="fas fa-users"></i> 8 participants
+                                        </span>
+                                        <span class="thread-activity">
+                                            Last activity: 2 hours ago
+                                        </span>
+                                    </div>
+                                    <div class="thread-preview">
+                                        <p>Coordinating training sessions for the new MRI equipment arriving next
+                                            week...</p>
+                                    </div>
+                                    <div class="thread-actions">
+                                        <button class="view-thread-btn">View Thread</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Audit Trail Tab -->
+                        <div class="tab-content" id="auditTab">
+                            <div class="section-header">
+                                <h3 class="section-subtitle">Mentions & Activity Log</h3>
+                                <div class="audit-filters">
+                                    <select class="audit-filter-select">
+                                        <option>All Activities</option>
+                                        <option>Mentions Only</option>
+                                        <option>Assigned Cases</option>
+                                        <option>Discussion Activity</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Mentions Log -->
+                            <div class="audit-log">
+                                <h4 class="log-section-title">Recent Mentions</h4>
+
+                                <!-- Mention Entry -->
+                                <div class="mention-entry">
+                                    <div class="mention-icon">
+                                        <i class="fas fa-at"></i>
+                                    </div>
+                                    <div class="mention-details">
+                                        <p class="mention-context">
+                                            <strong>Dr. Johnson Ndung'u</strong> mentioned you in Grace Njeri's
+                                            treatment plan
+                                        </p>
+                                        <span class="mention-time">2 hours ago</span>
+                                        <button class="go-to-mention-btn">Go to Mention</button>
+                                    </div>
+                                </div>
+
+                                <!-- Another Mention -->
+                                <div class="mention-entry">
+                                    <div class="mention-icon">
+                                        <i class="fas fa-at"></i>
+                                    </div>
+                                    <div class="mention-details">
+                                        <p class="mention-context">
+                                            <strong>Nurse Alice Mutua</strong> mentioned you in appointment notes for
+                                            John Kamau
+                                        </p>
+                                        <span class="mention-time">Yesterday at 3:45 PM</span>
+                                        <button class="go-to-mention-btn">Go to Mention</button>
+                                    </div>
+                                </div>
+
+                                <h4 class="log-section-title">Assigned Cases</h4>
+
+                                <!-- Assigned Case -->
+                                <div class="assigned-case">
+                                    <div class="case-icon">
+                                        <i class="fas fa-user-tag"></i>
+                                    </div>
+                                    <div class="case-details">
+                                        <p class="case-info">
+                                            <strong>James Mwangi</strong> - Post-surgery follow-up
+                                        </p>
+                                        <div class="case-meta">
+                                            <span>Assigned by: Jane Njoki</span>
+                                            <span>Status: Active</span>
+                                            <span>Last activity: Today</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions Section -->
+            <div class="quick-actions-bar">
+                <h3 class="quick-actions-title">
+                    <i class="fas fa-bolt"></i> Quick Actions
+                </h3>
+                <div class="quick-actions-grid">
+                    <button class="quick-action"
+                        onclick="window.location.href='C:\\Users\\nderu\\Documents\\Development\\Product\\Curis\\1.0\\Users\\Doctor\\Consultations\\consultations.html'">
+                        <i class="fas fa-video"></i>
+                        <span>Join Consultation</span>
+                    </button>
+                    <button class="quick-action"
+                        onclick="window.location.href='C:\\Users\\nderu\\Documents\\Development\\Product\\Curis\\1.0\\Users\\Doctor\\Patient Records\\patient_records.html'">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Open Patient File</span>
+                    </button>
+                    <button class="quick-action view-lab-results">
+                        <i class="fas fa-flask"></i>
+                        <span>View Lab Results</span>
+                    </button>
+                    <button class="quick-action" id="exportDataBtn">
+                        <i class="fas fa-download"></i>
+                        <span>Export Data</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+
+    <!-- New Discussion Modal -->
+    <div class="modal" id="newDiscussionModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-comments"></i> Start New Discussion
+                </h2>
+                <button class="modal-close" id="closeNewDiscussion">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="newDiscussionForm">
+                    <div class="form-group">
+                        <label for="discussionTitle">Discussion Title</label>
+                        <input type="text" id="discussionTitle" class="form-control"
+                            placeholder="Enter discussion subject..." required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="discussionPriority">Priority</label>
+                            <select id="discussionPriority" class="form-control">
+                                <option value="normal">Normal</option>
+                                <option value="urgent">Urgent</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="discussionCategory">Category</label>
+                            <select id="discussionCategory" class="form-control">
+                                <option value="clinical">Clinical</option>
+                                <option value="admin">Administrative</option>
+                                <option value="educational">Educational</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="attachContext">Attach Context (Optional)</label>
+                        <div class="context-options">
+                            <select id="attachContext" class="form-control">
+                                <option value="">Select patient or appointment...</option>
+                                <option value="patient-1">Patient: John Kamau</option>
+                                <option value="patient-2">Patient: Mary Wambui</option>
+                                <option value="appointment-1">Appointment: Today 10:30 AM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="discussionContent">Discussion Content</label>
+                        <div class="rich-text-editor">
+                            <div class="editor-toolbar">
+                                <button type="button" class="editor-btn" title="Bold"><i
+                                        class="fas fa-bold"></i></button>
+                                <button type="button" class="editor-btn" title="Italic"><i
+                                        class="fas fa-italic"></i></button>
+                                <button type="button" class="editor-btn" title="List"><i
+                                        class="fas fa-list"></i></button>
+                                <button type="button" class="editor-btn" title="Link"><i
+                                        class="fas fa-link"></i></button>
+                                <button type="button" class="editor-btn" title="Attach File"><i
+                                        class="fas fa-paperclip"></i></button>
+                                <button type="button" class="editor-btn mention-btn" title="Mention">@</button>
+                            </div>
+                            <textarea id="discussionContent" class="editor-content"
+                                placeholder="Start typing your discussion..." rows="8"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="saveDraftBtn">Save Draft</button>
+                <button class="btn btn-primary" id="postDiscussionBtn">Post Discussion</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Notes Modal -->
+    <div class="modal" id="appointmentNotesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-sticky-note"></i> Quick Appointment Notes
+                </h2>
+                <button class="modal-close" id="closeAppointmentNotes">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="appointment-selector">
+                    <label>Select Appointment:</label>
+                    <select class="form-control" id="appointmentSelect">
+                        <option>John Kamau - 10:30 AM Today</option>
+                        <option>Mary Wambui - 11:15 AM Today</option>
+                        <option>Peter Ochieng - 2:00 PM Today</option>
+                    </select>
+                </div>
+
+                <div class="note-type-selector">
+                    <label>Note Type:</label>
+                    <div class="note-type-options">
+                        <label class="radio-option">
+                            <input type="radio" name="noteType" value="pre" checked>
+                            Pre-Consultation
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="noteType" value="during">
+                            During Consultation
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="noteType" value="post">
+                            Post-Consultation
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Note Content:</label>
+                    <textarea class="form-control" id="appointmentNoteContent" rows="5"
+                        placeholder="Enter your notes here..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button class="attach-file-btn">
+                        <i class="fas fa-paperclip"></i> Attach Files
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelAppointmentNote">Cancel</button>
+                <button class="btn btn-primary" id="saveAppointmentNote">Save Note</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Preferences Modal -->
+    <div class="modal" id="preferencesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-cog"></i> Notification Preferences
+                </h2>
+                <button class="modal-close" id="closePreferences">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>Alert Channels</h3>
+                <div class="preference-group">
+                    <label class="switch-container">
+                        <input type="checkbox" checked>
+                        <span class="switch-label">Email Notifications</span>
+                    </label>
+                    <label class="switch-container">
+                        <input type="checkbox" checked>
+                        <span class="switch-label">In-App Notifications</span>
+                    </label>
+                    <label class="switch-container">
+                        <input type="checkbox">
+                        <span class="switch-label">SMS Alerts (Critical Only)</span>
+                    </label>
+                </div>
+
+                <h3>Notification Scope</h3>
+                <div class="preference-group">
+                    <label class="switch-container">
+                        <input type="checkbox" checked>
+                        <span class="switch-label">Assigned Patients Only</span>
+                    </label>
+                    <label class="switch-container">
+                        <input type="checkbox">
+                        <span class="switch-label">All Patient Changes</span>
+                    </label>
+                    <label class="switch-container">
+                        <input type="checkbox" checked>
+                        <span class="switch-label">Team Mentions</span>
+                    </label>
+                    <label class="switch-container">
+                        <input type="checkbox" checked>
+                        <span class="switch-label">Discussion Alerts</span>
+                    </label>
+                </div>
+
+                <h3>Working Hours</h3>
+                <div class="working-hours-settings">
+                    <div class="time-range">
+                        <label>Active Hours:</label>
+                        <input type="time" value="08:00"> to <input type="time" value="18:00">
+                    </div>
+                    <label class="switch-container">
+                        <input type="checkbox">
+                        <span class="switch-label">Mute notifications outside working hours</span>
+                    </label>
+                    <label class="switch-container">
+                        <input type="checkbox" checked>
+                        <span class="switch-label">Allow emergency alerts anytime</span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelPreferences">Cancel</button>
+                <button class="btn btn-primary" id="savePreferences">Save Preferences</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lab Viewer Modal -->
+    <div class="modal" id="labViewerModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-flask"></i> Lab Results Viewer
+                </h2>
+                <button class="modal-close" id="closeLabViewer">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="lab-viewer-container">
+                    <!-- PDF Viewer Placeholder -->
+                    <div class="pdf-viewer">
+                        <p>Lab results document will be displayed here</p>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500'%3E%3Crect width='400' height='500' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%23999'%3ELab Results PDF%3C/text%3E%3C/svg%3E"
+                            alt="Lab Results">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="downloadLab">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="btn btn-secondary" id="printLab">
+                    <i class="fas fa-print"></i> Print
+                </button>
+                <button class="btn btn-primary" id="closeLabViewerBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Dark Mode Toggle -->
+            <div class="dark-mode-toggle">
+                <button id="darkModeBtn" class="dark-mode-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                    <i class="fab fa-x "></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                    rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Corporate Link & Copyright -->
+            <div class="footer-info">
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer"
+                    class="corporate-link">Citrus Labs</a>
+                <span class="separator">|</span>
+                <span class="copyright">© 2025 Citrus Labs. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="alerts_and_collaboration.js"></script>
+</body>
+
+</html>

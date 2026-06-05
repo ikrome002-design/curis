@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration & Setup - Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS and JavaScript Links -->
+    <link rel="stylesheet" href="registration_and_setup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                class="logo-link">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo_1.png"
+                    alt="Curis by Citrus Logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Primary Navigation Menu -->
+        <div class="main-navigation">
+            <ul class="nav-menu">
+                <!-- Dashboard -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                        class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <!-- Workforce Hub -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Workforce Hub\workforce_hub.html"
+                        class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Workforce Hub</span>
+                    </a>
+                </li>
+
+                <!-- Clinic Services Hub -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Clinic Services Hub\clinic_services_hub.html"
+                        class="nav-link">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>Clinic Services Hub</span>
+                    </a>
+                </li>
+
+                <!-- Appointments -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Appointments\appointments.html"
+                        class="nav-link">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Appointments</span>
+                    </a>
+                </li>
+
+                <!-- Billing & Payments -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Billings and Payments\billings_and_payments.html"
+                        class="nav-link">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Billing & Payments</span>
+                    </a>
+                </li>
+
+                <!-- Messaging -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Messaging\messaging.html"
+                        class="nav-link">
+                        <i class="fas fa-comments"></i>
+                        <span>Messaging</span>
+                    </a>
+                </li>
+
+                <!-- Health Data & Records -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Health Data and Records\health_data_and_records.html"
+                        class="nav-link">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Health Data & Records</span>
+                    </a>
+                </li>
+
+                <!-- Insights & Performance -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Insights and Performance\insights_and_performance.html"
+                        class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Insights & Performance</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header Section -->
+        <header class="top-header">
+            <div class="header-left">
+                <h1>Registration & Setup</h1>
+                <p class="page-subtitle">Onboarding Hub - Complete your clinic setup and start serving patients</p>
+            </div>
+
+            <div class="header-right">
+                <!-- Notifications -->
+                <div class="notification-container">
+                    <button class="notification-btn" id="notificationBtn" title="Notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">2</span>
+                    </button>
+                </div>
+
+                <!-- User Profile -->
+                <div class="user-profile-container">
+                    <button class="user-profile-btn"
+                        onclick="window.location.href='file:///C:/Users/nderu/Documents/Development/Product/Curis/Users/Clinic%20Owner/My%20Profile/my_profile.html'"
+                        aria-label="Go to My Profile">
+                        <img src="file:///C:/Users/nderu/Documents/Development/Product/Curis/Technical%20Writings/Images/Icons/icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-image">
+                        <span class="profile-name">Dr. Sarah Wanjiku</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+
+                    <!-- User Dropdown Menu -->
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Settings\settings.html"
+                            class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Landing Page\landing_page.html"
+                            class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Setup Progress Tracker -->
+        <div class="progress-tracker-container">
+            <div class="progress-header">
+                <h3>Setup Progress</h3>
+                <span class="completion-percentage" id="completionPercentage">20% Complete</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 20%"></div>
+                </div>
+                <div class="step-indicators">
+                    <div class="step-indicator completed" data-step="1">
+                        <i class="fas fa-check"></i>
+                        <span>Clinic Identity</span>
+                    </div>
+                    <div class="step-indicator active" data-step="2">
+                        <i class="fas fa-clock"></i>
+                        <span>Operating Hours</span>
+                    </div>
+                    <div class="step-indicator" data-step="3">
+                        <i class="fas fa-circle"></i>
+                        <span>Services</span>
+                    </div>
+                    <div class="step-indicator" data-step="4">
+                        <i class="fas fa-circle"></i>
+                        <span>Payment Terms</span>
+                    </div>
+                    <div class="step-indicator" data-step="5">
+                        <i class="fas fa-circle"></i>
+                        <span>Final Setup</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration & Setup Dashboard -->
+        <div class="dashboard-container">
+            <!-- Clinic Identity Configuration Section -->
+            <section class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-hospital"></i>
+                        Clinic Identity Configuration
+                    </h3>
+                    <div class="widget-status completed">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Completed</span>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="identity-overview">
+                        <div class="clinic-info-display">
+                            <div class="clinic-logo-display">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                                    alt="Clinic Logo" class="logo-preview">
+                                <button class="change-logo-btn" id="changeLogoBtn">
+                                    <i class="fas fa-camera"></i>
+                                    Change Logo
+                                </button>
+                            </div>
+                            <div class="clinic-details">
+                                <h4 class="clinic-name">Nairobi Family Health Clinic</h4>
+                                <p class="clinic-description">Comprehensive family healthcare services in the heart of
+                                    Nairobi, providing quality medical care for all ages.</p>
+                                <div class="contact-info">
+                                    <div class="contact-item">
+                                        <i class="fas fa-phone"></i>
+                                        <span>+254 700 123 456</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>info@nairobifamilyhealth.co.ke</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Karen Shopping Centre, Nairobi</span>
+                                    </div>
+                                </div>
+                                <div class="social-links-display">
+                                    <a href="#" class="social-link-item">
+                                        <i class="fas fa-globe"></i>
+                                        <span>www.nairobifamilyhealth.co.ke</span>
+                                    </a>
+                                    <a href="#" class="social-link-item">
+                                        <i class="fab fa-facebook"></i>
+                                        <span>Facebook Page</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-secondary" id="editIdentityBtn">
+                            <i class="fas fa-edit"></i>
+                            Edit Clinic Identity
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Operating Hours Setup Section -->
+            <section class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-clock"></i>
+                        Operating Hours Setup
+                    </h3>
+                    <div class="widget-status in-progress">
+                        <i class="fas fa-clock"></i>
+                        <span>In Progress</span>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="schedule-builder">
+                        <div class="schedule-overview">
+                            <h4>Current Schedule</h4>
+                            <div class="weekly-schedule">
+                                <div class="day-schedule">
+                                    <div class="day-header">
+                                        <span class="day-name">Monday</span>
+                                        <button class="edit-day-btn" data-day="monday">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </div>
+                                    <div class="day-hours">
+                                        <span class="hours-display">8:00 AM - 6:00 PM</span>
+                                        <span class="break-time">Lunch: 1:00 PM - 2:00 PM</span>
+                                    </div>
+                                </div>
+
+                                <div class="day-schedule">
+                                    <div class="day-header">
+                                        <span class="day-name">Tuesday</span>
+                                        <button class="edit-day-btn" data-day="tuesday">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </div>
+                                    <div class="day-hours">
+                                        <span class="hours-display">8:00 AM - 6:00 PM</span>
+                                        <span class="break-time">Lunch: 1:00 PM - 2:00 PM</span>
+                                    </div>
+                                </div>
+
+                                <div class="day-schedule">
+                                    <div class="day-header">
+                                        <span class="day-name">Wednesday</span>
+                                        <button class="edit-day-btn" data-day="wednesday">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </div>
+                                    <div class="day-hours">
+                                        <span class="hours-display">8:00 AM - 6:00 PM</span>
+                                        <span class="break-time">Lunch: 1:00 PM - 2:00 PM</span>
+                                    </div>
+                                </div>
+
+                                <div class="day-schedule">
+                                    <div class="day-header">
+                                        <span class="day-name">Thursday</span>
+                                        <button class="edit-day-btn" data-day="thursday">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </div>
+                                    <div class="day-hours">
+                                        <span class="hours-display">8:00 AM - 6:00 PM</span>
+                                        <span class="break-time">Lunch: 1:00 PM - 2:00 PM</span>
+                                    </div>
+                                </div>
+
+                                <div class="day-schedule">
+                                    <div class="day-header">
+                                        <span class="day-name">Friday</span>
+                                        <button class="edit-day-btn" data-day="friday">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </div>
+                                    <div class="day-hours">
+                                        <span class="hours-display">8:00 AM - 6:00 PM</span>
+                                        <span class="break-time">Lunch: 1:00 PM - 2:00 PM</span>
+                                    </div>
+                                </div>
+
+                                <div class="day-schedule">
+                                    <div class="day-header">
+                                        <span class="day-name">Saturday</span>
+                                        <button class="edit-day-btn" data-day="saturday">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </div>
+                                    <div class="day-hours">
+                                        <span class="hours-display">9:00 AM - 1:00 PM</span>
+                                        <span class="break-time">No Breaks</span>
+                                    </div>
+                                </div>
+
+                                <div class="day-schedule closed">
+                                    <div class="day-header">
+                                        <span class="day-name">Sunday</span>
+                                        <button class="edit-day-btn" data-day="sunday">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </div>
+                                    <div class="day-hours">
+                                        <span class="hours-display closed-text">CLOSED</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="schedule-actions">
+                            <button class="btn-primary" id="editScheduleBtn">
+                                <i class="fas fa-calendar-alt"></i>
+                                Configure Schedule
+                            </button>
+                            <button class="btn-secondary" id="holidayCalendarBtn">
+                                <i class="fas fa-calendar-times"></i>
+                                Holiday Calendar
+                            </button>
+                            <button class="btn-secondary" id="savePresetBtn">
+                                <i class="fas fa-save"></i>
+                                Save as Preset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Specialties & Services Definition Section -->
+            <section class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-stethoscope"></i>
+                        Specialties & Services Definition
+                    </h3>
+                    <div class="widget-status pending">
+                        <i class="fas fa-circle"></i>
+                        <span>Pending</span>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="specialties-services-setup">
+                        <!-- Specialty Selection -->
+                        <div class="specialty-selection">
+                            <h4>Selected Specialties</h4>
+                            <div class="selected-specialties">
+                                <div class="specialty-tag">
+                                    <span>Primary Care</span>
+                                    <button class="remove-specialty">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="specialty-tag">
+                                    <span>Family Medicine</span>
+                                    <button class="remove-specialty">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="specialty-tag">
+                                    <span>Pediatrics</span>
+                                    <button class="remove-specialty">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="btn-secondary" id="addSpecialtyBtn">
+                                <i class="fas fa-plus"></i>
+                                Add Specialty
+                            </button>
+                        </div>
+
+                        <!-- Service Configuration Preview -->
+                        <div class="services-preview">
+                            <h4>Configured Services</h4>
+                            <div class="services-list">
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h5>General Consultation</h5>
+                                        <div class="service-details">
+                                            <span class="duration">30 minutes</span>
+                                            <span class="fee">KES. 2,500</span>
+                                            <span class="staff-role">Doctor</span>
+                                        </div>
+                                    </div>
+                                    <button class="edit-service-btn">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                </div>
+
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h5>Follow-up Consultation</h5>
+                                        <div class="service-details">
+                                            <span class="duration">20 minutes</span>
+                                            <span class="fee">KES. 1,800</span>
+                                            <span class="staff-role">Doctor</span>
+                                        </div>
+                                    </div>
+                                    <button class="edit-service-btn">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                </div>
+
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h5>Child Immunization</h5>
+                                        <div class="service-details">
+                                            <span class="duration">15 minutes</span>
+                                            <span class="fee">KES. 1,200</span>
+                                            <span class="staff-role">Nurse</span>
+                                        </div>
+                                    </div>
+                                    <button class="edit-service-btn">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lab Services Toggle -->
+                        <div class="lab-services-section">
+                            <div class="lab-toggle">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="labServicesToggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <div class="toggle-info">
+                                    <h5>Enable Laboratory Services</h5>
+                                    <p>Offer lab tests and diagnostic services to your patients</p>
+                                </div>
+                            </div>
+
+                            <div class="lab-config hidden" id="labConfig">
+                                <h5>Laboratory Test Categories</h5>
+                                <div class="lab-categories">
+                                    <label class="lab-category">
+                                        <input type="checkbox" value="blood">
+                                        <span>Blood Tests (CBC, Chemistry Panel, etc.)</span>
+                                    </label>
+                                    <label class="lab-category">
+                                        <input type="checkbox" value="urine">
+                                        <span>Urine Analysis</span>
+                                    </label>
+                                    <label class="lab-category">
+                                        <input type="checkbox" value="stool">
+                                        <span>Stool Examination</span>
+                                    </label>
+                                    <label class="lab-category">
+                                        <input type="checkbox" value="microbiology">
+                                        <span>Microbiology & Culture</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="services-actions">
+                            <button class="btn-primary" id="configureServicesBtn">
+                                <i class="fas fa-cog"></i>
+                                Configure Services
+                            </button>
+                            <button class="btn-secondary" id="smartSuggestionsBtn">
+                                <i class="fas fa-lightbulb"></i>
+                                Smart Suggestions
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Service Charge Payment Frequency Section -->
+            <section class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-credit-card"></i>
+                        Service Charge Payment Frequency
+                    </h3>
+                    <div class="widget-status pending">
+                        <i class="fas fa-circle"></i>
+                        <span>Pending</span>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="payment-frequency-setup">
+                        <div class="billing-terms">
+                            <h4>Choose Your Payment Schedule</h4>
+                            <p class="billing-info">Select how often you'd like to receive payments from the platform.
+                                This affects your cash flow and administrative overhead.</p>
+
+                            <div class="frequency-options">
+                                <label class="frequency-option">
+                                    <input type="radio" name="paymentFrequency" value="weekly">
+                                    <div class="option-content">
+                                        <div class="option-header">
+                                            <h5>Weekly Payments</h5>
+                                            <span class="frequency-badge recommended">Recommended</span>
+                                        </div>
+                                        <p class="option-description">Receive payments every Friday for the previous
+                                            week's services</p>
+                                        <div class="option-benefits">
+                                            <span class="benefit">
+                                                <i class="fas fa-check"></i>
+                                                Better cash flow
+                                            </span>
+                                            <span class="benefit">
+                                                <i class="fas fa-check"></i>
+                                                Lower risk exposure
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="frequency-option">
+                                    <input type="radio" name="paymentFrequency" value="biweekly">
+                                    <div class="option-content">
+                                        <div class="option-header">
+                                            <h5>Bi-Weekly Payments</h5>
+                                        </div>
+                                        <p class="option-description">Receive payments every two weeks on Fridays</p>
+                                        <div class="option-benefits">
+                                            <span class="benefit">
+                                                <i class="fas fa-check"></i>
+                                                Balanced approach
+                                            </span>
+                                            <span class="benefit">
+                                                <i class="fas fa-check"></i>
+                                                Moderate admin work
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="frequency-option">
+                                    <input type="radio" name="paymentFrequency" value="monthly">
+                                    <div class="option-content">
+                                        <div class="option-header">
+                                            <h5>Monthly Payments</h5>
+                                            <span class="frequency-badge caution">Consider carefully</span>
+                                        </div>
+                                        <p class="option-description">Receive payments on the last Friday of each month
+                                        </p>
+                                        <div class="option-benefits">
+                                            <span class="benefit">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                                Longer payment delays
+                                            </span>
+                                            <span class="benefit">
+                                                <i class="fas fa-check"></i>
+                                                Less admin overhead
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Payment Preview -->
+                        <div class="payment-preview">
+                            <h4>Payment Estimation</h4>
+                            <div class="estimation-card">
+                                <div class="estimation-inputs">
+                                    <div class="input-group">
+                                        <label>Expected Weekly Patients:</label>
+                                        <input type="number" id="weeklyPatients" value="50" min="1" max="500">
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Average Service Fee:</label>
+                                        <input type="number" id="averageFee" value="2500" min="100" step="50">
+                                        <span class="currency">KES.</span>
+                                    </div>
+                                </div>
+
+                                <div class="estimation-results">
+                                    <div class="result-item">
+                                        <span class="result-label">Estimated Weekly Revenue:</span>
+                                        <span class="result-value" id="weeklyRevenue">KES. 125,000</span>
+                                    </div>
+                                    <div class="result-item">
+                                        <span class="result-label">Platform Service Charge (5%):</span>
+                                        <span class="result-value" id="serviceCharge">KES. 6,250</span>
+                                    </div>
+                                    <div class="result-item total">
+                                        <span class="result-label">Your Net Payment:</span>
+                                        <span class="result-value" id="netPayment">KES. 118,750</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Agreement Confirmation -->
+                        <div class="agreement-section">
+                            <div class="terms-confirmation">
+                                <label class="terms-checkbox">
+                                    <input type="checkbox" id="termsAgreement" required>
+                                    <span class="checkmark"></span>
+                                    <div class="terms-text">
+                                        <p>I understand and agree to the platform service charges and payment terms</p>
+                                        <a href="#" class="terms-link">View detailed terms and conditions</a>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="fee-acknowledgment">
+                                <div class="fee-breakdown">
+                                    <h5>Service Charge Breakdown</h5>
+                                    <div class="fee-item">
+                                        <span>Platform Usage Fee:</span>
+                                        <span>3.5%</span>
+                                    </div>
+                                    <div class="fee-item">
+                                        <span>Payment Processing:</span>
+                                        <span>1.0%</span>
+                                    </div>
+                                    <div class="fee-item">
+                                        <span>Support & Maintenance:</span>
+                                        <span>0.5%</span>
+                                    </div>
+                                    <div class="fee-item total">
+                                        <span>Total Service Charge:</span>
+                                        <span>5.0%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="payment-actions">
+                            <button class="btn-primary" id="confirmPaymentTermsBtn" disabled>
+                                <i class="fas fa-check"></i>
+                                Confirm Payment Terms
+                            </button>
+                            <button class="btn-secondary" id="previewPaymentBtn">
+                                <i class="fas fa-eye"></i>
+                                Preview Payment Schedule
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Post-Setup Auto-Actions Section -->
+            <section class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-rocket"></i>
+                        Final Setup & Launch
+                    </h3>
+                    <div class="widget-status pending">
+                        <i class="fas fa-circle"></i>
+                        <span>Pending</span>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="final-setup">
+                        <!-- Clinic Profile Generation -->
+                        <div class="profile-generation">
+                            <h4>Clinic Profile</h4>
+                            <p class="setup-description">We'll automatically generate your clinic's public profile based
+                                on the information you've provided.</p>
+
+                            <div class="profile-preview-card">
+                                <div class="preview-header">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Patient-Facing Profile Preview</span>
+                                </div>
+                                <div class="preview-content">
+                                    <div class="preview-clinic-info">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                            alt="Clinic Logo" class="preview-logo">
+                                        <div class="preview-details">
+                                            <h5>Nairobi Family Health Clinic</h5>
+                                            <p>Primary Care • Family Medicine • Pediatrics</p>
+                                            <div class="preview-hours">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Mon-Fri: 8AM-6PM, Sat: 9AM-1PM</span>
+                                            </div>
+                                            <div class="preview-location">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <span>Karen Shopping Centre, Nairobi</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-actions">
+                                <button class="btn-secondary" id="editProfileBtn">
+                                    <i class="fas fa-edit"></i>
+                                    Edit Before Publishing
+                                </button>
+                                <button class="btn-primary" id="publishProfileBtn">
+                                    <i class="fas fa-globe"></i>
+                                    Publish Profile
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- First Staff Account Creation -->
+                        <div class="staff-creation">
+                            <h4>Create Your First Staff Account</h4>
+                            <p class="setup-description">Add your first team member to help manage appointments and
+                                patient care.</p>
+
+                            <div class="staff-quick-add">
+                                <div class="quick-add-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Staff Role:</label>
+                                            <select id="staffRole" class="form-control">
+                                                <option value="">Select Role</option>
+                                                <option value="doctor">Doctor</option>
+                                                <option value="nurse">Nurse</option>
+                                                <option value="receptionist">Receptionist</option>
+                                                <option value="lab-technician">Lab Technician</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Full Name:</label>
+                                            <input type="text" id="staffName" class="form-control"
+                                                placeholder="Dr. John Smith">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Email Address:</label>
+                                            <input type="email" id="staffEmail" class="form-control"
+                                                placeholder="doctor@nairobifamilyhealth.co.ke">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Phone Number:</label>
+                                            <input type="tel" id="staffPhone" class="form-control"
+                                                placeholder="+254 700 000 000">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="invitation-options">
+                                    <h5>Send Invitation Via:</h5>
+                                    <div class="invitation-methods">
+                                        <label class="method-option">
+                                            <input type="checkbox" value="email" checked>
+                                            <i class="fas fa-envelope"></i>
+                                            <span>Email</span>
+                                        </label>
+                                        <label class="method-option">
+                                            <input type="checkbox" value="sms">
+                                            <i class="fas fa-sms"></i>
+                                            <span>SMS</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="staff-actions">
+                                <button class="btn-primary" id="sendInvitationBtn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Invitation
+                                </button>
+                                <button class="btn-secondary" id="skipStaffBtn">
+                                    <i class="fas fa-forward"></i>
+                                    Skip for Now
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Onboarding Checklist -->
+                        <div class="onboarding-checklist">
+                            <h4>Onboarding Checklist</h4>
+                            <p class="setup-description">Complete these final steps to get your clinic fully
+                                operational.</p>
+
+                            <div class="checklist-items">
+                                <div class="checklist-item completed">
+                                    <div class="item-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h5>Set up Clinic Identity</h5>
+                                        <p>Configure clinic name, logo, and contact information</p>
+                                    </div>
+                                    <div class="item-status">
+                                        <span class="status-badge completed">Complete</span>
+                                    </div>
+                                </div>
+
+                                <div class="checklist-item in-progress">
+                                    <div class="item-checkbox">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h5>Configure Operating Hours</h5>
+                                        <p>Set weekly schedule and holiday calendar</p>
+                                    </div>
+                                    <div class="item-status">
+                                        <span class="status-badge in-progress">In Progress</span>
+                                    </div>
+                                </div>
+
+                                <div class="checklist-item pending">
+                                    <div class="item-checkbox">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h5>Define Services & Pricing</h5>
+                                        <p>Set up service categories and fee structure</p>
+                                    </div>
+                                    <div class="item-status">
+                                        <span class="status-badge pending">Pending</span>
+                                    </div>
+                                </div>
+
+                                <div class="checklist-item pending">
+                                    <div class="item-checkbox">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h5>Configure Payment Terms</h5>
+                                        <p>Set payment frequency and agree to terms</p>
+                                    </div>
+                                    <div class="item-status">
+                                        <span class="status-badge pending">Pending</span>
+                                    </div>
+                                </div>
+
+                                <div class="checklist-item pending">
+                                    <div class="item-checkbox">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h5>Add Staff Members</h5>
+                                        <p>Invite team members and assign roles</p>
+                                    </div>
+                                    <div class="item-status">
+                                        <span class="status-badge pending">Pending</span>
+                                    </div>
+                                </div>
+
+                                <div class="checklist-item pending">
+                                    <div class="item-checkbox">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h5>Enable Patient Notifications</h5>
+                                        <p>Configure SMS and email notifications</p>
+                                    </div>
+                                    <div class="item-status">
+                                        <span class="status-badge pending">Pending</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Final Actions -->
+                        <div class="final-actions">
+                            <div class="setup-completion-status">
+                                <div class="completion-indicator">
+                                    <div class="completion-circle">
+                                        <span class="completion-text">20%</span>
+                                    </div>
+                                    <p>Complete setup to launch your clinic</p>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="btn-primary large" id="completeSetupBtn" disabled>
+                                    <i class="fas fa-rocket"></i>
+                                    Complete Setup & Launch
+                                </button>
+                                <button class="btn-secondary" id="saveExitBtn">
+                                    <i class="fas fa-save"></i>
+                                    Save & Exit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Application Footer -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" class="social-link instagram" target="_blank"
+                        title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" class="social-link twitter" target="_blank" title="X (Twitter)">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" class="social-link facebook"
+                        target="_blank" title="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" class="social-link youtube" target="_blank"
+                        title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" class="social-link linkedin" target="_blank"
+                        title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <a href="https://citruslabs.co.ke/" class="corporate-link" target="_blank">citruslabs.co.ke</a>
+                <span class="copyright">© 2025 Citrus Labs. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notifications Panel -->
+    <div class="notifications-panel" id="notificationsPanel">
+        <div class="notifications-header">
+            <h3 class="notifications-title">Notifications</h3>
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Notifications\notifications.html"
+                class="view-all-notifications">View All</a>
+        </div>
+        <div class="notifications-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Setup Progress</h5>
+                    <p>Complete your clinic setup to start accepting patient appointments.</p>
+                    <span class="notification-time">Just now</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Welcome to Curis</h5>
+                    <p>Welcome to the Curis platform! Follow the setup guide to get started.</p>
+                    <span class="notification-time">1 hour ago</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clinic Identity Edit Modal -->
+    <div class="modal" id="clinicIdentityModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Edit Clinic Identity</h3>
+                <button class="modal-close" id="closeIdentityModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="clinicIdentityForm">
+                    <!-- Clinic Name Section -->
+                    <div class="form-section">
+                        <h4>Clinic Name</h4>
+                        <div class="form-group">
+                            <label for="clinicName">Clinic Name *</label>
+                            <input type="text" id="clinicName" name="clinicName" class="form-control"
+                                value="Nairobi Family Health Clinic" required>
+                            <div class="validation-message" id="nameValidation"></div>
+                        </div>
+                    </div>
+
+                    <!-- Logo Upload Section -->
+                    <div class="form-section">
+                        <h4>Clinic Logo</h4>
+                        <div class="logo-upload-area">
+                            <div class="current-logo">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                                    alt="Current Logo" id="currentLogoPreview">
+                            </div>
+                            <div class="upload-controls">
+                                <input type="file" id="logoUpload" accept=".jpg,.jpeg,.png,.svg" hidden>
+                                <button type="button" class="btn-secondary" id="uploadLogoBtn">
+                                    <i class="fas fa-upload"></i>
+                                    Upload New Logo
+                                </button>
+                                <p class="upload-info">JPG, PNG, or SVG. Max size: 5MB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Details Section -->
+                    <div class="form-section">
+                        <h4>Contact Information</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="clinicPhone">Phone Number *</label>
+                                <input type="tel" id="clinicPhone" name="clinicPhone" class="form-control"
+                                    value="+254 700 123 456" required>
+                                <div class="validation-message" id="phoneValidation"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="clinicEmail">Email Address *</label>
+                                <input type="email" id="clinicEmail" name="clinicEmail" class="form-control"
+                                    value="info@nairobifamilyhealth.co.ke" required>
+                                <div class="validation-message" id="emailValidation"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location Section -->
+                    <div class="form-section">
+                        <h4>Location</h4>
+                        <div class="location-setting">
+                            <div class="form-group">
+                                <label for="clinicAddress">Address</label>
+                                <input type="text" id="clinicAddress" name="clinicAddress" class="form-control"
+                                    value="Karen Shopping Centre, Nairobi">
+                                <button type="button" class="btn-secondary" id="setLocationBtn">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Set on Map
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Description Section -->
+                    <div class="form-section">
+                        <h4>Clinic Description</h4>
+                        <div class="form-group">
+                            <label for="clinicDescription">Description</label>
+                            <textarea id="clinicDescription" name="clinicDescription" class="form-control" rows="4"
+                                maxlength="500">Comprehensive family healthcare services in the heart of Nairobi, providing quality medical care for all ages.</textarea>
+                            <div class="character-count">
+                                <span id="charCount">123</span>/500 characters
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links Section -->
+                    <div class="form-section">
+                        <h4>Website & Social Media</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="clinicWebsite">Website URL</label>
+                                <input type="url" id="clinicWebsite" name="clinicWebsite" class="form-control"
+                                    placeholder="https://www.nairobifamilyhealth.co.ke">
+                            </div>
+                            <div class="form-group">
+                                <label for="clinicFacebook">Facebook Page</label>
+                                <input type="url" id="clinicFacebook" name="clinicFacebook" class="form-control"
+                                    placeholder="https://facebook.com/yourpage">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="clinicTwitter">Twitter/X Handle</label>
+                                <input type="url" id="clinicTwitter" name="clinicTwitter" class="form-control"
+                                    placeholder="https://x.com/yourhandle">
+                            </div>
+                            <div class="form-group">
+                                <label for="clinicInstagram">Instagram Profile</label>
+                                <input type="url" id="clinicInstagram" name="clinicInstagram" class="form-control"
+                                    placeholder="https://instagram.com/yourprofile">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" id="cancelIdentityEdit">Cancel</button>
+                <button type="submit" class="btn-primary" form="clinicIdentityForm">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Operating Hours Configuration Modal -->
+    <div class="modal" id="operatingHoursModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Configure Operating Hours</h3>
+                <button class="modal-close" id="closeHoursModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="hours-configuration">
+                    <div class="days-config">
+                        <div class="day-config" data-day="monday">
+                            <div class="day-header">
+                                <h5>Monday</h5>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="time-inputs">
+                                <div class="time-group">
+                                    <label>Opening Time:</label>
+                                    <input type="time" value="08:00" class="time-input">
+                                </div>
+                                <div class="time-group">
+                                    <label>Closing Time:</label>
+                                    <input type="time" value="18:00" class="time-input">
+                                </div>
+                            </div>
+                            <div class="break-times">
+                                <h6>Break Times</h6>
+                                <div class="break-inputs">
+                                    <div class="time-group">
+                                        <label>Break Start:</label>
+                                        <input type="time" value="13:00" class="break-input">
+                                    </div>
+                                    <div class="time-group">
+                                        <label>Break End:</label>
+                                        <input type="time" value="14:00" class="break-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="day-config" data-day="tuesday">
+                            <div class="day-header">
+                                <h5>Tuesday</h5>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="time-inputs">
+                                <div class="time-group">
+                                    <label>Opening Time:</label>
+                                    <input type="time" value="08:00" class="time-input">
+                                </div>
+                                <div class="time-group">
+                                    <label>Closing Time:</label>
+                                    <input type="time" value="18:00" class="time-input">
+                                </div>
+                            </div>
+                            <div class="break-times">
+                                <h6>Break Times</h6>
+                                <div class="break-inputs">
+                                    <div class="time-group">
+                                        <label>Break Start:</label>
+                                        <input type="time" value="13:00" class="break-input">
+                                    </div>
+                                    <div class="time-group">
+                                        <label>Break End:</label>
+                                        <input type="time" value="14:00" class="break-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="day-config" data-day="wednesday">
+                            <div class="day-header">
+                                <h5>Wednesday</h5>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="time-inputs">
+                                <div class="time-group">
+                                    <label>Opening Time:</label>
+                                    <input type="time" value="08:00" class="time-input">
+                                </div>
+                                <div class="time-group">
+                                    <label>Closing Time:</label>
+                                    <input type="time" value="18:00" class="time-input">
+                                </div>
+                            </div>
+                            <div class="break-times">
+                                <h6>Break Times</h6>
+                                <div class="break-inputs">
+                                    <div class="time-group">
+                                        <label>Break Start:</label>
+                                        <input type="time" value="13:00" class="break-input">
+                                    </div>
+                                    <div class="time-group">
+                                        <label>Break End:</label>
+                                        <input type="time" value="14:00" class="break-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="day-config" data-day="thursday">
+                            <div class="day-header">
+                                <h5>Thursday</h5>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="time-inputs">
+                                <div class="time-group">
+                                    <label>Opening Time:</label>
+                                    <input type="time" value="08:00" class="time-input">
+                                </div>
+                                <div class="time-group">
+                                    <label>Closing Time:</label>
+                                    <input type="time" value="18:00" class="time-input">
+                                </div>
+                            </div>
+                            <div class="break-times">
+                                <h6>Break Times</h6>
+                                <div class="break-inputs">
+                                    <div class="time-group">
+                                        <label>Break Start:</label>
+                                        <input type="time" value="13:00" class="break-input">
+                                    </div>
+                                    <div class="time-group">
+                                        <label>Break End:</label>
+                                        <input type="time" value="14:00" class="break-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="day-config" data-day="friday">
+                            <div class="day-header">
+                                <h5>Friday</h5>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="time-inputs">
+                                <div class="time-group">
+                                    <label>Opening Time:</label>
+                                    <input type="time" value="08:00" class="time-input">
+                                </div>
+                                <div class="time-group">
+                                    <label>Closing Time:</label>
+                                    <input type="time" value="18:00" class="time-input">
+                                </div>
+                            </div>
+                            <div class="break-times">
+                                <h6>Break Times</h6>
+                                <div class="break-inputs">
+                                    <div class="time-group">
+                                        <label>Break Start:</label>
+                                        <input type="time" value="13:00" class="break-input">
+                                    </div>
+                                    <div class="time-group">
+                                        <label>Break End:</label>
+                                        <input type="time" value="14:00" class="break-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="day-config" data-day="saturday">
+                            <div class="day-header">
+                                <h5>Saturday</h5>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="time-inputs">
+                                <div class="time-group">
+                                    <label>Opening Time:</label>
+                                    <input type="time" value="09:00" class="time-input">
+                                </div>
+                                <div class="time-group">
+                                    <label>Closing Time:</label>
+                                    <input type="time" value="13:00" class="time-input">
+                                </div>
+                            </div>
+                            <div class="break-times">
+                                <h6>Break Times</h6>
+                                <div class="break-inputs">
+                                    <div class="time-group">
+                                        <label>Break Start:</label>
+                                        <input type="time" class="break-input" disabled>
+                                    </div>
+                                    <div class="time-group">
+                                        <label>Break End:</label>
+                                        <input type="time" class="break-input" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="day-config" data-day="sunday">
+                            <div class="day-header">
+                                <h5>Sunday</h5>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="time-inputs disabled">
+                                <div class="time-group">
+                                    <label>Opening Time:</label>
+                                    <input type="time" class="time-input" disabled>
+                                </div>
+                                <div class="time-group">
+                                    <label>Closing Time:</label>
+                                    <input type="time" class="time-input" disabled>
+                                </div>
+                            </div>
+                            <div class="break-times">
+                                <h6>Break Times</h6>
+                                <div class="break-inputs">
+                                    <div class="time-group">
+                                        <label>Break Start:</label>
+                                        <input type="time" class="break-input" disabled>
+                                    </div>
+                                    <div class="time-group">
+                                        <label>Break End:</label>
+                                        <input type="time" class="break-input" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="schedule-presets">
+                        <h4>Quick Actions</h4>
+                        <div class="preset-buttons">
+                            <button class="btn-secondary" id="applyToAllBtn">
+                                <i class="fas fa-copy"></i>
+                                Apply Monday to All Days
+                            </button>
+                            <button class="btn-secondary" id="resetScheduleBtn">
+                                <i class="fas fa-undo"></i>
+                                Reset to Default
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" id="cancelHoursEdit">Cancel</button>
+                <button type="button" class="btn-primary" id="saveScheduleBtn">
+                    <i class="fas fa-save"></i>
+                    Save Schedule
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Specialty Selection Modal -->
+    <div class="modal" id="specialtyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Add Specialty</h3>
+                <button class="modal-close" id="closeSpecialtyModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="specialty-library">
+                    <div class="search-specialties">
+                        <input type="text" placeholder="Search specialties..." class="specialty-search"
+                            id="specialtySearch">
+                    </div>
+
+                    <div class="specialty-categories">
+                        <div class="category-section">
+                            <h4>Primary Care</h4>
+                            <div class="specialty-options">
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="general-practice">
+                                    <span>General Practice</span>
+                                </label>
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="family-medicine">
+                                    <span>Family Medicine</span>
+                                </label>
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="internal-medicine">
+                                    <span>Internal Medicine</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="category-section">
+                            <h4>Specialty Clinics</h4>
+                            <div class="specialty-options">
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="cardiology">
+                                    <span>Cardiology</span>
+                                </label>
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="dermatology">
+                                    <span>Dermatology</span>
+                                </label>
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="orthopedics">
+                                    <span>Orthopedics</span>
+                                </label>
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="neurology">
+                                    <span>Neurology</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="category-section">
+                            <h4>Pediatrics</h4>
+                            <div class="specialty-options">
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="pediatrics">
+                                    <span>General Pediatrics</span>
+                                </label>
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="neonatology">
+                                    <span>Neonatology</span>
+                                </label>
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="pediatric-surgery">
+                                    <span>Pediatric Surgery</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="category-section">
+                            <h4>Women's Health</h4>
+                            <div class="specialty-options">
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="obstetrics-gynecology">
+                                    <span>Obstetrics & Gynecology</span>
+                                </label>
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="maternal-health">
+                                    <span>Maternal Health</span>
+                                </label>
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="reproductive-health">
+                                    <span>Reproductive Health</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="category-section">
+                            <h4>Dental</h4>
+                            <div class="specialty-options">
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="general-dentistry">
+                                    <span>General Dentistry</span>
+                                </label>
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="orthodontics">
+                                    <span>Orthodontics</span>
+                                </label>
+                                <label class="specialty-option">
+                                    <input type="checkbox" value="oral-surgery">
+                                    <span>Oral Surgery</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="custom-specialty">
+                        <h4>Custom Specialty</h4>
+                        <div class="custom-input">
+                            <input type="text" placeholder="Enter custom specialty name..." id="customSpecialtyName">
+                            <button class="btn-secondary" id="addCustomSpecialty">
+                                <i class="fas fa-plus"></i>
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" id="cancelSpecialtySelection">Cancel</button>
+                <button type="button" class="btn-primary" id="saveSpecialties">
+                    <i class="fas fa-check"></i>
+                    Add Selected Specialties
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Configuration Modal -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Configure Service</h3>
+                <button class="modal-close" id="closeServiceModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="serviceConfigForm">
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="serviceName">Service Name *</label>
+                            <input type="text" id="serviceName" name="serviceName" class="form-control"
+                                placeholder="e.g., Initial Consultation" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="serviceDuration">Duration (minutes) *</label>
+                                <select id="serviceDuration" name="serviceDuration" class="form-control" required>
+                                    <option value="">Select Duration</option>
+                                    <option value="15">15 minutes</option>
+                                    <option value="20">20 minutes</option>
+                                    <option value="30">30 minutes</option>
+                                    <option value="45">45 minutes</option>
+                                    <option value="60">60 minutes</option>
+                                    <option value="90">90 minutes</option>
+                                    <option value="120">120 minutes</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="serviceFee">Fee per Service (KES.) *</label>
+                                <input type="number" id="serviceFee" name="serviceFee" class="form-control" min="100"
+                                    step="50" placeholder="2500" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="staffRoles">Associated Staff Roles *</label>
+                            <select id="staffRoles" name="staffRoles" class="form-control" required>
+                                <option value="">Select Staff Role</option>
+                                <option value="doctor">Doctor</option>
+                                <option value="nurse">Nurse</option>
+                                <option value="lab-technician">Lab Technician</option>
+                                <option value="receptionist">Receptionist</option>
+                                <option value="specialist">Specialist</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceDescription">Service Description</label>
+                            <textarea id="serviceDescription" name="serviceDescription" class="form-control" rows="3"
+                                placeholder="Optional description of the service..."></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" id="cancelServiceConfig">Cancel</button>
+                <button type="submit" class="btn-primary" form="serviceConfigForm">
+                    <i class="fas fa-save"></i>
+                    Save Service
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Save Progress Modal -->
+    <div class="modal" id="saveProgressModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Save Progress</h3>
+                <button class="modal-close" id="closeSaveModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="save-options">
+                    <div class="save-info">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Your progress will be saved and you can resume setup later. All configured information will
+                            be preserved.</p>
+                    </div>
+
+                    <div class="progress-summary">
+                        <h4>Current Progress</h4>
+                        <div class="summary-items">
+                            <div class="summary-item completed">
+                                <i class="fas fa-check"></i>
+                                <span>Clinic Identity - Complete</span>
+                            </div>
+                            <div class="summary-item in-progress">
+                                <i class="fas fa-clock"></i>
+                                <span>Operating Hours - In Progress</span>
+                            </div>
+                            <div class="summary-item pending">
+                                <i class="fas fa-circle"></i>
+                                <span>Services & Specialties - Pending</span>
+                            </div>
+                            <div class="summary-item pending">
+                                <i class="fas fa-circle"></i>
+                                <span>Payment Terms - Pending</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-info">
+                        <h4>Resume Later</h4>
+                        <p>You can continue your setup from the dashboard or by visiting this page again. A setup
+                            reminder will be displayed until completion.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" id="continueSetup">Continue Setup</button>
+                <button type="button" class="btn-primary" id="confirmSaveExit">
+                    <i class="fas fa-save"></i>
+                    Save & Exit
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Sync Indicator -->
+    <div class="auto-refresh-indicator" id="autoRefreshIndicator">
+        <i class="fas fa-sync-alt"></i>
+        <span>Saving progress...</span>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="registration_and_setup.js"></script>
+</body>
+
+</html>

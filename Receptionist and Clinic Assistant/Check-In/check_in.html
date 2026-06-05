@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Check-In - Curis Patient Flow Hub</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="check_in.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="checkin-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Check-In\check_in.html"
+                            class="nav-link">
+                            <i class="fas fa-user-check"></i>
+                            <span>Check-In</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Inbox and Alerts\inbox_and_alerts.html"
+                            class="nav-link">
+                            <i class="fas fa-inbox"></i>
+                            <span>Inbox & Alerts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Queue and Flow\queue_and_flow.html"
+                            class="nav-link">
+                            <i class="fas fa-list-check"></i>
+                            <span>Queue & Flow</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Patient Directory\patient_directory.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Patient Directory</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Check-In</h1>
+                    <p class="subtitle">Patient Flow Hub</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- User Profile -->
+                    <div class="user-profile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-icon" id="profileIcon">
+                        <span class="user-name">Sarah Wanjiru</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Quick Actions Bar -->
+            <div class="quick-actions-bar">
+                <button class="action-btn primary" id="liveCheckInBtn">
+                    <i class="fas fa-user-check"></i>
+                    <span>Live Check-In</span>
+                </button>
+                <button class="action-btn" id="newPatientBtn">
+                    <i class="fas fa-user-plus"></i>
+                    <span>New Patient</span>
+                </button>
+                <button class="action-btn" id="walkInBtn">
+                    <i class="fas fa-walking"></i>
+                    <span>Walk-In</span>
+                </button>
+                <button class="action-btn" id="updateProfileBtn">
+                    <i class="fas fa-user-edit"></i>
+                    <span>Update Profile</span>
+                </button>
+                <button class="action-btn" id="auditLogBtn">
+                    <i class="fas fa-history"></i>
+                    <span>Audit Trail</span>
+                </button>
+                <button class="action-btn" id="helpBtn">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Help</span>
+                </button>
+            </div>
+
+            <!-- Check-In Grid Layout -->
+            <div class="checkin-grid">
+
+                <!-- Live Patient Check-In -->
+                <section class="checkin-card live-checkin">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user-check"></i> Live Patient Check-In</h2>
+                        <span class="subtitle">Mark Arrived</span>
+                    </div>
+                    <div class="card-body">
+                        <!-- Search Bar -->
+                        <div class="patient-search-bar">
+                            <input type="text" placeholder="Search patient by name, phone, or appointment ID..."
+                                class="search-input" id="patientSearchInput">
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+
+                        <!-- Today's Schedule List -->
+                        <div class="todays-schedule">
+                            <h3>Today's Appointments</h3>
+                            <div class="appointment-list">
+                                <!-- Appointment Item -->
+                                <div class="appointment-item pending">
+                                    <div class="patient-info">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                            alt="Patient" class="patient-avatar">
+                                        <div class="patient-details">
+                                            <span class="patient-name">John Mwangi</span>
+                                            <span class="appointment-time">09:00 AM - Dr. James Ochieng</span>
+                                        </div>
+                                    </div>
+                                    <div class="check-in-status">
+                                        <span class="status-badge pending">Pending</span>
+                                    </div>
+                                    <button class="check-in-btn" data-patient-id="12345">
+                                        <i class="fas fa-sign-in-alt"></i> Check In
+                                    </button>
+                                </div>
+
+                                <div class="appointment-item arrived">
+                                    <div class="patient-info">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                            alt="Patient" class="patient-avatar">
+                                        <div class="patient-details">
+                                            <span class="patient-name">Mary Njeri</span>
+                                            <span class="appointment-time">09:30 AM - Dr. Mary Kamau</span>
+                                        </div>
+                                    </div>
+                                    <div class="check-in-status">
+                                        <span class="status-badge arrived">
+                                            <i class="fas fa-check-circle"></i> Arrived 9:25 AM
+                                        </span>
+                                    </div>
+                                    <button class="check-in-btn disabled" disabled>
+                                        <i class="fas fa-check"></i> Checked In
+                                    </button>
+                                </div>
+
+                                <div class="appointment-item pending">
+                                    <div class="patient-info">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                            alt="Patient" class="patient-avatar">
+                                        <div class="patient-details">
+                                            <span class="patient-name">Peter Omondi</span>
+                                            <span class="appointment-time">10:00 AM - Dr. Peter Mutua</span>
+                                        </div>
+                                    </div>
+                                    <div class="check-in-status">
+                                        <span class="status-badge pending">Pending</span>
+                                    </div>
+                                    <button class="check-in-btn" data-patient-id="12347">
+                                        <i class="fas fa-sign-in-alt"></i> Check In
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Walk-In Option -->
+                        <div class="walk-in-section">
+                            <button class="btn-outline">
+                                <i class="fas fa-walking"></i> Register Walk-In Patient
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- New Patient Registration -->
+                <section class="checkin-card new-patient-reg">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user-plus"></i> New Patient Registration</h2>
+                        <span class="subtitle">First-Time Visitors</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="registration-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">5</span>
+                                <span class="stat-label">New Today</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">42</span>
+                                <span class="stat-label">This Week</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">178</span>
+                                <span class="stat-label">This Month</span>
+                            </div>
+                        </div>
+                        <div class="registration-actions">
+                            <button class="reg-action-btn">
+                                <i class="fas fa-id-card"></i>
+                                <span>Quick Registration</span>
+                            </button>
+                            <button class="reg-action-btn">
+                                <i class="fas fa-camera"></i>
+                                <span>Photo Capture</span>
+                            </button>
+                            <button class="reg-action-btn">
+                                <i class="fas fa-credit-card"></i>
+                                <span>ID Scan</span>
+                            </button>
+                            <button class="reg-action-btn">
+                                <i class="fas fa-copy"></i>
+                                <span>Duplicate Check</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Doctor Assignment Engine -->
+                <section class="checkin-card doctor-assignment">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user-md"></i> Doctor Assignment Engine</h2>
+                        <span class="subtitle">Smart Allocation</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="doctor-availability-grid">
+                            <!-- Doctor Card -->
+                            <div class="doctor-card available">
+                                <div class="doctor-header">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Doctor" class="doctor-avatar">
+                                    <div class="doctor-info">
+                                        <span class="doctor-name">Dr. James Ochieng</span>
+                                        <span class="doctor-specialty">Cardiologist</span>
+                                    </div>
+                                    <span class="status-indicator available">
+                                        <i class="fas fa-circle"></i> Available
+                                    </span>
+                                </div>
+                                <div class="doctor-load">
+                                    <div class="load-info">
+                                        <span class="label">Queue:</span>
+                                        <span class="value">3 patients</span>
+                                    </div>
+                                    <div class="load-info">
+                                        <span class="label">Avg Time:</span>
+                                        <span class="value">20 min</span>
+                                    </div>
+                                    <div class="load-info">
+                                        <span class="label">Room:</span>
+                                        <span class="value">101</span>
+                                    </div>
+                                </div>
+                                <div class="load-gauge">
+                                    <div class="gauge-fill" style="width: 40%"></div>
+                                    <span class="gauge-label">40% capacity</span>
+                                </div>
+                                <button class="assign-btn">
+                                    <i class="fas fa-user-plus"></i> Assign Patient
+                                </button>
+                            </div>
+
+                            <div class="doctor-card busy">
+                                <div class="doctor-header">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Doctor" class="doctor-avatar">
+                                    <div class="doctor-info">
+                                        <span class="doctor-name">Dr. Mary Kamau</span>
+                                        <span class="doctor-specialty">Pediatrician</span>
+                                    </div>
+                                    <span class="status-indicator consultation">
+                                        <i class="fas fa-circle"></i> In Consultation
+                                    </span>
+                                </div>
+                                <div class="doctor-load">
+                                    <div class="load-info">
+                                        <span class="label">Queue:</span>
+                                        <span class="value">5 patients</span>
+                                    </div>
+                                    <div class="load-info">
+                                        <span class="label">Avg Time:</span>
+                                        <span class="value">25 min</span>
+                                    </div>
+                                    <div class="load-info">
+                                        <span class="label">Room:</span>
+                                        <span class="value">102</span>
+                                    </div>
+                                </div>
+                                <div class="load-gauge">
+                                    <div class="gauge-fill high" style="width: 80%"></div>
+                                    <span class="gauge-label">80% capacity</span>
+                                </div>
+                                <button class="assign-btn">
+                                    <i class="fas fa-user-plus"></i> Assign Patient
+                                </button>
+                            </div>
+
+                            <div class="doctor-card break">
+                                <div class="doctor-header">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Doctor" class="doctor-avatar">
+                                    <div class="doctor-info">
+                                        <span class="doctor-name">Dr. Peter Mutua</span>
+                                        <span class="doctor-specialty">Orthopedic</span>
+                                    </div>
+                                    <span class="status-indicator break">
+                                        <i class="fas fa-circle"></i> On Break
+                                    </span>
+                                </div>
+                                <div class="doctor-load">
+                                    <div class="load-info">
+                                        <span class="label">Queue:</span>
+                                        <span class="value">0 patients</span>
+                                    </div>
+                                    <div class="load-info">
+                                        <span class="label">Back at:</span>
+                                        <span class="value">12:30 PM</span>
+                                    </div>
+                                    <div class="load-info">
+                                        <span class="label">Room:</span>
+                                        <span class="value">103</span>
+                                    </div>
+                                </div>
+                                <div class="load-gauge">
+                                    <div class="gauge-fill" style="width: 0%"></div>
+                                    <span class="gauge-label">On break</span>
+                                </div>
+                                <button class="assign-btn disabled" disabled>
+                                    <i class="fas fa-pause"></i> Unavailable
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- AI Suggestion Box -->
+                        <div class="ai-suggestion">
+                            <div class="suggestion-header">
+                                <i class="fas fa-robot"></i>
+                                <span>AI Recommendation</span>
+                            </div>
+                            <div class="suggestion-content">
+                                <p>Based on current load and specialization match, <strong>Dr. James Ochieng</strong> is
+                                    the best choice for the next patient. Estimated wait time: <strong>15
+                                        minutes</strong>.</p>
+                            </div>
+                            <button class="btn-primary">
+                                <i class="fas fa-check"></i> Accept Suggestion
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Patient Profile Updates -->
+                <section class="checkin-card profile-updates">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user-edit"></i> Patient Profile Updates</h2>
+                        <span class="subtitle">Edit Details</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="recent-updates">
+                            <h3>Recent Profile Updates</h3>
+                            <div class="update-list">
+                                <div class="update-item">
+                                    <span class="update-time">10 min ago</span>
+                                    <div class="update-details">
+                                        <span class="patient-name">Grace Wanjiku</span>
+                                        <span class="update-type">Phone number updated</span>
+                                        <span class="updated-by">by Sarah Wanjiru</span>
+                                    </div>
+                                </div>
+                                <div class="update-item">
+                                    <span class="update-time">1 hour ago</span>
+                                    <div class="update-details">
+                                        <span class="patient-name">David Kimani</span>
+                                        <span class="update-type">Insurance info added</span>
+                                        <span class="updated-by">by Sarah Wanjiru</span>
+                                    </div>
+                                </div>
+                                <div class="update-item">
+                                    <span class="update-time">2 hours ago</span>
+                                    <div class="update-details">
+                                        <span class="patient-name">Alice Muthoni</span>
+                                        <span class="update-type">Address changed</span>
+                                        <span class="updated-by">by Sarah Wanjiru</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-outline">
+                            <i class="fas fa-search"></i> Search & Update Patient
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Doctor Notification System -->
+                <section class="checkin-card doctor-notifications">
+                    <div class="card-header">
+                        <h2><i class="fas fa-bell"></i> Doctor Notification System</h2>
+                        <span class="subtitle">Real-Time Alerts</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="notification-settings">
+                            <div class="setting-item">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">In-App Toast Notifications</span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">SMS Alerts</span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">Internal Messages</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Recent Notifications -->
+                        <div class="recent-notifications">
+                            <h3>Recent Doctor Notifications</h3>
+                            <div class="notif-list">
+                                <div class="notif-item success">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="notif-content">
+                                        <span class="notif-message">Dr. James Ochieng notified - Patient arrived</span>
+                                        <span class="notif-time">2 min ago</span>
+                                    </div>
+                                </div>
+                                <div class="notif-item warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <div class="notif-content">
+                                        <span class="notif-message">Dr. Mary Kamau offline - SMS sent</span>
+                                        <span class="notif-time">15 min ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Admin Notes -->
+                <section class="checkin-card admin-notes">
+                    <div class="card-header">
+                        <h2><i class="fas fa-sticky-note"></i> Admin Notes</h2>
+                        <span class="subtitle">Non-Clinical</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes-panel">
+                            <div class="note-item">
+                                <div class="note-header">
+                                    <span class="patient-name">John Mwangi</span>
+                                    <span class="note-date">Added: Sep 28, 2025</span>
+                                </div>
+                                <div class="note-content">
+                                    <p>Prefers morning appointments. Speaks Kiswahili primarily.</p>
+                                </div>
+                                <div class="note-footer">
+                                    <span class="added-by">by Sarah Wanjiru</span>
+                                    <button class="edit-note-btn"><i class="fas fa-edit"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="note-item">
+                                <div class="note-header">
+                                    <span class="patient-name">Mary Njeri</span>
+                                    <span class="note-date">Added: Sep 27, 2025</span>
+                                </div>
+                                <div class="note-content">
+                                    <p>Requires wheelchair access. Family member assists with forms.</p>
+                                </div>
+                                <div class="note-footer">
+                                    <span class="added-by">by Sarah Wanjiru</span>
+                                    <button class="edit-note-btn"><i class="fas fa-edit"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-outline">
+                            <i class="fas fa-plus"></i> Add New Note
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Walk-In Conversion -->
+                <section class="checkin-card walkin-conversion">
+                    <div class="card-header">
+                        <h2><i class="fas fa-walking"></i> Walk-In Conversion</h2>
+                        <span class="subtitle">Unscheduled Patients</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="walkin-stats">
+                            <div class="stat-card">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label">Walk-ins Today</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Converted to Appointments</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">In Queue</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary">
+                            <i class="fas fa-user-plus"></i> Register Walk-In Patient
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Smart Queue Integration -->
+                <section class="checkin-card queue-integration">
+                    <div class="card-header">
+                        <h2><i class="fas fa-list-ol"></i> Smart Queue Integration</h2>
+                        <span class="subtitle">Flow Management</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="queue-overview">
+                            <div class="queue-stats">
+                                <div class="queue-item green">
+                                    <span class="queue-count">5</span>
+                                    <span class="queue-label">
+                                        <i class="fas fa-circle"></i> &lt; 15 min wait
+                                    </span>
+                                </div>
+                                <div class="queue-item yellow">
+                                    <span class="queue-count">3</span>
+                                    <span class="queue-label">
+                                        <i class="fas fa-circle"></i> 15-30 min wait
+                                    </span>
+                                </div>
+                                <div class="queue-item red">
+                                    <span class="queue-count">1</span>
+                                    <span class="queue-label">
+                                        <i class="fas fa-circle"></i> &gt; 45 min wait
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="queue-actions">
+                                <button class="queue-btn">
+                                    <i class="fas fa-sync"></i> Refresh Queue
+                                </button>
+                                <button class="queue-btn">
+                                    <i class="fas fa-sort"></i> Reorder Patients
+                                </button>
+                                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Queue and Flow\queue_and_flow.html"
+                                    class="queue-btn">
+                                    <i class="fas fa-external-link-alt"></i> View Full Queue
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Audit Trail -->
+                <section class="checkin-card audit-trail">
+                    <div class="card-header">
+                        <h2><i class="fas fa-history"></i> Audit Trail</h2>
+                        <span class="subtitle">Role Accountability</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="audit-entries">
+                            <div class="audit-entry">
+                                <span class="audit-time">10:45 AM</span>
+                                <div class="audit-details">
+                                    <span class="audit-action">Patient Checked In</span>
+                                    <span class="audit-user">by Sarah Wanjiru</span>
+                                    <span class="audit-target">John Mwangi - ID: 12345</span>
+                                    <span class="audit-ip">IP: 192.168.1.100</span>
+                                </div>
+                            </div>
+                            <div class="audit-entry">
+                                <span class="audit-time">10:30 AM</span>
+                                <div class="audit-details">
+                                    <span class="audit-action">Profile Updated</span>
+                                    <span class="audit-user">by Sarah Wanjiru</span>
+                                    <span class="audit-target">Grace Wanjiku - Phone changed</span>
+                                    <span class="audit-ip">IP: 192.168.1.100</span>
+                                </div>
+                            </div>
+                            <div class="audit-entry">
+                                <span class="audit-time">09:15 AM</span>
+                                <div class="audit-details">
+                                    <span class="audit-action">New Patient Registered</span>
+                                    <span class="audit-user">by Sarah Wanjiru</span>
+                                    <span class="audit-target">Alice Muthoni - ID: 12348</span>
+                                    <span class="audit-ip">IP: 192.168.1.100</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="audit-actions">
+                            <button class="btn-outline">
+                                <i class="fas fa-filter"></i> Filter Logs
+                            </button>
+                            <button class="btn-outline">
+                                <i class="fas fa-download"></i> Export
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- User Guidance Tools -->
+                <section class="checkin-card user-guidance">
+                    <div class="card-header">
+                        <h2><i class="fas fa-question-circle"></i> User Guidance Tools</h2>
+                        <span class="subtitle">Help System</span>
+                    </div>
+                    <div class="card-body">
+                        <!-- Recent Patients Quick Access -->
+                        <div class="recent-patients">
+                            <h3>Recent Patients - Quick Access</h3>
+                            <div class="recent-patient-list">
+                                <button class="recent-patient-btn">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-16.png"
+                                        alt="Patient">
+                                    <span>John Mwangi</span>
+                                </button>
+                                <button class="recent-patient-btn">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-16.png"
+                                        alt="Patient">
+                                    <span>Mary Njeri</span>
+                                </button>
+                                <button class="recent-patient-btn">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-16.png"
+                                        alt="Patient">
+                                    <span>Peter Omondi</span>
+                                </button>
+                                <button class="recent-patient-btn">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-16.png"
+                                        alt="Patient">
+                                    <span>Grace Wanjiku</span>
+                                </button>
+                                <button class="recent-patient-btn">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-16.png"
+                                        alt="Patient">
+                                    <span>David Kimani</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Help Resources -->
+                        <div class="help-resources">
+                            <h3>Quick Help</h3>
+                            <div class="help-links">
+                                <a href="#" class="help-link">
+                                    <i class="fas fa-book"></i> Check-In Guide
+                                </a>
+                                <a href="#" class="help-link">
+                                    <i class="fas fa-video"></i> Video Tutorials
+                                </a>
+                                <a href="#" class="help-link">
+                                    <i class="fas fa-list"></i> Best Practices
+                                </a>
+                                <a href="#" class="help-link">
+                                    <i class="fas fa-headset"></i> Contact Support
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals Section -->
+
+    <!-- Check-In Modal -->
+    <div class="modal" id="checkInModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Check-In Interface</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="checkin-form">
+                    <!-- Patient Search Section -->
+                    <div class="form-section">
+                        <h4>Search Patient</h4>
+                        <div class="form-group">
+                            <div class="search-options">
+                                <input type="text" placeholder="Search by name..." class="form-input">
+                                <input type="tel" placeholder="Search by phone..." class="form-input">
+                                <input type="text" placeholder="Search by appointment ID..." class="form-input">
+                            </div>
+                            <button class="btn-primary">
+                                <i class="fas fa-search"></i> Search
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Patient Details -->
+                    <div class="form-section">
+                        <h4>Patient Information</h4>
+                        <div class="patient-card">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                alt="Patient" class="patient-photo">
+                            <div class="patient-info">
+                                <h3>John Mwangi</h3>
+                                <p>ID: 12345 | Phone: +254 712 345 678</p>
+                                <p>Appointment: 09:00 AM with Dr. James Ochieng</p>
+                                <p>Last Visit: September 1, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Check-In Actions -->
+                    <div class="form-section">
+                        <h4>Check-In Actions</h4>
+                        <div class="checkin-actions">
+                            <button class="action-btn success">
+                                <i class="fas fa-check"></i> Mark as Arrived
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-list"></i> Add to Queue
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-bell"></i> Notify Doctor
+                            </button>
+                        </div>
+                        <div class="form-group">
+                            <label>Additional Notes</label>
+                            <textarea placeholder="Add any special notes..." class="form-textarea"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button class="btn-primary">Complete Check-In</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Patient Registration Modal -->
+    <div class="modal" id="registrationModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>New Patient Registration</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="registration-form">
+                    <!-- Personal Details -->
+                    <div class="form-section">
+                        <h4>Personal Details</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" placeholder="Enter full name" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <input type="tel" placeholder="+254..." class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="email@example.com" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>ID/Passport Number *</label>
+                                <input type="text" placeholder="ID or Passport number" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Date of Birth *</label>
+                                <input type="date" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender *</label>
+                                <select class="form-select" required>
+                                    <option value="">Select Gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="form-section">
+                        <h4>Contact Information</h4>
+                        <div class="form-group">
+                            <label>Physical Address</label>
+                            <input type="text" placeholder="Street address" class="form-input">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>City/Town</label>
+                                <input type="text" placeholder="City" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>County</label>
+                                <select class="form-select">
+                                    <option>Nairobi</option>
+                                    <option>Kiambu</option>
+                                    <option>Machakos</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo Upload -->
+                    <div class="form-section">
+                        <h4>Photo Capture</h4>
+                        <div class="photo-upload">
+                            <div class="photo-preview">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                                    alt="Preview" id="photoPreview">
+                            </div>
+                            <div class="photo-actions">
+                                <button class="btn-outline">
+                                    <i class="fas fa-camera"></i> Take Photo
+                                </button>
+                                <button class="btn-outline">
+                                    <i class="fas fa-upload"></i> Upload Photo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Referral Source -->
+                    <div class="form-section">
+                        <h4>Referral Source</h4>
+                        <div class="referral-options">
+                            <label class="radio-label">
+                                <input type="radio" name="referral" value="walkin" checked>
+                                <span>Walk-in</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="referral" value="online">
+                                <span>Online Booking</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="referral" value="campaign">
+                                <span>Campaign</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="referral" value="referral">
+                                <span>Referral</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="referral" value="other">
+                                <span>Other</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate Check -->
+                    <div class="duplicate-alert hidden" id="duplicateAlert">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Possible duplicate found! A patient with similar details exists.</span>
+                        <button class="btn-link">View Existing Record</button>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button class="btn-primary">Register Patient</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update Profile Modal -->
+    <div class="modal" id="updateProfileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Update Patient Profile</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="update-form">
+                    <!-- Patient Selection -->
+                    <div class="form-group">
+                        <label>Search Patient</label>
+                        <input type="text" placeholder="Enter patient name or ID" class="form-input">
+                    </div>
+
+                    <!-- Update Fields -->
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" value="+254 712 345 678" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" value="john.mwangi@example.com" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Physical Address</label>
+                        <input type="text" value="123 Kimathi Street" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Insurance Provider</label>
+                        <select class="form-select">
+                            <option>None</option>
+                            <option>Jubilee Insurance</option>
+                            <option>AAR</option>
+                            <option>NHIF</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Policy Number</label>
+                        <input type="text" placeholder="Insurance policy number" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Emergency Contact</label>
+                        <input type="text" placeholder="Name and phone number" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Update Reason</label>
+                        <textarea placeholder="Reason for update (optional)" class="form-textarea"></textarea>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button class="btn-primary">Save Changes</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Walk-In Conversion Modal -->
+    <div class="modal" id="walkInModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Walk-In Patient Registration</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="walkin-form">
+                    <div class="form-group">
+                        <label>Patient Name *</label>
+                        <input type="text" placeholder="Full name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" placeholder="+254..." class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Reason for Visit *</label>
+                        <textarea placeholder="Brief description of symptoms or reason..." class="form-textarea"
+                            required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Urgency Level</label>
+                        <select class="form-select">
+                            <option>Normal</option>
+                            <option>Urgent</option>
+                            <option>Emergency</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Doctor Preference</label>
+                        <select class="form-select">
+                            <option>Any Available Doctor</option>
+                            <option>Dr. James Ochieng - Cardiologist</option>
+                            <option>Dr. Mary Kamau - Pediatrician</option>
+                            <option>Dr. Peter Mutua - Orthopedic</option>
+                        </select>
+                    </div>
+                    <div class="auto-tag">
+                        <i class="fas fa-tag"></i>
+                        <span>This will be automatically tagged as a walk-in appointment</span>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button class="btn-primary">Create Walk-In Appointment</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Doctor Assignment Modal -->
+    <div class="modal" id="assignmentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Doctor Assignment Engine</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="assignment-form">
+                    <!-- Patient Info -->
+                    <div class="patient-summary">
+                        <h4>Patient: John Mwangi</h4>
+                        <p>Visit Type: General Consultation</p>
+                    </div>
+
+                    <!-- Doctor Availability -->
+                    <div class="doctor-options">
+                        <h4>Available Doctors</h4>
+                        <div class="doctor-list">
+                            <div class="doctor-option recommended">
+                                <input type="radio" name="doctor" id="assignDoc1" checked>
+                                <label for="assignDoc1">
+                                    <div class="doc-info">
+                                        <span class="doc-name">Dr. James Ochieng</span>
+                                        <span class="doc-spec">Cardiologist</span>
+                                        <span class="ai-badge">
+                                            <i class="fas fa-robot"></i> AI Recommended
+                                        </span>
+                                    </div>
+                                    <div class="doc-stats">
+                                        <span>Queue: 3</span>
+                                        <span>Wait: ~15 min</span>
+                                        <span>Room 101</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="doctor-option">
+                                <input type="radio" name="doctor" id="assignDoc2">
+                                <label for="assignDoc2">
+                                    <div class="doc-info">
+                                        <span class="doc-name">Dr. Mary Kamau</span>
+                                        <span class="doc-spec">Pediatrician</span>
+                                    </div>
+                                    <div class="doc-stats">
+                                        <span>Queue: 5</span>
+                                        <span>Wait: ~45 min</span>
+                                        <span>Room 102</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manual Override -->
+                    <div class="form-group">
+                        <label>Manual Override Reason (if not using AI suggestion)</label>
+                        <input type="text" placeholder="Patient request, specialty match, etc." class="form-input">
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button class="btn-primary">Assign Doctor</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Notes Modal -->
+    <div class="modal" id="notesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Admin Notes - Non-Clinical</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="notes-form">
+                    <div class="form-group">
+                        <label>Patient</label>
+                        <input type="text" placeholder="Search patient..." class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Note Category</label>
+                        <select class="form-select">
+                            <option>Patient Preferences</option>
+                            <option>Language</option>
+                            <option>Special Needs</option>
+                            <option>Internal Reminder</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Note Content</label>
+                        <textarea placeholder="Enter note (max 500 characters)..." class="form-textarea"
+                            maxlength="500"></textarea>
+                        <span class="char-count">0 / 500</span>
+                    </div>
+                    <div class="note-warning">
+                        <i class="fas fa-info-circle"></i>
+                        <span>This section is for non-clinical administrative notes only. Medical information should be
+                            recorded in the patient's clinical record.</span>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button class="btn-primary">Save Note</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audit Log Filter Modal -->
+    <div class="modal" id="auditFilterModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Filter Audit Logs</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="filter-form">
+                    <div class="form-group">
+                        <label>Date Range</label>
+                        <div class="date-range">
+                            <input type="date" class="form-input">
+                            <span>to</span>
+                            <input type="date" class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>User</label>
+                        <select class="form-select">
+                            <option>All Users</option>
+                            <option>Sarah Wanjiru</option>
+                            <option>Admin</option>
+                            <option>System</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Action Type</label>
+                        <select class="form-select">
+                            <option>All Actions</option>
+                            <option>Check-ins</option>
+                            <option>Profile Updates</option>
+                            <option>New Registrations</option>
+                            <option>Doctor Assignments</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Patient</label>
+                        <input type="text" placeholder="Search by patient name or ID" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Export Format</label>
+                        <div class="export-options">
+                            <label class="radio-label">
+                                <input type="radio" name="export" value="view">
+                                <span>View Only</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="export" value="csv">
+                                <span>Export as CSV</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="export" value="pdf">
+                                <span>Export as PDF</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button class="btn-primary">Apply Filters</button>
+                        <button class="btn-secondary">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Popup -->
+    <div class="profile-popup" id="profilePopup">
+        <div class="profile-popup-content">
+            <div class="profile-header">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                    alt="Profile" class="popup-profile-img">
+                <div class="profile-info">
+                    <h3>Sarah Wanjiru</h3>
+                    <p>Receptionist</p>
+                </div>
+            </div>
+            <div class="profile-menu">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\My Profile\my_profile.html"
+                    class="profile-menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Landing Page\landing_page.html"
+                    class="profile-menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="fixed-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <!-- Corporate Website Link -->
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer" class="corporate-link">
+                    Visit Citrus Labs
+                </a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Copyright -->
+                <p class="copyright">© 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="check_in.js"></script>
+</body>
+
+</html>

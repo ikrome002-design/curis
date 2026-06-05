@@ -1,0 +1,65 @@
+#### 1. **Prescriptions**
+
+
+
+
+Here’s a firm and detailed breakdown of the dynamic MVP features and functionalities within the "Prescriptions" page of the Doctor’s account in the Curis by Citrus SaaS platform:
+________________________________________
+1.	Prescriptions Page – MVP Functional Overview
+
+
+The Prescriptions page is a dedicated interface that allows the doctor to issue accurate, trackable, and structured digital prescriptions that automatically integrate into the patient’s record and portal.
+________________________________________
+Core Functionalities
+
+a.	Prescription Creation Interface
+•	Doctor initiates a new prescription linked to:
+o	A specific patient
+o	A specific appointment or consultation (auto-linked if session is active)
+•	Form includes:
+o	Medication name (dropdown or autocomplete from clinic-defined medication database)
+o	Dosage (e.g., 500mg, 2 tablets)
+o	Frequency (e.g., once daily, every 8 hours)
+o	Duration (e.g., 5 days)
+o	Route of administration (oral, topical, injection)
+o	Additional instructions (free text)
+________________________________________
+b.	Medication Database Integration
+•	Doctors select drugs from a centralized clinic-defined medication list, ensuring consistency and preventing unauthorized entries.
+•	Autocomplete assists quick input with suggested doses.
+________________________________________
+c.	Digital Prescription Preview & Confirmation
+•	Doctors can preview prescription before issuing.
+•	Edits can be made until submission.
+•	Once confirmed:
+o	The prescription is time-stamped, doctor-signed, and stored in the patient’s record.
+________________________________________
+d.	Auto-Sync to Patient Portal
+•	Once issued:
+o	The digital prescription is automatically pushed to the Patient Portal.
+o	Patients can view and download their prescription in PDF format.
+o	Optional: Include QR code or prescription ID for pharmacy verification.
+________________________________________
+e.	Prescriptions History Log
+•	Doctors can:
+o	View a list of all past prescriptions issued to each patient.
+o	Click to view details.
+o	Re-issue or update based on follow-up consultations.
+________________________________________
+f.	Security & Integrity
+•	Doctors cannot delete prescriptions once submitted.
+•	Edits require supervisor (Clinic Owner) authorization.
+•	System ensures non-redundant entries (e.g., blocking duplicate active prescriptions unless justified).
+________________________________________
+Access Control
+
+•	Doctors can only view and issue prescriptions for patients assigned to them.
+•	Cannot access prescriptions created by other doctors.
+•	Prescription data is immutable after submission to meet compliance standards.
+________________________________________
+This Prescriptions page ensures accurate medication management, secure record-keeping, and immediate patient access—all within the controlled framework defined by the Clinic Owner.
+
+
+
+
+

@@ -1,0 +1,238 @@
+flowchart TD
+    %% Main Entry Points to Notifications
+    E[Dashboard] --> N[Notifications Page<br/>🔔 Centralized Alert Management]
+    E6[Notification Banner<br/>Real-time alerts] --> N
+    F[My Appointments] --> N
+    G[My Health Care] --> N
+    H[Billings & Payments] --> N
+    I[Emergency Care] --> N
+    J[My Medical Cover] --> N
+    K[My Profile] --> N
+    
+    %% Main Notifications Page Structure
+    N --> N1[Notification Feed<br/>📋 Real-time Activity Stream]
+    N --> N2[Notification Filters<br/>🔍 Category & Time Management]
+    N --> N3[Notification Preferences<br/>⚙️ Channel & Alert Settings]
+    N --> N4[Family Notification Management<br/>👨‍👩‍👧‍👦 Dependent Alert Control]
+    N --> N5[Emergency Notifications<br/>🚨 Critical Alert Center]
+    N --> N6[Historical Notifications<br/>📅 Past Alert Archive]
+    N --> N7[Notification Actions<br/>⚡ Quick Response Center]
+    
+    %% Notification Feed Details
+    N1 --> N1a[Live Notification Stream<br/>📺 Real-time Updates Display]
+    N1 --> N1b[Notification Cards<br/>📇 Individual Alert Display]
+    N1 --> N1c[Read/Unread Status<br/>👁️ Visual Status Indicators]
+    N1 --> N1d[Timestamp Display<br/>🕐 Time-based Organization]
+    
+    %% Live Notification Stream Components
+    N1a --> N1a1[Auto-refresh Feed<br/>🔄 Live Updates Every 30 seconds<br/>📱 Push notification integration]
+    N1a --> N1a2[New Alert Badges<br/>🔴 Unread Notification Counter<br/>✨ Visual highlight animations]
+    N1a --> N1a3[Priority Sorting<br/>📊 Urgent/High/Normal/Low<br/>🚨 Emergency alerts at top]
+    
+    %% Notification Card Components
+    N1b --> N1b1[Appointment Notifications<br/>📅 Schedule Updates & Reminders]
+    N1b --> N1b2[Medical Record Alerts<br/>🏥 New Results & Reports]
+    N1b --> N1b3[Billing Notifications<br/>💰 Invoice & Payment Updates]
+    N1b --> N1b4[Emergency Alerts<br/>🚨 Critical Health Notices]
+    N1b --> N1b5[System Notifications<br/>⚙️ Account & Security Updates]
+    N1b --> N1b6[Insurance Notifications<br/>🛡️ Claim Status Updates]
+    
+    %% Appointment Notification Details
+    N1b1 --> N1b1a[Appointment Reminder Modal<br/>📅 Date/Time/Doctor/Clinic<br/>🔄 Reschedule | ❌ Cancel<br/>✅ Mark as Read]
+    N1b1 --> N1b1b[Booking Confirmation Alert<br/>✅ Appointment Confirmed<br/>📋 Reference Number Display<br/>📱 Add to Calendar Option]
+    N1b1 --> N1b1c[Schedule Change Notice<br/>🔄 Doctor/Time/Location Updates<br/>📧 Auto-email confirmation<br/>💬 Contact clinic option]
+    N1b1 --> N1b1d[Cancellation Alerts<br/>❌ Appointment Cancelled<br/>📝 Reason from clinic<br/>🔄 Rebook suggestion]
+    
+    %% Medical Record Alert Details
+    N1b2 --> N1b2a[New Lab Results Modal<br/>🧪 Test Results Available<br/>📊 Normal/Abnormal indicators<br/>📄 View Full Report<br/>💬 Message Doctor]
+    N1b2 --> N1b2b[Prescription Updates<br/>💊 New Medication Added<br/>📋 Dosage Instructions<br/>⏰ Reminder Settings<br/>📄 Download PDF]
+    N1b2 --> N1b2c[Doctor Notes Alert<br/>📝 Visit Summary Available<br/>👨‍⚕️ Doctor Name & Clinic<br/>📄 View Complete Notes<br/>🔗 Link to appointment]
+    N1b2 --> N1b2d[Abnormal Results Warning<br/>⚠️ Urgent Medical Attention<br/>🏥 Contact doctor immediately<br/>📞 Emergency contact options<br/>🚨 Priority alert flag]
+    
+    %% Billing Notification Details
+    N1b3 --> N1b3a[New Invoice Alert<br/>💰 Bill Generated<br/>📋 Amount/Clinic/Service<br/>💳 Pay Now Option<br/>📄 Download Invoice]
+    N1b3 --> N1b3b[Payment Confirmation<br/>✅ Payment Verified<br/>🧾 Receipt Auto-sent<br/>📧 Email/WhatsApp delivery<br/>📊 Update payment history]
+    N1b3 --> N1b3c[Payment Rejected Notice<br/>❌ Payment Not Verified<br/>📝 Rejection Reason<br/>🔄 Resubmit Option<br/>💬 Contact billing support]
+    N1b3 --> N1b3d[Outstanding Balance Alert<br/>⏰ Payment Due Reminder<br/>📊 Amount & Due Date<br/>💳 Quick Pay Option<br/>⚠️ Overdue warning]
+    
+    %% Emergency Alert Details
+    N1b4 --> N1b4a[Health Advisory Modal<br/>🚨 Public Health Warning<br/>📢 Government/WHO Alerts<br/>📋 Action Instructions<br/>🔗 More Information Link]
+    N1b4 --> N1b4b[Outbreak Notifications<br/>🦠 Disease Outbreak Alert<br/>📍 Location-based warnings<br/>💉 Vaccination requirements<br/>🏥 Nearest treatment centers]
+    N1b4 --> N1b4c[Urgent Clinic Messages<br/>🏥 Direct Clinic Communication<br/>🚨 URGENT Priority Flag<br/>📞 Contact Information<br/>⚡ Immediate Action Required]
+    N1b4 --> N1b4d[Medication Recalls<br/>💊 Drug Safety Alert<br/>⚠️ Stop Taking Immediately<br/>👨‍⚕️ Contact Prescribing Doctor<br/>🔄 Alternative Medications]
+    
+    %% System Notification Details
+    N1b5 --> N1b5a[Account Security Alert<br/>🔐 Password/Login Changes<br/>📍 New Device Access<br/>🕐 Timestamp & Location<br/>🚨 Report Suspicious Activity]
+    N1b5 --> N1b5b[Profile Update Confirmation<br/>✅ Information Changed<br/>📋 Change Summary<br/>🔄 Undo Option<br/>📧 Email Confirmation]
+    N1b5 --> N1b5c[System Maintenance Notice<br/>⚙️ Planned Downtime<br/>📅 Maintenance Schedule<br/>📱 Alternative Access Options<br/>📞 Support Contact]
+    N1b5 --> N1b5d[Privacy Policy Updates<br/>📋 Terms & Conditions Changes<br/>📅 Effective Date<br/>✅ Consent Required<br/>📄 View Full Document]
+    
+    %% Insurance Notification Details
+    N1b6 --> N1b6a[Claim Status Update<br/>📋 Claim Processing Status<br/>💰 Approved/Rejected/Pending<br/>📊 Amount & Coverage<br/>📄 Download Claim Report]
+    N1b6 --> N1b6b[Coverage Expiry Alert<br/>⏰ Policy Expiring Soon<br/>📅 Expiry Date<br/>🔄 Renewal Options<br/>📞 Insurance Provider Contact]
+    N1b6 --> N1b6c[Pre-authorization Required<br/>📋 Treatment Approval Needed<br/>🏥 Provider Information<br/>📄 Required Documents<br/>⏰ Submission Deadline]
+    
+    %% Notification Filters
+    N2 --> N2a[Category Filters<br/>📂 Notification Type Sorting]
+    N2 --> N2b[Time Filters<br/>📅 Date Range Selection]
+    N2 --> N2c[Priority Filters<br/>🚨 Urgency Level Sorting]
+    N2 --> N2d[Read Status Filters<br/>👁️ Read/Unread Management]
+    N2 --> N2e[Family Member Filters<br/>👨‍👩‍👧‍👦 Dependent-specific Alerts]
+    
+    %% Category Filter Details
+    N2a --> N2a1[All Notifications Toggle<br/>📋 Show All Categories<br/>🔄 Reset Filter State]
+    N2a --> N2a2[Appointments Only<br/>📅 Schedule-related Alerts<br/>🔍 Filter appointment notifications]
+    N2a --> N2a3[Medical Records Only<br/>🏥 Health Information Updates<br/>🔍 Filter medical alerts]
+    N2a --> N2a4[Billing Only<br/>💰 Financial Notifications<br/>🔍 Filter payment alerts]
+    N2a --> N2a5[Emergency Only<br/>🚨 Critical Alerts<br/>🔍 Filter urgent notifications]
+    N2a --> N2a6[System Only<br/>⚙️ Account & Platform Updates<br/>🔍 Filter system notifications]
+    
+    %% Time Filter Details
+    N2b --> N2b1[Today's Notifications<br/>📅 Last 24 Hours<br/>🕐 Real-time updates]
+    N2b --> N2b2[This Week<br/>📅 Past 7 Days<br/>📊 Weekly summary view]
+    N2b --> N2b3[This Month<br/>📅 Past 30 Days<br/>📈 Monthly activity overview]
+    N2b --> N2b4[Custom Date Range<br/>📅 User-defined Period<br/>🔍 Advanced date picker]
+    N2b --> N2b5[All Time<br/>📅 Complete History<br/>📚 Full notification archive]
+    
+    %% Priority Filter Details
+    N2c --> N2c1[Emergency Priority<br/>🚨 Life-threatening Alerts<br/>🔴 Red Priority Indicators]
+    N2c --> N2c2[High Priority<br/>⚠️ Urgent Attention Required<br/>🟠 Orange Priority Indicators]
+    N2c --> N2c3[Normal Priority<br/>ℹ️ Standard Notifications<br/>🔵 Blue Priority Indicators]
+    N2c --> N2c4[Low Priority<br/>📝 Informational Updates<br/>⚪ Gray Priority Indicators]
+    
+    %% Notification Preferences
+    N3 --> N3a[Channel Preferences<br/>📱 Delivery Method Settings]
+    N3 --> N3b[Frequency Settings<br/>⏰ Timing & Schedule Control]
+    N3 --> N3c[Content Preferences<br/>📋 Notification Type Selection]
+    N3 --> N3d[Emergency Override Settings<br/>🚨 Critical Alert Configuration]
+    
+    %% Channel Preferences Details
+    N3a --> N3a1[In-App Notifications<br/>📱 Platform Alert Settings<br/>🔔 Enable/Disable Toggle<br/>📊 Priority Level Selection]
+    N3a --> N3a2[Email Notifications<br/>📧 Email Alert Configuration<br/>📬 Primary/Secondary Email<br/>📅 Delivery Schedule]
+    N3a --> N3a3[SMS Notifications<br/>📱 Text Message Settings<br/>📞 Phone Number Verification<br/>⏰ Time Restrictions]
+    N3a --> N3a4[WhatsApp Notifications<br/>💬 WhatsApp Alert Setup<br/>📱 Number Verification<br/>🔔 Message Type Selection]
+    N3a --> N3a5[Push Notifications<br/>📲 Browser/Mobile Push<br/>🔔 Permission Management<br/>📊 Priority Filtering]
+    
+    %% Frequency Settings Details
+    N3b --> N3b1[Immediate Alerts<br/>⚡ Real-time Notifications<br/>🔔 Instant delivery]
+    N3b --> N3b2[Daily Summary<br/>📅 Daily Digest Email<br/>🕐 Customizable send time]
+    N3b --> N3b3[Weekly Summary<br/>📅 Weekly Report<br/>📊 Activity overview]
+    N3b --> N3b4[Custom Schedule<br/>⏰ User-defined Timing<br/>📅 Flexible delivery options]
+    N3b --> N3b5[Do Not Disturb<br/>🔕 Quiet Hours Setting<br/>⏰ Time-based restrictions]
+    
+    %% Family Notification Management
+    N4 --> N4a[Parent Control Center<br/>👨‍👩‍👧‍👦 Family Alert Management]
+    N4 --> N4b[Dependent Notification Settings<br/>👶 Child-specific Alerts]
+    N4 --> N4c[Privacy-based Filtering<br/>🔒 Age-appropriate Notifications]
+    N4 --> N4d[Guardian Alert Preferences<br/>👨‍👩‍👧‍👦 Parent Notification Controls]
+    
+    %% Parent Control Center Details
+    N4a --> N4a1[Family Member Selector<br/>👨‍👩‍👧‍👦 Choose Family Member<br/>🔄 Switch Notification Context]
+    N4a --> N4a2[Consolidated Family Feed<br/>📋 All Family Notifications<br/>👤 Member-tagged Alerts]
+    N4a --> N4a3[Bulk Notification Actions<br/>📊 Mark All Read/Unread<br/>🗑️ Mass Delete Options]
+    N4a --> N4a4[Family Notification Summary<br/>📈 Activity Overview<br/>📊 Per-member Statistics]
+    
+    %% Dependent Notification Settings
+    N4b --> N4b1[Under 13 Settings<br/>👶 Full Parent Control<br/>📧 Parent receives all alerts<br/>🔒 Child cannot modify]
+    N4b --> N4b2[13-17 Settings<br/>👤 Limited Independence<br/>🔒 Privacy-protected Alerts<br/>⚖️ Parent override options]
+    N4b --> N4b3[18+ Independence<br/>👨‍👨‍👧‍👦 Separate Account Required<br/>🚫 No parent access<br/>📱 Independent notifications]
+    
+    %% Emergency Notifications Center
+    N5 --> N5a[Critical Health Alerts<br/>🚨 Life-threatening Notifications]
+    N5 --> N5b[Public Health Emergencies<br/>📢 Government Health Advisories]
+    N5 --> N5c[Clinic Emergency Messages<br/>🏥 Direct Provider Alerts]
+    N5 --> N5d[Emergency Contact Triggers<br/>📞 Auto-contact Activation]
+    
+    %% Critical Health Alert Details
+    N5a --> N5a1[Abnormal Test Results<br/>⚠️ Immediate Doctor Contact<br/>📞 Emergency Contact Options<br/>🚨 Priority Alert Flag]
+    N5a --> N5a2[Drug Interaction Warnings<br/>💊 Medication Safety Alerts<br/>⚠️ Stop Taking Immediately<br/>👨‍⚕️ Contact Doctor Urgently]
+    N5a --> N5a3[Allergy Alerts<br/>🚨 Severe Reaction Warnings<br/>📞 Emergency Services Contact<br/>💉 EpiPen Instructions]
+    N5a --> N5a4[Appointment Urgent Changes<br/>📅 Emergency Rescheduling<br/>🏥 Provider Emergency Contact<br/>⚡ Immediate Action Required]
+    
+    %% Historical Notifications
+    N6 --> N6a[Notification Archive<br/>📚 Complete History Access]
+    N6 --> N6b[Search & Filter History<br/>🔍 Advanced Search Options]
+    N6 --> N6c[Export Notification History<br/>📄 Download Notification Records]
+    N6 --> N6d[Storage Management<br/>🗂️ Archive Organization]
+    
+    %% Notification Archive Details
+    N6a --> N6a1[Chronological View<br/>📅 Time-ordered Display<br/>📊 Monthly/Yearly Grouping]
+    N6a --> N6a2[Category Archive<br/>📂 Type-based Organization<br/>🔍 Category-specific History]
+    N6a --> N6a3[Priority Archive<br/>🚨 Urgency-based Sorting<br/>📊 Priority Distribution Chart]
+    N6a --> N6a4[Family Member Archive<br/>👨‍👩‍👧‍👦 Person-specific History<br/>📋 Individual Activity Logs]
+    
+    %% Notification Actions Center
+    N7 --> N7a[Quick Actions Menu<br/>⚡ One-click Responses]
+    N7 --> N7b[Bulk Operations<br/>📊 Mass Notification Management]
+    N7 --> N7c[Smart Responses<br/>🤖 Auto-reply Options]
+    N7 --> N7d[Follow-up Actions<br/>🔄 Automated Next Steps]
+    
+    %% Quick Actions Details
+    N7a --> N7a1[Mark as Read/Unread<br/>👁️ Status Toggle<br/>✅ Bulk Selection Option]
+    N7a --> N7a2[Delete Notification<br/>🗑️ Remove from Feed<br/>⚠️ Confirmation Required]
+    N7a --> N7a3[Snooze Notification<br/>⏰ Temporary Hide<br/>📅 Custom Snooze Duration]
+    N7a --> N7a4[Pin Important<br/>📌 Priority Placement<br/>⭐ Star for Quick Access]
+    N7a --> N7a5[Share Notification<br/>📤 Forward to Family<br/>📧 Email/WhatsApp Options]
+    
+    %% Smart Responses Details
+    N7c --> N7c1[Appointment Confirmations<br/>✅ Auto-confirm Appointments<br/>📅 Add to Calendar<br/>📧 Send Confirmation Email]
+    N7c --> N7c2[Payment Acknowledgments<br/>💰 Confirm Payment Receipt<br/>🧾 Download Receipt<br/>📊 Update Payment History]
+    N7c --> N7c3[Medical Record Acknowledgments<br/>📋 Confirm Record Receipt<br/>👁️ Mark as Reviewed<br/>💬 Optional Doctor Message]
+    N7c --> N7c4[Emergency Response Actions<br/>🚨 Emergency Protocol Activation<br/>📞 Auto-dial Emergency Contacts<br/>🏥 Navigate to Nearest Hospital]
+    
+    %% Navigation Back to Other Sections
+    N --> E[Return to Dashboard<br/>🏠 Main Navigation]
+    N1b1a --> F[Go to My Appointments<br/>📅 Manage Appointments]
+    N1b2a --> G[Go to My Health Care<br/>🏥 View Medical Records]
+    N1b3a --> H[Go to Billings & Payments<br/>💰 Manage Payments]
+    N1b4c --> I[Go to Emergency Care<br/>🚨 Emergency Services]
+    N1b6a --> J[Go to My Medical Cover<br/>🛡️ Insurance Claims]
+    N3a --> K[Go to My Profile<br/>👤 Account Settings]
+    
+    %% Integration with Dashboard Notification Banner
+    E6 --> N1a[Direct Feed Integration<br/>🔄 Real-time Sync]
+    E6a[New Messages Alert] --> N1b2
+    E6b[Appointment Reminders] --> N1b1
+    E6c[Health Advisories] --> N1b4
+    
+    %% Cross-page Notification Triggers
+    F6[Integrated Notifications] --> N1b1
+    F6a[Reminder Settings] --> N3b
+    F6b[Confirmation Alerts] --> N1b1b
+    F6c[Dynamic Preferences] --> N3
+    
+    G8c[Multi-channel Alerts] --> N3a
+    H6[Payment Notifications] --> N1b3
+    H6a[Notification Engine] --> N5
+    H6b[Alert Customization] --> N3
+    
+    I4b[Emergency Notifications] --> N5
+    I4b3[Multi-channel Delivery] --> N3a
+    
+    %% Real-time Synchronization Flows
+    N1a1 --> E6[Update Dashboard Banner<br/>🔄 Live Sync]
+    N7a1 --> E6[Update Read Status<br/>📊 Status Synchronization]
+    N3 --> F6c[Sync Preferences<br/>⚙️ Cross-platform Settings]
+    
+    %% Logout & Session Management
+    N --> L[Logout & Session<br/>🚪 Account Security]
+    L --> A[Patient Portal Access<br/>🔄 Return to Login]
+    
+    %% Styling for different types of elements
+    classDef mainSection fill:#E3F2FD,stroke:#1976D2,stroke-width:3px
+    classDef subSection fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px
+    classDef actionButton fill:#E8F5E8,stroke:#388E3C,stroke-width:2px
+    classDef modal fill:#FFF3E0,stroke:#F57C00,stroke-width:2px
+    classDef emergency fill:#FFEBEE,stroke:#D32F2F,stroke-width:3px
+    classDef family fill:#F1F8E9,stroke:#689F38,stroke-width:2px
+    classDef navigation fill:#F5F5F5,stroke:#616161,stroke-width:2px
+    classDef sync fill:#E0F2F1,stroke:#00695C,stroke-width:2px
+    
+    class N mainSection
+    class N1,N2,N3,N4,N5,N6,N7 subSection
+    class N1a,N1b,N2a,N2b,N2c,N3a,N3b,N4a,N4b,N5a,N5b,N6a,N6b,N7a,N7b actionButton
+    class N1b1a,N1b2a,N1b3a,N1b4a,N1b5a,N1b6a,N3a1,N7c1 modal
+    class N5,N5a,N5a1,N5a2,N5a3,N1b4,N1b4a,N1b4b,N1b4c emergency
+    class N4,N4a,N4b,N4c,N4d,N4a1,N4a2,N4b1,N4b2 family
+    class E,F,G,H,I,J,K,L,A navigation
+    class N1a1,E6,N7a1,N3 sync

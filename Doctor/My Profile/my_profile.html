@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curis by Citrus - Doctor Profile Management">
+    <title>My Profile - Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="my_profile.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-list">
+                    <!-- Dashboard -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <!-- Appointments -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+
+                    <!-- Patient Records -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                            class="nav-link">
+                            <i class="fas fa-user-injured"></i>
+                            <span>Patient Records</span>
+                        </a>
+                    </li>
+
+                    <!-- Consultations -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Consultations\consultations.html"
+                            class="nav-link">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Consultations</span>
+                        </a>
+                    </li>
+
+                    <!-- Prescriptions -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Prescriptions\prescriptions.html"
+                            class="nav-link">
+                            <i class="fas fa-prescription"></i>
+                            <span>Prescriptions</span>
+                        </a>
+                    </li>
+
+                    <!-- Alerts & Collaboration -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Alerts and Collaboration\alerts_and_collaboration.html"
+                            class="nav-link">
+                            <i class="fas fa-bell"></i>
+                            <span>Alerts & Collaboration</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">
+                        <i class="fas fa-user-circle"></i>
+                        My Profile
+                    </h1>
+                    <!-- Breadcrumb Navigation -->
+                    <nav class="breadcrumb">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html">Dashboard</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>My Profile</span>
+                    </nav>
+                </div>
+
+                <div class="header-right">
+                    <!-- User Profile -->
+                    <div class="user-profile" id="userProfile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="Profile" class="profile-pic">
+                        <span class="profile-name">Dr. Sarah Wanjiru</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+
+                    <!-- Profile Dropdown Menu -->
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <button class="dropdown-item quick-settings-btn">
+                            <i class="fas fa-cog"></i>
+                            <span>Quick Settings</span>
+                        </button>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Landing Page\landing_page.html"
+                            class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Profile Header Section -->
+            <section class="profile-header-section">
+                <div class="profile-header-content">
+                    <!-- Current Profile Photo -->
+                    <div class="profile-photo-container">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                            alt="Profile Photo" class="profile-photo-large">
+                        <button class="photo-upload-btn" id="photoUploadBtn">
+                            <i class="fas fa-camera"></i>
+                            Change Photo
+                        </button>
+                    </div>
+
+                    <!-- Doctor Name Display -->
+                    <div class="profile-name-section">
+                        <h2 class="doctor-name">Dr. Sarah Wanjiru</h2>
+                        <p class="doctor-title">Medical Doctor</p>
+                        <button class="edit-name-btn" id="editNameBtn">
+                            <i class="fas fa-edit"></i>
+                            Edit Name
+                        </button>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Patients</span>
+                            <span class="stat-value">256</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Experience</span>
+                            <span class="stat-value">10 years</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Status</span>
+                            <span class="stat-value status-active">Active</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Content Sections -->
+            <div class="profile-content">
+
+                <!-- Personal Information Panel -->
+                <section class="profile-panel personal-info-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">
+                            <i class="fas fa-user-md"></i>
+                            Personal Information
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <!-- Specialization Section -->
+                        <div class="info-section">
+                            <h4 class="section-subtitle">Medical Specialization</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Primary Specialization:</label>
+                                    <span class="info-value">Cardiology</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Secondary Specialization:</label>
+                                    <span class="info-value">Internal Medicine</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Years of Experience:</label>
+                                    <span class="info-value">10 years</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Medical License:</label>
+                                    <span class="info-value">MP-12345</span>
+                                </div>
+                            </div>
+                            <button class="btn-secondary edit-specialization-btn" id="editSpecializationBtn">
+                                <i class="fas fa-edit"></i>
+                                Edit Specialization
+                            </button>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="info-section">
+                            <h4 class="section-subtitle">Contact Information</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Phone Number:</label>
+                                    <span class="info-value">+254 712 345678</span>
+                                    <span class="restricted-badge">
+                                        <i class="fas fa-lock"></i>
+                                        Clinic Owner Controlled
+                                    </span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Email Address:</label>
+                                    <span class="info-value">dr.sarah.wanjiru@curis.co.ke</span>
+                                    <span class="restricted-badge">
+                                        <i class="fas fa-lock"></i>
+                                        Clinic Owner Controlled
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="contact-admin-notice">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Contact information can only be changed by the clinic owner.</p>
+                                <button class="btn-link request-change-btn" id="requestContactChangeBtn">
+                                    Request Change
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Account Status Panel -->
+                <section class="profile-panel account-status-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">
+                            <i class="fas fa-hospital"></i>
+                            Account Status & Clinic Information
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <!-- Clinic Assignment Display -->
+                        <div class="info-section">
+                            <h4 class="section-subtitle">Clinic Assignment</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Clinic Name:</label>
+                                    <span class="info-value">Curis Medical Center</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Clinic Address:</label>
+                                    <span class="info-value">123 Healthcare Avenue, Nairobi, Kenya</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Assignment Date:</label>
+                                    <span class="info-value">January 15, 2025</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Clinic Owner:</label>
+                                    <span class="info-value">Dr. James Mwangi</span>
+                                    <button class="btn-link contact-owner-btn" id="contactOwnerBtn">
+                                        <i class="fas fa-envelope"></i>
+                                        Contact Owner
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Access Level Information -->
+                        <div class="info-section">
+                            <h4 class="section-subtitle">Access Permissions</h4>
+                            <div class="permissions-grid">
+                                <div class="permission-item granted">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Appointments Management</span>
+                                </div>
+                                <div class="permission-item granted">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Patient Records Access</span>
+                                </div>
+                                <div class="permission-item granted">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Prescriptions Issuing</span>
+                                </div>
+                                <div class="permission-item granted">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Consultations Management</span>
+                                </div>
+                                <div class="permission-item restricted">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span>Billing Management</span>
+                                </div>
+                                <div class="permission-item restricted">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span>Admin Functions</span>
+                                </div>
+                                <div class="permission-item restricted">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span>Patient Registration</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Activation Status -->
+                        <div class="info-section">
+                            <h4 class="section-subtitle">Account Activity</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Status:</label>
+                                    <span class="status-indicator active">
+                                        <i class="fas fa-check-circle"></i>
+                                        Active
+                                    </span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Activation Date:</label>
+                                    <span class="info-value">January 15, 2025</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Last Login:</label>
+                                    <span class="info-value">Today at 8:30 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Notification Settings Panel -->
+                <section class="profile-panel notification-settings-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">
+                            <i class="fas fa-bell"></i>
+                            Notification Preferences
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <!-- Notification Categories -->
+                        <div class="notification-categories">
+                            <h4 class="section-subtitle">Notification Types</h4>
+
+                            <!-- Appointment Notifications -->
+                            <div class="notification-category">
+                                <div class="category-header">
+                                    <h5>Appointment Notifications</h5>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="category-options">
+                                    <div class="option-group">
+                                        <label>Reminder Timing:</label>
+                                        <select class="form-control-sm">
+                                            <option value="15">15 minutes before</option>
+                                            <option value="60" selected>1 hour before</option>
+                                            <option value="custom">Custom timing</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Patient Record Notifications -->
+                            <div class="notification-category">
+                                <div class="category-header">
+                                    <h5>Patient Record Updates</h5>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="category-options">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        <span>New lab results</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        <span>Collaboration mentions</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                        <span>Record modifications</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- System Notifications -->
+                            <div class="notification-category">
+                                <div class="category-header">
+                                    <h5>System Notifications</h5>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="category-options">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        <span>System updates</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                        <span>Maintenance alerts</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                        <span>Policy updates</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Method Settings -->
+                        <div class="delivery-settings">
+                            <h4 class="section-subtitle">Delivery Methods</h4>
+                            <div class="delivery-options">
+                                <div class="delivery-method">
+                                    <div class="method-header">
+                                        <i class="fas fa-desktop"></i>
+                                        <span>In-App Notifications</span>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="method-options">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" checked>
+                                            <span>Enable notification sounds</span>
+                                        </label>
+                                        <button class="btn-link sound-settings-btn">
+                                            <i class="fas fa-volume-up"></i>
+                                            Sound Settings
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="delivery-method">
+                                    <div class="method-header">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Email Notifications</span>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="method-options">
+                                        <label>Email Frequency:</label>
+                                        <select class="form-control-sm">
+                                            <option value="immediate">Immediate</option>
+                                            <option value="hourly">Hourly Digest</option>
+                                            <option value="daily" selected>Daily Summary</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quiet Hours Settings -->
+                        <div class="quiet-hours-settings">
+                            <h4 class="section-subtitle">Quiet Hours</h4>
+                            <div class="quiet-hours-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="quietHoursToggle">
+                                    <span class="slider"></span>
+                                </label>
+                                <span>Enable Quiet Hours</span>
+                            </div>
+                            <div class="time-selection" style="display: none;">
+                                <div class="time-input-group">
+                                    <label>Start Time:</label>
+                                    <input type="time" class="form-control-sm" value="22:00">
+                                </div>
+                                <div class="time-input-group">
+                                    <label>End Time:</label>
+                                    <input type="time" class="form-control-sm" value="07:00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Security Settings Panel -->
+                <section class="profile-panel security-settings-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">
+                            <i class="fas fa-shield-alt"></i>
+                            Security & Privacy
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <!-- Session Management -->
+                        <div class="info-section">
+                            <h4 class="section-subtitle">Active Sessions</h4>
+                            <div class="sessions-list">
+                                <div class="session-item current">
+                                    <i class="fas fa-desktop"></i>
+                                    <div class="session-details">
+                                        <span class="session-device">Windows PC - Chrome</span>
+                                        <span class="session-location">Nairobi, Kenya</span>
+                                        <span class="session-time">Current session</span>
+                                    </div>
+                                </div>
+                                <div class="session-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div class="session-details">
+                                        <span class="session-device">iPhone - Safari</span>
+                                        <span class="session-location">Nairobi, Kenya</span>
+                                        <span class="session-time">Yesterday at 6:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn-warning logout-other-sessions-btn" id="logoutOtherSessionsBtn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout Other Sessions
+                            </button>
+                        </div>
+
+                        <!-- Privacy Preferences -->
+                        <div class="info-section">
+                            <h4 class="section-subtitle">Privacy Preferences</h4>
+                            <div class="privacy-options">
+                                <h5>Profile Visibility to Patients</h5>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span>Display name to patients</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span>Display photo to patients</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span>Display specialization to patients</span>
+                                </label>
+
+                                <h5>Data Sharing</h5>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span>Participate in anonymous analytics</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span>Contribute to medical research data</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- System Integration Panel -->
+                <section class="profile-panel system-integration-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">
+                            <i class="fas fa-sync-alt"></i>
+                            System Integration Status
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="integration-status-grid">
+                            <div class="integration-item synced">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="integration-name">Dashboard</span>
+                                <span class="integration-status">Synced</span>
+                            </div>
+                            <div class="integration-item synced">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="integration-name">Patient Records</span>
+                                <span class="integration-status">Synced</span>
+                            </div>
+                            <div class="integration-item synced">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="integration-name">Consultations</span>
+                                <span class="integration-status">Synced</span>
+                            </div>
+                            <div class="integration-item synced">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="integration-name">Appointments</span>
+                                <span class="integration-status">Synced</span>
+                            </div>
+                            <div class="integration-item syncing">
+                                <i class="fas fa-sync fa-spin"></i>
+                                <span class="integration-name">Prescriptions</span>
+                                <span class="integration-status">Syncing...</span>
+                            </div>
+                            <div class="integration-item synced">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="integration-name">Notifications</span>
+                                <span class="integration-status">Synced</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Profile Action Panel -->
+                <section class="profile-action-panel">
+                    <button class="btn-primary save-all-btn" id="saveAllChangesBtn">
+                        <i class="fas fa-save"></i>
+                        Save All Changes
+                    </button>
+                    <button class="btn-secondary reset-changes-btn" id="resetChangesBtn">
+                        <i class="fas fa-undo"></i>
+                        Reset Changes
+                    </button>
+                    <button class="btn-secondary export-profile-btn" id="exportProfileBtn">
+                        <i class="fas fa-download"></i>
+                        Export Profile
+                    </button>
+                </section>
+
+                <!-- Quick Navigation Panel -->
+                <section class="quick-navigation-panel">
+                    <h3 class="panel-title">Quick Navigation</h3>
+                    <div class="quick-nav-grid">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html"
+                            class="quick-nav-item">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Appointments\appointments.html"
+                            class="quick-nav-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                            class="quick-nav-item">
+                            <i class="fas fa-user-injured"></i>
+                            <span>Patient Records</span>
+                        </a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Consultations\consultations.html"
+                            class="quick-nav-item">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Consultations</span>
+                        </a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Prescriptions\prescriptions.html"
+                            class="quick-nav-item">
+                            <i class="fas fa-prescription"></i>
+                            <span>Prescriptions</span>
+                        </a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Alerts and Collaboration\alerts_and_collaboration.html"
+                            class="quick-nav-item">
+                            <i class="fas fa-bell"></i>
+                            <span>Alerts</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Photo Upload Modal -->
+    <div class="modal photo-upload-modal" id="photoUploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-camera"></i>
+                    Update Profile Photo
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-options">
+                    <button class="upload-option-btn">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Browse Files</span>
+                    </button>
+                    <button class="upload-option-btn">
+                        <i class="fas fa-camera"></i>
+                        <span>Take Photo</span>
+                    </button>
+                </div>
+                <div class="photo-preview-area">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                        alt="Photo Preview" class="photo-preview">
+                </div>
+                <div class="crop-controls">
+                    <button class="crop-btn">
+                        <i class="fas fa-crop"></i>
+                        Crop
+                    </button>
+                    <button class="crop-btn">
+                        <i class="fas fa-undo"></i>
+                        Rotate
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary save-photo-btn">
+                    <i class="fas fa-save"></i>
+                    Save Photo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Name Edit Modal -->
+    <div class="modal name-edit-modal" id="nameEditModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-user-edit"></i>
+                    Edit Name
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="name-edit-form">
+                    <div class="form-group">
+                        <label for="doctorTitle">Title</label>
+                        <select id="doctorTitle" class="form-control">
+                            <option value="Dr." selected>Dr.</option>
+                            <option value="Prof.">Prof.</option>
+                            <option value="Mr.">Mr.</option>
+                            <option value="Ms.">Ms.</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" class="form-control" value="Sarah" required>
+                        <span class="validation-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" class="form-control" value="Wanjiru" required>
+                        <span class="validation-message"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary save-name-btn">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Specialization Editor Modal -->
+    <div class="modal specialization-modal" id="specializationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-user-md"></i>
+                    Edit Specialization
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="specialization-form">
+                    <div class="form-group">
+                        <label for="primarySpecialty">Primary Specialization</label>
+                        <select id="primarySpecialty" class="form-control">
+                            <option value="general">General Practice</option>
+                            <option value="cardiology" selected>Cardiology</option>
+                            <option value="pediatrics">Pediatrics</option>
+                            <option value="orthopedics">Orthopedics</option>
+                            <option value="neurology">Neurology</option>
+                            <option value="psychiatry">Psychiatry</option>
+                            <option value="dermatology">Dermatology</option>
+                            <option value="gynecology">Gynecology</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="secondarySpecialty">Secondary Specialization (Optional)</label>
+                        <select id="secondarySpecialty" class="form-control">
+                            <option value="">None</option>
+                            <option value="internal" selected>Internal Medicine</option>
+                            <option value="emergency">Emergency Medicine</option>
+                            <option value="surgery">Surgery</option>
+                            <option value="radiology">Radiology</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="yearsExperience">Years of Experience</label>
+                        <input type="number" id="yearsExperience" class="form-control" value="10" min="0" max="50">
+                    </div>
+                    <div class="form-group">
+                        <label for="certificationInfo">Certification Information</label>
+                        <textarea id="certificationInfo" class="form-control" rows="3"
+                            placeholder="Enter professional qualifications and certifications">Board Certified in Cardiology, MBBS, MD</textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary save-specialization-btn">
+                    <i class="fas fa-save"></i>
+                    Save Specialization
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Change Request Modal -->
+    <div class="modal contact-request-modal" id="contactRequestModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-envelope"></i>
+                    Request Contact Information Change
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="contact-request-form">
+                    <div class="form-group">
+                        <label for="requestType">Request Type</label>
+                        <select id="requestType" class="form-control">
+                            <option value="phone">Phone Number Change</option>
+                            <option value="email">Email Address Change</option>
+                            <option value="both">Both Phone and Email</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="newContactInfo">New Contact Information</label>
+                        <input type="text" id="newContactInfo" class="form-control"
+                            placeholder="Enter new phone number or email">
+                    </div>
+                    <div class="form-group">
+                        <label for="changeReason">Reason for Change</label>
+                        <textarea id="changeReason" class="form-control" rows="3" required
+                            placeholder="Please provide justification for the contact information change"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary submit-request-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Request
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Owner Modal -->
+    <div class="modal contact-owner-modal" id="contactOwnerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-message"></i>
+                    Contact Clinic Owner
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="owner-message-form">
+                    <div class="form-group">
+                        <label for="messageSubject">Subject</label>
+                        <input type="text" id="messageSubject" class="form-control" placeholder="Enter message subject"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="messageBody">Message</label>
+                        <textarea id="messageBody" class="form-control" rows="5" required
+                            placeholder="Type your message to the clinic owner..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="messagePriority">Priority</label>
+                        <select id="messagePriority" class="form-control">
+                            <option value="normal">Normal</option>
+                            <option value="high">High</option>
+                            <option value="urgent">Urgent</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary send-message-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div class="modal password-change-modal" id="passwordChangeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-key"></i>
+                    Change Password
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="password-change-form">
+                    <div class="form-group">
+                        <label for="currentPassword">Current Password</label>
+                        <input type="password" id="currentPassword" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" id="newPassword" class="form-control" required>
+                        <div class="password-strength">
+                            <span class="strength-label">Password Strength:</span>
+                            <div class="strength-meter">
+                                <div class="strength-bar"></div>
+                            </div>
+                            <span class="strength-text">Weak</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm New Password</label>
+                        <input type="password" id="confirmPassword" class="form-control" required>
+                        <span class="validation-message"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary save-password-btn">
+                    <i class="fas fa-save"></i>
+                    Update Password
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Sessions Confirmation Modal -->
+    <div class="modal logout-sessions-modal" id="logoutSessionsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout Other Sessions
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="confirmation-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Are you sure you want to logout all other sessions? This will sign you out from all other devices.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-warning confirm-logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Confirm Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Profile Modal -->
+    <div class="modal export-profile-modal" id="exportProfileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-download"></i>
+                    Export Profile Data
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>Select Export Format</h4>
+                <div class="export-options">
+                    <button class="export-option-btn" data-format="pdf">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>PDF Document</span>
+                        <small>Formatted profile document</small>
+                    </button>
+                    <button class="export-option-btn" data-format="json">
+                        <i class="fas fa-file-code"></i>
+                        <span>JSON Data</span>
+                        <small>Structured data format</small>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sound Settings Modal -->
+    <div class="modal sound-settings-modal" id="soundSettingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-volume-up"></i>
+                    Notification Sound Settings
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="sound-options">
+                    <label class="radio-option">
+                        <input type="radio" name="notificationSound" value="default" checked>
+                        <span>Default</span>
+                        <button class="test-sound-btn" data-sound="default">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="notificationSound" value="chime">
+                        <span>Chime</span>
+                        <button class="test-sound-btn" data-sound="chime">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="notificationSound" value="bell">
+                        <span>Bell</span>
+                        <button class="test-sound-btn" data-sound="bell">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="notificationSound" value="silent">
+                        <span>Silent</span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary save-sound-btn">
+                    <i class="fas fa-save"></i>
+                    Save Settings
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reset Changes Confirmation Modal -->
+    <div class="modal reset-confirmation-modal" id="resetConfirmationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-undo"></i>
+                    Reset Changes
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="confirmation-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Are you sure you want to reset all unsaved changes? This action cannot be undone.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-warning confirm-reset-btn">
+                    <i class="fas fa-undo"></i>
+                    Confirm Reset
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Dark Mode Toggle -->
+            <div class="dark-mode-toggle">
+                <button id="darkModeBtn" class="dark-mode-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                    <i class="fab fa-x "></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                    rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Corporate Link & Copyright -->
+            <div class="footer-info">
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer"
+                    class="corporate-link">Citrus Labs</a>
+                <span class="separator">|</span>
+                <span class="copyright">© 2025 Citrus Labs. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="my_profile.js"></script>
+</body>
+
+</html>

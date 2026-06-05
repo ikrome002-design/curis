@@ -1,0 +1,38 @@
+flowchart TD
+    FAQ[Curis FAQ Home Page] --> Search[Search Bar]
+    FAQ --> Categories[FAQ Categories]
+    FAQ --> Support[Support Resources]
+
+    Categories --> General[General Info]
+    Categories --> AcctMgmt[Account Management]
+    Categories --> Appointments[Appointments & Scheduling]
+    Categories --> Billing[Billing & Payments]
+    Categories --> Notifications[Patient Communication]
+
+    General --> WhatIsCuris[What is Curis?]
+    General --> Requirements[System Requirements]
+    General --> GetStarted[How to Get Started]
+
+    AcctMgmt --> UserRoles[User Roles & Access Levels]
+    AcctMgmt --> UpdateProfile[Updating Profile Info]
+    AcctMgmt --> ResetPass[Resetting Your Password]
+
+    Appointments --> Booking[Booking Appointments]
+    Appointments --> CancelReschedule[Cancel or Reschedule]
+    Appointments --> VisitNotes[Reception Notes for Visits]
+
+    Billing --> CreateInvoice[Generating Invoices]
+    Billing --> TrackPayments[Tracking Payments]
+    Billing --> MPesaPayments[Handling M-Pesa Payments]
+
+    Notifications --> SMSReminders[SMS Reminders]
+    Notifications --> EmailNotices[Email Notices]
+    Notifications --> EditPrefs[Editing Notification Preferences]
+
+    Support --> Contact[How to Contact Support]
+    Support --> Tutorials[Step-by-Step Tutorials]
+    Support --> Updates[System Updates & Notices]
+
+    style FAQ fill:#f9f,stroke:#333,stroke-width:2px
+    style Categories fill:#bbf,stroke:#333
+    style Support fill:#bbf,stroke:#333

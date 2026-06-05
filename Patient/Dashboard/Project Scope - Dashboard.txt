@@ -1,0 +1,69 @@
+#### 1. **Dashboard**
+
+
+
+
+Based on the quoted features, the dynamic MVP features and functionalities of the Dashboard page in a Patient’s Curis by Citrus web app account are designed to be both user-centric and family-aware, with a focus on rapid access to critical data, intuitive navigation, and seamless family health management. Here's a detailed breakdown:
+
+Dynamic MVP Features of the “Dashboard” Page
+
+a.	Personalized User Greeting & Contextual Overview
+•	Dynamic Welcome Message: Displays a time-of-day greeting ("Good Morning, Paul") and the selected family member’s name/photo.
+•	Role-Based View: For adults, the dashboard shows their own and dependents' data; for teens (13+ with individual access), it shows personal info only.
+•	Real-Time Context Feed:
+o	Next upcoming appointment (for self or currently selected dependent).
+o	Most recent prescription or care note summary.
+o	Unpaid invoice alerts for easy attention.
+b.	Quick Navigation Shortcuts
+•	Prominent Action Cards:
+o	Book Appointment: Opens family-aware booking workflow.
+o	Medical Records: Leads to personal or dependent health data.
+o	Payments: Filters billing per individual or household.
+o	Messages: Shows unread communications, per profile.
+•	Responsive Layout: Cards reorder or collapse based on screen size (mobile/tablet/desktop).
+c.	Family User Switcher
+•	Profile Selector Dropdown:
+o	Shows list of linked dependents under the logged-in adult's account.
+o	Displays profile image, name, and age.
+•	Context Refresh:
+o	All dashboard widgets refresh dynamically based on the selected dependent (appointments, prescriptions, invoices, etc.).
+o	Ensures seamless data access without reloading the entire page.
+d.	Live Appointments Widget
+•	Scrollable Upcoming Appointments Feed:
+o	Date, time, doctor, and clinic details.
+o	Indicates if appointment is in-person or virtual.
+o	Tag shows for whom the appointment is booked (self or dependent).
+•	Action Buttons:
+o	“Reschedule” and “Cancel” if booking policy allows.
+e.	Prescription & Treatment Update Card
+•	Latest Prescription Summary:
+o	Doctor's name, prescription title, issue date.
+o	Quick link to full medical record for more details.
+•	Badge indicator for new/unread updates.
+f.	Invoice & Payment Alert Panel
+•	Outstanding Balances Widget:
+o	Itemized by person (self or dependents).
+o	Filters by due/overdue invoices.
+•	CTA Buttons:
+o	“View Invoice,” “Pay Now” lead to integrated checkout (M-Pesa, PayPal, Card).
+g.	Real-Time Notifications Banner
+•	Banner Area or Notification Bell:
+o	Alerts for new messages from clinics, upcoming appointments, and urgent health advisories.
+•	Click to expand and view details or navigate to respective sections.
+
+
+Additional MVP Considerations
+•	Loading States: Skeleton loaders and spinner animations during API calls.
+•	Error Handling: Graceful fallback messages if no upcoming appointments or prescriptions exist.
+•	Data Caching: Store recent API results locally for offline preview or reduced latency.
+Example Patient Journey
+•	A mother logs in and sees a summary card for her daughter’s upcoming vaccination, a new antibiotic prescription for her son, and an unpaid invoice from her last visit. With two clicks, she pays the bill and reschedules one appointment—all from the dashboard.
+
+
+
+
+
+
+
+
+

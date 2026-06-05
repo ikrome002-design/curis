@@ -1,0 +1,124 @@
+graph TB
+    %% Check-In Page Core
+    CheckInPage[Check-In Page<br/>Patient Flow Hub]
+    
+    %% Main Features
+    CheckInPage --> NewPatReg[New Patient Registration<br/>First-Time Visitors]
+    CheckInPage --> UpdateProfile[Patient Profile Updates<br/>Edit Details]
+    CheckInPage --> LiveCheckIn[Live Patient Check-In<br/>Mark Arrived]
+    CheckInPage --> DocAssign[Doctor Assignment Engine<br/>Smart Allocation]
+    CheckInPage --> DocNotify[Doctor Notification System<br/>Real-Time Alerts]
+    CheckInPage --> AdminNotes[Admin Notes<br/>Non-Clinical]
+    CheckInPage --> WalkInConv[Walk-In Conversion<br/>Unscheduled Patients]
+    CheckInPage --> QueueIntegration[Smart Queue Integration<br/>Flow Management]
+    CheckInPage --> AuditTrail[Audit Trail<br/>Role Accountability]
+    CheckInPage --> UserGuide[User Guidance Tools<br/>Help System]
+    
+    %% New Patient Registration Details
+    NewPatReg --> |Click| RegForm[Registration Form<br/>━━━━━━━━━━━━━━━━━<br/>• Personal details<br/>  - Full name<br/>  - Phone number<br/>  - Email address<br/>  - ID/Passport<br/>  - Gender<br/>  - Date of birth<br/>• Contact info<br/>• ID verification<br/>• Photo upload<br/>• Duplicate check<br/>━━━━━━━━━━━━━━━━━<br/>Smart validation]
+    
+    RegForm --> |Check Duplicates| DuplicateAlert[Duplicate Detection<br/>━━━━━━━━━━━━━━━━━<br/>• Phone match found<br/>• ID already exists<br/>• Similar names<br/>• Action options:<br/>  - View existing<br/>  - Update existing<br/>  - Create new]
+    
+    RegForm --> |Upload Photo| PhotoCapture[Photo Capture<br/>━━━━━━━━━━━━━━━━━<br/>• Camera access<br/>• File upload<br/>• Crop & resize<br/>• ID verification<br/>• Badge generation]
+    
+    RegForm --> |Smart Fill| AutoFillData[Smart Autofill<br/>━━━━━━━━━━━━━━━━━<br/>• National ID scan<br/>• Health card read<br/>• Auto-populate fields<br/>• Verify accuracy]
+    
+    RegForm --> |Tag Source| ReferralTag[Referral Source<br/>━━━━━━━━━━━━━━━━━<br/>• Walk-in ✓<br/>• Online booking ✓<br/>• Campaign ✓<br/>• Referral ✓<br/>• Other (specify)]
+    
+    %% Patient Profile Updates
+    UpdateProfile --> |Click| UpdateForm[Update Form Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Contact info<br/>  - Phone/Email<br/>  - Alt. contact<br/>• Address<br/>  - Physical<br/>  - Postal<br/>• Insurance info<br/>  - Provider<br/>  - Policy number<br/>• Emergency contact<br/>• Audit logging<br/>━━━━━━━━━━━━━━━━━<br/>Change tracking]
+    
+    UpdateForm --> |View History| PatientHistory[Patient History<br/>━━━━━━━━━━━━━━━━━<br/>• Last visit date<br/>• Next booking<br/>• Visit frequency<br/>• No-show history<br/>━━━━━━━━━━━━━━━━━<br/>Read-only view]
+    
+    UpdateForm --> |Save Changes| ChangeLog[Change Log<br/>━━━━━━━━━━━━━━━━━<br/>• Field changed<br/>• Old value<br/>• New value<br/>• Changed by<br/>• Timestamp<br/>• Reason (optional)]
+    
+    %% Live Patient Check-In
+    LiveCheckIn --> |Click| CheckInModal[Check-In Interface<br/>━━━━━━━━━━━━━━━━━<br/>• Today's schedule<br/>• Search patient<br/>  - By name<br/>  - By phone<br/>  - By appt ID<br/>• Mark arrived<br/>• Queue assignment<br/>• Doctor notification<br/>• Walk-in option<br/>━━━━━━━━━━━━━━━━━<br/>Real-time updates]
+    
+    CheckInModal --> |Search| PatientSearch[Patient Search<br/>━━━━━━━━━━━━━━━━━<br/>• Smart search<br/>• Fuzzy matching<br/>• Filter results<br/>• Quick select<br/>• View details]
+    
+    CheckInModal --> |Mark Arrived| ArrivalProcess[Arrival Process<br/>━━━━━━━━━━━━━━━━━<br/>• Status: Arrived ✓<br/>• Time stamped<br/>• Queue entry<br/>• Wait timer start<br/>• Update dashboard<br/>• Notify doctor]
+    
+    CheckInModal --> |No Appointment| WalkInProcess[Walk-In Process<br/>━━━━━━━━━━━━━━━━━<br/>• Create instant appt<br/>• Tag as walk-in<br/>• Find available slot<br/>• Priority handling<br/>• Direct to queue]
+    
+    %% Doctor Assignment Engine
+    DocAssign --> |Click| AssignModal[Assignment Engine<br/>━━━━━━━━━━━━━━━━━<br/>• View availability<br/>  - Real-time status<br/>  - Patient load<br/>  - Specialization<br/>• Smart suggestions<br/>  - Least busy<br/>  - Best match<br/>  - Wait time<br/>• Manual override<br/>• Load balancing<br/>━━━━━━━━━━━━━━━━━<br/>AI optimization]
+    
+    AssignModal --> |View Load| DoctorLoad[Doctor Workload<br/>━━━━━━━━━━━━━━━━━<br/>• Current patients<br/>• Queue length<br/>• Avg. consult time<br/>• Break schedule<br/>• Capacity gauge]
+    
+    AssignModal --> |Smart Suggest| AIEngine[AI Suggestion<br/>━━━━━━━━━━━━━━━━━<br/>• Load analysis<br/>• Specialty match<br/>• History check<br/>• Wait optimization<br/>• Best fit doctor]
+    
+    AssignModal --> |Manual Select| ManualAssign[Manual Assignment<br/>━━━━━━━━━━━━━━━━━<br/>• Patient request<br/>• Override reason<br/>• Confirm choice<br/>• Update queue<br/>• Log decision]
+    
+    %% Doctor Notification System
+    DocNotify --> |Trigger| NotifyModal[Notification System<br/>━━━━━━━━━━━━━━━━━<br/>• In-app toast<br/>  - Patient name<br/>  - Appt type<br/>  - Room number<br/>• SMS option<br/>• Internal message<br/>• Priority level<br/>━━━━━━━━━━━━━━━━━<br/>Multi-channel]
+    
+    NotifyModal --> |In-App| ToastNotif[Toast Notification<br/>━━━━━━━━━━━━━━━━━<br/>• Popup alert<br/>• Sound alert<br/>• Visual indicator<br/>• Action buttons<br/>  - View details<br/>  - Acknowledge]
+    
+    NotifyModal --> |Offline Doctor| BackupNotif[Backup Notification<br/>━━━━━━━━━━━━━━━━━<br/>• SMS fallback<br/>• Email alert<br/>• Staff message<br/>• Escalation path]
+    
+    %% Admin Notes
+    AdminNotes --> |Add Note| NotesPanel[Notes Panel<br/>━━━━━━━━━━━━━━━━━<br/>• Patient preferences<br/>  - Time preference<br/>  - Language<br/>  - Special needs<br/>• Internal reminders<br/>• Front-desk only<br/>• Character limit<br/>━━━━━━━━━━━━━━━━━<br/>Non-clinical only]
+    
+    NotesPanel --> |View History| NoteHistory[Note History<br/>━━━━━━━━━━━━━━━━━<br/>• Past notes<br/>• Added by<br/>• Timestamp<br/>• Edit trail<br/>• Delete option]
+    
+    %% Walk-In Conversion
+    WalkInConv --> |Convert| WalkInModal[Walk-In Conversion<br/>━━━━━━━━━━━━━━━━━<br/>• Patient details<br/>• Reason for visit<br/>• Urgency level<br/>• Doctor preference<br/>• Create appointment<br/>• Auto-tag walk-in<br/>━━━━━━━━━━━━━━━━━<br/>Backdated entry]
+    
+    WalkInModal --> |Assign Doctor| WalkInAssign[Walk-In Assignment<br/>━━━━━━━━━━━━━━━━━<br/>• Next available<br/>• Specialty match<br/>• Urgent priority<br/>• Queue position<br/>• Skip reminders]
+    
+    %% Smart Queue Integration
+    QueueIntegration --> |Enter Queue| QueueEntry[Queue Entry<br/>━━━━━━━━━━━━━━━━━<br/>• Auto-placement<br/>• Priority rules<br/>• Wait estimate<br/>• Position number<br/>• Status tracking]
+    
+    QueueEntry --> |Manage| QueueManage[Queue Management<br/>━━━━━━━━━━━━━━━━━<br/>• Reorder patients<br/>• Urgency override<br/>• Color coding<br/>  - Green <15min<br/>  - Yellow 15-30<br/>  - Red >45min<br/>• Update estimates]
+    
+    QueueEntry --> |Sync| QueuePageSync[→ Queue Page Sync<br/>• Live position<br/>• Wait times<br/>• Doctor status<br/>• Room ready]
+    
+    %% Audit Trail
+    AuditTrail --> |View Log| AuditLog[Activity Log<br/>━━━━━━━━━━━━━━━━━<br/>• All actions<br/>  - Check-ins<br/>  - Updates<br/>  - Assignments<br/>• User tracking<br/>• Timestamps<br/>• IP address<br/>• Immutable record]
+    
+    AuditLog --> |Filter| LogFilter[Log Filters<br/>━━━━━━━━━━━━━━━━━<br/>• By date<br/>• By user<br/>• By action<br/>• By patient<br/>• Export option]
+    
+    %% User Guidance
+    UserGuide --> |Help| GuidanceSystem[Guidance System<br/>━━━━━━━━━━━━━━━━━<br/>• Step tooltips<br/>• Process guides<br/>• Error handling<br/>• Best practices<br/>• Video tutorials]
+    
+    GuidanceSystem --> |Quick Access| RecentPatients[Recent Patients<br/>━━━━━━━━━━━━━━━━━<br/>• Last 10 checked<br/>• Frequent visitors<br/>• Quick select<br/>• One-click check-in]
+    
+    GuidanceSystem --> |Errors| ErrorHandling[Error Handling<br/>━━━━━━━━━━━━━━━━━<br/>• Duplicate check-in<br/>• Missing booking<br/>• System conflicts<br/>• Resolution steps<br/>• Help contact]
+    
+    %% Integration Synchronization
+    CheckInPage -.->|Sync| DashboardSync[→ Dashboard Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Update metrics<br/>• Refresh tasks<br/>• Doctor status<br/>• Performance data]
+    
+    CheckInPage -.->|Sync| AppointmentSync[→ Appointments Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Status updates<br/>• Walk-in bookings<br/>• Schedule changes<br/>• Availability]
+    
+    CheckInPage -.->|Sync| QueueSync[→ Queue & Flow Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Patient entry<br/>• Wait tracking<br/>• Doctor queues<br/>• Room status]
+    
+    CheckInPage -.->|Sync| PatientDirSync[→ Patient Directory<br/>━━━━━━━━━━━━━━━━━<br/>• New patients<br/>• Profile updates<br/>• Contact changes<br/>• Visit history]
+    
+    CheckInPage -.->|Sync| InboxSync[→ Inbox & Alerts<br/>━━━━━━━━━━━━━━━━━<br/>• Arrival alerts<br/>• Doctor messages<br/>• System notifs<br/>• Check-in logs]
+    
+    %% Navigation to Other Pages
+    CheckInPage ==> MainNavigation[Main Navigation]
+    MainNavigation ==> Dashboard[← Dashboard]
+    MainNavigation ==> AppointmentsPage[→ Appointments]
+    MainNavigation ==> InboxAlertsPage[→ Inbox & Alerts]
+    MainNavigation ==> QueueFlowPage[→ Queue & Flow]
+    MainNavigation ==> PatientDirPage[→ Patient Directory]
+    MainNavigation ==> BillingPayPage[→ Billings & Payments]
+    
+    %% Styling
+    classDef checkinCore fill:#0F766E,stroke:#047857,stroke-width:4px,color:#fff
+    classDef feature fill:#7C3AED,stroke:#6D28D9,stroke-width:3px,color:#fff
+    classDef modal fill:#DC2626,stroke:#B91C1C,stroke-width:2px,color:#fff
+    classDef process fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
+    classDef sync fill:#0891B2,stroke:#0E7490,stroke-width:2px,color:#fff
+    classDef navigation fill:#EA580C,stroke:#C2410C,stroke-width:3px,color:#fff
+    classDef alert fill:#EAB308,stroke:#CA8A04,stroke-width:2px,color:#000
+    
+    class CheckInPage checkinCore
+    class NewPatReg,UpdateProfile,LiveCheckIn,DocAssign,DocNotify,AdminNotes,WalkInConv,QueueIntegration,AuditTrail,UserGuide feature
+    class RegForm,UpdateForm,CheckInModal,AssignModal,NotifyModal,NotesPanel,WalkInModal,AuditLog,GuidanceSystem modal
+    class DuplicateAlert,PhotoCapture,AutoFillData,ReferralTag,PatientHistory,ChangeLog,PatientSearch,ArrivalProcess,WalkInProcess,DoctorLoad,AIEngine,ManualAssign,ToastNotif,BackupNotif,NoteHistory,WalkInAssign,QueueEntry,QueueManage,LogFilter,RecentPatients,ErrorHandling process
+    class DashboardSync,AppointmentSync,QueueSync,PatientDirSync,InboxSync,QueuePageSync sync
+    class MainNavigation,Dashboard,AppointmentsPage,InboxAlertsPage,QueueFlowPage,PatientDirPage,BillingPayPage navigation
+    class DuplicateAlert,ErrorHandling alert

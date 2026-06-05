@@ -1,0 +1,284 @@
+flowchart TD
+    %% Billings & Payments Main Page
+    H[Billings & Payments Page] --> H_HEADER[Page Header<br/>Navigation & Context]
+    H_HEADER --> H_NAV[Navigation Bar<br/>Main menu access]
+    H_NAV --> E[Dashboard]
+    H_NAV --> F[My Appointments]
+    H_NAV --> G[My Health Care]
+    H_NAV --> I[Emergency Care]
+    H_NAV --> J[My Medical Cover]
+    H_NAV --> K[My Profile]
+    
+    %% Invoice Overview Section
+    H --> H1[Invoice Overview<br/>Real-time billing display]
+    H1 --> H1_TABS[View Tabs<br/>Invoice categorization]
+    H1_TABS --> H1a[Invoice Feed<br/>Outstanding/Historical]
+    H1a --> H1a_TOGGLE{View Toggle}
+    H1a_TOGGLE --> H1a_OUT[Outstanding Invoices<br/>Unpaid bills]
+    H1a_TOGGLE --> H1a_HIST[Historical Invoices<br/>Paid records]
+    
+    H1 --> H1b[Dynamic Filters<br/>Multi-criteria search]
+    H1b --> H1b_CLICK{Filter Button Click}
+    H1b_CLICK --> H1b_MODAL[Filter Modal<br/>Search criteria]
+    H1b_MODAL --> H1b1[Patient Filter<br/>Self/Dependent]
+    H1b1 --> H1b1_DROP[Member Dropdown<br/>Family selection]
+    H1b1_DROP --> H1b1_D1[Self<br/>Personal invoices]
+    H1b1_DROP --> H1b1_D2[Dependent 1<br/>Child invoices]
+    H1b1_DROP --> H1b1_D3[All Members<br/>Family invoices]
+    
+    H1b_MODAL --> H1b2[Clinic Filter<br/>Provider selection]
+    H1b2 --> H1b2_LIST[Clinic List<br/>All providers]
+    H1b2 --> H1b2_CHECK[Checkboxes<br/>Multi-select]
+    
+    H1b_MODAL --> H1b3[Invoice Number Search<br/>Direct lookup]
+    H1b3 --> H1b3_INPUT[Search Input<br/>Invoice ID entry]
+    
+    H1b_MODAL --> H1b4[Date Range Filter<br/>Time period]
+    H1b4 --> H1b4_PICKER[Date Picker<br/>Start/End dates]
+    H1b4 --> H1b4_PRESET[Quick Options<br/>Last 30/60/90 days]
+    
+    H1b_MODAL --> H1b_APPLY{Apply Filters}
+    H1b_APPLY --> H1b_REFRESH[Results Update<br/>Filtered invoices]
+    
+    %% Invoice Cards Display
+    H1 --> H1c[Invoice Cards<br/>Detailed display]
+    H1c --> H1c_CARD[Invoice Card<br/>Individual bill]
+    H1c_CARD --> H1c1[Clinic Branding<br/>Logo/Name]
+    H1c_CARD --> H1c2[Invoice Details<br/>Core information]
+    H1c2 --> H1c2a[Invoice Number<br/>Unique ID]
+    H1c2 --> H1c2b[Issue Date<br/>Creation date]
+    H1c2 --> H1c2c[Amount Due<br/>Total cost]
+    H1c2 --> H1c2d[Status Badge<br/>Payment status]
+    H1c2d --> H1c2d1[Paid<br/>Green badge]
+    H1c2d --> H1c2d2[Pending Review<br/>Yellow badge]
+    H1c2d --> H1c2d3[Rejected<br/>Red badge]
+    H1c2d --> H1c2d4[Overdue<br/>Red alert]
+    
+    H1c_CARD --> H1c3[Download Button<br/>PDF generation]
+    H1c3 --> H1c3_CLICK{Download Click}
+    H1c3_CLICK --> H1c3a[Branded PDF<br/>Generated invoice]
+    H1c3a --> H1c3a1[Offline Use<br/>Payment proof]
+    H1c3a --> H1c3a2[Insurance Use<br/>Claim support]
+    
+    %% Family Billing Section
+    H --> H2[Family Billing<br/>Contextual management]
+    H2 --> H2a[Profile Switcher<br/>Member selection]
+    H2a --> H2a_CLICK{Switcher Click}
+    H2a_CLICK --> H2a_DROP[Member Dropdown<br/>Family list]
+    H2a_DROP --> H2a_D1[Self View<br/>Personal bills]
+    H2a_DROP --> H2a_D2[Child 1 View<br/>Dependent bills]
+    H2a_DROP --> H2a_D3[Child 2 View<br/>Dependent bills]
+    H2a_DROP --> H2a_D4[Family View<br/>All bills]
+    H2a_DROP --> H2a_SELECT{Select Member}
+    H2a_SELECT --> H2a_REFRESH[View Refresh<br/>Member-specific data]
+    
+    H2 --> H2b[Grouped Invoice Display<br/>Bill consolidation]
+    H2b --> H2b_TOGGLE{Group Toggle}
+    H2b_TOGGLE --> H2b1[Clinic Grouping<br/>Provider bundling]
+    H2b1 --> H2b1_EXPAND{Expand Group}
+    H2b1_EXPAND --> H2b1_LIST[Grouped Invoices<br/>Same clinic bills]
+    
+    H2b_TOGGLE --> H2b2[Date Grouping<br/>Time bundling]
+    H2b2 --> H2b2_EXPAND{Expand Period}
+    H2b2_EXPAND --> H2b2_LIST[Period Invoices<br/>Same date bills]
+    
+    H2 --> H2c[Payment Summary<br/>Financial overview]
+    H2c --> H2c1[Individual Totals<br/>Per-person sums]
+    H2c1 --> H2c1_SELF[Self Total<br/>Personal amount]
+    H2c1 --> H2c1_DEP[Dependent Totals<br/>Child amounts]
+    
+    H2c --> H2c2[Family Totals<br/>Household summary]
+    H2c2 --> H2c2_OUT[Total Outstanding<br/>Amount due]
+    H2c2 --> H2c2_PAID[Total Paid<br/>Historical sum]
+    
+    %% Offline Payment Processing
+    H --> H3[Offline Payment Processing<br/>External payments]
+    H3 --> H3_SELECT{Invoice Selection}
+    H3_SELECT --> H3a[Proof Submission Form<br/>Payment verification]
+    H3a --> H3a_MODAL[Upload Modal<br/>Proof submission]
+    
+    H3a_MODAL --> H3a1[File Upload<br/>Evidence attachment]
+    H3a1 --> H3a1_DRAG[Drag & Drop<br/>File area]
+    H3a1 --> H3a1_BROWSE[Browse Files<br/>Select photo]
+    H3a1 --> H3a1_PREVIEW[File Preview<br/>Image display]
+    
+    H3a_MODAL --> H3a2[Transaction Code Entry<br/>Reference input]
+    H3a2 --> H3a2_INPUT[Code Input<br/>M-Pesa/Bank ref]
+    H3a2 --> H3a2_VALID[Validation<br/>Format check]
+    
+    H3a_MODAL --> H3a3[Optional Notes<br/>Additional info]
+    H3a3 --> H3a3_TEXT[Text Area<br/>Comments field]
+    
+    H3a_MODAL --> H3b{Submit for Review}
+    H3b --> H3b_PROCESS[Submission Process<br/>Status update]
+    H3b_PROCESS --> H3b1[Under Review Status<br/>Invoice locked]
+    H3b1 --> H3b1_BADGE[Review Badge<br/>Yellow status]
+    H3b1 --> H3b1_LOCK[Edit Lock<br/>No changes allowed]
+    
+    H3b_PROCESS --> H3b2[Review Notifications<br/>Clinic alert]
+    H3b2 --> H3b2_CLINIC[Clinic Notification<br/>New submission]
+    H3b2 --> H3b2_PATIENT[Patient Confirmation<br/>Submission received]
+    
+    %% Status Tracking
+    H3 --> H3c[Status Tracking<br/>Payment verification]
+    H3c --> H3c_STATUS{Payment Status}
+    H3c_STATUS --> H3c1[Verified Paid<br/>Approved payment]
+    H3c1 --> H3c1_RECEIPT[Receipt Generation<br/>Auto-create PDF]
+    H3c1 --> H3c1_REMOVE[Invoice Removal<br/>From outstanding]
+    H3c1 --> H3c1_NOTIFY[Success Notification<br/>Payment confirmed]
+    
+    H3c_STATUS --> H3c2[Rejected Resubmit<br/>Failed verification]
+    H3c2 --> H3c2_MODAL[Rejection Modal<br/>Failure details]
+    H3c2_MODAL --> H3c2a[Rejection Reason<br/>Clinic feedback]
+    H3c2a --> H3c2a_MSG[Reason Message<br/>Why rejected]
+    
+    H3c2_MODAL --> H3c2b[New Proof Upload<br/>Resubmission]
+    H3c2b --> H3c2b_FORM[Upload Form<br/>New evidence]
+    H3c2b_FORM --> H3a[Proof Submission<br/>Retry process]
+    
+    %% Receipt & Communications
+    H --> H4[Receipt & Communications<br/>Multi-channel alerts]
+    H4 --> H4a[Real-time Notifications<br/>Event alerts]
+    H4a --> H4a_EVENTS[Notification Events<br/>Triggers]
+    H4a_EVENTS --> H4a1[Invoice Generation Alert<br/>New bill]
+    H4a1 --> H4a1_TOAST[Toast Notification<br/>In-app alert]
+    H4a1 --> H4a1_BADGE[Badge Update<br/>Counter increase]
+    
+    H4a_EVENTS --> H4a2[SMS/WhatsApp Delivery<br/>External alerts]
+    H4a2 --> H4a2_SMS[SMS Message<br/>Invoice details]
+    H4a2 --> H4a2_WA[WhatsApp Message<br/>Download link]
+    
+    H4 --> H4b[Receipt Delivery<br/>Payment confirmation]
+    H4b --> H4b_TRIGGER{Payment Confirmed}
+    H4b_TRIGGER --> H4b1[Auto-send Receipt<br/>Multi-channel]
+    H4b1 --> H4b1_EMAIL[Email Receipt<br/>PDF attachment]
+    H4b1 --> H4b1_WA[WhatsApp Receipt<br/>PDF document]
+    
+    H4b_TRIGGER --> H4b2[Multi-channel Delivery<br/>Redundancy]
+    H4b2 --> H4b2_RETRY[Delivery Retry<br/>Failed sends]
+    H4b2 --> H4b2_CONFIRM[Delivery Confirmation<br/>Success tracking]
+    
+    %% Payment History
+    H --> H5[Payment History<br/>Transaction ledger]
+    H5 --> H5a[Timeline View<br/>Chronological list]
+    H5a --> H5a_CARDS[Payment Cards<br/>Transaction records]
+    H5a_CARDS --> H5a1[Payment Details<br/>Transaction info]
+    H5a1 --> H5a1a[Payment Method<br/>M-Pesa/Bank/Cash]
+    H5a1 --> H5a1b[Dependent Name<br/>Who's payment]
+    H5a1 --> H5a1c[Clinic Name<br/>Provider info]
+    H5a1 --> H5a1d[Service Description<br/>Treatment details]
+    H5a1 --> H5a1e[Transaction Date<br/>Payment date]
+    H5a1 --> H5a1f[Amount Paid<br/>Transaction value]
+    
+    H5 --> H5b[Status Filters<br/>View options]
+    H5b --> H5b_CLICK{Filter Click}
+    H5b_CLICK --> H5b_OPTIONS[Filter Options<br/>Status selection]
+    H5b_OPTIONS --> H5b_O1[Paid Only<br/>Completed]
+    H5b_OPTIONS --> H5b_O2[Rejected Only<br/>Failed]
+    H5b_OPTIONS --> H5b_O3[Pending Only<br/>Under review]
+    
+    H5 --> H5c[Auto-update System<br/>Real-time sync]
+    H5c --> H5c_SYNC[Sync Engine<br/>Status updates]
+    H5c --> H5c_REFRESH[Auto Refresh<br/>List updates]
+    
+    %% Payment Notifications
+    H --> H6[Payment Notifications<br/>Reminder system]
+    H6 --> H6a[Notification Engine<br/>Alert system]
+    H6a --> H6a_TYPES[Alert Types<br/>Notification categories]
+    H6a_TYPES --> H6a1[New Invoice Alert<br/>Bill created]
+    H6a_TYPES --> H6a2[Payment Status Alert<br/>Status change]
+    H6a_TYPES --> H6a3[Submission Response<br/>Review outcome]
+    
+    H6 --> H6b[Alert Customization<br/>Preferences]
+    H6b --> H6b_CLICK{Settings Click}
+    H6b_CLICK --> H6b_MODAL[Settings Modal<br/>Notification preferences]
+    H6b_MODAL --> H6b1[Channel Selection<br/>Delivery methods]
+    H6b1 --> H6b1_SMS[SMS Toggle<br/>On/Off]
+    H6b1 --> H6b1_WA[WhatsApp Toggle<br/>On/Off]
+    H6b1 --> H6b1_EMAIL[Email Toggle<br/>On/Off]
+    H6b1 --> H6b1_APP[In-app Toggle<br/>On/Off]
+    
+    H6b_MODAL --> H6b2[Family Notifications<br/>Dependent alerts]
+    H6b2 --> H6b2_SELF[Self Alerts<br/>Personal bills]
+    H6b2 --> H6b2_DEP[Dependent Alerts<br/>Child bills]
+    H6b2 --> H6b2_ALL[All Alerts<br/>Family bills]
+    
+    %% Support & Disputes
+    H --> H7[Support & Disputes<br/>Resolution workflow]
+    H7 --> H7a[Dispute Button<br/>Per invoice]
+    H7a --> H7a_CLICK{Dispute Click}
+    H7a_CLICK --> H7a_MODAL[Dispute Modal<br/>Issue reporting]
+    H7a_MODAL --> H7a1[Dispute Form<br/>Issue details]
+    H7a1 --> H7a1_REASON[Reason Selection<br/>Dispute type]
+    H7a1_REASON --> H7a1_R1[Wrong Amount<br/>Pricing issue]
+    H7a1_REASON --> H7a1_R2[Service Not Received<br/>No treatment]
+    H7a1_REASON --> H7a1_R3[Already Paid<br/>Duplicate bill]
+    H7a1_REASON --> H7a1_R4[Other<br/>Custom reason]
+    
+    H7a1 --> H7a1_FILE[File Upload<br/>Evidence attachment]
+    H7a1 --> H7a1_MSG[Message Field<br/>Detailed explanation]
+    
+    H7a_MODAL --> H7a2{Submit Dispute}
+    H7a2 --> H7a2_STATUS[Investigation Status<br/>Dispute tracking]
+    H7a2_STATUS --> H7a2_BADGE[Disputed Badge<br/>Orange status]
+    H7a2_STATUS --> H7a2_LOCK[Invoice Lock<br/>Payment hold]
+    
+    H7 --> H7b[Message History<br/>Communication thread]
+    H7b --> H7b_CLICK{View Messages}
+    H7b_CLICK --> H7b_MODAL[Message Thread Modal<br/>Conversation view]
+    H7b_MODAL --> H7b1[Billing Department Chat<br/>Direct messaging]
+    H7b1 --> H7b1_THREAD[Message Thread<br/>Conversation history]
+    H7b1 --> H7b1_NEW[New Message<br/>Compose area]
+    H7b1 --> H7b1_SEND[Send Button<br/>Submit message]
+    
+    H7b_MODAL --> H7b2[Response Notifications<br/>Alert system]
+    H7b2 --> H7b2_CLINIC[Clinic Response<br/>New message alert]
+    H7b2 --> H7b2_PATIENT[Patient Alert<br/>Response received]
+    
+    %% Integration Points
+    H --> H_INT[Page Integrations<br/>Cross-page links]
+    H_INT --> H_INT1[From Dashboard<br/>Entry points]
+    E5c2 --> H3[Pay Now Button<br/>Direct payment]
+    E5c1 --> H1c[View Invoice<br/>Invoice details]
+    E2c --> H[Payments Card<br/>Billing access]
+    
+    H_INT --> H_INT2[To Appointments<br/>Related bookings]
+    H1c --> F7c[Visit Link<br/>Appointment details]
+    
+    H_INT --> H_INT3[To Medical Cover<br/>Insurance claims]
+    H1c3a --> J5[Insurance Export<br/>Claim preparation]
+    H1c_CARD --> J1a[Create Claim<br/>Insurance submission]
+    
+    H_INT --> H_INT4[To Profile<br/>Settings access]
+    H6b --> K[Notification Settings<br/>Profile preferences]
+    
+    %% Quick Actions
+    H --> H_QUICK[Quick Actions Bar<br/>Common tasks]
+    H_QUICK --> H_Q1[Pay All<br/>Bulk payment]
+    H_QUICK --> H_Q2[Export History<br/>Download records]
+    H_QUICK --> H_Q3[Contact Billing<br/>Support access]
+    
+    %% Search Functionality
+    H --> H_SEARCH[Global Search<br/>Find invoices]
+    H_SEARCH --> H_S_INPUT[Search Bar<br/>Query input]
+    H_S_INPUT --> H_S_SUGGEST[Suggestions<br/>Auto-complete]
+    H_S_INPUT --> H_S_RESULTS[Search Results<br/>Matching invoices]
+    
+    %% Loading States
+    H --> H_LOAD[Loading States<br/>Progress indicators]
+    H_LOAD --> H_L1[Initial Load<br/>Skeleton screens]
+    H_LOAD --> H_L2[PDF Generation<br/>Progress spinner]
+    H_LOAD --> H_L3[Upload Progress<br/>Progress bar]
+    
+    %% Error Handling
+    H --> H_ERROR[Error States<br/>Exception handling]
+    H_ERROR --> H_E1[No Invoices<br/>Empty state]
+    H_ERROR --> H_E2[Upload Failed<br/>Retry option]
+    H_ERROR --> H_E3[Payment Failed<br/>Error message]
+    
+    %% Real-time Updates
+    H --> H_SYNC[Real-time Sync<br/>Live updates]
+    H_SYNC --> H_S1[New Invoice Alert<br/>Push notification]
+    H_SYNC --> H_S2[Status Change<br/>Automatic update]
+    H_SYNC --> H_S3[Dashboard Sync<br/>Widget refresh]
+    H_S3 --> E5[Invoice Alert Panel<br/>Dashboard update]

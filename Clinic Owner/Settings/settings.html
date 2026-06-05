@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for responsive design and character encoding -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title -->
+    <title>Settings - Curis by Citrus</title>
+
+    <!-- Favicon links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External stylesheets -->
+    <link rel="stylesheet" href="settings.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!-- Left sidebar navigation -->
+    <aside class="sidebar">
+        <!-- Logo section -->
+        <div class="logo-section">
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                class="logo-link">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo_1.png"
+                    alt="Curis by Citrus Logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Main navigation menu -->
+        <nav class="main-navigation">
+            <ul class="nav-menu">
+                <!-- Dashboard link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                        class="nav-link">
+                        <i class="fas fa-chart-pie"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <!-- Workforce Hub link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Workforce Hub\workforce_hub.html"
+                        class="nav-link">
+                        <i class="fas fa-users"></i>
+                        Workforce Hub
+                    </a>
+                </li>
+
+                <!-- Clinic Services Hub link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Clinic Services Hub\clinic_services_hub.html"
+                        class="nav-link">
+                        <i class="fas fa-stethoscope"></i>
+                        Clinic Services Hub
+                    </a>
+                </li>
+
+                <!-- Appointments link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Appointments\appointments.html"
+                        class="nav-link">
+                        <i class="fas fa-calendar-check"></i>
+                        Appointments
+                    </a>
+                </li>
+
+                <!-- Billing & Payments link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Billings and Payments\billings_and_payments.html"
+                        class="nav-link">
+                        <i class="fas fa-credit-card"></i>
+                        Billing & Payments
+                    </a>
+                </li>
+
+                <!-- Messaging link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Messaging\messaging.html"
+                        class="nav-link">
+                        <i class="fas fa-comments"></i>
+                        Messaging
+                    </a>
+                </li>
+
+                <!-- Health Data & Records link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Health Data and Records\health_data_and_records.html"
+                        class="nav-link">
+                        <i class="fas fa-file-medical"></i>
+                        Health Data & Records
+                    </a>
+                </li>
+
+                <!-- Insights & Performance link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Insights and Performance\insights_and_performance.html"
+                        class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        Insights & Performance
+                    </a>
+                </li>
+
+                <!-- Settings link (current page) -->
+                <li class="nav-item active">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Settings\settings.html"
+                        class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="main-content">
+
+        <!-- Top header bar -->
+        <header class="top-header">
+            <div class="header-left">
+                <h1>Settings</h1>
+                <p class="page-subtitle">Configuration Control Center</p>
+            </div>
+
+            <div class="header-right">
+                <!-- Notifications button -->
+                <div class="notification-container">
+                    <button class="notification-btn" onclick="toggleNotifications()" aria-label="View notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                </div>
+
+                <!-- User profile dropdown -->
+                <div class="user-profile-container">
+                    <button class="user-profile-btn"
+                        onclick="window.location.href='file:///C:/Users/nderu/Documents/Development/Product/Curis/Users/Clinic%20Owner/My%20Profile/my_profile.html'"
+                        aria-label="Go to My Profile">
+                        <img src="file:///C:/Users/nderu/Documents/Development/Product/Curis/Technical%20Writings/Images/Icons/icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-image">
+                        <span class="profile-name">Dr. Sarah Wanjiku</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+
+                    <!-- User dropdown menu -->
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Settings\settings.html"
+                            class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            Settings
+                        </a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Landing Page\landing_page.html"
+                            class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Settings dashboard container -->
+        <div class="dashboard-container">
+
+            <!-- Working Hours Configuration Widget -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-clock"></i>
+                        Working Hours Configuration
+                    </h3>
+                    <button class="view-trends-btn" onclick="openWorkingHoursModal()">
+                        <i class="fas fa-edit"></i>
+                        Configure
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Set up your clinic's daily schedule and holiday management for
+                        optimal appointment booking.</p>
+
+                    <!-- Current schedule display -->
+                    <div class="current-schedule">
+                        <h4>Current Schedule</h4>
+                        <div class="schedule-grid">
+                            <div class="schedule-day">
+                                <strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM
+                            </div>
+                            <div class="schedule-day">
+                                <strong>Saturday:</strong> 9:00 AM - 3:00 PM
+                            </div>
+                            <div class="schedule-day">
+                                <strong>Sunday:</strong> Closed
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="openHolidayModal()">
+                            <i class="fas fa-calendar-times"></i>
+                            Manage Holidays
+                        </button>
+                        <button class="action-btn" onclick="syncRealTime()">
+                            <i class="fas fa-sync"></i>
+                            Real-time Sync
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Time Zone Management Widget -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-globe"></i>
+                        Time Zone Management
+                    </h3>
+                    <button class="status-legend-btn" onclick="openTimeZoneModal()">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Configure
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Manage time zone settings and daylight saving time adjustments for
+                        accurate scheduling.</p>
+
+                    <!-- Current timezone display -->
+                    <div class="timezone-info">
+                        <div class="metric-row">
+                            <span class="metric-label">Current Time Zone:</span>
+                            <span class="metric-number">East Africa Time (EAT)</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Current Local Time:</span>
+                            <span class="metric-number" id="currentTime">2:45 PM</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">DST Adjustment:</span>
+                            <span class="metric-number">Disabled</span>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="openDSTSettings()">
+                            <i class="fas fa-adjust"></i>
+                            DST Settings
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notification Settings Widget -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-bell"></i>
+                        Notification Settings
+                    </h3>
+                    <button class="top-performers-btn" onclick="openNotificationModal()">
+                        <i class="fas fa-cog"></i>
+                        Configure
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Configure notification recipients, triggers, and delivery channels
+                        for optimal communication.</p>
+
+                    <!-- Current notification settings -->
+                    <div class="notification-status">
+                        <div class="status-badges">
+                            <span class="status-badge completed">
+                                <i class="fas fa-envelope"></i>
+                                Email Enabled
+                            </span>
+                            <span class="status-badge pending">
+                                <i class="fas fa-sms"></i>
+                                SMS Enabled
+                            </span>
+                            <span class="status-badge in-progress">
+                                <i class="fas fa-mobile-alt"></i>
+                                In-App Enabled
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="openRecipientModal()">
+                            <i class="fas fa-users"></i>
+                            Recipients
+                        </button>
+                        <button class="action-btn" onclick="openTriggerModal()">
+                            <i class="fas fa-lightning-bolt"></i>
+                            Triggers
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment & Billing Preferences Widget -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-credit-card"></i>
+                        Payment & Billing Preferences
+                    </h3>
+                    <button class="view-trends-btn" onclick="openPaymentModal()">
+                        <i class="fas fa-money-bill-wave"></i>
+                        Configure
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Set payment frequency, auto-reconciliation, and payment method
+                        preferences.</p>
+
+                    <!-- Current payment settings -->
+                    <div class="payment-settings">
+                        <div class="metric-row">
+                            <span class="metric-label">Payment Frequency:</span>
+                            <span class="metric-number">Monthly</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Auto-Reconciliation:</span>
+                            <span class="metric-number">Enabled</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Primary Method:</span>
+                            <span class="metric-number">M-Pesa</span>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="openFrequencyModal()">
+                            <i class="fas fa-calendar"></i>
+                            Frequency
+                        </button>
+                        <button class="action-btn" onclick="openMethodsModal()">
+                            <i class="fas fa-credit-card"></i>
+                            Methods
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Privacy & Permissions Widget -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-shield-alt"></i>
+                        Data Privacy & Permissions
+                    </h3>
+                    <button class="status-legend-btn" onclick="openPrivacyModal()">
+                        <i class="fas fa-lock"></i>
+                        Configure
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Control staff access levels and data privacy settings for secure
+                        operations.</p>
+
+                    <!-- Permission summary -->
+                    <div class="permission-summary">
+                        <div class="category-breakdown">
+                            <div class="category-card consultation">
+                                <div class="category-title">Doctors</div>
+                                <div class="category-revenue">Full Access</div>
+                                <div class="category-percentage">Medical Records</div>
+                            </div>
+                            <div class="category-card prescription">
+                                <div class="category-title">Receptionists</div>
+                                <div class="category-revenue">Limited Access</div>
+                                <div class="category-percentage">Scheduling Only</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="openAccessMatrix()">
+                            <i class="fas fa-users-cog"></i>
+                            Access Matrix
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clinic Profile Updates Widget -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-hospital"></i>
+                        Clinic Profile Updates
+                    </h3>
+                    <button class="view-trends-btn" onclick="openProfileModal()">
+                        <i class="fas fa-edit"></i>
+                        Update
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Update clinic information, logo, contact details, and specialty
+                        management.</p>
+
+                    <!-- Current clinic info -->
+                    <div class="clinic-info">
+                        <div class="metric-row">
+                            <span class="metric-label">Clinic Name:</span>
+                            <span class="metric-number">Nairobi Medical Center</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Primary Specialty:</span>
+                            <span class="metric-number">General Practice</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Contact:</span>
+                            <span class="metric-number">+254 701 234 567</span>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="openSpecialtyModal()">
+                            <i class="fas fa-stethoscope"></i>
+                            Specialties
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backup & Data Export Widget -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-database"></i>
+                        Backup & Data Export
+                    </h3>
+                    <button class="top-performers-btn" onclick="openBackupModal()">
+                        <i class="fas fa-download"></i>
+                        Configure
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Set up automated backups and configure data export preferences.
+                    </p>
+
+                    <!-- Backup status -->
+                    <div class="backup-status">
+                        <div class="alert-item positive">
+                            <i class="fas fa-check-circle"></i>
+                            Auto-backup enabled - Monthly schedule
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Last Backup:</span>
+                            <span class="metric-number">January 15, 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="exportData()">
+                            <i class="fas fa-file-export"></i>
+                            Export Now
+                        </button>
+                        <button class="action-btn" onclick="openFormatModal()">
+                            <i class="fas fa-file-alt"></i>
+                            Format Options
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language & Localization Widget -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-language"></i>
+                        Language & Localization
+                    </h3>
+                    <button class="status-legend-btn" onclick="openLanguageModal()">
+                        <i class="fas fa-globe"></i>
+                        Configure
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Set language preferences and date format settings for your region.
+                    </p>
+
+                    <!-- Current language settings -->
+                    <div class="language-settings">
+                        <div class="metric-row">
+                            <span class="metric-label">Current Language:</span>
+                            <span class="metric-number">English (Default)</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Date Format:</span>
+                            <span class="metric-number">DD/MM/YYYY</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Currency:</span>
+                            <span class="metric-number">KES. (Kenyan Shilling)</span>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="openDateFormatModal()">
+                            <i class="fas fa-calendar-alt"></i>
+                            Date Format
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Options Widget -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-security"></i>
+                        Security Options
+                    </h3>
+                    <button class="view-trends-btn" onclick="openSecurityModal()">
+                        <i class="fas fa-key"></i>
+                        Configure
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Manage password settings and enable two-factor authentication for
+                        enhanced security.</p>
+
+                    <!-- Security status -->
+                    <div class="security-status">
+                        <div class="status-badges">
+                            <span class="status-badge completed">
+                                <i class="fas fa-lock"></i>
+                                Strong Password
+                            </span>
+                            <span class="status-badge no-show">
+                                <i class="fas fa-shield-alt"></i>
+                                2FA Disabled
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="openPasswordModal()">
+                            <i class="fas fa-key"></i>
+                            Change Password
+                        </button>
+                        <button class="action-btn" onclick="openTFAModal()">
+                            <i class="fas fa-mobile-alt"></i>
+                            Enable 2FA
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audit & Logging Widget -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-clipboard-list"></i>
+                        Audit & Logging
+                    </h3>
+                    <button class="top-performers-btn" onclick="openAuditModal()">
+                        <i class="fas fa-history"></i>
+                        View Logs
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">View system activity logs and export audit trails for compliance.
+                    </p>
+
+                    <!-- Recent activity -->
+                    <div class="recent-activity">
+                        <div class="activity-item">
+                            <div class="activity-avatar">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="User">
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-text">Working hours updated</div>
+                                <div class="activity-time">2 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-avatar">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="User">
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-text">Payment method configured</div>
+                                <div class="activity-time">1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="exportLogs()">
+                            <i class="fas fa-download"></i>
+                            Export Logs
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark mode toggle -->
+                <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <!-- Social media links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" class="social-link instagram" target="_blank"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" class="social-link twitter" target="_blank"
+                        aria-label="X (Twitter)">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" class="social-link facebook"
+                        target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" class="social-link youtube" target="_blank"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" class="social-link linkedin" target="_blank"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <!-- Corporate website link -->
+                <a href="https://citruslabs.co.ke/" class="corporate-link" target="_blank">citruslabs.co.ke</a>
+                <!-- Copyright -->
+                <span class="copyright">© 2025 Citrus Labs. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Notifications panel -->
+    <div class="notifications-panel" id="notificationsPanel">
+        <div class="notifications-header">
+            <h4 class="notifications-title">Notifications</h4>
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Notifications\notifications.html"
+                class="view-all-notifications">View All</a>
+        </div>
+        <div class="notifications-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>New Staff Member Added</h5>
+                    <p>Dr. John Kimani has been added to your workforce</p>
+                    <span class="notification-time">5 minutes ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Appointment Confirmed</h5>
+                    <p>Patient Jane Doe confirmed appointment for tomorrow</p>
+                    <span class="notification-time">1 hour ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Payment Received</h5>
+                    <p>KES. 3,500 payment received from patient</p>
+                    <span class="notification-time">3 hours ago</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auto-refresh indicator -->
+    <div class="auto-refresh-indicator" id="autoRefreshIndicator">
+        <i class="fas fa-sync-alt"></i>
+        <span>Syncing settings...</span>
+    </div>
+
+    <!-- MODALS SECTION -->
+
+    <!-- Working Hours Configuration Modal -->
+    <div class="modal" id="workingHoursModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Working Hours Configuration</h3>
+                <button class="modal-close" onclick="closeModal('workingHoursModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Daily Schedule Setup</label>
+                    <div class="schedule-config">
+                        <div class="day-schedule">
+                            <div class="form-group">
+                                <label>Monday</label>
+                                <div style="display: flex; gap: 1rem; align-items: center;">
+                                    <input type="time" class="form-control" value="08:00" style="width: 120px;">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" value="18:00" style="width: 120px;">
+                                    <label style="margin: 0;"><input type="checkbox" checked> Open</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Tuesday</label>
+                                <div style="display: flex; gap: 1rem; align-items: center;">
+                                    <input type="time" class="form-control" value="08:00" style="width: 120px;">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" value="18:00" style="width: 120px;">
+                                    <label style="margin: 0;"><input type="checkbox" checked> Open</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Wednesday</label>
+                                <div style="display: flex; gap: 1rem; align-items: center;">
+                                    <input type="time" class="form-control" value="08:00" style="width: 120px;">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" value="18:00" style="width: 120px;">
+                                    <label style="margin: 0;"><input type="checkbox" checked> Open</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Thursday</label>
+                                <div style="display: flex; gap: 1rem; align-items: center;">
+                                    <input type="time" class="form-control" value="08:00" style="width: 120px;">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" value="18:00" style="width: 120px;">
+                                    <label style="margin: 0;"><input type="checkbox" checked> Open</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Friday</label>
+                                <div style="display: flex; gap: 1rem; align-items: center;">
+                                    <input type="time" class="form-control" value="08:00" style="width: 120px;">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" value="18:00" style="width: 120px;">
+                                    <label style="margin: 0;"><input type="checkbox" checked> Open</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Saturday</label>
+                                <div style="display: flex; gap: 1rem; align-items: center;">
+                                    <input type="time" class="form-control" value="09:00" style="width: 120px;">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" value="15:00" style="width: 120px;">
+                                    <label style="margin: 0;"><input type="checkbox" checked> Open</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Sunday</label>
+                                <div style="display: flex; gap: 1rem; align-items: center;">
+                                    <input type="time" class="form-control" value="09:00" style="width: 120px;">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" value="17:00" style="width: 120px;">
+                                    <label style="margin: 0;"><input type="checkbox"> Open</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quick-actions" style="margin-top: 1rem;">
+                            <button class="action-btn" onclick="applyToAllDays()">
+                                <i class="fas fa-copy"></i>
+                                Apply Monday Hours to All
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('workingHoursModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveWorkingHours()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Holiday Management Modal -->
+    <div class="modal" id="holidayModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Holiday Management</h3>
+                <button class="modal-close" onclick="closeModal('holidayModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Mark Closed Days</label>
+                    <input type="date" class="form-control" id="holidayDate">
+                    <button class="action-btn" onclick="addHoliday()" style="margin-top: 0.5rem;">
+                        <i class="fas fa-plus"></i>
+                        Add Holiday
+                    </button>
+                </div>
+                <div class="form-group">
+                    <label>Current Holidays</label>
+                    <div class="holiday-list">
+                        <div class="holiday-item">
+                            <span>January 1, 2025 - New Year's Day</span>
+                            <button class="btn-secondary" onclick="removeHoliday(this)">Remove</button>
+                        </div>
+                        <div class="holiday-item">
+                            <span>December 25, 2025 - Christmas Day</span>
+                            <button class="btn-secondary" onclick="removeHoliday(this)">Remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Recurring Holidays</label>
+                    <div class="recurring-holidays">
+                        <label><input type="checkbox" checked> Kenya Independence Day (Dec 12)</label>
+                        <label><input type="checkbox" checked> Mashujaa Day (Oct 20)</label>
+                        <label><input type="checkbox" checked> Good Friday (Variable)</label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('holidayModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveHolidays()">Save Holidays</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Time Zone Modal -->
+    <div class="modal" id="timeZoneModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Time Zone Configuration</h3>
+                <button class="modal-close" onclick="closeModal('timeZoneModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Region Search</label>
+                    <input type="text" class="form-control" placeholder="Search cities or regions..."
+                        value="Nairobi, Kenya">
+                </div>
+                <div class="form-group">
+                    <label>Available Time Zones</label>
+                    <select class="form-control">
+                        <option value="EAT" selected>East Africa Time (EAT) - UTC+3</option>
+                        <option value="CAT">Central Africa Time (CAT) - UTC+2</option>
+                        <option value="WAT">West Africa Time (WAT) - UTC+1</option>
+                        <option value="UTC">Coordinated Universal Time (UTC)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Current Local Time Preview</label>
+                    <div class="time-preview">
+                        <h4 style="color: var(--accent-teal);">14:45:32</h4>
+                        <p>Sunday, June 01, 2025</p>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('timeZoneModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveTimeZone()">Apply Time Zone</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DST Settings Modal -->
+    <div class="modal" id="dstModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Daylight Saving Time Settings</h3>
+                <button class="modal-close" onclick="closeModal('dstModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Auto DST Adjustment</label>
+                    <label style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox"> Enable automatic DST adjustments
+                    </label>
+                    <p style="color: var(--medium-gray); font-size: 0.9rem; margin-top: 0.5rem;">
+                        Note: Kenya does not observe daylight saving time
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label>DST Change Alerts</label>
+                    <label style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox"> Receive notifications before DST changes
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('dstModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveDSTSettings()">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Configuration Modal -->
+    <div class="modal" id="notificationModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Notification Configuration</h3>
+                <button class="modal-close" onclick="closeModal('notificationModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Notification Channels</label>
+                    <div class="channel-toggles">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox" checked> Email Notifications
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox" checked> SMS Notifications
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" checked> In-App Notifications
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Notification Recipients</label>
+                    <div class="recipient-options">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="radio" name="recipients" value="owner" checked> Clinic Owner Only
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="radio" name="recipients" value="all"> All Staff Members
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="radio" name="recipients" value="custom"> Custom Selection
+                        </label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('notificationModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveNotificationSettings()">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Triggers Modal -->
+    <div class="modal" id="triggerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Notification Triggers</h3>
+                <button class="modal-close" onclick="closeModal('triggerModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Appointment Triggers</label>
+                    <div class="trigger-options">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox" checked> New Appointment Booked
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox" checked> Appointment Cancelled
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" checked> Appointment Rescheduled
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Payment Triggers</label>
+                    <div class="trigger-options">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox" checked> Payment Successful
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" checked> Payment Failed
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Billing Triggers</label>
+                    <div class="trigger-options">
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" checked> Upcoming Billing Deductions
+                        </label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('triggerModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveTriggerSettings()">Save Triggers</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Frequency Modal -->
+    <div class="modal" id="frequencyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Payment Frequency Settings</h3>
+                <button class="modal-close" onclick="closeModal('frequencyModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Payment Frequency</label>
+                    <div class="frequency-options">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="radio" name="frequency" value="weekly"> Weekly
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="radio" name="frequency" value="biweekly"> Bi-Weekly
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="radio" name="frequency" value="monthly" checked> Monthly
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Preview Calculator</label>
+                    <div class="preview-calc">
+                        <div class="metric-row">
+                            <span class="metric-label">Estimated Monthly Revenue:</span>
+                            <span class="metric-number">KES. 85,000</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Platform Fee (3%):</span>
+                            <span class="metric-number">KES. 2,550</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Net Amount:</span>
+                            <span class="metric-number">KES. 82,450</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('frequencyModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveFrequencySettings()">Apply Frequency</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Methods Modal -->
+    <div class="modal" id="methodsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Payment Methods Configuration</h3>
+                <button class="modal-close" onclick="closeModal('methodsModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>M-Pesa Configuration</label>
+                    <div class="mpesa-config">
+                        <div class="form-group">
+                            <label>Till Number</label>
+                            <input type="text" class="form-control" placeholder="Enter Till Number" value="123456">
+                        </div>
+                        <div class="form-group">
+                            <label>Paybill Number</label>
+                            <input type="text" class="form-control" placeholder="Enter Paybill Number" value="987654">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Auto-Reconciliation</label>
+                    <label style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" checked> Enable automatic payment matching
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Future Payment Methods</label>
+                    <div class="future-methods">
+                        <div
+                            style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; color: var(--medium-gray);">
+                            <input type="checkbox" disabled> Bank Transfer (Coming Soon)
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--medium-gray);">
+                            <input type="checkbox" disabled> PayPal (Coming Soon)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('methodsModal')">Cancel</button>
+                    <button class="btn-primary" onclick="savePaymentMethods()">Save Methods</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Access Control Matrix Modal -->
+    <div class="modal" id="accessMatrix">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Access Control Matrix</h3>
+                <button class="modal-close" onclick="closeModal('accessMatrix')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Doctor Permissions</label>
+                    <div class="permission-grid">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox" checked> Full Medical Records Access
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox" checked> Appointment Management
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox"> Financial Reports Access
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox"> Billing History Access
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Receptionist Permissions</label>
+                    <div class="permission-grid">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox" checked> Appointment Scheduling
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox" checked> Basic Patient Information
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox"> Medical Records Access
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox"> Financial Data Access
+                        </label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('accessMatrix')">Cancel</button>
+                    <button class="btn-primary" onclick="saveAccessMatrix()">Save Permissions</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clinic Profile Modal -->
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Clinic Profile Update</h3>
+                <button class="modal-close" onclick="closeModal('profileModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Clinic Name</label>
+                    <input type="text" class="form-control" value="Nairobi Medical Center" maxlength="100">
+                    <small>Maximum 100 characters</small>
+                </div>
+                <div class="form-group">
+                    <label>Logo Upload</label>
+                    <input type="file" class="form-control" accept="image/*">
+                    <small>Recommended size: 200x200px, Max: 2MB</small>
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control" placeholder="Street Address" value="123 Uhuru Highway">
+                    <input type="text" class="form-control" placeholder="City" value="Nairobi"
+                        style="margin-top: 0.5rem;">
+                    <input type="text" class="form-control" placeholder="Postal Code" value="00100"
+                        style="margin-top: 0.5rem;">
+                </div>
+                <div class="form-group">
+                    <label>Contact Details</label>
+                    <input type="tel" class="form-control" placeholder="Phone Number" value="+254 701 234 567">
+                    <input type="email" class="form-control" placeholder="Email Address" value="info@nairobimed.co.ke"
+                        style="margin-top: 0.5rem;">
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('profileModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveProfile()">Update Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Specialty Management Modal -->
+    <div class="modal" id="specialtyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Specialty Management</h3>
+                <button class="modal-close" onclick="closeModal('specialtyModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Primary Specialty</label>
+                    <select class="form-control">
+                        <option value="general" selected>General Practice</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="dermatology">Dermatology</option>
+                        <option value="pediatrics">Pediatrics</option>
+                        <option value="orthopedics">Orthopedics</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Additional Specialties</label>
+                    <div class="specialty-list">
+                        <div class="specialty-item">
+                            <span>Internal Medicine</span>
+                            <button class="btn-secondary" onclick="removeSpecialty(this)">Remove</button>
+                        </div>
+                        <div class="specialty-item">
+                            <span>Family Medicine</span>
+                            <button class="btn-secondary" onclick="removeSpecialty(this)">Remove</button>
+                        </div>
+                    </div>
+                    <div class="add-specialty">
+                        <select class="form-control">
+                            <option value="">Select specialty to add</option>
+                            <option value="emergency">Emergency Medicine</option>
+                            <option value="surgery">General Surgery</option>
+                            <option value="psychiatry">Psychiatry</option>
+                        </select>
+                        <button class="action-btn" onclick="addSpecialty()" style="margin-top: 0.5rem;">
+                            <i class="fas fa-plus"></i>
+                            Add Specialty
+                        </button>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('specialtyModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveSpecialties()">Save Specialties</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Backup Configuration Modal -->
+    <div class="modal" id="backupModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Backup Configuration</h3>
+                <button class="modal-close" onclick="closeModal('backupModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Auto-Backup Settings</label>
+                    <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <input type="checkbox" checked> Enable automatic backups
+                    </label>
+                    <select class="form-control">
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly" selected>Monthly</option>
+                        <option value="quarterly">Quarterly</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Backup Types</label>
+                    <div class="backup-types">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox" checked> Financial Data
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox" checked> Appointment Records
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="checkbox" checked> Patient Information
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" checked> All Data
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Delivery Method</label>
+                    <div class="delivery-options">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="radio" name="delivery" value="email" checked> Email Delivery
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="radio" name="delivery" value="download"> Direct Download
+                        </label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('backupModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveBackupSettings()">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Format Modal -->
+    <div class="modal" id="formatModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Export Format Selection</h3>
+                <button class="modal-close" onclick="closeModal('formatModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Export Format</label>
+                    <div class="format-options">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="radio" name="format" value="csv" checked> CSV Format (Raw Data)
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="radio" name="format" value="pdf"> PDF Format (Formatted Reports)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Date Range</label>
+                    <div style="display: flex; gap: 1rem;">
+                        <input type="date" class="form-control" value="2025-01-01">
+                        <input type="date" class="form-control" value="2025-06-01">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('formatModal')">Cancel</button>
+                    <button class="btn-primary" onclick="exportData()">Export Data</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Selection Modal -->
+    <div class="modal" id="languageModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Language Selection</h3>
+                <button class="modal-close" onclick="closeModal('languageModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Select Language</label>
+                    <div class="language-options">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="radio" name="language" value="en" checked> English (Default)
+                        </label>
+                        <label
+                            style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; color: var(--medium-gray);">
+                            <input type="radio" name="language" value="sw" disabled> Kiswahili (Coming Soon)
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--medium-gray);">
+                            <input type="radio" name="language" value="fr" disabled> Français (Coming Soon)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Regional Settings</label>
+                    <select class="form-control">
+                        <option value="ke" selected>Kenya</option>
+                        <option value="tz">Tanzania</option>
+                        <option value="ug">Uganda</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('languageModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveLanguageSettings()">Apply Language</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Date Format Modal -->
+    <div class="modal" id="dateFormatModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Date Format Settings</h3>
+                <button class="modal-close" onclick="closeModal('dateFormatModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Date Format</label>
+                    <div class="format-options">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="radio" name="dateFormat" value="ddmmyyyy" checked> DD/MM/YYYY (01/06/2025)
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="radio" name="dateFormat" value="mmddyyyy"> MM/DD/YYYY (06/01/2025)
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="radio" name="dateFormat" value="yyyymmdd"> YYYY-MM-DD (2025-06-01)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Time Format</label>
+                    <div class="format-options">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="radio" name="timeFormat" value="24h" checked> 24 Hour (14:45)
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="radio" name="timeFormat" value="12h"> 12 Hour (2:45 PM)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('dateFormatModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveDateFormat()">Apply Format</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Password Update Modal -->
+    <div class="modal" id="passwordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Change Password</h3>
+                <button class="modal-close" onclick="closeModal('passwordModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Current Password</label>
+                    <input type="password" class="form-control" placeholder="Enter current password">
+                </div>
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input type="password" class="form-control" placeholder="Enter new password">
+                    <div class="password-strength">
+                        <div class="strength-bar">
+                            <div class="strength-fill" style="width: 60%; background: var(--warning-yellow);"></div>
+                        </div>
+                        <small>Medium strength - Add special characters for stronger security</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Confirm New Password</label>
+                    <input type="password" class="form-control" placeholder="Confirm new password">
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('passwordModal')">Cancel</button>
+                    <button class="btn-primary" onclick="updatePassword()">Update Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Two-Factor Authentication Modal -->
+    <div class="modal" id="tfaModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Two-Factor Authentication Setup</h3>
+                <button class="modal-close" onclick="closeModal('tfaModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Authenticator App Setup</label>
+                    <p>Scan this QR code with your authenticator app (Google Authenticator, Authy, etc.)</p>
+                    <div class="qr-code-placeholder">
+                        <div
+                            style="width: 200px; height: 200px; background: var(--light-gray); border: 2px dashed var(--medium-gray); display: flex; align-items: center; justify-content: center; margin: 1rem auto;">
+                            <i class="fas fa-qrcode" style="font-size: 3rem; color: var(--medium-gray);"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Verification Code</label>
+                    <input type="text" class="form-control" placeholder="Enter 6-digit code from app" maxlength="6">
+                </div>
+                <div class="form-group">
+                    <label>Backup Codes</label>
+                    <p style="font-size: 0.9rem; color: var(--medium-gray);">Save these backup codes in a secure
+                        location. Each can only be used once.</p>
+                    <div class="backup-codes">
+                        <code>123-456-789</code>
+                        <code>987-654-321</code>
+                        <code>456-789-123</code>
+                        <code>654-321-987</code>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('tfaModal')">Cancel</button>
+                    <button class="btn-primary" onclick="enableTFA()">Enable 2FA</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audit Log Modal -->
+    <div class="modal" id="auditModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Audit & Change Log</h3>
+                <button class="modal-close" onclick="closeModal('auditModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Filter Options</label>
+                    <div style="display: flex; gap: 1rem;">
+                        <select class="form-control">
+                            <option value="all">All Users</option>
+                            <option value="owner">Clinic Owner</option>
+                            <option value="doctors">Doctors</option>
+                            <option value="reception">Reception</option>
+                        </select>
+                        <input type="date" class="form-control" value="2025-06-01">
+                        <select class="form-control">
+                            <option value="all">All Actions</option>
+                            <option value="settings">Settings Changes</option>
+                            <option value="appointments">Appointments</option>
+                            <option value="payments">Payments</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Recent Activity Log</label>
+                    <div class="audit-log">
+                        <div class="log-entry">
+                            <div class="log-time">2025-06-01 14:30</div>
+                            <div class="log-user">Dr. Sarah Wanjiku</div>
+                            <div class="log-action">Updated working hours</div>
+                            <div class="log-details">
+                                <strong>Before:</strong> Mon-Fri 9:00-17:00<br>
+                                <strong>After:</strong> Mon-Fri 8:00-18:00
+                            </div>
+                        </div>
+                        <div class="log-entry">
+                            <div class="log-time">2025-06-01 12:15</div>
+                            <div class="log-user">Dr. Sarah Wanjiku</div>
+                            <div class="log-action">Configured M-Pesa payment</div>
+                            <div class="log-details">
+                                <strong>Before:</strong> Not configured<br>
+                                <strong>After:</strong> Till: 123456, Paybill: 987654
+                            </div>
+                        </div>
+                        <div class="log-entry">
+                            <div class="log-time">2025-05-31 16:45</div>
+                            <div class="log-user">Dr. Sarah Wanjiku</div>
+                            <div class="log-action">Added new specialty</div>
+                            <div class="log-details">
+                                <strong>Added:</strong> Internal Medicine
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="exportAuditLogs()">Export Logs</button>
+                    <button class="btn-primary" onclick="closeModal('auditModal')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="settings.js"></script>
+</body>
+
+</html>

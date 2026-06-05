@@ -1,0 +1,214 @@
+flowchart TD
+    %% Entry Points
+    Login[Clinic Owner Login] --> FirstTimeCheck{First Time User?}
+    FirstTimeCheck -->|No| DashboardMain[Dashboard<br/>Command Center]
+    FirstTimeCheck -->|Yes| Registration[Registration & Setup]
+    Registration --> DashboardMain
+    
+    %% Dashboard Main Components
+    DashboardMain --> PerfOverview[Performance Overview<br/>Live Metrics Display]
+    DashboardMain --> FinancialSnapshot[Financial Snapshot<br/>Charts & Breakdowns]
+    DashboardMain --> AppointmentsSummary[Appointments Summary<br/>Status Tracker]
+    DashboardMain --> StaffActivity[Staff Activity<br/>Performance Snapshot]
+    DashboardMain --> PatientEngagement[Patient Engagement<br/>Overview]
+    DashboardMain --> SmartAlerts[Smart Alerts Panel<br/>System Notifications]
+    DashboardMain --> CustomWidgets[Customizable Widgets<br/>Dashboard Configuration]
+    
+    %% Performance Overview Branch
+    PerfOverview --> TimeFilter[Time Filter Dropdown]
+    TimeFilter --> DailyFilter[Daily View]
+    TimeFilter --> WeeklyFilter[Weekly View]
+    TimeFilter --> MonthlyFilter[Monthly View]
+    TimeFilter --> CustomDateRange[Custom Date Range<br/>Date Picker Modal]
+    
+    PerfOverview --> AppointmentCounter[Appointment Counter<br/>Real-time Updates]
+    AppointmentCounter --> TodayAppts[Today's Appointments<br/>Live Count]
+    AppointmentCounter --> WeekAppts[This Week's Total<br/>Aggregated Count]
+    
+    PerfOverview --> RevenueDisplay[Revenue Display<br/>Interactive Charts]
+    RevenueDisplay --> RevenueModal[Revenue Details Modal]
+    RevenueModal --> DailyRevenue[Daily Revenue<br/>Service Breakdown]
+    RevenueModal --> WeeklyRevenue[Weekly Revenue<br/>Trend Analysis]
+    RevenueModal --> MonthlyRevenue[Monthly Revenue<br/>YoY Comparison]
+    
+    PerfOverview --> OutstandingPayments[Outstanding Payments<br/>Click for Details]
+    OutstandingPayments --> OutstandingModal[Outstanding Details Modal<br/>Patient List/Amounts]
+    
+    PerfOverview --> NewRegistrations[New Patient Registrations<br/>Period Counter]
+    
+    %% Financial Snapshot Branch
+    FinancialSnapshot --> RevenueTrends[Revenue Trends Button]
+    RevenueTrends --> TrendsModal[Revenue Trends Modal]
+    TrendsModal --> LineGraphView[Line Graph View<br/>Time Series]
+    TrendsModal --> BarGraphView[Bar Graph View<br/>Category Comparison]
+    TrendsModal --> TrendFilters[Trend Filters<br/>Service/Doctor/Period]
+    
+    FinancialSnapshot --> ServiceChargeDeductions[Service Charge Deductions<br/>Curis Platform Fees]
+    ServiceChargeDeductions --> DeductionDetails[Deduction Details<br/>Percentage/Amount]
+    
+    FinancialSnapshot --> NetEarnings[Net Earnings Display<br/>After Deductions]
+    
+    FinancialSnapshot --> CategoryBreakdown[Category Breakdown Cards]
+    CategoryBreakdown --> ConsultationRevenue[Consultations<br/>Revenue Card]
+    CategoryBreakdown --> PrescriptionRevenue[Prescriptions<br/>Revenue Card]
+    CategoryBreakdown --> ProcedureRevenue[Procedures<br/>Revenue Card]
+    
+    FinancialSnapshot --> QuickLinkBilling[Quick Link Button<br/>Jump to Billing]
+    QuickLinkBilling --> BillingsModule[Billings & Payments Module]
+    
+    %% Appointments Summary Branch
+    AppointmentsSummary --> LiveTracker[Live Appointment Tracker]
+    LiveTracker --> ScheduledToday[Scheduled Today<br/>Real-time Count]
+    LiveTracker --> CancelledToday[Cancelled/Rescheduled<br/>Today's Count]
+    LiveTracker --> NoShowRate[No-show Rate<br/>Percentage Display]
+    
+    AppointmentsSummary --> StatusBadges[Status Badge Legend]
+    StatusBadges --> BadgeModal[Status Legend Modal]
+    BadgeModal --> CompletedBadge[Green = Completed]
+    BadgeModal --> PendingBadge[Yellow = Pending]
+    BadgeModal --> NoShowBadge[Red = No-show]
+    BadgeModal --> InProgressBadge[Blue = In Progress]
+    
+    AppointmentsSummary --> ViewAllAppts[View All Appointments<br/>Navigate Button]
+    ViewAllAppts --> AppointmentsModule[Appointments Module]
+    
+    %% Staff Activity Branch
+    StaffActivity --> TopPerformers[Top Performers Button]
+    TopPerformers --> PerformersModal[Top Performers Modal]
+    PerformersModal --> WeeklyRankings[Weekly Rankings<br/>Performance Metrics]
+    PerformersModal --> MetricDetails[Metrics Details<br/>Appts/Feedback/Punctuality]
+    PerformersModal --> StaffComparison[Staff Comparison View<br/>Side-by-Side]
+    
+    StaffActivity --> ActivityLogFeed[Activity Log Feed<br/>Real-time Updates]
+    ActivityLogFeed --> LogEntry1[Dr. Kamau completed consultation]
+    ActivityLogFeed --> LogEntry2[Receptionist A confirmed 3 appts]
+    ActivityLogFeed --> LogEntry3[Dr. Wanjiru marked no-show]
+    ActivityLogFeed --> ViewFullLog[View Full Activity Log]
+    
+    StaffActivity --> QuickAddStaff[Quick Add Staff Button]
+    QuickAddStaff --> StaffCreationModal[Staff Creation Modal<br/>Doctor/Receptionist]
+    StaffCreationModal --> WorkforceModule[Navigate to Workforce Hub]
+    
+    %% Patient Engagement Branch
+    PatientEngagement --> RegistrationMetrics[Registration Metrics]
+    RegistrationMetrics --> DailyRegs[Daily Registrations]
+    RegistrationMetrics --> WeeklyRegs[Weekly Registrations]
+    RegistrationMetrics --> MonthlyRegs[Monthly Registrations]
+    
+    PatientEngagement --> RequestedServices[Most Requested Services<br/>Top 5 List]
+    RequestedServices --> ServiceDetailsModal[Service Details Modal<br/>Usage Analytics]
+    
+    PatientEngagement --> SatisfactionAlerts[Patient Satisfaction Alerts]
+    SatisfactionAlerts --> NegativeFeedback[Negative Feedback Alert<br/>Threshold Breach]
+    SatisfactionAlerts --> FeedbackTrend[Feedback Trend Analysis<br/>Historical View]
+    
+    %% Smart Alerts Panel Branch
+    SmartAlerts --> AlertCounter[Alert Counter Badge<br/>e.g., 3 Payment Issues]
+    SmartAlerts --> AlertCategories[Alert Categories]
+    AlertCategories --> LowBookings[Low Appointment Bookings<br/>Below Threshold]
+    AlertCategories --> PendingPayments[Pending Payment Confirmations]
+    AlertCategories --> StaffInactivity[Staff Inactivity Alerts]
+    
+    SmartAlerts --> AlertDetails[Alert Details Button]
+    AlertDetails --> AlertModal[Alert Details Modal]
+    AlertModal --> IssueBreakdown[Issue Breakdown<br/>Root Cause Analysis]
+    AlertModal --> SuggestedActions[Suggested Actions<br/>Resolution Steps]
+    AlertModal --> DismissAlert[Dismiss Alert Button]
+    AlertModal --> NavigateToIssue[Navigate to Issue<br/>Context Switch]
+    
+    %% Customizable Widgets Branch
+    CustomWidgets --> WidgetSettings[Widget Settings Button]
+    WidgetSettings --> SettingsModal[Widget Settings Modal]
+    SettingsModal --> AddRemoveWidgets[Add/Remove Panels<br/>Toggle Switches]
+    AddRemoveWidgets --> RevenueWidget[Revenue Widget Toggle]
+    AddRemoveWidgets --> AppointmentWidget[Appointment Widget Toggle]
+    AddRemoveWidgets --> StaffWidget[Staff Activity Toggle]
+    AddRemoveWidgets --> PatientWidget[Patient Engagement Toggle]
+    
+    SettingsModal --> LayoutCustomization[Layout Customization]
+    LayoutCustomization --> DragDropInterface[Drag-and-Drop Interface]
+    DragDropInterface --> SaveLayout[Save Layout Button]
+    DragDropInterface --> ResetDefault[Reset to Default]
+    
+    %% Main Navigation Hub
+    DashboardMain --> MainNavigation[Main Navigation Menu]
+    MainNavigation --> NavWorkforce[Workforce Hub]
+    MainNavigation --> NavServices[Clinic Services Hub]
+    MainNavigation --> NavAppointments[Appointments]
+    MainNavigation --> NavBillings[Billings & Payments]
+    MainNavigation --> NavHealthData[Health Data & Records]
+    MainNavigation --> NavSettings[Settings]
+    MainNavigation --> NavInsights[Insights & Performance]
+    MainNavigation --> NavNotifications[Notifications]
+    
+    %% Navigation to Modules
+    NavWorkforce --> WorkforceHub[Workforce Hub Module]
+    NavServices --> ClinicServices[Clinic Services Hub Module]
+    NavAppointments --> Appointments[Appointments Module]
+    NavBillings --> Billings[Billings & Payments Module]
+    NavHealthData --> HealthData[Health Data & Records Module]
+    NavSettings --> Settings[Settings Module]
+    NavInsights --> InsightsPerf[Insights & Performance Module]
+    NavNotifications --> Notifications[Notifications Module]
+    
+    %% Data Integration Points (Incoming)
+    
+    %% From Registration & Setup
+    Registration -.->|Initial Clinic Data| DashboardMain
+    Registration -.->|Service Configuration| CategoryBreakdown
+    Registration -.->|Staff Setup| StaffActivity
+    
+    %% From Appointments
+    Appointments -.->|Real-time Counts| AppointmentCounter
+    Appointments -.->|Status Updates| LiveTracker
+    Appointments -.->|No-show Data| NoShowRate
+    
+    %% From Billings & Payments
+    Billings -.->|Revenue Data| RevenueDisplay
+    Billings -.->|Outstanding Info| OutstandingPayments
+    Billings -.->|Service Charges| ServiceChargeDeductions
+    
+    %% From Workforce Hub
+    WorkforceHub -.->|Staff Performance| TopPerformers
+    WorkforceHub -.->|Activity Logs| ActivityLogFeed
+    
+    %% From Health Data & Records
+    HealthData -.->|Patient Registrations| NewRegistrations
+    HealthData -.->|Patient Metrics| RegistrationMetrics
+    
+    %% From Insights & Performance
+    InsightsPerf -.->|Analytics Summary| RevenueTrends
+    InsightsPerf -.->|Service Usage| RequestedServices
+    
+    %% From Notifications
+    Notifications -.->|Alert Count| AlertCounter
+    Notifications -.->|Priority Alerts| SmartAlerts
+    
+    %% From Settings
+    Settings -.->|Widget Preferences| CustomWidgets
+    Settings -.->|Time Zone| TimeFilter
+    
+    %% From Clinic Services
+    ClinicServices -.->|Service Categories| CategoryBreakdown
+    ClinicServices -.->|Popular Services| RequestedServices
+    
+    %% Refresh & Auto-Update
+    DashboardMain --> AutoRefresh[Auto-Refresh Timer<br/>30-second intervals]
+    AutoRefresh --> DataSync[Data Synchronization<br/>All Widgets Update]
+    
+    %% Styling
+    classDef mainHub fill:#2563eb,stroke:#1e40af,stroke-width:3px,color:#fff
+    classDef widget fill:#7c3aed,stroke:#6d28d9,stroke-width:2px,color:#fff
+    classDef modal fill:#059669,stroke:#047857,stroke-width:2px,color:#fff
+    classDef action fill:#dc2626,stroke:#b91c1c,stroke-width:2px,color:#fff
+    classDef navigation fill:#ea580c,stroke:#c2410c,stroke-width:2px,color:#fff
+    classDef integration fill:#f59e0b,stroke:#d97706,stroke-width:2px,stroke-dasharray: 5 5
+    classDef alert fill:#ef4444,stroke:#dc2626,stroke-width:2px,color:#fff
+    
+    class DashboardMain mainHub
+    class PerfOverview,FinancialSnapshot,AppointmentsSummary,StaffActivity,PatientEngagement,SmartAlerts,CustomWidgets widget
+    class RevenueModal,TrendsModal,BadgeModal,PerformersModal,StaffCreationModal,ServiceDetailsModal,AlertModal,SettingsModal,CustomDateRange modal
+    class QuickLinkBilling,ViewAllAppts,QuickAddStaff,AlertDetails,WidgetSettings,SaveLayout action
+    class MainNavigation,NavWorkforce,NavServices,NavAppointments,NavBillings,NavHealthData,NavSettings,NavInsights,NavNotifications navigation
+    class Registration,Appointments,Billings,WorkforceHub,HealthData,InsightsPerf,Notifications,Settings,ClinicServices integration
+    class LowBookings,PendingPayments,StaffInactivity,NegativeFeedback alert

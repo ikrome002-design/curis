@@ -1,0 +1,294 @@
+flowchart TD
+    %% My Medical Cover Main Page
+    J[My Medical Cover Page] --> J_HEADER[Page Header<br/>Navigation & Context]
+    J_HEADER --> J_NAV[Navigation Bar<br/>Main menu access]
+    J_NAV --> E[Dashboard]
+    J_NAV --> F[My Appointments]
+    J_NAV --> G[My Health Care]
+    J_NAV --> H[Billings & Payments]
+    J_NAV --> I[Emergency Care]
+    J_NAV --> K[My Profile]
+    
+    %% Family-based Claims Section
+    J --> J1[Family-based Claims<br/>Multi-user processing]
+    J1 --> J1_VIEW[Claims Overview<br/>Family claims dashboard]
+    J1_VIEW --> J1_STATS[Claim Statistics<br/>Summary cards]
+    J1_STATS --> J1_S1[Pending Claims<br/>In review]
+    J1_STATS --> J1_S2[Approved Claims<br/>Completed]
+    J1_STATS --> J1_S3[Total Claims<br/>All submissions]
+    
+    %% Multi-user Invoice Generation
+    J1 --> J1a[Multi-user Invoice Generation<br/>Family claims]
+    J1a --> J1a_BUTTON{Create Claim Button}
+    J1a_BUTTON --> J1a_MODAL[Create Claim Modal<br/>Claim initiation]
+    
+    J1a_MODAL --> J1a1[Patient Selection<br/>Claim beneficiary]
+    J1a1 --> J1a1_DROP{Member Dropdown}
+    J1a1_DROP --> J1a1_LIST[Family List<br/>All members]
+    J1a1_LIST --> J1a1_L1[Self<br/>Primary patient]
+    J1a1_LIST --> J1a1_L2[Child 1<br/>Dependent]
+    J1a1_LIST --> J1a1_L3[Child 2<br/>Dependent]
+    J1a1_LIST --> J1a1_SELECT{Select Member}
+    
+    J1a_MODAL --> J1a2[Invoice Association<br/>Bill selection]
+    J1a2 --> J1a2_LIST[Available Invoices<br/>Paid bills only]
+    J1a2_LIST --> J1a2_FILTER[Filter Options<br/>Refine selection]
+    J1a2_FILTER --> J1a2_F1[Date Range<br/>Time period]
+    J1a2_FILTER --> J1a2_F2[Clinic Filter<br/>Provider]
+    J1a2_FILTER --> J1a2_F3[Service Filter<br/>Treatment type]
+    J1a2_LIST --> J1a2_CHECK[Invoice Selection<br/>Multiple choice]
+    J1a2_CHECK --> J1a2_C1[Clinic Name<br/>Provider info]
+    J1a2_CHECK --> J1a2_C2[Service Details<br/>Treatment info]
+    J1a2_CHECK --> J1a2_C3[Doctor Info<br/>Provider name]
+    J1a2_CHECK --> J1a2_C4[Amount Paid<br/>Cost details]
+    
+    %% User Context Switch
+    J1 --> J1b[User Context Switch<br/>Member interface]
+    J1b --> J1b_SWITCHER[Profile Switcher<br/>Active member]
+    J1b_SWITCHER --> J1b_CLICK{Switcher Click}
+    J1b_CLICK --> J1b_DROP[Member Dropdown<br/>Family selection]
+    J1b_DROP --> J1b1[Selected User Display<br/>Active member]
+    J1b1 --> J1b1_PHOTO[Profile Photo<br/>Visual ID]
+    J1b1 --> J1b1_NAME[Member Name<br/>Full name]
+    J1b1 --> J1b1_AGE[Age Display<br/>Years old]
+    
+    J1b_DROP --> J1b2[Real-time Data Update<br/>Context refresh]
+    J1b2 --> J1b2_MED[Medical History<br/>Member records]
+    J1b2 --> J1b2_BILL[Billing Data<br/>Member invoices]
+    J1b2 --> J1b2_POLICY[Policy Info<br/>Insurance details]
+    
+    %% Claim Type Selection
+    J1 --> J1c[Claim Type Selection<br/>Category choice]
+    J1c --> J1c_GRID[Type Selection Grid<br/>Claim categories]
+    J1c_GRID --> J1c1[Outpatient Claims<br/>Clinic visits]
+    J1c1 --> J1c1_ICON[Clinic Icon<br/>Visual indicator]
+    J1c1 --> J1c1_DESC[Description<br/>Regular visits]
+    
+    J1c_GRID --> J1c2[Inpatient Claims<br/>Hospital stays]
+    J1c2 --> J1c2_ICON[Hospital Icon<br/>Visual indicator]
+    J1c2 --> J1c2_DESC[Description<br/>Admission care]
+    
+    J1c_GRID --> J1c3[Specialist Claims<br/>Specialized care]
+    J1c3 --> J1c3_ICON[Specialist Icon<br/>Visual indicator]
+    J1c3 --> J1c3_DESC[Description<br/>Expert consultation]
+    
+    J1c_GRID --> J1c4[Lab/Diagnostic Claims<br/>Test results]
+    J1c4 --> J1c4_ICON[Lab Icon<br/>Visual indicator]
+    J1c4 --> J1c4_DESC[Description<br/>Medical tests]
+    
+    J1c_GRID --> J1c5[Medication Claims<br/>Prescriptions]
+    J1c5 --> J1c5_ICON[Pharmacy Icon<br/>Visual indicator]
+    J1c5 --> J1c5_DESC[Description<br/>Drug coverage]
+    
+    J1c_GRID --> J1c6[Auto-form Adjustment<br/>Dynamic fields]
+    J1c6 --> J1c6_FIELDS[Required Fields<br/>Type-specific]
+    J1c6 --> J1c6_DOCS[Required Documents<br/>Type-specific]
+    
+    %% Insurance Provider Directory
+    J --> J2[Insurance Provider Directory<br/>Carrier system]
+    J2 --> J2a[Provider Selection<br/>Carrier list]
+    J2a --> J2a_CLICK{Provider Click}
+    J2a_CLICK --> J2a_MODAL[Provider Modal<br/>Selection interface]
+    
+    J2a_MODAL --> J2a1[Provider Profiles<br/>Carrier display]
+    J2a1 --> J2a1_CARDS[Provider Cards<br/>Individual carriers]
+    J2a1_CARDS --> J2a1a[Carrier Name<br/>Company name]
+    J2a1_CARDS --> J2a1b[Submission Details<br/>Contact info]
+    J2a1b --> J2a1b_EMAIL[Email Address<br/>Submission email]
+    J2a1b --> J2a1b_PHONE[Phone Number<br/>Contact number]
+    
+    J2a1_CARDS --> J2a1c[Coverage Categories<br/>Service types]
+    J2a1c --> J2a1c_LIST[Coverage List<br/>Covered services]
+    J2a1c_LIST --> J2a1c_L1[Outpatient<br/>Coverage status]
+    J2a1c_LIST --> J2a1c_L2[Inpatient<br/>Coverage status]
+    J2a1c_LIST --> J2a1c_L3[Specialist<br/>Coverage status]
+    
+    J2a1_CARDS --> J2a1d[Claim Instructions<br/>Guidelines]
+    J2a1d --> J2a1d_TEXT[Instructions Text<br/>Submission guide]
+    J2a1d --> J2a1d_REQS[Requirements<br/>Document needs]
+    
+    J2 --> J2b[Auto-fill Capabilities<br/>Saved info]
+    J2b --> J2b1[Policy Details<br/>Stored data]
+    J2b1 --> J2b1_NUM[Policy Number<br/>Auto-filled]
+    J2b1 --> J2b1_NAME[Policy Holder<br/>Auto-filled]
+    J2b1 --> J2b1_VALID[Validity Period<br/>Coverage dates]
+    
+    J2b --> J2b2[Claim Guidelines<br/>Provider rules]
+    J2b2 --> J2b2_DISPLAY[Guidelines Display<br/>Auto-shown]
+    J2b2 --> J2b2_TIPS[Submission Tips<br/>Best practices]
+    
+    %% Medical Records Integration
+    J --> J3[Medical Records Integration<br/>Auto-attachment]
+    J3 --> J3a[Smart Document Aggregator<br/>Auto compilation]
+    J3a --> J3a_ENGINE[Aggregation Engine<br/>Document gathering]
+    
+    J3a_ENGINE --> J3a1[Consultation Summary<br/>Visit docs]
+    J3a1 --> J3a1_AUTO[Auto-attached<br/>From records]
+    J3a1 --> J3a1_PREVIEW[Preview Link<br/>View document]
+    
+    J3a_ENGINE --> J3a2[Doctor Notes<br/>Clinical notes]
+    J3a2 --> J3a2_AUTO[Auto-attached<br/>From visits]
+    J3a2 --> J3a2_PREVIEW[Preview Link<br/>View notes]
+    
+    J3a_ENGINE --> J3a3[Lab Results<br/>Test reports]
+    J3a3 --> J3a3_AUTO[Auto-attached<br/>From tests]
+    J3a3 --> J3a3_PREVIEW[Preview Link<br/>View results]
+    
+    J3a_ENGINE --> J3a4[Prescriptions<br/>Medication docs]
+    J3a4 --> J3a4_AUTO[Auto-attached<br/>From pharmacy]
+    J3a4 --> J3a4_PREVIEW[Preview Link<br/>View prescription]
+    
+    J3a_ENGINE --> J3a5[Provider Credentials<br/>Verification]
+    J3a5 --> J3a5_CLINIC[Clinic Credentials<br/>License info]
+    J3a5 --> J3a5_DOCTOR[Doctor Credentials<br/>Qualifications]
+    
+    %% Document Review
+    J3 --> J3b[Document Review<br/>Pre-submission]
+    J3b --> J3b_MODAL{Review Modal}
+    J3b_MODAL --> J3b1[Attached Files Preview<br/>Document list]
+    J3b1 --> J3b1_LIST[Document List<br/>All attachments]
+    J3b1_LIST --> J3b1_L1[Invoice PDF<br/>View/Remove]
+    J3b1_LIST --> J3b1_L2[Medical Records<br/>View/Remove]
+    J3b1_LIST --> J3b1_L3[Lab Results<br/>View/Remove]
+    J3b1_LIST --> J3b1_L4[Prescriptions<br/>View/Remove]
+    
+    J3b_MODAL --> J3b2[Manual File Addition<br/>Extra docs]
+    J3b2 --> J3b2_BUTTON{Add Files}
+    J3b2_BUTTON --> J3b2_UPLOAD[Upload Modal<br/>File selection]
+    J3b2_UPLOAD --> J3b2a[Referral Forms<br/>External docs]
+    J3b2_UPLOAD --> J3b2b[Doctor Letters<br/>Additional docs]
+    J3b2_UPLOAD --> J3b2_DRAG[Drag & Drop<br/>File upload]
+    
+    %% Claim Tracking
+    J --> J4[Claim Tracking<br/>Status management]
+    J4 --> J4a[Submission Dashboard<br/>Claims overview]
+    J4a --> J4a_VIEW[Dashboard View<br/>Claims display]
+    J4a_VIEW --> J4a1[Claim List Display<br/>Table view]
+    
+    J4a1 --> J4a1_HEADER[Table Headers<br/>Column labels]
+    J4a1_HEADER --> J4a1a[Patient Name<br/>Beneficiary]
+    J4a1_HEADER --> J4a1b[Dependent Info<br/>If applicable]
+    J4a1_HEADER --> J4a1c[Insurance Provider<br/>Carrier name]
+    J4a1_HEADER --> J4a1d[Claim Amount<br/>Value]
+    J4a1_HEADER --> J4a1e[Submission Date<br/>Timeline]
+    
+    J4a1 --> J4a1_ROWS[Claim Rows<br/>Individual claims]
+    J4a1_ROWS --> J4a1_R1[Status Badge<br/>Visual status]
+    J4a1_ROWS --> J4a1_R2[Action Buttons<br/>View/Download]
+    
+    J4 --> J4b[Status Updates<br/>Real-time tracking]
+    J4b --> J4b_STATES[Claim States<br/>Status types]
+    J4b_STATES --> J4b_S1[Submitted<br/>Initial state]
+    J4b_STATES --> J4b_S2[Under Review<br/>Processing]
+    J4b_STATES --> J4b_S3[Approved<br/>Accepted]
+    J4b_STATES --> J4b_S4[Rejected<br/>Declined]
+    J4b_STATES --> J4b_S5[Paid<br/>Completed]
+    
+    J4 --> J4c[Processing Alerts<br/>Status notifications]
+    J4c --> J4c_TYPES[Alert Types<br/>Notification categories]
+    J4c_TYPES --> J4c_T1[Submission Confirm<br/>Claim received]
+    J4c_TYPES --> J4c_T2[Status Change<br/>Update alert]
+    J4c_TYPES --> J4c_T3[Action Required<br/>User action needed]
+    
+    %% Invoice Validation
+    J --> J5[Invoice Validation<br/>Payment verification]
+    J5 --> J5a[Payment Verification<br/>Invoice check]
+    J5a --> J5a_CHECK{Invoice Status Check}
+    J5a_CHECK --> J5a1[Unpaid Invoice Block<br/>Prevention]
+    J5a1 --> J5a1_MODAL[Block Modal<br/>Warning display]
+    J5a1_MODAL --> J5a1_MSG[Error Message<br/>Payment required]
+    J5a1_MODAL --> J5a1_LINK[Pay Now Link<br/>To billing page]
+    J5a1_LINK --> H[Billings & Payments<br/>Payment page]
+    
+    J5a_CHECK --> J5a2[Payment Proof Prompt<br/>Verification]
+    J5a2 --> J5a2_REQUEST[Proof Request<br/>Upload prompt]
+    J5a2 --> J5a2_UPLOAD[Upload Proof<br/>Payment evidence]
+    
+    J5 --> J5b[Insurance-grade Format<br/>Official docs]
+    J5b --> J5b_ELEMENTS[Document Elements<br/>Required info]
+    J5b_ELEMENTS --> J5b1[Official Clinic Header<br/>Provider branding]
+    J5b_ELEMENTS --> J5b2[Patient Details<br/>Beneficiary info]
+    J5b_ELEMENTS --> J5b3[Service Breakdown<br/>Treatment details]
+    J5b_ELEMENTS --> J5b4[Payment Confirmation<br/>Amount paid]
+    J5b_ELEMENTS --> J5b5[Invoice Identification<br/>Unique number]
+    J5b_ELEMENTS --> J5b6[Doctor Signature<br/>Authentication]
+    
+    %% Dependent Coverage
+    J --> J6[Dependent Coverage<br/>Family insurance]
+    J6 --> J6a[Policy Mapping<br/>Insurance assignment]
+    J6a --> J6a_VIEW[Policy View<br/>Family policies]
+    J6a_VIEW --> J6a1[Dependent Policies<br/>Individual coverage]
+    J6a1 --> J6a1_LIST[Policy List<br/>All dependents]
+    J6a1_LIST --> J6a1_L1[Child 1 Policy<br/>Carrier/Number]
+    J6a1_LIST --> J6a1_L2[Child 2 Policy<br/>Carrier/Number]
+    
+    J6a_VIEW --> J6a2[Profile Savings<br/>Storage location]
+    J6a2 --> J6a2_LINK[Edit Link<br/>To profile]
+    J6a2_LINK --> K[My Profile<br/>Dependent info]
+    
+    J6 --> J6b[Coverage Eligibility<br/>Verification]
+    J6b --> J6b_CHECK{Coverage Check}
+    J6b_CHECK --> J6b1[Missing Info Alert<br/>Incomplete data]
+    J6b1 --> J6b1_BANNER[Alert Banner<br/>Warning display]
+    J6b1 --> J6b1_ACTION[Add Info Button<br/>Complete data]
+    
+    J6b_CHECK --> J6b2[Coverage Indicators<br/>Eligibility display]
+    J6b2 --> J6b2_ICON[Status Icons<br/>Visual indicators]
+    J6b2_ICON --> J6b2_I1[Green Check<br/>Covered]
+    J6b2_ICON --> J6b2_I2[Red X<br/>Not covered]
+    J6b2_ICON --> J6b2_I3[Yellow Warning<br/>Partial coverage]
+    
+    %% Integration Points
+    J --> J_INT[Page Integrations<br/>Cross-page links]
+    J_INT --> J_INT1[From Dashboard<br/>Entry points]
+    E --> J[Medical Cover Card<br/>Quick access]
+    
+    J_INT --> J_INT2[From Billing<br/>Invoice links]
+    H1c3a --> J5[Insurance Export<br/>Claim ready]
+    
+    J_INT --> J_INT3[From Health Care<br/>Record export]
+    G7b --> J3[Insurance Format<br/>Document bundle]
+    
+    J_INT --> J_INT4[Security Controls<br/>Access rules]
+    J_INT4 --> J_SEC1[Adult Only<br/>Primary patient]
+    J_INT4 --> J_SEC2[Age Privacy<br/>13-17 restrictions]
+    J_INT4 --> J_SEC3[Encryption<br/>Document security]
+    
+    %% Quick Actions
+    J --> J_QUICK[Quick Actions Bar<br/>Common tasks]
+    J_QUICK --> J_Q1[New Claim<br/>Start process]
+    J_QUICK --> J_Q2[Track Claims<br/>View status]
+    J_QUICK --> J_Q3[Add Policy<br/>Insurance info]
+    
+    %% Search Functionality
+    J --> J_SEARCH[Claim Search<br/>Find claims]
+    J_SEARCH --> J_S_INPUT[Search Bar<br/>Query input]
+    J_S_INPUT --> J_S_FILTER[Search Filters<br/>Refine results]
+    J_S_FILTER --> J_S_F1[Date Range<br/>Time filter]
+    J_S_FILTER --> J_S_F2[Provider<br/>Insurance filter]
+    J_S_FILTER --> J_S_F3[Status<br/>Claim state]
+    J_S_INPUT --> J_S_RESULTS[Search Results<br/>Matching claims]
+    
+    %% Help & Support
+    J --> J_HELP[Help Section<br/>User support]
+    J_HELP --> J_H1[Claim Guide<br/>How-to instructions]
+    J_HELP --> J_H2[Provider Info<br/>Insurance details]
+    J_HELP --> J_H3[FAQs<br/>Common questions]
+    
+    %% Loading States
+    J --> J_LOAD[Loading States<br/>Progress indicators]
+    J_LOAD --> J_L1[Initial Load<br/>Skeleton screens]
+    J_LOAD --> J_L2[Document Fetch<br/>Spinner animation]
+    J_LOAD --> J_L3[Claim Submit<br/>Progress bar]
+    
+    %% Error Handling
+    J --> J_ERROR[Error States<br/>Exception handling]
+    J_ERROR --> J_E1[No Claims<br/>Empty state]
+    J_ERROR --> J_E2[Submit Failed<br/>Retry option]
+    J_ERROR --> J_E3[Missing Info<br/>Completion prompt]
+    
+    %% Real-time Updates
+    J --> J_SYNC[Real-time Sync<br/>Live updates]
+    J_SYNC --> J_S1[Claim Updates<br/>Status changes]
+    J_SYNC --> J_S2[Document Sync<br/>Auto-attachment]
+    J_SYNC --> J_S3[Policy Updates<br/>Coverage changes]

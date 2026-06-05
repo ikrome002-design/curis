@@ -1,0 +1,95 @@
+CLINIC OWNER - CURIS.
+
+
+---
+
+For the Minimum Viable Product (MVP) of the **Insights & Performance** page within the **clinic account user** in *Curis by Citrus*, the focus is on equipping clinic owners with powerful data-driven insights, financial analytics, and operational performance metrics to enhance decision-making and clinic efficiency. This page provides an overview of revenue trends, service utilization, staff performance, and patient engagement, ensuring transparent clinic oversight and continuous improvement. Here's a breakdown of the essential features available on this analytics page:  
+
+________________________________________  
+### **Core MVP Features of the Insights & Performance Page**
+
+
+The “Insights & Performance” page within the Clinic Owner's Curis by Citrus MVP account is a central analytics hub, providing data-driven insights to manage clinic operations, revenue, patient engagement, and staff performance. Below is a direct expansion of its dynamic MVP features and functionalities:
+________________________________________
+1. Financial Performance Reports
+
+
+•	Total Income Overview:
+o	Aggregated revenue from services (consultations, labs, procedures) over selectable timeframes (daily, weekly, monthly).
+•	Service Charge Deductions:
+o	Automated display of Curis platform deductions per payment frequency (e.g., weekly 10% deductions).
+•	Outstanding Balances:
+o	Filterable report showing unpaid invoices by patient name, service date, and amount due.
+•	Revenue by Service Type:
+o	Breakdown of earnings per service category (e.g., General Consultation, Blood Test, Minor Surgery).
+•	Downloadable Reports:
+o	Export financial summaries in CSV or PDF for offline bookkeeping or audit.
+
+________________________________________
+2. Appointment Analytics
+
+
+•	Booking Trends:
+o	Volume of appointments per day/week/month.
+o	Identify peak patient traffic days/times.
+•	Cancellation & Reschedule Metrics:
+o	Track appointment drop-offs and changes, including reasons logged by staff or patients.
+•	No-Show Rates:
+o	Percentage of patients who missed appointments without prior notice, aiding in overbooking or follow-up planning.
+•	Utilization Rate:
+o	Ratio of booked slots to available slots across the clinic’s schedule.
+
+________________________________________
+3. Clinic Service Performance
+
+
+•	Patient Retention Tracking:
+o	Percentage of returning patients versus new patients over a period.
+•	Service Utilization:
+o	Top 5 most and least used services/specialties.
+•	Revenue vs Utilization Correlation:
+o	Match services with high earnings but low usage, guiding promotional or pricing strategies.
+
+________________________________________
+4. Staff Efficiency Metrics
+
+
+•	Appointments Handled:
+o	Number of consultations handled by each Doctor or Receptionist.
+•	Service Ratings:
+o	Aggregated patient feedback per staff member based on post-service surveys (e.g., 1–5 stars or emoji scale).
+•	Response Times:
+o	Time taken to confirm, reschedule, or cancel appointments by staff.
+•	Action Logs:
+o	Overview of staff-initiated actions (e.g., created invoice, edited appointment, updated patient file).
+
+________________________________________
+5. Visualized Dashboards
+
+
+•	Graphs and Charts:
+o	Line graphs for income trends, bar charts for staff performance, pie charts for service usage.
+•	Filter Tools:
+o	Date range picker, staff/service filters, patient segments (new vs returning).
+•	Comparative Views:
+o	Compare current period vs previous (e.g., this month vs last month).
+
+________________________________________
+6. Report Export & Sharing
+
+
+•	Export Options:
+o	PDF (summary snapshots), CSV (raw data tables).
+•	Scheduled Report Delivery (optional future upgrade):
+o	Email weekly or monthly reports automatically to the Clinic Owner’s registered email.
+
+________________________________________
+Summary Utility of This Page
+
+
+•	Insight-Driven Decisions: Enables data-backed staffing, marketing, and pricing strategies.
+•	Operational Visibility: Tracks how each part of the clinic ecosystem is performing.
+•	Financial Governance: Monitors earnings, costs, and profitability in real time.
+•	Staff Accountability: Offers performance benchmarks and evidence for rewards or corrective measures.
+________________________________________
+

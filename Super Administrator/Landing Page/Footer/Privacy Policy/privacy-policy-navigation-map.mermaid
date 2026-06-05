@@ -1,0 +1,219 @@
+flowchart TD
+    %% Main Privacy Policy Page
+    A[Super Administrator Dashboard] --> B[Privacy Policy Page]
+    
+    %% Main Navigation Elements
+    B --> C{Interactive Side Menu}
+    B --> D[Search Box]
+    B --> E[Expandable Sections]
+    B --> F[Quick Access Buttons]
+    B --> G[Update Notifications]
+
+
+    %% Interactive Side Menu Options
+    C --> C1[Overview/Introduction]
+    C --> C2[Data Collection]
+    C --> C3[Purpose of Data Collection]
+    C --> C4[Consent Management]
+    C --> C5[Data Sharing]
+    C --> C6[Storage & Security]
+    C --> C7[User Rights]
+    C --> C8[Cookies & Tracking]
+    C --> C9[International Data Transfers]
+    C --> C10[Policy Updates]
+    C --> C11[Contact Information]
+    
+    %% Search Box
+    D --> D1[Enter Keywords]
+    D1 --> D2[View Search Results]
+    D2 --> D3{Select Result}
+    D3 --> C1
+    D3 --> C2
+    D3 --> C3
+    D3 --> C4
+    D3 --> C5
+    D3 --> C6
+    D3 --> C7
+    D3 --> C8
+    D3 --> C9
+    D3 --> C10
+    D3 --> C11
+    
+    %% Expandable Sections
+    E --> E1{Toggle Section}
+    E1 --> E2[Expand Content]
+    E1 --> E3[Collapse Content]
+    
+    %% Quick Access Buttons
+    F --> F1[Privacy Rights Button]
+    F --> F2[Consent Management Button]
+    F --> F3[Data Access Request Button]
+    F --> F4[Cookie Preferences Button]
+    
+    F1 --> F1A[Privacy Rights Panel]
+    F1A --> F1B[Rights Summary]
+    F1A --> F1C[Regional Rights Info]
+    F1A --> F1D[Rights Exercise Guide]
+    F1A --> F1E[Close Panel]
+    
+    F2 --> F2A[Consent Management Panel]
+    F2A --> F2B[View Current Consents]
+    F2A --> F2C[Modify Consent Settings]
+    F2C --> F2D[Save Changes Button]
+    F2D --> F2E[Confirmation Message]
+    F2A --> F2F[Withdraw All Consent Button]
+    F2F --> F2G[Confirmation Dialog]
+    F2G --> F2H[Yes Button]
+    F2G --> F2I[No Button]
+    F2H --> F2J[All Consents Withdrawn Message]
+    
+    F3 --> F3A[Data Access Request Form]
+    F3A --> F3B[Personal Information Fields]
+    F3B --> F3C[Request Type Selection]
+    F3C --> F3D[Verification Method]
+    F3D --> F3E[Submit Button]
+    F3E --> F3F[Request Confirmation]
+    F3F --> F3G[Reference Number]
+    
+    F4 --> F4A[Cookie Preferences Panel]
+    F4A --> F4B[Necessary Cookies Info]
+    F4A --> F4C[Analytics Cookies Toggle]
+    F4A --> F4D[Marketing Cookies Toggle]
+    F4A --> F4E[Third-Party Cookies Toggle]
+    F4A --> F4F[Save Preferences Button]
+    F4F --> F4G[Preferences Saved Message]
+
+    
+    %% Update Notifications
+    G --> G1[Latest Update Banner]
+    G1 --> G2[View Changes Button]
+    G2 --> G3[Change Summary Popup]
+    G3 --> G4[Detailed Changes List]
+    G3 --> G5[Previous Version Link]
+    G5 --> G6[Version History Panel]
+    G6 --> G7{Select Version}
+    G7 --> G8[View Historical Policy]
+    G3 --> G9[Close Button]
+
+    
+
+  
+    
+    %% Main Content Sections - Overview/Introduction
+    C1 --> OV1[Policy Purpose]
+    OV1 --> OV2[Scope of the Policy]
+    OV1 --> OV3[Last Updated Date]
+    OV1 --> OV4[Applicability Across Clinics]
+    
+    %% Data Collection
+    C2 --> DC1[Personal Data Types]
+    C2 --> DC2[Automated Collection Methods]
+    C2 --> DC3[Optional vs. Required Information]
+    
+    DC1 --> DC1A[Patient Data]
+    DC1 --> DC1B[Doctor Data]
+    DC1 --> DC1C[Staff Data]
+    DC1 --> DC1D[Clinic Owner Data]
+    
+    DC2 --> DC2A[Cookies]
+    DC2 --> DC2B[Server Logs]
+    DC2 --> DC2C[Device Information]
+    DC2 --> DC2D[Location Data]
+    
+    %% Purpose of Data Collection
+    C3 --> PC1[Service Provision]
+    C3 --> PC2[Platform Improvement]
+    C3 --> PC3[Communications]
+    C3 --> PC4[Legal Requirements]
+    C3 --> PC5[Healthcare Operations]
+    
+    %% Consent Management
+    C4 --> CM1[Consent Collection Methods]
+    C4 --> CM2[Managing Consent Settings]
+    C4 --> CM3[Withdrawal Process]
+    
+    CM2 --> F2A
+    CM3 --> CM3A[Withdrawal Effects Information]
+    
+    %% Data Sharing
+    C5 --> DS1[Third-Party Service Providers]
+    C5 --> DS2[Legal Obligations]
+    C5 --> DS3[Business Transfers]
+    C5 --> DS4[Inter-Clinic Sharing]
+    
+    DS1 --> DS1A[Service Providers List]
+    DS1A --> DS1B[Provider Privacy Policies]
+    
+    %% Storage & Security
+    C6 --> SS1[Security Measures]
+    C6 --> SS2[Data Retention Periods]
+    C6 --> SS3[Breach Notification Process]
+    
+    SS1 --> SS1A[Encryption Methods]
+    SS1 --> SS1B[Access Controls]
+    SS1 --> SS1C[Regular Audits]
+    SS1 --> SS1D[Staff Training]
+    
+    SS2 --> SS2A[Active Accounts]
+    SS2 --> SS2B[Inactive Accounts]
+    SS2 --> SS2C[Deleted Accounts]
+    SS2 --> SS2D[Medical Data]
+    
+    SS3 --> SS3A[Breach Response Timeline]
+    SS3A --> SS3B[Notification Methods]
+    
+    %% User Rights
+    C7 --> UR1[Access Rights]
+    C7 --> UR2[Rectification Rights]
+    C7 --> UR3[Erasure Rights]
+    C7 --> UR4[Portability Rights]
+    C7 --> UR5[Objection Rights]
+    C7 --> UR6[Automated Decision Rights]
+    
+    UR1 --> F3A
+    UR3 --> UR3A[Deletion Request Process]
+    UR3A --> UR3B[Account Deletion Form]
+    UR3B --> UR3C[Identity Verification]
+    UR3C --> UR3D[Confirm Deletion Button]
+    UR3D --> UR3E[Deletion Confirmation]
+    
+    %% Cookies & Tracking
+    C8 --> CT1[Cookie Types & Purposes]
+    C8 --> CT2[Third-Party Trackers]
+    C8 --> CT3[Managing Cookie Preferences]
+    C8 --> CT4[Do Not Track Signals]
+    
+    CT3 --> F4A
+    
+    %% International Data Transfers
+    C9 --> ID1[Transfer Mechanisms]
+    C9 --> ID2[Countries of Operation]
+    C9 --> ID3[Safeguards]
+    
+    %% Policy Updates
+    C10 --> PU1[Update Frequency]
+    C10 --> PU2[Notification Methods]
+    C10 --> PU3[Version History]
+    
+    PU3 --> H6
+    
+    %% Contact Information
+    C11 --> CI1[Data Protection Officer]
+    C11 --> CI2[Privacy Team]
+    C11 --> CI3[Regulatory Authorities]
+    
+    CI1 --> CI1A[Send Message to DPO]
+    CI1A --> I1A
+    
+    %% Style definitions
+    classDef mainPage fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef section fill:#bbf,stroke:#33f,stroke-width:1px;
+    classDef popup fill:#fbb,stroke:#f33,stroke-width:1px;
+    classDef button fill:#bfb,stroke:#3f3,stroke-width:1px;
+    classDef result fill:#ffb,stroke:#bb3,stroke-width:1px;
+    
+    class A,B mainPage;
+    class C,D,E,F,G,H,I,C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11 section;
+    class F1A,F2A,F3A,F4A,H3,I1A,I2A,I3A,F2G popup;
+    class F1E,F2D,F2F,F2H,F2I,F3E,F4F,H2,H9,I1F,I3D,UR3D button;
+    class F2E,F2J,F3F,F4G,H8,I1G,I2C,UR3E result;

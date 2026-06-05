@@ -1,0 +1,68 @@
+#### 1. **Appointments**
+
+
+
+
+Here is a detailed breakdown of the dynamic MVP features and functionalities on the “Appointments” page for the Doctor account in the Curis by Citrus platform:
+________________________________________
+1.	Appointments Page – Dynamic MVP Features
+
+
+This page allows the doctor to interactively manage all assigned appointments, with real-time access to scheduling data, patient profiles, and consultation workflow.
+________________________________________
+a.	Appointments Table (Dynamic, Scrollable, Paginated)
+Each appointment entry displays:
+•	Patient Name + Profile Thumbnail (clickable to open record)
+•	Appointment Date & Time (formatted)
+•	Type (In-clinic / Online via Google Meet)
+•	Assigned Status: Pending, Ongoing, Completed, Cancelled
+•	Reason for Visit / Symptoms (short excerpt)
+•	Action Button: [View] / [Update Status] / [Join Consultation]
+________________________________________
+b.	Advanced Filters (Dynamic Query Filters)
+•	Filter by:
+o	Appointment Date or Range (calendar picker)
+o	Status (multi-select dropdown)
+o	Patient Name (type-ahead search)
+•	Results update instantly via AJAX (no full-page reloads)
+________________________________________
+c.	Appointment Detail Modal / Slide-in Panel
+Clicking “View” on an appointment shows a full detail view:
+•	Patient info: name, age, gender, ID number
+•	Scheduled time, status, and consultation type
+•	Assigned receptionist (if booked manually)
+•	Google Meet link (if online)
+•	Quick-access buttons:
+o	[View Full Record]
+o	[Add Pre-consultation Notes]
+o	[Start Consultation]
+________________________________________
+d.	Status Update Logic (Role-Based Permissions)
+•	Doctor can manually change the status to:
+o	Ongoing (starts session)
+o	Completed (ends session + locks appointment edits)
+o	Cancelled (requires reason input)
+•	Real-time update reflected across the platform for clinic assistants, receptionists, and patients
+________________________________________
+e.	Live Indicators & Alerts
+•	Color-coded status badges (e.g., green = completed, yellow = ongoing)
+•	Live alerts (toast/snackbar) for:
+o	Appointment time changes by receptionist
+o	New appointment assignments
+o	Missed appointment warnings
+________________________________________
+f.	Bulk View / Daily Snapshot
+•	Tabbed view by Day / Week
+•	Calendar-style visual of upcoming appointments
+•	Export to PDF or print for offline reference
+________________________________________
+g.	Access Control Enforcement
+•	Doctor sees only their assigned appointments
+•	Cannot book or delete appointments (clinic-only privileges)
+•	Cannot modify patient contact details
+________________________________________
+
+
+These features ensure that doctors have full operational oversight of their clinical workload, without breaching the admin boundaries set by the Clinic Owner.
+
+

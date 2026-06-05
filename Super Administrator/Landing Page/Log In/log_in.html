@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Administrator Login | Curis</title>
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="log_in.css">
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\landing_page.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\Create Account\create_account.html">Create
+                            Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Login Container -->
+        <section class="login-container">
+            <!-- Email Input Screen (Initial Screen) -->
+            <div id="emailInputScreen" class="login-screen active">
+                <div class="intro-text">
+                    <h1>Welcome, Super Administrator</h1>
+                    <h2>Power Starts Here.</h2>
+                    <hr>
+                    <p>You're not just logging in—you're taking command.</p>
+                    <p>The <strong>Curis Platform</strong> grants you secure, streamlined access to every clinic, every
+                        setting, and every system heartbeat—all from a single powerful dashboard built for elite
+                        oversight.</p>
+
+                    <div class="feature-list">
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span><strong>Instant Verification</strong> – Enter your authorized Citrus Labs email to
+                                receive a secure 6-digit code.</span>
+                        </div>
+
+                    </div>
+
+                    <p class="tagline"><em>Secure. Instant. Unstoppable.</em><br>
+                        <strong>This is Curis.</strong>
+                    </p>
+                </div>
+
+                <!-- Email Form -->
+                <div class="login-form">
+                    <h2>Super Administrator Login</h2>
+                    <form id="emailForm">
+                        <div class="form-group">
+                            <label for="adminEmail">Enter your Citrus Labs email</label>
+                            <div class="email-input-container">
+                                <input type="email" id="adminEmail" name="adminEmail"
+                                    placeholder="your.name@citruslabs.co.ke" required>
+                                <span class="validation-icon" id="emailValidationIcon"></span>
+                            </div>
+                            <div class="error-message" id="emailError"></div>
+                        </div>
+                        <button type="submit" id="sendVerificationBtn">Send Verification Code</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Verification Code Screen (Hidden Initially) -->
+            <div id="verificationScreen" class="login-screen">
+                <div class="verification-header">
+                    <h2>Verification Code Sent</h2>
+                    <div class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <p>A 6-digit verification code has been sent to <span id="emailDisplay">your email</span></p>
+                    </div>
+                    <p class="verification-instructions">Please check your inbox (and spam folder) for the verification
+                        email. The code will expire in 10 minutes.</p>
+                </div>
+
+                <!-- Verification Code Form -->
+                <div class="verification-form">
+                    <form id="verificationForm">
+                        <div class="form-group">
+                            <label for="verificationCode">Enter 6-digit verification code</label>
+                            <div class="verification-code-container">
+                                <input type="text" id="verificationCode" name="verificationCode" maxlength="6"
+                                    inputmode="numeric" pattern="[0-9]{6}" autocomplete="one-time-code" required>
+                            </div>
+                            <div class="error-message" id="verificationError"></div>
+                        </div>
+
+                        <div class="countdown-timer">
+                            <p>Code expires in: <span id="countdown">10:00</span></p>
+                        </div>
+
+                        <button type="submit" id="verifyBtn">Verify</button>
+
+                        <div class="resend-container">
+                            <p id="resendText">Didn't receive the code?</p>
+                            <button type="button" id="resendBtn" disabled>Resend Code</button>
+                            <div id="resendCountdown">Resend available in <span id="resendTimer">60</span>s</div>
+                        </div>
+                    </form>
+
+                    <div class="alternative-action">
+                        <a href="#" id="backToEmailBtn">Back to Email Entry</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Overlay (Hidden Initially) -->
+            <div id="loadingOverlay" class="overlay">
+                <div class="loading-container">
+                    <div class="spinner"></div>
+                    <p id="loadingMessage">Verifying...</p>
+                </div>
+            </div>
+
+            <!-- Error Overlay (Hidden Initially) -->
+            <div id="errorOverlay" class="overlay">
+                <div class="error-container">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>Error</h3>
+                    <p id="errorText">An error occurred. Please try again.</p>
+                    <button id="errorCloseBtn">Close</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Support Form (Hidden Initially) -->
+        <div id="contactFormModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Contact Support</h2>
+                <form id="supportForm">
+                    <div class="form-group">
+                        <label for="supportName">Name <span class="required">*</span></label>
+                        <input type="text" id="supportName" name="supportName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="supportEmail">Email <span class="required">*</span></label>
+                        <input type="email" id="supportEmail" name="supportEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="supportSubject">Subject <span class="required">*</span></label>
+                        <input type="text" id="supportSubject" name="supportSubject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="supportMessage">Message <span class="required">*</span></label>
+                        <textarea id="supportMessage" name="supportMessage" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-theme">
+                    <button id="darkModeToggle" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/@citruske" aria-label="Instagram" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" aria-label="X" target="_blank" rel="noopener">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" aria-label="Facebook"
+                        target="_blank" rel="noopener">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" aria-label="YouTube" target="_blank" rel="noopener">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" aria-label="LinkedIn" target="_blank"
+                        rel="noopener">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="footer-legal">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\Footer\Terms and Conditions\terms_and_conditions.html">Terms
+                                of Service</a></li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\Footer\Privacy Policy\privacy_policy.html">Privacy
+                                Policy</a></li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\Footer\Data Policy\data_policy.html">Data
+                                Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-help">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\Footer\FAQ\faq.html">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-corporate">
+                    <h4>Corporate</h4>
+                    <ul>
+                        <li><a href="https://citruslabs.co.ke/" target="_blank" rel="noopener">Citrus Labs</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="log_in.js"></script>
+</body>
+
+</html>

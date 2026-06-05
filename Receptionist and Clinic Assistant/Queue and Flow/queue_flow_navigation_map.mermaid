@@ -1,0 +1,115 @@
+graph TB
+    %% Queue & Flow Page Core
+    QueueFlowPage[Queue & Flow Page<br/>Patient Flow Management]
+    
+    %% Main Features
+    QueueFlowPage --> LiveQueue[Live Queue Overview<br/>Real-Time Display]
+    QueueFlowPage --> WaitTracking[Dynamic Wait Time Tracking<br/>Timer Management]
+    QueueFlowPage --> QueueActions[Queue Actions & Controls<br/>Patient Management]
+    QueueFlowPage --> DocStatus[Doctor Status & Sync<br/>Availability Feed]
+    QueueFlowPage --> PatNotifInt[Patient Notifications<br/>Real-Time Alerts]
+    QueueFlowPage --> QueueAnalytics[Queue Analytics<br/>Flow Metrics]
+    QueueFlowPage --> MultiDocQueue[Multi-Doctor Queues<br/>Segmentation]
+    QueueFlowPage --> AuditLogging[Audit & Logging<br/>Movement Tracking]
+    
+    %% Live Queue Overview Details
+    LiveQueue --> |Click| QueueView[Queue Display Interface<br/>━━━━━━━━━━━━━━━━━<br/>• Patient list view<br/>• Status indicators<br/>  - Waiting 🟡<br/>  - In Progress 🔵<br/>  - Complete ✅<br/>• Appointment time<br/>• Assigned doctor<br/>• Room number<br/>━━━━━━━━━━━━━━━━━<br/>Auto-refresh display]
+    
+    QueueView --> |View Patient| PatientCard[Patient Queue Card<br/>━━━━━━━━━━━━━━━━━<br/>• Patient name<br/>• Photo/Avatar<br/>• Appointment type<br/>• Check-in time<br/>• Current wait time<br/>• Queue position<br/>• Status color code]
+    
+    QueueView --> |Status Colors| ColorCoding[Status Color System<br/>━━━━━━━━━━━━━━━━━<br/>• Green: Checked-in ✓<br/>• Amber: Delayed ⚠️<br/>• Red: Overdue 🚨<br/>• Blue: Being seen 👨‍⚕️<br/>• Gray: Complete ✅<br/>━━━━━━━━━━━━━━━━━<br/>Visual management]
+    
+    %% Wait Time Tracking Details
+    WaitTracking --> |Monitor| TimerView[Timer Dashboard<br/>━━━━━━━━━━━━━━━━━<br/>• Individual timers<br/>  - Auto-start on check-in<br/>  - Live countdown<br/>  - Pause capability<br/>• Excessive wait alerts<br/>  - Threshold: 30min<br/>  - Auto-flag system<br/>• Average wait time<br/>━━━━━━━━━━━━━━━━━<br/>Real-time tracking]
+    
+    TimerView --> |Alert| WaitAlert[Wait Time Alert<br/>━━━━━━━━━━━━━━━━━<br/>• Patient exceeded wait<br/>• Current wait: [Time]<br/>• Suggested actions<br/>  - Notify patient<br/>  - Check doctor<br/>  - Reassign<br/>• Escalate option]
+    
+    TimerView --> |Analytics| WaitAnalytics[Wait Time Analytics<br/>━━━━━━━━━━━━━━━━━<br/>• Average by doctor<br/>• Peak wait times<br/>• Daily patterns<br/>• Bottleneck alerts<br/>• Improvement tips]
+    
+    %% Queue Actions & Controls Details
+    QueueActions --> |Manage| ActionPanel[Queue Control Panel<br/>━━━━━━━━━━━━━━━━━<br/>• Reorder patients<br/>  - Drag & drop<br/>  - Priority override<br/>• Mark status<br/>  - Seen ✓<br/>  - No Show ✗<br/>  - Deferred ↻<br/>• Reassign doctor<br/>• Priority handling<br/>━━━━━━━━━━━━━━━━━<br/>Full queue control]
+    
+    ActionPanel --> |Reorder| ReorderModal[Reorder Queue Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Drag patient cards<br/>• Priority reasons<br/>  - Emergency<br/>  - Doctor request<br/>  - Walk-in urgent<br/>• Confirm changes<br/>• Notify affected]
+    
+    ActionPanel --> |Mark Status| StatusUpdate[Status Update Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Select new status<br/>• Add reason/notes<br/>• Follow-up options<br/>  - Reschedule<br/>  - Call patient<br/>  - Send message<br/>• Update records]
+    
+    ActionPanel --> |Reassign| ReassignDoctor[Reassign Doctor Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Available doctors<br/>• Current load view<br/>• Specialty match<br/>• Patient preference<br/>• Confirm reassign<br/>• Auto-notify all]
+    
+    %% Doctor Status & Sync Details
+    DocStatus --> |View| DocStatusFeed[Doctor Status Feed<br/>━━━━━━━━━━━━━━━━━<br/>• Live availability<br/>  - Consulting 🔴<br/>  - Available 🟢<br/>  - Break ⏸️<br/>  - Unavailable ⛔<br/>• Current patient<br/>• Est. finish time<br/>━━━━━━━━━━━━━━━━━<br/>Real-time sync]
+    
+    DocStatusFeed --> |Room Status| RoomIndicator[Room Status View<br/>━━━━━━━━━━━━━━━━━<br/>• Room assignments<br/>• Readiness status<br/>  - Ready ✓<br/>  - Occupied 🔴<br/>  - Cleaning 🧹<br/>• Next patient prep<br/>• Equipment status]
+    
+    DocStatusFeed --> |Doctor Queue| DocQueueView[Doctor Queue Detail<br/>━━━━━━━━━━━━━━━━━<br/>• Patients in queue<br/>• Estimated times<br/>• Total wait load<br/>• Consultation avg<br/>• Break schedule]
+    
+    %% Patient Notifications Integration
+    PatNotifInt --> |Send Alert| NotifInterface[Notification Interface<br/>━━━━━━━━━━━━━━━━━<br/>• Message types<br/>  - "You're next"<br/>  - "Doctor delayed"<br/>  - "Please wait"<br/>• Send methods<br/>  - In-app 📱<br/>  - SMS 💬<br/>  - Display screen<br/>• Custom messages<br/>━━━━━━━━━━━━━━━━━<br/>Instant messaging]
+    
+    NotifInterface --> |Compose| MessageComposer[Message Composer<br/>━━━━━━━━━━━━━━━━━<br/>• Select template<br/>• Customize text<br/>• Add instructions<br/>  - "Have ID ready"<br/>  - "Sanitize hands"<br/>• Preview message<br/>• Send & track]
+    
+    NotifInterface --> |Bulk Send| BulkNotify[Bulk Notifications<br/>━━━━━━━━━━━━━━━━━<br/>• Select multiple<br/>• Delay announcement<br/>• Clinic updates<br/>• Emergency alerts<br/>• Delivery status]
+    
+    %% Queue Analytics Details
+    QueueAnalytics --> |View Metrics| MetricsPanel[Analytics Dashboard<br/>━━━━━━━━━━━━━━━━━<br/>• Live queue volume<br/>  - Per doctor<br/>  - Per room<br/>  - Total clinic<br/>• Average wait time<br/>  - Current: [Time]<br/>  - Target: <20min<br/>• Flow efficiency<br/>━━━━━━━━━━━━━━━━━<br/>Performance KPIs]
+    
+    MetricsPanel --> |Volume Chart| VolumeTracker[Queue Volume Chart<br/>━━━━━━━━━━━━━━━━━<br/>• Real-time graph<br/>• Peak hours<br/>• Doctor comparison<br/>• Capacity alerts<br/>• Trend analysis]
+    
+    MetricsPanel --> |Bottlenecks| BottleneckAlert[Bottleneck Detection<br/>━━━━━━━━━━━━━━━━━<br/>• Slow points<br/>• Doctor delays<br/>• Room issues<br/>• Suggested fixes<br/>• Alert clinic owner]
+    
+    %% Multi-Doctor Queue Segmentation
+    MultiDocQueue --> |Manage| SegmentPanel[Queue Segmentation<br/>━━━━━━━━━━━━━━━━━<br/>• Separate queues<br/>  - By doctor<br/>  - By department<br/>  - By specialty<br/>• Queue controls<br/>• Merge/Split options<br/>━━━━━━━━━━━━━━━━━<br/>Multi-queue mgmt]
+    
+    SegmentPanel --> |View Queues| MultiQueueView[Multi-Queue Display<br/>━━━━━━━━━━━━━━━━━<br/>• Side-by-side view<br/>• Doctor columns<br/>• Patient cards<br/>• Transfer between<br/>• Balance loads]
+    
+    SegmentPanel --> |Merge/Split| MergeSplitModal[Merge/Split Queues<br/>━━━━━━━━━━━━━━━━━<br/>• Merge reason<br/>  - Doctor absence<br/>  - Low volume<br/>• Split criteria<br/>  - Specialty<br/>  - Urgency<br/>• Apply changes]
+    
+    %% Audit & Logging Details
+    AuditLogging --> |View Log| AuditLogView[Queue Audit Log<br/>━━━━━━━━━━━━━━━━━<br/>• All movements<br/>  - Queue changes<br/>  - Status updates<br/>  - Reassignments<br/>• User tracking<br/>• Timestamps<br/>• Action reasons<br/>━━━━━━━━━━━━━━━━━<br/>Complete trail]
+    
+    AuditLogView --> |Filter| LogFilters[Log Filter Options<br/>━━━━━━━━━━━━━━━━━<br/>• By date/time<br/>• By user<br/>• By patient<br/>• By action type<br/>• Export options]
+    
+    AuditLogView --> |Report| GenerateReport[Generate Reports<br/>━━━━━━━━━━━━━━━━━<br/>• Daily summary<br/>• Queue efficiency<br/>• Wait time report<br/>• Staff actions<br/>• Export PDF/CSV]
+    
+    %% Integration & Synchronization
+    QueueFlowPage -.->|Sync| DashboardSync[→ Dashboard Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Queue counts<br/>• Wait alerts<br/>• Doctor status<br/>• Performance data]
+    
+    QueueFlowPage -.->|Sync| CheckInSync[→ Check-In Sync<br/>━━━━━━━━━━━━━━━━━<br/>• New arrivals<br/>• Queue entry<br/>• Walk-in adds<br/>• Status updates]
+    
+    QueueFlowPage -.->|Sync| AppointmentSync[→ Appointments Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Schedule sync<br/>• Time updates<br/>• Cancellations<br/>• No-shows]
+    
+    QueueFlowPage -.->|Sync| InboxSync[→ Inbox Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Queue alerts<br/>• Wait warnings<br/>• Doctor messages<br/>• Patient notifs]
+    
+    QueueFlowPage -.->|Sync| BillingSync[→ Billing Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Completed visits<br/>• Ready for billing<br/>• No-show tracking<br/>• Service updates]
+    
+    %% Quick Actions
+    QueueView --> |Quick Actions| QuickActionMenu[Quick Actions Menu<br/>━━━━━━━━━━━━━━━━━<br/>• Send "You're next"<br/>• Move to doctor<br/>• Mark complete<br/>• View details<br/>• Print queue list]
+    
+    QuickActionMenu --> |Execute| ActionExecution[→ Action Execution<br/>• Instant update<br/>• Notify parties<br/>• Log action<br/>• Refresh view]
+    
+    %% Navigation to Other Pages
+    QueueFlowPage ==> MainNavigation[Main Navigation]
+    MainNavigation ==> Dashboard[← Dashboard]
+    MainNavigation ==> AppointmentsPage[→ Appointments]
+    MainNavigation ==> CheckInPage[→ Check-In]
+    MainNavigation ==> InboxAlertsPage[→ Inbox & Alerts]
+    MainNavigation ==> PatientDirPage[→ Patient Directory]
+    MainNavigation ==> BillingPayPage[→ Billings & Payments]
+    
+    %% Styling
+    classDef queueCore fill:#0891B2,stroke:#0E7490,stroke-width:4px,color:#fff
+    classDef feature fill:#7C3AED,stroke:#6D28D9,stroke-width:3px,color:#fff
+    classDef modal fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
+    classDef process fill:#059669,stroke:#047857,stroke-width:2px,color:#fff
+    classDef sync fill:#F59E0B,stroke:#D97706,stroke-width:2px,color:#fff
+    classDef navigation fill:#EA580C,stroke:#C2410C,stroke-width:3px,color:#fff
+    classDef alert fill:#DC2626,stroke:#B91C1C,stroke-width:2px,color:#fff
+    classDef analytics fill:#8B5CF6,stroke:#7C3AED,stroke-width:2px,color:#fff
+    
+    class QueueFlowPage queueCore
+    class LiveQueue,WaitTracking,QueueActions,DocStatus,PatNotifInt,QueueAnalytics,MultiDocQueue,AuditLogging feature
+    class QueueView,TimerView,ActionPanel,DocStatusFeed,NotifInterface,MetricsPanel,SegmentPanel,AuditLogView modal
+    class PatientCard,ColorCoding,WaitAlert,WaitAnalytics,ReorderModal,StatusUpdate,ReassignDoctor,RoomIndicator,DocQueueView,MessageComposer,BulkNotify,VolumeTracker,BottleneckAlert,MultiQueueView,MergeSplitModal,LogFilters,GenerateReport,QuickActionMenu process
+    class DashboardSync,CheckInSync,AppointmentSync,InboxSync,BillingSync,ActionExecution sync
+    class MainNavigation,Dashboard,AppointmentsPage,CheckInPage,InboxAlertsPage,PatientDirPage,BillingPayPage navigation
+    class WaitAlert,BottleneckAlert alert
+    class MetricsPanel,VolumeTracker,WaitAnalytics analytics

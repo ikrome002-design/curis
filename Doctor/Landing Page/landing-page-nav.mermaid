@@ -1,0 +1,89 @@
+stateDiagram-v2
+    [*] --> LandingPage: Visitor opens the Curis platform website
+
+    state LandingPage {
+        [*] --> HeroSection
+        HeroSection --> CTA_HeroButton: Click "Get Started"
+
+        note right of HeroSection
+            - Headline: Communicates Curis' value to doctors
+            - Subheading: Highlights top benefits (e.g., simplified workflows, secure access)
+            - Background image/video: Shows doctor using Curis
+            - CTA Button: "Get Started"
+        end note
+
+        [*] --> FeaturesOverview
+
+        note right of FeaturesOverview
+            - Grid layout or carousel format
+            - Icon + short description for each feature
+            - Examples: 
+              • Secure Patient Records
+              • Easy Appointment Management
+              • e-Prescription Tools
+        end note
+
+        [*] --> TestimonialsSection
+
+        note right of TestimonialsSection
+            - Shows doctor reviews or endorsements
+            - Includes photos or names (real or placeholder)
+            - Optionally includes star ratings or video clips
+        end note
+
+        [*] --> ProductDemoSection
+
+        note right of ProductDemoSection
+            - 1-minute explainer video or animated preview
+            - Carousel of screenshots (e.g., appointments screen, notes view)
+            - "See How It Works" CTA
+        end note
+
+        [*] --> BenefitsSection
+
+        note right of BenefitsSection
+            - Bulleted advantages: 
+              • Save Time
+              • Streamline Doctor Tasks
+              • Enhance Patient Satisfaction
+            - Visuals/icons for quick scanning
+        end note
+
+        [*] --> TrustIndicatorsSection
+
+        note right of TrustIndicatorsSection
+            - Display logos of certified medical boards
+            - Mention data protection compliance (e.g., HIPAA, GDPR)
+            - Optional: "As Featured In" media logos or partners
+        end note
+
+        [*] --> ContactSection
+
+        note right of ContactSection
+            - "Contact Us" form (Name, Email, Message)
+            - Email link, phone (optional), support chat link
+            - Social media icons (LinkedIn, Twitter, etc.)
+        end note
+
+        [*] --> FooterSection
+
+        note right of FooterSection
+            - Links: About, FAQs, Privacy Policy, Terms of Service
+            - Copyright text
+            - Social media icons
+        end note
+
+        %% CTAs are spread across the page
+        LandingPage --> CTA_HeroButton: CTA (Hero)
+        LandingPage --> CTA_FeaturesButton: CTA (Features Overview)
+        LandingPage --> CTA_DemoButton: CTA (Product Demo)
+        LandingPage --> CTA_BenefitsButton: CTA (Benefits Section)
+    }
+
+    %% Optionally navigate to Login
+    CTA_HeroButton --> LoginPage: Redirect to login on click
+    CTA_FeaturesButton --> LoginPage: Redirect to login
+    CTA_DemoButton --> LoginPage: Redirect to login
+    CTA_BenefitsButton --> LoginPage: Redirect to login
+
+    LandingPage --> [*]: User exits site

@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Curis by Citrus - Patient Profile Management - Personal Information, Family Accounts, and Security Settings">
+    <title>My Profile | Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Profile\my_profile.css">
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Appointments\my_appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>My Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Health Care\my_health_care.html"
+                            class="nav-link">
+                            <i class="fas fa-heart-pulse"></i>
+                            <span>My Health Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Emergency Care\emergency_care.html"
+                            class="nav-link">
+                            <i class="fas fa-ambulance"></i>
+                            <span>Emergency Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Medical Cover\my_medical_cover.html"
+                            class="nav-link">
+                            <i class="fas fa-shield-heart"></i>
+                            <span>My Medical Cover</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Messaging\messaging.html"
+                            class="nav-link">
+                            <i class="fas fa-comments"></i>
+                            <span>Messaging</span>
+                            <span class="badge">3</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">My Profile</h1>
+                    <p class="page-subtitle">Manage your personal information and account settings</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- Notifications Icon -->
+                    <div class="notification-icon">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Notifications\notifications.html"
+                            class="icon-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">5</span>
+                        </a>
+                    </div>
+
+                    <!-- User Profile Icon with Dropdown -->
+                    <div class="user-profile-dropdown">
+                        <button class="profile-btn" id="profileBtn">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                                alt="User Profile" class="profile-img">
+                        </button>
+
+                        <!-- Profile Dropdown Menu -->
+                        <div class="profile-menu" id="profileMenu">
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Profile\my_profile.html"
+                                class="profile-menu-item active">
+                                <i class="fas fa-user"></i>
+                                <span>My Profile</span>
+                            </a>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\landing_page.html"
+                                class="profile-menu-item logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Profile Content -->
+            <section class="profile-content">
+
+                <!-- Profile Header Section -->
+                <div class="profile-header-section">
+                    <div class="profile-banner">
+                        <div class="profile-avatar-container">
+                            <div class="profile-avatar-wrapper">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                                    alt="Profile Picture" class="profile-avatar" id="profileAvatarDisplay">
+                                <button class="change-avatar-btn" id="changeAvatarBtn" title="Change profile picture">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                            </div>
+                            <div class="profile-header-info">
+                                <h2 class="profile-name" id="profileNameDisplay">John Kamau</h2>
+                                <p class="profile-email" id="profileEmailDisplay">john.kamau@example.com</p>
+                                <p class="profile-member-since">
+                                    <i class="fas fa-calendar"></i>
+                                    Member since January 2024
+                                </p>
+                            </div>
+                        </div>
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-calendar-check"></i>
+                                <div class="stat-info">
+                                    <span class="stat-number">24</span>
+                                    <span class="stat-label">Appointments</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <div class="stat-info">
+                                    <span class="stat-number">4</span>
+                                    <span class="stat-label">Family Members</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-clock"></i>
+                                <div class="stat-info">
+                                    <span class="stat-number">2h ago</span>
+                                    <span class="stat-label">Last Active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Content Grid -->
+                <div class="profile-sections-grid">
+
+                    <!-- Personal Information Section -->
+                    <div class="profile-section">
+                        <div class="section-header">
+                            <div class="section-title-wrapper">
+                                <i class="fas fa-user-circle"></i>
+                                <h3 class="section-title">Personal Information</h3>
+                            </div>
+                            <span class="section-badge">Editable</span>
+                        </div>
+                        <div class="section-content">
+                            <div class="info-fields-grid">
+
+                                <!-- Full Name Field -->
+                                <div class="info-field-item" data-field="name">
+                                    <div class="field-label">
+                                        <i class="fas fa-user"></i>
+                                        <span>Full Name</span>
+                                    </div>
+                                    <div class="field-value-wrapper">
+                                        <span class="field-value" id="fullNameValue">John Kamau</span>
+                                        <button class="edit-field-btn" data-edit="name" title="Edit name">
+                                            <i class="fas fa-pen"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Email Address Field -->
+                                <div class="info-field-item" data-field="email">
+                                    <div class="field-label">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Email Address</span>
+                                    </div>
+                                    <div class="field-value-wrapper">
+                                        <span class="field-value" id="emailValue">john.kamau@example.com</span>
+                                        <button class="edit-field-btn" data-edit="email" title="Edit email">
+                                            <i class="fas fa-pen"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Phone Number Field -->
+                                <div class="info-field-item" data-field="phone">
+                                    <div class="field-label">
+                                        <i class="fas fa-phone"></i>
+                                        <span>Phone Number</span>
+                                    </div>
+                                    <div class="field-value-wrapper">
+                                        <span class="field-value" id="phoneValue">+254 700 123 456</span>
+                                        <button class="edit-field-btn" data-edit="phone" title="Edit phone">
+                                            <i class="fas fa-pen"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Gender Field -->
+                                <div class="info-field-item" data-field="gender">
+                                    <div class="field-label">
+                                        <i class="fas fa-venus-mars"></i>
+                                        <span>Gender</span>
+                                    </div>
+                                    <div class="field-value-wrapper">
+                                        <span class="field-value" id="genderValue">Male</span>
+                                        <button class="edit-field-btn" data-edit="gender" title="Edit gender">
+                                            <i class="fas fa-pen"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Date of Birth Field -->
+                                <div class="info-field-item" data-field="dob">
+                                    <div class="field-label">
+                                        <i class="fas fa-cake-candles"></i>
+                                        <span>Date of Birth</span>
+                                    </div>
+                                    <div class="field-value-wrapper">
+                                        <span class="field-value" id="dobValue">January 15, 1980 (45 years)</span>
+                                        <button class="edit-field-btn" data-edit="dob" title="Edit date of birth">
+                                            <i class="fas fa-pen"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- National ID Field -->
+                                <div class="info-field-item" data-field="id">
+                                    <div class="field-label">
+                                        <i class="fas fa-id-card"></i>
+                                        <span>National ID</span>
+                                    </div>
+                                    <div class="field-value-wrapper">
+                                        <span class="field-value" id="idValue">12345678</span>
+                                        <button class="edit-field-btn" data-edit="id" title="Edit ID">
+                                            <i class="fas fa-pen"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Password Management Section -->
+                    <div class="profile-section">
+                        <div class="section-header">
+                            <div class="section-title-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <h3 class="section-title">Password & Security</h3>
+                            </div>
+                            <span class="section-badge security">Protected</span>
+                        </div>
+                        <div class="section-content">
+                            <div class="security-options-list">
+
+                                <!-- Change Password Option -->
+                                <div class="security-option-item">
+                                    <div class="option-icon-wrapper">
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                    <div class="option-details">
+                                        <h4 class="option-title">Change Password</h4>
+                                        <p class="option-description">Update your account password for enhanced security
+                                        </p>
+                                    </div>
+                                    <button class="btn-secondary" id="changePasswordBtn">
+                                        <i class="fas fa-arrow-right"></i>
+                                        Change
+                                    </button>
+                                </div>
+
+                                <!-- Two-Factor Authentication Option -->
+                                <div class="security-option-item">
+                                    <div class="option-icon-wrapper">
+                                        <i class="fas fa-shield-halved"></i>
+                                    </div>
+                                    <div class="option-details">
+                                        <h4 class="option-title">Two-Factor Authentication</h4>
+                                        <p class="option-description">Add an extra layer of security to your account</p>
+                                        <span class="status-badge disabled">Coming Soon</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="twoFactorToggle" disabled>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+
+                                <!-- Password Last Changed Info -->
+                                <div class="security-info-item">
+                                    <i class="fas fa-circle-info"></i>
+                                    <span>Password last changed: September 15, 2025</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Family Summary Section -->
+                    <div class="profile-section family-section">
+                        <div class="section-header">
+                            <div class="section-title-wrapper">
+                                <i class="fas fa-users"></i>
+                                <h3 class="section-title">Family Members</h3>
+                            </div>
+                            <button class="btn-primary" id="addDependentBtn">
+                                <i class="fas fa-user-plus"></i>
+                                Add Member
+                            </button>
+                        </div>
+                        <div class="section-content">
+                            <div class="family-members-list">
+
+                                <!-- Self Profile Card -->
+                                <div class="family-member-card self">
+                                    <div class="member-avatar-container">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                            alt="John Kamau" class="member-avatar">
+                                        <span class="access-indicator self-indicator">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                    </div>
+                                    <div class="member-info">
+                                        <h4 class="member-name">John Kamau</h4>
+                                        <p class="member-relationship">Account Holder</p>
+                                        <p class="member-details">
+                                            <span class="member-age">45 years</span>
+                                            <span class="member-gender">Male</span>
+                                        </p>
+                                    </div>
+                                    <div class="member-actions">
+                                        <span class="access-level-badge self">Primary</span>
+                                    </div>
+                                </div>
+
+                                <!-- Spouse Profile Card -->
+                                <div class="family-member-card" data-member-id="spouse" data-age="42">
+                                    <div class="member-avatar-container">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                            alt="Jane Kamau" class="member-avatar">
+                                        <span class="access-indicator independent-indicator">
+                                            <i class="fas fa-circle"></i>
+                                        </span>
+                                    </div>
+                                    <div class="member-info">
+                                        <h4 class="member-name">Jane Kamau</h4>
+                                        <p class="member-relationship">Spouse</p>
+                                        <p class="member-details">
+                                            <span class="member-age">42 years</span>
+                                            <span class="member-gender">Female</span>
+                                        </p>
+                                    </div>
+                                    <div class="member-actions">
+                                        <span class="access-level-badge independent">18+ Independent</span>
+                                        <button class="btn-icon" title="View details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Child 1 Profile Card (Under 13) -->
+                                <div class="family-member-card" data-member-id="daughter" data-age="12">
+                                    <div class="member-avatar-container">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                            alt="Mary Kamau" class="member-avatar">
+                                        <span class="access-indicator full-access-indicator">
+                                            <i class="fas fa-circle"></i>
+                                        </span>
+                                    </div>
+                                    <div class="member-info">
+                                        <h4 class="member-name">Mary Kamau</h4>
+                                        <p class="member-relationship">Daughter</p>
+                                        <p class="member-details">
+                                            <span class="member-age">12 years</span>
+                                            <span class="member-gender">Female</span>
+                                        </p>
+                                    </div>
+                                    <div class="member-actions">
+                                        <span class="access-level-badge full-access">Full Access</span>
+                                        <button class="btn-icon edit-dependent-btn" data-edit-member="daughter"
+                                            title="Edit details">
+                                            <i class="fas fa-pen"></i>
+                                        </button>
+                                        <button class="btn-icon remove-dependent-btn" data-remove-member="daughter"
+                                            title="Remove">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Child 2 Profile Card (Teen 13-17) -->
+                                <div class="family-member-card" data-member-id="son" data-age="15">
+                                    <div class="member-avatar-container">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                            alt="David Kamau" class="member-avatar">
+                                        <span class="access-indicator limited-access-indicator">
+                                            <i class="fas fa-circle"></i>
+                                        </span>
+                                    </div>
+                                    <div class="member-info">
+                                        <h4 class="member-name">David Kamau</h4>
+                                        <p class="member-relationship">Son</p>
+                                        <p class="member-details">
+                                            <span class="member-age">15 years</span>
+                                            <span class="member-gender">Male</span>
+                                        </p>
+                                    </div>
+                                    <div class="member-actions">
+                                        <span class="access-level-badge limited-access">Limited Access</span>
+                                        <button class="btn-icon edit-dependent-btn" data-edit-member="son"
+                                            title="Edit details">
+                                            <i class="fas fa-pen"></i>
+                                        </button>
+                                        <button class="btn-icon manage-teen-btn" data-manage-teen="son"
+                                            title="Manage credentials">
+                                            <i class="fas fa-key"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Access Level Legend -->
+                            <div class="access-level-legend">
+                                <h5 class="legend-title">Access Level Indicators:</h5>
+                                <div class="legend-items">
+                                    <div class="legend-item">
+                                        <span class="legend-indicator full-access">
+                                            <i class="fas fa-circle"></i>
+                                        </span>
+                                        <span class="legend-text">Under 13 - Full Parent Access</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-indicator limited-access">
+                                            <i class="fas fa-circle"></i>
+                                        </span>
+                                        <span class="legend-text">13-17 - Limited Access (Privacy Protected)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-indicator independent">
+                                            <i class="fas fa-circle"></i>
+                                        </span>
+                                        <span class="legend-text">18+ - Independent Account Required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Log Section -->
+                    <div class="profile-section">
+                        <div class="section-header">
+                            <div class="section-title-wrapper">
+                                <i class="fas fa-clock-rotate-left"></i>
+                                <h3 class="section-title">Recent Activity</h3>
+                            </div>
+                            <button class="btn-text" id="viewFullActivityBtn">
+                                <span>View All</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="section-content">
+                            <div class="activity-list">
+
+                                <!-- Activity Item 1 -->
+                                <div class="activity-item">
+                                    <div class="activity-icon login">
+                                        <i class="fas fa-right-to-bracket"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h5 class="activity-title">Last Login</h5>
+                                        <p class="activity-description">Logged in from Chrome on Windows</p>
+                                        <p class="activity-meta">
+                                            <i class="fas fa-clock"></i>
+                                            <span>2 hours ago</span>
+                                            <span class="activity-separator">•</span>
+                                            <i class="fas fa-location-dot"></i>
+                                            <span>Nairobi, Kenya</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Activity Item 2 -->
+                                <div class="activity-item">
+                                    <div class="activity-icon edit">
+                                        <i class="fas fa-pen"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h5 class="activity-title">Profile Updated</h5>
+                                        <p class="activity-description">Phone number changed</p>
+                                        <p class="activity-meta">
+                                            <i class="fas fa-clock"></i>
+                                            <span>3 days ago</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Activity Item 3 -->
+                                <div class="activity-item">
+                                    <div class="activity-icon security">
+                                        <i class="fas fa-shield-halved"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h5 class="activity-title">Password Changed</h5>
+                                        <p class="activity-description">Account password updated successfully</p>
+                                        <p class="activity-meta">
+                                            <i class="fas fa-clock"></i>
+                                            <span>2 weeks ago</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Activity Item 4 -->
+                                <div class="activity-item">
+                                    <div class="activity-icon family">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <h5 class="activity-title">Dependent Added</h5>
+                                        <p class="activity-description">David Kamau added to family account</p>
+                                        <p class="activity-meta">
+                                            <i class="fas fa-clock"></i>
+                                            <span>1 month ago</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account Management Section -->
+                    <div class="profile-section danger-zone-section">
+                        <div class="section-header">
+                            <div class="section-title-wrapper">
+                                <i class="fas fa-triangle-exclamation"></i>
+                                <h3 class="section-title">Account Management</h3>
+                            </div>
+                            <span class="section-badge danger">Caution Required</span>
+                        </div>
+                        <div class="section-content">
+                            <div class="account-actions-list">
+
+                                <!-- Temporary Deactivation Option -->
+                                <div class="account-action-item">
+                                    <div class="action-icon-wrapper warning">
+                                        <i class="fas fa-pause-circle"></i>
+                                    </div>
+                                    <div class="action-details">
+                                        <h4 class="action-title">Temporarily Deactivate Account</h4>
+                                        <p class="action-description">
+                                            Pause your account temporarily. You can reactivate it anytime by logging
+                                            back in.
+                                            Your data will be safely stored.
+                                        </p>
+                                    </div>
+                                    <button class="btn-warning" id="tempDeactivateBtn">
+                                        <i class="fas fa-pause"></i>
+                                        Deactivate
+                                    </button>
+                                </div>
+
+                                <!-- Permanent Deactivation Option -->
+                                <div class="account-action-item">
+                                    <div class="action-icon-wrapper danger">
+                                        <i class="fas fa-trash-can"></i>
+                                    </div>
+                                    <div class="action-details">
+                                        <h4 class="action-title">Permanently Delete Account</h4>
+                                        <p class="action-description">
+                                            Permanently delete your account and all associated data. This action cannot
+                                            be undone.
+                                            All family member accounts will also be removed.
+                                        </p>
+                                        <div class="warning-notice">
+                                            <i class="fas fa-circle-exclamation"></i>
+                                            <span>Warning: This action is irreversible and will delete all your medical
+                                                records, appointments, and payment history.</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn-danger" id="permanentDeleteBtn">
+                                        <i class="fas fa-trash"></i>
+                                        Delete Forever
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <p class="copyright">&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer"
+                    class="corporate-link">citruslabs.co.ke</a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer" aria-label="X">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Edit Name Modal -->
+    <div class="modal" id="editNameModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Full Name</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="editNameInput">Full Name</label>
+                    <input type="text" id="editNameInput" class="form-control" placeholder="Enter your full name"
+                        value="John Kamau">
+                    <small class="form-text">Enter your legal name as it appears on official documents</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="saveNameBtn">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Email Modal -->
+    <div class="modal" id="editEmailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Email Address</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="security-notice">
+                    <i class="fas fa-shield-halved"></i>
+                    <p>For security purposes, you'll need to verify your new email address with an OTP code.</p>
+                </div>
+                <div class="form-group">
+                    <label for="editEmailInput">New Email Address</label>
+                    <input type="email" id="editEmailInput" class="form-control" placeholder="Enter new email address"
+                        value="john.kamau@example.com">
+                </div>
+                <div class="form-group" id="emailOtpGroup" style="display: none;">
+                    <label for="emailOtpInput">Verification Code</label>
+                    <input type="text" id="emailOtpInput" class="form-control" placeholder="Enter 6-digit code"
+                        maxlength="6">
+                    <small class="form-text">A verification code has been sent to your new email address</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="sendEmailOtpBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Verification Code
+                </button>
+                <button class="btn-primary" id="verifyEmailBtn" style="display: none;">
+                    <i class="fas fa-check"></i>
+                    Verify & Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Phone Modal -->
+    <div class="modal" id="editPhoneModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Phone Number</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="security-notice">
+                    <i class="fas fa-shield-halved"></i>
+                    <p>For security purposes, you'll receive an SMS verification code to confirm the change.</p>
+                </div>
+                <div class="form-group">
+                    <label for="editPhoneInput">Phone Number</label>
+                    <input type="tel" id="editPhoneInput" class="form-control" placeholder="+254 XXX XXX XXX"
+                        value="+254 700 123 456">
+                    <small class="form-text">Format: +254 XXX XXX XXX</small>
+                </div>
+                <div class="form-group" id="phoneOtpGroup" style="display: none;">
+                    <label for="phoneOtpInput">Verification Code</label>
+                    <input type="text" id="phoneOtpInput" class="form-control" placeholder="Enter 6-digit code"
+                        maxlength="6">
+                    <small class="form-text">A verification code has been sent to your new phone number</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="sendPhoneOtpBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Verification Code
+                </button>
+                <button class="btn-primary" id="verifyPhoneBtn" style="display: none;">
+                    <i class="fas fa-check"></i>
+                    Verify & Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Gender Modal -->
+    <div class="modal" id="editGenderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Gender</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Select Gender</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="Male" checked>
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">Male</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="Female">
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">Female</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="Other">
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">Other</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="saveGenderBtn">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Date of Birth Modal -->
+    <div class="modal" id="editDobModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Date of Birth</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="editDobInput">Date of Birth</label>
+                    <input type="date" id="editDobInput" class="form-control" value="1980-01-15">
+                    <small class="form-text">You must be at least 18 years old to have an account</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="saveDobBtn">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit National ID Modal -->
+    <div class="modal" id="editIdModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit National ID</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="editIdInput">National ID Number</label>
+                    <input type="text" id="editIdInput" class="form-control" placeholder="Enter ID number"
+                        value="12345678">
+                    <small class="form-text">Enter your Kenyan National ID number</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="saveIdBtn">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div class="modal" id="changePasswordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Change Password</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="currentPassword">Current Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="currentPassword" class="form-control"
+                            placeholder="Enter current password">
+                        <button class="toggle-password-btn" type="button">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="newPassword" class="form-control" placeholder="Enter new password">
+                        <button class="toggle-password-btn" type="button">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength" id="passwordStrength">
+                        <div class="strength-meter">
+                            <div class="strength-meter-fill"></div>
+                        </div>
+                        <span class="strength-text">Password strength: <span id="strengthLabel">-</span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm New Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="confirmPassword" class="form-control"
+                            placeholder="Confirm new password">
+                        <button class="toggle-password-btn" type="button">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="password-requirements">
+                    <h5>Password must contain:</h5>
+                    <ul>
+                        <li id="req-length">
+                            <i class="fas fa-circle"></i>
+                            At least 8 characters
+                        </li>
+                        <li id="req-uppercase">
+                            <i class="fas fa-circle"></i>
+                            One uppercase letter
+                        </li>
+                        <li id="req-lowercase">
+                            <i class="fas fa-circle"></i>
+                            One lowercase letter
+                        </li>
+                        <li id="req-number">
+                            <i class="fas fa-circle"></i>
+                            One number
+                        </li>
+                        <li id="req-special">
+                            <i class="fas fa-circle"></i>
+                            One special character
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="confirmChangePasswordBtn">
+                    <i class="fas fa-key"></i>
+                    Change Password
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Profile Picture Modal -->
+    <div class="modal" id="changeAvatarModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Change Profile Picture</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-section">
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-arrow-up"></i>
+                        <h4>Choose a Photo</h4>
+                        <p>Drag and drop an image here or click to browse</p>
+                        <input type="file" id="avatarFileInput" accept="image/*" hidden>
+                        <button class="btn-secondary" id="browseAvatarBtn">
+                            <i class="fas fa-folder-open"></i>
+                            Browse Files
+                        </button>
+                    </div>
+                </div>
+                <div class="crop-section" id="cropSection" style="display: none;">
+                    <div class="crop-container">
+                        <img id="cropImage" src="" alt="Crop preview">
+                    </div>
+                    <div class="crop-controls">
+                        <button class="btn-icon" id="zoomInBtn" title="Zoom in">
+                            <i class="fas fa-magnifying-glass-plus"></i>
+                        </button>
+                        <button class="btn-icon" id="zoomOutBtn" title="Zoom out">
+                            <i class="fas fa-magnifying-glass-minus"></i>
+                        </button>
+                        <button class="btn-icon" id="rotateLeftBtn" title="Rotate left">
+                            <i class="fas fa-rotate-left"></i>
+                        </button>
+                        <button class="btn-icon" id="rotateRightBtn" title="Rotate right">
+                            <i class="fas fa-rotate-right"></i>
+                        </button>
+                    </div>
+                    <div class="preview-container">
+                        <h5>Preview</h5>
+                        <div class="avatar-preview" id="avatarPreview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="saveAvatarBtn" style="display: none;">
+                    <i class="fas fa-save"></i>
+                    Save Profile Picture
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Dependent Modal -->
+    <div class="modal" id="addDependentModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Add Family Member</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="dependent-form">
+                    <div class="form-group">
+                        <label for="dependentName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="dependentName" class="form-control"
+                            placeholder="Enter dependent's full name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dependentDob">Date of Birth <span class="required">*</span></label>
+                            <input type="date" id="dependentDob" class="form-control" required>
+                            <small class="form-text">Must be under 18 years old</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="dependentGender">Gender <span class="required">*</span></label>
+                            <select id="dependentGender" class="form-control" required>
+                                <option value="">Select gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dependentRelationship">Relationship <span class="required">*</span></label>
+                        <select id="dependentRelationship" class="form-control" required>
+                            <option value="">Select relationship</option>
+                            <option value="Son">Son</option>
+                            <option value="Daughter">Daughter</option>
+                            <option value="Sibling">Sibling</option>
+                            <option value="Parent">Parent</option>
+                            <option value="Spouse">Spouse</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="info-notice">
+                        <i class="fas fa-circle-info"></i>
+                        <div>
+                            <p><strong>Privacy Information:</strong></p>
+                            <ul>
+                                <li>Children under 13: Full parental access to all medical information</li>
+                                <li>Teens 13-17: Limited access - sensitive information is privacy-protected</li>
+                                <li>Adults 18+: Must create their own independent account</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="saveDependentBtn">
+                    <i class="fas fa-user-plus"></i>
+                    Add Family Member
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Dependent Modal -->
+    <div class="modal" id="editDependentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Family Member</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="dependent-form">
+                    <div class="form-group">
+                        <label for="editDependentName">Full Name</label>
+                        <input type="text" id="editDependentName" class="form-control" value="Mary Kamau">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editDependentDob">Date of Birth</label>
+                            <input type="date" id="editDependentDob" class="form-control" value="2013-03-15">
+                        </div>
+                        <div class="form-group">
+                            <label for="editDependentGender">Gender</label>
+                            <select id="editDependentGender" class="form-control">
+                                <option value="Female" selected>Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="updateDependentBtn">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manage Teen Credentials Modal -->
+    <div class="modal" id="manageTeenModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Manage Teen Credentials</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="teen-info-section">
+                    <div class="teen-avatar">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="David Kamau">
+                    </div>
+                    <div class="teen-details">
+                        <h4>David Kamau</h4>
+                        <p>15 years old • Son</p>
+                    </div>
+                </div>
+                <div class="teen-actions-list">
+                    <div class="teen-action-item">
+                        <div class="action-info">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>Update Email</h5>
+                                <p>Change the email address for this teen account</p>
+                            </div>
+                        </div>
+                        <button class="btn-secondary" id="updateTeenEmailBtn">
+                            <i class="fas fa-pen"></i>
+                            Update
+                        </button>
+                    </div>
+                    <div class="teen-action-item">
+                        <div class="action-info">
+                            <i class="fas fa-key"></i>
+                            <div>
+                                <h5>Reset Password</h5>
+                                <p>Send a password reset link to the teen's email</p>
+                            </div>
+                        </div>
+                        <button class="btn-secondary" id="resetTeenPasswordBtn">
+                            <i class="fas fa-rotate"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Remove Dependent Confirmation Modal -->
+    <div class="modal" id="removeDependentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Remove Family Member</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="warning-message">
+                    <i class="fas fa-triangle-exclamation"></i>
+                    <p>Are you sure you want to remove <strong id="removeDependentName">Mary Kamau</strong> from your
+                        family account?</p>
+                </div>
+                <div class="restriction-check" id="restrictionCheck">
+                    <!-- Will be populated dynamically based on checks -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-danger" id="confirmRemoveDependentBtn">
+                    <i class="fas fa-trash"></i>
+                    Remove Member
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Temporary Deactivation Modal -->
+    <div class="modal" id="tempDeactivateModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Temporarily Deactivate Account</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="deactivation-info">
+                    <h4>What happens when you deactivate?</h4>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Your profile will be temporarily suspended
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            You won't be able to log in until reactivation
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            All your data will be safely stored
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            You can reactivate anytime by logging back in
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Family member accounts will remain linked
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="tempDeactivatePassword">Confirm your password to continue</label>
+                    <input type="password" id="tempDeactivatePassword" class="form-control"
+                        placeholder="Enter your password">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-warning" id="confirmTempDeactivateBtn">
+                    <i class="fas fa-pause"></i>
+                    Deactivate Account
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Permanent Deletion Modal -->
+    <div class="modal" id="permanentDeleteModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Permanently Delete Account</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="danger-warning">
+                    <i class="fas fa-skull-crossbones"></i>
+                    <h4>This action cannot be undone!</h4>
+                    <p>Deleting your account will permanently remove all your data from our systems.</p>
+                </div>
+                <div class="deletion-consequences">
+                    <h5>What will be deleted:</h5>
+                    <ul class="consequences-list">
+                        <li>
+                            <i class="fas fa-xmark"></i>
+                            All personal information and profile data
+                        </li>
+                        <li>
+                            <i class="fas fa-xmark"></i>
+                            Complete medical history and records
+                        </li>
+                        <li>
+                            <i class="fas fa-xmark"></i>
+                            All appointment history
+                        </li>
+                        <li>
+                            <i class="fas fa-xmark"></i>
+                            Payment records and invoices
+                        </li>
+                        <li>
+                            <i class="fas fa-xmark"></i>
+                            All linked family member accounts
+                        </li>
+                        <li>
+                            <i class="fas fa-xmark"></i>
+                            Insurance information and claims
+                        </li>
+                    </ul>
+                </div>
+                <div class="restriction-warnings" id="deletionRestrictions">
+                    <!-- Will be populated if there are blocking conditions -->
+                </div>
+                <div class="confirmation-checks">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="confirmUnderstand">
+                        <span class="checkbox-custom"></span>
+                        <span>I understand that this action is permanent and cannot be reversed</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="confirmDataLoss">
+                        <span class="checkbox-custom"></span>
+                        <span>I acknowledge that all my data will be permanently deleted</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="confirmFamilyImpact">
+                        <span class="checkbox-custom"></span>
+                        <span>I understand that all linked family accounts will also be removed</span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="deletionPassword">Enter your password to confirm</label>
+                    <input type="password" id="deletionPassword" class="form-control" placeholder="Enter your password">
+                </div>
+                <div class="form-group">
+                    <label for="deletionConfirmText">Type "DELETE" to confirm</label>
+                    <input type="text" id="deletionConfirmText" class="form-control"
+                        placeholder='Type "DELETE" in capital letters'>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-danger" id="confirmPermanentDeleteBtn" disabled>
+                    <i class="fas fa-trash"></i>
+                    Delete Account Forever
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- External JavaScript -->
+    <script
+        src="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Profile\my_profile.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+stateDiagram-v2
+    [*] --> LoginPage: Doctor accesses login page
+
+    state LoginPage {
+        [*] --> EmailInputForm
+
+        note right of EmailInputForm
+            Doctor enters their registered email address
+            Single input field with email format validation
+            Displays Curis platform logo and branding
+            Primary button: "Send Verification Code"
+        end note
+
+        EmailInputForm --> FormValidation: Clicks "Send Verification Code"
+    }
+
+    state FormValidation {
+        [*] --> ValidatingEmail: Email is being checked
+        ValidatingEmail --> EmailValid: Format and domain OK
+        ValidatingEmail --> EmailInvalid: Invalid format or domain
+
+        note right of ValidatingEmail
+            Real-time validation for correct email format
+            Optional: Checks if email belongs to an active Doctor account
+            Displays error if invalid
+        end note
+    }
+
+    FormValidation --> LoginPage: Show error message if invalid
+    FormValidation --> SendVerification: Valid email proceeds
+
+    state SendVerification {
+        [*] --> GeneratingCode
+        GeneratingCode --> SendingEmail: 6-digit code created
+        SendingEmail --> EmailSent: Email sent to Doctor
+        SendingEmail --> SendingFailed: Delivery failure
+
+        note right of GeneratingCode
+            Generates a one-time verification code
+            Code expires after 10 minutes
+            Code is linked to Doctor's email
+        end note
+    }
+
+    SendVerification --> VerificationScreen: Success
+    SendVerification --> LoginPage: Failure (error shown)
+
+    state VerificationScreen {
+        [*] --> SuccessMessage
+        SuccessMessage --> CodeEntryForm: Show input field
+
+        note right of SuccessMessage
+            "Verification Code Sent!"
+            Includes masked email preview
+            Prompt to check inbox or spam
+        end note
+
+        state CodeEntryForm {
+            [*] --> CodeInput
+            CodeInput --> VerifyButton: Doctor enters code
+            CodeInput --> ResendButton: Requests new code
+
+            note right of CodeInput
+                Input field for 6-digit code
+                "Verify Code" button
+                "Resend Code" becomes active after 60 seconds
+                Countdown shows code expiry
+            end note
+        }
+    }
+
+    VerificationScreen --> TokenValidation: Verify code clicked
+    VerificationScreen --> SendVerification: Resend clicked
+
+    state TokenValidation {
+        [*] --> ValidatingToken
+        ValidatingToken --> TokenValid: Code accepted
+        ValidatingToken --> TokenInvalid: Code incorrect
+        ValidatingToken --> TokenExpired: Expired code
+
+        note right of ValidatingToken
+            Matches code against Curis database
+            Checks if expired or reused
+            Security validations
+        end note
+    }
+
+    TokenValidation --> VerificationScreen: Invalid or expired
+    TokenValidation --> LoginPage: Restart if expired
+    TokenValidation --> SessionCreation: Valid code
+
+    state SessionCreation {
+        [*] --> EstablishingSession
+        EstablishingSession --> SettingPermissions
+        SettingPermissions --> SessionEstablished
+
+        note right of EstablishingSession
+            Generates secure JWT session token
+            Loads Doctor role and permissions
+            Session duration: 8 hours
+            Saves session to browser storage
+        end note
+    }
+
+    SessionCreation --> Dashboard: Redirect after login
+
+    state Dashboard {
+        [*] --> LoadingDashboard
+        LoadingDashboard --> DashboardReady
+
+        note right of DashboardReady
+            Doctor-specific features:
+            - Appointments Overview
+            - Today's Patients
+            - Quick Access to Notes, Prescriptions
+            - Access to Communication Tools
+        end note
+    }
+
+    Dashboard --> ActiveSession: Monitor activity
+
+    state ActiveSession {
+        [*] --> UserActive
+        UserActive --> UserIdle: Inactivity detected
+        UserIdle --> UserActive: Resumes activity
+        UserActive --> LogoutRequested: Doctor clicks "Logout"
+
+        note right of UserActive
+            Tracks user activity
+            Logs out after inactivity
+            Secures ongoing session
+        end note
+    }
+
+    ActiveSession --> SessionValidation: Every 5 min check
+
+    state SessionValidation {
+        [*] --> CheckingToken
+        CheckingToken --> SessionValid: Token still valid
+        CheckingToken --> SessionInvalid: Token expired
+        CheckingToken --> SessionRevoked: Access revoked
+
+        note right of CheckingToken
+            Ensures token hasn't expired or been revoked
+            Redirects to login if session fails
+        end note
+    }
+
+    SessionValidation --> ActiveSession: Session OK
+    SessionValidation --> LoginPage: Session invalid
+
+    ActiveSession --> [*]: Full logout

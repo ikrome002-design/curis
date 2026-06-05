@@ -1,0 +1,217 @@
+flowchart TD
+    %% Main Entry Points
+    Dashboard[Dashboard] --> SettingsMain[Settings<br/>Configuration Control Center]
+    
+    %% Settings Main Hub
+    SettingsMain --> WorkingHours[Working Hours Configuration]
+    SettingsMain --> TimeZone[Time Zone Management]
+    SettingsMain --> NotificationSettings[Notification Settings]
+    SettingsMain --> PaymentPrefs[Payment & Billing Preferences]
+    SettingsMain --> PrivacyPerms[Data Privacy & Permissions]
+    SettingsMain --> ClinicProfile[Clinic Profile Updates]
+    SettingsMain --> BackupExport[Backup & Data Export]
+    SettingsMain --> LanguageLocal[Language & Localization]
+    SettingsMain --> SecurityOptions[Security Options]
+    SettingsMain --> AuditLogging[Audit & Logging]
+    
+    %% Working Hours Configuration Branch
+    WorkingHours --> DailySchedule[Daily Schedule Setup]
+    DailySchedule --> HoursModal[Hours Configuration Modal]
+    HoursModal --> DaySelection[Day-by-Day Selection]
+    DaySelection --> OpeningTime[Opening Time Picker<br/>Hour/Minute Selection]
+    DaySelection --> ClosingTime[Closing Time Picker<br/>Hour/Minute Selection]
+    DaySelection --> ApplyToAll[Apply to All Days Button]
+    
+    WorkingHours --> HolidayMgmt[Holiday Management]
+    HolidayMgmt --> HolidayModal[Holiday Calendar Modal]
+    HolidayModal --> MarkClosed[Mark Closed Days<br/>Date Selection]
+    HolidayModal --> RecurringHolidays[Recurring Holiday Setup<br/>Annual Events]
+    
+    WorkingHours --> RealTimeSync[Real-time Sync]
+    RealTimeSync --> SyncConfirm[Sync Confirmation Modal<br/>Impact Preview]
+    SyncConfirm --> UpdateAppointments[Update All Appointments<br/>System-wide Changes]
+    
+    %% Time Zone Management Branch
+    TimeZone --> TZSelection[Time Zone Selection]
+    TZSelection --> TZModal[Time Zone Selector Modal]
+    TZModal --> RegionSearch[Region Search Bar<br/>Auto-complete Cities]
+    TZModal --> TZPreview[Time Zone Preview<br/>Current Local Time Display]
+    
+    TimeZone --> DSTAdjust[DST Adjustment]
+    DSTAdjust --> DSTToggle[Auto DST Toggle<br/>Enable/Disable]
+    DSTAdjust --> DSTNotification[DST Change Alerts<br/>Advance Warnings]
+    
+    %% Notification Settings Branch
+    NotificationSettings --> RecipientSelect[Recipient Selection]
+    RecipientSelect --> RecipientModal[Recipient Configuration Modal]
+    RecipientModal --> OwnerOnly[Clinic Owner Only Toggle]
+    RecipientModal --> AllStaff[All Staff Toggle]
+    RecipientModal --> CustomSelect[Custom Selection<br/>Individual Staff Picker]
+    
+    NotificationSettings --> TriggerConfig[Trigger Configuration]
+    TriggerConfig --> TriggerModal[Notification Triggers Modal]
+    TriggerModal --> AppointmentTriggers[Appointment Triggers<br/>New/Cancel/Reschedule]
+    TriggerModal --> PaymentTriggers[Payment Triggers<br/>Success/Failure]
+    TriggerModal --> BillingTriggers[Billing Cycle Triggers<br/>Upcoming Deductions]
+    
+    NotificationSettings --> ChannelMgmt[Channel Management]
+    ChannelMgmt --> ChannelModal[Channel Settings Modal]
+    ChannelModal --> EmailToggle[Email Notifications Toggle]
+    ChannelModal --> SMSToggle[SMS Notifications Toggle]
+    ChannelModal --> InAppToggle[In-App Notifications Toggle]
+    
+    %% Payment & Billing Preferences Branch
+    PaymentPrefs --> FrequencySettings[Payment Frequency Settings]
+    FrequencySettings --> FrequencyModal[Frequency Selection Modal]
+    FrequencyModal --> WeeklyOption[Weekly Payment Option]
+    FrequencyModal --> BiWeeklyOption[Bi-Weekly Payment Option]
+    FrequencyModal --> MonthlyOption[Monthly Payment Option]
+    FrequencyModal --> PreviewCalc[Preview Calculator<br/>Estimated Deductions]
+    
+    PaymentPrefs --> AutoRecon[Auto-Reconciliation]
+    AutoRecon --> ReconToggle[Auto-Match Toggle<br/>Enable/Disable]
+    AutoRecon --> ReconRules[Reconciliation Rules<br/>Matching Criteria]
+    
+    PaymentPrefs --> PaymentMethods[Payment Methods]
+    PaymentMethods --> MethodsModal[Payment Methods Modal]
+    MethodsModal --> MPesaLink[M-Pesa Configuration<br/>Till/Paybill Setup]
+    MethodsModal --> BankLink[Bank Account Link<br/>Future Integration]
+    MethodsModal --> PayPalLink[PayPal Link<br/>Future Integration]
+    
+    %% Data Privacy & Permissions Branch
+    PrivacyPerms --> StaffAccess[Staff Access Limits]
+    StaffAccess --> AccessMatrix[Access Control Matrix Modal]
+    AccessMatrix --> DoctorPerms[Doctor Permissions<br/>Medical Records/Appointments]
+    AccessMatrix --> ReceptionistPerms[Receptionist Permissions<br/>Scheduling/Basic Billing]
+    AccessMatrix --> CustomPerms[Custom Permissions<br/>Granular Control]
+    
+    PrivacyPerms --> PermissionToggle[Permission Toggles]
+    PermissionToggle --> BillingAccess[Billing History Access<br/>On/Off Toggle]
+    PermissionToggle --> FinancialReports[Financial Reports Access<br/>On/Off Toggle]
+    PermissionToggle --> PatientDataAccess[Patient Data Access<br/>Limited/Full Toggle]
+    
+    %% Clinic Profile Updates Branch
+    ClinicProfile --> BasicInfo[Basic Information]
+    BasicInfo --> ProfileModal[Profile Update Modal]
+    ProfileModal --> NameUpdate[Clinic Name Field<br/>Character Limit Check]
+    ProfileModal --> LogoUpload[Logo Upload Button<br/>Image Picker]
+    ProfileModal --> AddressUpdate[Address Fields<br/>Street/City/Postal]
+    ProfileModal --> ContactUpdate[Contact Details<br/>Phone/Email Validation]
+    
+    ClinicProfile --> SpecialtyMgmt[Specialty Management]
+    SpecialtyMgmt --> SpecialtyModal[Specialty Selection Modal]
+    SpecialtyModal --> AddSpecialty[Add Specialty Button]
+    SpecialtyModal --> RemoveSpecialty[Remove Specialty Button]
+    SpecialtyModal --> PrimarySpecialty[Set Primary Specialty<br/>Dropdown Selection]
+    
+    %% Backup & Data Export Branch
+    BackupExport --> BackupConfig[Backup Configuration]
+    BackupConfig --> BackupModal[Backup Settings Modal]
+    BackupModal --> AutoBackup[Auto-Backup Toggle<br/>Monthly Schedule]
+    BackupModal --> BackupTypes[Backup Type Selection<br/>Financial/Appointments/All]
+    
+    BackupExport --> FormatSelect[Format Selection]
+    FormatSelect --> FormatModal[Export Format Modal]
+    FormatModal --> CSVOption[CSV Format Option<br/>Raw Data Export]
+    FormatModal --> PDFOption[PDF Format Option<br/>Formatted Reports]
+    
+    BackupExport --> DeliveryMethod[Delivery Method]
+    DeliveryMethod --> DeliveryModal[Delivery Options Modal]
+    DeliveryModal --> EmailDelivery[Email Delivery<br/>Address Configuration]
+    DeliveryModal --> DirectDownload[Direct Download<br/>Instant File Access]
+    
+    %% Language & Localization Branch
+    LanguageLocal --> LangSelect[Language Selection]
+    LangSelect --> LangModal[Language Picker Modal]
+    LangModal --> EnglishDefault[English (Default)]
+    LangModal --> FutureLangs[Future Languages<br/>Expansion Ready]
+    
+    LanguageLocal --> DateFormat[Date Format Settings]
+    DateFormat --> DateModal[Date Format Modal]
+    DateModal --> DDMMFormat[DD/MM/YYYY Format]
+    DateModal --> MMDDFormat[MM/DD/YYYY Format]
+    DateModal --> CustomFormat[Custom Format<br/>Regional Preferences]
+    
+    %% Security Options Branch
+    SecurityOptions --> PasswordMgmt[Password Management]
+    PasswordMgmt --> PasswordModal[Password Update Modal]
+    PasswordModal --> CurrentPassword[Current Password Field<br/>Verification]
+    PasswordModal --> NewPassword[New Password Field<br/>Strength Indicator]
+    PasswordModal --> ConfirmPassword[Confirm Password Field<br/>Match Validation]
+    
+    SecurityOptions --> TwoFactorAuth[Two-Factor Auth]
+    TwoFactorAuth --> TFAModal[2FA Setup Modal]
+    TFAModal --> EnableTFA[Enable 2FA Button]
+    TFAModal --> QRCode[QR Code Display<br/>Authenticator App Setup]
+    TFAModal --> BackupCodes[Backup Codes Generation<br/>Recovery Options]
+    
+    %% Audit & Logging Branch
+    AuditLogging --> ChangeLog[Change Log View]
+    ChangeLog --> LogModal[Change Log Modal]
+    LogModal --> LogFilters[Log Filter Panel<br/>User/Date/Action]
+    LogModal --> LogEntries[Log Entry Display<br/>Timestamped Changes]
+    LogModal --> BeforeAfter[Before/After Values<br/>Change Comparison]
+    
+    AuditLogging --> ExportLogs[Export Audit Logs]
+    ExportLogs --> AuditExportModal[Audit Export Modal<br/>Date Range/Format]
+    
+    %% Integration Points with Other Modules
+    
+    %% To/From Appointments
+    UpdateAppointments -.->|Schedule Changes| Appointments[Appointments Module]
+    Appointments -.->|Availability Rules| WorkingHours
+    
+    %% To/From Billings & Payments
+    FrequencySettings -.->|Update Billing Cycle| Billings[Billings & Payments]
+    MethodsModal -.->|Payment Config| Billings
+    
+    %% To/From Workforce Hub
+    AccessMatrix -.->|Permission Updates| WorkforceHub[Workforce Hub]
+    WorkforceHub -.->|Staff Roles| StaffAccess
+    
+    %% To/From Health Data & Records
+    PatientDataAccess -.->|Access Rules| HealthData[Health Data & Records]
+    BackupTypes -.->|Patient Records| HealthData
+    
+    %% To/From Dashboard
+    SyncConfirm -.->|Update Widgets| Dashboard
+    ProfileModal -.->|Clinic Info| Dashboard
+    
+    %% To/From Notifications
+    TriggerModal -.->|Alert Configuration| Notifications[Notifications Module]
+    ChannelModal -.->|Delivery Methods| Notifications
+    
+    %% To/From Insights & Performance
+    BackupTypes -.->|Report Data| InsightsPerf[Insights & Performance]
+    LogEntries -.->|Activity Metrics| InsightsPerf
+    
+    %% From Registration & Setup
+    Registration[Registration & Setup] -.->|Initial Config| SettingsMain
+    
+    %% Navigation Back Options
+    WorkingHours --> SettingsMain
+    TimeZone --> SettingsMain
+    NotificationSettings --> SettingsMain
+    PaymentPrefs --> SettingsMain
+    PrivacyPerms --> SettingsMain
+    ClinicProfile --> SettingsMain
+    BackupExport --> SettingsMain
+    LanguageLocal --> SettingsMain
+    SecurityOptions --> SettingsMain
+    AuditLogging --> SettingsMain
+    SettingsMain --> Dashboard
+    
+    %% Styling
+    classDef mainHub fill:#2563eb,stroke:#1e40af,stroke-width:3px,color:#fff
+    classDef subModule fill:#7c3aed,stroke:#6d28d9,stroke-width:2px,color:#fff
+    classDef modal fill:#059669,stroke:#047857,stroke-width:2px,color:#fff
+    classDef action fill:#dc2626,stroke:#b91c1c,stroke-width:2px,color:#fff
+    classDef integration fill:#f59e0b,stroke:#d97706,stroke-width:2px,stroke-dasharray: 5 5
+    classDef futureFeature fill:#94a3b8,stroke:#64748b,stroke-width:2px,color:#fff
+    
+    class SettingsMain mainHub
+    class WorkingHours,TimeZone,NotificationSettings,PaymentPrefs,PrivacyPerms,ClinicProfile,BackupExport,LanguageLocal,SecurityOptions,AuditLogging subModule
+    class HoursModal,HolidayModal,TZModal,RecipientModal,TriggerModal,ChannelModal,FrequencyModal,MethodsModal,AccessMatrix,ProfileModal,SpecialtyModal,BackupModal,FormatModal,DeliveryModal,LangModal,DateModal,PasswordModal,TFAModal,LogModal,AuditExportModal modal
+    class ApplyToAll,MarkClosed,EnableTFA,AutoBackup,AddSpecialty,RemoveSpecialty action
+    class Dashboard,Appointments,Billings,WorkforceHub,HealthData,Notifications,InsightsPerf,Registration integration
+    class FutureLangs,BankLink,PayPalLink futureFeature

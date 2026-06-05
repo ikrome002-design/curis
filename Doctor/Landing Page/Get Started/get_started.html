@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Get Started - Curis by Citrus Labs</title>
+
+    <!-- Favicon links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="get_started.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header with Logo -->
+        <header class="header">
+            <div class="logo-container">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Landing Page\landing_page.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="login-section">
+                <!-- Welcome Message -->
+                <div class="welcome-message">
+                    <h1>Welcome Back, Doctor</h1>
+
+                </div>
+
+                <!-- Quick & Secure Login Section -->
+                <div class="login-info">
+
+                    <p>Enter your <strong>registered email address</strong> and we'll send you a <strong>6-digit
+                            verification code</strong>. No passwords. No hassle.</p>
+
+                </div>
+
+                <!-- Login Form - Initially Visible -->
+                <div id="email-input-form" class="form-container">
+                    <form id="email-form">
+                        <div class="form-group">
+                            <label for="doctor-email">Email Address</label>
+                            <input type="email" id="doctor-email" name="doctor-email"
+                                placeholder="Enter your registered email" required>
+                            <div id="email-validation-message" class="validation-message"></div>
+                        </div>
+                        <button type="submit" id="send-verification-btn" class="primary-btn">Send Verification
+                            Code</button>
+                    </form>
+                </div>
+
+                <!-- Verification Screen - Initially Hidden -->
+                <div id="verification-screen" class="form-container" style="display: none;">
+                    <div class="success-message">
+                        <h3>Verification Code Sent!</h3>
+                        <p id="masked-email">We've sent a verification code to your email:
+                            <span>d****@example.com</span>
+                        </p>
+                        <p>Please check your inbox or spam folder.</p>
+                    </div>
+
+                    <div class="check-inbox-info">
+                        <h2>Check Your Inbox</h2>
+                        <p>Once your email is verified, we'll send a <strong>one-time login code</strong> to your inbox
+                            (or spam folder, just in case).</p>
+                        <p>Didn't get the code? You can <strong>resend after 60 seconds</strong>.</p>
+                    </div>
+
+                    <form id="verification-form">
+                        <div class="form-group">
+                            <label for="verification-code">Enter 6-digit Verification Code</label>
+                            <input type="text" id="verification-code" name="verification-code"
+                                placeholder="6-digit code" maxlength="6" required>
+                            <div id="code-validation-message" class="validation-message"></div>
+                        </div>
+                        <div class="code-expiry">
+                            <p>Code expires in: <span id="code-countdown">10:00</span></p>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="submit" id="verify-code-btn" class="primary-btn">Verify Code</button>
+                            <button type="button" id="resend-code-btn" class="secondary-btn" disabled>Resend Code (<span
+                                    id="resend-countdown">60</span>s)</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Healthcare Professional Info -->
+                <div class="professional-info">
+                    <blockquote>
+                        <p>💡 This platform is optimized for licensed medical professionals only. If you're having
+                            trouble logging in, please contact your Clinic Account admin.</p>
+                    </blockquote>
+                </div>
+
+                <!-- Focus Message -->
+                <div class="focus-message">
+                    <p><strong>You focus on patient care. Let Curis handle the rest.</strong></p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Dark Mode Toggle -->
+                <div class="mode-toggle">
+                    <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/@citruske" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" aria-label="X (Twitter)">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+
+                <!-- Legal Links -->
+                <div class="legal-links">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Landing Page\Footer\Terms and Conditions\terms_and_conditions.html">Terms
+                        of Service</a>
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Landing Page\Footer\Privacy Policy\privacy_policy.html">Privacy
+                        Policy</a>
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Landing Page\Footer\Data Policy\data_policy.html">Data
+                        Policy</a>
+                </div>
+
+                <!-- FAQ Link -->
+                <div class="faq-link">
+                    <a
+                        href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Landing Page\Footer\FAQ\faq.html">FAQ</a>
+                </div>
+
+                <!-- Corporate Website Link -->
+                <div class="corporate-link">
+                    <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener">Corporate Website</a>
+                </div>
+
+                <!-- Copyright -->
+                <div class="copyright">
+                    <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="get_started.js"></script>
+</body>
+
+</html>

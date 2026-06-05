@@ -1,0 +1,85 @@
+CLINIC OWNER - CURIS.
+
+
+---
+
+For the Minimum Viable Product (MVP) of the **Clinic Registration & Setup** page within the **clinic account user** in *Curis by Citrus*, the focus is on providing dynamic configuration tools that allow clinic owners to establish their clinic's identity, define operational parameters, and lay the groundwork for efficient service delivery and financial oversight. Here's a breakdown of the essential features available on this setup page:
+
+### **Core MVP Features of the Clinic Registration & Setup Page**
+
+
+#### **1. Clinic Registration & Setup**
+
+
+
+
+________________________________________
+Clinic Registration & Setup – Dynamic MVP Features
+
+This page is the foundational configuration module where the Clinic Owner establishes the core identity and operational parameters of the clinic. It’s not a static form — it dynamically adapts based on inputs to provide a tailored setup experience.
+
+a.	Clinic Identity Configuration
+
+•	Dynamic Inputs:
+Real-time validation for clinic name uniqueness, phone/email format, and location (with map API integration or auto-suggestions).
+•	Editable Fields:
+Clinic Name, Logo Upload, Phone, Email, Location (Google Maps or OpenStreetMap integration), Clinic Description, and Website/Social Media links.
+•	Geo-Tagged Location Setting:
+Automatically fetch and verify clinic coordinates to enable geo-filters for patients searching for clinics.
+
+b.	Operating Hours Setup
+
+•	Dynamic Schedule Builder:
+Day-by-day slot setup with options for:
+o	Full-day or half-day operations
+o	Custom open/close hours per day
+o	Marking holidays or closed days
+•	Repeat Logic:
+Save preset weekly schedules and clone to future weeks.
+
+c.	Specialties & Services Definition
+
+•	Specialty Selection:
+Choose from a categorized and searchable specialty library (e.g., General Practice, Pediatrics, Dental, etc.). Owners can also add custom specialties.
+•	Dynamic Service Configuration:
+For each specialty, define:
+o	Service Name (e.g., "Initial Consultation", "Blood Sugar Test")
+o	Duration (in minutes)
+o	Fee per service
+o	Associated staff roles (e.g., Doctor, Lab Technician)
+•	Conditional Logic:
+If lab services are added, system prompts to set up basic lab test categories and related sample collection methods.
+
+d.	Service Charge Payment Frequency
+
+•	Configurable Payment Terms to Curis Platform:
+o	Options: Weekly, Bi-Weekly, Monthly
+o	System shows a preview of estimated deductions based on configured service prices and expected patient volume.
+o	Dynamic alerts on choosing non-standard billing frequency (e.g., if clinic selects "Monthly," system displays risk or benefit notes).
+•	Confirmation Prompts:
+Ensures the clinic acknowledges service fee terms with checkbox/toggle for agreement.
+
+e.	System-Driven Setup Guidance
+
+•	Progress Tracker:
+A visible multi-step setup bar shows percentage completion — encouraging full configuration.
+•	Smart Suggestions:
+Based on specialty or clinic type, system recommends common services to add.
+•	Validation Checks:
+Page prevents proceeding if critical details are missing (e.g., no working hours set or no services listed).
+
+f.	Post-Setup Auto-Actions
+
+•	Auto-generate a Clinic Profile Page viewable within the platform for patients and staff.
+•	Prompt to create first Receptionist or Doctor account.
+•	Trigger onboarding checklist (e.g., "Set up appointments", "Review billing setup", "Enable patient notifications").
+
+________________________________________
+
+Key Outcomes of This Module
+
+•	Ensures the clinic is correctly structured from Day 1.
+•	Reduces configuration errors through guided steps and validations.
+•	Tailors the system’s internal features (appointment booking, billing, analytics) to the clinic's actual structure.
+•	Lays the foundation for compliant service charge billing and reporting. 
+

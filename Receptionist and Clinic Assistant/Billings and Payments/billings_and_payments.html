@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curis - Billings & Payments | Receptionist Portal</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="billings_and_payments.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Check-In\check_in.html"
+                            class="nav-link">
+                            <i class="fas fa-user-check"></i>
+                            <span>Check-In</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Inbox and Alerts\inbox_and_alerts.html"
+                            class="nav-link">
+                            <i class="fas fa-inbox"></i>
+                            <span>Inbox & Alerts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Queue and Flow\queue_and_flow.html"
+                            class="nav-link">
+                            <i class="fas fa-list-check"></i>
+                            <span>Queue & Flow</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Patient Directory\patient_directory.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Patient Directory</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Billings & Payments</h1>
+                    <p class="subtitle">Financial Management Hub</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- User Profile -->
+                    <div class="user-profile" id="userProfile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-icon">
+                        <span class="user-name">Sarah Wanjiru</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Quick Summary Stats -->
+            <section class="summary-stats">
+                <div class="stat-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <div class="stat-content">
+                        <span class="stat-value">KES. 245,600</span>
+                        <span class="stat-label">Today's Collections</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-file-invoice"></i>
+                    <div class="stat-content">
+                        <span class="stat-value">42</span>
+                        <span class="stat-label">Invoices Generated</span>
+                    </div>
+                </div>
+                <div class="stat-card warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div class="stat-content">
+                        <span class="stat-value">KES. 86,300</span>
+                        <span class="stat-label">Outstanding Payments</span>
+                    </div>
+                </div>
+                <div class="stat-card info">
+                    <i class="fas fa-building"></i>
+                    <div class="stat-content">
+                        <span class="stat-value">KES. 15,000</span>
+                        <span class="stat-label">Platform Fee Due</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Dashboard Grid -->
+            <div class="billing-grid">
+
+                <!-- Invoice Management Section -->
+                <section class="dashboard-card invoice-management">
+                    <div class="card-header">
+                        <h2><i class="fas fa-file-invoice"></i> Invoice Management</h2>
+                        <button class="btn-primary" id="createInvoiceBtn">
+                            <i class="fas fa-plus-circle"></i> Create New Invoice
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <!-- Filter Controls -->
+                        <div class="filter-controls">
+                            <select class="filter-select" id="doctorFilter">
+                                <option value="">All Doctors</option>
+                                <option value="dr-ochieng">Dr. James Ochieng</option>
+                                <option value="dr-kamau">Dr. Mary Kamau</option>
+                                <option value="dr-mutua">Dr. Peter Mutua</option>
+                            </select>
+                            <select class="filter-select" id="statusFilter">
+                                <option value="">All Status</option>
+                                <option value="paid">Paid ✓</option>
+                                <option value="unpaid">Unpaid ✗</option>
+                                <option value="partial">Partial ⚠️</option>
+                                <option value="pending-claim">Pending Claim 🏥</option>
+                            </select>
+                            <select class="filter-select" id="methodFilter">
+                                <option value="">All Methods</option>
+                                <option value="cash">Cash 💵</option>
+                                <option value="mpesa">M-Pesa 📱</option>
+                                <option value="insurance">Insurance 🏥</option>
+                                <option value="corporate">Corporate 🏢</option>
+                            </select>
+                            <input type="text" class="search-input" placeholder="Search invoices..." id="invoiceSearch">
+                            <button class="btn-export">
+                                <i class="fas fa-download"></i> Export
+                            </button>
+                        </div>
+
+                        <!-- Invoice Table -->
+                        <div class="table-wrapper">
+                            <table class="invoice-table">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice #</th>
+                                        <th>Patient</th>
+                                        <th>Doctor</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Method</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>INV-2025-001</td>
+                                        <td>John Kimani</td>
+                                        <td>Dr. James Ochieng</td>
+                                        <td>KES. 5,500</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td>M-Pesa</td>
+                                        <td>29-09-2025-09</td>
+                                        <td>
+                                            <button class="action-btn view-invoice" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn print-invoice" title="Print">
+                                                <i class="fas fa-print"></i>
+                                            </button>
+                                            <button class="action-btn send-invoice" title="Send">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>INV-2025-002</td>
+                                        <td>Grace Muthoni</td>
+                                        <td>Dr. Mary Kamau</td>
+                                        <td>KES. 3,200</td>
+                                        <td><span class="status-badge unpaid">Unpaid</span></td>
+                                        <td>-</td>
+                                        <td>29-09-2025</td>
+                                        <td>
+                                            <button class="action-btn view-invoice" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn mark-paid" title="Mark Paid">
+                                                <i class="fas fa-check-circle"></i>
+                                            </button>
+                                            <button class="action-btn send-reminder" title="Send Reminder">
+                                                <i class="fas fa-bell"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>INV-2025-003</td>
+                                        <td>Peter Odhiambo</td>
+                                        <td>Dr. Peter Mutua</td>
+                                        <td>KES. 12,000</td>
+                                        <td><span class="status-badge pending-claim">Pending Claim</span></td>
+                                        <td>Insurance</td>
+                                        <td>28-09-2025</td>
+                                        <td>
+                                            <button class="action-btn view-invoice" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn view-claim" title="View Claim">
+                                                <i class="fas fa-file-medical"></i>
+                                            </button>
+                                            <button class="action-btn update-status" title="Update Status">
+                                                <i class="fas fa-sync"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>INV-2025-004</td>
+                                        <td>Sarah Njeri</td>
+                                        <td>Dr. James Ochieng</td>
+                                        <td>KES. 8,500</td>
+                                        <td><span class="status-badge partial">Partial</span></td>
+                                        <td>Cash</td>
+                                        <td>27-09-2025</td>
+                                        <td>
+                                            <button class="action-btn view-invoice" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn add-payment" title="Add Payment">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                            <button class="action-btn payment-history" title="Payment History">
+                                                <i class="fas fa-history"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <button class="page-btn">Previous</button>
+                            <span class="page-info">Page 1 of 10</span>
+                            <button class="page-btn">Next</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Actions Panel -->
+                <section class="dashboard-card quick-actions">
+                    <div class="card-header">
+                        <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="quick-actions-grid">
+                            <button class="quick-action-btn" id="markPaidBtn">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Mark as Paid</span>
+                            </button>
+                            <button class="quick-action-btn" id="issueReceiptBtn">
+                                <i class="fas fa-receipt"></i>
+                                <span>Issue Receipt</span>
+                            </button>
+                            <button class="quick-action-btn" id="processRefundBtn">
+                                <i class="fas fa-undo-alt"></i>
+                                <span>Process Refund</span>
+                            </button>
+                            <button class="quick-action-btn" id="insuranceClaimBtn">
+                                <i class="fas fa-file-medical"></i>
+                                <span>Insurance Claim</span>
+                            </button>
+                            <button class="quick-action-btn" id="installmentPlanBtn">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Installment Plan</span>
+                            </button>
+                            <button class="quick-action-btn" id="walletDepositBtn">
+                                <i class="fas fa-wallet"></i>
+                                <span>Wallet Deposit</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Outstanding Payments Section -->
+                <section class="dashboard-card outstanding-payments">
+                    <div class="card-header">
+                        <h2><i class="fas fa-exclamation-circle"></i> Outstanding Payments</h2>
+                        <button class="btn-secondary" id="sendBulkRemindersBtn">
+                            <i class="fas fa-bell"></i> Send Bulk Reminders
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="outstanding-list">
+                            <div class="outstanding-item overdue">
+                                <div class="patient-info">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Patient" class="patient-avatar">
+                                    <div class="patient-details">
+                                        <span class="patient-name">Michael Wachira</span>
+                                        <span class="invoice-number">INV-2025-089</span>
+                                    </div>
+                                </div>
+                                <div class="amount-info">
+                                    <span class="amount">KES. 15,000</span>
+                                    <span class="overdue-days">14 days overdue</span>
+                                </div>
+                                <div class="action-buttons">
+                                    <button class="btn-remind" title="Send Reminder">
+                                        <i class="fas fa-bell"></i>
+                                    </button>
+                                    <button class="btn-call" title="Call Patient">
+                                        <i class="fas fa-phone"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="outstanding-item">
+                                <div class="patient-info">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Patient" class="patient-avatar">
+                                    <div class="patient-details">
+                                        <span class="patient-name">Alice Wanjiku</span>
+                                        <span class="invoice-number">INV-2025-095</span>
+                                    </div>
+                                </div>
+                                <div class="amount-info">
+                                    <span class="amount">KES. 8,500</span>
+                                    <span class="overdue-days">7 days overdue</span>
+                                </div>
+                                <div class="action-buttons">
+                                    <button class="btn-remind" title="Send Reminder">
+                                        <i class="fas fa-bell"></i>
+                                    </button>
+                                    <button class="btn-call" title="Call Patient">
+                                        <i class="fas fa-phone"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="outstanding-item installment">
+                                <div class="patient-info">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Patient" class="patient-avatar">
+                                    <div class="patient-details">
+                                        <span class="patient-name">David Maina</span>
+                                        <span class="invoice-number">INV-2025-102 (Installment 2/4)</span>
+                                    </div>
+                                </div>
+                                <div class="amount-info">
+                                    <span class="amount">KES. 5,000</span>
+                                    <span class="due-date">Due in 3 days</span>
+                                </div>
+                                <div class="action-buttons">
+                                    <button class="btn-remind" title="Send Reminder">
+                                        <i class="fas fa-bell"></i>
+                                    </button>
+                                    <button class="btn-view" title="View Plan">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Patient Wallet Section -->
+                <section class="dashboard-card patient-wallet">
+                    <div class="card-header">
+                        <h2><i class="fas fa-wallet"></i> Patient Wallet Management</h2>
+                        <button class="btn-primary" id="addDepositBtn">
+                            <i class="fas fa-plus-circle"></i> Add Deposit
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="wallet-search">
+                            <input type="text" placeholder="Search patient by name or ID..." class="search-input">
+                        </div>
+                        <div class="wallet-list">
+                            <div class="wallet-item">
+                                <div class="wallet-patient">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                        alt="Patient" class="wallet-avatar">
+                                    <div class="wallet-info">
+                                        <span class="wallet-name">James Kariuki</span>
+                                        <span class="wallet-id">PAT-2025-145</span>
+                                    </div>
+                                </div>
+                                <div class="wallet-balance">
+                                    <span class="balance-label">Balance:</span>
+                                    <span class="balance-amount">KES. 2,500</span>
+                                </div>
+                                <div class="wallet-actions">
+                                    <button class="btn-small view-history">History</button>
+                                    <button class="btn-small apply-to-invoice">Apply</button>
+                                </div>
+                            </div>
+                            <div class="wallet-item">
+                                <div class="wallet-patient">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                        alt="Patient" class="wallet-avatar">
+                                    <div class="wallet-info">
+                                        <span class="wallet-name">Susan Mwangi</span>
+                                        <span class="wallet-id">PAT-2025-203</span>
+                                    </div>
+                                </div>
+                                <div class="wallet-balance">
+                                    <span class="balance-label">Balance:</span>
+                                    <span class="balance-amount">KES. 10,000</span>
+                                </div>
+                                <div class="wallet-actions">
+                                    <button class="btn-small view-history">History</button>
+                                    <button class="btn-small apply-to-invoice">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Payment Methods Display -->
+                <section class="dashboard-card payment-methods">
+                    <div class="card-header">
+                        <h2><i class="fas fa-credit-card"></i> Payment Instructions</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="payment-method-grid">
+                            <!-- M-Pesa Details -->
+                            <div class="payment-method mpesa">
+                                <div class="method-header">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <h3>M-Pesa Payment</h3>
+                                </div>
+                                <div class="method-details">
+                                    <div class="detail-item">
+                                        <span class="detail-label">Paybill:</span>
+                                        <span class="detail-value">522533</span>
+                                        <button class="copy-btn" title="Copy">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-label">Account:</span>
+                                        <span class="detail-value">1234567890</span>
+                                        <button class="copy-btn" title="Copy">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bank Transfer -->
+                            <div class="payment-method bank">
+                                <div class="method-header">
+                                    <i class="fas fa-university"></i>
+                                    <h3>Bank Transfer</h3>
+                                </div>
+                                <div class="method-details">
+                                    <div class="detail-item">
+                                        <span class="detail-label">Account:</span>
+                                        <span class="detail-value">0100123456789</span>
+                                        <button class="copy-btn" title="Copy">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-label">Bank:</span>
+                                        <span class="detail-value">Standard Chartered</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-label">Branch:</span>
+                                        <span class="detail-value">Westlands</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Insurance -->
+                            <div class="payment-method insurance">
+                                <div class="method-header">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h3>Insurance Claims</h3>
+                                </div>
+                                <div class="method-details">
+                                    <p class="insurance-info">Process insurance claims through the invoice management
+                                        system. Required documents will be auto-fetched from patient records.</p>
+                                    <button class="btn-secondary" id="viewClaimProcess">
+                                        <i class="fas fa-info-circle"></i> View Process
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Curis Service Fees Section -->
+                <section class="dashboard-card curis-fees">
+                    <div class="card-header">
+                        <h2><i class="fas fa-building"></i> Platform Service Fees</h2>
+                        <span class="fee-info">20% Revenue Share</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="fee-alert">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Platform fee of <strong>KES. 15,000</strong> due in 3 days</span>
+                        </div>
+                        <div class="fee-breakdown">
+                            <table class="fee-table">
+                                <thead>
+                                    <tr>
+                                        <th>Period</th>
+                                        <th>Total Revenue</th>
+                                        <th>Platform Fee (20%)</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>September 2025</td>
+                                        <td>KES. 75,000</td>
+                                        <td>KES. 15,000</td>
+                                        <td><span class="status-badge pending">Pending</span></td>
+                                        <td>
+                                            <button class="btn-pay-now">Pay Now</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>August 2025</td>
+                                        <td>KES. 68,500</td>
+                                        <td>KES. 13,700</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td>
+                                            <button class="btn-view-receipt">View Receipt</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>July 2025</td>
+                                        <td>KES. 82,000</td>
+                                        <td>KES. 16,400</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td>
+                                            <button class="btn-view-receipt">View Receipt</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reports & Analytics Section -->
+                <section class="dashboard-card reports-analytics">
+                    <div class="card-header">
+                        <h2><i class="fas fa-chart-line"></i> Reports & Analytics</h2>
+                        <div class="report-controls">
+                            <input type="date" class="date-input" id="reportStartDate">
+                            <span>to</span>
+                            <input type="date" class="date-input" id="reportEndDate">
+                            <button class="btn-generate" id="generateReportBtn">
+                                <i class="fas fa-sync"></i> Generate
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="reports-grid">
+                            <!-- Daily Cashier Report -->
+                            <div class="report-card">
+                                <h3><i class="fas fa-cash-register"></i> Daily Cashier Report</h3>
+                                <div class="report-summary">
+                                    <div class="summary-item">
+                                        <span class="label">Cash:</span>
+                                        <span class="value">KES. 45,200</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="label">M-Pesa:</span>
+                                        <span class="value">KES. 156,400</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="label">Insurance:</span>
+                                        <span class="value">KES. 44,000</span>
+                                    </div>
+                                    <div class="summary-item total">
+                                        <span class="label">Total:</span>
+                                        <span class="value">KES. 245,600</span>
+                                    </div>
+                                </div>
+                                <button class="btn-export-report">
+                                    <i class="fas fa-download"></i> Export PDF
+                                </button>
+                            </div>
+
+                            <!-- Revenue by Service -->
+                            <div class="report-card">
+                                <h3><i class="fas fa-stethoscope"></i> Revenue by Service</h3>
+                                <div class="service-revenue-list">
+                                    <div class="service-item">
+                                        <span class="service-name">Consultation</span>
+                                        <span class="service-amount">KES. 85,000</span>
+                                    </div>
+                                    <div class="service-item">
+                                        <span class="service-name">Laboratory</span>
+                                        <span class="service-amount">KES. 62,300</span>
+                                    </div>
+                                    <div class="service-item">
+                                        <span class="service-name">Pharmacy</span>
+                                        <span class="service-amount">KES. 48,500</span>
+                                    </div>
+                                    <div class="service-item">
+                                        <span class="service-name">Procedures</span>
+                                        <span class="service-amount">KES. 49,800</span>
+                                    </div>
+                                </div>
+                                <button class="btn-view-details">View Details</button>
+                            </div>
+
+                            <!-- Revenue by Doctor -->
+                            <div class="report-card">
+                                <h3><i class="fas fa-user-md"></i> Revenue by Doctor</h3>
+                                <div class="doctor-revenue-list">
+                                    <div class="doctor-item">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                            alt="Doctor" class="doctor-avatar">
+                                        <span class="doctor-name">Dr. James Ochieng</span>
+                                        <span class="doctor-amount">KES. 92,000</span>
+                                    </div>
+                                    <div class="doctor-item">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                            alt="Doctor" class="doctor-avatar">
+                                        <span class="doctor-name">Dr. Mary Kamau</span>
+                                        <span class="doctor-amount">KES. 78,600</span>
+                                    </div>
+                                    <div class="doctor-item">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                            alt="Doctor" class="doctor-avatar">
+                                        <span class="doctor-name">Dr. Peter Mutua</span>
+                                        <span class="doctor-amount">KES. 75,000</span>
+                                    </div>
+                                </div>
+                                <button class="btn-view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Payment & Audit Logs -->
+                <section class="dashboard-card payment-logs">
+                    <div class="card-header">
+                        <h2><i class="fas fa-history"></i> Payment & Audit Logs</h2>
+                        <button class="btn-export">
+                            <i class="fas fa-download"></i> Export Logs
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="logs-table-wrapper">
+                            <table class="logs-table">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>Invoice ID</th>
+                                        <th>Action</th>
+                                        <th>Amount</th>
+                                        <th>Method</th>
+                                        <th>User</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>29-09-2025 14:32:15</td>
+                                        <td>INV-2025-001</td>
+                                        <td>Payment Received</td>
+                                        <td>KES. 5,500</td>
+                                        <td>M-Pesa</td>
+                                        <td>Sarah Wanjiru</td>
+                                        <td>Trans: PH45GHJ2K1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>29-09-2025 14:15:08</td>
+                                        <td>INV-2025-098</td>
+                                        <td>Refund Processed</td>
+                                        <td>KES. 2,000</td>
+                                        <td>M-Pesa</td>
+                                        <td>Admin User</td>
+                                        <td>Approved by Manager</td>
+                                    </tr>
+                                    <tr>
+                                        <td>29-09-2025 13:45:22</td>
+                                        <td>INV-2025-002</td>
+                                        <td>Invoice Created</td>
+                                        <td>KES. 3,200</td>
+                                        <td>-</td>
+                                        <td>Sarah Wanjiru</td>
+                                        <td>Consultation + Lab</td>
+                                    </tr>
+                                    <tr>
+                                        <td>29-09-2025 12:20:11</td>
+                                        <td>INV-2025-003</td>
+                                        <td>Insurance Claim</td>
+                                        <td>KES. 12,000</td>
+                                        <td>Insurance</td>
+                                        <td>System</td>
+                                        <td>Claim #CLM-2025-045</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Payment Alerts Section -->
+                <section class="dashboard-card payment-alerts">
+                    <div class="card-header">
+                        <h2><i class="fas fa-bell"></i> Payment Alerts</h2>
+                        <span class="alert-count">5 Active Alerts</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="alerts-list">
+                            <div class="alert-item high-priority">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <div class="alert-content">
+                                    <span class="alert-title">Platform Fee Due</span>
+                                    <span class="alert-description">Monthly fee of KES. 15,000 due in 3 days</span>
+                                    <span class="alert-time">2 hours ago</span>
+                                </div>
+                                <button class="btn-action">Pay Now</button>
+                            </div>
+                            <div class="alert-item medium-priority">
+                                <i class="fas fa-clock"></i>
+                                <div class="alert-content">
+                                    <span class="alert-title">5 Overdue Invoices</span>
+                                    <span class="alert-description">Total of KES. 86,300 pending for over 7 days</span>
+                                    <span class="alert-time">Today, 10:00 AM</span>
+                                </div>
+                                <button class="btn-action">Review</button>
+                            </div>
+                            <div class="alert-item success">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="alert-content">
+                                    <span class="alert-title">Insurance Claim Approved</span>
+                                    <span class="alert-description">Claim #CLM-2025-043 for KES. 25,000 approved</span>
+                                    <span class="alert-time">Yesterday, 4:30 PM</span>
+                                </div>
+                                <button class="btn-action">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- MODALS SECTION -->
+
+    <!-- Create Invoice Modal -->
+    <div class="modal" id="createInvoiceModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-file-invoice"></i> Create New Invoice</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="createInvoiceForm" class="invoice-form">
+                    <!-- Patient Selection -->
+                    <div class="form-section">
+                        <h4>Patient Information</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Patient Name *</label>
+                                <input type="text" class="form-input" id="patientName" placeholder="Search patient..."
+                                    required>
+                                <button type="button" class="btn-add-new">Add New Patient</button>
+                            </div>
+                            <div class="form-group">
+                                <label>Payment Type *</label>
+                                <select class="form-select" id="paymentType" required>
+                                    <option value="standard">Standard Payment</option>
+                                    <option value="insurance">Insurance Claim</option>
+                                    <option value="corporate">Corporate Billing</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Selection -->
+                    <div class="form-section">
+                        <h4>Services</h4>
+                        <div class="service-items" id="serviceItems">
+                            <div class="service-item-row">
+                                <select class="service-select">
+                                    <option value="">Select Service</option>
+                                    <option value="consultation">Consultation - KES. 2,500</option>
+                                    <option value="lab-test">Lab Test - KES. 3,000</option>
+                                    <option value="xray">X-Ray - KES. 5,000</option>
+                                    <option value="procedure">Minor Procedure - KES. 8,000</option>
+                                </select>
+                                <input type="number" class="quantity-input" value="1" min="1">
+                                <input type="text" class="amount-input" value="0" readonly>
+                                <button type="button" class="btn-remove-item">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-add-service" id="addServiceBtn">
+                            <i class="fas fa-plus"></i> Add Service
+                        </button>
+                    </div>
+
+                    <!-- Billing Details -->
+                    <div class="form-section">
+                        <h4>Billing Details</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Subtotal</label>
+                                <input type="text" class="form-input" id="subtotal" value="KES. 0" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>VAT (16%)</label>
+                                <input type="text" class="form-input" id="vat" value="KES. 0" readonly>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Discount</label>
+                                <div class="discount-group">
+                                    <input type="number" class="form-input" id="discount" placeholder="0">
+                                    <select class="discount-type">
+                                        <option value="percent">%</option>
+                                        <option value="fixed">KES.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Total Amount</label>
+                                <input type="text" class="form-input total-amount" id="totalAmount" value="KES. 0"
+                                    readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Installment Option -->
+                    <div class="form-section">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="enableInstallments">
+                            <label for="enableInstallments">Enable Installment Plan</label>
+                        </div>
+                        <div class="installment-options" id="installmentOptions" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Number of Installments</label>
+                                    <select class="form-select" id="numInstallments">
+                                        <option value="2">2 Payments</option>
+                                        <option value="3">3 Payments</option>
+                                        <option value="4">4 Payments</option>
+                                        <option value="6">6 Payments</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Frequency</label>
+                                    <select class="form-select" id="frequency">
+                                        <option value="weekly">Weekly</option>
+                                        <option value="biweekly">Bi-Weekly</option>
+                                        <option value="monthly">Monthly</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notes -->
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label>Notes (Optional)</label>
+                            <textarea class="form-textarea" id="invoiceNotes" rows="3"
+                                placeholder="Add any additional notes..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-save"></i> Create Invoice
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="closeModal('createInvoiceModal')">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Paid Modal -->
+    <div class="modal" id="markPaidModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-check-circle"></i> Mark Invoice as Paid</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="markPaidForm">
+                    <div class="form-group">
+                        <label>Invoice Number *</label>
+                        <input type="text" class="form-input" placeholder="Enter invoice number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount Due</label>
+                        <input type="text" class="form-input" value="KES. 5,500" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount Received *</label>
+                        <input type="number" class="form-input" placeholder="Enter amount received" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Method *</label>
+                        <select class="form-select" required>
+                            <option value="">Select Method</option>
+                            <option value="cash">Cash</option>
+                            <option value="mpesa">M-Pesa</option>
+                            <option value="insurance">Insurance</option>
+                            <option value="wallet">Patient Wallet</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="referenceField" style="display: none;">
+                        <label>Transaction Reference</label>
+                        <input type="text" class="form-input" placeholder="Enter M-Pesa or Insurance reference">
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Time</label>
+                        <input type="datetime-local" class="form-input">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-check"></i> Confirm Payment
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="closeModal('markPaidModal')">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Insurance Claim Modal -->
+    <div class="modal" id="insuranceClaimModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-file-medical"></i> Process Insurance Claim</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="insuranceClaimForm">
+                    <div class="form-section">
+                        <h4>Patient & Invoice Details</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Patient Name</label>
+                                <input type="text" class="form-input" value="Peter Odhiambo" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Invoice Number</label>
+                                <input type="text" class="form-input" value="INV-2025-003" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4>Auto-Fetched Documents</h4>
+                        <div class="document-list">
+                            <div class="document-item fetched">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Medical Report - Dr. Peter Mutua</span>
+                                <button type="button" class="btn-view">View</button>
+                            </div>
+                            <div class="document-item fetched">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Diagnosis Sheet</span>
+                                <button type="button" class="btn-view">View</button>
+                            </div>
+                            <div class="document-item fetched">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Prescription Details</span>
+                                <button type="button" class="btn-view">View</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4>Additional Documents</h4>
+                        <div class="form-group">
+                            <label>Upload Claim Form</label>
+                            <input type="file" class="form-input" accept=".pdf,.jpg,.png">
+                        </div>
+                        <div class="form-group">
+                            <label>Upload NHIF/SHIF Statement</label>
+                            <input type="file" class="form-input" accept=".pdf,.jpg,.png">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4>Claim Details</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Insurance Provider</label>
+                                <select class="form-select">
+                                    <option>Jubilee Insurance</option>
+                                    <option>UAP Insurance</option>
+                                    <option>Britam</option>
+                                    <option>Madison Insurance</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Policy Number</label>
+                                <input type="text" class="form-input" placeholder="Enter policy number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Submit Claim
+                        </button>
+                        <button type="button" class="btn-generate">
+                            <i class="fas fa-file-pdf"></i> Generate PDF Packet
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="closeModal('insuranceClaimModal')">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Refund/Adjustment Modal -->
+    <div class="modal" id="refundModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-undo-alt"></i> Process Refund/Adjustment</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="refundForm">
+                    <div class="form-group">
+                        <label>Request Type *</label>
+                        <select class="form-select" required>
+                            <option value="">Select Type</option>
+                            <option value="refund">Refund</option>
+                            <option value="correction">Billing Correction</option>
+                            <option value="writeoff">Write-off</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Invoice Number *</label>
+                        <input type="text" class="form-input" placeholder="Enter invoice number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount to Adjust *</label>
+                        <input type="number" class="form-input" placeholder="Enter amount" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Refund Method</label>
+                        <select class="form-select">
+                            <option value="">Select Method</option>
+                            <option value="cash">Cash</option>
+                            <option value="mpesa">M-Pesa</option>
+                            <option value="bank">Bank Transfer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Reason *</label>
+                        <textarea class="form-textarea" rows="3" placeholder="Provide reason for refund/adjustment"
+                            required></textarea>
+                    </div>
+                    <div class="alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        This request will require approval from the clinic manager.
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Submit for Approval
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="closeModal('refundModal')">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patient Wallet Deposit Modal -->
+    <div class="modal" id="walletDepositModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-wallet"></i> Add Wallet Deposit</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="walletDepositForm">
+                    <div class="form-group">
+                        <label>Patient Name *</label>
+                        <input type="text" class="form-input" placeholder="Search patient..." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Current Balance</label>
+                        <input type="text" class="form-input" value="KES. 0" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Deposit Amount *</label>
+                        <input type="number" class="form-input" placeholder="Enter amount" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Method *</label>
+                        <select class="form-select" required>
+                            <option value="">Select Method</option>
+                            <option value="cash">Cash</option>
+                            <option value="mpesa">M-Pesa</option>
+                            <option value="bank">Bank Transfer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Reference Number</label>
+                        <input type="text" class="form-input" placeholder="Transaction reference">
+                    </div>
+                    <div class="form-group">
+                        <label>Purpose/Notes</label>
+                        <textarea class="form-textarea" rows="2" placeholder="Optional notes..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-plus-circle"></i> Add Deposit
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="closeModal('walletDepositModal')">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Receipt Generation Modal -->
+    <div class="modal" id="receiptModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-receipt"></i> Generate Receipt</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="receipt-preview">
+                    <div class="receipt-header">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                            alt="Curis Logo" class="receipt-logo">
+                        <h4>Payment Receipt</h4>
+                    </div>
+                    <div class="receipt-details">
+                        <div class="receipt-row">
+                            <span class="label">Receipt No:</span>
+                            <span class="value">RCP-2025-0145</span>
+                        </div>
+                        <div class="receipt-row">
+                            <span class="label">Invoice No:</span>
+                            <span class="value">INV-2025-001</span>
+                        </div>
+                        <div class="receipt-row">
+                            <span class="label">Patient:</span>
+                            <span class="value">John Kimani</span>
+                        </div>
+                        <div class="receipt-row">
+                            <span class="label">Amount Paid:</span>
+                            <span class="value">KES. 5,500</span>
+                        </div>
+                        <div class="receipt-row">
+                            <span class="label">Payment Method:</span>
+                            <span class="value">M-Pesa</span>
+                        </div>
+                        <div class="receipt-row">
+                            <span class="label">Date:</span>
+                            <span class="value">29-09-2025 14:32:15</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="send-options">
+                    <h4>Send Receipt To:</h4>
+                    <div class="send-buttons">
+                        <button class="btn-send-sms">
+                            <i class="fas fa-sms"></i> SMS
+                        </button>
+                        <button class="btn-send-email">
+                            <i class="fas fa-envelope"></i> Email
+                        </button>
+                        <button class="btn-send-whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </button>
+                        <button class="btn-print">
+                            <i class="fas fa-print"></i> Print
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Popup -->
+    <div class="profile-popup" id="profilePopup">
+        <div class="profile-popup-content">
+            <div class="profile-header">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                    alt="Profile" class="popup-profile-img">
+                <div class="profile-info">
+                    <h3>Sarah Wanjiru</h3>
+                    <p>Receptionist</p>
+                </div>
+            </div>
+            <div class="profile-menu">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\My Profile\my_profile.html"
+                    class="profile-menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Landing Page\landing_page.html"
+                    class="profile-menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="fixed-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <!-- Corporate Website Link -->
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer" class="corporate-link">
+                    Visit Citrus Labs
+                </a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Copyright -->
+                <p class="copyright">© 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="billings_and_payments.js"></script>
+</body>
+
+</html>

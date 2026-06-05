@@ -1,0 +1,151 @@
+stateDiagram-v2
+    [*] --> LoginPage: Receptionist accesses login page
+    
+    state LoginPage {
+        [*] --> EmailInputForm
+
+        note right of EmailInputForm
+            Clinic Assistant enters work email
+            Single input field with real-time validation
+            Shows Curis logo and tagline
+            "Send Verification Code" primary button
+        end note
+
+        EmailInputForm --> FormValidation: User clicks "Send Verification Code"
+    }
+
+    state FormValidation {
+        [*] --> ValidatingEmail: Button shows loading state
+        ValidatingEmail --> EmailValid: Email format correct
+        ValidatingEmail --> EmailInvalid: Email format invalid
+
+        note right of ValidatingEmail
+            Checks for proper email format
+            Optional: Verifies domain exists
+            Shows red error text if invalid
+        end note
+    }
+
+    FormValidation --> LoginPage: Shows error message if invalid
+    FormValidation --> SendVerification: Email is valid
+
+    state SendVerification {
+        [*] --> GeneratingCode
+        GeneratingCode --> SendingEmail: System generates verification code
+        SendingEmail --> EmailSent: Code sent successfully
+        SendingEmail --> SendingFailed: Failed to send code
+
+        note right of GeneratingCode
+            Generates unique 6-digit code
+            Sets 10-minute expiration
+            Associates code with entered email
+        end note
+    }
+
+    SendVerification --> VerificationScreen: Success
+    SendVerification --> LoginPage: Failure (show error)
+
+    state VerificationScreen {
+        [*] --> SuccessMessage
+        SuccessMessage --> CodeEntryForm: Show verification input
+
+        note right of SuccessMessage
+            "Code Sent!" message
+            Email address confirmation
+            Prompt to check inbox/spam folder
+        end note
+
+        state CodeEntryForm {
+            [*] --> CodeInput
+            CodeInput --> VerifyButton: User enters code
+            CodeInput --> ResendButton: User requests new code
+
+            note right of CodeInput
+                6-digit verification input
+                "Verify Code" primary button
+                "Resend Code" link (enabled after 60s)
+                Countdown timer to code expiry
+            end note
+        }
+    }
+
+    VerificationScreen --> TokenValidation: Clicks "Verify Code"
+    VerificationScreen --> SendVerification: Clicks "Resend Code"
+
+    state TokenValidation {
+        [*] --> ValidatingToken: Loading verification
+        ValidatingToken --> TokenValid: Code is correct
+        ValidatingToken --> TokenInvalid: Code is wrong
+        ValidatingToken --> TokenExpired: Code has expired
+
+        note right of ValidatingToken
+            Compares code against database
+            Confirms it’s within time limit
+            Checks if it's not reused
+        end note
+    }
+
+    TokenValidation --> VerificationScreen: Invalid code (show error)
+    TokenValidation --> LoginPage: Expired code (restart flow)
+    TokenValidation --> SessionCreation: Valid code
+
+    state SessionCreation {
+        [*] --> EstablishingSession
+        EstablishingSession --> SettingPermissions
+        SettingPermissions --> SessionEstablished
+
+        note right of EstablishingSession
+            Creates secure session token (JWT)
+            Sets role: "Receptionist / Clinic Assistant"
+            Session timeout: 8 hours
+            Saves session locally
+        end note
+    }
+
+    SessionCreation --> Dashboard: Redirect to assistant dashboard
+
+    state Dashboard {
+        [*] --> LoadingDashboard
+        LoadingDashboard --> DashboardReady
+
+        note right of DashboardReady
+            Patient Queue View
+            Appointment Calendar
+            Doctor Availability Panel
+            Task and Note Widget
+        end note
+    }
+
+    Dashboard --> ActiveSession: Background session management
+
+    state ActiveSession {
+        [*] --> UserActive
+        UserActive --> UserIdle: No user activity
+        UserIdle --> UserActive: User returns
+        UserActive --> LogoutRequested: Manual logout
+
+        note right of UserActive
+            Session stays alive with activity
+            Auto logout if idle
+            Real-time session monitoring
+        end note
+    }
+
+    ActiveSession --> SessionValidation: Token check (every 5 min)
+
+    state SessionValidation {
+        [*] --> CheckingToken
+        CheckingToken --> SessionValid: Token OK
+        CheckingToken --> SessionInvalid: Token expired
+        CheckingToken --> SessionRevoked: Admin deactivated
+
+        note right of CheckingToken
+            Validates JWT token
+            Ensures permissions are intact
+        end note
+    }
+
+    SessionValidation --> ActiveSession: Session valid
+    SessionValidation --> LoginPage: Token invalid or revoked
+
+    ActiveSession --> [*]: Full logout

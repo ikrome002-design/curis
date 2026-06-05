@@ -1,0 +1,41 @@
+#### 1. **Compliance Hub**
+
+
+
+
+The **Compliance Hub** page is a critical area within the **Super Administrator's** account, ensuring that the platform remains secure, compliant with relevant standards, and protected from unauthorized access. Here’s an expanded view of its dynamic features and functionalities:
+
+### **a. Audit Log Access**
+- **Comprehensive Log Tracking**:
+  - The Super Admin can access and review detailed audit logs that record every user activity on the platform, including:
+    - **Login attempts** (successful and failed).
+    - **Actions taken** (e.g., account creation, updates, deletions).
+    - **Data access** (e.g., medical records, appointment adjustments, billing changes).
+    - **Changes in user roles** and permissions.
+    - **IP addresses** associated with each action.
+    - **Session histories** that provide timestamps of login and logout times.
+    
+- **Search and Filter Logs**:
+  - Logs can be searched and filtered by:
+    - **User type** (Patient, Doctor, Receptionist, Clinic Owner).
+    - **Action type** (logins, data changes, administrative actions).
+    - **Date range** to examine user activity over a specific period.
+    - **IP address** or device type, if suspicious activity is detected.
+
+- **Log Exporting**:
+  - Audit logs can be exported for offline analysis, backup, or compliance reporting. They can be exported in formats such as CSV or PDF, which are ideal for generating detailed reports.
+
+### **b. Login Attempt Monitoring**
+- **Login Attempt Limits**:
+  - The Super Admin can configure the number of **failed login attempts** allowed before locking an account. For example:
+    - **Max failed attempts**: 5 failed login attempts before the account is locked for a specific period (e.g., 30 minutes).
+    - **Customizable lockout duration** to prevent brute-force attacks.
+
+- **Automated Locking and Alerts**:
+  - When the set limit is reached, the system will **automatically lock** the account to protect it from unauthorized access.
+  - A **notification** is sent to the Super Admin and the affected user, alerting them of the failed login attempts and account lock.
+
+- **Captcha Integration**:
+  - After multiple failed login attempts, a **Captcha verification** can be required to prevent automated login attempts and ensure security.
+
+---

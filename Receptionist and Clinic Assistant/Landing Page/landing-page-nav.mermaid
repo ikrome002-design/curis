@@ -1,0 +1,81 @@
+stateDiagram-v2
+    [*] --> LandingPage: Visitor opens the Curis platform website
+
+    state LandingPage {
+        [*] --> HeroSection
+        HeroSection --> CTA_HeroButton: Click "Get Started"
+
+        note right of HeroSection
+            - Headline: Communicates Curis' value to clinic assistants
+            - Subheading: Highlights top benefits (e.g., faster check-ins, simplified schedules)
+            - Background image/video: Shows receptionist using Curis
+            - CTA Button: "Get Started"
+        end note
+
+        [*] --> FeaturesOverview
+
+        note right of FeaturesOverview
+            - Grid or carousel layout with icons + short text
+            - Example features:
+              • Patient Queue Management
+              • Easy Appointment Scheduling
+              • Real-time Doctor Availability
+              • Task Reminders and Notes
+        end note
+
+        [*] --> TestimonialsSection
+
+        note right of TestimonialsSection
+            - Displays testimonials from clinic assistants or receptionists
+            - May include names, roles, and photos
+            - Optional star ratings or quote highlights
+        end note
+
+
+        [*] --> BenefitsSection
+
+        note right of BenefitsSection
+            - Clear bullet points:
+              • Speed Up Patient Check-ins
+              • Reduce Scheduling Errors
+              • Keep Your Clinic Organized
+            - Accompanied by icons or visuals
+        end note
+
+        [*] --> TrustIndicatorsSection
+
+        note right of TrustIndicatorsSection
+            - Shows badges or compliance labels (HIPAA, GDPR)
+            - Trusted by clinics, hospitals, or health networks
+            - Optional: Featured in or partnered with logos
+        end note
+
+        [*] --> ContactSection
+
+        note right of ContactSection
+            - "Contact Us" form with name, email, message fields
+            - Email and optional phone support
+            - Links to social platforms like LinkedIn and Twitter
+        end note
+
+        [*] --> FooterSection
+
+        note right of FooterSection
+            - Navigation links: About, FAQs, Privacy Policy, Terms
+            - Social media icons
+            - Copyright text
+        end note
+
+        %% CTAs distributed throughout the page
+        LandingPage --> CTA_HeroButton: CTA (Hero)
+        LandingPage --> CTA_FeaturesButton: CTA (Features Overview)
+        LandingPage --> CTA_BenefitsButton: CTA (Benefits Section)
+    }
+
+    %% Navigation to Login
+    CTA_HeroButton --> LoginPage: Redirect to login on click
+    CTA_FeaturesButton --> LoginPage: Redirect to login
+    CTA_DemoButton --> LoginPage: Redirect to login
+    CTA_BenefitsButton --> LoginPage: Redirect to login
+
+    LandingPage --> [*]: User exits site

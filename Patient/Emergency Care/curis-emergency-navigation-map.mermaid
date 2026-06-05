@@ -1,0 +1,257 @@
+flowchart TD
+    %% Emergency Care Main Page
+    I[Emergency Care Page] --> I_HEADER[Page Header<br/>Navigation & Context]
+    I_HEADER --> I_NAV[Navigation Bar<br/>Main menu access]
+    I_NAV --> E[Dashboard]
+    I_NAV --> F[My Appointments]
+    I_NAV --> G[My Health Care]
+    I_NAV --> H[Billings & Payments]
+    I_NAV --> J[My Medical Cover]
+    I_NAV --> K[My Profile]
+    
+    %% National Emergency Directory
+    I --> I1[National Emergency Directory<br/>Critical service contacts]
+    I1 --> I1a[Emergency Categories<br/>Service type organization]
+    
+    I1a --> I1a_CARDS[Category Cards<br/>Service sections]
+    I1a_CARDS --> I1a1[Ambulance Services<br/>Medical transport]
+    I1a1 --> I1a1_LIST[Service List<br/>Available providers]
+    I1a1_LIST --> I1a1_L1[St. John Ambulance<br/>Emergency medical]
+    I1a1_LIST --> I1a1_L2[Red Cross<br/>Emergency response]
+    I1a1_LIST --> I1a1_L3[Other Providers<br/>Additional services]
+    
+    I1a_CARDS --> I1a2[Police & Security<br/>Law enforcement]
+    I1a2 --> I1a2_LIST[Hotline List<br/>Emergency numbers]
+    I1a2_LIST --> I1a2_L1[999 Emergency<br/>General police]
+    I1a2_LIST --> I1a2_L2[Crime Stoppers<br/>Anonymous reporting]
+    
+    I1a_CARDS --> I1a3[Fire & Rescue<br/>Emergency response]
+    I1a3 --> I1a3_LIST[Fire Services<br/>Contact numbers]
+    
+    I1a_CARDS --> I1a4[Poison Control<br/>Toxicology support]
+    I1a4 --> I1a4_LIST[Poison Centers<br/>Specialized help]
+    
+    I1a_CARDS --> I1a5[Mental Health Crisis<br/>Psychological support]
+    I1a5 --> I1a5_LIST[Crisis Lines<br/>Mental health services]
+    I1a5_LIST --> I1a5_L1[Suicide Prevention<br/>24/7 support]
+    I1a5_LIST --> I1a5_L2[Crisis Counseling<br/>Immediate help]
+    
+    I1a_CARDS --> I1a6[Child Protection<br/>Welfare agencies]
+    I1a6 --> I1a6_LIST[Child Services<br/>Protection contacts]
+    I1a6_LIST --> I1a6_L1[Child Helpline<br/>116 service]
+    I1a6_LIST --> I1a6_L2[Welfare Agencies<br/>Support services]
+    
+    I1a_CARDS --> I1a7[GBV Support<br/>Gender-based violence]
+    I1a7 --> I1a7_LIST[Support Services<br/>GBV assistance]
+    I1a7_LIST --> I1a7_L1[GBV Hotline<br/>1195 service]
+    I1a7_LIST --> I1a7_L2[Safe Houses<br/>Emergency shelter]
+    
+    %% Contact Information Display
+    I1 --> I1b[Contact Information<br/>Service details]
+    I1b --> I1b_CARD[Contact Card<br/>Service display]
+    I1b_CARD --> I1b1[Service Name<br/>Organization ID]
+    I1b_CARD --> I1b2[Phone Numbers<br/>Contact details]
+    I1b2 --> I1b2_CLICK{Number Click}
+    I1b2_CLICK --> I1b2a[Number Copied Toast<br/>Clipboard confirmation]
+    I1b2a --> I1b2a_MSG[Success Message<br/>"Number copied!"]
+    I1b2a --> I1b2a_ICON[Checkmark Icon<br/>Visual confirmation]
+    
+    I1b_CARD --> I1b3[Service Hours<br/>Availability]
+    I1b3 --> I1b3_24[24/7 Service<br/>Always available]
+    I1b3 --> I1b3_HOURS[Business Hours<br/>Time restrictions]
+    
+    I1b_CARD --> I1b4[Location Relevance<br/>Coverage area]
+    I1b4 --> I1b4_NAT[National<br/>Countrywide service]
+    I1b4 --> I1b4_REG[Regional<br/>Area-specific]
+    
+    %% Personal Emergency Contacts
+    I --> I2[Personal Emergency Contacts<br/>Private contacts]
+    I2 --> I2_VIEW[Contacts View<br/>List display]
+    I2_VIEW --> I2_CARDS[Contact Cards<br/>Individual entries]
+    
+    I2 --> I2a[Contact Management<br/>CRUD operations]
+    I2a --> I2a1[Add New Contact<br/>Create button]
+    I2a1 --> I2a1_CLICK{Add Click}
+    I2a1_CLICK --> I2a1_MODAL[Add Contact Modal<br/>Creation form]
+    I2a1_MODAL --> I2a1a[Contact Details<br/>Form fields]
+    I2a1a --> I2a1a_NAME[Name Field<br/>Contact name]
+    I2a1a --> I2a1a_REL[Relationship Field<br/>Dropdown selection]
+    I2a1a_REL --> I2a1a_R1[Mother<br/>Parent]
+    I2a1a_REL --> I2a1a_R2[Spouse<br/>Partner]
+    I2a1a_REL --> I2a1a_R3[Guardian<br/>Caregiver]
+    I2a1a_REL --> I2a1a_R4[Other<br/>Custom]
+    
+    I2a1a --> I2a1a_PHONE[Phone Field<br/>Number input]
+    I2a1a_PHONE --> I2a1a_P_VALID[Validation<br/>Format check]
+    
+    I2a1a --> I2a1a_TYPE[Type Field<br/>Contact category]
+    I2a1a_TYPE --> I2a1a_T1[Next of Kin<br/>Primary contact]
+    I2a1a_TYPE --> I2a1a_T2[Private Ambulance<br/>Medical transport]
+    I2a1a_TYPE --> I2a1a_T3[Family Doctor<br/>Healthcare provider]
+    I2a1a_TYPE --> I2a1a_T4[Family Member<br/>Relative]
+    
+    I2a1_MODAL --> I2a1_SAVE{Save Contact}
+    I2a1_SAVE --> I2a1_SUCCESS[Contact Added<br/>Success message]
+    I2a1_SUCCESS --> I2_VIEW[Refresh List<br/>Show new contact]
+    
+    I2a --> I2a2[Edit Contact<br/>Modify button]
+    I2a2 --> I2a2_CLICK{Edit Click}
+    I2a2_CLICK --> I2a2_MODAL[Edit Modal<br/>Update form]
+    I2a2_MODAL --> I2a2_FIELDS[Pre-filled Fields<br/>Current data]
+    I2a2_MODAL --> I2a2_UPDATE{Update Contact}
+    I2a2_UPDATE --> I2a2_SUCCESS[Contact Updated<br/>Success message]
+    
+    I2a --> I2a3[Delete Contact<br/>Remove button]
+    I2a3 --> I2a3_CLICK{Delete Click}
+    I2a3_CLICK --> I2a3_CONFIRM[Confirm Modal<br/>Delete warning]
+    I2a3_CONFIRM --> I2a3_MSG[Warning Message<br/>"Are you sure?"]
+    I2a3_CONFIRM --> I2a3_BTN{Confirm Delete}
+    I2a3_BTN --> I2a3_SUCCESS[Contact Deleted<br/>Removed from list]
+    
+    I2a --> I2a4[Copy-to-Call<br/>Phone clipboard]
+    I2a4 --> I2a4_CLICK{Copy Click}
+    I2a4_CLICK --> I2a4_TOAST[Number Copied<br/>Clipboard success]
+    
+    %% Contact Categories
+    I2 --> I2b[Contact Categories<br/>Type organization]
+    I2b --> I2b_TABS[Category Tabs<br/>Contact filtering]
+    I2b_TABS --> I2b1[Next of Kin<br/>Primary contacts]
+    I2b_TABS --> I2b2[Private Ambulance<br/>Medical transport]
+    I2b_TABS --> I2b3[Family Doctor<br/>Healthcare providers]
+    I2b_TABS --> I2b4[Family Members<br/>Relatives]
+    
+    %% Dependent Emergency Support
+    I --> I3[Dependent Emergency Support<br/>Child-specific care]
+    I3 --> I3_SWITCHER[Family Switcher<br/>Child selection]
+    I3_SWITCHER --> I3_DROP{Dropdown Click}
+    I3_DROP --> I3_LIST[Children List<br/>Dependents display]
+    I3_LIST --> I3_SELECT{Select Child}
+    
+    I3_SELECT --> I3a[Child Emergency Info<br/>Dependent data]
+    I3a --> I3a_CARD[Info Card<br/>Child details]
+    I3a_CARD --> I3a1[Child Details<br/>Basic info]
+    I3a1 --> I3a1_NAME[Child Name<br/>Full name]
+    I3a1 --> I3a1_AGE[Age Display<br/>Years old]
+    I3a1 --> I3a1_PHOTO[Profile Photo<br/>Visual ID]
+    
+    I3a_CARD --> I3a2[Allergy Alerts<br/>Critical conditions]
+    I3a2 --> I3a2_LIST[Allergy List<br/>Known allergies]
+    I3a2_LIST --> I3a2_L1[Food Allergies<br/>Dietary restrictions]
+    I3a2_LIST --> I3a2_L2[Drug Allergies<br/>Medication warnings]
+    I3a2_LIST --> I3a2_L3[Other Conditions<br/>Medical alerts]
+    
+    I3a_CARD --> I3a3[Emergency Contacts<br/>Child's contacts]
+    I3a3 --> I3a3_PED[Pediatrician<br/>Primary doctor]
+    I3a3 --> I3a3_SCHOOL[School Contact<br/>Education facility]
+    I3a3 --> I3a3_OTHER[Other Contacts<br/>Additional numbers]
+    
+    %% Priority Scheduling
+    I3 --> I3b[Priority Scheduling<br/>Urgent booking]
+    I3b --> I3b1[Urgent Appointment<br/>Emergency booking]
+    I3b1 --> I3b1_CLICK{Book Urgent Click}
+    I3b1_CLICK --> I3b1_FLOW[Booking Flow<br/>Fast-track process]
+    
+    I3b1_FLOW --> I3b1a[Pediatrician Filter<br/>Auto-applied]
+    I3b1a --> I3b1a_PREV[Previous Doctors<br/>History-based]
+    I3b1a --> I3b1a_SPEC[Pediatric Specialists<br/>Child doctors]
+    
+    I3b1_FLOW --> I3b1b[Earliest Slots<br/>Priority display]
+    I3b1b --> I3b1b_TODAY[Today's Slots<br/>Same-day options]
+    I3b1b --> I3b1b_NEXT[Next Available<br/>Soonest booking]
+    
+    I3b1_FLOW --> I3b1c[Urgent Flag<br/>Priority marker]
+    I3b1c --> I3b1c_BADGE[URGENT Badge<br/>Visual indicator]
+    I3b1c --> I3b1c_NOTIFY[Clinic Alert<br/>Priority notification]
+    
+    I3b1_FLOW --> F3[Time Slot Booking<br/>Appointment system]
+    
+    %% Urgent Clinic Communication
+    I --> I4[Urgent Clinic Communication<br/>Emergency messaging]
+    I4 --> I4a[Contact My Clinic<br/>Emergency button]
+    I4a --> I4a_CLICK{Contact Click}
+    I4a_CLICK --> I4a_MODAL[Emergency Form Modal<br/>Message interface]
+    
+    I4a_MODAL --> I4a1[Clinic Selection<br/>Provider choice]
+    I4a1 --> I4a1_DROP[Clinic Dropdown<br/>Available clinics]
+    I4a1_DROP --> I4a1_RECENT[Recent Clinics<br/>Visit history]
+    I4a1_DROP --> I4a1_ALL[All Clinics<br/>Full list]
+    
+    I4a_MODAL --> I4a2[Emergency Description<br/>Situation details]
+    I4a2 --> I4a2_FIELD[Description Field<br/>Text area]
+    I4a2 --> I4a2_TEMPLATE[Quick Templates<br/>Common emergencies]
+    I4a2_TEMPLATE --> I4a2_T1[Severe Pain<br/>Pain emergency]
+    I4a2_TEMPLATE --> I4a2_T2[Accident<br/>Injury situation]
+    I4a2_TEMPLATE --> I4a2_T3[Allergic Reaction<br/>Allergy emergency]
+    I4a2_TEMPLATE --> I4a2_T4[Other<br/>Custom description]
+    
+    I4a_MODAL --> I4a3[Urgent Submission<br/>Send button]
+    I4a3 --> I4a3_SUBMIT{Submit Emergency}
+    I4a3_SUBMIT --> I4a3_PROCESS[Submission Process<br/>Message routing]
+    I4a3_PROCESS --> I4a3a[URGENT Flag<br/>Priority marking]
+    I4a3a --> I4a3a_INBOX[Priority Inbox<br/>Clinic dashboard]
+    I4a3a --> I4a3a_ALERT[Staff Alert<br/>Immediate notification]
+    I4a3a --> I4a3a_CONFIRM[Patient Confirmation<br/>Message sent]
+    
+    %% Emergency Notifications
+    I4 --> I4b[Emergency Notifications<br/>Clinic alerts]
+    I4b --> I4b_TYPES[Notification Types<br/>Alert categories]
+    
+    I4b_TYPES --> I4b1[Outbreak Alerts<br/>Public health]
+    I4b1 --> I4b1_DISPLAY[Alert Display<br/>Warning banner]
+    I4b1 --> I4b1_DETAILS[Alert Details<br/>Outbreak info]
+    I4b1 --> I4b1_ACTIONS[Recommended Actions<br/>Safety measures]
+    
+    I4b_TYPES --> I4b2[Urgent Health Notices<br/>Critical info]
+    I4b2 --> I4b2_PRIORITY[Priority Display<br/>Top placement]
+    I4b2 --> I4b2_CONTENT[Notice Content<br/>Health advisory]
+    
+    I4b_TYPES --> I4b3[Multi-channel Delivery<br/>Alert methods]
+    I4b3 --> I4b3_SMS[SMS Alert<br/>Text message]
+    I4b3 --> I4b3_WA[WhatsApp Alert<br/>Instant message]
+    I4b3 --> I4b3_APP[In-app Alert<br/>Notification badge]
+    I4b3 --> I4b3_PUSH[Push Alert<br/>Mobile notification]
+    
+    %% Emergency Location Reference
+    I --> I5[Emergency Location Reference<br/>Geographic services]
+    I5 --> I5_FILTER[Location Filter<br/>Area selection]
+    I5_FILTER --> I5_DROP{Filter Dropdown}
+    I5_DROP --> I5a[County-based Services<br/>Regional contacts]
+    
+    I5a --> I5a_LIST[County List<br/>Kenya regions]
+    I5a_LIST --> I5a1[Nairobi Services<br/>Capital emergency]
+    I5a1 --> I5a1_AMB[Nairobi Ambulance<br/>Local providers]
+    I5a1 --> I5a1_HOSP[Major Hospitals<br/>Emergency rooms]
+    I5a1 --> I5a1_POLICE[Police Stations<br/>Local law enforcement]
+    
+    I5a_LIST --> I5a2[Mombasa Services<br/>Coastal emergency]
+    I5a2 --> I5a2_AMB[Coastal Ambulance<br/>Marine services]
+    I5a2 --> I5a2_HOSP[Coastal Hospitals<br/>Emergency care]
+    
+    I5a_LIST --> I5a3[Rural Area Support<br/>County services]
+    I5a3 --> I5a3_HEALTH[Health Centers<br/>Local facilities]
+    I5a3 --> I5a3_DISP[Dispensaries<br/>Basic emergency]
+    I5a3 --> I5a3_REFER[Referral Contacts<br/>Major hospitals]
+    
+    %% Integration Points
+    I --> I_INT[Page Integrations<br/>Cross-page links]
+    I_INT --> I_INT1[From Dashboard<br/>Emergency access]
+    E --> I[Emergency Care Card<br/>Quick access]
+    E6c --> I4b[Health Advisory<br/>Emergency alert]
+    
+    I_INT --> I_INT2[To Appointments<br/>Urgent booking]
+    I3b1 --> F3[Urgent Booking<br/>Priority slots]
+    
+    I_INT --> I_INT3[Security & Privacy<br/>Access control]
+    I_INT3 --> I_SEC1[Login Required<br/>Authentication]
+    I_INT3 --> I_SEC2[Parent Access<br/>Dependent data]
+    I_INT3 --> I_SEC3[Encryption<br/>Data security]
+    
+    %% Quick Actions
+    I --> I_QUICK[Quick Actions Bar<br/>Emergency tasks]
+    I_QUICK --> I_Q1[Call Ambulance<br/>Quick dial]
+    I_QUICK --> I_Q2[Contact Clinic<br/>Emergency message]
+    I_QUICK --> I_Q3[View Child Info<br/>Dependent emergency]
+    
+    %% Search Functionality
+    I --> I_SEARCH[Emergency Search<br/>Find contacts]
+    I_SEARCH --> I_S_INPUT[Search Bar<br/>Query input]

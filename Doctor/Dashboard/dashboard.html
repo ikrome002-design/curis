@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curis by Citrus - Doctor Dashboard for Specialist Healthcare Management">
+    <title>Dashboard - Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-list">
+                    <!-- Dashboard - Active -->
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <!-- Appointments -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+
+                    <!-- Patient Records -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                            class="nav-link">
+                            <i class="fas fa-user-injured"></i>
+                            <span>Patient Records</span>
+                        </a>
+                    </li>
+
+                    <!-- Consultations -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Consultations\consultations.html"
+                            class="nav-link">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Consultations</span>
+                        </a>
+                    </li>
+
+                    <!-- Prescriptions -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Prescriptions\prescriptions.html"
+                            class="nav-link">
+                            <i class="fas fa-prescription"></i>
+                            <span>Prescriptions</span>
+                        </a>
+                    </li>
+
+                    <!-- Alerts & Collaboration -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Alerts and Collaboration\alerts_and_collaboration.html"
+                            class="nav-link">
+                            <i class="fas fa-bell"></i>
+                            <span>Alerts & Collaboration</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Dashboard</h1>
+                    <!-- Welcome Message -->
+                    <p class="welcome-message">Welcome back, Dr. Sarah Wanjiru</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- User Profile -->
+                    <div class="user-profile" id="userProfile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="Profile" class="profile-pic">
+                        <span class="profile-name">Dr. Sarah Wanjiru</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+
+                    <!-- Profile Dropdown Menu -->
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\My Profile\my_profile.html"
+                            class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Landing Page\landing_page.html"
+                            class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Statistics Cards -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <!-- Total Patients Card -->
+                    <div class="stat-card">
+                        <div class="stat-icon patients-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-title">Total Patients</h3>
+                            <p class="stat-value">1,245</p>
+                            <span class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i> 12% from last month
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Today's Appointments -->
+                    <div class="stat-card">
+                        <div class="stat-icon appointments-icon">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-title">Today's Appointments</h3>
+                            <p class="stat-value">18</p>
+                            <span class="stat-change">Next: 10:30 AM</span>
+                        </div>
+                    </div>
+
+                    <!-- Revenue This Month -->
+                    <div class="stat-card">
+                        <div class="stat-icon revenue-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-title">Revenue This Month</h3>
+                            <p class="stat-value">KES. 485,000</p>
+                            <span class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i> 8% from last month
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Pending Prescriptions -->
+                    <div class="stat-card">
+                        <div class="stat-icon prescriptions-icon">
+                            <i class="fas fa-prescription-bottle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-title">Pending Prescriptions</h3>
+                            <p class="stat-value">7</p>
+                            <span class="stat-change warning">Requires approval</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Dashboard Content Grid -->
+            <div class="dashboard-grid">
+
+                <!-- Upcoming Appointments Section -->
+                <section class="appointments-section dashboard-card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-calendar-alt"></i>
+                            Upcoming Appointments
+                        </h2>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Appointments\appointments.html"
+                            class="view-all-link">View All</a>
+                    </div>
+                    <div class="appointments-list">
+                        <!-- Appointment Item 1 -->
+                        <div class="appointment-item">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                alt="Patient" class="patient-avatar">
+                            <div class="appointment-details">
+                                <p class="patient-name">John Kamau</p>
+                                <p class="appointment-time">10:30 AM - Follow-up Consultation</p>
+                            </div>
+                            <span class="appointment-status confirmed">Confirmed</span>
+                        </div>
+
+                        <!-- Appointment Item 2 -->
+                        <div class="appointment-item">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                alt="Patient" class="patient-avatar">
+                            <div class="appointment-details">
+                                <p class="patient-name">Mary Wambui</p>
+                                <p class="appointment-time">11:15 AM - Initial Consultation</p>
+                            </div>
+                            <span class="appointment-status pending">Pending</span>
+                        </div>
+
+                        <!-- Appointment Item 3 -->
+                        <div class="appointment-item">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                alt="Patient" class="patient-avatar">
+                            <div class="appointment-details">
+                                <p class="patient-name">Peter Ochieng</p>
+                                <p class="appointment-time">2:00 PM - Post-surgery Review</p>
+                            </div>
+                            <span class="appointment-status confirmed">Confirmed</span>
+                        </div>
+
+                        <!-- Appointment Item 4 -->
+                        <div class="appointment-item">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                alt="Patient" class="patient-avatar">
+                            <div class="appointment-details">
+                                <p class="patient-name">Grace Njeri</p>
+                                <p class="appointment-time">3:30 PM - Routine Check-up</p>
+                            </div>
+                            <span class="appointment-status confirmed">Confirmed</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Patient Activities -->
+                <section class="activities-section dashboard-card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-history"></i>
+                            Recent Patient Activities
+                        </h2>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                            class="view-all-link">View All</a>
+                    </div>
+                    <div class="activities-list">
+                        <!-- Activity Item 1 -->
+                        <div class="activity-item">
+                            <div class="activity-icon lab-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p class="activity-text">Lab results uploaded for <strong>James Mwangi</strong></p>
+                                <p class="activity-time">15 minutes ago</p>
+                            </div>
+                        </div>
+
+                        <!-- Activity Item 2 -->
+                        <div class="activity-item">
+                            <div class="activity-icon prescription-icon">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p class="activity-text">Prescription issued to <strong>Alice Mutua</strong></p>
+                                <p class="activity-time">1 hour ago</p>
+                            </div>
+                        </div>
+
+                        <!-- Activity Item 3 -->
+                        <div class="activity-item">
+                            <div class="activity-icon message-icon">
+                                <i class="fas fa-comment-medical"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p class="activity-text">New message from <strong>Dr. Johnson Ndung'u</strong></p>
+                                <p class="activity-time">2 hours ago</p>
+                            </div>
+                        </div>
+
+                        <!-- Activity Item 4 -->
+                        <div class="activity-item">
+                            <div class="activity-icon appointment-icon">
+                                <i class="fas fa-calendar-plus"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p class="activity-text">New appointment booked by <strong>Ruth Chebet</strong></p>
+                                <p class="activity-time">3 hours ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Actions -->
+                <section class="quick-actions dashboard-card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-bolt"></i>
+                            Quick Actions
+                        </h2>
+                    </div>
+                    <div class="actions-grid">
+                        <!-- New Consultation -->
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Consultations\consultations.html"
+                            class="action-button">
+                            <i class="fas fa-video"></i>
+                            <span>Start Consultation</span>
+                        </a>
+
+                        <!-- Add Patient -->
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                            class="action-button">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Add Patient</span>
+                        </a>
+
+                        <!-- Write Prescription -->
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Prescriptions\prescriptions.html"
+                            class="action-button">
+                            <i class="fas fa-file-prescription"></i>
+                            <span>Write Prescription</span>
+                        </a>
+
+                        <!-- View Schedule -->
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Appointments\appointments.html"
+                            class="action-button">
+                            <i class="fas fa-calendar-week"></i>
+                            <span>View Schedule</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Revenue Overview Chart -->
+                <section class="revenue-chart dashboard-card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-chart-bar"></i>
+                            Revenue Overview
+                        </h2>
+                        <select class="period-selector">
+                            <option value="week">This Week</option>
+                            <option value="month" selected>This Month</option>
+                            <option value="year">This Year</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <!-- Placeholder for Chart - Will be rendered by JavaScript -->
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                    <div class="revenue-summary">
+                        <div class="summary-item">
+                            <p class="summary-label">Total Revenue</p>
+                            <p class="summary-value">KES. 485,000</p>
+                        </div>
+                        <div class="summary-item">
+                            <p class="summary-label">Consultations</p>
+                            <p class="summary-value">KES. 320,000</p>
+                        </div>
+                        <div class="summary-item">
+                            <p class="summary-label">Procedures</p>
+                            <p class="summary-value">KES. 165,000</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pending Tasks -->
+                <section class="tasks-section dashboard-card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-tasks"></i>
+                            Pending Tasks
+                        </h2>
+                        <span class="task-count">4 tasks</span>
+                    </div>
+                    <div class="tasks-list">
+                        <!-- Task Item 1 -->
+                        <div class="task-item">
+                            <input type="checkbox" id="task1" class="task-checkbox">
+                            <label for="task1" class="task-label">
+                                <span class="task-text">Review lab results for John Kamau</span>
+                                <span class="task-priority high">High</span>
+                            </label>
+                        </div>
+
+                        <!-- Task Item 2 -->
+                        <div class="task-item">
+                            <input type="checkbox" id="task2" class="task-checkbox">
+                            <label for="task2" class="task-label">
+                                <span class="task-text">Complete discharge summary for Mary Wambui</span>
+                                <span class="task-priority medium">Medium</span>
+                            </label>
+                        </div>
+
+                        <!-- Task Item 3 -->
+                        <div class="task-item">
+                            <input type="checkbox" id="task3" class="task-checkbox">
+                            <label for="task3" class="task-label">
+                                <span class="task-text">Call back Peter Ochieng regarding test results</span>
+                                <span class="task-priority high">High</span>
+                            </label>
+                        </div>
+
+                        <!-- Task Item 4 -->
+                        <div class="task-item">
+                            <input type="checkbox" id="task4" class="task-checkbox">
+                            <label for="task4" class="task-label">
+                                <span class="task-text">Update treatment plan for Grace Njeri</span>
+                                <span class="task-priority low">Low</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Staff Overview -->
+                <section class="staff-section dashboard-card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-user-md"></i>
+                            Staff Overview
+                        </h2>
+                    </div>
+                    <div class="staff-stats">
+                        <div class="staff-item">
+                            <i class="fas fa-user-nurse"></i>
+                            <span class="staff-label">Nurses:</span>
+                            <strong>8</strong>
+                            <span class="status-indicator online"></span>
+                        </div>
+                        <div class="staff-item">
+                            <i class="fas fa-user-tie"></i>
+                            <span class="staff-label">Receptionists:</span>
+                            <strong>3</strong>
+                            <span class="status-indicator online"></span>
+                        </div>
+                        <div class="staff-item">
+                            <i class="fas fa-microscope"></i>
+                            <span class="staff-label">Lab Technicians:</span>
+                            <strong>4</strong>
+                            <span class="status-indicator partial"></span>
+                        </div>
+                        <div class="staff-item">
+                            <i class="fas fa-user-cog"></i>
+                            <span class="staff-label">Support Staff:</span>
+                            <strong>6</strong>
+                            <span class="status-indicator online"></span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Dark Mode Toggle -->
+            <div class="dark-mode-toggle">
+                <button id="darkModeBtn" class="dark-mode-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                    <i class="fab fa-x "></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                    rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Corporate Link & Copyright -->
+            <div class="footer-info">
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer"
+                    class="corporate-link">Citrus Labs</a>
+                <span class="separator">|</span>
+                <span class="copyright">© 2025 Citrus Labs. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

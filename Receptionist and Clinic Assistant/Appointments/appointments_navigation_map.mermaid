@@ -1,0 +1,108 @@
+graph TB
+    %% Appointments Page Core
+    AppointmentsPage[Appointments Page<br/>Scheduling Hub]
+    
+    %% Main Features
+    AppointmentsPage --> ApptListings[Appointment Listings<br/>Upcoming & Past]
+    AppointmentsPage --> BookingSystem[Book Appointment<br/>Smart Scheduling]
+    AppointmentsPage --> ManageAppts[Manage Appointments<br/>Confirm/Reschedule/Cancel]
+    AppointmentsPage --> DocAvailability[Doctor Availability<br/>Real-Time Schedules]
+    AppointmentsPage --> RemindersSystem[Automated Reminders<br/>SMS/Email/WhatsApp]
+    AppointmentsPage --> ConflictDetect[Conflict Detection<br/>& Resolution]
+    AppointmentsPage --> AuditTrail[Audit Trail & Logs<br/>Action History]
+    AppointmentsPage --> RealTimeNotif[Real-Time Notifications<br/>System Alerts]
+    AppointmentsPage --> PatientComm[Patient Communication<br/>Tools]
+    
+    %% Appointment Listings Details
+    ApptListings --> |Click| ListingsView[Listings Interface<br/>━━━━━━━━━━━━━━━━━<br/>• Calendar view<br/>• List view toggle<br/>• Status indicators<br/>• Quick actions menu]
+    
+    ListingsView --> |Filter| FilterModal[Filter & Search Modal<br/>━━━━━━━━━━━━━━━━━<br/>• By patient name<br/>• By doctor<br/>• By date/time range<br/>• By status<br/>  - Confirmed ✓<br/>  - Pending ⏳<br/>  - Cancelled ✗<br/>  - Completed ✔<br/>• Sort options<br/>━━━━━━━━━━━━━━━━━<br/>Real-time filtering]
+    
+    ListingsView --> |Select Appt| ApptDetails[Appointment Details<br/>━━━━━━━━━━━━━━━━━<br/>• Patient info<br/>• Doctor assigned<br/>• Time & duration<br/>• Visit reason<br/>• Status history<br/>• Action buttons]
+    
+    %% Booking System Details
+    BookingSystem --> |Click| BookingModal[Booking Form Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Patient selector<br/>  - Search existing<br/>  - Add new patient<br/>• Doctor selection<br/>  - Available doctors<br/>  - Specialization filter<br/>• Time slot picker<br/>  - Available slots<br/>  - Duration selector<br/>• Visit reason (optional)<br/>• Auto-suggest slots<br/>━━━━━━━━━━━━━━━━━<br/>Smart scheduling AI]
+    
+    BookingModal --> |New Patient| QuickRegister[Quick Registration<br/>━━━━━━━━━━━━━━━━━<br/>• Name & contact<br/>• Basic details<br/>• Create & continue<br/>→ Sync to Patient Directory]
+    
+    BookingModal --> |Check Availability| AvailabilityGrid[Availability Grid<br/>━━━━━━━━━━━━━━━━━<br/>• Week/Day view<br/>• Doctor columns<br/>• Time slot status<br/>• Buffer time display<br/>• Conflict warnings]
+    
+    BookingModal --> |Confirm| BookingConfirm[Booking Confirmation<br/>━━━━━━━━━━━━━━━━━<br/>• Summary display<br/>• Send confirmation<br/>• Add to queue<br/>• Update dashboard<br/>• Print option]
+    
+    %% Manage Appointments Details
+    ManageAppts --> |Click| ManageModal[Management Actions<br/>━━━━━━━━━━━━━━━━━<br/>• Confirm appointment<br/>• Reschedule<br/>• Cancel<br/>• Send notifications<br/>• Add notes]
+    
+    ManageModal --> |Confirm| ConfirmProcess[Confirmation Process<br/>━━━━━━━━━━━━━━━━━<br/>• One-click confirm<br/>• Auto SMS/Email<br/>• Update status<br/>• Log action<br/>• Notify doctor]
+    
+    ManageModal --> |Reschedule| RescheduleFlow[Reschedule Interface<br/>━━━━━━━━━━━━━━━━━<br/>• Drag-drop calendar<br/>• Time picker option<br/>• Check conflicts<br/>• Reason input<br/>• Patient notification<br/>• Update all systems]
+    
+    ManageModal --> |Cancel| CancelFlow[Cancellation Flow<br/>━━━━━━━━━━━━━━━━━<br/>• Reason selection<br/>  - Patient request<br/>  - Doctor unavailable<br/>  - Emergency<br/>  - Other<br/>• Free slot release<br/>• Auto notification<br/>• Suggest rebooking]
+    
+    %% Doctor Availability Details
+    DocAvailability --> |Click| ScheduleView[Schedule Management<br/>━━━━━━━━━━━━━━━━━<br/>• Real-time schedules<br/>• Availability status<br/>  - Available ✓<br/>  - In consultation 🔴<br/>  - Break time ⏸<br/>  - Off duty ✗<br/>• Room assignments<br/>• Patient load view]
+    
+    ScheduleView --> |Conflicts| ConflictAlert[Conflict Warnings<br/>━━━━━━━━━━━━━━━━━<br/>• Double-booking alert<br/>• Overlap detection<br/>• Buffer time issues<br/>• Resolution options]
+    
+    ScheduleView --> |Update| ScheduleSync[→ Schedule Sync<br/>• Update dashboard<br/>• Notify affected patients<br/>• Adjust queue]
+    
+    %% Reminders System Details
+    RemindersSystem --> |Configure| ReminderConfig[Reminder Settings<br/>━━━━━━━━━━━━━━━━━<br/>• 24hr reminder ✓<br/>• 1hr reminder ✓<br/>• Custom timings<br/>• Message templates<br/>• Channel selection<br/>  - SMS<br/>  - Email<br/>  - WhatsApp<br/>• Retry logic setup]
+    
+    ReminderConfig --> |Templates| TemplateEditor[Template Manager<br/>━━━━━━━━━━━━━━━━━<br/>• Default templates<br/>• Custom messages<br/>• Placeholders<br/>  - [Patient Name]<br/>  - [Doctor Name]<br/>  - [Time]<br/>  - [Date]<br/>• Language options]
+    
+    ReminderConfig --> |Send Now| ManualReminder[Manual Reminder<br/>━━━━━━━━━━━━━━━━━<br/>• Select recipients<br/>• Choose template<br/>• Preview message<br/>• Send immediately<br/>• Track delivery]
+    
+    %% Conflict Detection Details
+    ConflictDetect --> |Alert| ConflictModal[Conflict Resolution<br/>━━━━━━━━━━━━━━━━━<br/>• Conflict details<br/>• Affected appointments<br/>• Suggested alternatives<br/>  - Next available<br/>  - Different doctor<br/>  - Different day<br/>• Quick resolution<br/>• Escalation option]
+    
+    ConflictModal --> |Escalate| EscalateOwner[→ Escalate to Owner<br/>• Create ticket<br/>• Include details<br/>• Priority flag]
+    
+    %% Audit Trail Details
+    AuditTrail --> |View| AuditLog[Audit Log Viewer<br/>━━━━━━━━━━━━━━━━━<br/>• Action history<br/>  - Created<br/>  - Modified<br/>  - Cancelled<br/>• User tracking<br/>• Timestamps<br/>• Filter options<br/>• Export capability]
+    
+    AuditLog --> |Export| ExportOptions[Export Options<br/>• Date range<br/>• CSV format<br/>• PDF report<br/>• Email to owner]
+    
+    %% Real-Time Notifications
+    RealTimeNotif --> |Receive| NotifHandler[Notification Handler<br/>━━━━━━━━━━━━━━━━━<br/>• New patient bookings<br/>• Patient confirmations<br/>• Cancellations<br/>• Schedule changes<br/>• System alerts<br/>━━━━━━━━━━━━━━━━━<br/>Toast notifications]
+    
+    NotifHandler --> |View All| InboxIntegration[→ Inbox & Alerts<br/>Full notification history]
+    
+    %% Patient Communication
+    PatientComm --> |Send| CommPanel[Communication Panel<br/>━━━━━━━━━━━━━━━━━<br/>• Message type<br/>  - Appointment info<br/>  - Reminders<br/>  - Updates<br/>• Channel selection<br/>  - In-app alert<br/>  - SMS<br/>  - Email<br/>  - WhatsApp<br/>• Template library<br/>• Send & track]
+    
+    CommPanel --> |Track| DeliveryStatus[Delivery Tracking<br/>• Sent ✓<br/>• Delivered ✓<br/>• Read ✓<br/>• Failed ✗<br/>• Retry option]
+    
+    %% Integration Points
+    AppointmentsPage -.->|Sync| DashboardSync[→ Dashboard Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Update metrics<br/>• Refresh tasks<br/>• Update quick access<br/>• Doctor status]
+    
+    AppointmentsPage -.->|Sync| CheckInSync[→ Check-In Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Today's appointments<br/>• Patient arrival status<br/>• Walk-in slots<br/>• Queue updates]
+    
+    AppointmentsPage -.->|Sync| QueueSync[→ Queue Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Appointment order<br/>• Wait time estimates<br/>• Doctor assignments<br/>• Status updates]
+    
+    AppointmentsPage -.->|Sync| BillingSync[→ Billing Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Create invoices<br/>• Service charges<br/>• Payment status<br/>• Receipt generation]
+    
+    AppointmentsPage -.->|Sync| PatientDirSync[→ Patient Directory<br/>━━━━━━━━━━━━━━━━━<br/>• Patient details<br/>• Contact info<br/>• Visit history<br/>• Profile updates]
+    
+    %% Navigation Back to Dashboard
+    AppointmentsPage ==> NavigateBack[Main Navigation]
+    NavigateBack ==> Dashboard[← Dashboard]
+    NavigateBack ==> CheckInPage[→ Check-In Page]
+    NavigateBack ==> InboxPage[→ Inbox & Alerts]
+    NavigateBack ==> QueuePage[→ Queue & Flow]
+    NavigateBack ==> PatientDirectory[→ Patient Directory]
+    NavigateBack ==> BillingPage[→ Billings & Payments]
+    
+    %% Styling
+    classDef appointmentCore fill:#2563EB,stroke:#1D4ED8,stroke-width:4px,color:#fff
+    classDef feature fill:#7C3AED,stroke:#6D28D9,stroke-width:3px,color:#fff
+    classDef modal fill:#DC2626,stroke:#B91C1C,stroke-width:2px,color:#fff
+    classDef process fill:#059669,stroke:#047857,stroke-width:2px,color:#fff
+    classDef sync fill:#0891B2,stroke:#0E7490,stroke-width:2px,color:#fff
+    classDef navigation fill:#EA580C,stroke:#C2410C,stroke-width:3px,color:#fff
+    
+    class AppointmentsPage appointmentCore
+    class ApptListings,BookingSystem,ManageAppts,DocAvailability,RemindersSystem,ConflictDetect,AuditTrail,RealTimeNotif,PatientComm feature
+    class ListingsView,FilterModal,ApptDetails,BookingModal,ManageModal,ScheduleView,ReminderConfig,ConflictModal,AuditLog,NotifHandler,CommPanel modal
+    class QuickRegister,AvailabilityGrid,BookingConfirm,ConfirmProcess,RescheduleFlow,CancelFlow,ConflictAlert,TemplateEditor,ManualReminder,DeliveryStatus,ExportOptions process
+    class DashboardSync,CheckInSync,QueueSync,BillingSync,PatientDirSync,ScheduleSync,InboxIntegration,EscalateOwner sync
+    class NavigateBack,Dashboard,CheckInPage,InboxPage,QueuePage,PatientDirectory,BillingPage navigation

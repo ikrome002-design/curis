@@ -1,0 +1,273 @@
+flowchart TD
+    %% Main Entry Points
+    D[Dashboard] --> APP[Appointments<br/>Central Scheduling Hub]
+    D3[Dashboard Appointments Widget] --> APP
+    WH[Workforce Hub] --> APP
+    CSH[Clinic Services Hub] --> APP
+    HDR[Health Data & Records] --> APP
+    
+    %% Header Navigation
+    APP --> APP_HEADER[Header Navigation Bar]
+    APP_HEADER --> BACK_DASH[← Back to Dashboard]
+    APP_HEADER --> CAL_VIEW_TOGGLE[📅 Calendar View Selector<br/>Day/Week/Month]
+    APP_HEADER --> QUICK_ADD_BTN[+ New Appointment<br/>Primary action button]
+    APP_HEADER --> SEARCH_APPT[🔍 Search Appointments<br/>Patient/Doctor/Service]
+    
+    BACK_DASH --> D
+    
+    %% Scheduling Configuration Section
+    APP --> G1[⚙️ Scheduling Configuration<br/>Appointment rules setup]
+    G1 --> G1_BTN[Configure Rules Button]
+    G1_BTN --> G1a[Duration Settings Modal]
+    
+    G1a --> DUR_LIST[Service Duration List]
+    DUR_LIST --> DUR_ITEM[Service: General Consultation<br/>⏱️ 30 mins]
+    DUR_ITEM --> EDIT_DUR[Edit Duration<br/>15/30/45/60/90/120 mins dropdown]
+    DUR_LIST --> BULK_DUR[Bulk Update Durations<br/>Apply to multiple services]
+    
+    G1 --> G1b[Clinic Rules Modal]
+    G1b --> WORK_HOURS[Working Hours Display<br/>Synced from Settings]
+    G1b --> BREAK_CONFIG[Break Times Configuration]
+    BREAK_CONFIG --> LUNCH_BREAK[Lunch Break Setup<br/>12:00 PM - 1:00 PM]
+    BREAK_CONFIG --> TEA_BREAK[Tea Break Setup<br/>Custom times]
+    
+    G1 --> G1c[Doctor Availability Panel]
+    G1c --> DOC_LIST[Doctor List View]
+    DOC_LIST --> DOC_AVAIL_CARD[Dr. Kamau<br/>Mon-Fri: 9AM-5PM]
+    DOC_AVAIL_CARD --> EDIT_AVAIL[Edit Availability]
+    EDIT_AVAIL --> AVAIL_MODAL[Availability Modal<br/>Custom schedule builder]
+    AVAIL_MODAL --> TIME_SLOTS[Time Slot Grid<br/>Click to toggle availability]
+    AVAIL_MODAL --> RECURRING[Recurring Pattern<br/>Weekly/Monthly options]
+    
+    G1 --> G1d[Buffer Time Settings]
+    G1d --> BUFFER_MODAL[Buffer Configuration Modal]
+    BUFFER_MODAL --> GLOBAL_BUFFER[Global Buffer<br/>5/10/15 mins between appointments]
+    BUFFER_MODAL --> SERVICE_BUFFER[Service-Specific Buffer<br/>Post-procedure rest time]
+    
+    %% Cancellation Policies
+    APP --> G2[📋 Policies Management<br/>Cancellation & Rescheduling]
+    G2 --> G2a[Policy Settings Button]
+    G2a --> POLICY_MODAL[Policy Configuration Modal]
+    
+    POLICY_MODAL --> CANCEL_RULES[Cancellation Rules]
+    CANCEL_RULES --> CUTOFF_TIME[Cut-off Time Selector<br/>2/4/6/12/24 hours]
+    CANCEL_RULES --> CANCEL_FEE[Cancellation Fee Toggle<br/>Enable/Disable + Amount]
+    
+    POLICY_MODAL --> RESCH_RULES[Rescheduling Rules]
+    RESCH_RULES --> RESCH_WINDOW[Reschedule Window<br/>Min: Same day / Max: 30 days]
+    RESCH_RULES --> RESCH_LIMIT[Reschedule Limit<br/>Max 2 times per appointment]
+    
+    G2 --> G2b[No-show Management]
+    G2b --> NOSHOW_MODAL[No-show Settings Modal]
+    NOSHOW_MODAL --> NOSHOW_PENALTY[Penalty Configuration<br/>Fee amount/Block booking]
+    NOSHOW_MODAL --> NOSHOW_THRESHOLD[Threshold Setting<br/>3 no-shows = temporary block]
+    
+    %% Live Calendar View
+    APP --> G3[📅 Live Calendar View<br/>Interactive scheduler]
+    G3 --> CAL_DISPLAY[Calendar Display Area]
+    
+    CAL_VIEW_TOGGLE --> DAY_VIEW[Day View<br/>Hourly slots]
+    CAL_VIEW_TOGGLE --> WEEK_VIEW[Week View<br/>7-day grid]
+    CAL_VIEW_TOGGLE --> MONTH_VIEW[Month View<br/>Monthly overview]
+    
+    CAL_DISPLAY --> APPT_SLOT[Appointment Slot<br/>10:00 AM - John Doe]
+    APPT_SLOT --> SLOT_STATUS[Status Indicator]
+    SLOT_STATUS --> CONFIRMED[🟢 Confirmed]
+    SLOT_STATUS --> PENDING[🟡 Pending]
+    SLOT_STATUS --> IN_PROGRESS[🔵 In Progress]
+    SLOT_STATUS --> COMPLETED[✅ Completed]
+    SLOT_STATUS --> CANCELLED[🔴 Cancelled]
+    SLOT_STATUS --> NOSHOW[⚫ No-show]
+    
+    APPT_SLOT --> G3c[Appointment Details Modal]
+    G3c --> APPT_INFO[Appointment Information]
+    APPT_INFO --> PAT_INFO[Patient: John Doe<br/>Phone: +254712345678]
+    APPT_INFO --> SVC_INFO[Service: General Consultation<br/>Duration: 30 mins]
+    APPT_INFO --> DOC_INFO[Doctor: Dr. Kamau<br/>Specialty: General Practice]
+    APPT_INFO --> TIME_INFO[Time: 10:00 AM - 10:30 AM<br/>Date: May 24, 2025]
+    
+    G3c --> APPT_ACTIONS[Action Buttons]
+    APPT_ACTIONS --> CONFIRM_BTN[✓ Confirm Appointment]
+    APPT_ACTIONS --> RESCHEDULE_BTN[🔄 Reschedule]
+    APPT_ACTIONS --> CANCEL_BTN[✗ Cancel]
+    APPT_ACTIONS --> MARK_COMPLETE[✓ Mark Complete]
+    APPT_ACTIONS --> MARK_NOSHOW[⚫ Mark No-show]
+    
+    G3 --> G3a[Filter Panel Button<br/>🔽 Filters]
+    G3a --> FILTER_MODAL[Calendar Filter Modal]
+    FILTER_MODAL --> DATE_FILTER[Date Range Picker<br/>Custom date selection]
+    FILTER_MODAL --> DOC_FILTER[Doctor Filter<br/>Multi-select checkbox]
+    FILTER_MODAL --> SVC_FILTER[Service Filter<br/>Service category dropdown]
+    FILTER_MODAL --> STATUS_FILTER[Status Filter<br/>Show/Hide by status]
+    FILTER_MODAL --> APPLY_FILTER[Apply Filters Button]
+    
+    %% Quick Add Appointment
+    QUICK_ADD_BTN --> G3b[Manual Booking Modal<br/>Multi-step form]
+    G3b --> STEP1[Step 1: Patient Selection]
+    STEP1 --> SEARCH_PATIENT[Search Existing Patient<br/>Name/Phone/ID search]
+    STEP1 --> NEW_PATIENT[+ Register New Patient<br/>Quick registration form]
+    
+    G3b --> STEP2[Step 2: Service Selection]
+    STEP2 --> SERVICE_DROPDOWN[Service Dropdown<br/>Categorized list]
+    STEP2 --> MULTI_SERVICE[+ Add Another Service<br/>Multiple services booking]
+    
+    G3b --> STEP3[Step 3: Date & Time]
+    STEP3 --> DATE_PICKER[Date Selection<br/>Calendar widget]
+    STEP3 --> TIME_SLOTS_VIEW[Available Time Slots<br/>Green = Available, Red = Booked]
+    TIME_SLOTS_VIEW --> SLOT_SELECT[Select Time Slot<br/>Click to choose]
+    
+    G3b --> STEP4[Step 4: Doctor Assignment]
+    STEP4 --> AUTO_ASSIGN[🔄 Auto-Assign<br/>Based on availability]
+    STEP4 --> MANUAL_ASSIGN[Manual Selection<br/>Choose specific doctor]
+    
+    STEP4 --> CONFIRM_BOOKING[Confirm Booking Button]
+    CONFIRM_BOOKING --> BOOKING_SUCCESS[✅ Appointment Created<br/>Send confirmation?]
+    BOOKING_SUCCESS --> SEND_CONFIRM[Send SMS/Email<br/>Patient notification]
+    
+    %% Patient Notifications
+    APP --> G4[📧 Notification Center<br/>Automated reminders]
+    G4 --> G4a[Configure Notifications]
+    G4a --> NOTIF_MODAL[Notification Settings Modal]
+    
+    NOTIF_MODAL --> NOTIF_TRIGGERS[Notification Triggers]
+    NOTIF_TRIGGERS --> BOOKING_CONFIRM[Booking Confirmation<br/>Immediate send]
+    NOTIF_TRIGGERS --> REMINDER_24H[24-Hour Reminder<br/>Toggle on/off]
+    NOTIF_TRIGGERS --> REMINDER_1H[1-Hour Reminder<br/>Toggle on/off]
+    NOTIF_TRIGGERS --> FOLLOWUP[Follow-up Suggestion<br/>Post-appointment]
+    
+    NOTIF_MODAL --> NOTIF_CHANNELS[Delivery Channels]
+    NOTIF_CHANNELS --> SMS_TOGGLE[SMS Notifications<br/>On/Off]
+    NOTIF_CHANNELS --> EMAIL_TOGGLE[Email Notifications<br/>On/Off]
+    NOTIF_CHANNELS --> APP_TOGGLE[In-App Notifications<br/>On/Off]
+    
+    G4 --> G4b[Message Templates]
+    G4b --> TEMPLATE_MODAL[Template Editor Modal]
+    TEMPLATE_MODAL --> TEMPLATE_LIST[Template List<br/>Confirmation/Reminder/Follow-up]
+    TEMPLATE_LIST --> EDIT_TEMPLATE[Edit Template<br/>Rich text editor]
+    EDIT_TEMPLATE --> PLACEHOLDERS[Insert Placeholders<br/>{patient_name}, {time}, {doctor}]
+    EDIT_TEMPLATE --> PREVIEW[Preview Message<br/>See actual output]
+    
+    %% Performance Insights
+    APP --> G5[📊 Performance Dashboard<br/>Appointment analytics]
+    G5 --> G5a[View Analytics Button]
+    G5a --> ANALYTICS_MODAL[Booking Analytics Modal]
+    
+    ANALYTICS_MODAL --> METRICS_TABS[Metrics Navigation]
+    METRICS_TABS --> VOLUME_TAB[Booking Volume<br/>Chart view]
+    VOLUME_TAB --> VOLUME_CHART[Line Chart<br/>Daily/Weekly/Monthly trends]
+    
+    METRICS_TABS --> PEAK_TAB[Peak Hours Analysis]
+    PEAK_TAB --> HEATMAP[Booking Heatmap<br/>Busy vs quiet periods]
+    
+    METRICS_TABS --> SERVICE_TAB[Service Demand]
+    SERVICE_TAB --> SERVICE_CHART[Bar Chart<br/>Most booked services]
+    
+    G5 --> G5b[No-show Tracking]
+    G5b --> NOSHOW_REPORT[No-show Report Modal]
+    NOSHOW_REPORT --> NOSHOW_RATE[No-show Rate: 8%<br/>Above/Below average]
+    NOSHOW_REPORT --> NOSHOW_TRENDS[Trend Analysis<br/>Increasing/Decreasing]
+    NOSHOW_REPORT --> PATIENT_LIST[Frequent No-shows<br/>Patient blacklist candidates]
+    
+    %% Appointment History
+    APP --> G6[📜 History & Logs<br/>Complete audit trail]
+    G6 --> G6a[View History Button]
+    G6a --> HISTORY_MODAL[Appointment History Modal]
+    
+    HISTORY_MODAL --> HISTORY_FILTERS[Filter Options]
+    HISTORY_FILTERS --> DATE_RANGE[Date Range<br/>Last 7/30/90 days/Custom]
+    HISTORY_FILTERS --> STATUS_SELECT[Status Filter<br/>Completed/Cancelled/No-show]
+    
+    HISTORY_MODAL --> HISTORY_TABLE[History Table View]
+    HISTORY_TABLE --> HISTORY_ROW[Appointment Record<br/>Date|Patient|Doctor|Service|Status]
+    HISTORY_ROW --> VIEW_DETAILS[View Full Details]
+    
+    G6 --> G6b[Modification Log]
+    G6b --> MOD_LOG_MODAL[Change Log Modal]
+    MOD_LOG_MODAL --> LOG_ENTRY[Log Entry<br/>User: Reception | Action: Rescheduled | Time: 2:30 PM]
+    MOD_LOG_MODAL --> CHANGE_DETAILS[Change Details<br/>From: 10 AM → To: 2 PM]
+    
+    %% Doctor Assignment
+    APP --> G7[👨‍⚕️ Workload Management<br/>Doctor assignments]
+    G7 --> G7a[Assignment Settings]
+    G7a --> ASSIGN_MODAL[Assignment Logic Modal]
+    
+    ASSIGN_MODAL --> ASSIGN_MODE[Assignment Mode]
+    ASSIGN_MODE --> AUTO_MODE[Automatic Assignment<br/>Round-robin/Load balanced]
+    ASSIGN_MODE --> MANUAL_MODE[Manual Assignment<br/>Reception selects doctor]
+    
+    G7 --> G7b[Workload View]
+    G7b --> WORKLOAD_MODAL[Doctor Workload Display]
+    WORKLOAD_MODAL --> DOC_CARDS[Doctor Cards Grid]
+    DOC_CARDS --> WORKLOAD_CARD[Dr. Kamau<br/>8/10 slots filled<br/>80% capacity]
+    WORKLOAD_CARD --> REASSIGN[Reassign Appointments<br/>Balance workload]
+    
+    %% Self-booking Control
+    APP --> G8[🔒 Patient Portal Settings<br/>Self-booking controls]
+    G8 --> G8a[Configure Self-booking]
+    G8a --> BOOKING_RULES_MODAL[Booking Rules Modal]
+    
+    BOOKING_RULES_MODAL --> SELF_BOOK_TOGGLE[Enable Self-booking<br/>Master on/off switch]
+    BOOKING_RULES_MODAL --> LEAD_TIME[Lead Time Rules]
+    LEAD_TIME --> MIN_LEAD[Minimum: 24 hours<br/>Advance booking required]
+    LEAD_TIME --> MAX_LEAD[Maximum: 2 weeks<br/>Booking horizon limit]
+    
+    BOOKING_RULES_MODAL --> BOOKING_LIMITS[Booking Limits]
+    BOOKING_LIMITS --> DAILY_LIMIT[Daily Limit: 1 appointment<br/>Per patient per day]
+    BOOKING_LIMITS --> WEEKLY_LIMIT[Weekly Limit: 3 appointments<br/>Maximum per week]
+    
+    G8 --> G8b[Restriction Settings]
+    G8b --> RESTRICT_MODAL[Restrictions Modal]
+    RESTRICT_MODAL --> SAME_DAY[Same-day Cancellation<br/>Not allowed/Clinic approval only]
+    RESTRICT_MODAL --> RESCH_LIMIT_SET[Reschedule Limit<br/>2 times maximum]
+    
+    %% Integration Points
+    CAL_DISPLAY --> CREATE_INVOICE[Generate Invoice →]
+    CREATE_INVOICE --> BILL[Billings & Payments]
+    
+    APPT_SLOT --> VIEW_PATIENT[View Patient Profile →]
+    VIEW_PATIENT --> HDR
+    
+    MANUAL_ASSIGN --> STAFF_AVAIL[Check Staff Schedule →]
+    STAFF_AVAIL --> WH
+    
+    SERVICE_DROPDOWN --> SERVICE_SETTINGS[Service Duration →]
+    SERVICE_SETTINGS --> CSH
+    
+    WORK_HOURS --> CLINIC_HOURS[Sync Working Hours →]
+    CLINIC_HOURS --> SET[Settings]
+    
+    %% Quick Actions Panel
+    APP --> QUICK_PANEL[Quick Actions Sidebar]
+    QUICK_PANEL --> PRINT_SCHEDULE[🖨️ Print Schedule<br/>Daily appointment list]
+    QUICK_PANEL --> EXPORT_APPTS[📤 Export Appointments<br/>CSV/PDF download]
+    QUICK_PANEL --> BULK_REMIND[📨 Bulk Reminders<br/>Send to all tomorrow's appointments]
+    QUICK_PANEL --> BLOCK_SLOTS[🚫 Block Time Slots<br/>Emergency/Meeting blocks]
+    
+    %% Real-time Sync Indicators
+    APP --> SYNC_PANEL[Sync Status Panel]
+    SYNC_PANEL --> SYNC_BILL[💰 Billing Sync<br/>Auto-invoice on completion]
+    SYNC_PANEL --> SYNC_NOTIF[🔔 Notification Queue<br/>3 reminders pending]
+    SYNC_PANEL --> SYNC_STAFF[👥 Staff Updates<br/>Real-time availability]
+    
+    %% Navigation back to Dashboard
+    CONFIRM_BTN --> UPDATE_DASH[Update Dashboard Metrics]
+    CANCEL_BTN --> UPDATE_DASH
+    MARK_COMPLETE --> UPDATE_DASH
+    MARK_NOSHOW --> UPDATE_DASH
+    UPDATE_DASH --> D
+    
+    %% Style Classes
+    classDef primary fill:#4A90E2,stroke:#2E5C8A,color:#fff
+    classDef secondary fill:#7B68EE,stroke:#4B0082,color:#fff
+    classDef success fill:#5CB85C,stroke:#357A35,color:#fff
+    classDef warning fill:#F0AD4E,stroke:#D58512,color:#fff
+    classDef danger fill:#D9534F,stroke:#AC2925,color:#fff
+    classDef modal fill:#F5F5F5,stroke:#CCCCCC,color:#333
+    classDef sync fill:#17A2B8,stroke:#117A8B,color:#fff
+    
+    class APP,QUICK_ADD_BTN,G5 primary
+    class G1_BTN,G2a,G4a,G7a secondary
+    class CONFIRM_BOOKING,BOOKING_SUCCESS,MARK_COMPLETE success
+    class CANCEL_BTN,MARK_NOSHOW danger
+    class POLICY_MODAL,FILTER_MODAL,G3c,ANALYTICS_MODAL modal
+    class SYNC_PANEL,SYNC_BILL,SYNC_NOTIF sync

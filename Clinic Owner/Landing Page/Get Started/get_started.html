@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - Curis Clinic Management</title>
+
+    <!-- External CSS file link -->
+    <link rel="stylesheet" href="get_started.css">
+
+    <!-- Favicon links in different sizes for various devices -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Font Awesome CDN for icons throughout the page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header section with logo and navigation -->
+    <header class="main-header">
+        <div class="container">
+            <!-- Logo with link to landing page -->
+            <div class="logo-container">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Landing Page\landing_page.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content section -->
+    <main class="get-started-container">
+        <div class="container">
+            <!-- Tab Navigation for Create Account and Login -->
+            <div class="auth-tabs">
+                <button class="tab-btn active" id="createAccountTab">Create Account</button>
+                <button class="tab-btn" id="loginTab">Log In</button>
+            </div>
+
+            <!-- Create Account Panel -->
+            <div class="auth-panel active" id="createAccountPanel">
+                <div class="auth-content">
+                    <div class="auth-header">
+                        <h1>Create Your Clinic Owner Account</h1>
+                        <p class="tagline">Start streamlining your clinic with Curis — the all-in-one solution for
+                            modern practice management.</p>
+                        <p>You're just a few steps away from gaining full control over your clinic's operations, from
+                            patient records and appointments to staff coordination and reporting.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- What to Expect Section -->
+                    <div class="expectations-section">
+                        <h2>What to Expect:</h2>
+                        <ul class="check-list">
+                            <li><i class="fas fa-check"></i> Quick setup — just your <strong>email, phone number, and
+                                    password</strong></li>
+                            <li><i class="fas fa-check"></i> Secure verification via <strong>email link</strong></li>
+                            <li><i class="fas fa-check"></i> Confirm your <strong>Sales Personnel Code</strong> (we'll
+                                help you if you don't have one)</li>
+                            <li><i class="fas fa-check"></i> Review and agree to <strong>data privacy and terms</strong>
+                            </li>
+                            <li><i class="fas fa-check"></i> Instant access to your <strong>Curis Clinic
+                                    Dashboard</strong></li>
+                        </ul>
+
+                        <div class="password-alert">
+                            <p><i class="fas fa-exclamation-triangle"></i> Password must be at least 8 characters with
+                                one uppercase letter, one number, and one special character.</p>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Why Choose Curis Section -->
+                    <div class="benefits-section">
+                        <h2>Why Choose Curis?</h2>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-building"></i> Built for clinics like yours</li>
+                            <li><i class="fas fa-clock"></i> Save time with automation</li>
+                            <li><i class="fas fa-chart-line"></i> Access real-time performance data</li>
+                            <li><i class="fas fa-expand-arrows-alt"></i> Scale confidently with enterprise-level tools
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Create Account Form -->
+                    <form id="createAccountForm" class="auth-form"
+                        action="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                        method="POST">
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            <div class="input-feedback" id="emailFeedback"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="07XX XXX XXX">
+                            <div class="input-feedback" id="phoneFeedback"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password <span class="required">*</span></label>
+                            <div class="password-input-container">
+                                <input type="password" id="password" name="password" required
+                                    placeholder="Create a strong password">
+                                <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-requirements">
+                                <p>Password must contain:</p>
+                                <ul>
+                                    <li id="length-check"><i class="fas fa-circle"></i> At least 8 characters</li>
+                                    <li id="uppercase-check"><i class="fas fa-circle"></i> 1 uppercase letter</li>
+                                    <li id="number-check"><i class="fas fa-circle"></i> 1 number</li>
+                                    <li id="special-check"><i class="fas fa-circle"></i> 1 special character</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="salesCode">Sales Personnel Code</label>
+                            <input type="text" id="salesCode" name="salesCode"
+                                placeholder="Enter the code provided by your sales rep">
+                            <p class="request-code">Don't have a code? <a href="#" id="requestCodeLink">Request one</a>
+                            </p>
+                        </div>
+
+                        <input type="hidden" name="redirect_to"
+                            value="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html">
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus"></i> Create
+                                Account</button>
+                            <button type="button" class="btn btn-secondary" id="resetFormBtn"><i
+                                    class="fas fa-undo"></i> Reset Form</button>
+                        </div>
+                    </form>
+
+                    <div class="cta-message">
+                        <p>Take control of your clinic's growth and efficiency.</p>
+                        <p><i class="fas fa-hand-point-right"></i> <strong>Just complete the form and click 'Create
+                                Account' to get started—it's that simple.</strong></p>
+                        <p class="tagline-bottom">Curis gives you the tools to lead with confidence.</p>
+                    </div>
+
+                    <div class="auth-switch">
+                        <p>Already have an account? <a href="#" id="switchToLogin">Log in here</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Login Panel (Hidden by default) -->
+            <div class="auth-panel" id="loginPanel">
+                <div class="auth-content">
+                    <div class="auth-header">
+                        <h1>Welcome Back, Clinic Owner</h1>
+                        <p>Manage your entire clinic with confidence—<strong>appointments, staff, inventory, patient
+                                records, and performance tracking</strong>—all in one place.</p>
+                        <p>Curis puts <strong>clinic control back in your hands</strong>. Whether you're streamlining
+                            your front desk, reviewing analytics, or onboarding staff, everything starts here.</p>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="login-intro">
+                        <h2>Already have an account?</h2>
+                        <p><i class="fas fa-lock"></i> <strong>Log in to your Curis dashboard</strong> and get back to
+                            running your clinic smarter.</p>
+
+                        <ul class="login-benefits">
+                            <li><i class="fas fa-shield-alt"></i> Secure, admin-only access</li>
+                            <li><i class="fas fa-chart-pie"></i> Real-time insights on operations</li>
+                            <li><i class="fas fa-user-check"></i> Staff and patient activity monitoring</li>
+                        </ul>
+                    </div>
+
+                    <!-- Login Form -->
+                    <form id="loginForm" class="auth-form"
+                        action="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                        method="POST">
+                        <div class="form-group">
+                            <label for="loginEmail">Email Address <span class="required">*</span></label>
+                            <input type="email" id="loginEmail" name="loginEmail" required
+                                placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginPassword">Password <span class="required">*</span></label>
+                            <div class="password-input-container">
+                                <input type="password" id="loginPassword" name="loginPassword" required
+                                    placeholder="Enter your password">
+                                <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <div class="remember-me">
+                                <input type="checkbox" id="rememberMe" name="rememberMe">
+                                <label for="rememberMe">Remember me on this device</label>
+                            </div>
+                            <div class="forgot-password">
+                                <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="redirect_to"
+                            value="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html">
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Log
+                                In</button>
+                        </div>
+                    </form>
+
+                    <div class="help-message">
+                        <p><i class="fas fa-tools"></i> <strong>Need help?</strong> Use "Forgot Password" to reset
+                            access instantly.</p>
+                    </div>
+
+                    <div class="auth-switch">
+                        <p>Don't have an account? <a href="#" id="switchToCreateAccount">Create one here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Branding and copyright section -->
+                <div class="footer-branding">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="footer-logo">
+                    <p>Modernizing Clinics for Better Care.</p>
+                    <p>© 2025 Citrus Labs. All Rights Reserved.</p>
+                </div>
+
+                <!-- Legal links section -->
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Landing Page\Footer\Terms and Conditions\terms_and_conditions.html">Terms
+                                of Service</a></li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Landing Page\Footer\Privacy Policy\privacy_policy.html">Privacy
+                                Policy</a></li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Landing Page\Footer\Data Policy\data_policy.html">Data
+                                Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources links section -->
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Landing Page\Footer\FAQ\faq.html">FAQ</a>
+                        </li>
+                        <li><a href="https://citruslabs.co.ke/">Corporate Website</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social media links section -->
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/@citruske" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/LabsCitrus" aria-label="X (formerly Twitter)"><i
+                                class="fab fa-x"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100063778943426" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@citrus-labs" aria-label="YouTube"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://linkedin.com/company/citrus-labs" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer bottom section with dark mode toggle -->
+            <div class="footer-bottom">
+                <!-- Dark mode toggle button - functionality handled by JavaScript -->
+                <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript file link -->
+    <script src="get_started.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+CLINIC OWNER - CURIS.
+
+
+---
+
+For the Minimum Viable Product (MVP) of the **Clinic Services Hub** page within the **clinic account user** in *Curis by Citrus*, the focus is on equipping clinic owners with the necessary tools to define, configure, and manage the services their clinic offers. This page enables clinic owners to set service parameters, adjust pricing, and ensure efficient delivery of patient care while maintaining financial oversight. Here's a breakdown of the essential features available on this management page:  
+
+________________________________________  
+### **Core MVP Features of the Clinic Services Hub**
+
+
+The Clinic Services Management page is the Clinic Owner’s control panel for configuring and managing all medical services offered by the clinic. This ensures service clarity, pricing consistency, and operational structure across consultations, lab work, and procedures.
+________________________________________
+a.	Service Category Configuration
+
+•	Define and manage specialties. 
+
+Healthcare clinics come in various types, each serving different patient needs. Here are some common types of healthcare clinics:
+i.	Primary Care Clinics
+	Provide general medical care, routine checkups, and preventive services.
+	Usually staffed by **family doctors, general practitioners**, and **nurse practitioners**.
+ii.	Specialty Clinics
+	Focus on specific areas of healthcare like **cardiology, orthopedics, dermatology**, or **neurology**.
+	Treat patients with conditions requiring specialized expertise.
+iii.	Urgent Care Clinics
+	Handle **non-life-threatening** medical emergencies, such as infections, minor injuries, and flu symptoms.
+	Typically offer **extended hours** and faster service compared to hospitals.
+iv.	Pediatric Clinics
+	Specialize in the healthcare of **infants, children, and teenagers**.
+	Offer vaccinations, growth monitoring, and pediatric care.
+v.	Women's Health Clinics
+	Provide services such as **gynecology, prenatal care, family planning, and reproductive health**.
+	May offer **mammograms and cervical cancer screenings**.
+vi.	Mental Health Clinics
+	Offer **counseling, therapy, and psychiatric services** for emotional and psychological health.
+	Can provide **treatment for depression, anxiety, addiction, and trauma**.
+vii.	Dental Clinics
+	Focus on **oral health**, including checkups, cleanings, fillings, and surgeries.
+	Run by **dentists and dental hygienists**.
+viii.	Rehabilitation Clinics
+	Provide **physical therapy, occupational therapy, and speech therapy**.
+	Help patients recover from **injuries, strokes, surgeries, or mobility issues**.
+ix.	Chronic Disease Clinics
+	Manage long-term conditions like **diabetes, hypertension, kidney disease**, and **arthritis**.
+	Offer **continuous monitoring and treatment plans**.
+x.	Travel Medicine Clinics
+	Offer vaccinations, medications, and advice for **international travelers**.
+	Help prevent **travel-related diseases like malaria or yellow fever**.
+xi.	Workplace & Corporate Health Clinics
+	Serve employees within **companies or organizations**.
+	Provide **annual health screenings, occupational health assessments**, and **stress management programs**.
+xii.	Community & Free Clinics
+	Provide **low-cost or free medical services** for underserved populations.
+	Often run by **nonprofit organizations or government programs**.
+•	Group services under logical categories:
+o	Consultations
+o	Lab Tests
+o	Medical Procedures
+o	Follow-ups
+•	Easily add, edit, deactivate, or delete categories.
+
+
+b.	Service Creation & Customization
+
+•	Add new clinic services with:
+o	Name (e.g., "General Consultation")
+o	Category (Consultation, Lab, Procedure)
+o	Assigned Specialty
+o	Fee Structure (fixed, variable, or insurance-based)
+o	Duration (e.g., 30 minutes, 1 hour)
+o	Description (for internal reference or public display)
+•	Attach optional prerequisites (e.g., lab test before a specialist consultation).
+
+
+c.	Dynamic Pricing Controls
+
+•	Set service fees in local currency with:
+o	Optional discounts (seasonal or promotional)
+o	Tax & VAT toggle (if applicable)
+o	Insurance-supported toggle (if service is covered under select insurance plans)
+•	Set service fees as inclusive or exclusive of the Curis platform service charge.
+
+
+d.	Service Visibility & Publishing Controls
+
+•	Toggle services as active/inactive without deleting them.
+•	Control service visibility:
+o	Publicly available on the clinic’s booking portal.
+o	Internal only (used by receptionists or doctors during manual booking or billing).
+
+
+e.	Doctor-Service Assignment Matrix
+
+•	Assign specific services to individual doctors (e.g., Dr. Jane handles "Pap Smear", Dr. Kim handles "Skin Biopsy").
+•	View service availability coverage per doctor to avoid scheduling errors.
+
+
+f.	Service Search, Filter, & Sort Tools
+
+•	Quickly search services by name, type, or status.
+•	Filter by category, doctor assignment, or activity status.
+•	Sort by price, frequency of use, or recent modifications.
+
+
+g.	Usage Analytics (Basic MVP)
+
+•	Track number of times each service is booked per period (daily/weekly/monthly).
+•	View top-performing services to understand patient demand.
+•	Analyze inactive or underutilized services for strategic review.
+________________________________________
+
+Key Outcomes of Clinic Services Management
+
+
+•	Ensures all clinic services are structured, priced correctly, and staff-assigned.
+•	Gives Clinic Owners control over operational scope and revenue flow.
+•	Supports scalability as more services or specialties are added over time.
+•	Aligns with transparent billing, improving patient trust and service uptake. 

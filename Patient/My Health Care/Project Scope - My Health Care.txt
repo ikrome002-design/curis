@@ -1,0 +1,87 @@
+#### 1. **My Health Care**
+
+
+
+
+Based on the outlined Curis by Citrus Patient Account system, the dynamic MVP (Minimum Viable Product) features and functionalities within the My Health page are designed to offer patients a secure, centralized, and interactive way to view and manage their health records. 
+Here's an in-depth breakdown of the dynamic MVP components for the My Health Care page:
+
+MVP Features – “My Health Care” Page (Dynamic Patient View)
+
+1.	Unified Medical Record Viewing
+•	Visit History Timeline
+o	Chronological log of all clinic visits by the patient and their dependents.
+o	Each visit entry includes clinic name, attending doctor, appointment reason, and date.
+o	Dynamic filters for sorting (e.g., by clinic, date range, service type).
+•	Cross-Clinic Record Access
+o	Patients can view medical records uploaded by any verified clinic or doctor.
+o	Data is automatically grouped by clinic for easy navigation.
+o	Doctor profile badges and clinic info shown next to each record.
+•	Smart Highlighting for Important Entries
+o	Alerts for abnormal test results or urgent doctor notes.
+o	“New” label on recently uploaded records or prescriptions.
+2.	Lab Results & Diagnostics
+•	Lab Reports
+o	Tabulated view of results with reference ranges.
+o	Color-coded indicators (e.g., green = normal, red = abnormal).
+o	PDF preview/download options with clinic watermark.
+•	Linked Clinical Notes
+o	Each lab report can show contextual doctor notes and prescribed actions.
+o	Results and notes are linked and timestamped to the corresponding visit.
+3.	Prescription Viewer
+•	Current & Historical Prescriptions
+o	Active prescriptions shown in a collapsible “Current Medication” panel.
+o	Expired or completed medications moved to a “Past Medications” tab.
+o	Each prescription includes: drug name, dosage, instructions, prescribing doctor.
+•	Visual Reminders
+o	Medication Reminders:
+	Visual reminders will be placed directly within the "Current Medications" panel on the "My Health" page.
+	These include:
+	Next dose timing.
+o	Exportable Medication List:
+	For the MVP, patients can export a PDF version of their medication list for offline reference. This includes:
+	Dosage instructions, doctor’s name, and next dose timing.
+	It allows patients to have their medication schedule on hand without needing internet access.
+4.	Doctor Notes & Visit Summaries
+•	Structured Summaries
+o	Diagnosis, tests ordered, procedures performed, notes from doctor.
+o	Attached files (e.g., imaging, scanned charts) viewable inline or downloadable.
+•	Doctor Contact Attribution
+o	Each note includes the name and clinic of the doctor for traceability.
+o	Option to message doctor via Secure Messaging (when enabled by clinic).
+5.	Dependent Records Management
+•	Profile Switching
+o	Parent can switch between dependents from a dropdown menu or profile avatar bar.
+•	Age-Based Access Control
+o	Children under 13: full medical visibility to parent account holder.
+o	Children aged 13–17: restricted records view, with consent-based access flag.
+•	Child-Friendly View
+o	For underage dependents, the My Health page uses simpler labels and fewer clinical terminologies when accessed under child sub-profiles (future-friendly MVP upgrade).
+6.	Privacy & Consent Layer
+•	Dynamic Consent Notices
+o	If a dependent aged 13–17 restricts access, parent sees a “Private Record” tag.
+o	Patients are notified when a new document or sensitive note is added to their file.
+•	Record Access Logs
+o	Include logs showing which clinic added or modified records and when.
+7.	Record Export & Sharing
+•	Health Report Downloads
+o	Generate a “My Health Summary” as a downloadable PDF (customizable by date range, provider, etc.).
+o	Automatically includes visit history, prescriptions, and lab results.
+•	Insurance/Third-Party Submission Ready
+o	Export includes doctor signatures and clinic identifiers required for insurance claim support (ties into Insurance Claim feature).
+8.	Real-Time Sync with Clinic Input
+•	Instant Record Updates
+o	When a clinic uploads a new lab result, prescription, or visit summary, it reflects on the My Health page immediately.
+o	Patients are notified via in-app alert and email (if notifications enabled).
+•	Status Indicators
+o	“Under Review,” “Finalized,” or “Updated” badges appear based on clinic-side tagging.
+
+Summary
+
+The My Health Care page functions as a real-time, secure, and user-friendly health data hub. It prioritizes patient empowerment, family-based access controls, and seamless integration across multiple healthcare providers. The MVP version ensures core usability, while future versions may introduce additional features like health analytics, care team tagging, and wearable data integration.
+
+
+
+
+
+

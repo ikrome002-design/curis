@@ -1,0 +1,78 @@
+#### 1. **Dashboard**
+
+
+
+
+Here’s an expanded breakdown of the dynamic MVP features and functionalities available within the “Dashboard” page for the Receptionists & Clinic Assistants account on the Curis by Citrus platform:
+________________________________________
+1.	Dashboard – Dynamic Features Overview
+
+The Dashboard acts as the centralized command center for Receptionists and Clinic Assistants, providing a real-time, role-specific interface to streamline front-desk operations. It is designed for efficiency, situational awareness, and proactive clinic management.
+________________________________________
+a.	Quick Access to Appointments
+•	Real-time display of upcoming and past appointments.
+•	Visual indicators (color-coded) show appointment status: confirmed, pending, cancelled, or completed.
+•	Instant actions: "Check-in Patient," "Reschedule," "Cancel," or "Assign to Doctor" with one click.
+________________________________________
+b.	Daily Task Summary
+•	Auto-generated checklist of key responsibilities for the day:
+o	Scheduled patient check-ins
+o	Pending appointment confirmations
+o	Walk-in registration reminders
+o	Unpaid invoices requiring follow-up
+•	Tasks update dynamically based on real-time user actions and system events.
+________________________________________
+c.	Real-Time Notifications
+•	Pop-up and banner alerts for:
+o	New bookings or reschedules made by patients or doctors
+o	Cancellations and no-shows
+o	Patient arrivals and waiting status updates
+o	Billing events, such as payment received or overdue invoice flagged
+•	Customizable notification settings per user session.
+________________________________________
+d.	Doctor Availability Status
+•	Live feed of doctor schedules with current availability indicators (e.g., “In Consultation,” “Available,” “On Break”).
+•	Hover or tap to view each doctor’s appointment queue.
+•	Used to assign incoming patients or reschedule based on real-time availability.
+________________________________________
+e.	Performance Metrics
+•	Visual counters and charts display daily stats:
+o	Patients checked in today
+o	Total appointments handled
+o	Completed tasks vs pending
+o	Payment collection tally (non-sensitive overview)
+•	Supports accountability and helps front-desk staff track productivity in real time.
+________________________________________
+f.	System Shortcuts & Quick Actions Panel
+•	Direct links to frequently used pages:
+o	Book Appointment,
+o	Check-in Patient,
+o	View Queue,
+o	Create Invoice,
+o	Send Payment Reminder
+•	Search bar with smart suggestions for patients, doctors, or invoices.
+________________________________________
+g.	Alerts & Flags Section
+•	Displays alerts such as:
+o	Overdue patient bills
+o	Unassigned appointments
+o	Service fee invoice due (for clinic operations)
+•	Clicking on each alert leads directly to the relevant action screen.
+________________________________________
+h.	Integrated Messaging Notifications
+•	Notification preview for unread internal messages from doctors or staff.
+•	Quick access to the secure messaging portal for coordination.
+________________________________________
+Role-Specific Control
+
+All Dashboard data and interactions are scoped strictly to the receptionist/clinic assistant role:
+•	No access to patient medical records, diagnoses, or doctor analytics.
+•	View-limited financial summaries tied to front-desk actions (e.g., invoices and receipts handled by the assistant).
+________________________________________
+Purpose
+
+The Dashboard is the receptionist’s operational hub—providing full visibility into the day’s flow, minimizing oversight, and enabling fast decision-making without needing to navigate multiple tabs or screens.
+
+
+
+

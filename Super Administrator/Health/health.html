@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Records Audit - Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="health.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Dashboard\dashboard.html"
+                    class="logo-link">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Curis Users\curis_users.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Curis Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Health\health.html"
+                            class="nav-link">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Health</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Compliance Hub\compliance_hub.html"
+                            class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Compliance Hub</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Notifications -->
+                <div class="notification-container">
+                    <button id="notificationBtn" class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">6</span>
+                    </button>
+                </div>
+
+                <!-- User Profile -->
+                <div class="user-profile-container">
+                    <button id="userProfileBtn" class="user-profile-btn">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-image">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- User Profile Dropdown -->
+    <div id="userProfileDropdown" class="user-dropdown hidden">
+        <ul class="dropdown-menu">
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Settings\settings.html"
+                    class="dropdown-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\landing_page.html"
+                    class="dropdown-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Notification Panel -->
+    <div id="notificationPanel" class="notification-panel hidden">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button id="closeNotifications" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread warning">
+                <div class="notification-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="notification-content">
+                    <p class="notification-title">Unusual Access Pattern</p>
+                    <p class="notification-desc">Multiple record access from IP 192.168.1.100</p>
+                    <p class="notification-time">15 minutes ago</p>
+                </div>
+            </div>
+            <div class="notification-item unread info">
+                <div class="notification-icon">
+                    <i class="fas fa-file-medical"></i>
+                </div>
+                <div class="notification-content">
+                    <p class="notification-title">Record Modified</p>
+                    <p class="notification-desc">Prescription updated in file #12845</p>
+                    <p class="notification-time">32 minutes ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="notification-footer">
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Notifications\notifications.html"
+                class="view-all-link">View All Notifications</a>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-title">
+                <h1>
+                    <i class="fas fa-hospital-alt"></i>
+                    Health
+                </h1>
+                <p class="page-subtitle">Medical Records Audit & Compliance</p>
+            </div>
+
+            <!-- Privacy Notice -->
+            <div class="privacy-notice">
+                <div class="notice-badge">
+                    <i class="fas fa-lock"></i>
+                    <span>READ-ONLY ACCESS</span>
+                </div>
+                <div class="notice-text">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>No Personal Info Visible</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clinic Selection Section - Required First Step -->
+        <section class="clinic-selection-section" id="clinicSelectionSection">
+            <div class="selection-container">
+                <div class="selection-header">
+                    <i class="fas fa-hospital"></i>
+                    <h2>Select Clinic Owner</h2>
+                    <p class="selection-subtitle">Required First Step - Choose a clinic to audit medical records</p>
+                </div>
+
+                <div class="selection-actions">
+                    <button id="selectClinicBtn" class="btn-primary large">
+                        <i class="fas fa-search"></i>
+                        <span>Select Clinic Owner</span>
+                    </button>
+                </div>
+
+                <!-- Recent Clinics Quick Access -->
+                <div class="recent-clinics">
+                    <h3>Recent Clinics</h3>
+                    <div class="recent-clinic-cards">
+                        <button class="clinic-card" data-clinic-id="clinic-a">
+                            <div class="clinic-info">
+                                <div class="clinic-name">Nairobi Medical Center</div>
+                                <div class="clinic-owner">Dr. Sarah Johnson</div>
+                                <div class="clinic-meta">Last audited: 1 hour ago</div>
+                            </div>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="clinic-card" data-clinic-id="clinic-b">
+                            <div class="clinic-info">
+                                <div class="clinic-name">Westlands Health Clinic</div>
+                                <div class="clinic-owner">Dr. Michael Brown</div>
+                                <div class="clinic-meta">Last audited: Yesterday</div>
+                            </div>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="clinic-card" data-clinic-id="clinic-c">
+                            <div class="clinic-info">
+                                <div class="clinic-name">Karen Medical Center</div>
+                                <div class="clinic-owner">Dr. Emily Davis</div>
+                                <div class="clinic-meta">Last audited: 2 days ago</div>
+                            </div>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Records Dashboard - Hidden by default -->
+        <section class="health-records-dashboard hidden" id="healthRecordsDashboard">
+            <!-- Selected Clinic Header -->
+            <div class="selected-clinic-header">
+                <div class="clinic-identity">
+                    <div class="clinic-avatar">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="clinic-details">
+                        <h2 id="selectedClinicName">Nairobi Medical Center</h2>
+                        <p id="selectedClinicOwner">Dr. Sarah Johnson</p>
+                        <div class="access-restrictions">
+                            <span class="restriction-badge">
+                                <i class="fas fa-lock"></i>
+                                <span>READ-ONLY ACCESS</span>
+                            </span>
+                            <span class="restriction-badge">
+                                <i class="fas fa-user-slash"></i>
+                                <span>NO PERSONAL INFO VISIBLE</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clinic-actions">
+                    <button id="changeClinicBtn" class="btn-secondary">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Change Clinic</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Privacy & Restrictions Panel -->
+            <div class="privacy-restrictions-panel">
+                <div class="panel-header">
+                    <h3>
+                        <i class="fas fa-shield-alt"></i>
+                        Privacy & Access Restrictions
+                    </h3>
+                    <button class="toggle-panel" data-panel="privacy">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="panel-content" id="privacyPanelContent">
+                    <div class="restrictions-grid">
+                        <div class="restriction-section denied">
+                            <h4>
+                                <i class="fas fa-times-circle"></i>
+                                Super Admin Cannot:
+                            </h4>
+                            <ul class="restriction-list">
+                                <li>
+                                    <i class="fas fa-times"></i>
+                                    <span>Edit Medical Records</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-times"></i>
+                                    <span>View Patient Names</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-times"></i>
+                                    <span>See Contact Information</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-times"></i>
+                                    <span>Access Profile Photos</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="restriction-section allowed">
+                            <h4>
+                                <i class="fas fa-check-circle"></i>
+                                Super Admin Can:
+                            </h4>
+                            <ul class="restriction-list">
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>View Medical Data</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Audit Access Logs</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Monitor Compliance</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Generate Reports</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="audit-notice">
+                        <i class="fas fa-info-circle"></i>
+                        <span>All Actions Logged for Audit Trail</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medical Record Overview -->
+            <div class="medical-record-overview">
+                <div class="panel-header">
+                    <h2>
+                        <i class="fas fa-chart-bar"></i>
+                        Medical Record Overview
+                    </h2>
+                    <div class="realtime-indicator">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>Real-Time Statistics</span>
+                    </div>
+                </div>
+                <div class="overview-stats">
+                    <div class="stat-card primary">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number">2,847</div>
+                            <div class="stat-label">Total Records</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card info">
+                        <div class="stat-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number">156</div>
+                            <div class="stat-label">Records Accessed Today</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card warning">
+                        <div class="stat-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number">23</div>
+                            <div class="stat-label">Records Modified (Week)</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card success">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Active Doctors</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-grid">
+                        <div class="activity-item">
+                            <i class="fas fa-pills"></i>
+                            <span class="activity-label">New Prescriptions:</span>
+                            <span class="activity-count">42</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-stethoscope"></i>
+                            <span class="activity-label">Updated Diagnoses:</span>
+                            <span class="activity-count">18</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-vial"></i>
+                            <span class="activity-label">Lab Results Added:</span>
+                            <span class="activity-count">67</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <div class="tab-container">
+                    <button class="tab-btn active" data-tab="audit">
+                        <i class="fas fa-search"></i>
+                        <span>Audit Logs</span>
+                    </button>
+                    <button class="tab-btn" data-tab="compliance">
+                        <i class="fas fa-balance-scale"></i>
+                        <span>Compliance</span>
+                    </button>
+                    <button class="tab-btn" data-tab="records">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Records</span>
+                    </button>
+                    <button class="tab-btn" data-tab="reports">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Reports</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Actions Panel -->
+            <div class="quick-actions-panel">
+                <div class="quick-actions-header">
+                    <h3>
+                        <i class="fas fa-bolt"></i>
+                        Quick Actions
+                    </h3>
+                </div>
+                <div class="quick-actions-grid">
+                    <button class="quick-action-btn" id="quickAudit">
+                        <div class="action-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="action-label">Quick Audit</div>
+                    </button>
+                    <button class="quick-action-btn" id="quickCompliance">
+                        <div class="action-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="action-label">Compliance Check</div>
+                    </button>
+                    <button class="quick-action-btn" id="quickExport">
+                        <div class="action-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="action-label">Export Today's Log</div>
+                    </button>
+                    <button class="quick-action-btn" id="quickAlert">
+                        <div class="action-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="action-label">View Alerts</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content Areas -->
+            <div class="tab-content-container">
+                <!-- Audit Logs Tab -->
+                <div class="tab-content active" id="auditTab">
+                    <div class="audit-panel">
+                        <div class="panel-header">
+                            <h3>
+                                <i class="fas fa-search"></i>
+                                Medical Records Audit
+                            </h3>
+                            <div class="readonly-badge">
+                                <i class="fas fa-lock"></i>
+                                <span>VIEW-ONLY MODE ACTIVE</span>
+                            </div>
+                        </div>
+
+                        <!-- Audit Filters -->
+                        <div class="audit-filters">
+                            <div class="filter-row">
+                                <div class="filter-group">
+                                    <label for="recordType">Record Type</label>
+                                    <select id="recordType" class="form-select">
+                                        <option value="">All Types</option>
+                                        <option value="prescriptions">
+                                            <i class="fas fa-pills"></i> Prescriptions
+                                        </option>
+                                        <option value="diagnoses">
+                                            <i class="fas fa-stethoscope"></i> Diagnoses
+                                        </option>
+                                        <option value="lab-results">
+                                            <i class="fas fa-vial"></i> Lab Results
+                                        </option>
+                                        <option value="treatment-plans">
+                                            <i class="fas fa-clipboard-list"></i> Treatment Plans
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="dateRange">Date Range</label>
+                                    <select id="dateRange" class="form-select">
+                                        <option value="today">Today</option>
+                                        <option value="week">This Week</option>
+                                        <option value="month">This Month</option>
+                                        <option value="custom">Custom Range</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="doctorFilter">Doctor</label>
+                                    <select id="doctorFilter" class="form-select">
+                                        <option value="">All Doctors</option>
+                                        <option value="doc-001">Dr. Johnson (ID: DOC001)</option>
+                                        <option value="doc-002">Dr. Smith (ID: DOC002)</option>
+                                        <option value="doc-003">Dr. Brown (ID: DOC003)</option>
+                                    </select>
+                                </div>
+                                <button class="btn-primary" id="applyAuditFilters">
+                                    <i class="fas fa-filter"></i>
+                                    Apply Filters
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Access Permissions Log -->
+                        <div class="access-log-section">
+                            <h4>
+                                <i class="fas fa-key"></i>
+                                Access Permissions Log
+                            </h4>
+                            <div class="access-log-table">
+                                <table class="log-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Time</th>
+                                            <th>User</th>
+                                            <th>Role</th>
+                                            <th>File Number</th>
+                                            <th>Duration</th>
+                                            <th>IP Address</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="log-entry">
+                                            <td class="log-time">
+                                                <i class="fas fa-clock"></i>
+                                                10:30 AM
+                                            </td>
+                                            <td class="log-user">Dr. Lee (ID: DOC001)</td>
+                                            <td class="log-role">
+                                                <span class="role-badge doctor">Doctor</span>
+                                            </td>
+                                            <td class="log-file">#12345</td>
+                                            <td class="log-duration">15 min</td>
+                                            <td class="log-ip">192.168.1.45</td>
+                                            <td class="log-actions">
+                                                <button class="btn-link" data-action="view-details">Details</button>
+                                            </td>
+                                        </tr>
+                                        <tr class="log-entry">
+                                            <td class="log-time">
+                                                <i class="fas fa-clock"></i>
+                                                11:15 AM
+                                            </td>
+                                            <td class="log-user">Nurse Kim (ID: NUR001)</td>
+                                            <td class="log-role">
+                                                <span class="role-badge nurse">Nurse</span>
+                                            </td>
+                                            <td class="log-file">#67890</td>
+                                            <td class="log-duration">8 min</td>
+                                            <td class="log-ip">192.168.1.67</td>
+                                            <td class="log-actions">
+                                                <button class="btn-link" data-action="view-details">Details</button>
+                                            </td>
+                                        </tr>
+                                        <tr class="log-entry">
+                                            <td class="log-time">
+                                                <i class="fas fa-clock"></i>
+                                                12:00 PM
+                                            </td>
+                                            <td class="log-user">Reception (ID: REC001)</td>
+                                            <td class="log-role">
+                                                <span class="role-badge receptionist">Receptionist</span>
+                                            </td>
+                                            <td class="log-file">#11111</td>
+                                            <td class="log-duration">3 min</td>
+                                            <td class="log-ip">192.168.1.89</td>
+                                            <td class="log-actions">
+                                                <button class="btn-link" data-action="view-details">Details</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="log-actions">
+                                <button class="btn-secondary" id="exportAccessLog">
+                                    <i class="fas fa-download"></i>
+                                    Export Access Log
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compliance Tab -->
+                <div class="tab-content" id="complianceTab">
+                    <div class="compliance-panel">
+                        <div class="panel-header">
+                            <h3>
+                                <i class="fas fa-balance-scale"></i>
+                                Compliance Monitoring
+                            </h3>
+                            <div class="compliance-score">
+                                <span class="score-label">Compliance Score:</span>
+                                <span class="score-value">94.2%</span>
+                            </div>
+                        </div>
+
+                        <!-- Change Logs -->
+                        <div class="change-logs-section">
+                            <h4>
+                                <i class="fas fa-edit"></i>
+                                Change Logs & Audit Trail
+                            </h4>
+                            <div class="change-filters">
+                                <select class="form-select" id="changeTypeFilter">
+                                    <option value="">All Changes</option>
+                                    <option value="prescription">Prescription Updates</option>
+                                    <option value="diagnosis">Diagnosis Changes</option>
+                                    <option value="deletion">Record Deletions</option>
+                                </select>
+                                <select class="form-select" id="changeDateFilter">
+                                    <option value="today">Today</option>
+                                    <option value="week">This Week</option>
+                                    <option value="month">This Month</option>
+                                </select>
+                            </div>
+
+                            <div class="change-timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker prescription"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-time">
+                                            <i class="fas fa-clock"></i>
+                                            Today 09:45 AM
+                                        </div>
+                                        <div class="timeline-action">
+                                            <i class="fas fa-pills"></i>
+                                            Dr. Lee added prescription to file #12845
+                                        </div>
+                                        <div class="timeline-details">
+                                            Added: Amoxicillin 500mg - 3x daily for 7 days
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker diagnosis"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-time">
+                                            <i class="fas fa-clock"></i>
+                                            Today 10:30 AM
+                                        </div>
+                                        <div class="timeline-action">
+                                            <i class="fas fa-stethoscope"></i>
+                                            Dr. Park updated diagnosis in file #13567
+                                        </div>
+                                        <div class="timeline-details">
+                                            Changed: Primary diagnosis from A01 to B02
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker lab"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-time">
+                                            <i class="fas fa-clock"></i>
+                                            Today 11:15 AM
+                                        </div>
+                                        <div class="timeline-action">
+                                            <i class="fas fa-vial"></i>
+                                            Lab Tech added results to file #14729
+                                        </div>
+                                        <div class="timeline-details">
+                                            Added: Complete Blood Count results
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="compliance-actions">
+                            <button class="btn-primary" id="generateComplianceReport">
+                                <i class="fas fa-chart-bar"></i>
+                                Generate Compliance Report
+                            </button>
+                            <button class="btn-secondary" id="exportChangeLog">
+                                <i class="fas fa-download"></i>
+                                Export Change Log
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Records Tab -->
+                <div class="tab-content" id="recordsTab">
+                    <div class="records-panel">
+                        <div class="panel-header">
+                            <h3>
+                                <i class="fas fa-folder-open"></i>
+                                Patient Records Overview
+                            </h3>
+                            <div class="privacy-warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>Privacy Notice: No Names Visible</span>
+                            </div>
+                        </div>
+
+                        <!-- Patient Record Search -->
+                        <div class="patient-search-section">
+                            <h4>
+                                <i class="fas fa-search"></i>
+                                Patient Record Search
+                            </h4>
+                            <div class="search-container">
+                                <div class="search-input-group">
+                                    <i class="fas fa-search"></i>
+                                    <input type="text" id="fileNumberSearch" class="search-input"
+                                        placeholder="Enter File Number (e.g., #12345)">
+                                    <button class="btn-primary" id="searchRecordBtn">
+                                        <i class="fas fa-search"></i>
+                                        Search
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Privacy Notice -->
+                            <div class="privacy-notice-box">
+                                <h5>
+                                    <i class="fas fa-shield-alt"></i>
+                                    Privacy Protection Active
+                                </h5>
+                                <div class="privacy-grid">
+                                    <div class="privacy-item denied">
+                                        <i class="fas fa-times"></i>
+                                        <span>No Names Visible</span>
+                                    </div>
+                                    <div class="privacy-item denied">
+                                        <i class="fas fa-times"></i>
+                                        <span>No Phone Numbers</span>
+                                    </div>
+                                    <div class="privacy-item denied">
+                                        <i class="fas fa-times"></i>
+                                        <span>No Email Addresses</span>
+                                    </div>
+                                    <div class="privacy-item denied">
+                                        <i class="fas fa-times"></i>
+                                        <span>No Profile Pictures</span>
+                                    </div>
+                                    <div class="privacy-item allowed">
+                                        <i class="fas fa-check"></i>
+                                        <span>File Numbers Only</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Record View Placeholder -->
+                        <div class="record-view-placeholder" id="recordViewPlaceholder">
+                            <div class="placeholder-content">
+                                <i class="fas fa-search"></i>
+                                <h4>Enter File Number to View Record</h4>
+                                <p>Search by file number to view medical record details in read-only mode</p>
+                            </div>
+                        </div>
+
+                        <!-- Record Details (Hidden by default) -->
+                        <div class="record-details-section hidden" id="recordDetailsSection">
+                            <div class="record-header">
+                                <h4>
+                                    <i class="fas fa-folder"></i>
+                                    File Number: <span id="currentFileNumber">#12345</span>
+                                </h4>
+                                <div class="readonly-badge">
+                                    <i class="fas fa-lock"></i>
+                                    <span>READ-ONLY MODE</span>
+                                </div>
+                            </div>
+
+                            <div class="record-content">
+                                <div class="record-summary">
+                                    <h5>High-Level Summary</h5>
+                                    <div class="summary-grid">
+                                        <div class="summary-item">
+                                            <span class="summary-label">Last Visit:</span>
+                                            <span class="summary-value" id="lastVisit">Nov 25, 2024</span>
+                                        </div>
+                                        <div class="summary-item">
+                                            <span class="summary-label">Primary Diagnosis:</span>
+                                            <span class="summary-value" id="primaryDiagnosis">ICD-10: J06.9</span>
+                                        </div>
+                                        <div class="summary-item">
+                                            <span class="summary-label">Active Medications:</span>
+                                            <span class="summary-value" id="activeMedications">3</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="medical-history">
+                                    <h5>Medical History</h5>
+                                    <div class="history-tabs">
+                                        <button class="history-tab-btn active" data-history="prescriptions">
+                                            <i class="fas fa-pills"></i> Prescriptions
+                                        </button>
+                                        <button class="history-tab-btn" data-history="diagnoses">
+                                            <i class="fas fa-stethoscope"></i> Diagnoses
+                                        </button>
+                                        <button class="history-tab-btn" data-history="lab-results">
+                                            <i class="fas fa-vial"></i> Lab Results
+                                        </button>
+                                        <button class="history-tab-btn" data-history="treatments">
+                                            <i class="fas fa-clipboard-list"></i> Treatments
+                                        </button>
+                                    </div>
+
+                                    <div class="history-content">
+                                        <div class="history-list">
+                                            <div class="history-item">
+                                                <div class="history-date">Nov 25, 2024</div>
+                                                <div class="history-detail">Amoxicillin 500mg - 3x daily for 7 days
+                                                </div>
+                                                <div class="history-provider">Prescribed by: DOC001</div>
+                                            </div>
+                                            <div class="history-item">
+                                                <div class="history-date">Nov 20, 2024</div>
+                                                <div class="history-detail">Paracetamol 500mg - As needed for fever
+                                                </div>
+                                                <div class="history-provider">Prescribed by: DOC001</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="record-actions">
+                                <button class="btn-secondary" id="printSummaryBtn">
+                                    <i class="fas fa-print"></i>
+                                    Print Summary
+                                </button>
+                                <button class="btn-secondary" id="exportRecordBtn">
+                                    <i class="fas fa-download"></i>
+                                    Export Record
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reports Tab -->
+                <div class="tab-content" id="reportsTab">
+                    <div class="reports-panel">
+                        <div class="panel-header">
+                            <h3>
+                                <i class="fas fa-chart-line"></i>
+                                Health Reports & Analytics
+                            </h3>
+                        </div>
+
+                        <!-- Report Generation -->
+                        <div class="report-generation">
+                            <h4>Generate Health Analytics Report</h4>
+                            <div class="report-config">
+                                <div class="config-row">
+                                    <div class="config-group">
+                                        <label for="reportType">Report Type</label>
+                                        <select id="reportType" class="form-select">
+                                            <option value="access-stats">Access Statistics</option>
+                                            <option value="modification-trends">Modification Trends</option>
+                                            <option value="compliance-summary">Compliance Summary</option>
+                                            <option value="audit-overview">Audit Overview</option>
+                                        </select>
+                                    </div>
+                                    <div class="config-group">
+                                        <label for="reportPeriod">Time Period</label>
+                                        <select id="reportPeriod" class="form-select">
+                                            <option value="today">Today</option>
+                                            <option value="week">This Week</option>
+                                            <option value="month">This Month</option>
+                                            <option value="quarter">This Quarter</option>
+                                        </select>
+                                    </div>
+                                    <div class="config-group">
+                                        <label for="reportFormat">Export Format</label>
+                                        <select id="reportFormat" class="form-select">
+                                            <option value="pdf">PDF Report</option>
+                                            <option value="csv">CSV Data</option>
+                                            <option value="excel">Excel Spreadsheet</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Key Metrics Preview -->
+                            <div class="metrics-preview">
+                                <h5>Key Metrics</h5>
+                                <div class="metrics-grid">
+                                    <div class="metric-item">
+                                        <div class="metric-icon">
+                                            <i class="fas fa-eye"></i>
+                                        </div>
+                                        <div class="metric-content">
+                                            <div class="metric-label">Record Access Frequency</div>
+                                            <div class="metric-value">156 accesses/day avg</div>
+                                        </div>
+                                    </div>
+                                    <div class="metric-item">
+                                        <div class="metric-icon">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="metric-content">
+                                            <div class="metric-label">Peak Access Times</div>
+                                            <div class="metric-value">10:00-12:00 PM</div>
+                                        </div>
+                                    </div>
+                                    <div class="metric-item">
+                                        <div class="metric-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="metric-content">
+                                            <div class="metric-label">User Activity Patterns</div>
+                                            <div class="metric-value">8 active users/hour</div>
+                                        </div>
+                                    </div>
+                                    <div class="metric-item">
+                                        <div class="metric-icon">
+                                            <i class="fas fa-percentage"></i>
+                                        </div>
+                                        <div class="metric-content">
+                                            <div class="metric-label">Compliance Rate</div>
+                                            <div class="metric-value">94.2%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Chart Visualizations Preview -->
+                            <div class="visualizations-preview">
+                                <h5>Data Visualizations</h5>
+                                <div class="charts-grid">
+                                    <div class="chart-placeholder">
+                                        <i class="fas fa-chart-bar"></i>
+                                        <p>Bar Chart: Access by Time</p>
+                                    </div>
+                                    <div class="chart-placeholder">
+                                        <i class="fas fa-chart-line"></i>
+                                        <p>Trend Line: Modifications</p>
+                                    </div>
+                                    <div class="chart-placeholder">
+                                        <i class="fas fa-chart-pie"></i>
+                                        <p>Pie Chart: Record Types</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="report-actions">
+                                <button class="btn-primary" id="generateReportBtn">
+                                    <i class="fas fa-chart-bar"></i>
+                                    Generate Report
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health Alerts Section -->
+            <div class="health-alerts-section">
+                <div class="panel-header">
+                    <h3>
+                        <i class="fas fa-bell"></i>
+                        Health Alerts Configuration
+                    </h3>
+                    <button class="btn-secondary" id="configureAlertsBtn">
+                        <i class="fas fa-cog"></i>
+                        Configure Alerts
+                    </button>
+                </div>
+
+                <div class="alert-types">
+                    <div class="alert-type-item">
+                        <div class="alert-type-info">
+                            <i class="fas fa-edit"></i>
+                            <span>Record Modifications</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="alert-type-item">
+                        <div class="alert-type-info">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Unusual Access Patterns</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="alert-type-item">
+                        <div class="alert-type-info">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>Compliance Violations</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="alert-type-item">
+                        <div class="alert-type-info">
+                            <i class="fas fa-pills"></i>
+                            <span>Prescription Changes</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Billing Integration -->
+            <div class="billing-integration-section">
+                <div class="panel-header">
+                    <h3>
+                        <i class="fas fa-credit-card"></i>
+                        Billing Integration
+                    </h3>
+                    <button class="btn-secondary" id="billingVerifyBtn">
+                        <i class="fas fa-check-double"></i>
+                        Verify Billing
+                    </button>
+                </div>
+
+                <div class="billing-verification">
+                    <div class="verification-stats">
+                        <div class="verification-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="verification-label">Prescription → Invoice:</span>
+                            <span class="verification-status verified">Verified</span>
+                        </div>
+                        <div class="verification-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="verification-label">Lab Test → Charge:</span>
+                            <span class="verification-status verified">Verified</span>
+                        </div>
+                        <div class="verification-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span class="verification-label">Treatment → Bill:</span>
+                            <span class="verification-status warning">3 Discrepancies</span>
+                        </div>
+                    </div>
+
+                    <div class="discrepancies">
+                        <h4>
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Billing Discrepancies
+                        </h4>
+                        <div class="discrepancy-list">
+                            <div class="discrepancy-item">
+                                <span class="discrepancy-type">Unbilled Services:</span>
+                                <span class="discrepancy-count">7</span>
+                            </div>
+                            <div class="discrepancy-item">
+                                <span class="discrepancy-type">Missing Charges:</span>
+                                <span class="discrepancy-count">3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="billing-actions">
+                        <button class="btn-primary" id="generateBillingReport">
+                            <i class="fas fa-chart-bar"></i>
+                            Generate Report
+                        </button>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Billings and Payments\billings_and_payments.html"
+                            class="btn-secondary">
+                            <i class="fas fa-external-link-alt"></i>
+                            Go to Billing Page
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Overlays -->
+
+    <!-- Clinic Selection Modal -->
+    <div id="clinicSelectionModal" class="modal-overlay hidden">
+        <div class="modal-container large">
+            <div class="modal-header">
+                <h2>Select Clinic Owner</h2>
+                <button class="modal-close" data-modal="clinicSelectionModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="clinic-selection-content">
+                    <!-- Search Bar -->
+                    <div class="search-section">
+                        <div class="search-input-group">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="clinicSearchInput" class="search-input"
+                                placeholder="Search by Clinic Name or ID">
+                        </div>
+                    </div>
+
+                    <!-- Recent Clinics -->
+                    <div class="recent-clinics-section">
+                        <h3>Recent Clinics</h3>
+                        <div class="clinic-list">
+                            <button class="clinic-item" data-clinic-id="clinic-a">
+                                <div class="clinic-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="clinic-info">
+                                    <div class="clinic-name">Nairobi Medical Center</div>
+                                    <div class="clinic-owner">Dr. Sarah Johnson</div>
+                                    <div class="clinic-details">Nairobi, Kenya • 2,847 Records</div>
+                                </div>
+                            </button>
+                            <button class="clinic-item" data-clinic-id="clinic-b">
+                                <div class="clinic-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="clinic-info">
+                                    <div class="clinic-name">Westlands Health Clinic</div>
+                                    <div class="clinic-owner">Dr. Michael Brown</div>
+                                    <div class="clinic-details">Westlands, Kenya • 1,234 Records</div>
+                                </div>
+                            </button>
+                            <button class="clinic-item" data-clinic-id="clinic-c">
+                                <div class="clinic-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="clinic-info">
+                                    <div class="clinic-name">Karen Medical Center</div>
+                                    <div class="clinic-owner">Dr. Emily Davis</div>
+                                    <div class="clinic-details">Karen, Kenya • 3,156 Records</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- All Clinics List -->
+                    <div class="all-clinics-section">
+                        <div class="section-header">
+                            <h3>All Clinics</h3>
+                            <div class="filter-options">
+                                <select class="form-select" id="regionFilter">
+                                    <option value="">All Regions</option>
+                                    <option value="nairobi">Nairobi</option>
+                                    <option value="mombasa">Mombasa</option>
+                                    <option value="kisumu">Kisumu</option>
+                                </select>
+                                <select class="form-select" id="statusFilter">
+                                    <option value="">All Status</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="clinic-list scrollable">
+                            <button class="clinic-item" data-clinic-id="clinic-d">
+                                <div class="clinic-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="clinic-info">
+                                    <div class="clinic-name">Eastleigh Family Clinic</div>
+                                    <div class="clinic-owner">Dr. Ahmed Hassan</div>
+                                    <div class="clinic-details">Eastleigh, Kenya • 892 Records</div>
+                                </div>
+                            </button>
+                            <button class="clinic-item" data-clinic-id="clinic-e">
+                                <div class="clinic-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="clinic-info">
+                                    <div class="clinic-name">Kiambu District Hospital</div>
+                                    <div class="clinic-owner">Dr. Grace Wanjiku</div>
+                                    <div class="clinic-details">Kiambu, Kenya • 4,567 Records</div>
+                                </div>
+                            </button>
+                            <!-- More clinics would be listed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" data-modal="clinicSelectionModal">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patient Record View Modal -->
+    <div id="patientRecordModal" class="modal-overlay hidden">
+        <div class="modal-container large">
+            <div class="modal-header">
+                <h2>
+                    <i class="fas fa-folder"></i>
+                    Patient Record View - File #<span id="modalFileNumber">12345</span>
+                </h2>
+                <div class="readonly-badge">
+                    <i class="fas fa-lock"></i>
+                    <span>READ-ONLY MODE</span>
+                </div>
+                <button class="modal-close" data-modal="patientRecordModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-record-content">
+                    <!-- Privacy Warning -->
+                    <div class="privacy-warning-banner">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Personal Information Hidden - File Number View Only</span>
+                    </div>
+
+                    <!-- Record Summary -->
+                    <div class="modal-record-summary">
+                        <h3>High-Level Summary</h3>
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <span class="summary-label">Last Visit:</span>
+                                <span class="summary-value">Nov 25, 2024</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Primary Diagnosis:</span>
+                                <span class="summary-value">ICD-10: J06.9</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Active Medications:</span>
+                                <span class="summary-value">3</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Last Update:</span>
+                                <span class="summary-value">Nov 25, 2024 10:30 AM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medical History Tabs -->
+                    <div class="modal-history-tabs">
+                        <button class="modal-tab-btn active" data-modal-tab="prescriptions">
+                            <i class="fas fa-pills"></i> Recent Prescriptions
+                        </button>
+                        <button class="modal-tab-btn" data-modal-tab="diagnoses">
+                            <i class="fas fa-stethoscope"></i> Diagnoses History
+                        </button>
+                        <button class="modal-tab-btn" data-modal-tab="labs">
+                            <i class="fas fa-vial"></i> Lab Results
+                        </button>
+                        <button class="modal-tab-btn" data-modal-tab="treatments">
+                            <i class="fas fa-clipboard-list"></i> Treatment Records
+                        </button>
+                    </div>
+
+                    <div class="modal-history-content">
+                        <div class="modal-tab-content active" id="modalPrescriptionsTab">
+                            <div class="history-list">
+                                <div class="history-item">
+                                    <div class="history-date">Nov 25, 2024</div>
+                                    <div class="history-detail">
+                                        <strong>Amoxicillin 500mg</strong><br>
+                                        Dosage: 3x daily for 7 days<br>
+                                        Instructions: Take with food
+                                    </div>
+                                    <div class="history-provider">Prescribed by: DOC001</div>
+                                </div>
+                                <div class="history-item">
+                                    <div class="history-date">Nov 20, 2024</div>
+                                    <div class="history-detail">
+                                        <strong>Paracetamol 500mg</strong><br>
+                                        Dosage: As needed for fever<br>
+                                        Instructions: Maximum 4 times daily
+                                    </div>
+                                    <div class="history-provider">Prescribed by: DOC001</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-tab-content" id="modalDiagnosesTab">
+                            <div class="history-list">
+                                <div class="history-item">
+                                    <div class="history-date">Nov 25, 2024</div>
+                                    <div class="history-detail">
+                                        <strong>Primary Diagnosis:</strong> J06.9 - Acute upper respiratory
+                                        infection<br>
+                                        <strong>Secondary:</strong> Z87.891 - Personal history of nicotine dependence
+                                    </div>
+                                    <div class="history-provider">Diagnosed by: DOC001</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-tab-content" id="modalLabsTab">
+                            <div class="history-list">
+                                <div class="history-item">
+                                    <div class="history-date">Nov 24, 2024</div>
+                                    <div class="history-detail">
+                                        <strong>Complete Blood Count</strong><br>
+                                        WBC: 7.2 K/uL (Normal)<br>
+                                        RBC: 4.5 M/uL (Normal)<br>
+                                        Hemoglobin: 13.8 g/dL (Normal)
+                                    </div>
+                                    <div class="history-provider">Ordered by: DOC001</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-tab-content" id="modalTreatmentsTab">
+                            <div class="history-list">
+                                <div class="history-item">
+                                    <div class="history-date">Nov 25, 2024</div>
+                                    <div class="history-detail">
+                                        <strong>Treatment Plan:</strong><br>
+                                        1. Antibiotic therapy (Amoxicillin)<br>
+                                        2. Symptomatic relief (Paracetamol)<br>
+                                        3. Follow-up in 7 days<br>
+                                        4. Rest and increased fluid intake
+                                    </div>
+                                    <div class="history-provider">Planned by: DOC001</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="modalPrintSummary">
+                    <i class="fas fa-print"></i>
+                    Print Summary
+                </button>
+                <button class="btn-secondary" data-modal="patientRecordModal">
+                    <i class="fas fa-times"></i>
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Configuration Modal -->
+    <div id="alertConfigModal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Configure Health Alerts</h2>
+                <button class="modal-close" data-modal="alertConfigModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="alert-config-content">
+                    <div class="config-section">
+                        <h3>Alert Types</h3>
+                        <div class="alert-types-config">
+                            <div class="alert-config-item">
+                                <div class="alert-info">
+                                    <i class="fas fa-edit"></i>
+                                    <div class="alert-details">
+                                        <span class="alert-name">Record Modifications</span>
+                                        <span class="alert-desc">Alert when medical records are modified</span>
+                                    </div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="alert-config-item">
+                                <div class="alert-info">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <div class="alert-details">
+                                        <span class="alert-name">Unusual Access Patterns</span>
+                                        <span class="alert-desc">Alert for suspicious access behavior</span>
+                                    </div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="alert-config-item">
+                                <div class="alert-info">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <div class="alert-details">
+                                        <span class="alert-name">Compliance Violations</span>
+                                        <span class="alert-desc">Alert for compliance policy violations</span>
+                                    </div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="alert-config-item">
+                                <div class="alert-info">
+                                    <i class="fas fa-pills"></i>
+                                    <div class="alert-details">
+                                        <span class="alert-name">Prescription Changes</span>
+                                        <span class="alert-desc">Alert when prescriptions are modified</span>
+                                    </div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Notification Channels</h3>
+                        <div class="notification-channels">
+                            <div class="channel-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Dashboard Alert</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="channel-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email Notification</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="channel-item">
+                                <i class="fas fa-sms"></i>
+                                <span>SMS Alert</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Alert History</h3>
+                        <div class="alert-history-list">
+                            <div class="alert-history-item">
+                                <i class="fas fa-edit"></i>
+                                <span class="alert-text">Record modified in file #12845</span>
+                                <span class="alert-time">2 hours ago</span>
+                            </div>
+                            <div class="alert-history-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="alert-text">Unusual access pattern detected</span>
+                                <span class="alert-time">5 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="saveAlertConfig">
+                    <i class="fas fa-save"></i>
+                    Save Configuration
+                </button>
+                <button class="btn-secondary" data-modal="alertConfigModal">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Dark Mode Toggle -->
+            <div class="footer-section">
+                <button id="darkModeToggle" class="dark-mode-btn">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-section social-media">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                        class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer"
+                        class="social-link twitter">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer" class="social-link facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                        class="social-link youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                        class="social-link linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Corporate Website Link -->
+            <div class="footer-section">
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer" class="corporate-link">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Corporate Website</span>
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-section copyright">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="health.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+graph TB
+    %% Dashboard Core
+    Dashboard[Receptionist Dashboard<br/>Central Command Center]
+    
+    %% Dashboard Main Features
+    Dashboard --> QuickAccess[Quick Access Panel<br/>One-Click Actions]
+    Dashboard --> TaskSummary[Daily Task Summary<br/>Auto-Generated Checklist]
+    Dashboard --> Notifications[Real-Time Notifications<br/>Live Updates]
+    Dashboard --> DocAvail[Doctor Availability Status<br/>Live Feed]
+    Dashboard --> PerfMetrics[Performance Metrics<br/>Daily Stats]
+    Dashboard --> Shortcuts[System Shortcuts Panel<br/>Frequent Actions]
+    Dashboard --> AlertsFlags[Alerts & Flags Section<br/>Priority Items]
+    Dashboard --> MsgNotif[Integrated Messaging<br/>Notifications]
+    
+    %% Quick Access Panel Details
+    QuickAccess --> |Click| QAPopup[Quick Access Actions Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Check-in Patient<br/>• Reschedule Appointment<br/>• Cancel Appointment<br/>• Assign to Doctor<br/>━━━━━━━━━━━━━━━━━<br/>Color-coded status indicators]
+    
+    QAPopup --> |Check-in| CheckInSync[→ Sync to Check-In Page<br/>• Auto-fill patient data<br/>• Update queue status<br/>• Send doctor notification]
+    QAPopup --> |Reschedule| RescheduleModal[Reschedule Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Calendar view<br/>• Available slots<br/>• Doctor selection<br/>• Auto-notification<br/>• Conflict detection]
+    QAPopup --> |Cancel| CancelModal[Cancel Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Reason input<br/>• Patient notification<br/>• Update doctor queue<br/>• Log cancellation]
+    QAPopup --> |Assign| AssignDocModal[Assign Doctor Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Live doctor status<br/>• Current patient load<br/>• Smart suggestions<br/>• Manual override<br/>• Queue balancing]
+    
+    %% Task Summary Details
+    TaskSummary --> |Click| TaskDetails[Task Details Panel<br/>━━━━━━━━━━━━━━━━━<br/>• Scheduled check-ins<br/>• Pending confirmations<br/>• Walk-in registrations<br/>• Unpaid invoice follow-ups<br/>━━━━━━━━━━━━━━━━━<br/>Real-time task updates]
+    
+    TaskDetails --> |Check-ins| CheckInPage[→ Check-In Page<br/>Direct navigation]
+    TaskDetails --> |Confirmations| AppointmentPage[→ Appointments Page<br/>Pending list filter]
+    TaskDetails --> |Invoices| BillingPage[→ Billings Page<br/>Outstanding filter]
+    
+    %% Notifications Details
+    Notifications --> |Click| NotifPopup[Notification Center<br/>━━━━━━━━━━━━━━━━━<br/>• New bookings alert<br/>• Cancellations notice<br/>• Patient arrivals<br/>• Payment alerts<br/>• Custom settings<br/>━━━━━━━━━━━━━━━━━<br/>Pop-up & banner alerts]
+    
+    NotifPopup --> |Settings| NotifSettings[Notification Settings<br/>• Alert types toggle<br/>• Sound preferences<br/>• Display duration]
+    NotifPopup --> |View All| InboxPage[→ Inbox & Alerts Page<br/>Full notification history]
+    
+    %% Doctor Availability Details
+    DocAvail --> |Hover/Click| DocQueue[Doctor Queue View<br/>━━━━━━━━━━━━━━━━━<br/>• Current status<br/>  - In Consultation<br/>  - Available<br/>  - On Break<br/>• Patient queue count<br/>• Room assignment<br/>━━━━━━━━━━━━━━━━━<br/>Live status updates]
+    
+    DocQueue --> |View Queue| QueuePage[→ Queue & Flow Page<br/>Doctor-specific queue]
+    DocQueue --> |Assign Patient| AssignSync[→ Sync Assignment<br/>Update queue order]
+    
+    %% Performance Metrics Details
+    PerfMetrics --> |Click| MetricsDetail[Metrics Dashboard<br/>━━━━━━━━━━━━━━━━━<br/>• Patients checked today<br/>• Total appointments<br/>• Completed vs pending<br/>• Payment collection<br/>• Visual charts<br/>━━━━━━━━━━━━━━━━━<br/>Real-time counters]
+    
+    MetricsDetail --> |View Details| ReportsSync[→ Sync to Reports<br/>Detailed analytics]
+    
+    %% System Shortcuts Details
+    Shortcuts --> BookApptShort[Book Appointment<br/>Quick Access]
+    Shortcuts --> CheckInShort[Check-in Patient<br/>Quick Access]
+    Shortcuts --> ViewQueueShort[View Queue<br/>Quick Access]
+    Shortcuts --> CreateInvShort[Create Invoice<br/>Quick Access]
+    Shortcuts --> PayRemindShort[Payment Reminder<br/>Quick Access]
+    Shortcuts --> SearchBar[Smart Search Bar<br/>• Patients<br/>• Doctors<br/>• Invoices]
+    
+    BookApptShort --> |Click| AppointmentPage
+    CheckInShort --> |Click| CheckInPage
+    ViewQueueShort --> |Click| QueuePage
+    CreateInvShort --> |Click| BillingPage
+    PayRemindShort --> |Click| BillingOutstanding[→ Billings Page<br/>Outstanding section]
+    
+    %% Alerts & Flags Details
+    AlertsFlags --> |Click| AlertsPanel[Alerts Panel<br/>━━━━━━━━━━━━━━━━━<br/>• Overdue bills<br/>• Unassigned appointments<br/>• Service fee due<br/>• System warnings<br/>━━━━━━━━━━━━━━━━━<br/>Priority color-coding]
+    
+    AlertsPanel --> |Overdue Bills| BillingPage
+    AlertsPanel --> |Unassigned| AppointmentPage
+    AlertsPanel --> |Service Fee| CurisFees[→ Platform Fees<br/>Payment section]
+    
+    %% Messaging Integration
+    MsgNotif --> |Click| MsgPreview[Message Preview<br/>━━━━━━━━━━━━━━━━━<br/>• Unread count<br/>• Sender preview<br/>• Message snippet<br/>• Quick reply option]
+    
+    MsgPreview --> |Open| InboxMsg[→ Inbox Page<br/>Internal messaging]
+    
+    %% Data Synchronization Flows
+    Dashboard -.->|Real-time Sync| SyncEngine{Synchronization Engine}
+    
+    SyncEngine --> AppointmentSync[Appointment Updates<br/>• New bookings<br/>• Status changes<br/>• Doctor schedules]
+    SyncEngine --> QueueSync[Queue Updates<br/>• Patient flow<br/>• Wait times<br/>• Room status]
+    SyncEngine --> PaymentSync[Payment Updates<br/>• Invoice status<br/>• Collection totals<br/>• Overdue alerts]
+    SyncEngine --> PatientSync[Patient Updates<br/>• Check-in status<br/>• Profile changes<br/>• New registrations]
+    
+    %% Navigation to Main Pages
+    Dashboard ==> MainNav{Main Navigation Menu}
+    MainNav ==> AppointmentPage[Appointments Page]
+    MainNav ==> CheckInPage[Check-In Page]
+    MainNav ==> InboxPage[Inbox & Alerts Page]
+    MainNav ==> QueuePage[Queue & Flow Page]
+    MainNav ==> PatientDir[Patient Directory]
+    MainNav ==> BillingPage[Billings & Payments]
+    
+    %% Styling
+    classDef dashboard fill:#1E3A8A,stroke:#1E40AF,stroke-width:4px,color:#fff
+    classDef feature fill:#7C3AED,stroke:#6D28D9,stroke-width:3px,color:#fff
+    classDef popup fill:#DC2626,stroke:#B91C1C,stroke-width:2px,color:#fff
+    classDef action fill:#059669,stroke:#047857,stroke-width:2px,color:#fff
+    classDef page fill:#EA580C,stroke:#C2410C,stroke-width:3px,color:#fff
+    classDef sync fill:#0891B2,stroke:#0E7490,stroke-width:2px,color:#fff
+    
+    class Dashboard dashboard
+    class QuickAccess,TaskSummary,Notifications,DocAvail,PerfMetrics,Shortcuts,AlertsFlags,MsgNotif feature
+    class QAPopup,TaskDetails,NotifPopup,DocQueue,MetricsDetail,AlertsPanel,MsgPreview,RescheduleModal,CancelModal,AssignDocModal,NotifSettings popup
+    class BookApptShort,CheckInShort,ViewQueueShort,CreateInvShort,PayRemindShort,SearchBar action
+    class AppointmentPage,CheckInPage,InboxPage,QueuePage,PatientDir,BillingPage page
+    class SyncEngine,AppointmentSync,QueueSync,PaymentSync,PatientSync,CheckInSync,AssignSync,ReportsSync sync

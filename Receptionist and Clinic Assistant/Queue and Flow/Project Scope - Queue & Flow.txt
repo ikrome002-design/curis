@@ -1,0 +1,68 @@
+#### 1. **Queue & Flow**
+
+
+
+
+Dynamic MVP Features and Functionalities – “Queue & Flow” Page
+Receptionist/Clinic Assistant Account – Curis by Citrus
+The “Queue & Flow” page is a real-time operational hub for Receptionists and Clinic Assistants to actively manage patient flow, reduce wait times, and improve clinic efficiency—without touching clinical data.
+________________________________________
+a.	Live Queue Overview
+•	Real-Time Patient Queue Display:
+Displays all patients currently in queue, their status (e.g., “Waiting,” “In Progress,” “Complete”), appointment time, and assigned doctor.
+•	Color-Coded Status Indicators:
+Visual cues for wait stages—e.g., green (checked-in), amber (delayed), red (overdue), blue (being seen).
+________________________________________
+b.	Dynamic Wait Time Tracking
+•	Individual Patient Wait Timers:
+Automatically starts a timer once a patient checks in—tracks exact wait duration.
+•	Alerts for Excessive Wait Times:
+System flags patients exceeding the average or set threshold wait time.
+________________________________________
+c.	Queue Actions & Controls
+•	Reorder Queue Position:
+Manually drag-and-drop patients (e.g., urgent walk-ins prioritized with doctor consent).
+•	Mark Patient as “Seen” / “No Show” / “Deferred”:
+Helps update queue in real-time with relevant follow-up options.
+•	Assign or Reassign Doctor:
+Allows the Receptionist to quickly reassign a patient to an available doctor in case of scheduling delays or absences.
+________________________________________
+d.	Doctor Status & Sync
+•	Live Doctor Availability Feed:
+Displays which doctors are actively consulting, idle, or unavailable—sourced from the Dashboard and Appointment Management module.
+•	Consultation Room Readiness Indicator:
+Visual status showing which rooms/doctors are “Ready for Next Patient” or “Occupied.”
+________________________________________
+e.	Patient Notifications Integration
+•	Trigger In-App & SMS Alerts:
+Send instant messages to patients (e.g., “You’re next,” “Doctor delayed by 10 minutes”).
+•	Pre-Consultation Instructions:
+Attach custom messages (e.g., "Have your ID ready" or "Kindly sanitize before entry").
+________________________________________
+f.	Queue Analytics & Flow Metrics
+•	Live Queue Volume Counter:
+Tracks how many patients are in queue per doctor or room.
+•	Average Wait Time Monitor:
+Auto-calculated and updated in real-time to identify bottlenecks.
+________________________________________
+g.	Multi-Doctor Queue Segmentation
+•	Separate Queues per Doctor or Department:
+Enables the receptionist to manage independent queues, especially in multi-specialty clinics.
+•	Merge or Split Queues:
+Temporarily combine queues (e.g., during doctor absence) or revert when full staff resumes.
+________________________________________
+h.	Audit & Logging
+•	All Queue Movements Logged:
+Every patient queue status change is audit-logged with timestamp, receptionist ID, and action taken.
+________________________________________
+Summary of Value Delivered:
+
+•	Enables proactive patient flow control without accessing medical data.
+•	Reduces patient frustration by improving transparency and communication.
+•	Ensures coordination with doctors and adherence to scheduled consultations.
+•	Centralizes check-in, wait tracking, and queue adjustments into a single interface.
+
+
+
+
+

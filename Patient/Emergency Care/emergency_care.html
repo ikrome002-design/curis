@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Curis by Citrus - Emergency Care for accessing critical services, emergency contacts, and urgent healthcare support">
+    <title>Emergency Care | Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Emergency Care\emergency_care.css">
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Appointments\my_appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>My Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Health Care\my_health_care.html"
+                            class="nav-link">
+                            <i class="fas fa-heart-pulse"></i>
+                            <span>My Health Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Emergency Care\emergency_care.html"
+                            class="nav-link">
+                            <i class="fas fa-ambulance"></i>
+                            <span>Emergency Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Medical Cover\my_medical_cover.html"
+                            class="nav-link">
+                            <i class="fas fa-shield-heart"></i>
+                            <span>My Medical Cover</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Emergency Care</h1>
+                </div>
+
+                <div class="header-right">
+                    <!-- Notifications Icon -->
+                    <div class="notification-icon">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Notifications\notifications.html"
+                            class="icon-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">5</span>
+                        </a>
+                    </div>
+
+                    <!-- User Profile Icon with Dropdown -->
+                    <div class="user-profile-dropdown">
+                        <button class="profile-btn" id="profileBtn">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                                alt="User Profile" class="profile-img">
+                        </button>
+
+                        <!-- Profile Dropdown Menu -->
+                        <div class="profile-menu" id="profileMenu">
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Profile\my_profile.html"
+                                class="profile-menu-item">
+                                <i class="fas fa-user"></i>
+                                <span>My Profile</span>
+                            </a>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\landing_page.html"
+                                class="profile-menu-item logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Emergency Alert Banner (Outbreak/Health Notices) -->
+            <div class="emergency-alert-banner" id="emergencyAlertBanner">
+                <div class="alert-content">
+                    <div class="alert-icon">
+                        <i class="fas fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="alert-message">
+                        <h3 class="alert-title">Health Advisory: Cholera Outbreak Alert</h3>
+                        <p class="alert-description">Cases of cholera have been reported in Nairobi County. Ensure
+                            proper
+                            hygiene, drink only boiled or bottled water, and seek immediate medical attention if
+                            experiencing symptoms.</p>
+                        <div class="alert-actions">
+                            <button class="alert-action-btn">
+                                <i class="fas fa-info-circle"></i>
+                                View Safety Measures
+                            </button>
+                            <button class="alert-action-btn">
+                                <i class="fas fa-hospital"></i>
+                                Find Treatment Centers
+                            </button>
+                        </div>
+                    </div>
+                    <button class="close-alert-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Emergency Content -->
+            <section class="emergency-content">
+
+                <!-- Quick Actions Bar -->
+                <div class="quick-actions-bar emergency-actions">
+                    <button class="quick-action-btn emergency-btn" id="callAmbulanceBtn">
+                        <i class="fas fa-truck-medical"></i>
+                        <span>Call Ambulance</span>
+                    </button>
+                    <button class="quick-action-btn emergency-btn" id="contactClinicBtn">
+                        <i class="fas fa-hospital"></i>
+                        <span>Contact My Clinic</span>
+                    </button>
+                    <button class="quick-action-btn emergency-btn" id="viewChildInfoBtn">
+                        <i class="fas fa-child"></i>
+                        <span>View Child Emergency Info</span>
+                    </button>
+                    <button class="quick-action-btn emergency-btn" id="urgentBookingBtn">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Book Urgent Appointment</span>
+                    </button>
+                </div>
+
+                <!-- Family Member Switcher for Dependent Emergency Support -->
+                <div class="family-switcher emergency-switcher">
+                    <div class="switcher-header">
+                        <span class="label">Viewing emergency information for:</span>
+                        <button class="profile-selector" id="emergencyProfileSelector">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                alt="Current Profile" class="profile-avatar">
+                            <span class="profile-name">John Kamau (Self)</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dependent Emergency Info Card (Hidden by default, shown when dependent selected) -->
+                <div class="dependent-emergency-card" id="dependentEmergencyCard" style="display: none;">
+                    <div class="dependent-header">
+                        <div class="dependent-photo">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-80.png"
+                                alt="Child Photo" id="dependentPhoto">
+                        </div>
+                        <div class="dependent-info">
+                            <h3 class="dependent-name" id="dependentName">Mary Kamau</h3>
+                            <p class="dependent-age" id="dependentAge">12 years old</p>
+                        </div>
+                        <button class="urgent-booking-btn" id="urgentPediatricBooking">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Book Urgent Pediatric Appointment</span>
+                        </button>
+                    </div>
+
+                    <div class="dependent-emergency-sections">
+                        <!-- Allergy Alerts Section -->
+                        <div class="emergency-section allergy-section">
+                            <h4 class="section-title">
+                                <i class="fas fa-triangle-exclamation"></i>
+                                Critical Allergy Alerts
+                            </h4>
+                            <div class="allergy-alerts">
+                                <div class="allergy-item severe">
+                                    <div class="allergy-icon">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                    </div>
+                                    <div class="allergy-details">
+                                        <span class="allergy-type">Peanut Allergy</span>
+                                        <span class="allergy-severity">Severe - Anaphylaxis Risk</span>
+                                    </div>
+                                </div>
+                                <div class="allergy-item moderate">
+                                    <div class="allergy-icon">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="allergy-details">
+                                        <span class="allergy-type">Penicillin</span>
+                                        <span class="allergy-severity">Moderate - Drug Allergy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Child Emergency Contacts Section -->
+                        <div class="emergency-section child-contacts-section">
+                            <h4 class="section-title">
+                                <i class="fas fa-address-book"></i>
+                                Child's Emergency Contacts
+                            </h4>
+                            <div class="child-contacts-grid">
+                                <div class="contact-card child-contact">
+                                    <div class="contact-header">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-user-doctor"></i>
+                                        </div>
+                                        <span class="contact-label">Pediatrician</span>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h5 class="contact-name">Dr. James Omondi</h5>
+                                        <p class="contact-clinic">Westlands Medical Clinic</p>
+                                        <button class="contact-number-btn copy-number" data-number="+254722345678">
+                                            <i class="fas fa-phone"></i>
+                                            <span>+254 722 345 678</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="contact-card child-contact">
+                                    <div class="contact-header">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-school"></i>
+                                        </div>
+                                        <span class="contact-label">School Contact</span>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h5 class="contact-name">Greenfield Academy</h5>
+                                        <p class="contact-clinic">School Nurse: Mrs. Wanjiku</p>
+                                        <button class="contact-number-btn copy-number" data-number="+254733456789">
+                                            <i class="fas fa-phone"></i>
+                                            <span>+254 733 456 789</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Search Bar -->
+                <div class="emergency-search-section">
+                    <div class="search-header">
+                        <h2 class="section-main-title">Find Emergency Services</h2>
+                        <div class="location-filter">
+                            <label for="countyFilter">
+                                <i class="fas fa-location-dot"></i>
+                                Filter by County:
+                            </label>
+                            <select id="countyFilter" class="county-select">
+                                <option value="all">All Counties</option>
+                                <option value="nairobi" selected>Nairobi</option>
+                                <option value="mombasa">Mombasa</option>
+                                <option value="kisumu">Kisumu</option>
+                                <option value="nakuru">Nakuru</option>
+                                <option value="kiambu">Kiambu</option>
+                                <option value="other">Other Counties</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="emergencySearchInput" class="search-input"
+                            placeholder="Search for emergency services, hotlines, or contacts...">
+                    </div>
+                </div>
+
+                <!-- National Emergency Directory -->
+                <div class="national-directory-section">
+                    <h2 class="section-main-title">National Emergency Directory</h2>
+
+                    <!-- Emergency Categories Grid -->
+                    <div class="emergency-categories-grid">
+
+                        <!-- Ambulance Services Category -->
+                        <div class="emergency-category-card">
+                            <div class="category-header">
+                                <div class="category-icon ambulance">
+                                    <i class="fas fa-truck-medical"></i>
+                                </div>
+                                <h3 class="category-title">Ambulance Services</h3>
+                            </div>
+                            <div class="category-services">
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">St. John Ambulance</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            24/7 Service
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            National Coverage
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="1120">
+                                            <i class="fas fa-phone"></i>
+                                            <span>1120</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">Kenya Red Cross</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            24/7 Service
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            National Coverage
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="1199">
+                                            <i class="fas fa-phone"></i>
+                                            <span>1199</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">AMREF Flying Doctors</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            24/7 Service
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            East Africa
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="+254733639088">
+                                            <i class="fas fa-phone"></i>
+                                            <span>+254 733 639 088</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Police & Security Category -->
+                        <div class="emergency-category-card">
+                            <div class="category-header">
+                                <div class="category-icon police">
+                                    <i class="fas fa-shield-halved"></i>
+                                </div>
+                                <h3 class="category-title">Police & Security</h3>
+                            </div>
+                            <div class="category-services">
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">Police Emergency Hotline</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            24/7 Service
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            National
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="999">
+                                            <i class="fas fa-phone"></i>
+                                            <span>999</span>
+                                        </button>
+                                        <button class="number-btn copy-number" data-number="911">
+                                            <i class="fas fa-phone"></i>
+                                            <span>911</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">Crime Stoppers (Anonymous)</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            24/7 Service
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-user-secret"></i>
+                                            Anonymous Reporting
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="0800722203">
+                                            <i class="fas fa-phone"></i>
+                                            <span>0800 722 203</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fire & Rescue Category -->
+                        <div class="emergency-category-card">
+                            <div class="category-header">
+                                <div class="category-icon fire">
+                                    <i class="fas fa-fire-extinguisher"></i>
+                                </div>
+                                <h3 class="category-title">Fire & Rescue</h3>
+                            </div>
+                            <div class="category-services">
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">Nairobi Fire Brigade</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            24/7 Service
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Nairobi County
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="999">
+                                            <i class="fas fa-phone"></i>
+                                            <span>999</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">County Fire Services</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            24/7 Service
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Regional
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="0202222181">
+                                            <i class="fas fa-phone"></i>
+                                            <span>020 222 2181</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Poison Control Category -->
+                        <div class="emergency-category-card">
+                            <div class="category-header">
+                                <div class="category-icon poison">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <h3 class="category-title">Poison Control</h3>
+                            </div>
+                            <div class="category-services">
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">Kenya Poison Information Centre</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            24/7 Service
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            National
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="0202722814">
+                                            <i class="fas fa-phone"></i>
+                                            <span>020 272 2814</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mental Health Crisis Category -->
+                        <div class="emergency-category-card">
+                            <div class="category-header">
+                                <div class="category-icon mental-health">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h3 class="category-title">Mental Health Crisis</h3>
+                            </div>
+                            <div class="category-services">
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">Kenya Red Cross Counseling</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            24/7 Service
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-comments"></i>
+                                            Free & Confidential
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="1199">
+                                            <i class="fas fa-phone"></i>
+                                            <span>1199</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">Befrienders Kenya (Suicide Prevention)</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            24/7 Service
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-heart"></i>
+                                            Crisis Support
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="+254722178177">
+                                            <i class="fas fa-phone"></i>
+                                            <span>+254 722 178 177</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Child Protection Category -->
+                        <div class="emergency-category-card">
+                            <div class="category-header">
+                                <div class="category-icon child-protection">
+                                    <i class="fas fa-child-reaching"></i>
+                                </div>
+                                <h3 class="category-title">Child Protection</h3>
+                            </div>
+                            <div class="category-services">
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">Child Helpline Kenya</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            24/7 Service
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-shield"></i>
+                                            Child Protection
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="116">
+                                            <i class="fas fa-phone"></i>
+                                            <span>116</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">Department of Children Services</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            Business Hours
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-building"></i>
+                                            Government Service
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="0202716376">
+                                            <i class="fas fa-phone"></i>
+                                            <span>020 271 6376</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GBV Support Category -->
+                        <div class="emergency-category-card">
+                            <div class="category-header">
+                                <div class="category-icon gbv">
+                                    <i class="fas fa-hands-holding-circle"></i>
+                                </div>
+                                <h3 class="category-title">Gender-Based Violence Support</h3>
+                            </div>
+                            <div class="category-services">
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">National GBV Hotline</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            24/7 Service
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-lock"></i>
+                                            Confidential Support
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="1195">
+                                            <i class="fas fa-phone"></i>
+                                            <span>1195</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="service-item">
+                                    <div class="service-info">
+                                        <h4 class="service-name">FIDA Kenya (Legal Aid)</h4>
+                                        <span class="service-availability">
+                                            <i class="fas fa-clock"></i>
+                                            Business Hours
+                                        </span>
+                                        <span class="service-coverage">
+                                            <i class="fas fa-gavel"></i>
+                                            Legal Support
+                                        </span>
+                                    </div>
+                                    <div class="service-numbers">
+                                        <button class="number-btn copy-number" data-number="0800720553">
+                                            <i class="fas fa-phone"></i>
+                                            <span>0800 720 553</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Personal Emergency Contacts Section -->
+                <div class="personal-contacts-section">
+                    <div class="section-header">
+                        <h2 class="section-main-title">My Emergency Contacts</h2>
+                        <button class="btn-primary" id="addContactBtn">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Emergency Contact</span>
+                        </button>
+                    </div>
+
+                    <!-- Contact Category Tabs -->
+                    <div class="contact-category-tabs">
+                        <button class="category-tab-btn active" data-category="all">
+                            <i class="fas fa-address-book"></i>
+                            <span>All Contacts</span>
+                        </button>
+                        <button class="category-tab-btn" data-category="next-of-kin">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Next of Kin</span>
+                        </button>
+                        <button class="category-tab-btn" data-category="private-ambulance">
+                            <i class="fas fa-truck-medical"></i>
+                            <span>Private Ambulance</span>
+                        </button>
+                        <button class="category-tab-btn" data-category="family-doctor">
+                            <i class="fas fa-user-doctor"></i>
+                            <span>Family Doctor</span>
+                        </button>
+                        <button class="category-tab-btn" data-category="family-member">
+                            <i class="fas fa-users"></i>
+                            <span>Family Members</span>
+                        </button>
+                    </div>
+
+                    <!-- Personal Contacts Grid -->
+                    <div class="personal-contacts-grid" id="personalContactsGrid">
+
+                        <!-- Personal Contact Card 1 - Next of Kin -->
+                        <div class="personal-contact-card" data-contact-id="1" data-category="next-of-kin">
+                            <div class="contact-card-header">
+                                <div class="contact-type-badge next-of-kin">
+                                    <i class="fas fa-user-shield"></i>
+                                    <span>Next of Kin</span>
+                                </div>
+                                <div class="contact-actions">
+                                    <button class="contact-action-btn edit-contact" data-contact-id="1">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="contact-action-btn delete-contact" data-contact-id="1">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="contact-card-body">
+                                <h4 class="contact-name">Jane Kamau</h4>
+                                <p class="contact-relationship">
+                                    <i class="fas fa-heart"></i>
+                                    Spouse
+                                </p>
+                                <button class="contact-number-btn copy-number" data-number="+254722123456">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+254 722 123 456</span>
+                                    <i class="fas fa-copy copy-icon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Personal Contact Card 2 - Private Ambulance -->
+                        <div class="personal-contact-card" data-contact-id="2" data-category="private-ambulance">
+                            <div class="contact-card-header">
+                                <div class="contact-type-badge private-ambulance">
+                                    <i class="fas fa-truck-medical"></i>
+                                    <span>Private Ambulance</span>
+                                </div>
+                                <div class="contact-actions">
+                                    <button class="contact-action-btn edit-contact" data-contact-id="2">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="contact-action-btn delete-contact" data-contact-id="2">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="contact-card-body">
+                                <h4 class="contact-name">AAR Emergency Services</h4>
+                                <p class="contact-relationship">
+                                    <i class="fas fa-briefcase-medical"></i>
+                                    Private Provider
+                                </p>
+                                <button class="contact-number-btn copy-number" data-number="+254202717374">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+254 20 271 7374</span>
+                                    <i class="fas fa-copy copy-icon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Personal Contact Card 3 - Family Doctor -->
+                        <div class="personal-contact-card" data-contact-id="3" data-category="family-doctor">
+                            <div class="contact-card-header">
+                                <div class="contact-type-badge family-doctor">
+                                    <i class="fas fa-user-doctor"></i>
+                                    <span>Family Doctor</span>
+                                </div>
+                                <div class="contact-actions">
+                                    <button class="contact-action-btn edit-contact" data-contact-id="3">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="contact-action-btn delete-contact" data-contact-id="3">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="contact-card-body">
+                                <h4 class="contact-name">Dr. Sarah Wanjiru</h4>
+                                <p class="contact-relationship">
+                                    <i class="fas fa-hospital"></i>
+                                    Nairobi Health Center
+                                </p>
+                                <button class="contact-number-btn copy-number" data-number="+254733234567">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+254 733 234 567</span>
+                                    <i class="fas fa-copy copy-icon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Personal Contact Card 4 - Family Member -->
+                        <div class="personal-contact-card" data-contact-id="4" data-category="family-member">
+                            <div class="contact-card-header">
+                                <div class="contact-type-badge family-member">
+                                    <i class="fas fa-users"></i>
+                                    <span>Family Member</span>
+                                </div>
+                                <div class="contact-actions">
+                                    <button class="contact-action-btn edit-contact" data-contact-id="4">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="contact-action-btn delete-contact" data-contact-id="4">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="contact-card-body">
+                                <h4 class="contact-name">Peter Kamau</h4>
+                                <p class="contact-relationship">
+                                    <i class="fas fa-user"></i>
+                                    Brother
+                                </p>
+                                <button class="contact-number-btn copy-number" data-number="+254711345678">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+254 711 345 678</span>
+                                    <i class="fas fa-copy copy-icon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Empty State (Hidden by default) -->
+                    <div class="empty-state" style="display: none;">
+                        <i class="fas fa-address-book"></i>
+                        <p>No emergency contacts added yet</p>
+                        <button class="btn-primary" id="addFirstContactBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Your First Contact
+                        </button>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <p class="copyright">&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer"
+                    class="corporate-link">citruslabs.co.ke</a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer" aria-label="X">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Family Member Selector Modal -->
+    <div class="modal" id="familyEmergencyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Family Member</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="family-list">
+                    <div class="family-member active" data-member-id="self">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="John Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>John Kamau</h4>
+                            <p>Self - 45 years</p>
+                        </div>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="family-member" data-member-id="spouse">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="Jane Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>Jane Kamau</h4>
+                            <p>Spouse - 42 years</p>
+                        </div>
+                    </div>
+                    <div class="family-member" data-member-id="daughter">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="Mary Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>Mary Kamau</h4>
+                            <p>Daughter - 12 years</p>
+                            <span class="allergy-warning">
+                                <i class="fas fa-triangle-exclamation"></i>
+                                Has critical allergies
+                            </span>
+                        </div>
+                    </div>
+                    <div class="family-member" data-member-id="son">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="David Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>David Kamau</h4>
+                            <p>Son - 8 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Emergency Contact Modal -->
+    <div class="modal" id="addContactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Emergency Contact</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="contact-form" id="addContactForm">
+
+                    <!-- Contact Name -->
+                    <div class="form-group">
+                        <label for="contactName">Contact Name *</label>
+                        <input type="text" id="contactName" class="form-control"
+                            placeholder="e.g., Dr. John Doe or Jane Smith" required>
+                    </div>
+
+                    <!-- Contact Type -->
+                    <div class="form-group">
+                        <label for="contactType">Contact Type *</label>
+                        <select id="contactType" class="form-control" required>
+                            <option value="">Select contact type</option>
+                            <option value="next-of-kin">Next of Kin</option>
+                            <option value="private-ambulance">Private Ambulance</option>
+                            <option value="family-doctor">Family Doctor</option>
+                            <option value="family-member">Family Member</option>
+                        </select>
+                    </div>
+
+                    <!-- Relationship -->
+                    <div class="form-group">
+                        <label for="contactRelationship">Relationship *</label>
+                        <select id="contactRelationship" class="form-control" required>
+                            <option value="">Select relationship</option>
+                            <option value="mother">Mother</option>
+                            <option value="father">Father</option>
+                            <option value="spouse">Spouse</option>
+                            <option value="sibling">Sibling</option>
+                            <option value="child">Child</option>
+                            <option value="guardian">Guardian</option>
+                            <option value="healthcare-provider">Healthcare Provider</option>
+                            <option value="service-provider">Service Provider</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number *</label>
+                        <input type="tel" id="contactPhone" class="form-control" placeholder="+254 712 345 678"
+                            required>
+                        <small class="form-text">Include country code (e.g., +254 for Kenya)</small>
+                    </div>
+
+                    <!-- Additional Information (Optional) -->
+                    <div class="form-group">
+                        <label for="contactNotes">Additional Information (Optional)</label>
+                        <textarea id="contactNotes" class="form-control" rows="2"
+                            placeholder="e.g., Available 24/7, Works at Nairobi Hospital, etc."></textarea>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="saveContactBtn">
+                    <i class="fas fa-check"></i>
+                    Save Contact
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Emergency Contact Modal -->
+    <div class="modal" id="editContactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Emergency Contact</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="contact-form" id="editContactForm">
+
+                    <input type="hidden" id="editContactId">
+
+                    <!-- Contact Name -->
+                    <div class="form-group">
+                        <label for="editContactName">Contact Name *</label>
+                        <input type="text" id="editContactName" class="form-control" required>
+                    </div>
+
+                    <!-- Contact Type -->
+                    <div class="form-group">
+                        <label for="editContactType">Contact Type *</label>
+                        <select id="editContactType" class="form-control" required>
+                            <option value="next-of-kin">Next of Kin</option>
+                            <option value="private-ambulance">Private Ambulance</option>
+                            <option value="family-doctor">Family Doctor</option>
+                            <option value="family-member">Family Member</option>
+                        </select>
+                    </div>
+
+                    <!-- Relationship -->
+                    <div class="form-group">
+                        <label for="editContactRelationship">Relationship *</label>
+                        <select id="editContactRelationship" class="form-control" required>
+                            <option value="mother">Mother</option>
+                            <option value="father">Father</option>
+                            <option value="spouse">Spouse</option>
+                            <option value="sibling">Sibling</option>
+                            <option value="child">Child</option>
+                            <option value="guardian">Guardian</option>
+                            <option value="healthcare-provider">Healthcare Provider</option>
+                            <option value="service-provider">Service Provider</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-group">
+                        <label for="editContactPhone">Phone Number *</label>
+                        <input type="tel" id="editContactPhone" class="form-control" required>
+                    </div>
+
+                    <!-- Additional Information -->
+                    <div class="form-group">
+                        <label for="editContactNotes">Additional Information (Optional)</label>
+                        <textarea id="editContactNotes" class="form-control" rows="2"></textarea>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="updateContactBtn">
+                    <i class="fas fa-check"></i>
+                    Update Contact
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Contact Confirmation Modal -->
+    <div class="modal" id="deleteContactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Delete Emergency Contact</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="delete-warning">
+                    <i class="fas fa-triangle-exclamation"></i>
+                    <h4>Are you sure you want to delete this contact?</h4>
+                    <p id="deleteContactName">Contact Name</p>
+                    <p class="warning-text">This action cannot be undone.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-danger" id="confirmDeleteBtn">
+                    <i class="fas fa-trash"></i>
+                    Delete Contact
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact My Clinic (Emergency Message) Modal -->
+    <div class="modal" id="contactClinicModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Contact My Clinic - Emergency</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="urgent-notice">
+                    <i class="fas fa-siren"></i>
+                    <p>This message will be marked as <strong>URGENT</strong> and sent directly to the clinic's
+                        emergency inbox.</p>
+                </div>
+
+                <form class="emergency-message-form" id="emergencyMessageForm">
+
+                    <!-- Clinic Selection -->
+                    <div class="form-group">
+                        <label for="emergencyClinic">Select Clinic *</label>
+                        <select id="emergencyClinic" class="form-control" required>
+                            <option value="">Choose a clinic</option>
+                            <optgroup label="Recent Clinics">
+                                <option value="nairobi-health">Nairobi Health Center</option>
+                                <option value="westlands-medical">Westlands Medical Clinic</option>
+                            </optgroup>
+                            <optgroup label="All Clinics">
+                                <option value="karen-hospital">Karen Hospital</option>
+                                <option value="aga-khan">Aga Khan Hospital</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <!-- Quick Templates -->
+                    <div class="form-group">
+                        <label>Quick Templates</label>
+                        <div class="template-buttons">
+                            <button type="button" class="template-btn" data-template="pain">
+                                <i class="fas fa-hand-dots"></i>
+                                Severe Pain
+                            </button>
+                            <button type="button" class="template-btn" data-template="accident">
+                                <i class="fas fa-car-burst"></i>
+                                Accident/Injury
+                            </button>
+                            <button type="button" class="template-btn" data-template="allergy">
+                                <i class="fas fa-allergies"></i>
+                                Allergic Reaction
+                            </button>
+                            <button type="button" class="template-btn" data-template="other">
+                                <i class="fas fa-pen"></i>
+                                Other
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Description -->
+                    <div class="form-group">
+                        <label for="emergencyDescription">Describe the Emergency *</label>
+                        <textarea id="emergencyDescription" class="form-control" rows="5"
+                            placeholder="Please describe the emergency situation in detail..." required></textarea>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-danger" id="sendEmergencyMessageBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Emergency Message
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call Ambulance Quick Dial Modal -->
+    <div class="modal" id="callAmbulanceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Emergency Ambulance Services</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="ambulance-services-list">
+                    <div class="ambulance-service-item">
+                        <div class="service-details">
+                            <h4>St. John Ambulance</h4>
+                            <span class="service-badge national">National Coverage</span>
+                        </div>
+                        <button class="call-btn copy-number" data-number="1120">
+                            <i class="fas fa-phone"></i>
+                            1120
+                        </button>
+                    </div>
+                    <div class="ambulance-service-item">
+                        <div class="service-details">
+                            <h4>Kenya Red Cross</h4>
+                            <span class="service-badge national">National Coverage</span>
+                        </div>
+                        <button class="call-btn copy-number" data-number="1199">
+                            <i class="fas fa-phone"></i>
+                            1199
+                        </button>
+                    </div>
+                    <div class="ambulance-service-item">
+                        <div class="service-details">
+                            <h4>Your Private Ambulance</h4>
+                            <span class="service-badge private">AAR Emergency Services</span>
+                        </div>
+                        <button class="call-btn copy-number" data-number="+254202717374">
+                            <i class="fas fa-phone"></i>
+                            +254 20 271 7374
+                        </button>
+                    </div>
+                </div>
+
+                <div class="emergency-tip">
+                    <i class="fas fa-lightbulb"></i>
+                    <p><strong>Tip:</strong> Click any number to copy it to your clipboard for quick dialing.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Health Advisory Details Modal -->
+    <div class="modal" id="healthAdvisoryModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Health Advisory Details</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="advisory-details">
+                    <h4>Cholera Outbreak - Nairobi County</h4>
+                    <p class="advisory-date">
+                        <i class="fas fa-calendar"></i>
+                        Issued: October 1, 2025
+                    </p>
+
+                    <div class="advisory-section">
+                        <h5>Situation Overview</h5>
+                        <p>Multiple cases of cholera have been confirmed in Nairobi County. The Ministry of Health is
+                            working closely with county health departments to contain the outbreak.</p>
+                    </div>
+
+                    <div class="advisory-section">
+                        <h5>Recommended Safety Measures</h5>
+                        <ul>
+                            <li>Drink only boiled or bottled water</li>
+                            <li>Wash hands frequently with soap and clean water</li>
+                            <li>Eat thoroughly cooked food</li>
+                            <li>Avoid raw vegetables unless properly washed</li>
+                            <li>Practice good hygiene and sanitation</li>
+                        </ul>
+                    </div>
+
+                    <div class="advisory-section">
+                        <h5>Symptoms to Watch For</h5>
+                        <ul>
+                            <li>Severe watery diarrhea</li>
+                            <li>Vomiting</li>
+                            <li>Rapid dehydration</li>
+                            <li>Muscle cramps</li>
+                        </ul>
+                    </div>
+
+                    <div class="advisory-section urgent">
+                        <h5>When to Seek Immediate Medical Attention</h5>
+                        <p>If you or a family member experience severe diarrhea and vomiting, seek immediate medical
+                            attention at the nearest health facility.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Close</button>
+                <button class="btn-primary">
+                    <i class="fas fa-hospital"></i>
+                    Find Treatment Centers
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading emergency information...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- External JavaScript -->
+    <script
+        src="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Emergency Care\emergency_care.js"></script>
+
+</body>
+
+</html>

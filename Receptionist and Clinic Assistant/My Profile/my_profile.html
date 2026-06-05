@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Profile - Curis by Citrus Labs</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="my_profile.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Check-In\check_in.html"
+                            class="nav-link">
+                            <i class="fas fa-user-check"></i>
+                            <span>Check-In</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Inbox and Alerts\inbox_and_alerts.html"
+                            class="nav-link">
+                            <i class="fas fa-inbox"></i>
+                            <span>Inbox & Alerts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Queue and Flow\queue_and_flow.html"
+                            class="nav-link">
+                            <i class="fas fa-list-check"></i>
+                            <span>Queue & Flow</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Patient Directory\patient_directory.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Patient Directory</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">My Profile</h1>
+                    <p class="subtitle">Staff Identity & Settings Hub</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- User Profile -->
+                    <div class="user-profile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-icon" id="profileIcon">
+                        <span class="user-name">Sarah Wanjiru</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Profile Content -->
+            <div class="profile-content">
+
+                <!-- Profile Header Section -->
+                <section class="profile-header-section">
+                    <div class="profile-banner">
+                        <!-- Profile Avatar -->
+                        <div class="profile-avatar-container">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                                alt="Profile Avatar" class="profile-avatar" id="profileAvatar">
+                            <button class="avatar-edit-btn" id="avatarEditBtn" title="Change Profile Picture">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                            <span class="verification-badge" title="Verified Staff Member">
+                                <i class="fas fa-circle-check"></i>
+                            </span>
+                        </div>
+
+                        <!-- Basic Info Display -->
+                        <div class="profile-basic-info">
+                            <h2 class="profile-name">Sarah Wanjiru</h2>
+                            <p class="profile-employee-id">Employee ID: <strong>RCP-2024-0042</strong></p>
+                            <div class="profile-role-badge">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Receptionist & Clinic Assistant</span>
+                            </div>
+                            <div class="profile-meta-info">
+                                <div class="meta-item">
+                                    <i class="fas fa-building"></i>
+                                    <span>Front Desk Department</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    <span>Joined: January 15, 2024</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Last Login: Today at 8:45 AM</span>
+                                </div>
+                            </div>
+                            <div class="profile-completion">
+                                <span class="completion-label">Profile Completion</span>
+                                <div class="completion-bar">
+                                    <div class="completion-fill" data-percentage="85"></div>
+                                </div>
+                                <span class="completion-percentage">85%</span>
+                            </div>
+                        </div>
+
+                        <!-- Profile Action Icons -->
+                        <div class="profile-action-icons">
+                            <button class="action-icon-btn" id="viewProfileIcon" title="View Full Profile">
+                                <i class="fas fa-id-card"></i>
+                                <span>View Profile</span>
+                            </button>
+                            <button class="action-icon-btn" id="quickActionsIcon" title="Quick Actions">
+                                <i class="fas fa-bolt"></i>
+                                <span>Quick Actions</span>
+                            </button>
+                            <button class="action-icon-btn" id="walkInVerifyIcon" title="Walk-in Verification">
+                                <i class="fas fa-user-shield"></i>
+                                <span>ID Check</span>
+                            </button>
+                            <button class="action-icon-btn" id="contactConfirmIcon" title="Contact Confirmation">
+                                <i class="fas fa-envelope-circle-check"></i>
+                                <span>Test Messages</span>
+                            </button>
+                            <button class="action-icon-btn" id="followUpIcon" title="Follow-up Scheduling">
+                                <i class="fas fa-clipboard-list"></i>
+                                <span>Staff Tasks</span>
+                            </button>
+                            <button class="action-icon-btn" id="paymentRemindIcon" title="Payment Reminders">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Billing Sync</span>
+                            </button>
+                            <button class="action-icon-btn" id="queueCheckIcon" title="Queue Checking">
+                                <i class="fas fa-users-line"></i>
+                                <span>Live Status</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Profile Sections Grid -->
+                <div class="profile-sections-grid">
+
+                    <!-- Request Management Section -->
+                    <section class="profile-card request-management-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-clipboard-question"></i> Request Management</h2>
+                            <span class="subtitle">View & Track Changes</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="request-summary">
+                                <div class="request-stat">
+                                    <span class="stat-number">2</span>
+                                    <span class="stat-label">Pending Requests</span>
+                                </div>
+                                <div class="request-stat">
+                                    <span class="stat-number">1</span>
+                                    <span class="stat-label">Under Review</span>
+                                </div>
+                                <div class="request-stat">
+                                    <span class="stat-number">5</span>
+                                    <span class="stat-label">Approved (30 days)</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary" id="viewActiveRequestsBtn">
+                                <i class="fas fa-list"></i>
+                                View Active Requests
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Personal Details Section -->
+                    <section class="profile-card personal-details-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-user"></i> Personal Details</h2>
+                            <span class="subtitle">View-Only + Edit Request</span>
+                            <button class="card-action-btn" id="requestPersonalEditBtn" title="Request to Edit">
+                                <i class="fas fa-pen-to-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label><i class="fas fa-signature"></i> Full Name</label>
+                                    <span class="info-value">Sarah Wanjiru Maina</span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-calendar"></i> Date of Birth</label>
+                                    <span class="info-value">March 12, 1995</span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-venus-mars"></i> Gender</label>
+                                    <span class="info-value">Female</span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-id-badge"></i> National ID</label>
+                                    <span class="info-value">32145678</span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-flag"></i> Nationality</label>
+                                    <span class="info-value">Kenyan</span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-ring"></i> Marital Status</label>
+                                    <span class="info-value">Single</span>
+                                </div>
+                            </div>
+                            <div class="edit-restriction-notice">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Changes require approval from Clinic Owner</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Contact Information Section -->
+                    <section class="profile-card contact-info-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-address-book"></i> Contact Information</h2>
+                            <span class="subtitle">View-Only + Edit Request</span>
+                            <button class="card-action-btn" id="requestContactEditBtn" title="Request to Edit">
+                                <i class="fas fa-pen-to-square"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label><i class="fas fa-phone"></i> Primary Phone</label>
+                                    <span class="info-value">+254 712 345 678</span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-mobile-screen"></i> Secondary Phone</label>
+                                    <span class="info-value">+254 734 567 890</span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fab fa-whatsapp"></i> WhatsApp Number</label>
+                                    <span class="info-value">+254 712 345 678</span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-envelope"></i> Email Address</label>
+                                    <span class="info-value read-only-field">sarah.wanjiru@curis.co.ke <span
+                                            class="locked-badge" title="Cannot be changed"><i
+                                                class="fas fa-lock"></i></span></span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-star"></i> Preferred Contact</label>
+                                    <span class="info-value">WhatsApp</span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-message"></i> SMS Consent</label>
+                                    <span class="info-value"><span class="badge badge-success">Enabled</span></span>
+                                </div>
+                            </div>
+                            <div class="address-section">
+                                <h3><i class="fas fa-location-dot"></i> Address</h3>
+                                <p class="address-text">Nairobi, Westlands, ABC Plaza, 4th Floor, Suite 402</p>
+                            </div>
+                            <div class="edit-restriction-notice">
+                                <i class="fas fa-shield-halved"></i>
+                                <span>Contact changes require verification and approval</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Account Information Section -->
+                    <section class="profile-card account-info-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-user-gear"></i> Account Information</h2>
+                            <span class="subtitle">Read-Only Display</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label><i class="fas fa-at"></i> Username</label>
+                                    <span class="info-value read-only-field">sarah.wanjiru <span class="locked-badge"><i
+                                                class="fas fa-lock"></i></span></span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-calendar-check"></i> Account Created</label>
+                                    <span class="info-value">January 15, 2024</span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-user-tag"></i> Role Assignment</label>
+                                    <span class="info-value">Receptionist & Clinic Assistant</span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-chart-line"></i> Profile Completion</label>
+                                    <span class="info-value">85%</span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-circle-check"></i> Verification Status</label>
+                                    <span class="info-value"><span class="badge badge-success"><i
+                                                class="fas fa-check"></i> Verified</span></span>
+                                </div>
+                                <div class="info-item">
+                                    <label><i class="fas fa-shield"></i> Account Status</label>
+                                    <span class="info-value"><span class="badge badge-success">Active</span></span>
+                                </div>
+                            </div>
+                            <div class="account-restrictions">
+                                <div class="restriction-notice error">
+                                    <i class="fas fa-lock"></i>
+                                    <div class="restriction-content">
+                                        <strong>Email Changes Not Allowed</strong>
+                                        <p>Contact Clinic Owner to modify email address</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Notification Preferences Section -->
+                    <section class="profile-card notification-prefs-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-bell"></i> Notification Preferences</h2>
+                            <span class="subtitle">Manage Your Alerts</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="notification-categories">
+                                <div class="notification-category">
+                                    <button class="category-btn" id="emailNotifsBtn">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Email Notifications</span>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="notification-category">
+                                    <button class="category-btn" id="smsNotifsBtn">
+                                        <i class="fas fa-message"></i>
+                                        <span>SMS Notifications</span>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="notification-category">
+                                    <button class="category-btn" id="inAppNotifsBtn">
+                                        <i class="fas fa-desktop"></i>
+                                        <span>In-App Notifications</span>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="notification-category">
+                                    <button class="category-btn" id="soundAlertsBtn">
+                                        <i class="fas fa-volume-high"></i>
+                                        <span>Sound & Alert Settings</span>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Security & Privacy Section -->
+                    <section class="profile-card security-settings-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-shield-halved"></i> Security & Privacy</h2>
+                            <span class="subtitle">View-Only Information</span>
+                            <button class="card-action-btn" id="viewSecurityBtn" title="View Security Details">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="security-overview">
+                                <div class="security-status">
+                                    <i class="fas fa-circle-check security-icon-success"></i>
+                                    <div class="status-content">
+                                        <strong>Security Status: Good</strong>
+                                        <p>Your account is secure</p>
+                                    </div>
+                                </div>
+                                <div class="security-items">
+                                    <div class="security-item">
+                                        <i class="fas fa-mobile-screen-button"></i>
+                                        <div class="security-item-content">
+                                            <label>Two-Factor Authentication</label>
+                                            <span><span class="badge badge-warning">Not Enabled</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="security-item">
+                                        <i class="fas fa-clock-rotate-left"></i>
+                                        <div class="security-item-content">
+                                            <label>Active Sessions</label>
+                                            <span>1 active session (This device)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="security-restriction-notice">
+                                    <i class="fas fa-circle-info"></i>
+                                    <span>Password changes must be done via email link. Contact administrator for
+                                        security settings.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Activity & Audit Logs Section -->
+                    <section class="profile-card activity-logs-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-history"></i> Activity & Audit Logs</h2>
+                            <span class="subtitle">Track Your Actions</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-categories">
+                                <button class="activity-category-btn" id="loginHistoryBtn">
+                                    <i class="fas fa-right-to-bracket"></i>
+                                    <div class="category-info">
+                                        <span class="category-name">Login History</span>
+                                        <span class="category-count">Last 30 entries</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                                <button class="activity-category-btn" id="actionLogsBtn">
+                                    <i class="fas fa-list-check"></i>
+                                    <div class="category-info">
+                                        <span class="category-name">Action & Change Logs</span>
+                                        <span class="category-count">124 actions logged</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                                <button class="activity-category-btn" id="systemActivityBtn">
+                                    <i class="fas fa-chart-simple"></i>
+                                    <div class="category-info">
+                                        <span class="category-name">System Activity Tracking</span>
+                                        <span class="category-count">Usage analytics</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                                <button class="activity-category-btn" id="exportLogsBtn">
+                                    <i class="fas fa-file-export"></i>
+                                    <div class="category-info">
+                                        <span class="category-name">Export & Download Logs</span>
+                                        <span class="category-count">PDF format only</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- System Access & Permissions Section -->
+                    <section class="profile-card permissions-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-user-lock"></i> System Access & Permissions</h2>
+                            <span class="subtitle">Role-Based Display</span>
+                            <button class="card-action-btn" id="viewPermissionsBtn" title="View All Permissions">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="permissions-overview">
+                                <div class="role-display">
+                                    <div class="role-badge-large">
+                                        <i class="fas fa-user-tie"></i>
+                                        <span>Receptionist & Clinic Assistant</span>
+                                    </div>
+                                </div>
+                                <div class="permissions-summary">
+                                    <h3>Permissions Summary</h3>
+                                    <div class="permission-list">
+                                        <div class="permission-item allowed">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>View non-clinical data</span>
+                                        </div>
+                                        <div class="permission-item allowed">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Manage appointments</span>
+                                        </div>
+                                        <div class="permission-item allowed">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Process payments</span>
+                                        </div>
+                                        <div class="permission-item allowed">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Send reminders</span>
+                                        </div>
+                                        <div class="permission-item denied">
+                                            <i class="fas fa-times-circle"></i>
+                                            <span>Edit medical records</span>
+                                        </div>
+                                        <div class="permission-item denied">
+                                            <i class="fas fa-times-circle"></i>
+                                            <span>View clinical data</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="permission-notice">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Contact Clinic Owner to request permission changes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Help & Support Section -->
+                    <section class="profile-card help-support-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-life-ring"></i> Help & Support</h2>
+                            <span class="subtitle">Get Assistance</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="support-options">
+                                <div class="support-contact">
+                                    <h3><i class="fas fa-headset"></i> Contact Clinic Owner</h3>
+                                    <div class="contact-details">
+                                        <div class="contact-item">
+                                            <i class="fas fa-envelope"></i>
+                                            <span>owner@clinic.curis.co.ke</span>
+                                        </div>
+                                        <div class="contact-item">
+                                            <i class="fas fa-phone"></i>
+                                            <span>+254 700 123 456</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn-primary btn-support" id="createTicketBtn">
+                                    <i class="fas fa-ticket"></i>
+                                    Create Support Ticket
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals Section -->
+
+    <!-- Avatar Management Modal -->
+    <div class="modal" id="avatarModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Avatar Management</h3>
+                <button class="close-modal" data-modal="avatarModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="avatar-management">
+                    <div class="current-avatar-display">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                            alt="Current Avatar" class="current-avatar-img">
+                    </div>
+                    <div class="avatar-actions">
+                        <button class="btn-primary">
+                            <i class="fas fa-upload"></i>
+                            Upload New Photo
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-crop"></i>
+                            Crop & Resize
+                        </button>
+                        <button class="btn-danger">
+                            <i class="fas fa-trash"></i>
+                            Remove Current Photo
+                        </button>
+                    </div>
+                    <div class="upload-info">
+                        <p><i class="fas fa-info-circle"></i> Accepted formats: JPG, PNG (Max 5MB)</p>
+                        <p><i class="fas fa-sync"></i> Changes sync automatically across platform</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Profile Modal -->
+    <div class="modal" id="fullProfileModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3>Full Profile Information</h3>
+                <button class="close-modal" data-modal="fullProfileModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="full-profile-display">
+                    <div class="profile-section">
+                        <h4><i class="fas fa-user"></i> Personal Information</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Full Name</label>
+                                <span>Sarah Wanjiru Maina</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Employee ID</label>
+                                <span>RCP-2024-0042</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Date of Birth</label>
+                                <span>March 12, 1995</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Gender</label>
+                                <span>Female</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-section">
+                        <h4><i class="fas fa-address-book"></i> Contact Details</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Primary Phone</label>
+                                <span>+254 712 345 678</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Email</label>
+                                <span>sarah.wanjiru@curis.co.ke</span>
+                            </div>
+                            <div class="info-item">
+                                <label>WhatsApp</label>
+                                <span>+254 712 345 678</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Address</label>
+                                <span>Nairobi, Westlands, ABC Plaza</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-section">
+                        <h4><i class="fas fa-user-friends"></i> Emergency Contacts</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Emergency Contact Name</label>
+                                <span>John Maina (Spouse)</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Emergency Phone</label>
+                                <span>+254 722 987 654</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restricted-section">
+                        <i class="fas fa-lock"></i>
+                        <strong>Medical Data Restricted</strong>
+                        <p>No access to clinical information</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions Dropdown Modal -->
+    <div class="modal" id="quickActionsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Quick Actions</h3>
+                <button class="close-modal" data-modal="quickActionsModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="quick-actions-list">
+                    <button class="quick-action-item">
+                        <i class="fas fa-pen-to-square"></i>
+                        <span>Request Contact Change</span>
+                    </button>
+                    <button class="quick-action-item">
+                        <i class="fas fa-clock-rotate-left"></i>
+                        <span>View Activity Logs</span>
+                    </button>
+                    <button class="quick-action-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Download Profile PDF</span>
+                    </button>
+                    <button class="quick-action-item">
+                        <i class="fas fa-headset"></i>
+                        <span>Contact Support</span>
+                    </button>
+                    <button class="quick-action-item">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>View Permissions</span>
+                    </button>
+                    <button class="quick-action-item">
+                        <i class="fas fa-signal"></i>
+                        <span>System Status</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ID Verification Modal -->
+    <div class="modal" id="idCheckModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Staff ID Verification</h3>
+                <button class="close-modal" data-modal="idCheckModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="id-verification-display">
+                    <div class="verification-badge-large">
+                        <i class="fas fa-circle-check"></i>
+                        <span>Verified: Receptionist</span>
+                    </div>
+                    <div class="verification-details">
+                        <div class="verification-item">
+                            <label>Profile ID</label>
+                            <span class="verification-value">RCP-2024-0042</span>
+                        </div>
+                        <div class="verification-item">
+                            <label>System Registration</label>
+                            <span class="verification-value">January 15, 2024</span>
+                        </div>
+                        <div class="verification-item">
+                            <label>Role Confirmation</label>
+                            <span class="verification-value">Receptionist & Clinic Assistant</span>
+                        </div>
+                        <div class="verification-item">
+                            <label>Verification Timestamp</label>
+                            <span class="verification-value">September 30, 2025 - 10:45 AM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Test Modal -->
+    <div class="modal" id="contactTestModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Confirmation Test</h3>
+                <button class="close-modal" data-modal="contactTestModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-test">
+                    <div class="test-instructions">
+                        <p><i class="fas fa-info-circle"></i> Test your contact methods to ensure notifications are
+                            delivered</p>
+                    </div>
+                    <div class="contact-test-list">
+                        <div class="contact-test-item">
+                            <div class="test-info">
+                                <i class="fas fa-message"></i>
+                                <span>SMS Test</span>
+                                <span class="test-number">+254 712 345 678</span>
+                            </div>
+                            <button class="btn-primary btn-sm">Send Test</button>
+                        </div>
+                        <div class="contact-test-item">
+                            <div class="test-info">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email Test</span>
+                                <span class="test-number">sarah.wanjiru@curis.co.ke</span>
+                            </div>
+                            <button class="btn-primary btn-sm">Send Test</button>
+                        </div>
+                        <div class="contact-test-item">
+                            <div class="test-info">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp Test</span>
+                                <span class="test-number">+254 712 345 678</span>
+                            </div>
+                            <button class="btn-primary btn-sm">Send Test</button>
+                        </div>
+                    </div>
+                    <div class="delivery-status">
+                        <p class="status-message success"><i class="fas fa-check-circle"></i> Last SMS sent to +2547***
+                            on September 28, 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Queue Status Modal -->
+    <div class="modal" id="queueStatusModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Live Queue Status</h3>
+                <button class="close-modal" data-modal="queueStatusModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="queue-status-display">
+                    <div class="staff-on-duty">
+                        <p><i class="fas fa-user-check"></i> <strong>Sarah Wanjiru</strong> is on duty</p>
+                    </div>
+                    <div class="queue-stats">
+                        <div class="queue-stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Patients in Queue</span>
+                        </div>
+                        <div class="queue-stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Checked In Today</span>
+                        </div>
+                        <div class="queue-stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Doctors Available</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary">
+                        <i class="fas fa-sync"></i>
+                        Refresh Queue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Request Modal -->
+    <div class="modal" id="editRequestModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Request Profile Edit</h3>
+                <button class="close-modal" data-modal="editRequestModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="edit-request-form">
+                    <div class="warning-notice">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Profile changes require approval from Clinic Owner</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Field to Edit</label>
+                        <select class="form-select" id="fieldToEdit">
+                            <option value="">Select field...</option>
+                            <option value="full_name">Full Name</option>
+                            <option value="dob">Date of Birth</option>
+                            <option value="national_id">National ID</option>
+                            <option value="marital_status">Marital Status</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Desired Change</label>
+                        <input type="text" class="form-input" placeholder="Enter new value">
+                    </div>
+                    <div class="form-group">
+                        <label>Reason for Change (Optional)</label>
+                        <textarea class="form-textarea" placeholder="Explain why this change is needed..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Request
+                        </button>
+                        <button class="btn-secondary" data-modal="editRequestModal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Requests Modal -->
+    <div class="modal" id="activeRequestsModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3>Active Requests</h3>
+                <button class="close-modal" data-modal="activeRequestsModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="requests-list">
+                    <div class="request-item status-pending">
+                        <div class="request-header">
+                            <span class="request-id">Request #REQ-2024-0156</span>
+                            <span class="request-status-badge pending"><i class="fas fa-clock"></i> Pending</span>
+                        </div>
+                        <div class="request-details">
+                            <div class="request-detail-item">
+                                <label>Field Requested</label>
+                                <span>Primary Phone Number</span>
+                            </div>
+                            <div class="request-detail-item">
+                                <label>Submission Date</label>
+                                <span>September 25, 2025</span>
+                            </div>
+                            <div class="request-detail-item">
+                                <label>Requested Change</label>
+                                <span>+254 712 345 678 → +254 722 987 654</span>
+                            </div>
+                        </div>
+                        <button class="btn-sm btn-secondary">View Details</button>
+                    </div>
+                    <div class="request-item status-review">
+                        <div class="request-header">
+                            <span class="request-id">Request #REQ-2024-0148</span>
+                            <span class="request-status-badge review"><i class="fas fa-eye"></i> Under Review</span>
+                        </div>
+                        <div class="request-details">
+                            <div class="request-detail-item">
+                                <label>Field Requested</label>
+                                <span>Address</span>
+                            </div>
+                            <div class="request-detail-item">
+                                <label>Submission Date</label>
+                                <span>September 22, 2025</span>
+                            </div>
+                            <div class="request-detail-item">
+                                <label>Owner Comments</label>
+                                <span>Reviewing documentation...</span>
+                            </div>
+                        </div>
+                        <button class="btn-sm btn-secondary">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Notifications Settings Modal -->
+    <div class="modal" id="emailNotifsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Email Notification Settings</h3>
+                <button class="close-modal" data-modal="emailNotifsModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="notification-settings">
+                    <div class="notification-setting-item">
+                        <div class="setting-info">
+                            <label>New Appointment Alerts</label>
+                            <p>Receive email when new appointments are booked</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="notification-setting-item">
+                        <div class="setting-info">
+                            <label>Patient Arrival Notifications</label>
+                            <p>Email when patients check-in</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="notification-setting-item">
+                        <div class="setting-info">
+                            <label>Payment Confirmations</label>
+                            <p>Notifications for successful payments</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="notification-setting-item">
+                        <div class="setting-info">
+                            <label>Request Status Updates</label>
+                            <p>Updates on profile change requests</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="notification-setting-item">
+                        <div class="setting-info">
+                            <label>System Updates</label>
+                            <p>Platform updates and announcements</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary">Save Preferences</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login History Modal -->
+    <div class="modal" id="loginHistoryModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3>Login History</h3>
+                <button class="close-modal" data-modal="loginHistoryModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="login-history-list">
+                    <div class="login-entry">
+                        <div class="login-icon success">
+                            <i class="fas fa-circle-check"></i>
+                        </div>
+                        <div class="login-details">
+                            <strong>Successful Login via Email Link</strong>
+                            <p>Today at 8:45 AM</p>
+                            <div class="login-meta">
+                                <span><i class="fas fa-laptop"></i> Windows PC</span>
+                                <span><i class="fas fa-location-dot"></i> Nairobi, Kenya</span>
+                                <span><i class="fas fa-network-wired"></i> 105.163.x.x</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login-entry">
+                        <div class="login-icon success">
+                            <i class="fas fa-circle-check"></i>
+                        </div>
+                        <div class="login-details">
+                            <strong>Successful Login via Email Link</strong>
+                            <p>September 29, 2025 at 9:12 AM</p>
+                            <div class="login-meta">
+                                <span><i class="fas fa-laptop"></i> Windows PC</span>
+                                <span><i class="fas fa-location-dot"></i> Nairobi, Kenya</span>
+                                <span><i class="fas fa-network-wired"></i> 105.163.x.x</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login-entry">
+                        <div class="login-icon warning">
+                            <i class="fas fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="login-details">
+                            <strong>Failed Login Attempt</strong>
+                            <p>September 28, 2025 at 11:30 PM</p>
+                            <div class="login-meta">
+                                <span><i class="fas fa-mobile"></i> Mobile Device</span>
+                                <span><i class="fas fa-location-dot"></i> Unknown Location</span>
+                                <span><i class="fas fa-network-wired"></i> 197.x.x.x</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Permissions Detail Modal -->
+    <div class="modal" id="permissionsDetailModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3>Detailed Permissions</h3>
+                <button class="close-modal" data-modal="permissionsDetailModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="permissions-detail">
+                    <div class="permission-category">
+                        <h4><i class="fas fa-calendar"></i> Appointments Module</h4>
+                        <div class="permission-list">
+                            <div class="permission-item allowed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>View appointments</span>
+                            </div>
+                            <div class="permission-item allowed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Book appointments</span>
+                            </div>
+                            <div class="permission-item allowed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Cancel appointments</span>
+                            </div>
+                            <div class="permission-item allowed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Reschedule appointments</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="permission-category">
+                        <h4><i class="fas fa-file-invoice"></i> Billing Module</h4>
+                        <div class="permission-list">
+                            <div class="permission-item allowed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Process payments</span>
+                            </div>
+                            <div class="permission-item allowed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Send payment reminders</span>
+                            </div>
+                            <div class="permission-item denied">
+                                <i class="fas fa-times-circle"></i>
+                                <span>Modify pricing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="permission-category">
+                        <h4><i class="fas fa-file-medical"></i> Medical Records</h4>
+                        <div class="permission-list">
+                            <div class="permission-item denied">
+                                <i class="fas fa-times-circle"></i>
+                                <span>View medical records</span>
+                            </div>
+                            <div class="permission-item denied">
+                                <i class="fas fa-times-circle"></i>
+                                <span>Edit medical data</span>
+                            </div>
+                            <div class="permission-item denied">
+                                <i class="fas fa-times-circle"></i>
+                                <span>Access clinical notes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Support Ticket Modal -->
+    <div class="modal" id="supportTicketModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create Support Ticket</h3>
+                <button class="close-modal" data-modal="supportTicketModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="support-ticket-form">
+                    <div class="form-group">
+                        <label>Issue Category</label>
+                        <select class="form-select">
+                            <option value="">Select category...</option>
+                            <option value="technical">Technical Issue</option>
+                            <option value="account">Account Access</option>
+                            <option value="billing">Billing Question</option>
+                            <option value="feature">Feature Request</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Priority Level</label>
+                        <select class="form-select">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                            <option value="urgent">Urgent</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-textarea" placeholder="Describe your issue in detail..."
+                            rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Attach Screenshot (Optional)</label>
+                        <input type="file" class="form-input" accept="image/*">
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Ticket
+                        </button>
+                        <button class="btn-secondary" data-modal="supportTicketModal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Popup -->
+    <div class="profile-popup" id="profilePopup">
+        <div class="profile-popup-content">
+            <div class="profile-header">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                    alt="Profile" class="popup-profile-img">
+                <div class="profile-info">
+                    <h3>Sarah Wanjiru</h3>
+                    <p>Receptionist</p>
+                </div>
+            </div>
+            <div class="profile-menu">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\My Profile\my_profile.html"
+                    class="profile-menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Landing Page\landing_page.html"
+                    class="profile-menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="fixed-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <!-- Corporate Website Link -->
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer" class="corporate-link">
+                    Visit Citrus Labs
+                </a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Copyright -->
+                <p class="copyright">© 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="my_profile.js"></script>
+</body>
+
+</html>

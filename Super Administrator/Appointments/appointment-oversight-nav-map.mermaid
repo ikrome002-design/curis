@@ -1,0 +1,103 @@
+graph TB
+    %% Main Appointment Oversight Page
+    ApptOversight["📅 Appointment Oversight Page<br/>Clinic-Specific Management"]
+     
+    %% Back Navigation
+    ApptOversight --> BackNav["← Back to Dashboard"]
+    BackNav --> Dashboard["🏠 Super Admin Dashboard"]
+    
+    %% Clinic Owner Selection (Primary Feature)
+    ApptOversight --> ClinicSelect["🏥 Select Clinic Owner<br/>(Required First Step)"]
+    ClinicSelect --> |Click| ClinicSelector["Clinic Selection Modal<br/>──────────────<br/>🔍 Search: [Clinic Name/ID]<br/>• Recent Clinics:<br/>  - Clinic A (Dr. Smith)<br/>  - Clinic B (Dr. Jones)<br/>  - Clinic C (Dr. Brown)<br/>• All Clinics List:<br/>  📋 [Scrollable List]<br/>  □ Filter by Region<br/>  □ Filter by Status<br/>• Select Clinic ✓"]
+    
+    %% After Clinic Selection
+    ClinicSelector --> |Select| ClinicDashboard["Selected Clinic Dashboard<br/>─────────────────<br/>🏥 [Clinic Name] - [Owner Name]<br/>📊 Real-Time Statistics"]
+    
+    %% Appointment Summary Panel
+    ClinicDashboard --> SummaryPanel["📊 Appointment Summary Panel"]
+    SummaryPanel --> |View| SummaryStats["Clinic Statistics<br/>────────────<br/>• Today's Appointments: [Count]<br/>• Status Breakdown:<br/>  - Scheduled: [Count] 🟢<br/>  - Canceled: [Count] 🔴<br/>  - Completed: [Count] 🔵<br/>• This Week: [Count]<br/>• This Month: [Count]<br/>• Avg Wait Time: [Duration]<br/>• No-Show Rate: [%]"]
+    
+    %% Filter & Search Section
+    ClinicDashboard --> FilterSearch["🔍 Filter & Search"]
+    FilterSearch --> |Click| FilterModal["Advanced Filter Panel<br/>──────────────<br/>📅 Date Range:<br/>  ○ Today<br/>  ○ This Week<br/>  ○ Last Week<br/>  ○ Custom: [From] - [To]<br/>📊 Status:<br/>  □ Scheduled<br/>  □ Canceled<br/>  □ Completed<br/>👨‍⚕️ Doctor:<br/>  [Select Doctor Dropdown]<br/>👤 Patient:<br/>  🔍 [Name/ID Search]<br/>• Apply Filters ✓<br/>• Clear Filters 🔄"]
+    
+    %% Appointment List View
+    ClinicDashboard --> ApptListView["📋 Appointment List View"]
+    ApptListView --> ApptTable["Appointment Table<br/>────────────────<br/>ID | Patient | Doctor | Date/Time | Status | Location | Actions<br/>───────────────────────────────────────<br/>A001 | John Doe | Dr. Lee | Today 10:00 | Scheduled 🟢 | Room 1 | ⚙️<br/>A002 | Jane Smith | Dr. Park | Today 11:00 | Canceled 🔴 | Room 2 | ⚙️<br/>A003 | Bob Wilson | Dr. Kim | Today 12:00 | Completed 🔵 | Room 3 | ⚙️"]
+    
+    %% Individual Appointment Actions
+    ApptTable --> |Click Actions| ApptActions["Appointment Actions<br/>─────────────<br/>• View Details 👁️<br/>• Reschedule 📅<br/>• Force Cancel ❌<br/>• View History 📊<br/>• Send Notification 📧<br/>• Print Details 🖨️"]
+    
+    %% Appointment Details Modal
+    ApptActions --> |View Details| ApptDetails["Appointment Details<br/>─────────────<br/>📋 Appointment ID: A001<br/>👤 Patient Info:<br/>  - Name: John Doe<br/>  - ID: P12345<br/>  - History: [View]<br/>👨‍⚕️ Doctor Info:<br/>  - Name: Dr. Lee<br/>  - Specialty: General<br/>📅 Schedule:<br/>  - Date: Today<br/>  - Time: 10:00 AM<br/>  - Duration: 30 min<br/>📍 Location: Room 1<br/>📊 Status: Scheduled<br/>• Actions:<br/>  - Edit Availability ✏️<br/>  - Reschedule 📅<br/>  - Cancel ❌"]
+    
+    %% Doctor Availability Management
+    ClinicDashboard --> DocAvailability["👨‍⚕️ Doctor Availability"]
+    DocAvailability --> |Manage| AvailabilityPanel["Doctor Availability Panel<br/>──────────────────<br/>• Select Doctor:<br/>  [Dr. Lee ▼]<br/>📅 Calendar View:<br/>  [Interactive Calendar]<br/>• Available Slots:<br/>  ✅ 9:00-10:00<br/>  ❌ 10:00-11:00 (Booked)<br/>  ✅ 11:00-12:00<br/>• Actions:<br/>  - Block Time Slot 🚫<br/>  - Schedule Time Off 🏖️<br/>  - Set Unavailable ⏸️<br/>  - Override Schedule ⚠️<br/>• Save Changes ✓"]
+    
+    %% Force-Cancel Feature
+    ClinicDashboard --> ForceCancelBtn["❌ Force-Cancel Appointments"]
+    ForceCancelBtn --> |Click| ForceCancelModal["Force Cancel Modal<br/>─────────────<br/>⚠️ Force Cancel Appointment<br/>• Appointment: A001<br/>• Patient: John Doe<br/>• Doctor: Dr. Lee<br/>• Reason (Required):<br/>  ○ Doctor Unavailable<br/>  ○ System Error<br/>  ○ Emergency<br/>  ○ Other: [Text Field]<br/>• Additional Notes:<br/>  [Text Area]<br/>• Notifications:<br/>  ☑️ Notify Patient (SMS/Email)<br/>  ☑️ Notify Doctor<br/>  ☑️ Notify Reception<br/>• Confirm Cancellation 🔴"]
+    
+    %% Notification Management
+    ClinicDashboard --> NotifManager["🔔 Notification Settings"]
+    NotifManager --> |Configure| NotifConfig["Notification Configuration<br/>───────────────────<br/>• Reminder Settings:<br/>  - Send Before: [24hrs ▼]<br/>  - Channels: ☑️ SMS ☑️ Email<br/>• Templates:<br/>  - Appointment Reminder<br/>  - Cancellation Notice<br/>  - Reschedule Alert<br/>  [Edit Templates]<br/>• Auto-Notifications:<br/>  ☑️ Confirmations<br/>  ☑️ Reminders<br/>  ☑️ Changes<br/>• Save Settings ✓"]
+    
+    %% Reports & Analytics
+    ClinicDashboard --> ReportsBtn["📊 Reports & Analytics"]
+    ReportsBtn --> |Generate| ReportsPanel["Reports Dashboard<br/>────────────<br/>• Report Type:<br/>  ○ Appointment History<br/>  ○ Appointment Trends<br/>  ○ Doctor Performance<br/>  ○ No-Show Analysis<br/>• Date Range:<br/>  [From] - [To]<br/>• Filters:<br/>  □ By Doctor<br/>  □ By Status<br/>  □ By Location<br/>• Visualizations:<br/>  📊 [Bar Chart]<br/>  📈 [Line Graph]<br/>  🥧 [Pie Chart]<br/>• Export:<br/>  📥 CSV | PDF | Excel<br/>• Generate Report ✓"]
+    
+    %% Appointment History & Audit
+    ClinicDashboard --> HistoryBtn["📜 Appointment History"]
+    HistoryBtn --> |View| HistoryLog["Appointment History Log<br/>──────────────────<br/>• Filter by:<br/>  - Date: [Range]<br/>  - Status: [All ▼]<br/>  - Action: [All ▼]<br/>• History Entries:<br/>  🕐 Today 09:45 - Scheduled (Reception)<br/>  🕐 Today 10:15 - Checked In (System)<br/>  🕐 Today 10:30 - Completed (Doctor)<br/>  🕐 Yesterday 14:00 - Rescheduled (Admin)<br/>• Audit Details:<br/>  - User: [Name]<br/>  - Action: [Type]<br/>  - Timestamp: [Date/Time]<br/>  - IP: [Address]<br/>• Export Audit Log 📥"]
+    
+    %% Tab Navigation
+    ClinicDashboard --> TabNav["Tab Navigation"]
+    TabNav --> ScheduledTab["🟢 Scheduled"]
+    TabNav --> CompletedTab["🔵 Completed"] 
+    TabNav --> CanceledTab["🔴 Canceled"]
+    TabNav --> AnalyticsTab["📊 Analytics"]
+    
+    %% Calendar View
+    ClinicDashboard --> CalendarView["📅 Calendar View"]
+    CalendarView --> |Toggle| CalendarDisplay["Interactive Calendar<br/>─────────────<br/>« November 2024 »<br/>Mo Tu We Th Fr Sa Su<br/>────────────────<br/>[Color-coded appointments]<br/>🟢 Scheduled<br/>🔴 Canceled<br/>🔵 Completed<br/>• Click date for details<br/>• Drag to reschedule<br/>• View: Day|Week|Month"]
+    
+    %% Quick Actions Panel
+    ClinicDashboard --> QuickActions["⚡ Quick Actions"]
+    QuickActions --> QuickSchedule["📅 Quick Schedule"]
+    QuickActions --> QuickCancel["❌ Quick Cancel"]
+    QuickActions --> QuickMessage["💬 Send Message"]
+    QuickActions --> QuickExport["📥 Export Today"]
+    
+    %% Real-time Updates
+    ClinicDashboard -.->|WebSocket| RealTimeSync["🔄 Real-Time Updates<br/>────────────<br/>• New appointments<br/>• Status changes<br/>• Cancellations<br/>• Doctor updates<br/>• Auto-refresh data"]
+    
+    %% Integration with Other Pages
+    ApptOversight --> MainNav["Main Navigation"]
+    MainNav --> UsersPage["→ Curis Users"]
+    MainNav --> HealthPage["→ Health (High-Level)"]
+    MainNav --> BillingPage["→ Billings & Payments"]
+    MainNav --> SettingsPage["→ Settings"]
+    MainNav --> CompliancePage["→ Compliance Hub"]
+    
+    %% Quick Access from Dashboard
+    Dashboard --> |Appointment Widget| ApptOversight
+    Dashboard --> |Quick Action| ApptOversight
+    
+    %% Styling
+    classDef mainPage fill:#1E3A5F,stroke:#0D1B2A,stroke-width:4px,color:#fff,font-weight:bold
+    classDef selector fill:#FF6B35,stroke:#C73E1D,stroke-width:3px,color:#fff
+    classDef panel fill:#7B2CBF,stroke:#5A189A,stroke-width:2px,color:#fff
+    classDef modal fill:#FF6B35,stroke:#C73E1D,stroke-width:2px,color:#fff
+    classDef action fill:#06A77D,stroke:#045A3F,stroke-width:2px,color:#fff
+    classDef critical fill:#DC2626,stroke:#991B1B,stroke-width:2px,color:#fff
+    classDef nav fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
+    classDef realtime fill:#10B981,stroke:#059669,stroke-width:2px,color:#fff
+    
+    class ApptOversight,ClinicDashboard mainPage
+    class ClinicSelect,ClinicSelector selector
+    class SummaryPanel,FilterSearch,ApptListView,DocAvailability,NotifManager,ReportsBtn,HistoryBtn,TabNav,CalendarView,QuickActions panel
+    class FilterModal,ApptDetails,AvailabilityPanel,ForceCancelModal,NotifConfig,ReportsPanel,HistoryLog,CalendarDisplay modal
+    class ForceCancelBtn,QuickCancel critical
+    class MainNav,BackNav,Dashboard,UsersPage,HealthPage,BillingPage,SettingsPage,CompliancePage nav
+    class RealTimeSync realtime

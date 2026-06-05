@@ -1,0 +1,104 @@
+#### 1. **Emergency Care**
+
+
+
+
+Based on the outlined system architecture and MVP goals of the Curis by Citrus web app, the "Emergency Care" page within the Patient Account should serve as a critical, life-saving access point designed for high-urgency situations. It must blend simplicity, speed, and privacy while supporting both individual patients and families with dependents.
+Here’s an expounded breakdown of the dynamic MVP features and functionalities of the Emergency Care page:
+________________________________________
+Emergency Care – MVP Features & Functionalities
+
+a.	National Emergency Services Directory
+A curated list of emergency service contacts in Kenya with clearly labeled categories:
+•	Ambulance Services (e.g., St. John, Red Cross)
+•	Police & Security Hotlines
+•	Fire & Rescue
+•	Poison Control Centers
+•	Mental Health Crisis Lines
+•	Child Protection & Welfare Agencies
+•	Gender-Based Violence Support Lines
+Key Functional Elements:
+•	Each contact has:
+o	Service name
+o	Phone number (text + copy-to-clipboard button)
+o	Service hours (if not 24/7)
+o	Location relevance (national or regional)
+•	Copy-to-Clipboard Call Button
+o	As Curis is a web app (not native mobile), pressing a call button triggers a “Number Copied” toast notification, so users can immediately paste it into their phone dialer.
+________________________________________
+b.	Personal Emergency Contact Management
+A dedicated section for patients to store and manage their own trusted emergency contacts:
+Editable Fields per Contact:
+•	Name
+•	Relationship (e.g., mother, spouse, guardian)
+•	Contact number (mobile or landline)
+•	Type (e.g., Next of Kin, Private Ambulance, Family Doctor)
+Functional Features:
+•	Add New Contact
+•	Edit Existing Contact
+•	Delete Contact
+•	Copy-to-call action (as above)
+Data is securely stored under the patient’s profile and accessible by them only, ensuring full patient data ownership.
+________________________________________
+c.	Dependent Emergency Support
+For parents or guardians managing underage dependents:
+Features Include:
+•	Fast Access to Child's Emergency Info
+o	Each dependent displays their:
+	Name & age
+	Allergies or critical conditions (optional)
+	Pre-selected emergency contact (e.g., pediatrician)
+•	Priority Scheduling for Dependents
+o	A shortcut to Book Urgent Appointment for a child that:
+	Auto-filters for pediatricians or previously visited doctors
+	Highlights the soonest available time slots
+	Flags the booking as Urgent in the clinic dashboard
+________________________________________
+d.	Urgent Clinic Communication & Alerts
+Provides secure patient-to-clinic and clinic-to-patient emergency communication:
+Features:
+•	“Contact My Clinic” Button
+o	Opens a form where the patient can:
+	Select the clinic
+	Describe the emergency
+	Submit request (sent to clinic’s support inbox with URGENT flag)
+•	Real-Time Emergency Notifications from Clinics
+o	Clinics can push emergency alerts (e.g., outbreak alerts, urgent health notices)
+o	Delivered to patients via:
+	SMS
+	WhatsApp
+	In-app push notification
+________________________________________
+e.	Emergency Location Quick Reference
+If patients have multiple dependents or live in rural areas:
+•	Integration with geographical filters for emergency contact numbers per county or region (e.g., Nairobi Ambulance vs. Mombasa Fire Department)
+________________________________________
+Security & Access Rules
+•	Only logged-in patients can manage their personal contacts.
+•	Parents can only see/manage emergency data for their dependents under 18.
+•	No access to another adult’s emergency data even within the same family account.
+•	All data encrypted and stored securely, following same security protocols as medical records.
+________________________________________
+Summary of Emergency Care MVP Value
+
+
+Feature  -----  Description
+
+National Emergency Directory  -----  One-click copy to dial essential services
+Personal Emergency Contact Storage  -----  Add/edit/delete trusted emergency contacts
+Family-Centered Urgent Support  -----  Fast-track pediatric appointment scheduling and alerts
+Direct Clinic SOS Messaging  -----  Emergency form sent to patient’s clinic
+Real-Time Alerts  -----  Clinics can notify patients of urgent health concerns
+________________________________________
+
+
+
+
+
+
+
+
+
+
+
+

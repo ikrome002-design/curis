@@ -1,0 +1,63 @@
+#### 1. **Dashboard**
+
+
+
+
+Here’s an expanded and detailed breakdown of the dynamic MVP features and functionalities within the Doctor Dashboard page of the Curis by Citrus web app:
+________________________________________
+1.	Doctor Dashboard – Dynamic MVP Features (Curis by Citrus)
+
+
+
+The Doctor Dashboard serves as the central command panel for doctors, offering real-time, actionable insights and quick access to core tasks. It dynamically pulls clinic-specific data based on the doctor’s assignments and permissions granted by the Clinic Owner.
+________________________________________
+a.	Today’s Appointments Panel
+•	Dynamic List View showing:
+o	Patient name & profile picture (clickable for record access)
+o	Appointment time & type (in-clinic / online)
+o	Appointment status (Pending, Ongoing, Completed, Cancelled)
+o	Short description/reason for visit
+•	Real-time refresh of status as receptionist/clinic assistant updates backend
+•	Action Buttons: "Start Consultation" or "View Details"
+________________________________________
+b.	Pending Consultations Summary
+•	Next 3 Upcoming Appointments (chronological order)
+•	Missed Appointments List (auto-updated if doctor did not join or mark as completed)
+•	Alerts if any:
+o	No-shows needing follow-up notes
+o	Missed consultations unresolved for 24+ hours
+________________________________________
+c.	Quick Access Widgets
+•	Recent Patients Viewed/Updated: 3–5 patient tiles with:
+o	Name, visit date, link to record
+o	“Add Notes” or “View History” shortcuts
+•	Prescriptions Issued (Today):
+o	Count summary
+o	Link to full list or quickly duplicate a past prescription
+•	New Lab Results Uploaded: Notification of files linked to any of the doctor’s patients
+________________________________________
+d.	Embedded Google Meet Consultation Links
+•	If a consultation is due within the next hour, display a countdown timer and one-click access to the scheduled Google Meet session
+________________________________________
+e.	Clinic Broadcasts / Internal Memos
+•	Short notices or instructions from the Clinic Owner (editable from owner’s dashboard)
+•	Alerts for:
+o	System updates
+o	Schedule changes
+o	Staff meetings
+________________________________________
+f.	Activity Snapshot / Stats
+•	Total consultations today
+•	Number of completed appointments
+•	Outstanding patient records requiring updates
+•	Prescription summary (issued vs. pending)
+________________________________________
+g.	Notification Center Preview
+•	Top 5 most recent notifications with links:
+o	Appointment changes
+o	Lab result uploads
+o	Comments from other staff
+o	Patient follow-up requests
+________________________________________
+All these dashboard components are clinic-specific, dynamically populated based on real-time backend data, and accessible only if the doctor has been assigned or activated by the Clinic Owner. No financial, billing, or clinic-wide admin controls are visible on this page.
+

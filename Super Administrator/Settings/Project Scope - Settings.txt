@@ -1,0 +1,76 @@
+#### 1. **Settings**
+
+The **Settings** page enables the **Super Administrator** to configure site-wide settings, manage system integrations, and ensure the platform operates smoothly across all user accounts and functionalities. This section is crucial for customizing the platform’s behavior, integrating third-party services, and ensuring security, accessibility, and compliance.
+
+Below are the detailed features and functionalities:
+
+---
+
+### **a. Site-Wide Settings Management**
+- **Session Timeout Durations**:
+  - The Super Admin can **configure session timeouts** to control how long a user can stay logged in without activity. This ensures **security** by automatically logging out inactive users after a specified period.
+    - Options:  
+      - Set timeout for users (Patient, Doctor, Receptionist, Clinic Assistant, Clinic Owner).
+      - Customize session duration for different user roles (e.g., shorter timeouts for more sensitive accounts like Admin or Doctors).
+      - Enable or disable “remember me” functionality on login.
+    - **Dynamic Settings**:  
+      - Adjust the session duration dynamically across the platform without downtime.
+      - All changes trigger an alert or notification to Super Admin about the new settings being applied.
+
+---
+
+### **b. Notification Templates Management**
+- **Customize System Notifications**:  
+  - The Super Admin can manage and customize **email/SMS templates** for all system notifications across the platform.
+    - Examples of notifications:
+      - **User account creation** (Patient, Doctor, Receptionist, Clinic Owner).
+      - **Appointment updates** (cancellations, rescheduling).
+      - **Billing and invoice updates** (service charges applied, invoices paid).
+      - **Critical notifications** (user suspension, forced cancellations).
+    - **Template Customization**:  
+      - Super Admin can edit the content, tone, and layout of each notification message.  
+      - Enable support for **multi-language templates** to cater to a diverse user base.
+      - Preview and test notifications before applying changes across the platform.
+
+**Dynamic:** Templates are instantly updated, and changes are reflected across all notifications sent by the system in real time.
+
+---
+
+### **c. Platform Maintenance Mode**
+- **Enable/Disable Maintenance Mode**:  
+  - The Super Admin has the ability to put the platform in **maintenance mode** for updates, bug fixes, or new feature rollouts.
+    - This temporarily makes the platform **unavailable to users** while allowing the development team to make changes.
+    - **Dynamic Features**:
+      - Display a **customizable maintenance page** to users indicating that the system is temporarily unavailable.
+      - **Scheduled Maintenance**: The Super Admin can schedule maintenance periods in advance, notifying users ahead of time.
+      - **Toggle Maintenance Mode**: The Super Admin can enable or disable the maintenance mode instantly, with real-time reflection across the system.
+
+**Dynamic:** Users are alerted and redirected to a maintenance page, and the platform is offline for updates as needed.
+
+---
+
+### **d. Configure Third-Party Integrations**
+- **SMS/Email/WhatsApp Gateway Settings**:
+
+  - The Super Admin can configure and manage **third-party integrations**, such as **SMS**, **email**, and **WhatsApp** gateways, to send platform-wide notifications.
+    - **Third-party integration settings**:
+      - Enter credentials or API keys for the chosen **SMS**, **email**, or **WhatsApp provider**.
+      - **Enable multiple providers** (SMS, email, WhatsApp) for redundancy in case one service fails.
+      - **Configure custom message formats** and **sender IDs** for communication, ensuring the platform maintains a clinic-specific branding (e.g., clinic name for SMS/WhatsApp messages).
+    - **WhatsApp-Specific Features**:
+      - Integration with WhatsApp **Business API** to send notifications to patients, doctors, and clinic staff.
+      - Ability to send text, media (images, files), and links directly through WhatsApp, facilitating easier communication and appointment reminders.
+      - **Interactive WhatsApp Messages**: Customize WhatsApp messages to include buttons for quick actions, such as confirming appointments or requesting follow-up consultations.
+    - **Dynamic Integration**:  
+      - Adjust or switch SMS, email, or WhatsApp providers at any time, with immediate effect on notification delivery.
+      - **Real-time tracking** of each integration’s status (SMS, email, and WhatsApp), allowing the Super Admin to monitor if messages are successfully delivered or failed.
+      - Log and track the success or failure of each integration attempt for troubleshooting purposes.
+
+---
+
+
+
+### **Summary**
+
+The **Settings** page for the **Super Administrator** plays a crucial role in ensuring smooth operation, customization, and compliance across the **Curis by Citrus** web app. It allows the Super Admin to configure system-wide settings for Curis Users, notifications, security, and third-party integrations all of which are dynamic, real-time updates that take effect immediately after configuration.
+

@@ -1,0 +1,101 @@
+#### 1. **Create Account**
+
+
+
+
+Based on the expanded MVP features for the Patient account with family management, here is a detailed and dynamic breakdown of the Create Account page functionalities for the Curis by Citrus web app:
+
+Curis by Citrus – Create Account Page (Patient Account) – MVP Feature Expansion
+
+Overview:
+
+The Create Account page serves as the gateway for both self-registered and clinic-assisted patient account creation. It supports dynamic form behavior based on user age, initiator (self or clinic staff), and family account structure.
+
+Dynamic MVP Features:
+
+a.	Account Initiation Logic
+•	Self-Initiated Registration:
+o	Accessed directly by patients (via the main Curis website or patient portal).
+o	Full registration form is available.
+o	Required fields:
+	Full Name
+	Date of Birth (DOB)
+	Gender
+	Phone Number (with SMS OTP verification)
+	Email Address
+	Password & Confirm Password
+	Consent to Terms and Privacy Policy
+•	Clinic-Initiated Registration (by Receptionist/Clinic Assistant):
+o	Accessed from the Clinic Dashboard (Staff View).
+o	Staff can create a preliminary account by entering:
+	Patient Full Name
+	Date of Birth
+	Phone Number and/or Email Address
+	Gender
+o	Password field is excluded (patient will set their own via secure activation email).
+o	Upon submission:
+	Patient receives email with secure activation link.
+	Clicking the link opens a password setup and consent step to finalize account.
+b.	Age-Based Logic & Access Pathways
+•	Patients Aged 18+ (Adult):
+o	Full standalone account creation.
+o	Option to add dependent children (under 18) during or after registration.
+o	Automatically granted family management permissions.
+•	Patients Aged 13–17 (Teen):
+o	Allowed to register for an individual patient account.
+o	Same required fields as adult accounts.
+o	Terms include mandatory checkbox for “guardian aware of account registration.”
+o	Data access is partially restricted (clinic and system enforced age-based privacy controls).
+•	Children Aged 12 and Below:
+o	Cannot create a separate account.
+o	Can only be added as dependents under a parent or legal guardian’s Patient account.
+o	If a user enters a DOB that calculates as under 13:
+	System blocks registration and prompts for parent account linkage.
+	Optional “Send Link to Parent” feature to redirect a guardian for account creation.
+c.	Family Management Setup (For Adult Accounts)
+•	During Registration:
+o	“Add Family Member” toggle visible for users aged 18+.
+o	Clicking opens modal/form for:
+	Child’s Full Name
+	Date of Birth
+	Gender
+	Relationship to Patient (e.g., son, daughter, dependent)
+o	Multiple dependents can be added at once.
+o	All dependent data is nested under the main account profile.
+•	After Registration:
+o	Accessible via Profile > Family Management section.
+o	Add/Edit/Remove dependents.
+o	Optional: Upload dependent ID or birth certificate (for future release).
+d.	Verification & Activation Workflow
+•	Phone Number Verification (All Registrations):
+o	Real-time OTP (SMS) verification required before submission.
+•	Email Verification:
+o	For self-registered users: optional email link sent for validation.
+o	For clinic-initiated users: mandatory email verification and password setup required to activate account.
+e.	Accessibility & Consent
+•	Accessibility Features:
+o	Screen reader support.
+o	High-contrast toggle for visually impaired users.
+•	Consent Management:
+o	Required checkbox for accepting:
+	Terms of Service
+	Privacy Policy
+o	Optional marketing communications opt-in.
+f.	UI Dynamics & Validation
+•	Smart Date Picker:
+o	Dynamically calculates age and adjusts allowed features (e.g., family creation, blocking under-13 accounts).
+o	Warning banners for age-related restrictions.
+•	Dynamic Form Sections:
+o	If DOB < 13 → disable registration and show parent account prompt.
+o	If DOB 13–17 → show “guardian awareness” checkbox.
+o	If DOB ≥ 18 → show family member input option.
+•	Inline Validation:
+o	Real-time feedback on email format, password strength, and OTP validity.
+
+This dynamic approach ensures that the Curis Create Account page is age-compliant, user-friendly, and fully adaptable for both individual and family-based healthcare access.
+
+
+
+
+
+

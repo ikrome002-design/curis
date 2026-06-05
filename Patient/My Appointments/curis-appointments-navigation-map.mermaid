@@ -1,0 +1,234 @@
+flowchart TD
+    %% My Appointments Main Page
+    F[My Appointments Page] --> F_HEADER[Page Header<br/>Navigation & User Context]
+    F_HEADER --> F_NAV[Navigation Bar<br/>Main menu access]
+    F_NAV --> E[Dashboard]
+    F_NAV --> G[My Health Care]
+    F_NAV --> H[Billings & Payments]
+    F_NAV --> I[Emergency Care]
+    F_NAV --> J[My Medical Cover]
+    F_NAV --> K[My Profile]
+    
+    %% Family Member Switcher
+    F --> F1[Multi-Patient Booking<br/>Family appointment management]
+    F1 --> F1a[Family Member Switcher<br/>Patient selection dropdown]
+    F1a --> F1a_CLICK{Dropdown Click}
+    F1a_CLICK --> F1a_MODAL[Family Selection Modal<br/>Member list display]
+    F1a_MODAL --> F1a_M1[Profile Photos<br/>Visual identification]
+    F1a_MODAL --> F1a_M2[Member Names<br/>Full names display]
+    F1a_MODAL --> F1a_M3[Age Display<br/>Calculated from DOB]
+    F1a_MODAL --> F1a_M4[Relationship Tags<br/>Self/Son/Daughter]
+    
+    F1a_MODAL --> F1a_SELECT{Member Selected}
+    F1a_SELECT --> F1a1[Active Patient Display<br/>Selected family member]
+    F1a_SELECT --> F1a2[Age-based Services<br/>Pediatric/Adult filtering]
+    F1a_SELECT --> F1_REFRESH[Context Refresh<br/>All data updates]
+    F1_REFRESH --> F1_R1[Appointments reload<br/>Member-specific data]
+    F1_REFRESH --> F1_R2[Doctors filter<br/>Age-appropriate providers]
+    F1_REFRESH --> F1_R3[Services update<br/>Relevant treatments]
+    
+    %% Clinic & Doctor Search
+    F --> F2[Clinic & Doctor Search<br/>Dynamic directory]
+    F2 --> F2_FILTERS[Search Filters Panel<br/>Multiple criteria]
+    
+    F2_FILTERS --> F2a[Location Filter<br/>Geographic selection]
+    F2a --> F2a_CLICK{Location Click}
+    F2a_CLICK --> F2a_DROP[Location Dropdown<br/>Hierarchical selection]
+    F2a_DROP --> F2a_D1[Country Level<br/>Kenya default]
+    F2a_DROP --> F2a_D2[County Level<br/>Regional selection]
+    F2a_DROP --> F2a_D3[City/Town Level<br/>Specific location]
+    
+    F2_FILTERS --> F2b[Specialty Filter<br/>Medical specialties]
+    F2b --> F2b_CLICK{Specialty Click}
+    F2b_CLICK --> F2b_LIST[Specialty List<br/>Categorized options]
+    F2b_LIST --> F2b_L1[General Practice]
+    F2b_LIST --> F2b_L2[Pediatrics<br/>Child-focused]
+    F2b_LIST --> F2b_L3[Dermatology]
+    F2b_LIST --> F2b_L4[Dentistry]
+    F2b_LIST --> F2b_L5[Other Specialties<br/>Full list]
+    
+    F2_FILTERS --> F2c[Availability Filter<br/>Time-based filtering]
+    F2c --> F2c_CLICK{Availability Click}
+    F2c_CLICK --> F2c_CAL[Calendar Modal<br/>Date selection]
+    F2c_CAL --> F2c_C1[Date Picker<br/>Available dates]
+    F2c_CAL --> F2c_C2[Time Range<br/>Preferred hours]
+    F2c_CAL --> F2c_C3[Apply Filter<br/>Update results]
+    
+    F2 --> F2d[Advanced Search<br/>Detailed lookup]
+    F2d --> F2d_CLICK{Advanced Click}
+    F2d_CLICK --> F2d_MODAL[Advanced Search Modal<br/>Multiple search options]
+    F2d_MODAL --> F2d1[Clinic Name Search<br/>Direct clinic lookup]
+    F2d_MODAL --> F2d2[Doctor Search<br/>Provider-specific search]
+    F2d_MODAL --> F2d3[Contact Search<br/>Email/Phone lookup]
+    F2d_MODAL --> F2d_SEARCH{Search Submit}
+    F2d_SEARCH --> F2e[Dynamic Results<br/>Real-time filter updates]
+    
+    %% Search Results
+    F2e --> F2e_RESULTS[Search Results Grid<br/>Filtered providers]
+    F2e_RESULTS --> F2e_R1[Clinic Cards<br/>Provider information]
+    F2e_R1 --> F2e_R1a[Clinic Logo<br/>Visual identity]
+    F2e_R1 --> F2e_R1b[Clinic Name<br/>Provider name]
+    F2e_R1 --> F2e_R1c[Location Info<br/>Address/Map link]
+    F2e_R1 --> F2e_R1d[Available Doctors<br/>Provider list]
+    F2e_R1 --> F2e_R1e[Next Available<br/>Earliest slot]
+    
+    %% Time Slot Booking
+    F2e_R1 --> F3_SELECT{Select Clinic/Doctor}
+    F3_SELECT --> F3[Time Slot Booking<br/>Real-time availability]
+    F3 --> F3a[Calendar Interface<br/>Available dates display]
+    F3a --> F3a_VIEW[Calendar View<br/>Monthly/Weekly toggle]
+    F3a_VIEW --> F3a_V1[Available Days<br/>Green highlights]
+    F3a_VIEW --> F3a_V2[Unavailable Days<br/>Grayed out]
+    F3a_VIEW --> F3a_V3[Selected Date<br/>Blue highlight]
+    
+    F3a --> F3a_SELECT{Date Selected}
+    F3a_SELECT --> F3b[Doctor Availability<br/>Time slot selection]
+    F3b --> F3b_SLOTS[Time Slots Grid<br/>Available appointments]
+    F3b_SLOTS --> F3b_S1[Morning Slots<br/>8AM-12PM]
+    F3b_SLOTS --> F3b_S2[Afternoon Slots<br/>12PM-5PM]
+    F3b_SLOTS --> F3b_S3[Evening Slots<br/>5PM-8PM]
+    F3b_SLOTS --> F3b_S4[Slot Status<br/>Available/Booked]
+    
+    F3b --> F3b_SELECT{Slot Selected}
+    F3b_SELECT --> F3c[Booking Confirmation<br/>Appointment details modal]
+    F3c --> F3c_MODAL[Confirmation Modal<br/>Booking summary]
+    F3c_MODAL --> F3c1[Confirmation Details<br/>Full appointment info]
+    F3c1 --> F3c1a[Clinic Info<br/>Name/Location/Contact]
+    F3c1 --> F3c1b[Service Type<br/>Consultation/Treatment]
+    F3c1 --> F3c1c[Provider Info<br/>Doctor name/Specialty]
+    F3c1 --> F3c1d[Date & Time<br/>Selected slot]
+    
+    F3c_MODAL --> F3c2[Patient Selection<br/>Booking recipient]
+    F3c2 --> F3c2a[Current Selection<br/>Active family member]
+    F3c2 --> F3c2b[Change Option<br/>Switch patient]
+    F3c2b --> F3c2b1[Family Dropdown<br/>Member selection]
+    
+    F3c_MODAL --> F3c3[Final Confirmation<br/>Booking completion]
+    F3c3 --> F3c3_BTN{Confirm Booking}
+    F3c3_BTN --> F3c3a[Booking Processing<br/>System validation]
+    F3c3a --> F3c3b[Reference Generation<br/>Unique booking ID]
+    F3c3b --> F3c3c[Success Message<br/>Confirmation display]
+    F3c3c --> F3c3d[Multi-channel Alert<br/>SMS/Email/In-app]
+    
+    %% Appointment History
+    F --> F4[Appointment History<br/>Booking tracking]
+    F4 --> F4_TABS[History Tabs<br/>Time-based views]
+    F4_TABS --> F4a[Upcoming Appointments<br/>Future bookings]
+    F4_TABS --> F4b[Past Appointments<br/>Historical bookings]
+    
+    F4 --> F4c[Filter Options<br/>Search refinement]
+    F4c --> F4c_CLICK{Filter Click}
+    F4c_CLICK --> F4c_MODAL[Filter Modal<br/>Multiple criteria]
+    F4c_MODAL --> F4c1[Date Range Picker<br/>Time period selection]
+    F4c1 --> F4c1a[Start Date<br/>From date]
+    F4c1 --> F4c1b[End Date<br/>To date]
+    F4c1 --> F4c1c[Quick Ranges<br/>Last week/month/year]
+    
+    F4c_MODAL --> F4c2[Patient Filter<br/>Family member selection]
+    F4c2 --> F4c2a[All Members<br/>Full family view]
+    F4c2 --> F4c2b[Self Only<br/>Personal appointments]
+    F4c2 --> F4c2c[Specific Dependent<br/>Child selection]
+    
+    F4c_MODAL --> F4c3[Provider Filter<br/>Clinic/Doctor selection]
+    F4c3 --> F4c3a[All Providers<br/>Complete list]
+    F4c3 --> F4c3b[Specific Clinic<br/>Single provider]
+    F4c3 --> F4c3c[Specific Doctor<br/>Individual practitioner]
+    
+    %% Appointment Management
+    F4a --> F5[Appointment Management<br/>Booking modifications]
+    F5 --> F5_CARDS[Appointment Cards<br/>Individual bookings]
+    F5_CARDS --> F5a[Status Tags<br/>Visual indicators]
+    F5a --> F5a1[Upcoming Tag<br/>Future appointment]
+    F5a --> F5a2[Completed Tag<br/>Past appointment]
+    F5a --> F5a3[Cancelled Tag<br/>Cancelled booking]
+    F5a --> F5a4[No-show Tag<br/>Missed appointment]
+    
+    F5_CARDS --> F5b[Action Buttons<br/>Appointment actions]
+    F5b --> F5b_RESCH{Reschedule Click}
+    F5b_RESCH --> F5b1[Reschedule Interface<br/>New time selection]
+    F5b1 --> F5b1a[Cancellation Window Check<br/>Policy validation]
+    F5b1a -->|Within window| F5b1b[Available Slots<br/>Doctor availability]
+    F5b1a -->|Past window| F5b1_BLOCK[Action Blocked<br/>Policy message]
+    
+    F5b1b --> F5b1b_CAL[Calendar View<br/>New date selection]
+    F5b1b_CAL --> F5b1b_SLOTS[Time Slots<br/>Available times]
+    F5b1b_SLOTS --> F5b1b_SELECT{New Slot Selected}
+    F5b1b_SELECT --> F5b1b_CONFIRM[Confirm Reschedule<br/>Update appointment]
+    F5b1b_CONFIRM --> F5b1b_SUCCESS[Success Alert<br/>Appointment updated]
+    
+    F5b --> F5b_CANCEL{Cancel Click}
+    F5b_CANCEL --> F5b2[Cancel Appointment<br/>Cancellation flow]
+    F5b2 --> F5b2a[Cancellation Policy<br/>Time limit check]
+    F5b2a -->|Within limit| F5b2b[Confirmation Modal<br/>Final cancellation]
+    F5b2a -->|Past limit| F5b2_BLOCK[Cancellation Blocked<br/>Policy message]
+    
+    F5b2b --> F5b2b_MODAL[Cancel Modal<br/>Confirmation dialog]
+    F5b2b_MODAL --> F5b2b_M1[Warning Message<br/>Cancellation impact]
+    F5b2b_MODAL --> F5b2b_M2[Reason Selection<br/>Optional feedback]
+    F5b2b_MODAL --> F5b2b_M3[Confirm Button<br/>Final action]
+    F5b2b_M3 --> F5b2b_PROCESS[Cancellation Process<br/>System update]
+    F5b2b_PROCESS --> F5b2b_SUCCESS[Cancelled Status<br/>Appointment removed]
+    
+    %% Integrated Features
+    F --> F6[Integrated Notifications<br/>Appointment alerts]
+    F6 --> F6_SETTINGS{Settings Click}
+    F6_SETTINGS --> F6_MODAL[Notification Settings<br/>Preference management]
+    F6_MODAL --> F6a[Reminder Settings<br/>Alert preferences]
+    F6a --> F6a1[Email Reminders<br/>Toggle on/off]
+    F6a --> F6a2[SMS Reminders<br/>Toggle on/off]
+    F6a --> F6a3[Reminder Timing<br/>Hours/Days before]
+    
+    F6_MODAL --> F6b[Confirmation Alerts<br/>Action notifications]
+    F6b --> F6b1[Booking Alerts<br/>New appointment]
+    F6b --> F6b2[Reschedule Alerts<br/>Changed appointment]
+    F6b --> F6b3[Cancel Alerts<br/>Cancelled appointment]
+    
+    F6_MODAL --> F6c[Dynamic Preferences<br/>Profile-based settings]
+    F6c --> F6c1[Per-member Settings<br/>Individual preferences]
+    F6c --> F6c2[Global Settings<br/>Account-wide preferences]
+    
+    %% Medical Record Integration
+    F5_CARDS --> F7[Medical Record Integration<br/>Linked health data]
+    F7 --> F7_CLICK{View Details Click}
+    F7_CLICK --> F7_MODAL[Appointment Details<br/>Comprehensive view]
+    F7_MODAL --> F7a[Visit Summaries<br/>Appointment outcomes]
+    F7a --> F7a_LINK{View Summary}
+    F7a_LINK --> G[My Health Care<br/>Medical records]
+    
+    F7_MODAL --> F7b[Prescription Links<br/>Medication from visits]
+    F7b --> F7b_LINK{View Prescription}
+    F7b_LINK --> G3[Prescription Viewer<br/>Medication details]
+    
+    F7_MODAL --> F7c[Billing Links<br/>Invoice associations]
+    F7c --> F7c_LINK{View Invoice}
+    F7c_LINK --> H[Billings & Payments<br/>Invoice details]
+    
+    %% Quick Actions
+    F --> F_QUICK[Quick Actions Bar<br/>Common tasks]
+    F_QUICK --> F_Q1[Book New<br/>Quick appointment]
+    F_Q1 --> F3[Time Slot Booking]
+    
+    F_QUICK --> F_Q2[Find Doctor<br/>Quick search]
+    F_Q2 --> F2d[Advanced Search]
+    
+    F_QUICK --> F_Q3[Emergency Booking<br/>Urgent care]
+    F_Q3 --> I3b[Priority Scheduling<br/>Emergency booking]
+    
+    %% Real-time Sync
+    F --> F_SYNC[Real-time Sync<br/>Live updates]
+    F_SYNC --> F_S1[Availability Updates<br/>Slot changes]
+    F_SYNC --> F_S2[Booking Confirmations<br/>Instant status]
+    F_SYNC --> F_S3[Dashboard Sync<br/>Widget updates]
+    F_S3 --> E3[Dashboard Widget<br/>Appointment updates]
+    
+    %% Error Handling
+    F --> F_ERROR[Error States<br/>Exception handling]
+    F_ERROR --> F_E1[No Results<br/>Empty search]
+    F_ERROR --> F_E2[Booking Failed<br/>System error]
+    F_ERROR --> F_E3[Network Error<br/>Connection lost]
+    
+    %% Loading States
+    F --> F_LOAD[Loading States<br/>Progress indicators]
+    F_LOAD --> F_L1[Search Loading<br/>Spinner animation]
+    F_LOAD --> F_L2[Calendar Loading<br/>Skeleton screen]
+    F_LOAD --> F_L3[Booking Processing<br/>Progress bar]

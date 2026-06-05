@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curis by Citrus - Appointments Management for Specialist Healthcare">
+    <title>Appointments - Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="appointments.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-list">
+                    <!-- Dashboard -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <!-- Appointments - Active -->
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+
+                    <!-- Patient Records -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                            class="nav-link">
+                            <i class="fas fa-user-injured"></i>
+                            <span>Patient Records</span>
+                        </a>
+                    </li>
+
+                    <!-- Consultations -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Consultations\consultations.html"
+                            class="nav-link">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Consultations</span>
+                        </a>
+                    </li>
+
+                    <!-- Prescriptions -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Prescriptions\prescriptions.html"
+                            class="nav-link">
+                            <i class="fas fa-prescription"></i>
+                            <span>Prescriptions</span>
+                        </a>
+                    </li>
+
+                    <!-- Alerts & Collaboration -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Alerts and Collaboration\alerts_and_collaboration.html"
+                            class="nav-link">
+                            <i class="fas fa-bell"></i>
+                            <span>Alerts & Collaboration</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">
+                        <i class="fas fa-calendar-alt"></i>
+                        Appointment Management Hub
+                    </h1>
+                    <!-- Breadcrumb Navigation -->
+                    <nav class="breadcrumb">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html">Dashboard</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Appointments</span>
+                    </nav>
+                </div>
+
+                <div class="header-right">
+                    <!-- Live Indicators System -->
+                    <div class="live-indicators">
+                        <span class="indicator-badge ongoing">
+                            <i class="fas fa-circle"></i>
+                            <span>3 Ongoing</span>
+                        </span>
+                        <span class="indicator-badge pending">
+                            <i class="fas fa-circle"></i>
+                            <span>12 Pending</span>
+                        </span>
+                    </div>
+
+                    <!-- User Profile -->
+                    <div class="user-profile" id="userProfile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="Profile" class="profile-pic">
+                        <span class="profile-name">Dr. Sarah Wanjiru</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+
+                    <!-- Profile Dropdown Menu -->
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\My Profile\my_profile.html"
+                            class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Landing Page\landing_page.html"
+                            class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Advanced Filter Panel -->
+            <section class="filter-panel">
+                <div class="filter-container">
+                    <!-- Date Range Filter -->
+                    <div class="filter-group">
+                        <label for="dateFilter" class="filter-label">
+                            <i class="fas fa-calendar-day"></i>
+                            Date Range
+                        </label>
+                        <div class="date-filter-wrapper">
+                            <input type="text" id="dateFilter" class="date-input" placeholder="Select date range">
+                            <button class="calendar-trigger" aria-label="Open calendar">
+                                <i class="fas fa-calendar"></i>
+                            </button>
+                        </div>
+                        <!-- Quick Date Selects -->
+                        <div class="quick-date-selects">
+                            <button class="quick-select-btn active" data-range="today">Today</button>
+                            <button class="quick-select-btn" data-range="week">This Week</button>
+                            <button class="quick-select-btn" data-range="month">This Month</button>
+                        </div>
+                    </div>
+
+                    <!-- Status Filter -->
+                    <div class="filter-group">
+                        <label for="statusFilter" class="filter-label">
+                            <i class="fas fa-filter"></i>
+                            Status
+                        </label>
+                        <div class="status-filter-dropdown">
+                            <button class="status-filter-trigger" id="statusFilter">
+                                <span>All Statuses</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="status-dropdown-content">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="all" checked>
+                                    <span>All</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="pending">
+                                    <span>Pending</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="ongoing">
+                                    <span>Ongoing</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="completed">
+                                    <span>Completed</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="missed">
+                                    <span>Missed</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="cancelled">
+                                    <span>Cancelled</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Patient Search -->
+                    <div class="filter-group">
+                        <label for="patientSearch" class="filter-label">
+                            <i class="fas fa-search"></i>
+                            Patient Search
+                        </label>
+                        <div class="search-wrapper">
+                            <input type="text" id="patientSearch" class="search-input"
+                                placeholder="Type patient name...">
+                            <button class="clear-search" aria-label="Clear search">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <!-- Recent Patients Quick Access -->
+                        <div class="recent-patients-list">
+                            <span class="recent-label">Recent:</span>
+                            <button class="recent-patient-chip">John Kamau</button>
+                            <button class="recent-patient-chip">Mary Wambui</button>
+                            <button class="recent-patient-chip">Peter Ochieng</button>
+                        </div>
+                    </div>
+
+                    <!-- Apply Filters Button -->
+                    <div class="filter-group filter-actions">
+                        <button class="btn-apply-filters" id="applyFilters">
+                            <i class="fas fa-check"></i>
+                            Apply Filters
+                        </button>
+                        <button class="btn-clear-filters" id="clearFilters">
+                            <i class="fas fa-redo"></i>
+                            Clear All
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bulk View Options and Export Controls -->
+            <section class="view-controls">
+                <div class="view-tabs">
+                    <button class="view-tab active" data-view="day">
+                        <i class="fas fa-calendar-day"></i>
+                        Day View
+                    </button>
+                    <button class="view-tab" data-view="week">
+                        <i class="fas fa-calendar-week"></i>
+                        Week View
+                    </button>
+                    <button class="view-tab" data-view="month">
+                        <i class="fas fa-calendar-alt"></i>
+                        Month View
+                    </button>
+                </div>
+
+                <div class="export-controls">
+                    <button class="export-btn" data-export="pdf">
+                        <i class="fas fa-file-pdf"></i>
+                        Export PDF
+                    </button>
+                    <button class="export-btn" data-export="print">
+                        <i class="fas fa-print"></i>
+                        Print
+                    </button>
+                    <button class="export-btn" data-export="csv">
+                        <i class="fas fa-file-csv"></i>
+                        Export CSV
+                    </button>
+                </div>
+            </section>
+
+            <!-- Dynamic Appointments Table -->
+            <section class="appointments-table-section">
+                <div class="table-container">
+                    <table class="appointments-table" id="appointmentsTable">
+                        <thead>
+                            <tr>
+                                <th class="th-patient">Patient</th>
+                                <th class="th-date">Date & Time</th>
+                                <th class="th-type">Type</th>
+                                <th class="th-status">Status</th>
+                                <th class="th-receptionist">Scheduled By</th>
+                                <th class="th-actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Appointment Row 1 - Ongoing -->
+                            <tr class="appointment-row status-ongoing">
+                                <td class="patient-cell">
+                                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                                        class="patient-link">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Patient" class="patient-thumbnail">
+                                        <div class="patient-info">
+                                            <span class="patient-name">John Kamau</span>
+                                            <span class="patient-id">ID: PAT-2024-001</span>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td class="date-cell">
+                                    <span class="appointment-date">Sept 25, 2025</span>
+                                    <span class="appointment-time">10:30 AM</span>
+                                </td>
+                                <td class="type-cell">
+                                    <span class="appointment-type online">
+                                        <i class="fas fa-video"></i>
+                                        Online Consultation
+                                    </span>
+                                </td>
+                                <td class="status-cell">
+                                    <span class="status-badge ongoing">
+                                        <i class="fas fa-circle"></i>
+                                        Ongoing
+                                    </span>
+                                    <span class="session-timer">00:15:32</span>
+                                </td>
+                                <td class="receptionist-cell">Jane Muthoni</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn view-btn" data-appointment-id="1"
+                                        aria-label="View details">
+                                        <i class="fas fa-eye"></i>
+                                        View
+                                    </button>
+                                    <button class="action-btn join-btn"
+                                        data-meet-link="https://meet.google.com/abc-defg-hij"
+                                        aria-label="Join consultation">
+                                        <i class="fas fa-video"></i>
+                                        Join
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Appointment Row 2 - Pending -->
+                            <tr class="appointment-row status-pending">
+                                <td class="patient-cell">
+                                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                                        class="patient-link">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Patient" class="patient-thumbnail">
+                                        <div class="patient-info">
+                                            <span class="patient-name">Mary Wambui</span>
+                                            <span class="patient-id">ID: PAT-2024-002</span>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td class="date-cell">
+                                    <span class="appointment-date">Sept 25, 2025</span>
+                                    <span class="appointment-time">11:15 AM</span>
+                                </td>
+                                <td class="type-cell">
+                                    <span class="appointment-type in-person">
+                                        <i class="fas fa-hospital"></i>
+                                        In-Person
+                                    </span>
+                                </td>
+                                <td class="status-cell">
+                                    <select class="status-dropdown" data-appointment-id="2">
+                                        <option value="pending" selected>Pending</option>
+                                        <option value="ongoing">Ongoing</option>
+                                        <option value="completed">Completed</option>
+                                        <option value="cancelled">Cancelled</option>
+                                    </select>
+                                </td>
+                                <td class="receptionist-cell">Peter Njoroge</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn view-btn" data-appointment-id="2"
+                                        aria-label="View details">
+                                        <i class="fas fa-eye"></i>
+                                        View
+                                    </button>
+                                    <button class="action-btn start-btn" data-appointment-id="2"
+                                        aria-label="Start consultation">
+                                        <i class="fas fa-play"></i>
+                                        Start
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Appointment Row 3 - Completed -->
+                            <tr class="appointment-row status-completed">
+                                <td class="patient-cell">
+                                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                                        class="patient-link">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Patient" class="patient-thumbnail">
+                                        <div class="patient-info">
+                                            <span class="patient-name">Peter Ochieng</span>
+                                            <span class="patient-id">ID: PAT-2024-003</span>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td class="date-cell">
+                                    <span class="appointment-date">Sept 25, 2025</span>
+                                    <span class="appointment-time">09:00 AM</span>
+                                </td>
+                                <td class="type-cell">
+                                    <span class="appointment-type in-person">
+                                        <i class="fas fa-hospital"></i>
+                                        Post-Surgery Review
+                                    </span>
+                                </td>
+                                <td class="status-cell">
+                                    <span class="status-badge completed">
+                                        <i class="fas fa-check-circle"></i>
+                                        Completed
+                                    </span>
+                                    <span class="completion-time">Duration: 45 mins</span>
+                                </td>
+                                <td class="receptionist-cell">Jane Muthoni</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn view-btn" data-appointment-id="3"
+                                        aria-label="View details">
+                                        <i class="fas fa-eye"></i>
+                                        View
+                                    </button>
+                                    <button class="action-btn notes-btn" data-appointment-id="3"
+                                        aria-label="View notes">
+                                        <i class="fas fa-notes-medical"></i>
+                                        Notes
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Appointment Row 4 - Cancelled -->
+                            <tr class="appointment-row status-cancelled">
+                                <td class="patient-cell">
+                                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                                        class="patient-link">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Patient" class="patient-thumbnail">
+                                        <div class="patient-info">
+                                            <span class="patient-name">Grace Njeri</span>
+                                            <span class="patient-id">ID: PAT-2024-004</span>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td class="date-cell">
+                                    <span class="appointment-date">Sept 25, 2025</span>
+                                    <span class="appointment-time">03:30 PM</span>
+                                </td>
+                                <td class="type-cell">
+                                    <span class="appointment-type in-person">
+                                        <i class="fas fa-hospital"></i>
+                                        Routine Check-up
+                                    </span>
+                                </td>
+                                <td class="status-cell">
+                                    <span class="status-badge cancelled">
+                                        <i class="fas fa-times-circle"></i>
+                                        Cancelled
+                                    </span>
+                                    <span class="cancellation-reason">Patient request</span>
+                                </td>
+                                <td class="receptionist-cell">Peter Njoroge</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn view-btn" data-appointment-id="4"
+                                        aria-label="View details">
+                                        <i class="fas fa-eye"></i>
+                                        View
+                                    </button>
+                                    <button class="action-btn reschedule-btn" data-appointment-id="4"
+                                        aria-label="Reschedule">
+                                        <i class="fas fa-redo"></i>
+                                        Reschedule
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Additional Sample Rows -->
+                            <tr class="appointment-row status-pending">
+                                <td class="patient-cell">
+                                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                                        class="patient-link">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Patient" class="patient-thumbnail">
+                                        <div class="patient-info">
+                                            <span class="patient-name">Alice Mutua</span>
+                                            <span class="patient-id">ID: PAT-2024-005</span>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td class="date-cell">
+                                    <span class="appointment-date">Sept 25, 2025</span>
+                                    <span class="appointment-time">02:00 PM</span>
+                                </td>
+                                <td class="type-cell">
+                                    <span class="appointment-type online">
+                                        <i class="fas fa-video"></i>
+                                        Follow-up
+                                    </span>
+                                </td>
+                                <td class="status-cell">
+                                    <select class="status-dropdown" data-appointment-id="5">
+                                        <option value="pending" selected>Pending</option>
+                                        <option value="ongoing">Ongoing</option>
+                                        <option value="completed">Completed</option>
+                                        <option value="cancelled">Cancelled</option>
+                                    </select>
+                                </td>
+                                <td class="receptionist-cell">Jane Muthoni</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn view-btn" data-appointment-id="5"
+                                        aria-label="View details">
+                                        <i class="fas fa-eye"></i>
+                                        View
+                                    </button>
+                                    <button class="action-btn start-btn" data-appointment-id="5"
+                                        aria-label="Start consultation">
+                                        <i class="fas fa-play"></i>
+                                        Start
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr class="appointment-row status-missed">
+                                <td class="patient-cell">
+                                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                                        class="patient-link">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                            alt="Patient" class="patient-thumbnail">
+                                        <div class="patient-info">
+                                            <span class="patient-name">James Mwangi</span>
+                                            <span class="patient-id">ID: PAT-2024-006</span>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td class="date-cell">
+                                    <span class="appointment-date">Sept 24, 2025</span>
+                                    <span class="appointment-time">04:00 PM</span>
+                                </td>
+                                <td class="type-cell">
+                                    <span class="appointment-type in-person">
+                                        <i class="fas fa-hospital"></i>
+                                        Consultation
+                                    </span>
+                                </td>
+                                <td class="status-cell">
+                                    <span class="status-badge missed">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        Missed
+                                    </span>
+                                </td>
+                                <td class="receptionist-cell">Peter Njoroge</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn view-btn" data-appointment-id="6"
+                                        aria-label="View details">
+                                        <i class="fas fa-eye"></i>
+                                        View
+                                    </button>
+                                    <button class="action-btn follow-up-btn" data-appointment-id="6"
+                                        aria-label="Follow up">
+                                        <i class="fas fa-phone"></i>
+                                        Follow-up
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Table Pagination -->
+                <div class="table-pagination">
+                    <div class="pagination-info">
+                        Showing <strong>1-6</strong> of <strong>24</strong> appointments
+                    </div>
+                    <div class="pagination-controls">
+                        <button class="pagination-btn" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                            Previous
+                        </button>
+                        <div class="pagination-numbers">
+                            <button class="page-number active">1</button>
+                            <button class="page-number">2</button>
+                            <button class="page-number">3</button>
+                            <button class="page-number">4</button>
+                        </div>
+                        <button class="pagination-btn">
+                            Next
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Access Control Indicator -->
+            <div class="access-control-info">
+                <div class="access-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>View assigned appointments</span>
+                </div>
+                <div class="access-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Update status & notes</span>
+                </div>
+                <div class="access-item restricted">
+                    <i class="fas fa-times-circle"></i>
+                    <span>Cannot book/delete appointments</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Appointment Detail Modal -->
+    <div class="modal appointment-detail-modal" id="appointmentDetailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-calendar-check"></i>
+                    Appointment Details
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Patient Information Section -->
+                <section class="modal-section patient-info-section">
+                    <h3 class="section-title">Patient Information</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                alt="Patient" class="patient-photo">
+                        </div>
+                        <div class="info-item">
+                            <label>Name:</label>
+                            <span>John Kamau</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Age:</label>
+                            <span>45 years</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Gender:</label>
+                            <span>Male</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Patient ID:</label>
+                            <span>PAT-2024-001</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Phone:</label>
+                            <span>+254 712 345678</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Schedule Details Section -->
+                <section class="modal-section schedule-details-section">
+                    <h3 class="section-title">Schedule Details</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Date & Time:</label>
+                            <span>Sept 25, 2025 - 10:30 AM</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Status:</label>
+                            <span class="status-badge ongoing">Ongoing</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Type:</label>
+                            <span>Online Consultation</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Scheduled By:</label>
+                            <span>Jane Muthoni (Receptionist)</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Reason for Visit:</label>
+                            <span>Follow-up consultation for hypertension management</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Google Meet Link (for online consultations) -->
+                <section class="modal-section meet-link-section">
+                    <h3 class="section-title">Virtual Meeting</h3>
+                    <div class="meet-link-container">
+                        <i class="fas fa-video"></i>
+                        <a href="https://meet.google.com/abc-defg-hij" target="_blank" class="meet-link">
+                            Join Google Meet Session
+                        </a>
+                        <button class="copy-link-btn" aria-label="Copy link">
+                            <i class="fas fa-copy"></i>
+                            Copy Link
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Quick Actions Panel -->
+                <section class="modal-section quick-actions-section">
+                    <h3 class="section-title">Quick Actions</h3>
+                    <div class="quick-actions-grid">
+                        <button class="quick-action-btn view-record-btn">
+                            <i class="fas fa-folder-open"></i>
+                            View Full Record
+                        </button>
+                        <button class="quick-action-btn add-notes-btn">
+                            <i class="fas fa-edit"></i>
+                            Add Pre-consultation Notes
+                        </button>
+                        <button class="quick-action-btn start-consult-btn">
+                            <i class="fas fa-stethoscope"></i>
+                            Start Consultation
+                        </button>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notes Editor Modal -->
+    <div class="modal notes-editor-modal" id="notesEditorModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-notes-medical"></i>
+                    Pre-consultation Notes
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Rich Text Editor -->
+                <div class="editor-toolbar">
+                    <button class="editor-btn" data-command="bold" aria-label="Bold">
+                        <i class="fas fa-bold"></i>
+                    </button>
+                    <button class="editor-btn" data-command="italic" aria-label="Italic">
+                        <i class="fas fa-italic"></i>
+                    </button>
+                    <button class="editor-btn" data-command="underline" aria-label="Underline">
+                        <i class="fas fa-underline"></i>
+                    </button>
+                    <button class="editor-btn" data-command="insertUnorderedList" aria-label="Bullet list">
+                        <i class="fas fa-list-ul"></i>
+                    </button>
+                    <button class="editor-btn" data-command="insertOrderedList" aria-label="Numbered list">
+                        <i class="fas fa-list-ol"></i>
+                    </button>
+                </div>
+                <div class="editor-content" contenteditable="true" id="notesEditor">
+                    <!-- Editable content area -->
+                    <p>Enter pre-consultation notes here...</p>
+                </div>
+
+                <!-- Keyword Tagging -->
+                <div class="keyword-tagging">
+                    <label class="tagging-label">Clinical Tags:</label>
+                    <div class="tags-container">
+                        <span class="tag">Hypertension</span>
+                        <span class="tag">Follow-up</span>
+                        <input type="text" class="tag-input" placeholder="Add tag...">
+                    </div>
+                </div>
+
+                <!-- Auto-save Indicator -->
+                <div class="auto-save-indicator">
+                    <i class="fas fa-save"></i>
+                    <span>Auto-saving every 30 seconds</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary save-close-btn">
+                    <i class="fas fa-save"></i>
+                    Save & Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cancellation Modal -->
+    <div class="modal cancellation-modal" id="cancellationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-times-circle"></i>
+                    Cancel Appointment
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="cancellation-warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Are you sure you want to cancel this appointment?
+                </p>
+                <div class="form-group">
+                    <label for="cancellationReason" class="required">Cancellation Reason:</label>
+                    <textarea id="cancellationReason" class="cancellation-reason-input" rows="4" required
+                        placeholder="Please provide a reason for cancellation..."></textarea>
+                </div>
+                <div class="notification-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked>
+                        <span>Notify patient via SMS</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked>
+                        <span>Notify patient via email</span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Keep Appointment</button>
+                <button class="btn-danger confirm-cancel-btn">
+                    <i class="fas fa-times"></i>
+                    Confirm Cancellation
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar Picker Modal -->
+    <div class="modal calendar-modal" id="calendarModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-calendar"></i>
+                    Select Date Range
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="calendar-container">
+                    <!-- Calendar widget would be rendered here by JavaScript -->
+                    <div class="calendar-placeholder">
+                        <div class="calendar-header">
+                            <button class="cal-nav-btn prev-month">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <span class="current-month">September 2025</span>
+                            <button class="cal-nav-btn next-month">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="calendar-grid">
+                            <!-- Calendar days would be generated here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="date-range-display">
+                    <div class="date-input-group">
+                        <label>From:</label>
+                        <input type="date" class="date-range-from">
+                    </div>
+                    <div class="date-input-group">
+                        <label>To:</label>
+                        <input type="date" class="date-range-to">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary apply-date-range">Apply Range</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patient Follow-up Modal -->
+    <div class="modal follow-up-modal" id="patientFollowUpModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-user-clock"></i>
+                    Patient Follow-up
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="follow-up-message">
+                    The patient missed their appointment. Please select a follow-up action:
+                </p>
+                <div class="contact-options">
+                    <button class="contact-option-btn">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Patient</span>
+                        <small>+254 712 345678</small>
+                    </button>
+                    <button class="contact-option-btn">
+                        <i class="fas fa-sms"></i>
+                        <span>Send SMS</span>
+                        <small>Automated reminder</small>
+                    </button>
+                    <button class="contact-option-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span>Send Email</span>
+                        <small>patient@email.com</small>
+                    </button>
+                    <button class="contact-option-btn">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Reschedule</span>
+                        <small>Book new appointment</small>
+                    </button>
+                </div>
+                <div class="follow-up-notes">
+                    <label>Add Note:</label>
+                    <textarea placeholder="Add follow-up notes..." rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn-primary">Save & Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer">
+        <!-- Dynamic toast messages will appear here -->
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Dark Mode Toggle -->
+            <div class="dark-mode-toggle">
+                <button id="darkModeBtn" class="dark-mode-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                    <i class="fab fa-x"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                    rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Corporate Link & Copyright -->
+            <div class="footer-info">
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer"
+                    class="corporate-link">Citrus Labs</a>
+                <span class="separator">|</span>
+                <span class="copyright">© 2025 Citrus Labs. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="appointments.js"></script>
+</body>
+
+</html>

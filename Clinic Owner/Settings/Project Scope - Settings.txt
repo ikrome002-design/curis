@@ -1,0 +1,116 @@
+CLINIC OWNER - CURIS.
+
+
+---
+
+For the Minimum Viable Product (MVP) of the **Settings** page within the **clinic account user** in *Curis by Citrus*, the focus is on providing comprehensive configuration tools that enable clinic owners to customize system preferences, manage clinic-wide parameters, and optimize operational efficiency. This page allows clinic owners to tailor their clinic's settings, including user permissions, service charge preferences, notifications, and other administrative controls. Here's a breakdown of the essential features available on this settings page:  
+
+________________________________________  
+### **Core MVP Features of the Settings Page**
+
+
+
+Based on the provided MVP outline, the “Settings” page in the Clinic Owner’s Curis by Citrus account serves as the central configuration hub for foundational operational preferences and platform behavior. Here's a detailed breakdown of the dynamic MVP features and functionalities of this section:
+________________________________________
+1. Working Hours Configuration
+
+•	Set Clinic Working Days and Hours:
+o	Define opening and closing times for each day of the week.
+o	Allow special adjustments for weekends or public holidays.
+•	Appointment Dependency: These hours directly influence available appointment slots system-wide.
+•	Real-time Sync: Changes take immediate effect and are reflected across staff schedules and patient booking availability.
+
+________________________________________
+2. Time Zone Management
+
+
+•	Set Default Time Zone for the clinic to standardize scheduling across the platform.
+•	Ensure all timestamps (appointments, invoices, activity logs) align with clinic’s local time.
+•	Automatically adjust for Daylight Saving Time (DST) where applicable.
+
+________________________________________
+3. Notification Settings
+
+
+•	Select Notification Recipients:
+o	Clinic Owner only
+o	All staff (Doctors, Receptionists)
+o	Custom combinations
+•	Choose Notification Triggers:
+o	New appointment requests
+o	Appointment cancellations/reschedules
+o	Payment confirmations or failures
+o	Upcoming billing cycle alerts
+•	Enable/Disable Channels:
+o	Email
+o	SMS (if integrated)
+o	In-app notifications
+
+________________________________________
+4. Payment & Billing Preferences
+
+
+•	Set or Update Service Charge Payment Frequency:
+o	Weekly, Bi-weekly, Monthly
+•	Configure Auto-Reconciliation Preferences:
+o	Enable or disable auto-matching of payments to invoices
+•	Link or Unlink Payment Methods (e.g., M-Pesa Till/Paybill, upcoming PayPal, Bank)
+
+________________________________________
+5. Data Privacy & Permissions Control
+
+
+•	Define staff access limits to sensitive areas such as billing, patient records, or reports.
+•	Toggle editable permissions for:
+o	Doctor accounts (e.g., access to own appointments and patients only)
+o	Receptionist accounts (e.g., limited to appointments and billing)
+
+________________________________________
+6. Clinic Profile Update Tools
+
+
+•	Update:
+o	Clinic name, logo, physical address, and contact details
+o	Clinic specialties and primary services
+•	Changes reflect in patient-facing materials such as invoices and booking confirmations.
+
+________________________________________
+7. Backup & Data Export Preferences
+
+
+•	Toggle automatic monthly data export of financial or appointment records.
+•	Choose export formats (CSV or PDF).
+•	Set preferred email for backup file delivery or download directly from the dashboard.
+
+________________________________________
+8. Language & Localization (Optional for Future MVP Expansion)
+
+
+•	Ability to select preferred language for the clinic’s dashboard (English default).
+•	Adapt date formats (e.g., DD/MM/YYYY vs. MM/DD/YYYY) based on region.
+
+________________________________________
+Audit & Security Layer
+
+
+•	All changes made in Settings are logged and timestamped with:
+o	User ID (e.g., Clinic Owner or Staff)
+o	Change Details
+o	Before and After values
+•	Password Reset & Security Options:
+o	Update account login credentials
+o	Enable two-factor authentication (future-ready)
+
+________________________________________
+Summary of Settings Utility
+
+
+•	Centralized Control: Clinic Owner can govern platform behavior from a single settings panel.
+•	Operational Efficiency: System rules and constraints set here influence multiple modules (appointments, payments, notifications).
+•	Scalability Ready: Designed to scale with added modules and integrations over time (e.g., more payment options, new services, multi-location clinics).
+
+
+________________________________________
+
+
+

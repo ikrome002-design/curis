@@ -1,0 +1,249 @@
+flowchart TD
+    %% Entry Points
+    Dashboard[Dashboard] --> PatientRecordsPage[Patient Records Page<br/>📋 Medical Records Hub]
+    AppointmentsPage[Appointments Page] --> PatientRecordsPage
+    ConsultationsPage[Consultations Page] --> PatientRecordsPage
+    
+    %% Main Page Structure
+    PatientRecordsPage --> SearchAccess[Patient Search & Access<br/>Quick Lookup System]
+    PatientRecordsPage --> MedicalHistory[Medical History View<br/>Chronological Display]
+    PatientRecordsPage --> NotesEditor[Clinical Notes Editor<br/>Diagnosis & Observations]
+    PatientRecordsPage --> DocumentAttach[Document Attachments<br/>Lab Results & Scans]
+    PatientRecordsPage --> PrescriptionOverview[Prescription Overview<br/>Medication History]
+    PatientRecordsPage --> AllergiesPanel[Allergies & Conditions<br/>Risk Awareness Panel]
+    PatientRecordsPage --> ConsultIntegration[Consultation Integration<br/>Live Session Links]
+    PatientRecordsPage --> ActivityTimeline[Activity Timeline<br/>Edit History & Audit]
+    PatientRecordsPage --> CollabComments[Collaboration Comments<br/>Team Communication]
+    
+    %% Patient Search & Access
+    SearchAccess --> SearchBar[Autocomplete Search Bar<br/>Real-time patient matching]
+    SearchAccess --> FilterOptions[Filter Options<br/>Advanced search]
+    SearchAccess --> RecentlyAccessed[Recently Accessed<br/>Quick access panel]
+    
+    SearchBar --> SearchFeatures[Search Features:]
+    SearchFeatures --> TypeAhead[Type-ahead Suggestions<br/>As you type results]
+    SearchFeatures --> PatientID[Search by ID<br/>Direct patient lookup]
+    SearchFeatures --> PatientName[Search by Name<br/>Partial match support]
+    
+    FilterOptions -->|Click| FilterModal[Filter Modal<br/>Advanced Criteria]
+    FilterModal --> FilterCriteria[Filter By:]
+    FilterCriteria --> NameFilter[Name<br/>Text input]
+    FilterCriteria --> GenderFilter[Gender<br/>Male/Female/Other]
+    FilterCriteria --> AgeFilter[Age Range<br/>Min-Max slider]
+    FilterCriteria --> VisitHistoryFilter[Visit History<br/>Date range picker]
+    FilterCriteria --> ChronicCondFilter[Chronic Conditions<br/>Condition selector]
+    FilterModal --> ApplyFiltersBtn[Apply Filters<br/>Execute search]
+    
+    ApplyFiltersBtn -->|Click| FilteredResults[Filtered Patient List<br/>Matching results]
+    FilteredResults -->|Select Patient| LoadPatientRecord[Load Patient Record<br/>Full medical history]
+    
+    RecentlyAccessed --> RecentPatientTiles[Recent Patient Tiles<br/>Last 10 accessed]
+    RecentPatientTiles -->|Click Tile| LoadPatientRecord
+    
+    %% Medical History View
+    LoadPatientRecord --> MedicalHistory
+    MedicalHistory --> HistoryEntries[Chronological Entries<br/>Expandable list]
+    HistoryEntries --> ConsultationEntry[Past Consultations<br/>Session records]
+    HistoryEntries --> DiagnosisEntry[Diagnoses History<br/>Medical conditions]
+    HistoryEntries --> PrescriptionEntry[Prescriptions Issued<br/>Medication timeline]
+    HistoryEntries --> NotesEntry[Medical Notes<br/>Doctor observations]
+    
+    ConsultationEntry -->|Click Expand| ConsultDetailModal[Consultation Detail Modal<br/>Full session view]
+    ConsultDetailModal --> ConsultDetails[Session Details:]
+    ConsultDetails --> ConsultDate[Date & Time<br/>When conducted]
+    ConsultDetails --> ConsultType[Type<br/>Online/In-clinic]
+    ConsultDetails --> ConsultNotes[Session Notes<br/>Doctor's observations]
+    ConsultDetails --> ConsultDiagnosis[Diagnosis Made<br/>Medical findings]
+    ConsultDetails --> ConsultPrescription[Prescriptions Issued<br/>Medications given]
+    
+    DiagnosisEntry -->|Click Expand| DiagnosisModal[Diagnosis History Modal<br/>Condition timeline]
+    DiagnosisModal --> DiagnosisTimeline[Diagnosis Timeline:]
+    DiagnosisTimeline --> ChronicConditions[Chronic Conditions<br/>Long-term ailments]
+    DiagnosisTimeline --> AcuteConditions[Acute Conditions<br/>Short-term issues]
+    DiagnosisTimeline --> ResolvedConditions[Resolved Conditions<br/>Past ailments]
+    
+    %% Clinical Notes Editor
+    NotesEditor --> AddNotesBtn[Add Clinical Notes<br/>New entry button]
+    AddNotesBtn -->|Click| NotesEditorModal[Notes Editor Modal<br/>Rich text interface]
+    
+    NotesEditorModal --> EditorFeatures[Editor Features:]
+    EditorFeatures --> RichTextTools[Rich Text Formatting<br/>Bold/Italic/Lists/Headers]
+    EditorFeatures --> DiagnosisInput[Diagnosis Entry<br/>Structured input]
+    EditorFeatures --> SymptomsDoc[Symptoms Documentation<br/>Patient complaints]
+    EditorFeatures --> ObservationsField[Clinical Observations<br/>Doctor findings]
+    EditorFeatures --> TreatmentPlan[Treatment Plan<br/>Care strategy]
+    EditorFeatures --> KeywordTags[Keyword Tagging<br/>Chronic/Acute/Follow-up]
+    
+    DiagnosisInput --> DiagnosisDropdown[Diagnosis Selector<br/>ICD-10 lookup]
+    DiagnosisInput --> CustomDiagnosis[Custom Diagnosis<br/>Free text option]
+    
+    NotesEditorModal --> NotesActions[Editor Actions:]
+    NotesActions --> SaveDraftBtn[Save as Draft<br/>Continue later]
+    NotesActions --> SaveFinalBtn[Save & Finalize<br/>Complete entry]
+    NotesActions --> CancelBtn[Cancel<br/>Discard changes]
+    
+    SaveFinalBtn -->|Click| SaveToRecord[Save to Patient Record<br/>Permanent storage]
+    SaveToRecord -->|Updates| MedicalHistoryRefresh[Refresh Medical History<br/>Show new entry]
+    SaveToRecord -->|Syncs| DashboardNotification[Dashboard Notification<br/>Activity update]
+    
+    %% Document Attachments
+    DocumentAttach --> UploadBtn[Upload Document<br/>Add files button]
+    UploadBtn -->|Click| UploadModal[File Upload Modal<br/>Document interface]
+    
+    UploadModal --> UploadFeatures[Upload Features:]
+    UploadFeatures --> DragDrop[Drag & Drop Zone<br/>Drop files here]
+    UploadFeatures --> BrowseFiles[Browse Files<br/>File selector]
+    UploadFeatures --> CategorySelect[Category Selection<br/>Document type]
+    
+    CategorySelect --> DocCategories[Document Categories:]
+    DocCategories --> LabResults[Lab Results<br/>Blood tests, etc.]
+    DocCategories --> ImagingScans[Imaging/Scans<br/>X-rays, MRI, CT]
+    DocCategories --> ReferralLetters[Referral Letters<br/>Specialist notes]
+    DocCategories --> OtherDocs[Other Documents<br/>Miscellaneous]
+    
+    UploadModal --> FileValidation[File Validation:]
+    FileValidation --> FormatCheck[Format Check<br/>PDF/JPG/PNG only]
+    FileValidation --> SizeCheck[Size Check<br/>Max 10MB per file]
+    FileValidation --> PreviewThumb[Preview Thumbnail<br/>Visual confirmation]
+    
+    UploadModal --> UploadConfirm[Upload & Attach<br/>Confirm button]
+    UploadConfirm -->|Success| DocListUpdate[Document List Update<br/>Show new files]
+    
+    DocumentAttach --> ViewDocs[View Documents<br/>Attached files list]
+    ViewDocs --> DocGrid[Document Grid<br/>Categorized display]
+    DocGrid -->|Click Document| DocViewer[Document Viewer Modal<br/>Full screen view]
+    
+    DocViewer --> ViewerFeatures[Viewer Features:]
+    ViewerFeatures --> ZoomControls[Zoom Controls<br/>In/Out/Fit]
+    ViewerFeatures --> PageNav[Page Navigation<br/>Multi-page support]
+    ViewerFeatures --> DownloadBtn[Download<br/>Save locally]
+    ViewerFeatures --> PrintBtn[Print<br/>Physical copy]
+    ViewerFeatures --> ShareBtn[Share<br/>With other doctors]
+    
+    %% Prescription Overview
+    PrescriptionOverview --> PrescriptionList[Prescription History<br/>All medications]
+    PrescriptionList --> PrescriptionItem[Each Prescription Shows:]
+    PrescriptionItem --> MedName[Medication Name<br/>Drug identifier]
+    PrescriptionItem --> Dosage[Dosage & Frequency<br/>Administration details]
+    PrescriptionItem --> Duration[Duration<br/>Treatment period]
+    PrescriptionItem --> PrescribedBy[Prescribed By<br/>Doctor name]
+    PrescriptionItem --> DateIssued[Date Issued<br/>Prescription date]
+    
+    PrescriptionItem -->|Click| PrescriptionDetailModal[Prescription Detail Modal<br/>Complete information]
+    PrescriptionDetailModal --> PrescDetails[Prescription Details:]
+    PrescDetails --> FullMedInfo[Complete Medication Info<br/>Name/Form/Strength]
+    PrescDetails --> Instructions[Instructions<br/>How to take]
+    PrescDetails --> DoctorNotes[Doctor's Notes<br/>Special instructions]
+    PrescDetails --> RefillInfo[Refill Information<br/>Remaining refills]
+    
+    PrescriptionDetailModal --> PrescActions[Prescription Actions:]
+    PrescActions --> ReissueBtn[Re-issue Prescription<br/>Duplicate for refill]
+    PrescActions --> ModifyBtn[Modify & Re-issue<br/>Adjust dosage]
+    PrescActions --> ViewPDFBtn[View PDF<br/>Original prescription]
+    
+    ReissueBtn -->|Click| PrescriptionPage[Navigate to Prescriptions<br/>Pre-filled form]
+    
+    %% Allergies & Conditions Panel
+    AllergiesPanel --> AllergyDisplay[Allergy Display<br/>Known allergies list]
+    AllergiesPanel --> ConditionsDisplay[Chronic Conditions<br/>Long-term ailments]
+    AllergiesPanel --> EditAllergyBtn[Edit Allergies<br/>Update button]
+    
+    EditAllergyBtn -->|Click| AllergyModal[Allergy Management Modal<br/>Edit interface]
+    AllergyModal --> AllergyFeatures[Allergy Features:]
+    AllergyFeatures --> AddAllergy[Add New Allergy<br/>Search/Select]
+    AllergyFeatures --> AllergyType[Allergy Type<br/>Drug/Food/Environmental]
+    AllergyFeatures --> Severity[Severity Level<br/>Mild/Moderate/Severe]
+    AllergyFeatures --> Reaction[Reaction Type<br/>Rash/Anaphylaxis/Other]
+    AllergyFeatures --> RemoveAllergy[Remove Allergy<br/>Delete option]
+    
+    AllergyModal --> SaveAllergies[Save Changes<br/>Update record]
+    SaveAllergies -->|Updates| RiskAlertUpdate[Update Risk Alerts<br/>Top of record warning]
+    
+    ConditionsDisplay -->|Click| ConditionModal[Condition Editor Modal<br/>Manage conditions]
+    ConditionModal --> ConditionList[Condition Management:]
+    ConditionList --> Diabetes[Diabetes<br/>Type/Control status]
+    ConditionList --> Hypertension[Hypertension<br/>BP ranges]
+    ConditionList --> Asthma[Asthma<br/>Severity/Triggers]
+    ConditionList --> CustomCondition[Add Custom<br/>Other conditions]
+    
+    %% Consultation Integration
+    ConsultIntegration --> ActiveConsultCheck[Active Consultation Check<br/>Is session live?]
+    ActiveConsultCheck -->|If Active| SplitViewBtn[Split View Button<br/>Open alongside consultation]
+    ActiveConsultCheck -->|If Scheduled Today| QuickStartBtn[Quick Start Consultation<br/>Direct link]
+    
+    SplitViewBtn -->|Click| SplitViewMode[Split View Mode<br/>Record + Consultation]
+    SplitViewMode --> LiveUpdateCapability[Live Update Features:]
+    LiveUpdateCapability --> RealtimeNotes[Real-time Notes<br/>Update during session]
+    LiveUpdateCapability --> QuickPrescribe[Quick Prescribe<br/>Issue medications]
+    LiveUpdateCapability --> InstantSave[Instant Save<br/>Auto-sync changes]
+    
+    QuickStartBtn -->|Click| ConsultationsPage
+    
+    %% Activity Timeline
+    ActivityTimeline --> TimelineView[Timeline View<br/>Chronological edits]
+    TimelineView --> EditEntry[Each Edit Entry Shows:]
+    EditEntry --> WhoEdited[Editor Name<br/>Doctor/Staff ID]
+    EditEntry --> WhatChanged[Changes Made<br/>Field modifications]
+    EditEntry --> WhenChanged[Timestamp<br/>Date/Time of edit]
+    EditEntry --> ChangeReason[Change Reason<br/>If provided]
+    
+    TimelineView --> FilterTimeline[Filter Timeline<br/>Search options]
+    FilterTimeline --> DateRangeFilter[Date Range<br/>Period selector]
+    FilterTimeline --> EditorFilter[Filter by Editor<br/>Specific user]
+    FilterTimeline --> FieldFilter[Filter by Field<br/>Specific data type]
+    
+    %% Collaboration Comments
+    CollabComments --> CommentThread[Comment Thread<br/>Discussion panel]
+    CommentThread --> AddCommentBtn[Add Comment<br/>New discussion]
+    
+    AddCommentBtn -->|Click| CommentModal[Comment Modal<br/>Discussion interface]
+    CommentModal --> CommentFeatures[Comment Features:]
+    CommentFeatures --> TextEditor[Text Editor<br/>Rich text support]
+    CommentFeatures --> MentionSystem[@Mention System<br/>Tag doctors/owner]
+    CommentFeatures --> AttachRef[Attach Reference<br/>Link to specific data]
+    CommentFeatures --> Priority[Priority Level<br/>Normal/Urgent]
+    
+    MentionSystem --> MentionDropdown[Mention Dropdown<br/>User selector]
+    MentionDropdown --> DoctorList[Doctor List<br/>All clinic doctors]
+    MentionDropdown --> OwnerOption[Clinic Owner<br/>Administrative tag]
+    
+    CommentModal --> PostComment[Post Comment<br/>Submit button]
+    PostComment -->|Triggers| NotificationSend[Send Notifications<br/>Alert mentioned users]
+    NotificationSend --> AlertsCollabPage[Alerts & Collaboration<br/>Notification appears]
+    
+    CommentThread --> ReplySystem[Reply System<br/>Threaded discussions]
+    ReplySystem --> ReplyBtn[Reply Button<br/>On each comment]
+    ReplyBtn -->|Click| ReplyEditor[Reply Editor<br/>Inline response]
+    
+    %% Cross-Page Synchronization
+    PatientRecordsPage -.->|Real-time Sync| DashboardActivity[Dashboard Activity<br/>Recent patients update]
+    PatientRecordsPage -.->|Notes Added| ConsultationNotes[Consultation Notes<br/>Session documentation]
+    PatientRecordsPage -.->|Prescription View| PrescriptionHistory[Prescription Page<br/>Medication sync]
+    PatientRecordsPage -.->|Comments Made| AlertsNotification[Alerts Page<br/>Team notifications]
+    
+    %% Navigation Options
+    PatientRecordsPage --> NavigationMenu[Navigation Menu]
+    NavigationMenu --> BackToDashboard[Back to Dashboard<br/>Home link]
+    NavigationMenu --> ToAppointments[To Appointments<br/>Schedule view]
+    NavigationMenu --> ToConsultations[To Consultations<br/>Session management]
+    NavigationMenu --> ToPrescriptions[To Prescriptions<br/>Medication management]
+    
+    %% Access Control
+    PatientRecordsPage --> AccessControl[Access Control<br/>Permission boundaries]
+    AccessControl --> CanView[Can View:<br/>Assigned patients only]
+    AccessControl --> CanEdit[Can Edit:<br/>Medical fields/Notes]
+    AccessControl --> CannotDelete[Cannot Delete:<br/>Any records]
+    AccessControl --> AuditLog[All Edits:<br/>Logged with doctor ID]
+    
+    %% Styling
+    classDef pageStyle fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef modalStyle fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef actionStyle fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    classDef syncStyle fill:#fce4ec,stroke:#880e4f,stroke-width:2px,stroke-dasharray: 5 5
+    classDef alertStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    
+    class PatientRecordsPage,Dashboard,AppointmentsPage,ConsultationsPage,PrescriptionPage,AlertsCollabPage pageStyle
+    class FilterModal,ConsultDetailModal,DiagnosisModal,NotesEditorModal,UploadModal,DocViewer,PrescriptionDetailModal,AllergyModal,ConditionModal,CommentModal modalStyle
+    class AddNotesBtn,UploadBtn,EditAllergyBtn,QuickStartBtn,AddCommentBtn,SaveFinalBtn,UploadConfirm,ReissueBtn,PostComment actionStyle
+    class DashboardActivity,ConsultationNotes,PrescriptionHistory,AlertsNotification syncStyle
+    class RiskAlertUpdate,NotificationSend alertStyle

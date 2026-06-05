@@ -1,0 +1,134 @@
+flowchart TD
+    %% Notifications Main Hub
+    NOT[🔔 NOTIFICATIONS CENTER<br/>Real-time Command Center<br/>Operational Awareness Hub]
+    
+    %% Navigation from Dashboard
+    DASH[🏥 Dashboard] --> NOT
+    
+    %% Real-Time Alert Center Section
+    NOT --> RTA[🚨 Real-Time Alert Center<br/>Operational Awareness<br/>Critical Notifications]
+    RTA --> RTAP[💳 Payment Alert Panel<br/>Failed Payment Tracking]
+    RTA --> RTAA[📅 Appointment Alert Panel<br/>New Booking Notifications]
+    RTA --> RTAB[💰 Billing Cycle Alert Panel<br/>Service Charge Reminders]
+    
+    RTAP --> RTAPM[💳 Payment Alert Modal<br/>🚨 FAILED PAYMENT DETAILS<br/>⚠️ High Priority Alert<br/>📋 Transaction Information:<br/>Patient: Sarah Johnson<br/>Amount: KES 2,500<br/>Service: General Consultation<br/>Payment Method: M-Pesa<br/>Failure Reason: Insufficient Funds<br/>Attempt Time: 14:32 Today<br/>Invoice ID: INV-2024-001247<br/>📞 Patient Contact:<br/>Phone: +254-XXX-XXXX<br/>Email: sarah.j@email.com<br/>🔄 Retry Options:<br/>• Different Payment Method<br/>• Reduced Amount<br/>• Payment Plan<br/>📊 Payment History:<br/>Previous Attempts: 2<br/>Last Successful: 15 days ago<br/>Average Payment: KES 1,800<br/>💡 Recommended Actions:<br/>• Contact patient within 2 hours<br/>• Offer payment alternatives<br/>• Schedule follow-up consultation<br/>Action Buttons:<br/>[Contact Patient] [Retry Payment] [Create Payment Plan] [View Full History] [Mark Resolved]]
+    
+    RTAA --> RTAAM[📅 Appointment Alert Modal<br/>📋 NEW APPOINTMENT REQUEST<br/>🔔 Medium Priority Alert<br/>👤 Patient Information:<br/>Name: Michael Chen<br/>Phone: +254-XXX-XXXX<br/>Type: New Patient<br/>📋 Appointment Details:<br/>Service: General Consultation<br/>Preferred Date: Tomorrow, 10:00 AM<br/>Duration: 30 minutes<br/>Special Notes: Follow-up for blood pressure<br/>👨‍⚕️ Doctor Assignment:<br/>Requested: Dr. Sarah Johnson<br/>Alternative: Dr. Michael Wilson<br/>Availability Status: ✅ Available<br/>📊 Booking Context:<br/>Booking Method: Patient Portal<br/>Time Requested: 30 minutes ago<br/>Previous Visits: 0 (New Patient)<br/>💡 Auto-Suggestions:<br/>• Confirm with Dr. Sarah<br/>• Send confirmation SMS<br/>• Prepare new patient forms<br/>Action Buttons:<br/>[Confirm Appointment] [Assign Different Doctor] [Reschedule] [Request More Info] [Auto-Confirm]]
+    
+    RTAB --> RTABM[💰 Billing Cycle Alert Modal<br/>💳 UPCOMING SERVICE CHARGE DEDUCTION<br/>🔔 Low Priority Reminder<br/>📊 Billing Period Information:<br/>Current Cycle: Weekly (Monday-Sunday)<br/>Cycle End: In 2 days (Sunday)<br/>Next Deduction: Monday, 9:00 AM<br/>💰 Financial Overview:<br/>Total Revenue This Week: KES 45,600<br/>Curis Service Fee (20%): KES 9,120<br/>Net Clinic Income: KES 36,480<br/>📈 Comparison:<br/>Last Week: KES 42,300 (+7.8%)<br/>Monthly Average: KES 41,200<br/>💳 Payment Method:<br/>Auto-Deduction: M-Pesa (***-XXX-789)<br/>Backup Method: Bank Transfer<br/>Account Status: ✅ Active<br/>📋 Transaction Details:<br/>Reference: AUTO-WK-2024-47<br/>Processing Time: 5-10 minutes<br/>Receipt: Auto-generated<br/>⚙️ Settings Options:<br/>• Change payment frequency<br/>• Update payment method<br/>• View payment history<br/>Action Buttons:<br/>[View Details] [Change Settings] [Download Receipt] [Contact Support] [Acknowledge]]
+    
+    %% Internal Clinic Notifications Section
+    NOT --> ICN[📢 Internal Notifications<br/>Staff Communication<br/>Clinic Announcements]
+    ICN --> ICNS[📣 Staff Announcements<br/>Policy/Schedule Updates]
+    ICN --> ICNA[📅 Appointment Reminders<br/>Staff Schedule Notifications]
+    ICN --> ICNSH[⏰ Shift Notifications<br/>Schedule Change Alerts]
+    
+    ICNS --> ICNSM[📣 Staff Announcements Modal<br/>📢 CREATE CLINIC ANNOUNCEMENT<br/>🎯 Announcement Details:<br/>Title: [Enter announcement title]<br/>Message: [Rich text editor area]<br/>Priority Level:<br/>○ High (Urgent - Red badge)<br/>○ Medium (Important - Yellow badge)<br/>○ Low (Informational - Blue badge)<br/>📤 Recipient Selection:<br/>☑️ All Staff Members<br/>☐ Doctors Only<br/>☐ Receptionists Only<br/>☐ Custom Selection:<br/>  ☐ Dr. Sarah Johnson<br/>  ☐ Dr. Michael Wilson<br/>  ☐ Receptionist Mary<br/>  ☐ Receptionist John<br/>📅 Scheduling Options:<br/>○ Send Immediately<br/>○ Schedule for Later:<br/>  Date: [Date picker]<br/>  Time: [Time picker]<br/>🔔 Delivery Preferences:<br/>☑️ In-App Notification<br/>☑️ Email Notification<br/>☐ SMS Notification<br/>📋 Additional Options:<br/>☑️ Require Read Receipt<br/>☐ Allow Staff Replies<br/>☐ Pin to Top<br/>☐ Auto-Delete After: [Days]<br/>📊 Preview Section:<br/>[Live preview of announcement]<br/>Action Buttons:<br/>[Send Now] [Schedule] [Save Draft] [Preview] [Cancel]]
+    
+    ICNA --> ICNAM[📅 Appointment Reminders Modal<br/>⏰ STAFF APPOINTMENT REMINDERS<br/>📋 Today's Schedule Reminders:<br/>👨‍⚕️ Dr. Sarah Johnson:<br/>• 09:00 AM - Michael Chen (General Consultation)<br/>• 10:30 AM - Lisa Wong (Follow-up)<br/>• 02:00 PM - Peter Kim (Blood Test Review)<br/>• 04:00 PM - Jane Doe (New Patient)<br/>👨‍⚕️ Dr. Michael Wilson:<br/>• 08:30 AM - Robert Smith (Pediatric Checkup)<br/>• 11:00 AM - Alice Brown (Vaccination)<br/>• 03:30 PM - David Lee (Consultation)<br/>👩‍💼 Reception Staff:<br/>• Reminder: 5 new patients need registration forms<br/>• Follow-up: 3 pending payment confirmations<br/>• Task: Update patient contact information<br/>⚙️ Reminder Settings:<br/>Send Reminders:<br/>○ 24 hours before<br/>○ 2 hours before<br/>○ 30 minutes before<br/>Notification Method:<br/>☑️ In-App Alert<br/>☑️ Email<br/>☐ SMS<br/>📊 Staff Response Tracking:<br/>• Dr. Sarah: ✅ Acknowledged (2 min ago)<br/>• Dr. Michael: ⏳ Pending<br/>• Mary (Reception): ✅ Acknowledged (5 min ago)<br/>Action Buttons:<br/>[Send Reminder Now] [Update Schedule] [Staff Response Log] [Settings] [Close]]
+    
+    ICNSH --> ICNSHM[⏰ Shift Notifications Modal<br/>📅 SCHEDULE CHANGE MANAGEMENT<br/>🔄 Recent Schedule Changes:<br/>📅 Today's Changes:<br/>• Dr. Sarah Johnson: Extended hours until 7:00 PM<br/>  Reason: Emergency patient<br/>  Status: ✅ Confirmed<br/>• Receptionist John: Started 1 hour early<br/>  Reason: Staff shortage<br/>  Status: ✅ Approved<br/>📅 Upcoming Changes (Next 7 Days):<br/>• Monday: Dr. Michael on leave (morning)<br/>  Replacement: Dr. Sarah (double shift)<br/>  Status: ⏳ Pending confirmation<br/>• Wednesday: New staff orientation<br/>  Time: 2:00 PM - 4:00 PM<br/>  Affected: All reception staff<br/>  Status: 📋 Planned<br/>🔔 Notification Preferences:<br/>Send Alerts For:<br/>☑️ Schedule Extensions<br/>☑️ Emergency Changes<br/>☑️ Staff Replacements<br/>☑️ Leave Approvals<br/>☐ Minor Adjustments<br/>Alert Recipients:<br/>☑️ Affected Staff Only<br/>☐ All Staff<br/>☐ Clinic Owner Only<br/>📊 Impact Analysis:<br/>• Patient Appointments Affected: 12<br/>• Revenue Impact: KES 18,500<br/>• Staff Overtime Hours: 4.5<br/>Action Buttons:<br/>[Approve Changes] [Request Modification] [Send Notifications] [View Calendar] [Cancel Changes]]
+    
+    %% Notification Settings Section
+    NOT --> NS[⚙️ Notification Settings<br/>Alert Configuration<br/>Preference Management]
+    NS --> NSP[🎛️ Preference Panel<br/>Alert Type Toggles]
+    NS --> NSC[📱 Channel Selection<br/>App/Email/SMS Options]
+    NS --> NSF[🏷️ Priority Filters<br/>High/Medium/Low Sorting]
+    
+    NSP --> NSPM[🎛️ Notification Preferences Modal<br/>⚙️ ALERT CONFIGURATION PANEL<br/>💳 Payment & Financial Alerts:<br/>☑️ Failed Payment Attempts<br/>☑️ Successful Payments<br/>☑️ Overdue Invoices<br/>☑️ Service Charge Deductions<br/>☐ Daily Revenue Summary<br/>☐ Weekly Financial Reports<br/>📅 Appointment Alerts:<br/>☑️ New Appointment Requests<br/>☑️ Appointment Cancellations<br/>☑️ No-show Notifications<br/>☐ Appointment Confirmations<br/>☐ Reschedule Requests<br/>👥 Staff Alerts:<br/>☑️ Staff Inactivity (>3 days)<br/>☑️ Performance Issues<br/>☑️ Leave Requests<br/>☐ Daily Activity Summary<br/>☐ Staff Login/Logout<br/>🏥 System Alerts:<br/>☑️ System Maintenance<br/>☑️ Security Issues<br/>☑️ Data Backup Status<br/>☐ Software Updates<br/>☐ Integration Errors<br/>📊 Alert Frequency:<br/>○ Real-time (Immediate)<br/>○ Batched (Every 30 minutes)<br/>○ Daily Summary (End of day)<br/>○ Custom Frequency<br/>🔇 Do Not Disturb:<br/>Start Time: [Time picker]<br/>End Time: [Time picker]<br/>Days: [Weekday selector]<br/>Action Buttons:<br/>[Save Preferences] [Reset to Default] [Test Notifications] [Export Settings] [Cancel]]
+    
+    NSC --> NSCM[📱 Channel Selection Modal<br/>📡 NOTIFICATION DELIVERY CHANNELS<br/>📱 In-App Notifications:<br/>☑️ Enabled<br/>Display Duration: [5] seconds<br/>Sound Alert: ☑️ Enabled<br/>Badge Counter: ☑️ Show on icon<br/>Position: Top-right corner<br/>📧 Email Notifications:<br/>☑️ Enabled<br/>Primary Email: owner@clinic.com<br/>Backup Email: [Optional email]<br/>Email Format:<br/>○ HTML (Rich formatting)<br/>○ Plain Text<br/>Frequency: ○ Immediate ○ Daily Digest<br/>📱 SMS Notifications:<br/>☑️ Enabled<br/>Primary Phone: +254-XXX-XXXX<br/>Backup Phone: [Optional phone]<br/>SMS Provider: Safaricom<br/>International: ☐ Enabled<br/>🔔 Push Notifications (Mobile App):<br/>☑️ Enabled<br/>Device Registration: ✅ Active<br/>Sound: Default clinic tone<br/>Vibration: ☑️ Enabled<br/>📊 Delivery Preferences:<br/>High Priority: All channels<br/>Medium Priority: In-app + Email<br/>Low Priority: In-app only<br/>📈 Channel Performance:<br/>Email Delivery Rate: 98.5%<br/>SMS Delivery Rate: 99.2%<br/>In-app View Rate: 87.3%<br/>Action Buttons:<br/>[Save Channels] [Test All Channels] [View Delivery Stats] [Reset] [Cancel]]
+    
+    NSF --> NSFM[🏷️ Priority Filter Modal<br/>🎯 NOTIFICATION PRIORITY SYSTEM<br/>🔴 HIGH PRIORITY (Critical):<br/>Triggers:<br/>☑️ Payment Failures (>KES 5,000)<br/>☑️ System Security Alerts<br/>☑️ Staff Emergency Situations<br/>☑️ Patient Safety Alerts<br/>Display: Red badge, sound alert<br/>Response Time: Immediate action required<br/>Auto-Escalation: After 15 minutes<br/>🟡 MEDIUM PRIORITY (Important):<br/>Triggers:<br/>☑️ New Appointment Requests<br/>☑️ Schedule Changes<br/>☑️ Service Charge Reminders<br/>☑️ Staff Performance Alerts<br/>Display: Yellow badge, soft notification<br/>Response Time: Within 2 hours<br/>Auto-Escalation: After 4 hours<br/>🔵 LOW PRIORITY (Informational):<br/>Triggers:<br/>☑️ Daily Activity Summary<br/>☑️ System Updates<br/>☑️ General Announcements<br/>☑️ Marketing Messages<br/>Display: Blue badge, no sound<br/>Response Time: When convenient<br/>Auto-Escalation: None<br/>⚙️ Filter Settings:<br/>Show Only:<br/>○ All Priorities<br/>○ High + Medium<br/>○ High Only<br/>○ Custom Selection<br/>📊 Priority Statistics:<br/>Today: High(3) Medium(8) Low(12)<br/>Week: High(15) Medium(45) Low(87)<br/>🔄 Auto-Classification Rules:<br/>☑️ Enable smart priority detection<br/>☑️ Learn from user actions<br/>☑️ Adjust based on clinic hours<br/>Action Buttons:<br/>[Apply Filters] [Save as Default] [Reset Priorities] [View Statistics] [Cancel]]
+    
+    %% Notification History Section
+    NOT --> NH[📜 Notification History<br/>Alert Tracking<br/>Historical Records]
+    NH --> NHS[🔍 History Search<br/>Type/Staff/Date Filtering]
+    NH --> NHSM[📊 Status Management<br/>Read/Unread/Action Tags]
+    NH --> NHAT[📋 Action Tracking<br/>Response Logging]
+    
+    NHS --> NHSM_MODAL[🔍 Notification History Search Modal<br/>📋 COMPREHENSIVE NOTIFICATION LOG<br/>🔍 Search & Filter Options:<br/>Search Query: [Enter keywords...]<br/>📅 Date Range:<br/>From: [Date picker]<br/>To: [Date picker]<br/>Quick Filters:<br/>[Today] [This Week] [This Month] [Last 30 Days]<br/>🏷️ Notification Type:<br/>☐ All Types<br/>☐ Payment Alerts<br/>☐ Appointment Notifications<br/>☐ Staff Messages<br/>☐ System Alerts<br/>☐ Billing Reminders<br/>👤 Source Filter:<br/>☐ All Sources<br/>☐ System Generated<br/>☐ Staff Created<br/>☐ Patient Triggered<br/>☐ External Integration<br/>🎯 Priority Level:<br/>☐ All Priorities<br/>☐ High Priority Only<br/>☐ Medium Priority Only<br/>☐ Low Priority Only<br/>📊 Status Filter:<br/>☐ All Status<br/>☐ Unread<br/>☐ Read<br/>☐ Action Required<br/>☐ Resolved<br/>☐ Archived<br/>📋 Search Results (Last 100 matches):<br/>📅 Today, 15:45 - Payment Alert: Failed payment KES 2,500<br/>  Status: 🔴 Action Required | Priority: High<br/>  [View Details] [Mark Resolved]<br/>📅 Today, 14:30 - New Appointment: Michael Chen booking<br/>  Status: ✅ Resolved | Priority: Medium<br/>  [View Details] [Reopen]<br/>📅 Today, 12:15 - Staff Message: Dr. Sarah schedule change<br/>  Status: 👁️ Read | Priority: Low<br/>  [View Details] [Archive]<br/>📊 Summary Statistics:<br/>Total Notifications: 1,247<br/>Unread: 23 | Action Required: 8<br/>Average Response Time: 2.3 hours<br/>Action Buttons:<br/>[Export Results] [Bulk Actions] [Clear Filters] [Advanced Search] [Close]]
+    
+    NHSM --> NHSMM[📊 Status Management Modal<br/>🏷️ NOTIFICATION STATUS CONTROL<br/>📋 Status Categories:<br/>🔵 UNREAD (47 notifications)<br/>Recent unread items that need attention<br/>Auto-mark as read: After 24 hours<br/>Highlight: Blue dot indicator<br/>👁️ READ (234 notifications)<br/>Acknowledged notifications<br/>Auto-archive: After 30 days<br/>Display: Normal text<br/>⚠️ ACTION REQUIRED (12 notifications)<br/>Critical items needing response<br/>Escalation: After 4 hours<br/>Highlight: Red badge + sound<br/>✅ RESOLVED (89 notifications)<br/>Completed actions and responses<br/>Auto-archive: After 7 days<br/>Display: Green checkmark<br/>📦 ARCHIVED (865 notifications)<br/>Historical records for reference<br/>Retention: 1 year<br/>Access: Search only<br/>🔄 Bulk Status Operations:<br/>Select Multiple: ☐ Enable bulk selection<br/>Bulk Actions:<br/>• Mark as Read<br/>• Require Action<br/>• Mark as Resolved<br/>• Archive Selected<br/>• Delete Selected<br/>📊 Status Analytics:<br/>Response Rate: 94.2%<br/>Average Resolution Time: 3.1 hours<br/>Overdue Actions: 3 items<br/>⚙️ Auto-Status Rules:<br/>☑️ Auto-mark payment confirmations as resolved<br/>☑️ Auto-archive read items after 30 days<br/>☑️ Flag overdue actions after 6 hours<br/>Action Buttons:<br/>[Apply Changes] [Bulk Process] [Export Status Report] [Reset Rules] [Close]]
+    
+    NHAT --> NHATM[📋 Action Tracking Modal<br/>📊 NOTIFICATION RESPONSE ANALYTICS<br/>🎯 Action Categories:<br/>💳 Payment Actions:<br/>• Payment Retry Initiated: 15 times<br/>• Patient Contact Made: 23 times<br/>• Payment Plan Created: 8 times<br/>• Invoice Adjustment: 4 times<br/>Average Resolution Time: 2.1 hours<br/>📅 Appointment Actions:<br/>• Appointments Confirmed: 45 times<br/>• Doctor Reassigned: 12 times<br/>• Schedule Modified: 18 times<br/>• Patient Contacted: 31 times<br/>Average Response Time: 45 minutes<br/>👥 Staff Actions:<br/>• Messages Sent: 67 times<br/>• Schedule Changes: 23 times<br/>• Performance Reviews: 5 times<br/>• Training Scheduled: 3 times<br/>Average Follow-up: 1.8 hours<br/>📊 Response Performance:<br/>📈 This Week's Statistics:<br/>Total Actions Taken: 156<br/>Successful Resolutions: 142 (91%)<br/>Pending Actions: 14<br/>Overdue Items: 3<br/>📅 Response Time Trends:<br/>Monday: 1.2 hours avg.<br/>Tuesday: 2.1 hours avg.<br/>Wednesday: 1.8 hours avg.<br/>Thursday: 2.5 hours avg.<br/>Friday: 3.2 hours avg.<br/>🏆 Performance Metrics:<br/>Best Response Day: Monday<br/>Peak Alert Time: 2:00 PM - 4:00 PM<br/>Most Common Action: Patient Contact<br/>Highest Success Rate: Payment Retries (95%)<br/>📋 Action Templates:<br/>• Standard payment follow-up<br/>• Appointment confirmation<br/>• Staff schedule change<br/>• System maintenance notice<br/>Action Buttons:<br/>[Create Action Template] [Export Analytics] [Schedule Report] [Performance Review] [Close]]
+    
+    %% Automated Alerts Section
+    NOT --> AA[🤖 Automated Alerts<br/>System-Triggered Notifications<br/>Smart Monitoring]
+    AA --> AAS[🚨 System Alert Panel<br/>Auto-generated Warnings]
+    AA --> AAT[⚙️ Threshold Settings<br/>Alert Trigger Configuration]
+    
+    AAS --> AASM[🚨 System Alert Modal<br/>🤖 AUTOMATED SYSTEM ALERTS<br/>⚠️ Active System Warnings:<br/>🔴 CRITICAL ALERTS:<br/>• Server Response Time: 5.2s (Threshold: 3s)<br/>  Impact: Slow patient booking<br/>  Detected: 15 minutes ago<br/>  Auto-Action: IT support contacted<br/>  [View Details] [Escalate]<br/>• Database Connection: 2 failed attempts<br/>  Impact: Appointment sync issues<br/>  Detected: 8 minutes ago<br/>  Auto-Action: Backup system activated<br/>  [View Details] [Manual Sync]<br/>🟡 WARNING ALERTS:<br/>• Storage Space: 87% full (Threshold: 85%)<br/>  Impact: Limited file uploads<br/>  Detected: 2 hours ago<br/>  Auto-Action: Cleanup scheduled<br/>  [View Details] [Free Space Now]<br/>• Failed Login Attempts: 12 in last hour<br/>  Impact: Potential security risk<br/>  Detected: 30 minutes ago<br/>  Auto-Action: IP monitoring enabled<br/>  [View Details] [Block Suspicious IPs]<br/>🔵 INFORMATIONAL ALERTS:<br/>• System Backup: Completed successfully<br/>  Status: All data secured<br/>  Completed: 3:00 AM today<br/>  Next Backup: Tomorrow 3:00 AM<br/>  [View Backup Report]<br/>• Software Update: Available<br/>  Version: 2.4.1 → 2.4.2<br/>  Features: Bug fixes, performance improvements<br/>  Scheduled: This weekend<br/>  [View Release Notes] [Schedule Now]<br/>📊 System Health Dashboard:<br/>Server Uptime: 99.8%<br/>Response Time: 2.1s avg.<br/>Active Users: 23<br/>Data Sync Status: ✅ Normal<br/>Action Buttons:<br/>[Resolve All] [System Status] [Contact IT Support] [Schedule Maintenance] [Close]]
+    
+    AAT --> AATM[⚙️ Threshold Settings Modal<br/>🎯 ALERT TRIGGER CONFIGURATION<br/>💰 Financial Thresholds:<br/>Failed Payment Alert:<br/>Amount Threshold: KES [5,000] and above<br/>Frequency: After [2] consecutive failures<br/>Auto-Action: ☑️ Contact patient immediately<br/>Daily Revenue Drop:<br/>Percentage: [20]% below average<br/>Comparison Period: Last [30] days<br/>Auto-Action: ☑️ Generate investigation report<br/>Outstanding Balance:<br/>Amount: KES [10,000] per patient<br/>Age: [7] days overdue<br/>Auto-Action: ☑️ Send payment reminder<br/>📅 Appointment Thresholds:<br/>No-show Rate:<br/>Percentage: [15]% of daily appointments<br/>Time Period: [Weekly] average<br/>Auto-Action: ☑️ Review booking policies<br/>Booking Volume Drop:<br/>Percentage: [30]% below normal<br/>Comparison: Same day last [4] weeks<br/>Auto-Action: ☑️ Marketing alert<br/>Cancellation Rate:<br/>Percentage: [25]% of bookings<br/>Time Period: [Daily] tracking<br/>Auto-Action: ☑️ Investigate causes<br/>👥 Staff Performance Thresholds:<br/>Inactivity Alert:<br/>Duration: [3] days without login<br/>Apply to: ☑️ All staff ☐ Specific roles<br/>Auto-Action: ☑️ Send reminder + supervisor alert<br/>Patient Rating Drop:<br/>Rating: Below [4.0] stars<br/>Review Count: Minimum [5] ratings<br/>Auto-Action: ☑️ Schedule performance review<br/>🏥 System Performance Thresholds:<br/>Response Time:<br/>Threshold: [3] seconds<br/>Monitoring: ☑️ Continuous<br/>Auto-Action: ☑️ IT support notification<br/>Storage Space:<br/>Warning Level: [85]%<br/>Critical Level: [95]%<br/>Auto-Action: ☑️ Cleanup old files<br/>Action Buttons:<br/>[Save Thresholds] [Test Alerts] [Reset to Default] [Import Config] [Export Settings]]
+    
+    %% Quick Actions Panel
+    NOT --> QA[⚡ Quick Actions<br/>Instant Operations<br/>Priority Tasks]
+    QA --> QAM[📝 Mark All Read<br/>Bulk status update]
+    QA --> QAC[🔔 Create Announcement<br/>Staff communication]
+    QA --> QAR[🔄 Refresh All<br/>Update notifications]
+    QA --> QAE[📤 Export History<br/>Download records]
+    
+    %% Integration Points
+    NOT --> INT[🔗 Integration Points<br/>System Synchronization]
+    INT --> INTD[🏥 Dashboard Integration<br/>Alert widgets sync]
+    INT --> INTW[👥 Workforce Integration<br/>Staff notification sync]
+    INT --> INTA[📅 Appointments Integration<br/>Booking alert sync]
+    INT --> INTB[💰 Billing Integration<br/>Payment notification sync]
+    INT --> INTS[⚙️ Settings Integration<br/>Notification preferences sync]
+    
+    INTD --> INTDM[🏥 Dashboard Alert Widget<br/>Real-time notification counter<br/>Shows unread count badge<br/>Click to open notifications<br/>Priority color coding<br/>Last update timestamp]
+    
+    %% Navigation to Other System Pages
+    NOT --> NOTNAV[🧭 Navigation Menu]
+    NOTNAV --> NAVD[🏥 Dashboard<br/>Return to Main Hub]
+    NOTNAV --> NAVW[👥 Workforce Hub<br/>Staff Management]
+    NOTNAV --> NAVCS[🏥 Clinic Services Hub<br/>Service Management]
+    NOTNAV --> NAVA[📅 Appointments<br/>Scheduling System]
+    NOTNAV --> NAVB[💳 Billings & Payments<br/>Financial Management]
+    NOTNAV --> NAVHR[📋 Health Data & Records<br/>Patient Information]
+    NOTNAV --> NAVS[⚙️ Settings<br/>System Configuration]
+    NOTNAV --> NAVI[📊 Insights & Performance<br/>Analytics Dashboard]
+    
+    %% Return Navigation Paths
+    NAVD --> DASH
+    NAVW --> WORKFORCE[👥 Workforce Hub]
+    NAVCS --> CLINICSERVICES[🏥 Clinic Services Hub]
+    NAVA --> APPOINTMENTS[📅 Appointments]
+    NAVB --> BILLING[💳 Billings & Payments]
+    NAVHR --> HEALTHDATA[📋 Health Data & Records]
+    NAVS --> SETTINGS[⚙️ Settings]
+    NAVI --> INSIGHTS[📊 Insights & Performance]
+    
+    %% Emergency Notification System
+    NOT --> ENS[🚨 Emergency Notifications<br/>Critical Alert System]
+    ENS --> ENSE[🚑 Emergency Staff Alert<br/>Immediate staff notification]
+    ENS --> ENSP[🚨 Emergency Patient Alert<br/>Critical patient notifications]
+    ENS --> ENSS[🔒 Emergency System Alert<br/>Security/system emergencies]
+    
+    ENSE --> ENSEM[🚑 Emergency Staff Alert Modal<br/>🚨 EMERGENCY STAFF NOTIFICATION<br/>⚠️ CRITICAL SITUATION ALERT<br/>📋 Emergency Details:<br/>Type: [Dropdown: Medical Emergency/Security/Equipment Failure/Other]<br/>Location: [Clinic area/room]<br/>Severity: ○ Low ○ Medium ○ High ○ Critical<br/>Description: [Text area for details]<br/>👥 Notify Staff:<br/>☑️ All Available Staff<br/>☑️ On-Duty Doctors<br/>☑️ Reception Staff<br/>☐ Specific Staff: [Multi-select]<br/>📱 Notification Method:<br/>☑️ Instant In-App Alert<br/>☑️ SMS to All<br/>☑️ Phone Call (for Critical)<br/>☑️ Email<br/>⏰ Auto-Escalation:<br/>☑️ Call emergency services if no response in [5] minutes<br/>☑️ Contact clinic owner immediately<br/>☑️ Notify backup staff<br/>📊 Emergency Response Plan:<br/>• Step 1: Secure immediate area<br/>• Step 2: Assess situation<br/>• Step 3: Contact emergency services if needed<br/>• Step 4: Document incident<br/>Action Buttons:<br/>[Send Emergency Alert] [Call Emergency Services] [Contact Owner] [Cancel]]
+    
+    %% Real-time Update System
+    NOT --> RTS[🔄 Real-time Updates<br/>Live Notification System]
+    RTS --> RTSL[📡 Live Connection Status<br/>WebSocket connection active]
+    RTS --> RTSR[⏱️ Auto-Refresh Settings<br/>Update frequency configuration]
+    RTS --> RTSS[🔔 Sound Notifications<br/>Audio alert settings]
+    
+    %% Style definitions for visual clarity
+    classDef notificationMain fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px
+    classDef sectionBox fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef modalBox fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef alertBox fill:#ffebee,stroke:#c62828,stroke-width:2px
+    classDef actionButton fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef navigationBox fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    classDef integrationBox fill:#e0f2f1,stroke:#00695c,stroke-width:2px
+    classDef emergencyBox fill:#ffcdd2,stroke:#d32f2f,stroke-width:3px
+    
+    class NOT notificationMain
+    class RTA,ICN,NS,NH,AA sectionBox
+    class RTAPM,RTAAM,RTABM,ICNSM,ICNAM,ICNSHM,NSPM,NSCM,NSFM,NHSM_MODAL,NHSMM,NHATM,AASM,AATM modalBox
+    class RTAP,RTAA,RTAB,ICNS,ICNA,ICNSH,NSP,NSC,NSF,NHS,NHSM,NHAT,AAS,AAT alertBox
+    class QAM,QAC,QAR,QAE actionButton
+    class NOTNAV,NAVD,NAVW,NAVCS,NAVA,NAVB,NAVHR,NAVS,NAVI navigationBox
+    class INT,INTD,INTW,INTA,INTB,INTS,INTDM integrationBox
+    class ENS,ENSE,ENSP,ENSS,ENSEM emergencyBox

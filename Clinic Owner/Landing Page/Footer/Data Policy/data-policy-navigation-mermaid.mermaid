@@ -1,0 +1,72 @@
+flowchart TD
+    DataPolicy[Data Policy Home Page] --> Introduction[Introduction]
+    DataPolicy --> DataCollection[Data Collection]
+    DataPolicy --> DataUse[Data Use]
+    DataPolicy --> DataSecurity[Data Security]
+    DataPolicy --> UserRights[User Rights]
+    DataPolicy --> Compliance[Compliance]
+    DataPolicy --> Contact[Contact Information]
+    
+    Introduction --> AboutCuris[About Curis Platform]
+    Introduction --> PolicyScope[Scope of Policy]
+    Introduction --> Definitions[Key Definitions]
+    
+    DataCollection --> PatientData[Patient Data]
+    DataCollection --> StaffData[Staff & Clinic Data]
+    DataCollection --> PaymentData[Payment Data]
+    
+    PatientData --> PersonalInfo[Personal Information]
+    PatientData --> ContactDetails[Contact Details]
+    PatientData --> MedicalRecords[Medical Records]
+    PatientData --> NotificationPrefs[Notification Preferences]
+    
+    StaffData --> AccountInfo[Staff Account Information]
+    StaffData --> AccessLogs[Access & Activity Logs]
+    
+    PaymentData --> InvoiceDetails[Invoice Information]
+    PaymentData --> Transactions[Transaction History]
+    
+    DataUse --> ServiceDelivery[Service Delivery]
+    DataUse --> Personalization[Platform Personalization]
+    DataUse --> Analytics[Analytics & Performance Reports]
+    DataUse --> Communications[Automated Communications]
+    
+    Communications --> EmailUse[Email Communications]
+    Communications --> SMSUse[SMS Notifications]
+    Communications --> ThirdPartySharing[Data Sharing with Partners]
+    
+    ThirdPartySharing --> Labs[Partner Labs]
+    ThirdPartySharing --> Pharmacies[Partner Pharmacies]
+    ThirdPartySharing --> Legal[Legal Authorities]
+    
+    DataSecurity --> StorageMethods[Data Storage Methods]
+    DataSecurity --> AccessControls[Access Controls]
+    DataSecurity --> Encryption[Encryption Standards]
+    DataSecurity --> RetentionPolicy[Data Retention Policy]
+    DataSecurity --> BreachProtocol[Data Breach Response]
+    
+    AccessControls --> RoleBased[Role-Based Access]
+    AccessControls --> Authentication[Authentication Methods]
+    AccessControls --> Monitoring[System Monitoring]
+
+    RetentionPolicy --> ActiveData[Active Data]
+    RetentionPolicy --> ArchivedData[Archived/Inactivated Data]
+    RetentionPolicy --> DeletionProcess[Data Deletion Process]
+
+    UserRights --> AccessRights[Right to Access]
+    UserRights --> CorrectionRights[Right to Correct]
+    UserRights --> DeletionRights[Right to Delete]
+    UserRights --> RestrictRights[Right to Restrict Use]
+    UserRights --> PortabilityRights[Right to Data Portability]
+    
+    AccessRights --> RequestFlow[How to Request Data]
+    AccessRights --> Timeframe[Response Timeline]
+    
+    Compliance --> LocalLaws[Compliance with Local Laws]
+    Compliance --> Standards[Data Protection Standards]
+    Compliance --> Certifications[System Certifications]
+    Compliance --> AuditProcess[Internal Audit Process]
+    
+    Contact --> ContactOptions[Contact Options]
+    Contact --> DPO[Data Protection Officer Contact]
+    Contact --> ComplaintHandling[Complaint Handling Process]

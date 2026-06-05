@@ -1,0 +1,141 @@
+#### 1. **Appointment Oversight**
+
+---
+
+### **Dynamic MVP Features and Functionalities for the Appointment Oversight Page (With Clinic Owner Selection)**
+
+---
+
+### **a. Clinic Owner Selection and Appointment Dashboard Overview**
+- **Select a Clinic Owner**:  
+  - The Super Admin must first **select a clinic owner account** from a list or search bar. This selection will determine which clinic’s appointments will be visible and manageable.
+- **Real-time Summary**:  
+  - After selecting the clinic, display a **summary panel** showing the total number of appointments (Scheduled, Canceled, Completed) for that clinic.
+  - **Quick statistics** specific to the selected clinic:  
+    - Number of appointments today.
+    - Total number of appointments for the current week/month.
+    - Average wait time for appointments in the clinic.
+
+**Dynamic:** Updates automatically based on the clinic owner selected.
+
+---
+
+### **b. Appointment Filter & Search (Clinic-Specific)**
+- **Filter Options** to narrow down appointments by the selected clinic’s:  
+  - **Date Range**: Today, this week, last week, or custom date range.
+  - **Status**: Scheduled, Canceled, Completed.
+  - **Doctor**: Filter by specific doctor(s) within the selected clinic.
+  - **Patient**: Search by patient name or ID within the selected clinic.
+- **Search Bar** for fast appointment lookups (e.g., by patient or doctor name within the clinic).
+
+**Dynamic:** Filters and search results are updated based on the selected clinic.
+
+---
+
+### **c. Appointment List View (Clinic-Specific)**
+- **Appointment Grid/Table View** for the selected clinic:  
+  - **Columns Displayed**:  
+    - Patient Name  
+    - Doctor Name  
+    - Appointment Status (Scheduled, Canceled, Completed)  
+    - Appointment Date and Time  
+    - Clinic Location  
+    - Action (e.g., Force Cancel, Reschedule)
+- **Status Indicators**: Visual cues such as color-coding for appointment status:
+  - Green: Scheduled
+  - Red: Canceled
+  - Blue: Completed
+
+**Dynamic:** The appointment list refreshes based on the selected clinic and real-time changes.
+
+---
+
+### **d. Appointment Details & Management (Clinic-Specific)**
+- **View Appointment Details**:  
+  - Click on an individual appointment to see detailed information, including patient history, doctor assigned, clinic location, and status, but only for the selected clinic.
+  - Option to **Reschedule** appointments if needed within the selected clinic.
+  - **Edit Doctor Availability** directly from the appointment view for the selected clinic.
+
+**Dynamic:** Clicking any appointment within the clinic opens detailed information, which is filtered by the selected clinic.
+
+---
+
+### **e. Doctor Availability Management (Clinic-Specific)**
+- **Manual Override for Selected Clinic**:  
+  - The Super Admin can manually override a doctor’s availability for the selected clinic (e.g., block specific dates or times for that clinic).
+  - **Schedule Doctor Time Off**: Temporarily block out doctors’ schedules in the selected clinic.
+  - **Doctor Unavailability**: Mark a doctor as unavailable for a specific period, preventing appointment bookings during that time.
+
+**Dynamic:** Availability changes are instantly reflected in the selected clinic's schedule.
+
+---
+
+### **f. Force-Cancel Appointments (Clinic-Specific)**
+- **Force-Cancel Appointments**:  
+  - Option to cancel an appointment forcefully within the selected clinic (with a notification to affected users).
+  - Auto-triggered notification (Email/SMS) to:  
+    - Patient  
+    - Doctor  
+    - Receptionist/Clinic Assistant
+- **Cancellation Reason**: Required field to specify the reason for the cancellation (e.g., System Error, Doctor Unavailable).
+
+**Dynamic:** Canceled appointments in the selected clinic trigger system updates and notifications.
+
+---
+
+### **g. Appointment Notifications & Alerts (Clinic-Specific)**
+- **Automated Notifications for Clinic**:  
+  - **Appointment Reminders** sent to Patients and Doctors ahead of scheduled appointments in the selected clinic.
+  - **Changes or Cancellations** trigger automatic notifications to all relevant parties (Patient, Doctor, Receptionist/Clinic Assistant).
+- **Customizable Templates**: Ability to adjust notification templates (e.g., time, message format) for consistency within the selected clinic.
+
+**Dynamic:** Notifications are triggered instantly when any action is taken within the selected clinic.
+
+---
+
+### **h. Appointment Reports & Analytics (Clinic-Specific)**
+- **Generate Reports for Selected Clinic**:  
+  - **Appointment History**: View detailed reports for appointments in the selected clinic by date, status, or doctor.
+  - **Appointment Trends**: Visual representation (e.g., graphs) showing peak appointment times, no-show rates, and cancellations specific to the selected clinic.
+  - **Doctor Performance**: Track and analyze appointment volume per doctor in the selected clinic, including cancellations or patient feedback.
+- **Export Data**: Ability to export appointment data specific to the selected clinic to CSV or Excel for further analysis.
+
+**Dynamic:** Reports update in real-time and are specific to the selected clinic.
+
+---
+
+### **i. Integration with Clinic Owner & Staff (Clinic-Specific)**
+- **Clinic-Level View**:  
+  - Clinic Owners will be able to access and manage their specific appointments, including those of their doctors and staff.
+  - **Doctor-Specific Views**: Clinic Owners and Super Admin can filter appointments by specific doctor within the selected clinic.
+
+**Dynamic:** The clinic owner and staff will only see their specific clinic’s appointments and data.
+
+---
+
+### **j. Appointment History & Audit Logs (Clinic-Specific)**
+- **Appointment History for the Clinic**:  
+  - View past appointments in the selected clinic, including their status changes (Scheduled, Canceled, Completed).
+  - **Audit Logs** for each appointment (who scheduled, who canceled, and who rescheduled).
+- **Compliance Check**: Ensure that any cancellations or changes within the clinic are recorded for compliance and audit purposes.
+
+**Dynamic:** Logs and histories update automatically based on appointment status changes in the selected clinic.
+
+---
+
+### **Visual Layout (Firm Recommendation)**
+- **Tabbed Sections**:  
+  - **Scheduled Appointments**
+  - **Completed Appointments**
+  - **Canceled Appointments**
+  - **Reports & Analytics**
+- **Appointment Cards/Rows**: Each appointment should be displayed with status tags and actions for cancellation or rescheduling.
+- **Doctor Availability View**: Interactive calendar view showing available and unavailable times for each doctor within the selected clinic.
+
+---
+
+### **Summary**
+
+The **Appointment Oversight** page now operates within the context of the **selected clinic owner account**. Once a clinic owner is selected, all features and functionalities will dynamically focus on appointments, doctors, and staff within that specific clinic. The Super Admin can manage appointments, force cancellations, reschedule, and view real-time statistics for the clinic. These features ensure that the Super Admin has control and oversight over appointments at a **clinic-specific level**, while still allowing access to detailed reporting and auditing for compliance purposes.
+
+---

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | Curis Health</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="log_in.css">
+
+    <!-- Favicon links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\Users\Patient\Landing Page\landing_page.html">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                    alt="Curis Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+
+                <li><a
+                        href="C:\Users\nderu\Documents\Development\Product\Curis\Users\Patient\Landing Page\Create Account\create_account.html">Create
+                        Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Main Sales Copy -->
+        <section class="sales-copy">
+            <h1>Log In to Your Curis Patient Account</h1>
+            <p>Access your healthcare—securely and seamlessly.</p>
+
+            <div class="login-benefits">
+                <p>Choose how you log in:</p>
+                <ul>
+                    <li><strong>Email + Code</strong> (quick and secure)</li>
+                    <li><strong>Email + Password</strong> (familiar and simple)</li>
+                </ul>
+
+                <p>Get instant access to:</p>
+                <ul>
+                    <li>Your appointments</li>
+                    <li>Medical records</li>
+                    <li>Doctor communication</li>
+                    <li>Emergency contacts and more</li>
+                </ul>
+
+                <p class="tagline">Your health, your way—just one step away.</p>
+            </div>
+        </section>
+
+        <!-- Login Form Container -->
+        <section class="login-container">
+            <div class="form-container">
+                <!-- Common Email Input Section -->
+                <div class="email-section">
+                    <h2>Log In</h2>
+                    <form id="email-form">
+                        <div class="form-field">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="validation-icon" id="email-validation-icon"></div>
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Authentication Method Toggle -->
+                <div class="auth-method-toggle">
+                    <button type="button" id="code-auth-btn" class="auth-toggle-btn active">Email + Code</button>
+                    <button type="button" id="password-auth-btn" class="auth-toggle-btn">Email + Password</button>
+                </div>
+
+                <!-- Code Authentication Form (Default) -->
+                <div id="code-auth-section" class="auth-section">
+                    <form id="code-auth-form">
+                        <p class="auth-description">We'll send a secure 6-digit code to your email.</p>
+
+                        <div class="verification-code-container hidden" id="verification-code-container">
+                            <p class="confirmation-message">
+                                Verification code sent to <span id="masked-email"></span>
+                            </p>
+
+                            <div class="form-field">
+                                <label for="verification-code">Enter 6-digit Verification Code</label>
+                                <div class="code-input-container">
+                                    <input type="text" id="verification-code" name="verification-code" maxlength="6"
+                                        inputmode="numeric" pattern="[0-9]*" required>
+                                </div>
+                                <div class="error-message" id="verification-code-error"></div>
+                            </div>
+
+                            <div class="timer-container">
+                                <p>Code expires in: <span id="countdown-timer">10:00</span></p>
+                            </div>
+
+                            <div class="resend-container">
+                                <button type="button" id="resend-code-btn" class="link-button" disabled>Resend
+                                    Code</button>
+                                <span id="resend-timer" class="resend-timer">Available in 60s</span>
+                            </div>
+
+                            <div class="form-action">
+                                <button type="submit" id="verify-code-btn" class="primary-btn">Verify Code</button>
+                            </div>
+                        </div>
+
+                        <!-- Initial Send Code Button -->
+                        <div class="form-action" id="send-code-container">
+                            <button type="button" id="send-code-btn" class="primary-btn">Send Verification Code</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Password Authentication Form (Hidden by Default) -->
+                <div id="password-auth-section" class="auth-section hidden">
+                    <form id="password-auth-form">
+                        <div class="form-field">
+                            <label for="password">Password</label>
+                            <div class="password-input-container">
+                                <input type="password" id="password" name="password" required>
+                                <button type="button" id="toggle-password-visibility" class="toggle-password"
+                                    aria-label="Toggle password visibility">
+                                    <span class="eye-icon"></span>
+                                </button>
+                            </div>
+                            <div class="error-message" id="password-error"></div>
+                        </div>
+
+                        <div class="remember-forgot-row">
+                            <div class="remember-me">
+                                <input type="checkbox" id="remember-me" name="remember-me">
+                                <label for="remember-me">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-password" id="forgot-password-link">Forgot Password?</a>
+                        </div>
+
+                        <div class="form-action">
+                            <button type="submit" id="login-btn" class="primary-btn">Log In</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Loading Indicator (Hidden by Default) -->
+                <div id="loading-indicator" class="loading-indicator hidden">
+                    <div class="spinner"></div>
+                    <p>Processing your request...</p>
+                </div>
+            </div>
+
+            <!-- Account Creation Link -->
+            <div class="create-account-link">
+                <p>Don't have an account? <a
+                        href="C:\Users\nderu\Documents\Development\Product\Curis\Users\Patient\Landing Page\Create Account\create_account.html">Create
+                        Account</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <!-- Error Modal -->
+    <div id="error-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Error</h3>
+                <button type="button" class="close-modal" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="error-modal-message"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="primary-btn" id="error-modal-close">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Session Timeout Warning Modal -->
+    <div id="timeout-warning-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Session Timeout Warning</h3>
+                <button type="button" class="close-modal" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Your session will expire in <span id="timeout-countdown">60</span> seconds due to inactivity.</p>
+                <p>Do you want to stay logged in?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="secondary-btn" id="timeout-logout-btn">Log Out</button>
+                <button type="button" class="primary-btn" id="timeout-stay-btn">Stay Logged In</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Reset Password</h3>
+                <button type="button" class="close-modal" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Enter your email address to receive password reset instructions.</p>
+                <form id="reset-password-form">
+                    <div class="form-field">
+                        <label for="reset-email">Email Address</label>
+                        <input type="email" id="reset-email" name="reset-email" required>
+                        <div class="error-message" id="reset-email-error"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="secondary-btn" id="cancel-reset-btn">Cancel</button>
+                <button type="button" class="primary-btn" id="send-reset-btn">Send Reset Link</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-section social-media">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/@citruske" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" aria-label="X (Twitter)">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section legal-links">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\Curis\Users\Patient\Landing Page\Footer\Terms and Conditions\terms_and_conditions.html">Terms
+                            of Service</a></li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\Curis\Users\Patient\Landing Page\Footer\Privacy Policy\privacy_policy.html">Privacy
+                            Policy</a></li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\Curis\Users\Patient\Landing Page\Footer\Data Policy\data_policy.html">Data
+                            Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section help">
+                <h3>Help</h3>
+                <ul>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\Curis\Users\Patient\Landing Page\Footer\FAQ\faq.html">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-section corporate">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="log_in.js"></script>
+</body>
+
+</html>

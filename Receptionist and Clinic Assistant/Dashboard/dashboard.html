@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curis Dashboard - Receptionist & Clinic Assistant</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Check-In\check_in.html"
+                            class="nav-link">
+                            <i class="fas fa-user-check"></i>
+                            <span>Check-In</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Inbox and Alerts\inbox_and_alerts.html"
+                            class="nav-link">
+                            <i class="fas fa-inbox"></i>
+                            <span>Inbox & Alerts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Queue and Flow\queue_and_flow.html"
+                            class="nav-link">
+                            <i class="fas fa-list-check"></i>
+                            <span>Queue & Flow</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Patient Directory\patient_directory.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Patient Directory</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Receptionist Dashboard</h1>
+                    <p class="subtitle">Central Command Center</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- User Profile -->
+                    <div class="user-profile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-icon" id="profileIcon">
+                        <span class="user-name">Sarah Wanjiru</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Grid Layout -->
+            <div class="dashboard-grid">
+
+                <!-- Quick Access Panel -->
+                <section class="dashboard-card quick-access-panel">
+                    <div class="card-header">
+                        <h2><i class="fas fa-bolt"></i> Quick Access Panel</h2>
+                        <span class="subtitle">One-Click Actions</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="quick-action-buttons">
+                            <button class="quick-action-btn check-in" data-action="check-in">
+                                <i class="fas fa-user-check"></i>
+                                <span>Check-in Patient</span>
+                            </button>
+                            <button class="quick-action-btn reschedule" data-action="reschedule">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Reschedule</span>
+                            </button>
+                            <button class="quick-action-btn cancel" data-action="cancel">
+                                <i class="fas fa-times-circle"></i>
+                                <span>Cancel Appointment</span>
+                            </button>
+                            <button class="quick-action-btn assign" data-action="assign">
+                                <i class="fas fa-user-md"></i>
+                                <span>Assign to Doctor</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Daily Task Summary -->
+                <section class="dashboard-card task-summary">
+                    <div class="card-header">
+                        <h2><i class="fas fa-tasks"></i> Daily Task Summary</h2>
+                        <span class="subtitle">Auto-Generated Checklist</span>
+                    </div>
+                    <div class="card-body">
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <span class="task-count">12</span>
+                                <span class="task-label">Scheduled Check-ins</span>
+                                <span class="task-status pending">Pending</span>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-count">8</span>
+                                <span class="task-label">Pending Confirmations</span>
+                                <span class="task-status warning">Action Required</span>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-count">3</span>
+                                <span class="task-label">Walk-in Registrations</span>
+                                <span class="task-status complete">Complete</span>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-count">5</span>
+                                <span class="task-label">Unpaid Invoice Follow-ups</span>
+                                <span class="task-status urgent">Urgent</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Doctor Availability Status -->
+                <section class="dashboard-card doctor-availability">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user-doctor"></i> Doctor Availability Status</h2>
+                        <span class="subtitle">Live Feed</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="doctor-list">
+                            <div class="doctor-item">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Doctor" class="doctor-avatar">
+                                <div class="doctor-info">
+                                    <span class="doctor-name">Dr. James Ochieng</span>
+                                    <span class="doctor-specialty">Cardiologist</span>
+                                </div>
+                                <div class="doctor-status available">
+                                    <i class="fas fa-circle"></i> Available
+                                </div>
+                                <span class="queue-count">Queue: 3</span>
+                                <span class="room-number">Room 101</span>
+                            </div>
+                            <div class="doctor-item">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Doctor" class="doctor-avatar">
+                                <div class="doctor-info">
+                                    <span class="doctor-name">Dr. Mary Kamau</span>
+                                    <span class="doctor-specialty">Pediatrician</span>
+                                </div>
+                                <div class="doctor-status consultation">
+                                    <i class="fas fa-circle"></i> In Consultation
+                                </div>
+                                <span class="queue-count">Queue: 5</span>
+                                <span class="room-number">Room 102</span>
+                            </div>
+                            <div class="doctor-item">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Doctor" class="doctor-avatar">
+                                <div class="doctor-info">
+                                    <span class="doctor-name">Dr. Peter Mutua</span>
+                                    <span class="doctor-specialty">Orthopedic</span>
+                                </div>
+                                <div class="doctor-status break">
+                                    <i class="fas fa-circle"></i> On Break
+                                </div>
+                                <span class="queue-count">Queue: 0</span>
+                                <span class="room-number">Room 103</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Performance Metrics -->
+                <section class="dashboard-card performance-metrics">
+                    <div class="card-header">
+                        <h2><i class="fas fa-chart-line"></i> Performance Metrics</h2>
+                        <span class="subtitle">Daily Stats</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <span class="metric-value">42</span>
+                                <span class="metric-label">Patients Checked Today</span>
+                                <span class="metric-change positive">+12% from yesterday</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">58</span>
+                                <span class="metric-label">Total Appointments</span>
+                                <span class="metric-change positive">+5% from average</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">KES. 125,400</span>
+                                <span class="metric-label">Payment Collection</span>
+                                <span class="metric-change positive">+18% from target</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">85%</span>
+                                <span class="metric-label">Completed vs Pending</span>
+                                <span class="metric-change neutral">On track</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- System Shortcuts Panel -->
+                <section class="dashboard-card system-shortcuts">
+                    <div class="card-header">
+                        <h2><i class="fas fa-rocket"></i> System Shortcuts Panel</h2>
+                        <span class="subtitle">Frequent Actions</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="shortcuts-grid">
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Appointments\appointments.html"
+                                class="shortcut-item">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>Book Appointment</span>
+                            </a>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Queue and Flow\queue_and_flow.html"
+                                class="shortcut-item">
+                                <i class="fas fa-list"></i>
+                                <span>View Queue</span>
+                            </a>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Billings and Payments\billings_and_payments.html"
+                                class="shortcut-item">
+                                <i class="fas fa-file-invoice"></i>
+                                <span>Create Invoice</span>
+                            </a>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Billings and Payments\billings_and_payments.html"
+                                class="shortcut-item">
+                                <i class="fas fa-bell-dollar"></i>
+                                <span>Payment Reminder</span>
+                            </a>
+                        </div>
+                        <!-- Smart Search Bar -->
+                        <div class="smart-search">
+                            <input type="text" placeholder="Search patients, doctors, invoices..." class="search-input">
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Alerts & Flags Section -->
+                <section class="dashboard-card alerts-flags">
+                    <div class="card-header">
+                        <h2><i class="fas fa-exclamation-triangle"></i> Alerts & Flags Section</h2>
+                        <span class="subtitle">Priority Items</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="alerts-list">
+                            <div class="alert-item high-priority">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <div class="alert-content">
+                                    <span class="alert-title">5 Overdue Bills</span>
+                                    <span class="alert-description">Total: KES. 45,000 pending for over 30 days</span>
+                                </div>
+                                <button class="alert-action">View</button>
+                            </div>
+                            <div class="alert-item medium-priority">
+                                <i class="fas fa-clock"></i>
+                                <div class="alert-content">
+                                    <span class="alert-title">3 Unassigned Appointments</span>
+                                    <span class="alert-description">Morning slots require doctor assignment</span>
+                                </div>
+                                <button class="alert-action">Assign</button>
+                            </div>
+                            <div class="alert-item low-priority">
+                                <i class="fas fa-info-circle"></i>
+                                <div class="alert-content">
+                                    <span class="alert-title">Platform Service Fee Due</span>
+                                    <span class="alert-description">Monthly fee of KES. 5,000 due in 3 days</span>
+                                </div>
+                                <button class="alert-action">Pay</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Real-Time Notifications -->
+                <section class="dashboard-card real-time-notifications">
+                    <div class="card-header">
+                        <h2><i class="fas fa-bell"></i> Real-Time Notifications</h2>
+                        <span class="subtitle">Live Updates</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="notifications-list">
+                            <div class="notification-item new">
+                                <span class="notification-time">2 min ago</span>
+                                <div class="notification-content">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span>New patient John Kimani booked appointment for tomorrow</span>
+                                </div>
+                            </div>
+                            <div class="notification-item new">
+                                <span class="notification-time">5 min ago</span>
+                                <div class="notification-content">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span>Patient cancelled 2:30 PM appointment with Dr. Ochieng</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <span class="notification-time">15 min ago</span>
+                                <div class="notification-content">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Payment of KES. 3,500 received from Patient #1234</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <span class="notification-time">30 min ago</span>
+                                <div class="notification-content">
+                                    <i class="fas fa-user-check"></i>
+                                    <span>Patient Grace Muthoni checked in for 10:00 AM appointment</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Integrated Messaging Notifications -->
+                <section class="dashboard-card messaging-notifications">
+                    <div class="card-header">
+                        <h2><i class="fas fa-comment-dots"></i> Integrated Messaging</h2>
+                        <span class="subtitle">Notifications</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="messages-preview">
+                            <div class="message-item unread">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                    alt="Sender" class="sender-avatar">
+                                <div class="message-content">
+                                    <span class="sender-name">Dr. James Ochieng</span>
+                                    <span class="message-snippet">Please prepare Lab Report for Patient #2345...</span>
+                                    <span class="message-time">10:45 AM</span>
+                                </div>
+                                <button class="quick-reply-btn"><i class="fas fa-reply"></i></button>
+                            </div>
+                            <div class="message-item unread">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                    alt="Sender" class="sender-avatar">
+                                <div class="message-content">
+                                    <span class="sender-name">Lab Department</span>
+                                    <span class="message-snippet">Results ready for collection - Patient John...</span>
+                                    <span class="message-time">10:30 AM</span>
+                                </div>
+                                <button class="quick-reply-btn"><i class="fas fa-reply"></i></button>
+                            </div>
+                            <div class="message-item">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                    alt="Sender" class="sender-avatar">
+                                <div class="message-content">
+                                    <span class="sender-name">Admin Office</span>
+                                    <span class="message-snippet">Staff meeting scheduled for tomorrow at...</span>
+                                    <span class="message-time">Yesterday</span>
+                                </div>
+                                <button class="quick-reply-btn"><i class="fas fa-reply"></i></button>
+                            </div>
+                        </div>
+                        <div class="message-counter">
+                            <span class="unread-count">2 unread messages</span>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Inbox and Alerts\inbox_and_alerts.html"
+                                class="view-all-link">View All Messages</a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals Section -->
+
+    <!-- Quick Access Actions Modal -->
+    <div class="modal" id="quickAccessModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Quick Access Actions</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="action-options">
+                    <button class="action-btn check-in-action">
+                        <i class="fas fa-user-check"></i> Check-in Patient
+                    </button>
+                    <button class="action-btn reschedule-action">
+                        <i class="fas fa-calendar-alt"></i> Reschedule Appointment
+                    </button>
+                    <button class="action-btn cancel-action">
+                        <i class="fas fa-times-circle"></i> Cancel Appointment
+                    </button>
+                    <button class="action-btn assign-action">
+                        <i class="fas fa-user-md"></i> Assign to Doctor
+                    </button>
+                </div>
+                <div class="status-indicators">
+                    <span class="status-indicator available">Available</span>
+                    <span class="status-indicator busy">Busy</span>
+                    <span class="status-indicator pending">Pending</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reschedule Modal -->
+    <div class="modal" id="rescheduleModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Reschedule Appointment</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="reschedule-form">
+                    <div class="form-group">
+                        <label>Patient Name</label>
+                        <input type="text" placeholder="Enter patient name" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Select Doctor</label>
+                        <select class="form-select">
+                            <option>Dr. James Ochieng - Cardiologist</option>
+                            <option>Dr. Mary Kamau - Pediatrician</option>
+                            <option>Dr. Peter Mutua - Orthopedic</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Date</label>
+                        <input type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Available Slots</label>
+                        <div class="time-slots">
+                            <button class="time-slot">09:00 AM</button>
+                            <button class="time-slot">10:00 AM</button>
+                            <button class="time-slot">11:00 AM</button>
+                            <button class="time-slot">02:00 PM</button>
+                            <button class="time-slot">03:00 PM</button>
+                            <button class="time-slot">04:00 PM</button>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary">Confirm Reschedule</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cancel Appointment Modal -->
+    <div class="modal" id="cancelModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Cancel Appointment</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cancel-form">
+                    <div class="form-group">
+                        <label>Patient Name</label>
+                        <input type="text" placeholder="Enter patient name" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Appointment Details</label>
+                        <div class="appointment-info">
+                            <p>Date: September 28, 2025</p>
+                            <p>Time: 2:30 PM</p>
+                            <p>Doctor: Dr. James Ochieng</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Reason for Cancellation</label>
+                        <textarea placeholder="Enter reason..." class="form-textarea"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox"> Notify patient via SMS
+                        </label>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-danger">Confirm Cancellation</button>
+                        <button class="btn-secondary">Go Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assign Doctor Modal -->
+    <div class="modal" id="assignDoctorModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Assign Doctor</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="assign-form">
+                    <div class="form-group">
+                        <label>Patient Name</label>
+                        <input type="text" placeholder="Enter patient name" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Available Doctors</label>
+                        <div class="doctor-assignment-list">
+                            <div class="doctor-assignment-item">
+                                <input type="radio" name="doctor" id="doc1">
+                                <label for="doc1">
+                                    <span class="doc-name">Dr. James Ochieng</span>
+                                    <span class="doc-status available">Available</span>
+                                    <span class="doc-queue">Queue: 3 patients</span>
+                                </label>
+                            </div>
+                            <div class="doctor-assignment-item">
+                                <input type="radio" name="doctor" id="doc2">
+                                <label for="doc2">
+                                    <span class="doc-name">Dr. Mary Kamau</span>
+                                    <span class="doc-status busy">Busy</span>
+                                    <span class="doc-queue">Queue: 5 patients</span>
+                                </label>
+                            </div>
+                            <div class="doctor-assignment-item">
+                                <input type="radio" name="doctor" id="doc3">
+                                <label for="doc3">
+                                    <span class="doc-name">Dr. Peter Mutua</span>
+                                    <span class="doc-status available">Available</span>
+                                    <span class="doc-queue">Queue: 0 patients</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Priority Level</label>
+                        <select class="form-select">
+                            <option>Normal</option>
+                            <option>Urgent</option>
+                            <option>Emergency</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary">Assign Doctor</button>
+                        <button class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Popup -->
+    <div class="profile-popup" id="profilePopup">
+        <div class="profile-popup-content">
+            <div class="profile-header">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                    alt="Profile" class="popup-profile-img">
+                <div class="profile-info">
+                    <h3>Sarah Wanjiru</h3>
+                    <p>Receptionist</p>
+                </div>
+            </div>
+            <div class="profile-menu">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\My Profile\my_profile.html"
+                    class="profile-menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Landing Page\landing_page.html"
+                    class="profile-menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="fixed-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <!-- Corporate Website Link -->
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer" class="corporate-link">
+                    Visit Citrus Labs
+                </a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Copyright -->
+                <p class="copyright">© 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

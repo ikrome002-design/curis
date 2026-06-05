@@ -1,0 +1,111 @@
+CLINIC OWNER - CURIS.
+
+
+---
+
+For the Minimum Viable Product (MVP) of the **Appointments** page within the **clinic account user** in *Curis by Citrus*, the focus is on providing intuitive scheduling tools that allow clinic owners to efficiently manage patient bookings, streamline appointment workflows, and optimize service delivery. This page ensures seamless coordination between clinic staff and patients, minimizing scheduling conflicts while enhancing accessibility and operational efficiency. Here's a breakdown of the essential features available on this appointments page:  
+
+________________________________________  
+### **Core MVP Features of the Appointments Page**
+
+
+
+
+The Appointment Management page is the central hub for configuring, viewing, and optimizing the entire appointment lifecycle across the clinic. It balances operational flexibility, patient convenience, and performance tracking.
+
+________________________________________
+1. Appointment Rules & Scheduling Configuration
+
+•	Define default appointment duration per service (e.g., 15 minutes, 30 minutes, 1 hour).
+•	Set clinic-wide scheduling rules:
+o	Working hours per day
+o	Break times (e.g., lunch hours)
+o	Doctor-specific availability
+o	Max daily bookings per staff member
+•	Configure buffer times between appointments.
+•	Enable clinic-wide or per-doctor slot visibility to patients.
+
+2. Cancellation & Rescheduling Policies
+
+•	Set cut-off times for cancellations or reschedules (e.g., at least 2 hours before).
+•	Configure rescheduling window (how soon or far patients can move appointments).
+•	Enable penalty fees or blocks for repeated no-shows.
+
+3. Live Clinic Calendar View
+
+•	Multi-view dynamic calendar (day/week/month).
+•	Colour-coded display for:
+o	Appointment status (booked, confirmed, in progress, completed, cancelled, no-show)
+o	Assigned doctor
+o	Service type
+•	Filter and view by:
+o	Date range
+o	Doctor
+o	Service type
+o	Appointment status
+•	Quick-add slot button for manually creating appointments (by staff).
+
+4. Automated Patient Notifications & Reminders
+
+•	Enable SMS, email, or in-app reminders:
+o	Upon booking confirmation
+o	24 hours and/or 1 hour before scheduled time
+o	For missed appointments or follow-up suggestions
+•	Customize message templates with placeholders (e.g., patient name, service name, doctor name).
+
+5. Appointment Performance Insights
+
+•	View real-time booking volumes: today, this week, this month
+•	Track no-show rates, cancellation frequencies, reschedule counts
+•	Identify most booked services and busiest doctors
+•	Spot peak hours and booking trends for resource planning
+
+6. Appointment History & Audit Trail
+
+•	Maintain a log of all past appointments:
+o	Date/time
+o	Service
+o	Assigned doctor
+o	Patient
+o	Status
+•	Include a modification history: who made changes (staff or patient), what was changed, and when.
+
+7. Doctor Assignment Logic
+
+•	Dynamically assign appointments:
+o	Automatically based on doctor availability
+o	Manually by receptionist or clinic owner
+•	View doctor workload and adjust bookings accordingly.
+
+8. Patient Self-Booking Control 
+
+•	Toggle to enable or disable self-booking from the patient portal.
+•	Define lead time and booking limit rules which are as follows:
+
+a.	**Lead Time Rules**
+
+o	Minimum booking lead time: Patients must book at least **24 hours** in advance to prevent last-minute scheduling.
+o	Maximum booking lead time: Patients **cannot** book appointments **more than 2 weeks ahead**, ensuring flexibility in scheduling.
+
+
+b.	**Booking Limit Rules**
+
+o	Daily booking cap: Patients can book a maximum of **1 appointment per day** to prevent excessive bookings.
+o	Weekly limit: Patients can schedule up to **3 appointments per week**, depending on clinic availability.
+o	Concurrent bookings: Patients **cannot** book overlapping appointments within the same clinic.
+
+
+c.	**Cancellation & Rescheduling Restrictions**
+
+o	Same-day cancellations are **not allowed** unless approved by the clinic.
+o	Patients can **reschedule** up to **twice per appointment** before restrictions apply.
+
+________________________________________
+Outcomes of the Appointment Management Module
+
+
+•	Reduces manual effort by streamlining booking and schedule management.
+•	Minimizes no-shows through automated communication and structured policies.
+•	Gives Clinic Owners a clear view of clinical throughput, service demand, and staff efficiency.
+•	Supports data-driven decisions on staffing, clinic hours, and service optimization. 
+

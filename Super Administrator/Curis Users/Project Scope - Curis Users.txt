@@ -1,0 +1,133 @@
+#### 1. **Curis Users**
+
+
+---
+
+### **Dynamic MVP Features and Functionalities for the Curis Users Page**
+
+---
+
+### **a. User Overview Panel**
+- **Filter Options** for users based on roles: Patient, Doctor, Receptionist/Clinic Assistant, Clinic Owner.
+- **Search Bar** to quickly find a specific user by name, role, or clinic.
+- **User Status Indicator:**  
+  - Active
+  - Suspended
+  - Pending verification
+- **Key Metrics** displayed: Total number of users in each role (Doctors, Receptionists, etc.) and their current status.
+
+**Dynamic:** Automatically updates as users are added, deactivated, or edited.
+
+---
+
+### **b. User List Management**
+- **Table/Grid View** displaying:
+  - User ID
+  - Name
+  - Role (Patient, Doctor, Receptionist, Clinic Owner)
+  - Status (Active, Suspended)
+  - Date Created
+  - Last Login
+- **Bulk Actions:**  
+  - Suspend or activate multiple users at once.
+  - Delete multiple users (with confirmation).
+  - Assign or change roles for selected users.
+
+**Dynamic:** Real-time filtering and sorting based on the table's columns.
+
+---
+
+### **c. User Details Management**
+- **View and Edit User Profiles:**
+  - View all user details including contact info, clinic affiliation, assigned role.
+  - **Edit User Info** (email, phone, etc.), including changing role between Patient, Doctor, Receptionist/Clinic Assistant, Clinic Owner.
+  - **Reset Password** functionality for users.
+  - **Account Status:** Ability to Suspend, Activate, or Delete accounts.  
+    - **Suspension:** Option to add notes/reasons for suspension.
+    - **Deactivation:** Requires a confirmation prompt and triggers notifications (email/SMS) to affected users.
+- **Role Assignment:**  
+  - Super Admin can assign or change a user’s role.  
+  - Ability to assign or change a Clinic Owner’s staff roles (Doctor, Receptionist/Clinic Assistant).
+
+**Dynamic:** Changes are immediately reflected in the user list and trigger notifications to the user.
+
+---
+
+### **d. Notifications and Alerts Management**
+- **Critical Action Notifications**:  
+  - Automated **email/SMS notifications** for critical actions like user suspension, account deletions, or forced cancellations.
+  - Notifications should go to the **affected user** and, if relevant, to other stakeholders (e.g., Clinic Owner when a staff member is suspended).
+
+**Dynamic:** Notifications are triggered automatically based on actions taken (e.g., account suspension, deletion).
+
+---
+
+### **e. Role-Specific User Actions**
+- **Clinic Owners:**  
+  - View/manage their staff (Doctors, Receptionists/Clinic Assistants).
+  - Assign or remove staff roles.
+  - View a summary of all their users (active, suspended).
+- **Doctors/Receptionists:**  
+  - **Assign and remove clinic-related permissions** (e.g., view/edit patient records, manage appointments).
+  - Ability to **merge patient records** under certain conditions (for example, if a patient has multiple profiles).
+
+**Dynamic:** Changes to user roles or permissions update instantly across the platform.
+
+---
+
+### **f. User Activity & Audit Logs**
+- **Track User Activity:**
+  - Detailed audit log of each user's actions (login times, updates to their profile, appointments they’ve managed).
+  - Log user actions related to account changes (who made changes, when).
+  
+**Dynamic:** Logs are updated in real-time and can be viewed by the Super Admin for compliance and oversight purposes.
+
+---
+
+### **g. Add New User**
+- **Simple User Creation Process**:
+  - Provide a **form** for adding new users:  
+    - Select user role (Patient, Doctor, Receptionist, Clinic Owner).
+    - Input user details (name, contact info, clinic assignment).
+    - Set initial status (active, suspended).
+  - **Batch Upload** feature: Upload user data from CSV to quickly create multiple accounts.
+- **Role-based Permissions** when adding new users:
+  - For Clinic Owners: Create staff roles under their account.
+  - For Doctors and Receptionists: Assign them to specific clinics and set specialties.
+
+**Dynamic:** Instantly reflects the newly added user within the user list, with notifications sent to relevant parties.
+
+---
+
+### **h. User Communication**
+- **Direct Messaging or Bulk Emails/SMS:**  
+  - Ability for the Super Admin to send bulk messages to specific user types (e.g., all Doctors) or individual users (e.g., a suspended Doctor).
+  - **Template-based communication:** Pre-set templates for common messages (e.g., welcome, account suspension, role change).
+
+**Dynamic:** Real-time updates and communication logs available for reference.
+
+---
+
+### **i. User Deactivation & Deletion**
+- **Bulk Deactivation or Deletion**:  
+  - Admin can bulk deactivate or delete users. This action should trigger an **email/SMS notification** to the affected users.
+  - Option to preserve user data for compliance reasons (e.g., medical records).
+  
+**Dynamic:** Changes immediately reflected across the platform, with logs showing who performed the actions.
+
+---
+
+### **Visual Layout (Firm Recommendation):**
+- **Tabbed Navigation** for:
+  - **Active Users**
+  - **Suspended Users**
+  - **Pending Verification**
+- **User Cards** or **Table View** for easy management, with **search filters** to help drill down to specific roles or statuses.
+
+---
+
+### **Summary**
+
+The **Curis Users** page must serve as a **central hub** for managing users, assigning roles, handling notifications, and ensuring compliance. **Real-time actions**, **automated notifications**, and **comprehensive activity logs** are essential for smooth and efficient user administration.
+
+---

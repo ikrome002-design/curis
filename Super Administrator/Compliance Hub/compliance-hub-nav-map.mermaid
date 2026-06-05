@@ -1,0 +1,96 @@
+graph TB
+    %% Main Compliance Hub Page
+    CompliancePage["🔒 Compliance Hub Page<br/>Security & Audit Center"]
+    
+    %% Back Navigation
+    CompliancePage --> BackNav["← Back to Dashboard"]
+    BackNav --> Dashboard["🏠 Super Admin Dashboard"]
+    
+    %% Main Features
+    CompliancePage --> AuditLogAccess["📊 Audit Log Access"]
+    CompliancePage --> LoginMonitor["🛡️ Login Attempt Monitoring"]
+    
+    %% Audit Log Access Section
+    AuditLogAccess --> |Access| LogViewer["Comprehensive Log Viewer<br/>──────────────<br/>📋 Activity Categories:<br/>  • User Activities ✓<br/>  • Login Attempts ✓<br/>  • Data Access ✓<br/>  • Role Changes ✓<br/>  • Medical Records Access ✓<br/>  • Billing Actions ✓<br/>  • Administrative Changes ✓<br/>🔍 Quick Filters:<br/>  • Today's Activity<br/>  • Failed Logins<br/>  • Critical Actions<br/>  • Suspicious Activity<br/>📥 Export Options:<br/>  • CSV Export<br/>  • PDF Report<br/>  • Filtered Export"]
+    
+    %% Detailed Log Search & Filter
+    LogViewer --> |Filter| FilterPanel["Advanced Filter Panel<br/>─────────────<br/>👤 User Type:<br/>  □ Patients<br/>  □ Doctors<br/>  □ Receptionists<br/>  □ Clinic Owners<br/>  □ Super Admin<br/>📋 Action Type:<br/>  □ Login/Logout<br/>  □ Data Changes<br/>  □ Account Updates<br/>  □ Medical Access<br/>  □ Billing Actions<br/>📅 Date Range:<br/>  From: [Date Picker]<br/>  To: [Date Picker]<br/>🌐 IP/Device:<br/>  IP: [IP Address]<br/>  Device: [Type ▼]<br/>• Apply Filters ✓<br/>• Clear Filters 🔄"]
+    
+    %% Log Table View
+    LogViewer --> LogTable["Audit Log Table<br/>────────────<br/>Timestamp | User | Action | Details | IP | Status<br/>─────────────────────────────────<br/>🕐 10:45 | Dr.Lee | Login Success | Dashboard | 192.168.1.1 | ✅<br/>🕐 10:30 | Admin | User Created | Added Dr.Park | 192.168.1.2 | ✅<br/>🕐 10:15 | Patient | Login Failed | Wrong Pass | 192.168.1.3 | ❌<br/>🕐 10:00 | Dr.Kim | Medical Access | File #12345 | 192.168.1.4 | ⚠️<br/>🕐 09:45 | Clinic A | Billing Update | Invoice Paid | 192.168.1.5 | ✅"]
+    
+    %% Individual Log Actions
+    LogTable --> |Click Entry| LogDetails["Log Entry Details<br/>─────────────<br/>📋 Full Details:<br/>• Timestamp: 2024-11-15 10:00:45<br/>• User: Dr. Kim (ID: U12345)<br/>• Role: Doctor<br/>• Action: Medical Record Access<br/>• Details: Viewed patient file #12345<br/>• IP Address: 192.168.1.4<br/>• Location: Nairobi, Kenya<br/>• Device: Chrome/Windows<br/>• Session ID: S789456<br/>• Duration: 15 minutes<br/>📊 Related Actions:<br/>  - Previous: Login at 09:45<br/>  - Next: Prescription Added 10:15<br/>🔍 Actions:<br/>  • Flag Suspicious ⚠️<br/>  • Export Entry 📥<br/>  • View User Profile 👤"]
+    
+    %% Session History View
+    AuditLogAccess --> SessionHistory["📅 Session History"]
+    SessionHistory --> |View| SessionPanel["Session Analysis Panel<br/>──────────────<br/>👤 User Sessions:<br/>User | Login Time | Duration | Actions | Status<br/>────────────────────────────<br/>Dr.Lee | 08:00 | 2hrs | 45 actions | Active 🟢<br/>Admin | 09:00 | 1hr | 23 actions | Ended 🔵<br/>Patient1 | 10:00 | 30min | 5 actions | Active 🟢<br/>─────────────<br/>📊 Session Metrics:<br/>  • Avg Duration: 45 min<br/>  • Peak Time: 10-11 AM<br/>  • Active Now: 125 users<br/>🔍 Unusual Patterns:<br/>  ⚠️ Long session: User X (6hrs)<br/>  ⚠️ High activity: User Y (200/hr)<br/>• Export Session Report 📥"]
+    
+    %% Data Access Logs
+    AuditLogAccess --> DataAccessLog["🔐 Data Access Logs"]
+    DataAccessLog --> |Monitor| AccessPanel["Data Access Monitor<br/>─────────────<br/>🏥 Medical Records:<br/>  • Files Accessed Today: 234<br/>  • Unique Users: 45<br/>  • Unauthorized Attempts: 0<br/>💰 Billing Data:<br/>  • Invoices Viewed: 89<br/>  • Payments Processed: 56<br/>  • Reports Generated: 12<br/>👥 User Data:<br/>  • Profiles Viewed: 145<br/>  • Profiles Edited: 23<br/>  • Accounts Created: 8<br/>📊 Access Patterns:<br/>  [Heatmap Visualization]<br/>• Generate Access Report 📊"]
+    
+    %% Export Functions
+    LogViewer --> ExportPanel["📥 Export Functions"]
+    ExportPanel --> |Configure| ExportModal["Export Configuration<br/>─────────────<br/>📄 Export Format:<br/>  ○ CSV (Detailed)<br/>  ○ PDF (Report)<br/>  ○ Excel (Analysis)<br/>📅 Date Range:<br/>  ○ Today<br/>  ○ This Week<br/>  ○ This Month<br/>  ○ Custom Range<br/>📋 Include:<br/>  ☑️ User Activities<br/>  ☑️ Login History<br/>  ☑️ Data Access<br/>  ☑️ Security Events<br/>  ☑️ IP Addresses<br/>🔒 Compliance:<br/>  ☑️ Anonymize PII<br/>  ☑️ Include Timestamps<br/>  ☑️ Add Digital Signature<br/>• Export Now 📥"]
+    
+    %% Login Attempt Monitoring
+    LoginMonitor --> |Configure| SecurityPanel["Security Configuration Panel<br/>──────────────────<br/>🔒 Failed Login Settings:<br/>  • Max Attempts: [5 ▼]<br/>  • Before Lock: ⚠️<br/>  • Lockout Duration: [30 min ▼]<br/>🛡️ Account Protection:<br/>  ☑️ Auto-lock on failures<br/>  ☑️ IP-based blocking<br/>  ☑️ Device fingerprinting<br/>🤖 Captcha Settings:<br/>  • Trigger After: [3 ▼] attempts<br/>  • Type: [reCAPTCHA v3 ▼]<br/>  • Difficulty: [Medium ▼]<br/>🔔 Alert Configuration:<br/>  ☑️ Admin notification<br/>  ☑️ User notification<br/>  ☑️ Email alerts<br/>  ☑️ SMS alerts<br/>• Save Configuration ✓"]
+    
+    %% Active Security Monitoring
+    LoginMonitor --> ActiveMonitor["🚨 Active Security Monitor"]
+    ActiveMonitor --> |Monitor| ThreatPanel["Real-Time Threat Dashboard<br/>──────────────────<br/>🔴 Current Threats:<br/>  • Brute Force: 2 active<br/>  • Suspicious IPs: 5<br/>  • Locked Accounts: 12<br/>📊 Failed Login Attempts:<br/>Time | User | IP | Attempts | Status<br/>────────────────────────<br/>10:45 | user@mail | 185.x.x.x | 5/5 | Locked 🔒<br/>10:30 | admin | 192.x.x.x | 3/5 | Warning ⚠️<br/>10:15 | doctor | 10.x.x.x | 2/5 | Active 🟡<br/>─────────────<br/>⚡ Quick Actions:<br/>  • Block IP Range 🚫<br/>  • Unlock Account 🔓<br/>  • Force Password Reset 🔑<br/>  • View Full Report 📊"]
+    
+    %% IP Management
+    LoginMonitor --> IPManagement["🌐 IP Management"]
+    IPManagement --> |Manage| IPPanel["IP Address Control<br/>────────────<br/>🚫 Blocked IPs:<br/>  185.123.45.* - Brute force<br/>  192.168.1.99 - Suspicious<br/>  10.0.0.55 - Temp block<br/>  [Add IP Block ➕]<br/>✅ Whitelisted IPs:<br/>  Office: 192.168.1.0/24<br/>  VPN: 10.0.0.0/16<br/>  [Add Whitelist ➕]<br/>📊 IP Analytics:<br/>  • Top Countries: [Chart]<br/>  • Suspicious Patterns<br/>  • Geographic Map View<br/>• Export IP Report 📥"]
+    
+    %% Account Lock Management
+    LoginMonitor --> LockManager["🔒 Account Lock Manager"]
+    LockManager --> |View| LockPanel["Locked Accounts Panel<br/>─────────────<br/>🔒 Currently Locked:<br/>User | Reason | Locked At | Duration | Actions<br/>──────────────────────────────<br/>user1 | 5 Failed | 10:45 | 25min left | 🔓<br/>user2 | Admin Lock | Yesterday | Indefinite | 🔓<br/>user3 | Suspicious | 09:30 | 10min left | 🔓<br/>─────────────<br/>📊 Lock Statistics:<br/>  • Today: 15 locks<br/>  • This Week: 87 locks<br/>  • Auto-unlocked: 73<br/>  • Manual unlock: 14<br/>⚡ Bulk Actions:<br/>  • Unlock Selected<br/>  • Reset Passwords<br/>  • Send Notifications"]
+    
+    %% Compliance Reports
+    CompliancePage --> ComplianceReports["📊 Compliance Reports"]
+    ComplianceReports --> |Generate| ReportPanel["Compliance Report Center<br/>──────────────<br/>📋 Report Types:<br/>  ○ Security Audit<br/>  ○ Access Compliance<br/>  ○ Login Analysis<br/>  ○ User Activity<br/>  ○ HIPAA Compliance<br/>  ○ GDPR Report<br/>📅 Period:<br/>  [Select Date Range]<br/>📊 Visualizations:<br/>  ☑️ Charts & Graphs<br/>  ☑️ Trend Analysis<br/>  ☑️ Risk Assessment<br/>🔒 Certifications:<br/>  ☑️ Digital Signature<br/>  ☑️ Timestamp<br/>  ☑️ Audit Trail<br/>• Generate Report ✓"]
+    
+    %% Quick Actions
+    CompliancePage --> QuickActions["⚡ Quick Actions"]
+    QuickActions --> QuickExport["📥 Export Today's Logs"]
+    QuickActions --> QuickBlock["🚫 Block Suspicious IP"]
+    QuickActions --> QuickUnlock["🔓 Unlock Account"]
+    QuickActions --> QuickReport["📊 Security Report"]
+    
+    %% Real-time Alerts
+    CompliancePage -.->|WebSocket| RealTimeAlerts["🔔 Real-Time Security Alerts<br/>────────────────<br/>• Failed login attempts<br/>• Account lockouts<br/>• Suspicious activities<br/>• Data breach attempts<br/>• Compliance violations<br/>• Auto-refresh dashboard"]
+    
+    %% Integration with Other Pages
+    CompliancePage --> MainNav["Main Navigation"]
+    MainNav --> UsersPage["→ Curis Users"]
+    MainNav --> ApptPage["→ Appointment Oversight"]
+    MainNav --> HealthPage["→ Health (High-Level)"]
+    MainNav --> BillingPage["→ Billings & Payments"]
+    MainNav --> SettingsPage["→ Settings"]
+    
+    %% Quick Access from Dashboard
+    Dashboard --> |Security Widget| CompliancePage
+    Dashboard --> |Security Alert| ThreatPanel
+    
+    %% Integration with Settings
+    SecurityPanel --> |Session Config| SettingsPage
+    
+    %% Styling
+    classDef mainPage fill:#1E3A5F,stroke:#0D1B2A,stroke-width:4px,color:#fff,font-weight:bold
+    classDef panel fill:#7B2CBF,stroke:#5A189A,stroke-width:2px,color:#fff
+    classDef modal fill:#FF6B35,stroke:#C73E1D,stroke-width:2px,color:#fff
+    classDef security fill:#DC2626,stroke:#991B1B,stroke-width:2px,color:#fff
+    classDef action fill:#06A77D,stroke:#045A3F,stroke-width:2px,color:#fff
+    classDef nav fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
+    classDef realtime fill:#10B981,stroke:#059669,stroke-width:2px,color:#fff
+    
+    class CompliancePage mainPage
+    class AuditLogAccess,LoginMonitor,SessionHistory,DataAccessLog,ActiveMonitor,IPManagement,LockManager,ComplianceReports,QuickActions panel
+    class LogViewer,FilterPanel,LogDetails,SessionPanel,AccessPanel,ExportModal,SecurityPanel,ThreatPanel,IPPanel,LockPanel,ReportPanel modal
+    class ThreatPanel,IPPanel,LockPanel security
+    class QuickExport,QuickBlock,QuickUnlock,QuickReport action
+    class MainNav,BackNav,Dashboard,UsersPage,ApptPage,HealthPage,BillingPage,SettingsPage nav
+    class RealTimeAlerts realtime

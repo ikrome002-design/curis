@@ -1,0 +1,190 @@
+flowchart TD
+    %% Main Entry Points
+    Dashboard[Dashboard] --> HealthDataMain[Health Data & Records<br/>Patient Information Hub]
+    
+    %% Health Data & Records Main Hub
+    HealthDataMain --> PatientReg[Patient Registration]
+    HealthDataMain --> PatientDir[Patient Directory]
+    HealthDataMain --> MedicalHistory[Medical History Access]
+    HealthDataMain --> AppointmentLink[Appointment & Billing Linkage]
+    HealthDataMain --> ActivityMonitor[Patient Activity Monitoring]
+    HealthDataMain --> SelfService[Patient Self-Service Sync]
+    HealthDataMain --> StaffRelation[Staff-Patient Relationship]
+    HealthDataMain --> DataExport[Data Export & Portability]
+    HealthDataMain --> AuditTrail[Audit Trail & Compliance]
+    
+    %% Patient Registration Branch
+    PatientReg --> ManualReg[Manual Registration Button]
+    ManualReg --> RegForm[Registration Form Modal]
+    RegForm --> BasicInfo[Basic Information Fields<br/>Name/Phone/Email/Gender/DOB]
+    RegForm --> IDInfo[Identification Fields<br/>ID/Passport Number Entry]
+    RegForm --> EmergencyContact[Emergency Contact Section<br/>Name/Phone/Relationship]
+    RegForm --> InsuranceInfo[Insurance Details<br/>Provider/Policy Number]
+    RegForm --> SavePatient[Save Patient Button]
+    SavePatient --> ValidationCheck[Validation Check<br/>Required Fields/Format]
+    ValidationCheck --> PatientCreated[Patient Profile Created<br/>Unique ID Generated]
+    
+    PatientReg --> ProfileMgmt[Profile Management]
+    ProfileMgmt --> EditableFields[Editable Basic Info<br/>Phone/Email/Address]
+    ProfileMgmt --> LockedFields[Locked Medical Info<br/>View-Only Access]
+    
+    %% Patient Directory Branch
+    PatientDir --> SearchBar[Search Bar<br/>Name/Phone/Patient ID]
+    SearchBar --> InstantResults[Instant Search Results<br/>Auto-complete Suggestions]
+    
+    PatientDir --> FilterPanel[Filter & Sort Panel]
+    FilterPanel --> DateFilters[Date Filters<br/>Last Visit/Registration Date]
+    FilterPanel --> DemographicFilters[Demographic Filters<br/>Gender/Age Range]
+    FilterPanel --> DoctorFilter[Assigned Doctor Filter<br/>Dropdown Selection]
+    FilterPanel --> SortOptions[Sort Options<br/>Name/Date/Visits]
+    
+    PatientDir --> PatientList[Patient List View]
+    PatientList --> PatientCard[Patient Card Display<br/>Name/Phone/Last Visit]
+    PatientCard --> QuickActions[Quick Actions Menu]
+    QuickActions --> ViewProfile[View Full Profile]
+    QuickActions --> ViewAppointments[View Appointments]
+    QuickActions --> ViewBilling[View Billing Summary]
+    
+    %% Medical History Access Branch
+    MedicalHistory --> OverviewAccess[High-Level Overview Access]
+    OverviewAccess --> MetadataView[Metadata Display Panel]
+    MetadataView --> VisitSummaries[Visit Summaries<br/>Date/Reason/Outcome]
+    MetadataView --> DiagnosisList[Diagnosis List<br/>Condition Names Only]
+    MetadataView --> LabTestTypes[Lab Test Types<br/>Test Names/Dates]
+    MetadataView --> MedicationList[Medications Prescribed<br/>Drug Names Only]
+    
+    MedicalHistory --> TimelineView[Record Timeline View]
+    TimelineView --> ChronologicalDisplay[Chronological Display<br/>Interactive Timeline]
+    ChronologicalDisplay --> TimelineFilter[Timeline Filter<br/>Date Range/Event Type]
+    TimelineFilter --> FilteredTimeline[Filtered Timeline<br/>Appointments/Procedures/Prescriptions]
+    
+    MedicalHistory --> AccessRestriction[Access Restriction Notice<br/>No Sensitive Data Display]
+    
+    %% Appointment & Billing Linkage Branch
+    AppointmentLink --> PatientAppointments[Patient Appointments View]
+    PatientAppointments --> AppointmentHistory[Appointment History Modal]
+    AppointmentHistory --> AppointmentDetails[Appointment Details<br/>Status/Date/Doctor/Service]
+    AppointmentHistory --> FeedbackView[Patient Feedback<br/>Ratings/Comments]
+    
+    AppointmentLink --> BillingSummary[Billing Summary View]
+    BillingSummary --> InvoiceList[Invoice List Display]
+    InvoiceList --> InvoiceDetails[Invoice Details Modal<br/>Services/Amount/Status]
+    InvoiceList --> PaymentStatus[Payment Status<br/>Paid/Pending/Partial]
+    
+    %% Patient Activity Monitoring Branch
+    ActivityMonitor --> ActivityDashboard[Activity Dashboard]
+    ActivityDashboard --> LastSeenTracker[Last Seen Tracker<br/>Timestamp Display]
+    ActivityDashboard --> VisitMetrics[Visit Metrics<br/>Total/Cancelled/Rescheduled]
+    
+    ActivityMonitor --> FeedbackHistory[Feedback History Panel]
+    FeedbackHistory --> RatingsDisplay[Ratings Display<br/>Average Score/Trends]
+    FeedbackHistory --> CommentView[Comment View Modal<br/>Patient Feedback Details]
+    
+    %% Patient Self-Service Sync Branch
+    SelfService --> SyncSettings[Sync Settings Panel]
+    SyncSettings --> EnablePortal[Enable Portal Access Toggle]
+    EnablePortal --> PortalPermissions[Portal Permissions Modal]
+    PortalPermissions --> ContactUpdate[Contact Update Permission]
+    PortalPermissions --> RecordView[Medical Summary View Permission]
+    PortalPermissions --> BillingDownload[Billing History Download Permission]
+    
+    SelfService --> AccessLog[Patient Access Log<br/>Login History/Actions]
+    
+    %% Staff-Patient Relationship Branch
+    StaffRelation --> RelationshipMatrix[Relationship Matrix View]
+    RelationshipMatrix --> DoctorAssignments[Doctor Assignments<br/>Primary/Secondary]
+    RelationshipMatrix --> ReceptionistLinks[Receptionist Links<br/>Registration/Scheduling]
+    
+    StaffRelation --> WorkloadBalance[Workload Balance View]
+    WorkloadBalance --> PatientLoad[Patient Load Display<br/>Per Staff Member]
+    WorkloadBalance --> LoadDistribution[Load Distribution Chart<br/>Visual Analytics]
+    WorkloadBalance --> ReassignButton[Reassign Patients Button]
+    ReassignButton --> ReassignModal[Reassignment Modal<br/>From/To Staff Selection]
+    
+    %% Data Export Branch
+    DataExport --> ExportButton[Export Records Button]
+    ExportButton --> ExportModal[Export Options Modal]
+    ExportModal --> DataSelection[Data Selection Panel<br/>Patient Groups/Date Range]
+    ExportModal --> FieldSelection[Field Selection<br/>Include/Exclude Fields]
+    ExportModal --> FormatSelection[Format Selection<br/>CSV/PDF Options]
+    FormatSelection --> GenerateExport[Generate Export Button]
+    GenerateExport --> DownloadFile[Download File<br/>Encrypted/Watermarked]
+    
+    %% Audit Trail Branch
+    AuditTrail --> AuditLog[Audit Log View]
+    AuditLog --> LogFilters[Log Filter Panel]
+    LogFilters --> UserFilter[User Filter<br/>Staff Member Selection]
+    LogFilters --> ActionFilter[Action Filter<br/>View/Edit/Export]
+    LogFilters --> DateFilter[Date Range Filter]
+    
+    AuditLog --> LogEntries[Log Entry Display]
+    LogEntries --> EntryDetails[Entry Details Modal<br/>User/Time/Action/IP]
+    
+    AuditTrail --> RBACSettings[RBAC Settings Panel]
+    RBACSettings --> RolePermissions[Role Permissions Matrix]
+    RolePermissions --> OwnerAccess[Owner Access Level<br/>High-level Only]
+    RolePermissions --> DoctorAccess[Doctor Access Level<br/>Full Medical Access]
+    RolePermissions --> ReceptionistAccess[Receptionist Access<br/>Limited View]
+    
+    %% Integration Points with Other Modules
+    
+    %% From Registration & Setup
+    Registration[Registration & Setup] -.->|Initial Patient Data| PatientReg
+    
+    %% To/From Dashboard
+    PatientCreated -.->|Update Metrics| Dashboard
+    ActivityDashboard -.->|Patient Stats| Dashboard
+    
+    %% To/From Appointments
+    ViewAppointments -.->|Navigate to| Appointments[Appointments Module]
+    Appointments -.->|Service Completion| AppointmentHistory
+    
+    %% To/From Billings & Payments
+    ViewBilling -.->|Navigate to| Billings[Billings & Payments]
+    Billings -.->|Invoice Data| InvoiceList
+    
+    %% From Workforce Hub
+    WorkforceHub[Workforce Hub] -.->|Staff Assignments| DoctorAssignments
+    WorkforceHub -.->|Access Permissions| RBACSettings
+    
+    %% To/From Settings
+    Settings[Settings Module] <-.->|Privacy Settings| RBACSettings
+    Settings <-.->|Export Preferences| ExportModal
+    
+    %% To Insights & Performance
+    VisitMetrics -.->|Analytics Data| InsightsPerf[Insights & Performance]
+    PatientLoad -.->|Staff Metrics| InsightsPerf
+    
+    %% To Notifications
+    PatientCreated -.->|New Patient Alert| Notifications[Notifications Module]
+    ReassignModal -.->|Reassignment Alert| Notifications
+    
+    %% From Clinic Services
+    ClinicServices[Clinic Services Hub] -.->|Service Info| VisitSummaries
+    
+    %% Navigation Back Options
+    PatientReg --> HealthDataMain
+    PatientDir --> HealthDataMain
+    MedicalHistory --> HealthDataMain
+    AppointmentLink --> HealthDataMain
+    ActivityMonitor --> HealthDataMain
+    SelfService --> HealthDataMain
+    StaffRelation --> HealthDataMain
+    DataExport --> HealthDataMain
+    AuditTrail --> HealthDataMain
+    HealthDataMain --> Dashboard
+    
+    %% Styling
+    classDef mainHub fill:#2563eb,stroke:#1e40af,stroke-width:3px,color:#fff
+    classDef subModule fill:#7c3aed,stroke:#6d28d9,stroke-width:2px,color:#fff
+    classDef modal fill:#059669,stroke:#047857,stroke-width:2px,color:#fff
+    classDef action fill:#dc2626,stroke:#b91c1c,stroke-width:2px,color:#fff
+    classDef integration fill:#f59e0b,stroke:#d97706,stroke-width:2px,stroke-dasharray: 5 5
+    classDef restriction fill:#6b7280,stroke:#4b5563,stroke-width:2px,color:#fff
+    
+    class HealthDataMain mainHub
+    class PatientReg,PatientDir,MedicalHistory,AppointmentLink,ActivityMonitor,SelfService,StaffRelation,DataExport,AuditTrail subModule
+    class RegForm,AppointmentHistory,InvoiceDetails,ExportModal,PortalPermissions,ReassignModal,EntryDetails modal
+    class ManualReg,SavePatient,ExportButton,ReassignButton,EnablePortal action
+    class Dashboard,Appointments,Billings,WorkforceHub,Settings,InsightsPerf,Notifications,ClinicServices,Registration integration
+    class AccessRestriction restriction

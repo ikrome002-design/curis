@@ -1,0 +1,197 @@
+#### 1. **Billings & Payments**
+
+
+
+
+Here is a highly detailed expansion of the “Billings & Payments” page functionalities and dynamic behavior within the Receptionist & Clinic Assistant account on the Curis by Citrus web app:
+________________________________________
+OVERVIEW
+
+The “Billings & Payments” page is a central workspace where Receptionists and Clinic Assistants manage all financial transactions tied to patient services and platform usage. It is split into logical sections that dynamically interact with user actions, invoice status, and integrated payment systems.
+________________________________________
+a.	Invoice Management
+
+Objective: View, generate, and organize invoices across all patient visits.
+Features:
+i.	Invoice Table/List View
+o	Dynamic, searchable, paginated list of all invoices.
+o	Columns: Invoice ID, Patient Name, Date, Doctor, Total Amount, Payment Status.
+o	Filters:
+	By Doctor
+	By Date Range
+	By Payment Status (Paid, Unpaid, Partial)
+	By Payment Method (Cash, M-Pesa, Insurance)
+	Walk-in vs Scheduled Appointment
+ii.	Create New Invoice (Ad-Hoc)
+o	Used for non-booked walk-ins or additional procedures.
+o	Auto-complete patient name (or add new).
+o	Dynamic service selector (pulled from Clinic Owner-defined service catalog).
+o	Auto-calculates VAT and total amount.
+o	Discounts field (optional, percent or fixed).
+o	Line items with dynamic unit price and quantity fields.
+iii.	Invoice Detail View
+o	Modal or subpage showing:
+	Itemized service list
+	Doctor associated
+	VAT, discount applied
+	Invoice notes (if any)
+	Invoice creator identity
+	Time created
+o	Export as PDF button available.
+________________________________________
+b.	Mark Invoices As Paid
+
+Objective: Update the system with real-world payment events manually received at the front desk.
+Features:
+i.	Manual Payment Form (Opens from unpaid invoice)
+o	Inputs required:
+	Amount received
+	Payment method (dropdown: Cash, M-Pesa, Insurance)
+	Payment timestamp (auto-filled with current time, editable)
+	Transaction reference (mandatory for M-Pesa/Insurance)
+o	Partial payment logic:
+	Remaining balance automatically calculated and shown
+	System tracks payment history per invoice
+ii.	Audit Log Entry
+o	Each mark-as-paid action logs:
+	User ID
+	Action type (e.g., marked as paid)
+	Invoice ID
+	Timestamp
+	Method and reference
+o	Visible in the audit log section
+________________________________________
+c.	Curis Platform Service Charge Payments
+
+Objective: Let reception staff pay the platform’s service fee (e.g., 20% of total revenue) directly to Curis.
+Features:
+i.	List of Curis Fee Invoices
+o	Pulled from system-generated revenue share calculations.
+o	Columns: Curis Invoice ID, Date, Total Due, Paid Amount, Status
+ii.	Pay Invoice Modal
+o	Choose [Full] or [Partial] payment
+o	Enter M-Pesa number (with STK Push or manual confirmation)
+o	Confirmation screen with:
+	Invoice summary
+	Charges to be paid
+	Instructions for manual payment fallback
+iii.	Real-Time Feedback
+o	System polls for payment confirmation from M-Pesa
+o	Updates payment status without needing to refresh
+o	Receipt auto-generated upon successful transaction
+iv.	Upcoming Payment Alerts
+o	If platform fee invoice is due in <3 days, warning is shown in red on dashboard and Billing page.
+________________________________________
+d.	Receipt Issuance
+
+Objective: Issue proof-of-payment to patients or the clinic for any recorded transaction.
+Features:
+i.	Auto-generation Post-Payment
+o	Every marked payment (manual or via M-Pesa) triggers receipt creation
+ii.	Receipt Detail View
+o	Contains:
+	Invoice number
+	Paid amount
+	Method
+	Patient name
+	Clinic branding
+	Timestamp and clinic stamp
+o	Reissue options available:
+	Send via SMS, Email, WhatsApp (uses patient contact data)
+	Print format (PDF export)
+iii.	Receipt History Panel
+o	View all issued receipts
+o	Filter by date, patient, or method
+________________________________________
+e.	Outstanding Payments Follow-Up
+
+Objective: Ensure no invoice goes unpaid by actively tracking and sending reminders.
+Features:
+i.	Overdue Invoices List
+o	Separate table showing invoices unpaid beyond their due date (e.g., 7 days)
+ii.	Follow-Up Actions (Per Row)
+o	Send Reminder options:
+	WhatsApp (integrated via API or web popup)
+	SMS
+	In-app alert (if patient uses patient portal)
+o	Message templates auto-fill:
+	"Dear [Name], your invoice #[ID] at [Clinic Name] remains unpaid. Kindly clear the KES [amount] via M-Pesa till [XXXXXX]."
+iii.	Reminder Logs
+o	Every sent reminder is logged with:
+	Date/time
+	Sender (receptionist’s account)
+	Medium used
+	Message content
+________________________________________
+f.	View Payment Methods & Instructions
+
+Objective: Provide reception staff with all accepted payment methods for patient communication.
+Features:
+i.	Display Only Section
+o	Shows:
+	M-Pesa Paybill/Till Numbers
+	Bank transfer instructions (Account Name, Number, Bank Name, Branch)
+	Insurance claim processes (e.g., attach claim form, waiting time)
+o	Configured only by Clinic Owner; no editing rights for reception staff
+ii.	Copy-to-Clipboard Buttons
+o	For easy copy-paste into SMS/WhatsApp/email replies
+________________________________________
+g.	Payment & Audit Logs
+
+Objective: Maintain financial transparency and traceability.
+Features:
+i.	Comprehensive Payment Log Table
+o	Columns: Invoice ID, Amount, Method, Payer, Timestamp, Marked By (staff)
+ii.	Filters
+o	By payer name
+o	Date range
+o	Method
+o	Action performed (e.g., payment, receipt reissued, invoice created)
+iii.	Export Options
+o	Export full logs to CSV/PDF for internal use or auditing
+________________________________________
+h.	Payment Alerts & Curis Billing Data
+
+Objective: Keep staff informed of critical billing notifications related to platform use.
+Features:
+i.	System Alerts Panel
+o	Notices on:
+	Upcoming Curis deductions
+	Failed payments
+	Payment confirmation requests
+ii.	Historical Curis Billing Reports
+o	Tabular list of:
+	All platform fee invoices
+	Payment status
+	Associated receipts and timestamps
+________________________________________
+i.	Service Charge Audit Trail
+
+Objective: Maintain a record of platform usage fee deductions for transparency with the Clinic Owner.
+Features:
+i.	Trail Log View
+o	Data shown:
+	Date of deduction
+	Linked patient invoices
+	Percentage charged
+	Amount remitted
+	Method used
+o	Separate tab within Reports or accessible from Billing dashboard
+________________________________________
+Permission Control
+
+•	Cannot modify:
+o	Platform fee percentages
+o	Service item prices
+o	Payment channels
+•	Can only operate within visibility and roles assigned by Clinic Owner
+________________________________________
+
+
+
+
+
+
+
+
+

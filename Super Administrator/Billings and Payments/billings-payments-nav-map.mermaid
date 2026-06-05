@@ -1,0 +1,91 @@
+graph TB
+    %% Main Billings & Payments Page
+    BillingPage["💰 Billings & Payments Page<br/>Financial Control Center"]
+    
+    %% Back Navigation
+    BillingPage --> BackNav["← Back to Dashboard"]
+    BackNav --> Dashboard["🏠 Super Admin Dashboard"]
+    
+    %% Dynamic Billing Dashboard
+    BillingPage --> BillingDash["📊 Dynamic Billing Dashboard"]
+    BillingDash --> |View| RevenueSummary["Revenue Overview Panel<br/>────────────────<br/>💵 Total Platform Revenue:<br/>  • All Clinics: KES [Amount]<br/>  • This Month: KES [Amount]<br/>  • YTD: KES [Amount]<br/>📈 Service Charges Collected:<br/>  • Weekly: KES [Amount]<br/>  • Bi-weekly: KES [Amount]<br/>  • Monthly: KES [Amount]<br/>📋 Invoice Status:<br/>  • Pending: [Count] - KES [Amount]<br/>  • Paid: [Count] - KES [Amount]<br/>❌ Failed Transactions: [Count]<br/>🔍 Dynamic Filters:<br/>  • By Clinic Owner ▼<br/>  • By Frequency ▼<br/>  • By Region ▼<br/>  • By Time Period ▼"]
+    
+    %% Invoice Management
+    BillingPage --> InvoiceManager["📄 Invoice Management"]
+    InvoiceManager --> |Manage| InvoicePanel["Invoice Control Panel<br/>──────────────<br/>⚙️ Auto-Generation Settings:<br/>  • Frequency: [Weekly ▼]<br/>  • Charge Type: [Fixed ▼]<br/>  • Generate Now 🔄<br/>📋 Invoice Table:<br/>  ID | Clinic | Amount | Status | Due Date | Actions<br/>  ─────────────────────────────────<br/>  INV001 | Clinic A | KES 2,500 | Pending 🟡 | Today | ⚙️<br/>  INV002 | Clinic B | KES 3,000 | Paid ✅ | Yesterday | ⚙️<br/>  INV003 | Clinic C | KES 2,000 | Overdue 🔴 | 5 days ago | ⚙️<br/>• Search: 🔍 [Invoice/Clinic]<br/>• Filter: Status ▼ Date ▼ Amount ▼<br/>• Bulk Actions: Export Selected 📥"]
+    
+    %% Individual Invoice Actions
+    InvoicePanel --> |Click Actions| InvoiceActions["Invoice Actions Menu<br/>─────────────<br/>• View Details 👁️<br/>• Edit Status ✏️<br/>• Mark as Paid ✅<br/>• Mark as Unpaid ❌<br/>• Send Reminder 📧<br/>• Download PDF 📥<br/>• Download CSV 📊<br/>• View Breakdown 📋"]
+    
+    %% Invoice Details Modal
+    InvoiceActions --> |View Details| InvoiceDetails["Invoice Details Modal<br/>──────────────<br/>📄 Invoice #INV001<br/>🏥 Clinic: Clinic A<br/>👤 Owner: Dr. Smith<br/>📅 Period: 01/01 - 07/01<br/>─────────────<br/>Services Breakdown:<br/>• Consultations: 50 × KES 100<br/>• Prescriptions: 30 × KES 50<br/>• Lab Tests: 20 × KES 200<br/>Subtotal: KES 10,500<br/>─────────────<br/>Service Charge (20%): KES 2,100<br/>Total Due: KES 2,100<br/>Status: Pending 🟡<br/>• Actions:<br/>  - Edit Status ✏️<br/>  - Send Invoice 📧<br/>  - Export PDF 📥"]
+    
+    %% Service Charge Configuration
+    BillingPage --> ServiceConfig["⚙️ Service Charge Config"]
+    ServiceConfig --> |Configure| ChargePanel["Service Charge Settings<br/>──────────────<br/>💰 Charge Model Selection:<br/>📊 Percentage Based:<br/>  ○ Weekly: 20%<br/>  ○ Bi-weekly: 25%<br/>  ○ Monthly: 30%<br/>💵 Fixed Amount:<br/>  ○ Weekly: KES [2,000]<br/>  ○ Bi-weekly: KES [2,500]<br/>  ○ Monthly: KES [3,000]<br/>  [Edit Amounts ✏️]<br/>🎯 Apply Settings:<br/>  ○ All Clinics (Global)<br/>  ○ Specific Clinic:<br/>    [Select Clinic ▼]<br/>📅 Current Settings Display:<br/>  • Clinic A: Weekly 20%<br/>  • Clinic B: Monthly Fixed<br/>  • Clinic C: Bi-weekly 25%<br/>• Save Configuration ✓"]
+    
+    %% Payment Cycle Management
+    BillingPage --> PaymentCycle["🔄 Payment Cycle Mgmt"]
+    PaymentCycle --> |Monitor| CyclePanel["Payment Cycle Monitor<br/>─────────────<br/>📊 Accumulated Charges:<br/>Clinic | Current | Status | Next Bill<br/>────────────────────<br/>Clinic A | KES 5,000 | Active ✅ | 3 days<br/>Clinic B | KES 8,000 | Overdue 🔴 | Past due<br/>Clinic C | KES 3,500 | Settled ✅ | 7 days<br/>─────────────<br/>⚠️ Delinquent Accounts: [3]<br/>  [View Details]<br/>💳 Payment Methods:<br/>  • M-PESA: Connected ✅<br/>  • Stripe: Connected ✅<br/>  • Bank Transfer: Active ✅<br/>📊 Status Summary:<br/>  • Paid: [Count]<br/>  • Partially Paid: [Count]<br/>  • Failed: [Count]<br/>  • Awaiting: [Count]"]
+    
+    %% Dispute & Refund Handling
+    BillingPage --> DisputeRefund["⚖️ Dispute & Refund"]
+    DisputeRefund --> |Handle| DisputePanel["Dispute Management<br/>────────────<br/>📋 Active Disputes:<br/>ID | Clinic | Amount | Reason | Status<br/>─────────────────────────<br/>D001 | Clinic A | KES 500 | Overcharge | Open 🟡<br/>D002 | Clinic B | KES 1,000 | Duplicate | Resolved ✅<br/>─────────────<br/>• Actions per Dispute:<br/>  - View Details 👁️<br/>  - Adjust Charge 💰<br/>  - Waive Charge ❌<br/>  - Issue Refund 💸<br/>  - Add Note 📝<br/>🔍 Audit Trail:<br/>  • All adjustments logged<br/>  • User actions tracked<br/>  • Timestamps recorded<br/>• Export Dispute Log 📥"]
+    
+    %% Financial Reporting
+    BillingPage --> FinReporting["📊 Financial Reporting"]
+    FinReporting --> |Generate| ReportsPanel["Financial Reports Center<br/>──────────────<br/>📈 Report Types:<br/>  ○ Platform Earnings<br/>  ○ Service Charges<br/>  ○ Clinic Balances<br/>  ○ Overdue Invoices<br/>  ○ Revenue Trends<br/>🔍 Filters:<br/>  • By Clinic: [Select ▼]<br/>  • Charge Type: [All ▼]<br/>  • Frequency: [All ▼]<br/>  • Date Range: [From-To]<br/>📊 Visualizations:<br/>  [Revenue Chart 📊]<br/>  [Trend Graph 📈]<br/>  [Clinic Comparison 📉]<br/>📥 Export Options:<br/>  • PDF Report 📄<br/>  • Excel Sheet 📊<br/>  • CSV Data 📋<br/>• Generate Report ✓"]
+    
+    %% Automated Notifications
+    BillingPage --> BillingNotif["🔔 Billing Notifications"]
+    BillingNotif --> |Configure| NotifPanel["Notification Settings<br/>─────────────<br/>📧 Alert Configuration:<br/>☑️ Invoice Due Dates<br/>  - Send: [3 days] before<br/>☑️ Invoice Generated<br/>  - Immediate notification<br/>☑️ Failed Payments<br/>  - Alert admin + clinic<br/>☑️ Overdue Notices<br/>  - Every: [7 days]<br/>☑️ Charge Adjustments<br/>  - Notify affected parties<br/>📱 Channels:<br/>  ☑️ Email<br/>  ☑️ SMS<br/>  ☑️ Dashboard Alert<br/>📝 Templates:<br/>  [Edit Templates]<br/>• Save Settings ✓"]
+    
+    %% Manual Payment Controls
+    BillingPage --> ManualPayment["✋ Manual Payment Controls"]
+    ManualPayment --> |Record| ManualPanel["Manual Payment Entry<br/>─────────────<br/>💳 Record Offline Payment:<br/>• Clinic: [Select ▼]<br/>• Amount: KES [____]<br/>• Payment Method:<br/>  ○ Cash<br/>  ○ Bank Transfer<br/>  ○ Cheque<br/>• Reference: [____]<br/>• Date: [Date Picker]<br/>• Notes: [Text Area]<br/>• Attach Receipt: 📎<br/>• Record Payment ✓<br/>─────────────<br/>📜 Transaction History:<br/>  [View Full History]"]
+    
+    %% Bulk Actions
+    BillingPage --> BulkActions["🔧 Bulk Actions"]
+    BulkActions --> |Execute| BulkPanel["Bulk Operations Panel<br/>─────────────<br/>⚡ Quick Actions:<br/>• Service Charge Update:<br/>  - Select Clinics: □ All<br/>  - New Setting: [____]<br/>  - Apply Changes ✓<br/>• Invoice Generation:<br/>  - Generate for All ⚡<br/>  - Selected Period: [____]<br/>• Export Operations:<br/>  - All Billing Logs 📥<br/>  - Selected Period 📅<br/>  - Format: CSV/Excel<br/>• Global Rules:<br/>  - Grace Period: [Days]<br/>  - Late Fee: [%]<br/>  - Notification Freq: [____]<br/>• Execute Bulk Action ✓"]
+    
+    %% Transaction History
+    BillingPage --> TransHistory["📜 Transaction History"]
+    TransHistory --> |View| HistoryPanel["Complete Transaction Log<br/>──────────────────<br/>🔍 Filter by Clinic: [Select ▼]<br/>Date | Type | Amount | Status | Clinic<br/>────────────────────────<br/>Today | Consultation | KES 500 | Paid ✅ | Clinic A<br/>Today | Prescription | KES 300 | Paid ✅ | Clinic B<br/>Yesterday | Service Charge | KES 2,000 | Pending 🟡 | Clinic A<br/>Yesterday | Refund | -KES 500 | Complete ✅ | Clinic C<br/>─────────────────<br/>• Transaction Details:<br/>  - Revenue Breakdown<br/>  - Service Charges<br/>  - Refunds/Disputes<br/>  - Audit Trail<br/>• Export History 📥"]
+    
+    %% Quick Actions
+    BillingPage --> QuickActions["⚡ Quick Actions"]
+    QuickActions --> QuickInvoice["📄 Generate Invoice"]
+    QuickActions --> QuickCharge["💰 Adjust Charge"]
+    QuickActions --> QuickReport["📊 Today's Report"]
+    QuickActions --> QuickExport["📥 Export Data"]
+    
+    %% Real-time Updates
+    BillingPage -.->|WebSocket| RealTimeSync["🔄 Real-Time Updates<br/>────────────<br/>• New payments<br/>• Status changes<br/>• Failed transactions<br/>• Dispute submissions<br/>• Auto-refresh data"]
+    
+    %% Integration with Other Pages
+    BillingPage --> MainNav["Main Navigation"]
+    MainNav --> UsersPage["→ Curis Users"]
+    MainNav --> ApptPage["→ Appointment Oversight"]
+    MainNav --> HealthPage["→ Health (High-Level)"]
+    MainNav --> SettingsPage["→ Settings"]
+    MainNav --> CompliancePage["→ Compliance Hub"]
+    
+    %% Quick Access from Dashboard
+    Dashboard --> |Financial Widget| BillingPage
+    Dashboard --> |Quick Action| ChargePanel
+    
+    %% Styling
+    classDef mainPage fill:#1E3A5F,stroke:#0D1B2A,stroke-width:4px,color:#fff,font-weight:bold
+    classDef panel fill:#7B2CBF,stroke:#5A189A,stroke-width:2px,color:#fff
+    classDef modal fill:#FF6B35,stroke:#C73E1D,stroke-width:2px,color:#fff
+    classDef action fill:#06A77D,stroke:#045A3F,stroke-width:2px,color:#fff
+    classDef financial fill:#F59E0B,stroke:#D97706,stroke-width:2px,color:#fff
+    classDef nav fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
+    classDef realtime fill:#10B981,stroke:#059669,stroke-width:2px,color:#fff
+    
+    class BillingPage mainPage
+    class BillingDash,InvoiceManager,ServiceConfig,PaymentCycle,DisputeRefund,FinReporting,BillingNotif,ManualPayment,BulkActions,TransHistory,QuickActions panel
+    class RevenueSummary,InvoicePanel,InvoiceDetails,ChargePanel,CyclePanel,DisputePanel,ReportsPanel,NotifPanel,ManualPanel,BulkPanel,HistoryPanel modal
+    class ChargePanel,CyclePanel,DisputePanel financial
+    class MainNav,BackNav,Dashboard,UsersPage,ApptPage,HealthPage,SettingsPage,CompliancePage nav
+    class RealTimeSync realtime

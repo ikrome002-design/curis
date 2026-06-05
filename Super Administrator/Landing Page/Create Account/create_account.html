@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Super Administrator Account | Curis</title>
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="create_account.css">
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\landing_page.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\Log In\log_in.html">Log
+                            In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <section class="create-account-container">
+            <div class="intro-text">
+                <h1>Create Your Super Administrator Account</h1>
+                <p>Step into the <strong>driver's seat of Curis</strong>. As a <strong>Super Administrator</strong>, you
+                    hold full control over every clinic, user, and setting on the platform.</p>
+                <ul>
+                    <li>Manage all clinics and accounts</li>
+                    <li>Control billing, permissions, and features</li>
+                    <li>Oversee system security and compliance</li>
+                </ul>
+                <p>This is <strong>top-level access</strong> — built for platform governance, scale, and precision.</p>
+
+            </div>
+
+            <!-- Account Creation Form -->
+            <form id="accountCreationForm">
+                <!-- Personal Information Section -->
+                <div class="form-section">
+                    <h2>Personal Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <div class="error-message" id="firstNameError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required>
+                            <div class="error-message" id="lastNameError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="staffId">Staff ID <span class="required">*</span></label>
+                            <input type="text" id="staffId" name="staffId" required>
+                            <div class="error-message" id="staffIdError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="workEmail">Work Email <span class="required">*</span></label>
+                            <div class="email-validation-container">
+                                <input type="email" id="workEmail" name="workEmail" required>
+                                <span class="validation-icon" id="emailValidationIcon"></span>
+                            </div>
+                            <div class="error-message" id="workEmailError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title <span class="required">*</span></label>
+                            <input type="text" id="jobTitle" name="jobTitle" required>
+                            <div class="error-message" id="jobTitleError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department <span class="required">*</span></label>
+                            <input type="text" id="department" name="department" required>
+                            <div class="error-message" id="departmentError"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Information Section -->
+                <div class="form-section">
+                    <h2>Security Information</h2>
+
+
+
+                    <!-- CAPTCHA Verification -->
+                    <div class="captcha-container">
+                        <h3>CAPTCHA Verification <span class="required">*</span></h3>
+                        <div id="captcha">
+                            <!-- CAPTCHA will be inserted by JavaScript -->
+                        </div>
+                        <div class="error-message" id="captchaError"></div>
+                    </div>
+                </div>
+
+                <!-- Legal Agreements Section -->
+                <div class="form-section">
+                    <h2>Legal Agreements</h2>
+                    <div class="agreement-group">
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="termsAgree" name="termsAgree" required>
+                            <label for="termsAgree">I agree to the <a href="#" id="termsLink">Terms & Conditions</a>
+                                <span class="required">*</span></label>
+                        </div>
+                        <div class="error-message" id="termsAgreeError"></div>
+                    </div>
+
+                    <div class="agreement-group">
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="privacyAgree" name="privacyAgree" required>
+                            <label for="privacyAgree">I agree to the <a href="#" id="privacyLink">Privacy Policy</a>
+                                <span class="required">*</span></label>
+                        </div>
+                        <div class="error-message" id="privacyAgreeError"></div>
+                    </div>
+
+                    <div class="agreement-group">
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="dataPolicyAgree" name="dataPolicyAgree" required>
+                            <label for="dataPolicyAgree">I agree to the <a href="#" id="dataPolicyLink">Data Policy</a>
+                                <span class="required">*</span></label>
+                        </div>
+                        <div class="error-message" id="dataPolicyAgreeError"></div>
+                    </div>
+                </div>
+
+                <!-- Form Submission -->
+                <div class="form-actions">
+                    <button type="submit" id="createAccountBtn">Create Account</button>
+                    <div class="loading-indicator" id="loadingIndicator">
+                        <div class="spinner"></div>
+                        <span>Processing...</span>
+                    </div>
+                </div>
+            </form>
+
+        </section>
+
+        <!-- Success/Error Messages -->
+        <div id="messageOverlay" class="overlay">
+            <div class="message-container">
+                <div id="successMessage" class="message success-message">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Account Pending Approval</h3>
+                    <p>Your account has been submitted for admin review. You will receive an email notification once
+                        your account is approved.</p>
+                    <button id="closeSuccessBtn">Close</button>
+                </div>
+
+                <div id="errorMessage" class="message error-message">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>Error</h3>
+                    <p id="errorText">There was an error processing your request. Please try again.</p>
+                    <button id="retryBtn">Retry</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legal Modals -->
+        <div id="termsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Terms & Conditions</h2>
+                <div class="modal-body">
+                    <!-- Terms content will be loaded via JavaScript -->
+                    <p>Loading Terms & Conditions...</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="privacyModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Privacy Policy</h2>
+                <div class="modal-body">
+                    <!-- Privacy content will be loaded via JavaScript -->
+                    <p>Loading Privacy Policy...</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="dataPolicyModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Data Policy</h2>
+                <div class="modal-body">
+                    <!-- Data Policy content will be loaded via JavaScript -->
+                    <p>Loading Data Policy...</p>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-theme">
+                    <button id="darkModeToggle" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/@citruske" aria-label="Instagram" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" aria-label="X" target="_blank" rel="noopener">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" aria-label="Facebook"
+                        target="_blank" rel="noopener">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" aria-label="YouTube" target="_blank" rel="noopener">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" aria-label="LinkedIn" target="_blank"
+                        rel="noopener">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="footer-legal">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\Footer\Terms and Conditions\terms_and_conditions.html">Terms
+                                of Service</a></li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\Footer\Privacy Policy\privacy_policy.html">Privacy
+                                Policy</a></li>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\Footer\Data Policy\data_policy.html">Data
+                                Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-help">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a
+                                href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\Footer\FAQ\faq.html">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-corporate">
+                    <h4>Corporate</h4>
+                    <ul>
+                        <li><a href="https://citruslabs.co.ke/" target="_blank" rel="noopener">Citrus Labs</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="create_account.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for responsive design and character encoding -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title -->
+    <title>My Profile - Curis by Citrus</title>
+
+    <!-- Favicon links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External stylesheets -->
+    <link rel="stylesheet" href="my_profile.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Left sidebar navigation -->
+    <aside class="sidebar">
+        <!-- Logo section -->
+        <div class="logo-section">
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                class="logo-link">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo_1.png"
+                    alt="Curis by Citrus Logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Main navigation menu -->
+        <nav class="main-navigation">
+            <ul class="nav-menu">
+                <!-- Dashboard link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                        class="nav-link">
+                        <i class="fas fa-chart-pie"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <!-- Workforce Hub link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Workforce Hub\workforce_hub.html"
+                        class="nav-link">
+                        <i class="fas fa-users"></i>
+                        Workforce Hub
+                    </a>
+                </li>
+
+                <!-- Clinic Services Hub link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Clinic Services Hub\clinic_services_hub.html"
+                        class="nav-link">
+                        <i class="fas fa-stethoscope"></i>
+                        Clinic Services Hub
+                    </a>
+                </li>
+
+                <!-- Appointments link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Appointments\appointments.html"
+                        class="nav-link">
+                        <i class="fas fa-calendar-check"></i>
+                        Appointments
+                    </a>
+                </li>
+
+                <!-- Billing & Payments link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Billings and Payments\billings_and_payments.html"
+                        class="nav-link">
+                        <i class="fas fa-credit-card"></i>
+                        Billing & Payments
+                    </a>
+                </li>
+
+                <!-- Messaging link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Messaging\messaging.html"
+                        class="nav-link">
+                        <i class="fas fa-comments"></i>
+                        Messaging
+                    </a>
+                </li>
+
+                <!-- Health Data & Records link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Health Data and Records\health_data_and_records.html"
+                        class="nav-link">
+                        <i class="fas fa-file-medical"></i>
+                        Health Data & Records
+                    </a>
+                </li>
+
+                <!-- Insights & Performance link -->
+                <li class="nav-item">
+                    <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Insights and Performance\insights_and_performance.html"
+                        class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        Insights & Performance
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="main-content">
+
+        <!-- Top header bar -->
+        <header class="top-header">
+            <div class="header-left">
+                <h1>My Profile</h1>
+                <p class="page-subtitle">Manage your personal information and clinic details</p>
+            </div>
+
+            <div class="header-right">
+                <!-- Notifications button -->
+                <div class="notification-container">
+                    <button class="notification-btn" onclick="toggleNotifications()" aria-label="View notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">2</span>
+                    </button>
+                </div>
+
+                <!-- User profile dropdown -->
+                <div class="user-profile-container">
+                    <button class="user-profile-btn"
+                        onclick="window.location.href='file:///C:/Users/nderu/Documents/Development/Product/Curis/Users/Clinic%20Owner/My%20Profile/my_profile.html'"
+                        aria-label="Go to My Profile">
+                        <img src="file:///C:/Users/nderu/Documents/Development/Product/Curis/Technical%20Writings/Images/Icons/icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-image">
+                        <span class="profile-name">Dr. Sarah Wanjiku</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <!-- User dropdown menu -->
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Settings\settings.html"
+                            class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            Settings
+                        </a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Landing Page\landing_page.html"
+                            class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Profile management container -->
+        <div class="dashboard-container">
+
+            <!-- Personal Information Section -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-user"></i>
+                        Personal Information
+                    </h3>
+                    <button class="view-trends-btn" onclick="editPersonalInfo()">
+                        <i class="fas fa-edit"></i>
+                        Edit Info
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Manage your personal details, profile photo, and login
+                        credentials.</p>
+
+                    <!-- Current personal information display -->
+                    <div class="personal-info-display">
+                        <div class="profile-photo-section">
+                            <div class="current-photo">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                                    alt="Profile Photo" class="profile-photo">
+                                <button class="photo-edit-btn" onclick="openPhotoModal()">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label class="info-label">Full Name</label>
+                                <div class="info-value">Dr. Sarah Wanjiku Kiprotich</div>
+                            </div>
+                            <div class="info-item">
+                                <label class="info-label">Email Address</label>
+                                <div class="info-value">sarah.wanjiku@nairobimed.co.ke</div>
+                            </div>
+                            <div class="info-item">
+                                <label class="info-label">Phone Number</label>
+                                <div class="info-value">+254 701 234 567</div>
+                            </div>
+                            <div class="info-item">
+                                <label class="info-label">Professional Title</label>
+                                <div class="info-value">General Practitioner</div>
+                            </div>
+                            <div class="info-item">
+                                <label class="info-label">Medical License Number</label>
+                                <div class="info-value">KE-MP-12345</div>
+                            </div>
+                            <div class="info-item">
+                                <label class="info-label">Address</label>
+                                <div class="info-value">123 Uhuru Highway, Nairobi, Kenya 00100</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="openPhotoModal()">
+                            <i class="fas fa-camera"></i>
+                            Update Photo
+                        </button>
+                        <button class="action-btn" onclick="openCredentialsModal()">
+                            <i class="fas fa-key"></i>
+                            Login Credentials
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clinic Details Section -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-hospital"></i>
+                        Clinic Information
+                    </h3>
+                    <button class="status-legend-btn" onclick="editClinicInfo()">
+                        <i class="fas fa-edit"></i>
+                        Edit Clinic
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Update your clinic details, business hours, and branding
+                        information.</p>
+
+                    <!-- Current clinic information display -->
+                    <div class="clinic-info-display">
+                        <div class="clinic-branding-section">
+                            <div class="clinic-logo">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo_1.png"
+                                    alt="Clinic Logo" class="clinic-logo-img">
+                                <button class="logo-edit-btn" onclick="openBrandingModal()">
+                                    <i class="fas fa-image"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="clinic-details-grid">
+                            <div class="clinic-item">
+                                <label class="clinic-label">Clinic Name</label>
+                                <div class="clinic-value">Nairobi Medical Center</div>
+                            </div>
+                            <div class="clinic-item">
+                                <label class="clinic-label">Registration Number</label>
+                                <div class="clinic-value">CL-NRB-2023-001</div>
+                            </div>
+                            <div class="clinic-item">
+                                <label class="clinic-label">Contact Email</label>
+                                <div class="clinic-value">info@nairobimed.co.ke</div>
+                            </div>
+                            <div class="clinic-item">
+                                <label class="clinic-label">Contact Phone</label>
+                                <div class="clinic-value">+254 20 123 4567</div>
+                            </div>
+                            <div class="clinic-item">
+                                <label class="clinic-label">Physical Address</label>
+                                <div class="clinic-value">456 Kenyatta Avenue, Nairobi, Kenya 00100</div>
+                            </div>
+                            <div class="clinic-item">
+                                <label class="clinic-label">Specialization</label>
+                                <div class="clinic-value">General Practice, Family Medicine</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="openBusinessHoursModal()">
+                            <i class="fas fa-clock"></i>
+                            Business Hours
+                        </button>
+                        <button class="action-btn" onclick="openServicesModal()">
+                            <i class="fas fa-list"></i>
+                            Services & Pricing
+                        </button>
+                        <button class="action-btn" onclick="openBrandingModal()">
+                            <i class="fas fa-palette"></i>
+                            Clinic Branding
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Hours Overview Widget -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-clock"></i>
+                        Business Hours
+                    </h3>
+                    <button class="top-performers-btn" onclick="openBusinessHoursModal()">
+                        <i class="fas fa-edit"></i>
+                        Configure
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Current operating hours and break time configuration.</p>
+
+                    <!-- Business hours display -->
+                    <div class="business-hours-display">
+                        <div class="hours-grid">
+                            <div class="day-schedule">
+                                <div class="day-name">Monday</div>
+                                <div class="day-hours">8:00 AM - 6:00 PM</div>
+                                <div class="day-break">Lunch: 1:00 PM - 2:00 PM</div>
+                            </div>
+                            <div class="day-schedule">
+                                <div class="day-name">Tuesday</div>
+                                <div class="day-hours">8:00 AM - 6:00 PM</div>
+                                <div class="day-break">Lunch: 1:00 PM - 2:00 PM</div>
+                            </div>
+                            <div class="day-schedule">
+                                <div class="day-name">Wednesday</div>
+                                <div class="day-hours">8:00 AM - 6:00 PM</div>
+                                <div class="day-break">Lunch: 1:00 PM - 2:00 PM</div>
+                            </div>
+                            <div class="day-schedule">
+                                <div class="day-name">Thursday</div>
+                                <div class="day-hours">8:00 AM - 6:00 PM</div>
+                                <div class="day-break">Lunch: 1:00 PM - 2:00 PM</div>
+                            </div>
+                            <div class="day-schedule">
+                                <div class="day-name">Friday</div>
+                                <div class="day-hours">8:00 AM - 6:00 PM</div>
+                                <div class="day-break">Lunch: 1:00 PM - 2:00 PM</div>
+                            </div>
+                            <div class="day-schedule">
+                                <div class="day-name">Saturday</div>
+                                <div class="day-hours">9:00 AM - 3:00 PM</div>
+                                <div class="day-break">No break</div>
+                            </div>
+                            <div class="day-schedule closed">
+                                <div class="day-name">Sunday</div>
+                                <div class="day-hours">Closed</div>
+                                <div class="day-break">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Offerings Widget -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-list"></i>
+                        Service Offerings
+                    </h3>
+                    <button class="view-trends-btn" onclick="openServicesModal()">
+                        <i class="fas fa-plus"></i>
+                        Manage Services
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Manage the services you offer, including duration and pricing in
+                        KES..</p>
+
+                    <!-- Services list display -->
+                    <div class="services-display">
+                        <div class="service-item">
+                            <div class="service-info">
+                                <div class="service-name">General Consultation</div>
+                                <div class="service-description">Initial consultation and examination</div>
+                            </div>
+                            <div class="service-details">
+                                <div class="service-duration">30 minutes</div>
+                                <div class="service-price">KES. 2,500</div>
+                            </div>
+                            <div class="service-actions">
+                                <button class="service-edit-btn" onclick="editService('consultation')">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-info">
+                                <div class="service-name">Follow-up Visit</div>
+                                <div class="service-description">Follow-up consultation for existing patients</div>
+                            </div>
+                            <div class="service-details">
+                                <div class="service-duration">20 minutes</div>
+                                <div class="service-price">KES. 1,800</div>
+                            </div>
+                            <div class="service-actions">
+                                <button class="service-edit-btn" onclick="editService('followup')">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-info">
+                                <div class="service-name">Vaccination</div>
+                                <div class="service-description">Immunization services for all ages</div>
+                            </div>
+                            <div class="service-details">
+                                <div class="service-duration">15 minutes</div>
+                                <div class="service-price">KES. 1,200</div>
+                            </div>
+                            <div class="service-actions">
+                                <button class="service-edit-btn" onclick="editService('vaccination')">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-info">
+                                <div class="service-name">Health Screening</div>
+                                <div class="service-description">Comprehensive health check-up package</div>
+                            </div>
+                            <div class="service-details">
+                                <div class="service-duration">45 minutes</div>
+                                <div class="service-price">KES. 4,500</div>
+                            </div>
+                            <div class="service-actions">
+                                <button class="service-edit-btn" onclick="editService('screening')">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="add-service-section">
+                        <button class="quick-add-staff-btn" onclick="addNewService()">
+                            <i class="fas fa-plus"></i>
+                            Add New Service
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account Security Overview Widget -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        <i class="fas fa-shield-alt"></i>
+                        Account Security
+                    </h3>
+                    <button class="status-legend-btn" onclick="openCredentialsModal()">
+                        <i class="fas fa-cog"></i>
+                        Manage
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <p class="customization-info">Monitor your account security settings and update login
+                        credentials.</p>
+
+                    <!-- Security status display -->
+                    <div class="security-overview">
+                        <div class="security-item">
+                            <div class="security-icon">
+                                <i class="fas fa-check-circle" style="color: var(--success-green);"></i>
+                            </div>
+                            <div class="security-details">
+                                <div class="security-title">Email Verified</div>
+                                <div class="security-description">sarah.wanjiku@nairobimed.co.ke</div>
+                            </div>
+                            <div class="security-action">
+                                <button class="action-btn" onclick="changeEmail()">
+                                    <i class="fas fa-edit"></i>
+                                    Change
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="security-item">
+                            <div class="security-icon">
+                                <i class="fas fa-check-circle" style="color: var(--success-green);"></i>
+                            </div>
+                            <div class="security-details">
+                                <div class="security-title">Strong Password</div>
+                                <div class="security-description">Last updated: March 15, 2025</div>
+                            </div>
+                            <div class="security-action">
+                                <button class="action-btn" onclick="changePassword()">
+                                    <i class="fas fa-key"></i>
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="security-item">
+                            <div class="security-icon">
+                                <i class="fas fa-exclamation-triangle" style="color: var(--warning-yellow);"></i>
+                            </div>
+                            <div class="security-details">
+                                <div class="security-title">Two-Factor Authentication</div>
+                                <div class="security-description">Not enabled - Recommended for enhanced security
+                                </div>
+                            </div>
+                            <div class="security-action">
+                                <button class="action-btn" onclick="setupTwoFactor()">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    Enable
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark mode toggle -->
+                <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <!-- Social media links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" class="social-link instagram" target="_blank"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" class="social-link twitter" target="_blank"
+                        aria-label="X (Twitter)">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" class="social-link facebook"
+                        target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" class="social-link youtube" target="_blank"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" class="social-link linkedin" target="_blank"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <!-- Corporate website link -->
+                <a href="https://citruslabs.co.ke/" class="corporate-link" target="_blank">citruslabs.co.ke</a>
+                <!-- Copyright -->
+                <span class="copyright">© 2025 Citrus Labs. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Notifications panel -->
+    <div class="notifications-panel" id="notificationsPanel">
+        <div class="notifications-header">
+            <h4 class="notifications-title">Notifications</h4>
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Notifications\notifications.html"
+                class="view-all-notifications">View All</a>
+        </div>
+        <div class="notifications-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-user-edit"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Profile Update Reminder</h5>
+                    <p>Consider updating your professional photo for better patient recognition</p>
+                    <span class="notification-time">2 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Security Recommendation</h5>
+                    <p>Enable two-factor authentication for enhanced account security</p>
+                    <span class="notification-time">1 day ago</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALS SECTION -->
+
+    <!-- Personal Information Edit Modal -->
+    <div class="modal" id="personalInfoModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Edit Personal Information</h3>
+                <button class="modal-close" onclick="closeModal('personalInfoModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="personalInfoForm">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" value="Dr. Sarah Wanjiku Kiprotich" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Professional Title</label>
+                        <input type="text" class="form-control" value="General Practitioner" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Medical License Number</label>
+                        <input type="text" class="form-control" value="KE-MP-12345" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-control" value="+254 701 234 567" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea class="form-control" rows="3"
+                            required>123 Uhuru Highway, Nairobi, Kenya 00100</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Years of Experience</label>
+                        <input type="number" class="form-control" value="8" min="0" max="50">
+                    </div>
+                </form>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('personalInfoModal')">Cancel</button>
+                    <button class="btn-primary" onclick="savePersonalInfo()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Photo Management Modal -->
+    <div class="modal" id="photoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Profile Photo Management</h3>
+                <button class="modal-close" onclick="closeModal('photoModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Current Photo</label>
+                    <div class="current-photo-preview">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                            alt="Current Profile Photo" id="currentPhotoPreview">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Upload New Photo</label>
+                    <input type="file" class="form-control" accept="image/*" onchange="previewPhoto(event)">
+                    <small>Recommended: Square image, minimum 200x200px, maximum 5MB</small>
+                </div>
+                <div class="form-group">
+                    <label>Photo Preview</label>
+                    <div class="photo-preview-container">
+                        <img src="" alt="Photo Preview" id="photoPreview" style="display: none;">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('photoModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveProfilePhoto()">Save Photo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Credentials Management Modal -->
+    <div class="modal" id="credentialsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Login Credentials Management</h3>
+                <button class="modal-close" onclick="closeModal('credentialsModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="credentials-section">
+                    <h4>Change Email Address</h4>
+                    <div class="form-group">
+                        <label>Current Email</label>
+                        <input type="email" class="form-control" value="sarah.wanjiku@nairobimed.co.ke" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>New Email Address</label>
+                        <input type="email" class="form-control" placeholder="Enter new email address">
+                        <small>Verification email will be sent to the new address</small>
+                    </div>
+                    <button class="action-btn" onclick="requestEmailChange()">
+                        <i class="fas fa-envelope"></i>
+                        Request Email Change
+                    </button>
+                </div>
+
+                <hr style="margin: 2rem 0;">
+
+                <div class="credentials-section">
+                    <h4>Change Password</h4>
+                    <div class="form-group">
+                        <label>Current Password</label>
+                        <input type="password" class="form-control" placeholder="Enter current password">
+                    </div>
+                    <div class="form-group">
+                        <label>New Password</label>
+                        <input type="password" class="form-control" placeholder="Enter new password">
+                        <div class="password-strength-indicator">
+                            <div class="strength-meter">
+                                <div class="strength-fill" style="width: 0%;"></div>
+                            </div>
+                            <small class="strength-text">Password strength will appear here</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm New Password</label>
+                        <input type="password" class="form-control" placeholder="Confirm new password">
+                    </div>
+                    <button class="action-btn" onclick="changePassword()">
+                        <i class="fas fa-key"></i>
+                        Change Password
+                    </button>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn-primary" onclick="closeModal('credentialsModal')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clinic Information Edit Modal -->
+    <div class="modal" id="clinicInfoModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Edit Clinic Information</h3>
+                <button class="modal-close" onclick="closeModal('clinicInfoModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="clinicInfoForm">
+                    <div class="form-group">
+                        <label>Clinic Name</label>
+                        <input type="text" class="form-control" value="Nairobi Medical Center" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Registration Number</label>
+                        <input type="text" class="form-control" value="CL-NRB-2023-001" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Email</label>
+                        <input type="email" class="form-control" value="info@nairobimed.co.ke" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Phone</label>
+                        <input type="tel" class="form-control" value="+254 20 123 4567" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Physical Address</label>
+                        <textarea class="form-control" rows="3"
+                            required>456 Kenyatta Avenue, Nairobi, Kenya 00100</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Specialization</label>
+                        <input type="text" class="form-control" value="General Practice, Family Medicine" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Website (Optional)</label>
+                        <input type="url" class="form-control" placeholder="https://www.yoursite.com">
+                    </div>
+                </form>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('clinicInfoModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveClinicInfo()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Business Hours Configuration Modal -->
+    <div class="modal" id="businessHoursModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Business Hours Configuration</h3>
+                <button class="modal-close" onclick="closeModal('businessHoursModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="hours-configuration">
+                    <div class="day-config">
+                        <div class="day-header">
+                            <h4>Monday</h4>
+                            <label><input type="checkbox" checked> Open</label>
+                        </div>
+                        <div class="day-times">
+                            <div class="time-group">
+                                <label>Opening Time</label>
+                                <input type="time" class="form-control" value="08:00">
+                            </div>
+                            <div class="time-group">
+                                <label>Closing Time</label>
+                                <input type="time" class="form-control" value="18:00">
+                            </div>
+                            <div class="break-group">
+                                <label><input type="checkbox" checked> Lunch Break</label>
+                                <div class="break-times">
+                                    <input type="time" class="form-control" value="13:00">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" value="14:00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-config">
+                        <div class="day-header">
+                            <h4>Tuesday</h4>
+                            <label><input type="checkbox" checked> Open</label>
+                        </div>
+                        <div class="day-times">
+                            <div class="time-group">
+                                <label>Opening Time</label>
+                                <input type="time" class="form-control" value="08:00">
+                            </div>
+                            <div class="time-group">
+                                <label>Closing Time</label>
+                                <input type="time" class="form-control" value="18:00">
+                            </div>
+                            <div class="break-group">
+                                <label><input type="checkbox" checked> Lunch Break</label>
+                                <div class="break-times">
+                                    <input type="time" class="form-control" value="13:00">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" value="14:00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-config">
+                        <div class="day-header">
+                            <h4>Wednesday</h4>
+                            <label><input type="checkbox" checked> Open</label>
+                        </div>
+                        <div class="day-times">
+                            <div class="time-group">
+                                <label>Opening Time</label>
+                                <input type="time" class="form-control" value="08:00">
+                            </div>
+                            <div class="time-group">
+                                <label>Closing Time</label>
+                                <input type="time" class="form-control" value="18:00">
+                            </div>
+                            <div class="break-group">
+                                <label><input type="checkbox" checked> Lunch Break</label>
+                                <div class="break-times">
+                                    <input type="time" class="form-control" value="13:00">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" value="14:00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-config">
+                        <div class="day-header">
+                            <h4>Thursday</h4>
+                            <label><input type="checkbox" checked> Open</label>
+                        </div>
+                        <div class="day-times">
+                            <div class="time-group">
+                                <label>Opening Time</label>
+                                <input type="time" class="form-control" value="08:00">
+                            </div>
+                            <div class="time-group">
+                                <label>Closing Time</label>
+                                <input type="time" class="form-control" value="18:00">
+                            </div>
+                            <div class="break-group">
+                                <label><input type="checkbox" checked> Lunch Break</label>
+                                <div class="break-times">
+                                    <input type="time" class="form-control" value="13:00">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" value="14:00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-config">
+                        <div class="day-header">
+                            <h4>Friday</h4>
+                            <label><input type="checkbox" checked> Open</label>
+                        </div>
+                        <div class="day-times">
+                            <div class="time-group">
+                                <label>Opening Time</label>
+                                <input type="time" class="form-control" value="08:00">
+                            </div>
+                            <div class="time-group">
+                                <label>Closing Time</label>
+                                <input type="time" class="form-control" value="18:00">
+                            </div>
+                            <div class="break-group">
+                                <label><input type="checkbox" checked> Lunch Break</label>
+                                <div class="break-times">
+                                    <input type="time" class="form-control" value="13:00">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" value="14:00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-config">
+                        <div class="day-header">
+                            <h4>Saturday</h4>
+                            <label><input type="checkbox" checked> Open</label>
+                        </div>
+                        <div class="day-times">
+                            <div class="time-group">
+                                <label>Opening Time</label>
+                                <input type="time" class="form-control" value="09:00">
+                            </div>
+                            <div class="time-group">
+                                <label>Closing Time</label>
+                                <input type="time" class="form-control" value="15:00">
+                            </div>
+                            <div class="break-group">
+                                <label><input type="checkbox"> Lunch Break</label>
+                                <div class="break-times">
+                                    <input type="time" class="form-control" value="12:00">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" value="13:00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-config">
+                        <div class="day-header">
+                            <h4>Sunday</h4>
+                            <label><input type="checkbox"> Open</label>
+                        </div>
+                        <div class="day-times closed">
+                            <p>Clinic is closed on Sundays</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('businessHoursModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveBusinessHours()">Save Hours</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Management Modal -->
+    <div class="modal" id="servicesModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Service Offerings Management</h3>
+                <button class="modal-close" onclick="closeModal('servicesModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="services-management">
+                    <div class="add-service-form">
+                        <h4>Add New Service</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Service Name</label>
+                                <input type="text" class="form-control" placeholder="e.g., General Consultation">
+                            </div>
+                            <div class="form-group">
+                                <label>Duration (minutes)</label>
+                                <input type="number" class="form-control" placeholder="30" min="5" max="180">
+                            </div>
+                            <div class="form-group">
+                                <label>Price (KES.)</label>
+                                <input type="number" class="form-control" placeholder="2500" min="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control" rows="2"
+                                placeholder="Brief description of the service"></textarea>
+                        </div>
+                        <button class="action-btn" onclick="addService()">
+                            <i class="fas fa-plus"></i>
+                            Add Service
+                        </button>
+                    </div>
+
+                    <hr style="margin: 2rem 0;">
+
+                    <div class="existing-services">
+                        <h4>Current Services</h4>
+                        <div class="services-list">
+                            <div class="service-edit-item">
+                                <div class="service-details">
+                                    <input type="text" class="form-control" value="General Consultation">
+                                    <textarea class="form-control"
+                                        rows="1">Initial consultation and examination</textarea>
+                                </div>
+                                <div class="service-params">
+                                    <input type="number" class="form-control" value="30" min="5">
+                                    <span>minutes</span>
+                                    <input type="number" class="form-control" value="2500" min="0">
+                                    <span>KES.</span>
+                                </div>
+                                <div class="service-controls">
+                                    <button class="btn-primary" onclick="updateService(this)">Save</button>
+                                    <button class="btn-secondary" onclick="deleteService(this)">Delete</button>
+                                </div>
+                            </div>
+
+                            <div class="service-edit-item">
+                                <div class="service-details">
+                                    <input type="text" class="form-control" value="Follow-up Visit">
+                                    <textarea class="form-control"
+                                        rows="1">Follow-up consultation for existing patients</textarea>
+                                </div>
+                                <div class="service-params">
+                                    <input type="number" class="form-control" value="20" min="5">
+                                    <span>minutes</span>
+                                    <input type="number" class="form-control" value="1800" min="0">
+                                    <span>KES.</span>
+                                </div>
+                                <div class="service-controls">
+                                    <button class="btn-primary" onclick="updateService(this)">Save</button>
+                                    <button class="btn-secondary" onclick="deleteService(this)">Delete</button>
+                                </div>
+                            </div>
+
+                            <div class="service-edit-item">
+                                <div class="service-details">
+                                    <input type="text" class="form-control" value="Vaccination">
+                                    <textarea class="form-control"
+                                        rows="1">Immunization services for all ages</textarea>
+                                </div>
+                                <div class="service-params">
+                                    <input type="number" class="form-control" value="15" min="5">
+                                    <span>minutes</span>
+                                    <input type="number" class="form-control" value="1200" min="0">
+                                    <span>KES.</span>
+                                </div>
+                                <div class="service-controls">
+                                    <button class="btn-primary" onclick="updateService(this)">Save</button>
+                                    <button class="btn-secondary" onclick="deleteService(this)">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('servicesModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveAllServices()">Save All Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clinic Branding Modal -->
+    <div class="modal" id="brandingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Clinic Branding Upload</h3>
+                <button class="modal-close" onclick="closeModal('brandingModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="branding-section">
+                    <div class="form-group">
+                        <label>Current Clinic Logo</label>
+                        <div class="current-logo-preview">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo_1.png"
+                                alt="Current Clinic Logo" id="currentLogoPreview">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload New Logo</label>
+                        <input type="file" class="form-control" accept="image/*" onchange="previewLogo(event)">
+                        <small>Recommended: PNG or SVG format, transparent background, minimum 200x200px</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Logo Preview</label>
+                        <div class="logo-preview-container">
+                            <img src="" alt="Logo Preview" id="logoPreview" style="display: none;">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Brand Colors (Optional)</label>
+                        <div class="color-palette">
+                            <div class="color-input-group">
+                                <label>Primary Color</label>
+                                <input type="color" class="form-control" value="#1D2A3B">
+                            </div>
+                            <div class="color-input-group">
+                                <label>Secondary Color</label>
+                                <input type="color" class="form-control" value="#00BFA5">
+                            </div>
+                            <div class="color-input-group">
+                                <label>Accent Color</label>
+                                <input type="color" class="form-control" value="#FF6B35">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="closeModal('brandingModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveBranding()">Save Branding</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auto-refresh indicator -->
+    <div class="auto-refresh-indicator" id="autoRefreshIndicator">
+        <i class="fas fa-sync-alt"></i>
+        <span>Updating profile...</span>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="my_profile.js"></script>
+</body>
+
+</html>

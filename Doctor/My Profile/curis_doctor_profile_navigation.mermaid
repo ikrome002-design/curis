@@ -1,0 +1,304 @@
+flowchart TD
+    A[Doctor Login] --> B{Account Activated?}
+    B -->|No| C[Account Pending<br/>Contact Clinic Owner]
+    B -->|Yes| D[Dashboard]
+    
+    %% Dashboard to Profile Navigation
+    D --> D1[Navigation Menu<br/>Main sidebar/header]
+    D1 --> D1a[Profile Menu Item<br/>User avatar/name click]
+    D1a --> P[My Profile Page<br/>Doctor profile management hub]
+    
+    D --> D2[User Avatar<br/>Top-right corner]
+    D2 --> D2a[Profile Dropdown<br/>Quick access menu]
+    D2a --> D2a1[View Profile Option<br/>Navigate to full profile]
+    D2a1 --> P
+    D2a --> D2a2[Quick Settings<br/>Immediate preference toggles]
+    D2a2 --> D2a2a[Notification Toggle<br/>Enable/disable alerts]
+    D2a2 --> D2a2b[Language Preference<br/>Interface language selector]
+    D2a --> D2a3[Sign Out Option<br/>Account logout]
+    
+    %% My Profile Main Interface
+    P --> P1[Profile Header Section<br/>Visual identity display]
+    P1 --> P1a[Current Profile Photo<br/>Doctor's image display]
+    P1a --> P1a1[Photo Upload Button<br/>Image update trigger]
+    P1a1 --> P1a1a[Photo Upload Modal<br/>Image selection interface]
+    P1a1a --> P1a1a1[File Browser<br/>Local image selection]
+    P1a1a --> P1a1a2[Camera Capture<br/>Live photo option]
+    P1a1a --> P1a1a3[Crop & Preview<br/>Image adjustment tool]
+    P1a1a3 --> P1a1a3a[Crop Controls<br/>Resize/rotate interface]
+    P1a1a3 --> P1a1a3b[Save Changes Button<br/>Confirm photo update]
+    P1a1a3b --> P1a1a3b1[Success Notification<br/>Profile photo updated alert]
+    P1a1a3b1 --> P1a1a3b1a[Dashboard Sync<br/>Avatar update across platform]
+    P1a1a --> P1a1a4[Cancel Button<br/>Discard changes]
+    P1a1a4 --> P1
+    
+    P1 --> P1b[Doctor Name Display<br/>Current name presentation]
+    P1b --> P1b1[Edit Name Button<br/>Name modification trigger]
+    P1b1 --> P1b1a[Name Edit Modal<br/>Name update interface]
+    P1b1a --> P1b1a1[First Name Field<br/>Given name input]
+    P1b1a --> P1b1a2[Last Name Field<br/>Family name input]
+    P1b1a --> P1b1a3[Title Dropdown<br/>Dr./Prof./Mr./Ms. selection]
+    P1b1a --> P1b1a4[Validation Display<br/>Real-time input validation]
+    P1b1a --> P1b1a5[Save Changes Button<br/>Confirm name update]
+    P1b1a5 --> P1b1a5a[Name Update Confirmation<br/>Success message display]
+    P1b1a5a --> P1b1a5a1[System-wide Name Sync<br/>Update across all modules]
+    P1b1a5a1 --> P1b1a5a1a[Patient Records Update<br/>Doctor signature refresh]
+    P1b1a5a1 --> P1b1a5a1b[Prescription Headers Update<br/>Prescribing doctor name refresh]
+    P1b1a5a1 --> P1b1a5a1c[Appointment Display Update<br/>Schedule display refresh]
+    P1b1a --> P1b1a6[Cancel Button<br/>Discard name changes]
+    P1b1a6 --> P1
+    
+    %% Personal Information Section
+    P --> P2[Personal Information Panel<br/>Professional details management]
+    P2 --> P2a[Specialization Section<br/>Medical specialty display]
+    P2a --> P2a1[Current Specialization<br/>Listed medical specialty]
+    P2a --> P2a2[Edit Specialization Button<br/>Specialty modification trigger]
+    P2a2 --> P2a2a[Specialization Editor Modal<br/>Medical specialty selection]
+    P2a2a --> P2a2a1[Specialty Dropdown<br/>Predefined specialty list]
+    P2a2a1 --> P2a2a1a[General Practice Option<br/>Primary care selection]
+    P2a2a1 --> P2a2a1b[Cardiology Option<br/>Heart specialist selection]
+    P2a2a1 --> P2a2a1c[Pediatrics Option<br/>Children's medicine selection]
+    P2a2a1 --> P2a2a1d[Orthopedics Option<br/>Bone/joint specialist selection]
+    P2a2a1 --> P2a2a1e[Other Specialties<br/>Additional medical fields]
+    P2a2a --> P2a2a2[Secondary Specialization<br/>Additional expertise field]
+    P2a2a --> P2a2a3[Years of Experience<br/>Professional experience input]
+    P2a2a --> P2a2a4[Certification Info<br/>Professional qualifications field]
+    P2a2a --> P2a2a5[Save Specialization Button<br/>Confirm specialty update]
+    P2a2a5 --> P2a2a5a[Specialization Update Success<br/>Confirmation message]
+    P2a2a5a --> P2a2a5a1[Dashboard Profile Sync<br/>Specialty display update]
+    P2a2a5a --> P2a2a5a2[Patient Visible Info Update<br/>Doctor profile for patients]
+    P2a2a --> P2a2a6[Cancel Specialization Edit<br/>Discard specialty changes]
+    P2a2a6 --> P2
+    
+    P2 --> P2b[Contact Information<br/>Communication details display]
+    P2b --> P2b1[Phone Number Display<br/>Current contact number]
+    P2b --> P2b2[Email Address Display<br/>Professional email address]
+    P2b --> P2b3[Contact Edit Restrictions<br/>Clinic Owner controlled fields]
+    P2b3 --> P2b3a[Contact Admin Notice<br/>Change request information]
+    P2b3a --> P2b3a1[Request Change Button<br/>Contact clinic admin]
+    P2b3a1 --> P2b3a1a[Change Request Modal<br/>Contact modification request]
+    P2b3a1a --> P2b3a1a1[Request Type Dropdown<br/>Phone/Email/Both selection]
+    P2b3a1a --> P2b3a1a2[New Information Field<br/>Requested contact details]
+    P2b3a1a --> P2b3a1a3[Reason Field<br/>Change justification]
+    P2b3a1a --> P2b3a1a4[Submit Request Button<br/>Send to clinic owner]
+    P2b3a1a4 --> P2b3a1a4a[Request Sent Confirmation<br/>Submission success message]
+    P2b3a1a4a --> P2b3a1a4a1[Clinic Owner Notification<br/>Admin alert trigger]
+    P2b3a1a --> P2b3a1a5[Cancel Request<br/>Discard contact request]
+    P2b3a1a5 --> P2
+    
+    %% Account Status & Clinic Information
+    P --> P3[Account Status Panel<br/>Clinic linkage & access information]
+    P3 --> P3a[Clinic Assignment Display<br/>Current workplace information]
+    P3a --> P3a1[Clinic Name<br/>Assigned healthcare facility]
+    P3a --> P3a2[Clinic Address<br/>Workplace location display]
+    P3a --> P3a3[Assignment Date<br/>Doctor linkage timestamp]
+    P3a --> P3a4[Clinic Owner Information<br/>Administrative contact display]
+    P3a4 --> P3a4a[Owner Name<br/>Clinic administrator name]
+    P3a4 --> P3a4b[Owner Contact<br/>Administrative contact info]
+    P3a4 --> P3a4c[Contact Owner Button<br/>Direct communication link]
+    P3a4c --> P3a4c1[Owner Contact Modal<br/>Message composition interface]
+    P3a4c1 --> P3a4c1a[Message Subject Field<br/>Communication topic]
+    P3a4c1 --> P3a4c1b[Message Body Field<br/>Detailed message content]
+    P3a4c1 --> P3a4c1c[Priority Selection<br/>Message urgency level]
+    P3a4c1 --> P3a4c1d[Send Message Button<br/>Deliver to clinic owner]
+    P3a4c1d --> P3a4c1d1[Message Sent Confirmation<br/>Delivery success notification]
+    P3a4c1d1 --> P3a4c1d1a[Owner Notification Alert<br/>Clinic admin message alert]
+    P3a4c1 --> P3a4c1e[Cancel Message<br/>Discard communication]
+    P3a4c1e --> P3
+    
+    P3 --> P3b[Access Level Information<br/>Permission & capability summary]
+    P3b --> P3b1[Current Permissions<br/>Authorized system access]
+    P3b1 --> P3b1a[Appointments Access<br/>Schedule management capability]
+    P3b1 --> P3b1b[Patient Records Access<br/>Medical data permissions]
+    P3b1 --> P3b1c[Prescriptions Access<br/>Medication issuing capability]
+    P3b1 --> P3b1d[Consultations Access<br/>Session management permissions]
+    P3b --> P3b2[Restricted Functions<br/>Unavailable features display]
+    P3b2 --> P3b2a[Billing Restriction Notice<br/>Financial access limitation]
+    P3b2 --> P3b2b[Admin Restriction Notice<br/>Clinic management limitation]
+    P3b2 --> P3b2c[Patient Creation Restriction<br/>Registration limitation]
+    
+    P3 --> P3c[Activation Status<br/>Account operational state]
+    P3c --> P3c1[Active Status Indicator<br/>Green check/Active badge]
+    P3c --> P3c2[Activation Date<br/>Account approval timestamp]
+    P3c --> P3c3[Last Login Display<br/>Recent access information]
+    
+    %% Notification Preferences
+    P --> P4[Notification Settings Panel<br/>Alert customization interface]
+    P4 --> P4a[Notification Categories<br/>Alert type management]
+    P4a --> P4a1[Appointment Notifications<br/>Schedule alert preferences]
+    P4a1 --> P4a1a[Appointment Toggle<br/>Enable/disable schedule alerts]
+    P4a1 --> P4a1b[Reminder Timing<br/>Alert frequency selection]
+    P4a1b --> P4a1b1[15 Minutes Before<br/>Quick reminder option]
+    P4a1b --> P4a1b2[1 Hour Before<br/>Standard reminder option]
+    P4a1b --> P4a1b3[Custom Timing<br/>Personalized reminder setting]
+    P4a1b3 --> P4a1b3a[Custom Time Modal<br/>Personalized timing interface]
+    P4a1b3a --> P4a1b3a1[Minutes Input<br/>Custom reminder minutes]
+    P4a1b3a --> P4a1b3a2[Save Custom Timing<br/>Confirm personalized setting]
+    P4a1b3a2 --> P4a1b3a2a[Custom Setting Saved<br/>Confirmation notification]
+    P4a1b3a --> P4a1b3a3[Cancel Custom Timing<br/>Discard timing changes]
+    P4a1b3a3 --> P4
+    
+    P4a --> P4a2[Patient Record Notifications<br/>Medical data alert preferences]
+    P4a2 --> P4a2a[Record Update Toggle<br/>Medical data change alerts]
+    P4a2 --> P4a2b[Lab Results Toggle<br/>New lab report notifications]
+    P4a2 --> P4a2c[Collaboration Toggle<br/>Team mention notifications]
+    
+    P4a --> P4a3[System Notifications<br/>Platform alert preferences]
+    P4a3 --> P4a3a[System Update Toggle<br/>Platform change notifications]
+    P4a3 --> P4a3b[Maintenance Toggle<br/>Scheduled downtime alerts]
+    P4a3 --> P4a3c[Policy Update Toggle<br/>Terms/policy change notifications]
+    
+    P4 --> P4b[Delivery Method Settings<br/>Notification channel preferences]
+    P4b --> P4b1[In-App Notifications<br/>Platform alert preferences]
+    P4b1 --> P4b1a[In-App Toggle<br/>Enable/disable platform alerts]
+    P4b1 --> P4b1b[Sound Settings<br/>Audio notification preferences]
+    P4b1b --> P4b1b1[Sound Toggle<br/>Enable/disable alert sounds]
+    P4b1b --> P4b1b2[Sound Selection<br/>Notification tone choice]
+    P4b1b2 --> P4b1b2a[Sound Preview Modal<br/>Tone testing interface]
+    P4b1b2a --> P4b1b2a1[Tone Options<br/>Available notification sounds]
+    P4b1b2a --> P4b1b2a2[Test Sound Button<br/>Audio preview trigger]
+    P4b1b2a --> P4b1b2a3[Select Tone Button<br/>Confirm sound choice]
+    P4b1b2a3 --> P4b1b2a3a[Sound Selection Saved<br/>Tone preference confirmed]
+    P4b1b2a --> P4b1b2a4[Cancel Sound Selection<br/>Discard tone changes]
+    P4b1b2a4 --> P4
+    
+    P4b --> P4b2[Email Notifications<br/>External email alert preferences]
+    P4b2 --> P4b2a[Email Toggle<br/>Enable/disable email alerts]
+    P4b2 --> P4b2b[Email Frequency<br/>Message batching preferences]
+    P4b2b --> P4b2b1[Immediate Delivery<br/>Real-time email option]
+    P4b2b --> P4b2b2[Hourly Digest<br/>Batched email option]
+    P4b2b --> P4b2b3[Daily Summary<br/>Once-daily email option]
+    
+    P4 --> P4c[Quiet Hours Settings<br/>Do not disturb preferences]
+    P4c --> P4c1[Quiet Hours Toggle<br/>Enable/disable quiet period]
+    P4c --> P4c2[Start Time Selector<br/>Quiet period beginning]
+    P4c2 --> P4c2a[Time Picker Modal<br/>Start time selection interface]
+    P4c2a --> P4c2a1[Hour Selection<br/>Start hour choice]
+    P4c2a --> P4c2a2[Minute Selection<br/>Start minute choice]
+    P4c2a --> P4c2a3[AM/PM Selection<br/>Time period choice]
+    P4c2a --> P4c2a4[Save Start Time<br/>Confirm quiet start time]
+    P4c2a4 --> P4c2a4a[Start Time Saved<br/>Beginning time confirmed]
+    P4c2a --> P4c2a5[Cancel Start Time<br/>Discard start time changes]
+    P4c2a5 --> P4
+    P4c --> P4c3[End Time Selector<br/>Quiet period conclusion]
+    P4c3 --> P4c3a[End Time Picker Modal<br/>End time selection interface]
+    P4c3a --> P4c3a1[Hour Selection<br/>End hour choice]
+    P4c3a --> P4c3a2[Minute Selection<br/>End minute choice]
+    P4c3a --> P4c3a3[AM/PM Selection<br/>Time period choice]
+    P4c3a --> P4c3a4[Save End Time<br/>Confirm quiet end time]
+    P4c3a4 --> P4c3a4a[End Time Saved<br/>Conclusion time confirmed]
+    P4c3a --> P4c3a5[Cancel End Time<br/>Discard end time changes]
+    P4c3a5 --> P4
+    
+    %% Security & Privacy Section
+    P --> P5[Security Settings Panel<br/>Account protection preferences]
+    P5 --> P5a[Password Management<br/>Authentication security]
+    P5a --> P5a1[Change Password Button<br/>Password update trigger]
+    P5a1 --> P5a1a[Password Change Modal<br/>Authentication update interface]
+    P5a1a --> P5a1a1[Current Password Field<br/>Existing password verification]
+    P5a1a --> P5a1a2[New Password Field<br/>Updated password input]
+    P5a1a --> P5a1a3[Confirm Password Field<br/>Password verification input]
+    P5a1a --> P5a1a4[Password Strength Indicator<br/>Security level display]
+    P5a1a --> P5a1a5[Save New Password<br/>Confirm password change]
+    P5a1a5 --> P5a1a5a[Password Updated Successfully<br/>Change confirmation]
+    P5a1a5a --> P5a1a5a1[Security Email Sent<br/>Password change notification]
+    P5a1a --> P5a1a6[Cancel Password Change<br/>Discard authentication changes]
+    P5a1a6 --> P5
+    
+    P5 --> P5b[Session Management<br/>Active login tracking]
+    P5b --> P5b1[Active Sessions Display<br/>Current login locations]
+    P5b1 --> P5b1a[Session List<br/>Device/location/time display]
+    P5b1 --> P5b1b[Current Session Indicator<br/>Active device identification]
+    P5b1 --> P5b1c[Logout Other Sessions<br/>Remote session termination]
+    P5b1c --> P5b1c1[Logout Confirmation Modal<br/>Session termination verification]
+    P5b1c1 --> P5b1c1a[Confirm Logout Button<br/>Execute session termination]
+    P5b1c1a --> P5b1c1a1[Sessions Terminated<br/>Remote logout confirmation]
+    P5b1c1 --> P5b1c1b[Cancel Logout<br/>Maintain active sessions]
+    P5b1c1b --> P5
+    
+    P5 --> P5c[Privacy Preferences<br/>Data visibility settings]
+    P5c --> P5c1[Profile Visibility<br/>Information display preferences]
+    P5c1 --> P5c1a[Patient Visible Info<br/>Public profile settings]
+    P5c1a --> P5c1a1[Name Visibility Toggle<br/>Display name to patients]
+    P5c1a --> P5c1a2[Photo Visibility Toggle<br/>Display photo to patients]
+    P5c1a --> P5c1a3[Specialty Visibility Toggle<br/>Display specialization to patients]
+    P5c --> P5c2[Data Sharing Preferences<br/>Information distribution settings]
+    P5c2 --> P5c2a[Analytics Participation<br/>Anonymous data contribution]
+    P5c2 --> P5c2b[Research Participation<br/>Medical research data sharing]
+    
+    %% Integration Actions & Save Functions
+    P --> P6[Profile Action Panel<br/>Save and synchronization controls]
+    P6 --> P6a[Save All Changes Button<br/>Comprehensive update trigger]
+    P6a --> P6a1[Validation Process<br/>Data integrity check]
+    P6a1 --> P6a1a[Validation Success<br/>Data quality confirmed]
+    P6a1a --> P6a1a1[Profile Update Success<br/>All changes saved notification]
+    P6a1a1 --> P6a1a1a[Dashboard Navigation<br/>Return to main interface]
+    P6a1a1a --> D
+    P6a1a1 --> P6a1a1b[Stay on Profile<br/>Continue profile management]
+    P6a1a1b --> P
+    P6a1 --> P6a1b[Validation Errors<br/>Data quality issues identified]
+    P6a1b --> P6a1b1[Error Display Modal<br/>Issue specification interface]
+    P6a1b1 --> P6a1b1a[Error List<br/>Specific validation failures]
+    P6a1b1 --> P6a1b1b[Fix Errors Button<br/>Return to correction]
+    P6a1b1b --> P
+    
+    P6 --> P6b[Reset Changes Button<br/>Discard modifications trigger]
+    P6b --> P6b1[Reset Confirmation Modal<br/>Change discard verification]
+    P6b1 --> P6b1a[Confirm Reset Button<br/>Execute change discard]
+    P6b1a --> P6b1a1[Changes Discarded<br/>Modifications removed notification]
+    P6b1a1 --> P
+    P6b1 --> P6b1b[Cancel Reset<br/>Maintain current changes]
+    P6b1b --> P
+    
+    P6 --> P6c[Export Profile Button<br/>Profile data download trigger]
+    P6c --> P6c1[Export Options Modal<br/>Download format selection]
+    P6c1 --> P6c1a[PDF Export<br/>Formatted profile document]
+    P6c1a --> P6c1a1[PDF Generation<br/>Document creation process]
+    P6c1a1 --> P6c1a1a[PDF Download<br/>Profile document delivery]
+    P6c1 --> P6c1b[JSON Export<br/>Structured data format]
+    P6c1b --> P6c1b1[JSON Generation<br/>Data structure creation]
+    P6c1b1 --> P6c1b1a[JSON Download<br/>Profile data delivery]
+    P6c1 --> P6c1c[Cancel Export<br/>Discard download request]
+    P6c1c --> P
+    
+    %% Cross-Platform Synchronization & Integration
+    P --> P7[System Integration Panel<br/>Cross-platform synchronization display]
+    P7 --> P7a[Dashboard Integration<br/>Main interface synchronization]
+    P7a --> P7a1[Avatar Sync Status<br/>Profile photo update status]
+    P7a --> P7a2[Name Sync Status<br/>Identity update status]
+    P7a --> P7a3[Notification Sync Status<br/>Alert preference update status]
+    
+    P7 --> P7b[Patient Records Integration<br/>Medical documentation synchronization]
+    P7b --> P7b1[Doctor Signature Sync<br/>Prescription signature update]
+    P7b --> P7b2[Specialty Display Sync<br/>Professional credentials update]
+    P7b --> P7b3[Contact Info Sync<br/>Communication details update]
+    
+    P7 --> P7c[Consultation Integration<br/>Session management synchronization]
+    P7c --> P7c1[Profile Visibility Sync<br/>Patient-facing information update]
+    P7c --> P7c2[Notification Preference Sync<br/>Session alert settings update]
+    
+    P7 --> P7d[Appointment Integration<br/>Schedule management synchronization]
+    P7d --> P7d1[Doctor Name Sync<br/>Schedule display update]
+    P7d --> P7d2[Availability Sync<br/>Quiet hours integration]
+    
+    %% Navigation Back to Other Modules
+    P --> P8[Quick Navigation Panel<br/>Module access shortcuts]
+    P8 --> P8a[Return to Dashboard<br/>Main interface navigation]
+    P8a --> D
+    P8 --> P8b[Go to Appointments<br/>Schedule management access]
+    P8b --> E[Appointments Page]
+    P8 --> P8c[Go to Patient Records<br/>Medical documentation access]
+    P8c --> F[Patient Records Page]
+    P8 --> P8d[Go to Consultations<br/>Session management access]
+    P8d --> G[Consultations Page]
+    P8 --> P8e[Go to Prescriptions<br/>Medication management access]
+    P8e --> H[Prescriptions Page]
+    P8 --> P8f[Go to Alerts & Collaboration<br/>Communication center access]
+    P8f --> I[Alerts & Collaboration Page]
+    
+    %% Return Navigation Flows
+    E --> P8a
+    F --> P8a  
+    G --> P8a
+    H --> P8a
+    I --> P8a

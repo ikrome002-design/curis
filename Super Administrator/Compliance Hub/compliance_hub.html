@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags for Character Set and Viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Compliance Hub - Security & Audit Center | Curis by Citrus</title>
+
+    <!-- Meta Description for SEO -->
+    <meta name="description"
+        content="Comprehensive security and audit management for Curis healthcare platform. Monitor login attempts, audit logs, and compliance reports.">
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS File Link -->
+    <link rel="stylesheet" href="compliance_hub.css">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Security Alert Banner -->
+    <div class="alert-banner hidden" id="securityAlert">
+        <div class="alert-content">
+            <i class="fas fa-shield-alt alert-icon"></i>
+            <span id="alertMessage">Security Alert: Suspicious login attempts detected</span>
+            <button class="alert-close" onclick="closeAlert()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Dashboard\dashboard.html"
+                    class="logo-link">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Curis Users\curis_users.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Curis Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Health\health.html"
+                            class="nav-link">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Health</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Compliance Hub\compliance_hub.html"
+                            class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Compliance Hub</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Notifications -->
+                <div class="notification-container">
+                    <button class="notification-btn" onclick="toggleNotifications()">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+
+                    <!-- Notification Panel -->
+                    <div class="notification-panel hidden" id="notificationPanel">
+                        <div class="notification-header">
+                            <h3>Security Notifications</h3>
+                            <button class="close-btn" onclick="toggleNotifications()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="notification-list">
+                            <div class="notification-item unread">
+                                <div class="notification-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <div class="notification-title">Failed Login Attempts</div>
+                                    <div class="notification-desc">5 failed attempts from IP 185.123.45.67</div>
+                                    <div class="notification-time">2 minutes ago</div>
+                                </div>
+                            </div>
+                            <div class="notification-item unread">
+                                <div class="notification-icon">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <div class="notification-title">Account Locked</div>
+                                    <div class="notification-desc">User account user@clinic.com has been locked</div>
+                                    <div class="notification-time">5 minutes ago</div>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <div class="notification-title">Compliance Report</div>
+                                    <div class="notification-desc">Weekly security report is ready</div>
+                                    <div class="notification-time">1 hour ago</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notification-footer">
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Notifications\notifications.html"
+                                class="view-all-link">
+                                View All Notifications
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Profile -->
+                <div class="user-profile-container">
+                    <button class="user-profile-btn" onclick="toggleUserDropdown()">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-image">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+
+                    <!-- User Dropdown Menu -->
+                    <div class="user-dropdown hidden" id="userDropdown">
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Settings\settings.html"
+                                    class="dropdown-link">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\landing_page.html"
+                                    class="dropdown-link">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Log Out</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <div class="dashboard-title">
+                <h1>
+                    <i class="fas fa-shield-alt"></i>
+                    Compliance Hub
+                </h1>
+                <p class="dashboard-subtitle">Security & Audit Center - Monitor, Analyze, and Ensure Platform Compliance
+                </p>
+            </div>
+            <div class="realtime-status">
+                <div class="status-indicator active">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Security Active</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Features Grid -->
+        <div class="compliance-features-grid">
+            <!-- Audit Log Access Widget -->
+            <div class="compliance-widget audit-widget" onclick="openAuditLogs()">
+                <div class="widget-header">
+                    <div class="widget-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="widget-title">
+                        <h3>Audit Log Access</h3>
+                        <p>Comprehensive activity monitoring and log analysis</p>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="stat-number">12,847</div>
+                    <div class="stat-label">Total Log Entries Today</div>
+                    <div class="stat-breakdown">
+                        <div class="breakdown-item success">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Successful Actions: <strong>11,982</strong></span>
+                        </div>
+                        <div class="breakdown-item warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Warnings: <strong>785</strong></span>
+                        </div>
+                        <div class="breakdown-item failed">
+                            <i class="fas fa-times-circle"></i>
+                            <span>Failed Actions: <strong>80</strong></span>
+                        </div>
+                    </div>
+                    <div class="widget-action">
+                        <button class="btn-primary">
+                            <i class="fas fa-search"></i>
+                            View Detailed Logs
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Login Monitoring Widget -->
+            <div class="compliance-widget security-widget" onclick="openLoginMonitoring()">
+                <div class="widget-header">
+                    <div class="widget-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="widget-title">
+                        <h3>Login Attempt Monitoring</h3>
+                        <p>Real-time login security and threat detection</p>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="stat-number">23</div>
+                    <div class="stat-label">Failed Attempts Today</div>
+                    <div class="security-alerts">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>5 accounts currently locked due to suspicious activity</span>
+                    </div>
+                    <div class="stat-breakdown">
+                        <div class="breakdown-item high">
+                            <i class="fas fa-ban"></i>
+                            <span>Blocked IPs: <strong>8</strong></span>
+                        </div>
+                        <div class="breakdown-item medium">
+                            <i class="fas fa-eye"></i>
+                            <span>Monitoring: <strong>15</strong></span>
+                        </div>
+                    </div>
+                    <div class="widget-action">
+                        <button class="btn-primary">
+                            <i class="fas fa-shield-alt"></i>
+                            Security Dashboard
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session History Widget -->
+            <div class="compliance-widget session-widget" onclick="openSessionHistory()">
+                <div class="widget-header">
+                    <div class="widget-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="widget-title">
+                        <h3>Session History</h3>
+                        <p>User session tracking and analysis</p>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="stat-number">125</div>
+                    <div class="stat-label">Active Sessions</div>
+                    <div class="stat-breakdown">
+                        <div class="breakdown-item success">
+                            <i class="fas fa-user-md"></i>
+                            <span>Doctors: <strong>45</strong></span>
+                        </div>
+                        <div class="breakdown-item info">
+                            <i class="fas fa-user-nurse"></i>
+                            <span>Staff: <strong>35</strong></span>
+                        </div>
+                        <div class="breakdown-item healthy">
+                            <i class="fas fa-user"></i>
+                            <span>Patients: <strong>45</strong></span>
+                        </div>
+                    </div>
+                    <div class="outstanding-balance">
+                        <i class="fas fa-clock"></i>
+                        <span>Average session duration: 45 minutes</span>
+                    </div>
+                    <div class="widget-action">
+                        <button class="btn-primary">
+                            <i class="fas fa-chart-line"></i>
+                            Session Analytics
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Access Logs Widget -->
+            <div class="compliance-widget data-widget" onclick="openDataAccessLogs()">
+                <div class="widget-header">
+                    <div class="widget-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="widget-title">
+                        <h3>Data Access Logs</h3>
+                        <p>Monitor sensitive data access and file operations</p>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="stat-number">1,234</div>
+                    <div class="stat-label">Data Access Events Today</div>
+                    <div class="stat-breakdown">
+                        <div class="breakdown-item success">
+                            <i class="fas fa-file-medical"></i>
+                            <span>Medical Records: <strong>856</strong></span>
+                        </div>
+                        <div class="breakdown-item info">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Billing Data: <strong>234</strong></span>
+                        </div>
+                        <div class="breakdown-item warning">
+                            <i class="fas fa-users"></i>
+                            <span>User Profiles: <strong>144</strong></span>
+                        </div>
+                    </div>
+                    <div class="widget-action">
+                        <button class="btn-primary">
+                            <i class="fas fa-eye"></i>
+                            Access Monitor
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compliance Reports Widget -->
+            <div class="compliance-widget reports-widget" onclick="openComplianceReports()">
+                <div class="widget-header">
+                    <div class="widget-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="widget-title">
+                        <h3>Compliance Reports</h3>
+                        <p>Generate comprehensive compliance and audit reports</p>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="stat-number">98.5%</div>
+                    <div class="stat-label">Compliance Score</div>
+                    <div class="stat-breakdown">
+                        <div class="breakdown-item success">
+                            <i class="fas fa-check-circle"></i>
+                            <span>HIPAA Compliant: <strong>Yes</strong></span>
+                        </div>
+                        <div class="breakdown-item success">
+                            <i class="fas fa-check-circle"></i>
+                            <span>GDPR Compliant: <strong>Yes</strong></span>
+                        </div>
+                        <div class="breakdown-item warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Minor Issues: <strong>2</strong></span>
+                        </div>
+                    </div>
+                    <div class="widget-action">
+                        <button class="btn-primary">
+                            <i class="fas fa-file-download"></i>
+                            Generate Reports
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions Widget -->
+            <div class="compliance-widget actions-widget">
+                <div class="widget-header">
+                    <div class="widget-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="widget-title">
+                        <h3>Quick Actions</h3>
+                        <p>Instant security and compliance actions</p>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="quick-actions-grid">
+                        <button class="quick-action-btn" onclick="exportTodayLogs()">
+                            <div class="action-icon">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <div class="action-label">Export Today's Logs</div>
+                        </button>
+                        <button class="quick-action-btn" onclick="blockSuspiciousIP()">
+                            <div class="action-icon">
+                                <i class="fas fa-ban"></i>
+                            </div>
+                            <div class="action-label">Block Suspicious IP</div>
+                        </button>
+                        <button class="quick-action-btn" onclick="unlockAccount()">
+                            <div class="action-icon">
+                                <i class="fas fa-unlock"></i>
+                            </div>
+                            <div class="action-label">Unlock Account</div>
+                        </button>
+                        <button class="quick-action-btn" onclick="generateSecurityReport()">
+                            <div class="action-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="action-label">Security Report</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Real-time Security Status Bar -->
+        <div class="realtime-security-bar">
+            <div class="security-status-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>System Status: <strong class="success">Secure</strong></span>
+            </div>
+            <div class="security-status-item">
+                <i class="fas fa-eye"></i>
+                <span>Active Monitors: <strong>12</strong></span>
+            </div>
+            <div class="security-status-item">
+                <i class="fas fa-clock"></i>
+                <span>Last Updated: <strong id="lastUpdated">Just now</strong></span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Audit Logs Modal -->
+    <div class="modal-overlay hidden" id="auditLogsModal">
+        <div class="modal-container large-modal">
+            <div class="modal-header">
+                <h2>
+                    <i class="fas fa-file-alt"></i>
+                    Comprehensive Log Viewer
+                </h2>
+                <button class="modal-close" onclick="closeModal('auditLogsModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <!-- Filter Panel -->
+                <div class="log-filters">
+                    <div class="filter-section">
+                        <h4>Quick Filters</h4>
+                        <div class="quick-filter-buttons">
+                            <button class="filter-btn active" data-filter="all">All Activity</button>
+                            <button class="filter-btn" data-filter="today">Today's Activity</button>
+                            <button class="filter-btn" data-filter="failed">Failed Logins</button>
+                            <button class="filter-btn" data-filter="critical">Critical Actions</button>
+                            <button class="filter-btn" data-filter="suspicious">Suspicious Activity</button>
+                        </div>
+                    </div>
+
+                    <div class="advanced-filters">
+                        <div class="filter-row">
+                            <div class="filter-group">
+                                <label>User Type</label>
+                                <select id="userTypeFilter">
+                                    <option value="">All Users</option>
+                                    <option value="patients">Patients</option>
+                                    <option value="doctors">Doctors</option>
+                                    <option value="receptionists">Receptionists</option>
+                                    <option value="clinic_owners">Clinic Owners</option>
+                                    <option value="super_admin">Super Admin</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Action Type</label>
+                                <select id="actionTypeFilter">
+                                    <option value="">All Actions</option>
+                                    <option value="login_logout">Login/Logout</option>
+                                    <option value="data_changes">Data Changes</option>
+                                    <option value="account_updates">Account Updates</option>
+                                    <option value="medical_access">Medical Access</option>
+                                    <option value="billing_actions">Billing Actions</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Date From</label>
+                                <input type="date" id="dateFromFilter">
+                            </div>
+                            <div class="filter-group">
+                                <label>Date To</label>
+                                <input type="date" id="dateToFilter">
+                            </div>
+                        </div>
+                        <div class="filter-actions">
+                            <button class="btn-primary" onclick="applyFilters()">
+                                <i class="fas fa-filter"></i>
+                                Apply Filters
+                            </button>
+                            <button class="btn-secondary" onclick="clearFilters()">
+                                <i class="fas fa-undo"></i>
+                                Clear Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audit Log Table -->
+                <div class="log-table-container">
+                    <div class="table-header">
+                        <h4>Audit Log Entries</h4>
+                        <div class="table-actions">
+                            <button class="btn-secondary" onclick="refreshLogs()">
+                                <i class="fas fa-sync-alt"></i>
+                                Refresh
+                            </button>
+                            <button class="btn-primary" onclick="exportLogs()">
+                                <i class="fas fa-download"></i>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+                    <div class="log-table-wrapper">
+                        <table class="audit-log-table">
+                            <thead>
+                                <tr>
+                                    <th>Timestamp</th>
+                                    <th>User</th>
+                                    <th>Action</th>
+                                    <th>Details</th>
+                                    <th>IP Address</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="logTableBody">
+                                <tr class="log-entry success">
+                                    <td>2024-12-15 10:45:23</td>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                                alt="User">
+                                            <span>Dr. Lee (ID: U12345)</span>
+                                        </div>
+                                    </td>
+                                    <td>Login Success</td>
+                                    <td>Dashboard Access</td>
+                                    <td>192.168.1.1</td>
+                                    <td><span class="status-badge success">Success</span></td>
+                                    <td>
+                                        <button class="action-btn" onclick="viewLogDetails('log1')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="log-entry success">
+                                    <td>2024-12-15 10:30:15</td>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                                alt="User">
+                                            <span>Admin (ID: A67890)</span>
+                                        </div>
+                                    </td>
+                                    <td>User Created</td>
+                                    <td>Added Dr. Park</td>
+                                    <td>192.168.1.2</td>
+                                    <td><span class="status-badge success">Success</span></td>
+                                    <td>
+                                        <button class="action-btn" onclick="viewLogDetails('log2')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="log-entry failed">
+                                    <td>2024-12-15 10:15:42</td>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                                alt="User">
+                                            <span>patient@email.com</span>
+                                        </div>
+                                    </td>
+                                    <td>Login Failed</td>
+                                    <td>Wrong Password</td>
+                                    <td>192.168.1.3</td>
+                                    <td><span class="status-badge failed">Failed</span></td>
+                                    <td>
+                                        <button class="action-btn" onclick="viewLogDetails('log3')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="log-entry warning">
+                                    <td>2024-12-15 10:00:18</td>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                                alt="User">
+                                            <span>Dr. Kim (ID: U54321)</span>
+                                        </div>
+                                    </td>
+                                    <td>Medical Access</td>
+                                    <td>File #12345</td>
+                                    <td>192.168.1.4</td>
+                                    <td><span class="status-badge warning">Warning</span></td>
+                                    <td>
+                                        <button class="action-btn" onclick="viewLogDetails('log4')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="log-entry success">
+                                    <td>2024-12-15 09:45:33</td>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                                alt="User">
+                                            <span>Clinic A (ID: C98765)</span>
+                                        </div>
+                                    </td>
+                                    <td>Billing Update</td>
+                                    <td>Invoice Paid</td>
+                                    <td>192.168.1.5</td>
+                                    <td><span class="status-badge success">Success</span></td>
+                                    <td>
+                                        <button class="action-btn" onclick="viewLogDetails('log5')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Monitoring Modal -->
+    <div class="modal-overlay hidden" id="securityModal">
+        <div class="modal-container large-modal">
+            <div class="modal-header">
+                <h2>
+                    <i class="fas fa-shield-alt"></i>
+                    Real-Time Security Monitor
+                </h2>
+                <button class="modal-close" onclick="closeModal('securityModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="security-dashboard">
+                    <!-- Current Threats -->
+                    <div class="threat-panel">
+                        <h3>
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Current Threats
+                        </h3>
+                        <div class="threat-stats">
+                            <div class="threat-stat">
+                                <div class="stat-number">2</div>
+                                <div class="stat-label">Brute Force Attempts</div>
+                            </div>
+                            <div class="threat-stat">
+                                <div class="stat-number">5</div>
+                                <div class="stat-label">Suspicious IPs</div>
+                            </div>
+                            <div class="threat-stat">
+                                <div class="stat-number">12</div>
+                                <div class="stat-label">Locked Accounts</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Failed Login Attempts Table -->
+                    <div class="failed-logins-panel">
+                        <h3>
+                            <i class="fas fa-ban"></i>
+                            Recent Failed Login Attempts
+                        </h3>
+                        <div class="failed-logins-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>User</th>
+                                        <th>IP Address</th>
+                                        <th>Attempts</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="high-risk">
+                                        <td>10:45</td>
+                                        <td>user@mail.com</td>
+                                        <td>185.123.45.67</td>
+                                        <td>5/5</td>
+                                        <td><span class="status-badge locked">Locked</span></td>
+                                        <td>
+                                            <button class="action-btn" onclick="blockIP('185.123.45.67')">
+                                                <i class="fas fa-ban"></i>
+                                            </button>
+                                            <button class="action-btn" onclick="unlockUser('user@mail.com')">
+                                                <i class="fas fa-unlock"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="medium-risk">
+                                        <td>10:30</td>
+                                        <td>admin</td>
+                                        <td>192.168.1.100</td>
+                                        <td>3/5</td>
+                                        <td><span class="status-badge warning">Warning</span></td>
+                                        <td>
+                                            <button class="action-btn" onclick="monitorIP('192.168.1.100')">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="low-risk">
+                                        <td>10:15</td>
+                                        <td>doctor@clinic.com</td>
+                                        <td>10.0.0.55</td>
+                                        <td>2/5</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>
+                                            <button class="action-btn" onclick="viewUserDetails('doctor@clinic.com')">
+                                                <i class="fas fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- IP Management -->
+                    <div class="ip-management-panel">
+                        <h3>
+                            <i class="fas fa-globe"></i>
+                            IP Address Management
+                        </h3>
+                        <div class="ip-lists">
+                            <div class="blocked-ips">
+                                <h4>Blocked IPs</h4>
+                                <div class="ip-list">
+                                    <div class="ip-item blocked">
+                                        <span class="ip">185.123.45.*</span>
+                                        <span class="reason">Brute force</span>
+                                        <button class="unblock-btn" onclick="unblockIP('185.123.45.*')">
+                                            <i class="fas fa-unlock"></i>
+                                        </button>
+                                    </div>
+                                    <div class="ip-item blocked">
+                                        <span class="ip">192.168.1.99</span>
+                                        <span class="reason">Suspicious</span>
+                                        <button class="unblock-btn" onclick="unblockIP('192.168.1.99')">
+                                            <i class="fas fa-unlock"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="btn-secondary" onclick="addBlockedIP()">
+                                    <i class="fas fa-plus"></i>
+                                    Add IP Block
+                                </button>
+                            </div>
+
+                            <div class="whitelisted-ips">
+                                <h4>Whitelisted IPs</h4>
+                                <div class="ip-list">
+                                    <div class="ip-item whitelisted">
+                                        <span class="ip">192.168.1.0/24</span>
+                                        <span class="reason">Office Network</span>
+                                        <button class="remove-btn" onclick="removeWhitelist('192.168.1.0/24')">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <div class="ip-item whitelisted">
+                                        <span class="ip">10.0.0.0/16</span>
+                                        <span class="reason">VPN Network</span>
+                                        <button class="remove-btn" onclick="removeWhitelist('10.0.0.0/16')">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="btn-secondary" onclick="addWhitelistIP()">
+                                    <i class="fas fa-plus"></i>
+                                    Add Whitelist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account Lock Management -->
+                    <div class="lock-management-panel">
+                        <h3>
+                            <i class="fas fa-lock"></i>
+                            Locked Accounts
+                        </h3>
+                        <div class="locked-accounts-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Reason</th>
+                                        <th>Locked At</th>
+                                        <th>Duration</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>user1@clinic.com</td>
+                                        <td>5 Failed Attempts</td>
+                                        <td>10:45</td>
+                                        <td>25 min left</td>
+                                        <td>
+                                            <button class="btn-primary" onclick="unlockAccount('user1@clinic.com')">
+                                                <i class="fas fa-unlock"></i>
+                                                Unlock
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>user2@clinic.com</td>
+                                        <td>Admin Lock</td>
+                                        <td>Yesterday</td>
+                                        <td>Indefinite</td>
+                                        <td>
+                                            <button class="btn-primary" onclick="unlockAccount('user2@clinic.com')">
+                                                <i class="fas fa-unlock"></i>
+                                                Unlock
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>user3@clinic.com</td>
+                                        <td>Suspicious Activity</td>
+                                        <td>09:30</td>
+                                        <td>10 min left</td>
+                                        <td>
+                                            <button class="btn-primary" onclick="unlockAccount('user3@clinic.com')">
+                                                <i class="fas fa-unlock"></i>
+                                                Unlock
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Configuration Modal -->
+    <div class="modal-overlay hidden" id="exportModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>
+                    <i class="fas fa-download"></i>
+                    Export Configuration
+                </h2>
+                <button class="modal-close" onclick="closeModal('exportModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="export-config">
+                    <div class="config-section">
+                        <h4>Export Format</h4>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="exportFormat" value="csv" checked>
+                                <span>CSV (Detailed)</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="exportFormat" value="pdf">
+                                <span>PDF (Report)</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="exportFormat" value="excel">
+                                <span>Excel (Analysis)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h4>Date Range</h4>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="dateRange" value="today" checked>
+                                <span>Today</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="dateRange" value="week">
+                                <span>This Week</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="dateRange" value="month">
+                                <span>This Month</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="dateRange" value="custom">
+                                <span>Custom Range</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h4>Include Data</h4>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" checked>
+                                <span>User Activities</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" checked>
+                                <span>Login History</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" checked>
+                                <span>Data Access</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" checked>
+                                <span>Security Events</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" checked>
+                                <span>IP Addresses</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h4>Compliance Options</h4>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" checked>
+                                <span>Anonymize PII</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" checked>
+                                <span>Include Timestamps</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" checked>
+                                <span>Add Digital Signature</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-secondary" onclick="closeModal('exportModal')">Cancel</button>
+                    <button class="btn-primary" onclick="processExport()">
+                        <i class="fas fa-download"></i>
+                        Export Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-btn" onclick="toggleDarkMode()">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+
+            <div class="footer-section">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" class="social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" class="social-link" title="X (Twitter)">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        class="social-link" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" class="social-link" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" class="social-link"
+                        title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <!-- Corporate Website Link -->
+                <a href="https://citruslabs.co.ke/" target="_blank" class="corporate-link">
+                    <i class="fas fa-globe"></i>
+                    <span>citruslabs.co.ke</span>
+                </a>
+            </div>
+
+            <div class="footer-section">
+                <!-- Copyright -->
+                <div class="copyright">
+                    <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript File Link -->
+    <script src="compliance_hub.js"></script>
+</body>
+
+</html>

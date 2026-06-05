@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags and Document Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curis by Citrus Clinic Services Hub - Service Configuration Center">
+    <meta name="author" content="Citrus Labs">
+    <title>Clinic Services Hub - Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="clinic_services_hub.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- External JavaScript -->
+    <script src="clinic_services_hub.js" defer></script>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="app-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                    class="logo-link">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo_1.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <!-- Dashboard -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <!-- Workforce Hub -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Workforce Hub\workforce_hub.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Workforce Hub</span>
+                        </a>
+                    </li>
+
+                    <!-- Clinic Services Hub - Active Page -->
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Clinic Services Hub\clinic_services_hub.html"
+                            class="nav-link">
+                            <i class="fas fa-hospital"></i>
+                            <span>Clinic Services Hub</span>
+                        </a>
+                    </li>
+
+                    <!-- Appointments -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+
+                    <!-- Billing & Payments -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Billing & Payments</span>
+                        </a>
+                    </li>
+
+                    <!-- Messaging -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Messaging\messaging.html"
+                            class="nav-link">
+                            <i class="fas fa-comments"></i>
+                            <span>Messaging</span>
+                        </a>
+                    </li>
+
+                    <!-- Health Data & Records -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Health Data and Records\health_data_and_records.html"
+                            class="nav-link">
+                            <i class="fas fa-file-medical"></i>
+                            <span>Health Data & Records</span>
+                        </a>
+                    </li>
+
+                    <!-- Insights & Performance -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Insights and Performance\insights_and_performance.html"
+                            class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Insights & Performance</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <!-- Breadcrumb Navigation -->
+                    <div class="breadcrumb">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Dashboard\dashboard.html"
+                            class="breadcrumb-link">Dashboard</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span class="current-page">Clinic Services Hub</span>
+                    </div>
+                    <h1 class="page-title">Clinic Services Hub</h1>
+                    <p class="page-subtitle">Service Configuration Center - Manage and organize your clinic's medical
+                        services</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- Global Service Search -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="globalServiceSearch"
+                            placeholder="Search services...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+
+                    <!-- Add New Service Button -->
+                    <button class="add-service-btn primary-btn" id="addServiceBtn">
+                        <i class="fas fa-plus"></i>
+                        <span>Add New Service</span>
+                    </button>
+
+                    <!-- Notifications -->
+                    <div class="notification-container">
+                        <button class="notification-btn" id="notificationBtn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">4</span>
+                        </button>
+                    </div>
+
+                    <!-- User Profile -->
+                    <div class="user-profile-container">
+                        <button class="user-profile-btn"
+                            onclick="window.location.href='file:///C:/Users/nderu/Documents/Development/Product/Curis/Users/Clinic%20Owner/My%20Profile/my_profile.html'"
+                            aria-label="Go to My Profile">
+                            <img src="file:///C:/Users/nderu/Documents/Development/Product/Curis/Technical%20Writings/Images/Icons/icons8-profile-picture-48.png"
+                                alt="User Profile" class="profile-image">
+                            <span class="profile-name">Dr. Sarah Wanjiku</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+
+                        <!-- User Profile Dropdown -->
+                        <div class="user-dropdown" id="userDropdown">
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Settings\settings.html"
+                                class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Landing Page\landing_page.html"
+                                class="dropdown-item">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Services Hub Container -->
+            <div class="services-hub-container">
+
+                <!-- Service Categories Panel -->
+                <section class="service-categories-panel">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-layer-group"></i>
+                            Service Categories
+                        </h2>
+                        <button class="manage-categories-btn" id="manageCategoriesBtn">
+                            <i class="fas fa-cog"></i>
+                            Manage Categories
+                        </button>
+                    </div>
+
+                    <div class="categories-list">
+                        <!-- Consultations Category -->
+                        <div class="category-item" data-category="consultations">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <i class="fas fa-stethoscope"></i>
+                                </div>
+                                <div class="category-info">
+                                    <h3 class="category-name">Consultations</h3>
+                                    <span class="service-count">10 services</span>
+                                </div>
+                                <button class="expand-btn" data-category="consultations">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <div class="category-services collapsed" id="consultations-services">
+                                <div class="service-item">General Consultation</div>
+                                <div class="service-item">Specialist Consultation</div>
+                                <div class="service-item">Emergency Consultation</div>
+                                <div class="service-item">Pediatric Consultation</div>
+                                <div class="service-item">Cardiology Consultation</div>
+                            </div>
+                        </div>
+
+                        <!-- Lab Tests Category -->
+                        <div class="category-item" data-category="lab-tests">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <div class="category-info">
+                                    <h3 class="category-name">Lab Tests</h3>
+                                    <span class="service-count">25 services</span>
+                                </div>
+                                <button class="expand-btn" data-category="lab-tests">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <div class="category-services collapsed" id="lab-tests-services">
+                                <div class="service-item">Blood Sugar Test</div>
+                                <div class="service-item">Complete Blood Count</div>
+                                <div class="service-item">Urine Analysis</div>
+                                <div class="service-item">Cholesterol Test</div>
+                                <div class="service-item">Kidney Function Test</div>
+                            </div>
+                        </div>
+
+                        <!-- Medical Procedures Category -->
+                        <div class="category-item" data-category="procedures">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div class="category-info">
+                                    <h3 class="category-name">Medical Procedures</h3>
+                                    <span class="service-count">15 services</span>
+                                </div>
+                                <button class="expand-btn" data-category="procedures">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <div class="category-services collapsed" id="procedures-services">
+                                <div class="service-item">Minor Surgery</div>
+                                <div class="service-item">Wound Dressing</div>
+                                <div class="service-item">Injection</div>
+                                <div class="service-item">Blood Pressure Check</div>
+                                <div class="service-item">ECG</div>
+                            </div>
+                        </div>
+
+                        <!-- Follow-ups Category -->
+                        <div class="category-item" data-category="followups">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <i class="fas fa-redo-alt"></i>
+                                </div>
+                                <div class="category-info">
+                                    <h3 class="category-name">Follow-ups</h3>
+                                    <span class="service-count">5 services</span>
+                                </div>
+                                <button class="expand-btn" data-category="followups">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <div class="category-services collapsed" id="followups-services">
+                                <div class="service-item">Post-Surgery Follow-up</div>
+                                <div class="service-item">Medication Review</div>
+                                <div class="service-item">Progress Check</div>
+                                <div class="service-item">Lab Results Review</div>
+                                <div class="service-item">Chronic Care Follow-up</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Service Management Toolbar -->
+                <section class="service-management-toolbar">
+                    <div class="toolbar-left">
+                        <button class="filter-btn" id="advancedFilterBtn">
+                            <i class="fas fa-filter"></i>
+                            Filters
+                        </button>
+
+                        <select class="sort-dropdown" id="sortOptions">
+                            <option value="name">A-Z Service Name</option>
+                            <option value="price-low">Price Low-High</option>
+                            <option value="price-high">Price High-Low</option>
+                            <option value="usage">Most Used First</option>
+                            <option value="modified">Recently Modified</option>
+                        </select>
+
+                        <div class="view-toggle">
+                            <button class="view-btn active" data-view="grid" id="gridViewBtn">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn" data-view="list" id="listViewBtn">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="toolbar-right">
+                        <div class="bulk-actions-container">
+                            <select class="bulk-actions-dropdown" id="bulkActionsDropdown">
+                                <option value="">Bulk Actions</option>
+                                <option value="activate">Activate Selected</option>
+                                <option value="deactivate">Deactivate Selected</option>
+                                <option value="delete">Delete Selected</option>
+                                <option value="export">Export Selected</option>
+                            </select>
+                        </div>
+
+                        <button class="analytics-btn" id="analyticsBtn">
+                            <i class="fas fa-chart-bar"></i>
+                            View Service Analytics
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Services List/Grid Container -->
+                <section class="services-container">
+                    <div class="services-grid" id="servicesGrid">
+
+                        <!-- Service Card 1 - General Consultation -->
+                        <div class="service-card" data-service-id="SVC001">
+                            <div class="service-header">
+                                <div class="service-selection">
+                                    <input type="checkbox" class="service-checkbox">
+                                </div>
+                                <div class="service-status">
+                                    <span class="status-badge active">
+                                        <i class="fas fa-circle"></i>
+                                        Active
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-stethoscope"></i>
+                                </div>
+                                <h3 class="service-name">General Consultation</h3>
+                                <span class="service-category">Consultations</span>
+                                <p class="service-description">Comprehensive medical examination and diagnosis for
+                                    general health concerns</p>
+
+                                <div class="service-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>30 minutes</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <span>KES. 1,500</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-user-md"></i>
+                                        <span>5 doctors assigned</span>
+                                    </div>
+                                </div>
+
+                                <div class="service-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">42</span>
+                                        <span class="stat-label">Bookings this month</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="service-actions">
+                                <button class="action-btn edit-btn" data-action="edit" data-service="SVC001">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn clone-btn" data-action="clone" data-service="SVC001">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <button class="action-btn toggle-btn" data-action="toggle" data-service="SVC001">
+                                    <i class="fas fa-power-off"></i>
+                                </button>
+                                <button class="action-btn more-btn" data-action="more" data-service="SVC001">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 2 - Blood Sugar Test -->
+                        <div class="service-card" data-service-id="SVC002">
+                            <div class="service-header">
+                                <div class="service-selection">
+                                    <input type="checkbox" class="service-checkbox">
+                                </div>
+                                <div class="service-status">
+                                    <span class="status-badge active">
+                                        <i class="fas fa-circle"></i>
+                                        Active
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <h3 class="service-name">Blood Sugar Test</h3>
+                                <span class="service-category">Lab Tests</span>
+                                <p class="service-description">Glucose level testing for diabetes screening and
+                                    monitoring</p>
+
+                                <div class="service-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>15 minutes</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <span>KES. 800</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-user-md"></i>
+                                        <span>3 technicians assigned</span>
+                                    </div>
+                                </div>
+
+                                <div class="service-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">28</span>
+                                        <span class="stat-label">Bookings this month</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="service-actions">
+                                <button class="action-btn edit-btn" data-action="edit" data-service="SVC002">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn clone-btn" data-action="clone" data-service="SVC002">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <button class="action-btn toggle-btn" data-action="toggle" data-service="SVC002">
+                                    <i class="fas fa-power-off"></i>
+                                </button>
+                                <button class="action-btn more-btn" data-action="more" data-service="SVC002">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 3 - Minor Surgery -->
+                        <div class="service-card" data-service-id="SVC003">
+                            <div class="service-header">
+                                <div class="service-selection">
+                                    <input type="checkbox" class="service-checkbox">
+                                </div>
+                                <div class="service-status">
+                                    <span class="status-badge inactive">
+                                        <i class="fas fa-circle"></i>
+                                        Inactive
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <h3 class="service-name">Minor Surgery</h3>
+                                <span class="service-category">Medical Procedures</span>
+                                <p class="service-description">Outpatient surgical procedures for minor conditions</p>
+
+                                <div class="service-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>90 minutes</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <span>KES. 8,500</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-user-md"></i>
+                                        <span>2 surgeons assigned</span>
+                                    </div>
+                                </div>
+
+                                <div class="service-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">5</span>
+                                        <span class="stat-label">Bookings this month</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="service-actions">
+                                <button class="action-btn edit-btn" data-action="edit" data-service="SVC003">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn clone-btn" data-action="clone" data-service="SVC003">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <button class="action-btn toggle-btn" data-action="toggle" data-service="SVC003">
+                                    <i class="fas fa-power-off"></i>
+                                </button>
+                                <button class="action-btn more-btn" data-action="more" data-service="SVC003">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 4 - Vaccination -->
+                        <div class="service-card" data-service-id="SVC004">
+                            <div class="service-header">
+                                <div class="service-selection">
+                                    <input type="checkbox" class="service-checkbox">
+                                </div>
+                                <div class="service-status">
+                                    <span class="status-badge active">
+                                        <i class="fas fa-circle"></i>
+                                        Active
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-syringe"></i>
+                                </div>
+                                <h3 class="service-name">Vaccination</h3>
+                                <span class="service-category">Medical Procedures</span>
+                                <p class="service-description">Immunization services for children and adults</p>
+
+                                <div class="service-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>15 minutes</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <span>KES. 1,200</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-user-md"></i>
+                                        <span>4 nurses assigned</span>
+                                    </div>
+                                </div>
+
+                                <div class="service-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">67</span>
+                                        <span class="stat-label">Bookings this month</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="service-actions">
+                                <button class="action-btn edit-btn" data-action="edit" data-service="SVC004">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn clone-btn" data-action="clone" data-service="SVC004">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <button class="action-btn toggle-btn" data-action="toggle" data-service="SVC004">
+                                    <i class="fas fa-power-off"></i>
+                                </button>
+                                <button class="action-btn more-btn" data-action="more" data-service="SVC004">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 5 - Post-Surgery Follow-up -->
+                        <div class="service-card" data-service-id="SVC005">
+                            <div class="service-header">
+                                <div class="service-selection">
+                                    <input type="checkbox" class="service-checkbox">
+                                </div>
+                                <div class="service-status">
+                                    <span class="status-badge active">
+                                        <i class="fas fa-circle"></i>
+                                        Active
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-redo-alt"></i>
+                                </div>
+                                <h3 class="service-name">Post-Surgery Follow-up</h3>
+                                <span class="service-category">Follow-ups</span>
+                                <p class="service-description">Post-operative care and wound monitoring</p>
+
+                                <div class="service-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>20 minutes</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <span>KES. 1,000</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-user-md"></i>
+                                        <span>3 doctors assigned</span>
+                                    </div>
+                                </div>
+
+                                <div class="service-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">12</span>
+                                        <span class="stat-label">Bookings this month</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="service-actions">
+                                <button class="action-btn edit-btn" data-action="edit" data-service="SVC005">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn clone-btn" data-action="clone" data-service="SVC005">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <button class="action-btn toggle-btn" data-action="toggle" data-service="SVC005">
+                                    <i class="fas fa-power-off"></i>
+                                </button>
+                                <button class="action-btn more-btn" data-action="more" data-service="SVC005">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 6 - Complete Blood Count -->
+                        <div class="service-card" data-service-id="SVC006">
+                            <div class="service-header">
+                                <div class="service-selection">
+                                    <input type="checkbox" class="service-checkbox">
+                                </div>
+                                <div class="service-status">
+                                    <span class="status-badge active">
+                                        <i class="fas fa-circle"></i>
+                                        Active
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <h3 class="service-name">Complete Blood Count (CBC)</h3>
+                                <span class="service-category">Lab Tests</span>
+                                <p class="service-description">Comprehensive blood analysis including RBC, WBC, and
+                                    platelets</p>
+
+                                <div class="service-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>10 minutes</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <span>KES. 1,200</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-user-md"></i>
+                                        <span>2 technicians assigned</span>
+                                    </div>
+                                </div>
+
+                                <div class="service-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">35</span>
+                                        <span class="stat-label">Bookings this month</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="service-actions">
+                                <button class="action-btn edit-btn" data-action="edit" data-service="SVC006">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn clone-btn" data-action="clone" data-service="SVC006">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <button class="action-btn toggle-btn" data-action="toggle" data-service="SVC006">
+                                    <i class="fas fa-power-off"></i>
+                                </button>
+                                <button class="action-btn more-btn" data-action="more" data-service="SVC006">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+
+        </main>
+
+        <!-- Quick Actions Panel (Right Sidebar) -->
+        <aside class="quick-actions-panel">
+            <h3 class="panel-title">Quick Actions</h3>
+
+            <div class="quick-actions-list">
+                <button class="quick-action-btn" id="importServicesBtn">
+                    <i class="fas fa-download"></i>
+                    <span>Import Services</span>
+                    <small>CSV upload</small>
+                </button>
+
+                <button class="quick-action-btn" id="exportAllBtn">
+                    <i class="fas fa-upload"></i>
+                    <span>Export All Services</span>
+                    <small>Download CSV</small>
+                </button>
+
+                <button class="quick-action-btn" id="serviceTemplatesBtn">
+                    <i class="fas fa-clipboard"></i>
+                    <span>Service Templates</span>
+                    <small>Common presets</small>
+                </button>
+
+                <button class="quick-action-btn" id="helpGuidelinesBtn">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Help & Guidelines</span>
+                    <small>Setup guide</small>
+                </button>
+            </div>
+
+            <!-- Sync Status Indicator -->
+            <div class="sync-status">
+                <div class="sync-indicator">
+                    <i class="fas fa-sync-alt spinning"></i>
+                    <span>Syncing with Appointments</span>
+                </div>
+                <small class="sync-time">Last sync: 2 minutes ago</small>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <!-- Left Side - Dark Mode Toggle -->
+            <div class="footer-left">
+                <button class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Center - Social Media Links -->
+            <div class="footer-center">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" class="social-link twitter">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        class="social-link facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" class="social-link youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" class="social-link linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side - Corporate Info -->
+            <div class="footer-right">
+                <a href="https://citruslabs.co.ke/" target="_blank" class="corporate-link">citruslabs.co.ke</a>
+                <span class="copyright">© 2025 Citrus Labs. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Windows -->
+
+    <!-- Service Creation Modal (Multi-step) -->
+    <div class="modal" id="serviceCreationModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Create New Service</h3>
+                <div class="step-indicator">
+                    <span class="step active" data-step="1">Service Details</span>
+                    <span class="step" data-step="2">Pricing</span>
+                    <span class="step" data-step="3">Settings</span>
+                </div>
+                <button class="modal-close" data-modal="serviceCreationModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <!-- Step 1: Service Details -->
+                <div class="step-content active" id="step1">
+                    <form class="service-form">
+                        <div class="form-section">
+                            <h4>Basic Information</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Service Name <span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="serviceName" required
+                                        placeholder="Enter service name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Category <span class="required">*</span></label>
+                                    <select class="form-control" name="category" required>
+                                        <option value="">Select category</option>
+                                        <option value="consultations">Consultations</option>
+                                        <option value="lab-tests">Lab Tests</option>
+                                        <option value="procedures">Medical Procedures</option>
+                                        <option value="followups">Follow-ups</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Duration <span class="required">*</span></label>
+                                    <select class="form-control" name="duration" required>
+                                        <option value="">Select duration</option>
+                                        <option value="15">15 minutes</option>
+                                        <option value="30">30 minutes</option>
+                                        <option value="45">45 minutes</option>
+                                        <option value="60">60 minutes</option>
+                                        <option value="90">90 minutes</option>
+                                        <option value="120">120 minutes</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Specialty Assignment</label>
+                                    <select class="form-control" name="specialty" multiple>
+                                        <option value="general">General Practice</option>
+                                        <option value="pediatrics">Pediatrics</option>
+                                        <option value="cardiology">Cardiology</option>
+                                        <option value="laboratory">Laboratory</option>
+                                        <option value="dermatology">Dermatology</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Description</label>
+                                <div class="description-toggle">
+                                    <button type="button" class="toggle-btn active" data-editor="plain">Plain
+                                        Text</button>
+                                    <button type="button" class="toggle-btn" data-editor="rich">Rich Text</button>
+                                </div>
+                                <textarea class="form-control" name="description" rows="4"
+                                    placeholder="Enter service description"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Prerequisites Setup</h4>
+                            <div class="prerequisites-toggle">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="enablePrerequisites">
+                                    <span class="slider"></span>
+                                </label>
+                                <span class="toggle-label">Enable Prerequisites</span>
+                            </div>
+
+                            <div class="prerequisites-panel" style="display: none;">
+                                <div class="form-group">
+                                    <label class="form-label">Required Services</label>
+                                    <select class="form-control searchable" name="prerequisites" multiple>
+                                        <option value="SVC001">General Consultation</option>
+                                        <option value="SVC002">Blood Sugar Test</option>
+                                        <option value="SVC006">Complete Blood Count</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn-primary" id="nextToPricingBtn">Next: Pricing <i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Pricing Configuration -->
+                <div class="step-content" id="step2">
+                    <div class="pricing-form">
+                        <div class="form-section">
+                            <h4>Fee Structure</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Fee Type <span class="required">*</span></label>
+                                    <select class="form-control" name="feeType" required>
+                                        <option value="fixed">Fixed Fee</option>
+                                        <option value="variable">Variable Fee</option>
+                                        <option value="insurance">Insurance Based</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Base Fee (KES.) <span class="required">*</span></label>
+                                    <input type="number" class="form-control" name="baseFee" required placeholder="0.00"
+                                        min="0" step="0.01">
+                                </div>
+                            </div>
+
+                            <div class="curis-fee-section">
+                                <div class="fee-toggle">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="includesCurisFee" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="toggle-label">Include Curis Fee (5%)</span>
+                                </div>
+                                <div class="fee-calculation">
+                                    <span class="calculation-text">Fee structure: Inclusive of platform charges</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Discount Settings</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Discount Type</label>
+                                    <select class="form-control" name="discountType">
+                                        <option value="">No Discount</option>
+                                        <option value="percentage">Percentage</option>
+                                        <option value="fixed">Fixed Amount</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Discount Value</label>
+                                    <input type="number" class="form-control" name="discountValue" placeholder="0"
+                                        min="0">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Valid From</label>
+                                    <input type="date" class="form-control" name="discountStart">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Valid Until</label>
+                                    <input type="date" class="form-control" name="discountEnd">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Discount Conditions</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="discountConditions" value="new_patients">
+                                        <span class="checkmark"></span>
+                                        New Patients Only
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="discountConditions" value="bulk_booking">
+                                        <span class="checkmark"></span>
+                                        Bulk Booking (3+ services)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Tax & Insurance</h4>
+                            <div class="tax-insurance-options">
+                                <div class="option-item">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="vatApplicable">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <div class="option-info">
+                                        <span class="option-title">VAT Applicable (16%)</span>
+                                        <small class="option-description">Automatically calculated on final
+                                            amount</small>
+                                    </div>
+                                </div>
+
+                                <div class="option-item">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="insuranceCoverage">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <div class="option-info">
+                                        <span class="option-title">Insurance Coverage</span>
+                                        <small class="option-description">Service covered by insurance providers</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="insurance-providers" style="display: none;">
+                                <label class="form-label">Select Insurance Providers</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="insuranceProviders" value="nhif">
+                                        <span class="checkmark"></span>
+                                        NHIF
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="insuranceProviders" value="jubilee">
+                                        <span class="checkmark"></span>
+                                        Jubilee Insurance
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="insuranceProviders" value="britam">
+                                        <span class="checkmark"></span>
+                                        Britam
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="insuranceProviders" value="aap">
+                                        <span class="checkmark"></span>
+                                        AAR Insurance
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn-secondary" id="backToDetailsBtn"><i
+                                class="fas fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn-primary" id="nextToSettingsBtn">Next: Settings <i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Publishing & Assignment Settings -->
+                <div class="step-content" id="step3">
+                    <div class="settings-form">
+                        <div class="form-section">
+                            <h4>Service Publishing</h4>
+                            <div class="publishing-options">
+                                <div class="option-item">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="serviceActive" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <div class="option-info">
+                                        <span class="option-title">Service Active</span>
+                                        <small class="option-description">Available for booking immediately</small>
+                                    </div>
+                                </div>
+
+                                <div class="option-item">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="publicVisibility" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <div class="option-info">
+                                        <span class="option-title">Public Visibility</span>
+                                        <small class="option-description">Show on patient portal</small>
+                                    </div>
+                                </div>
+
+                                <div class="option-item">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="internalOnly">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <div class="option-info">
+                                        <span class="option-title">Internal Only</span>
+                                        <small class="option-description">Staff manual booking only</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="scheduled-publication">
+                                <div class="form-group">
+                                    <label class="form-label">Schedule Publication (Optional)</label>
+                                    <input type="datetime-local" class="form-control" name="scheduledPublication">
+                                    <small class="form-help">Leave empty for immediate publication</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Doctor Assignment</h4>
+                            <div class="assignment-controls">
+                                <div class="search-doctors">
+                                    <input type="text" class="form-control"
+                                        placeholder="Search doctors by name or specialty" id="doctorSearch">
+                                </div>
+
+                                <div class="bulk-assignment">
+                                    <button type="button" class="btn-secondary" id="selectAllDoctors">Select
+                                        All</button>
+                                    <button type="button" class="btn-secondary" id="selectNoneDoctors">Select
+                                        None</button>
+                                </div>
+                            </div>
+
+                            <div class="doctors-list">
+                                <div class="doctor-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="assignedDoctors" value="DOC001">
+                                        <span class="checkmark"></span>
+                                        <div class="doctor-info">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                                alt="Dr. Kamau" class="doctor-avatar">
+                                            <div class="doctor-details">
+                                                <span class="doctor-name">Dr. James Kamau</span>
+                                                <span class="doctor-specialty">General Practice</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="doctor-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="assignedDoctors" value="DOC002">
+                                        <span class="checkmark"></span>
+                                        <div class="doctor-info">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                                alt="Dr. Wanjiru" class="doctor-avatar">
+                                            <div class="doctor-details">
+                                                <span class="doctor-name">Dr. Grace Wanjiru</span>
+                                                <span class="doctor-specialty">Pediatrics</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="doctor-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="assignedDoctors" value="DOC003">
+                                        <span class="checkmark"></span>
+                                        <div class="doctor-info">
+                                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                                alt="Dr. Mwangi" class="doctor-avatar">
+                                            <div class="doctor-details">
+                                                <span class="doctor-name">Dr. Peter Mwangi</span>
+                                                <span class="doctor-specialty">Cardiology</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Coverage Analysis -->
+                            <div class="coverage-analysis">
+                                <h5>Coverage Analysis</h5>
+                                <div class="coverage-grid">
+                                    <div class="coverage-item good">
+                                        <span class="time-slot">Mon-Fri 9AM-5PM</span>
+                                        <span class="coverage-status">Good Coverage</span>
+                                    </div>
+                                    <div class="coverage-item warning">
+                                        <span class="time-slot">Sat-Sun 9AM-1PM</span>
+                                        <span class="coverage-status">Limited Coverage</span>
+                                    </div>
+                                </div>
+
+                                <div class="coverage-alert">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <span>Coverage Gap Alert: No doctors available on Sundays after 1PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn-secondary" id="backToPricingBtn"><i
+                                class="fas fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn-success" id="createServiceBtn">Create Service <i
+                                class="fas fa-check"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Management Modal -->
+    <div class="modal" id="categoryManagementModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Category Management</h3>
+                <button class="modal-close" data-modal="categoryManagementModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="category-management">
+                    <div class="management-header">
+                        <button class="btn-primary" id="addCategoryBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Category
+                        </button>
+                    </div>
+
+                    <div class="existing-categories">
+                        <h4>Existing Categories</h4>
+                        <p class="drag-instruction">Drag categories to reorder them</p>
+
+                        <div class="categories-sortable">
+                            <div class="category-management-item" data-category="consultations">
+                                <div class="drag-handle">
+                                    <i class="fas fa-grip-vertical"></i>
+                                </div>
+                                <div class="category-details">
+                                    <div class="category-icon">
+                                        <i class="fas fa-stethoscope"></i>
+                                    </div>
+                                    <div class="category-text">
+                                        <h5>Consultations</h5>
+                                        <span>Medical consultations and examinations</span>
+                                    </div>
+                                </div>
+                                <div class="category-actions">
+                                    <button class="edit-category-btn" data-category="consultations">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="delete-category-btn" data-category="consultations">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="category-management-item" data-category="lab-tests">
+                                <div class="drag-handle">
+                                    <i class="fas fa-grip-vertical"></i>
+                                </div>
+                                <div class="category-details">
+                                    <div class="category-icon">
+                                        <i class="fas fa-flask"></i>
+                                    </div>
+                                    <div class="category-text">
+                                        <h5>Lab Tests</h5>
+                                        <span>Laboratory testing and analysis</span>
+                                    </div>
+                                </div>
+                                <div class="category-actions">
+                                    <button class="edit-category-btn" data-category="lab-tests">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="delete-category-btn" data-category="lab-tests">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="category-management-item" data-category="procedures">
+                                <div class="drag-handle">
+                                    <i class="fas fa-grip-vertical"></i>
+                                </div>
+                                <div class="category-details">
+                                    <div class="category-icon">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <div class="category-text">
+                                        <h5>Medical Procedures</h5>
+                                        <span>Surgical and medical procedures</span>
+                                    </div>
+                                </div>
+                                <div class="category-actions">
+                                    <button class="edit-category-btn" data-category="procedures">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="delete-category-btn" data-category="procedures">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="category-management-item" data-category="followups">
+                                <div class="drag-handle">
+                                    <i class="fas fa-grip-vertical"></i>
+                                </div>
+                                <div class="category-details">
+                                    <div class="category-icon">
+                                        <i class="fas fa-redo-alt"></i>
+                                    </div>
+                                    <div class="category-text">
+                                        <h5>Follow-ups</h5>
+                                        <span>Post-treatment follow-up appointments</span>
+                                    </div>
+                                </div>
+                                <div class="category-actions">
+                                    <button class="edit-category-btn" data-category="followups">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="delete-category-btn" data-category="followups">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Category Modal -->
+    <div class="modal" id="categoryFormModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="categoryFormTitle">Add New Category</h3>
+                <button class="modal-close" data-modal="categoryFormModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="category-form" id="categoryForm">
+                    <div class="form-group">
+                        <label class="form-label">Category Name <span class="required">*</span></label>
+                        <input type="text" class="form-control" name="categoryName" required
+                            placeholder="Enter category name">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" name="categoryDescription" rows="3"
+                            placeholder="Enter category description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Icon</label>
+                        <div class="icon-selector">
+                            <div class="selected-icon">
+                                <i class="fas fa-hospital" id="selectedIcon"></i>
+                            </div>
+                            <button type="button" class="icon-picker-btn" id="iconPickerBtn">
+                                Choose Icon
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" data-action="close">Cancel</button>
+                        <button type="submit" class="btn-primary" id="saveCategoryBtn">Save Category</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advanced Filter Modal -->
+    <div class="modal" id="advancedFilterModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Advanced Filter Options</h3>
+                <button class="modal-close" data-modal="advancedFilterModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="filter-form">
+                    <div class="form-group">
+                        <label class="form-label">Filter by Category</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="categoryFilter" value="consultations" checked>
+                                <span class="checkmark"></span>
+                                Consultations
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="categoryFilter" value="lab-tests" checked>
+                                <span class="checkmark"></span>
+                                Lab Tests
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="categoryFilter" value="procedures" checked>
+                                <span class="checkmark"></span>
+                                Medical Procedures
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="categoryFilter" value="followups" checked>
+                                <span class="checkmark"></span>
+                                Follow-ups
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Filter by Status</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="statusFilter" value="all" checked>
+                                <span class="radio-mark"></span>
+                                All Services
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="statusFilter" value="active">
+                                <span class="radio-mark"></span>
+                                Active Only
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="statusFilter" value="inactive">
+                                <span class="radio-mark"></span>
+                                Inactive Only
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Filter by Doctor Assignment</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="doctorFilter" value="all" checked>
+                                <span class="radio-mark"></span>
+                                All Services
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="doctorFilter" value="assigned">
+                                <span class="radio-mark"></span>
+                                Assigned to Doctors
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="doctorFilter" value="unassigned">
+                                <span class="radio-mark"></span>
+                                Unassigned Services
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Price Range (KES.)</label>
+                        <div class="price-range-slider">
+                            <input type="range" min="0" max="10000" value="0" class="slider" id="minPriceSlider">
+                            <input type="range" min="0" max="10000" value="10000" class="slider" id="maxPriceSlider">
+                            <div class="range-values">
+                                <span id="minPriceValue">KES. 0</span>
+                                <span id="maxPriceValue">KES. 10,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="clearAllFilters">Clear All</button>
+                        <button type="button" class="btn-primary" id="applyFiltersBtn">Apply Filters</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Analytics Modal -->
+    <div class="modal" id="serviceAnalyticsModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Service Analytics Dashboard</h3>
+                <div class="analytics-period-selector">
+                    <select class="period-select" id="analyticsPeriod">
+                        <option value="today">Today</option>
+                        <option value="week" selected>This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+                <button class="modal-close" data-modal="serviceAnalyticsModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="analytics-content">
+
+                    <!-- Charts Section -->
+                    <div class="charts-section">
+                        <div class="chart-container">
+                            <h4>Booking Frequency</h4>
+                            <canvas id="bookingChart"></canvas>
+                        </div>
+
+                        <div class="chart-container">
+                            <h4>Revenue by Service</h4>
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Service Utilization Table -->
+                    <div class="utilization-section">
+                        <h4>Service Utilization Analysis</h4>
+
+                        <div class="utilization-tabs">
+                            <button class="tab-btn active" data-tab="top-services">Top 5 Services</button>
+                            <button class="tab-btn" data-tab="underused">Underutilized</button>
+                            <button class="tab-btn" data-tab="trending">Trending</button>
+                        </div>
+
+                        <div class="tab-content" id="top-services-tab">
+                            <table class="utilization-table">
+                                <thead>
+                                    <tr>
+                                        <th>Service Name</th>
+                                        <th>Bookings</th>
+                                        <th>Revenue</th>
+                                        <th>Growth</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Vaccination</td>
+                                        <td>67</td>
+                                        <td>KES. 80,400</td>
+                                        <td class="positive">+15%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>General Consultation</td>
+                                        <td>42</td>
+                                        <td>KES. 63,000</td>
+                                        <td class="positive">+8%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Complete Blood Count</td>
+                                        <td>35</td>
+                                        <td>KES. 42,000</td>
+                                        <td class="positive">+12%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Blood Sugar Test</td>
+                                        <td>28</td>
+                                        <td>KES. 22,400</td>
+                                        <td class="negative">-5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Post-Surgery Follow-up</td>
+                                        <td>12</td>
+                                        <td>KES. 12,000</td>
+                                        <td class="positive">+20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="tab-content" id="underused-tab" style="display: none;">
+                            <div class="underused-services">
+                                <div class="service-alert">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <div class="alert-content">
+                                        <h5>Minor Surgery</h5>
+                                        <p>Only 5 bookings this month (< 5 threshold)</p>
+                                                <span class="suggestion">Consider promotional pricing or
+                                                    marketing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="trending-tab" style="display: none;">
+                            <div class="trending-services">
+                                <div class="trend-item">
+                                    <div class="trend-icon positive">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </div>
+                                    <div class="trend-info">
+                                        <h5>Post-Surgery Follow-up</h5>
+                                        <p>+20% growth in demand</p>
+                                        <span class="trend-reason">Increased surgical procedures</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Export and Report Options -->
+                    <div class="analytics-actions">
+                        <button class="btn-secondary" id="exportAnalyticsBtn">
+                            <i class="fas fa-download"></i>
+                            Export Report (PDF)
+                        </button>
+                        <button class="btn-secondary" id="scheduleReportBtn">
+                            <i class="fas fa-calendar"></i>
+                            Schedule Reports
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Service Modal -->
+    <div class="modal" id="editServiceModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Edit Service</h3>
+                <div class="auto-save-indicator">
+                    <i class="fas fa-save"></i>
+                    <span>Auto-saving...</span>
+                </div>
+                <button class="modal-close" data-modal="editServiceModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="editServiceContent">
+                <!-- Content will be dynamically loaded based on selected service -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Clone Service Modal -->
+    <div class="modal" id="cloneServiceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Clone Service</h3>
+                <button class="modal-close" data-modal="cloneServiceModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="clone-form">
+                    <div class="original-service-info">
+                        <h4>Cloning from:</h4>
+                        <div class="service-preview">
+                            <i class="fas fa-stethoscope"></i>
+                            <span id="originalServiceName">General Consultation</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">New Service Name <span class="required">*</span></label>
+                        <input type="text" class="form-control" name="newServiceName" required
+                            placeholder="Enter new service name">
+                    </div>
+
+                    <div class="clone-options">
+                        <h5>Clone Settings:</h5>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="cloneOptions" value="pricing" checked>
+                                <span class="checkmark"></span>
+                                Copy Pricing Information
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="cloneOptions" value="doctors" checked>
+                                <span class="checkmark"></span>
+                                Copy Doctor Assignments
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="cloneOptions" value="settings">
+                                <span class="checkmark"></span>
+                                Copy Visibility Settings
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" data-action="close">Cancel</button>
+                        <button type="button" class="btn-primary" id="confirmCloneBtn">Clone Service</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteConfirmationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Delete Service</h3>
+                <button class="modal-close" data-modal="deleteConfirmationModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="delete-warning">
+                    <div class="warning-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h4>Warning: This action cannot be undone</h4>
+                    <p>Are you sure you want to delete this service?</p>
+
+                    <div class="service-to-delete">
+                        <div class="service-preview">
+                            <i class="fas fa-stethoscope"></i>
+                            <span id="serviceToDeleteName">General Consultation</span>
+                        </div>
+                    </div>
+
+                    <div class="impact-warning">
+                        <h5>This will also:</h5>
+                        <ul>
+                            <li>Cancel all pending appointments for this service</li>
+                            <li>Remove service from doctor assignments</li>
+                            <li>Archive historical booking data</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" data-action="close">Cancel</button>
+                    <button type="button" class="btn-danger" id="confirmDeleteBtn">Delete Service</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import Services Modal -->
+    <div class="modal" id="importServicesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Import Services</h3>
+                <button class="modal-close" data-modal="importServicesModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="import-guide">
+                    <h4>CSV Format Guide</h4>
+                    <p>Please ensure your CSV file follows this format:</p>
+
+                    <div class="format-example">
+                        <code>Service Name, Category, Duration, Price, Description</code>
+                        <br>
+                        <code>General Consultation, Consultations, 30, 1500, Medical examination</code>
+                    </div>
+
+                    <div class="download-template">
+                        <button class="btn-secondary" id="downloadTemplateBtn">
+                            <i class="fas fa-download"></i>
+                            Download Template
+                        </button>
+                    </div>
+                </div>
+
+                <div class="file-upload">
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag and drop your CSV file here, or click to browse</p>
+                        <input type="file" id="csvFileInput" accept=".csv" hidden>
+                    </div>
+                </div>
+
+                <div class="import-progress" id="importProgress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span class="progress-text">Importing services...</span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" data-action="close">Cancel</button>
+                    <button type="button" class="btn-primary" id="startImportBtn" disabled>Import Services</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Templates Modal -->
+    <div class="modal" id="serviceTemplatesModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Service Templates</h3>
+                <button class="modal-close" data-modal="serviceTemplatesModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="templates-grid">
+
+                    <div class="template-card" data-template="basic-consultation">
+                        <div class="template-header">
+                            <i class="fas fa-stethoscope"></i>
+                            <h4>Basic Consultation Package</h4>
+                        </div>
+                        <div class="template-content">
+                            <p>Includes general consultation, basic examination, and diagnosis services.</p>
+                            <div class="template-services">
+                                <span class="service-tag">General Consultation</span>
+                                <span class="service-tag">Physical Examination</span>
+                                <span class="service-tag">Basic Diagnosis</span>
+                            </div>
+                        </div>
+                        <button class="use-template-btn" data-template="basic-consultation">
+                            Use Template
+                        </button>
+                    </div>
+
+                    <div class="template-card" data-template="lab-package">
+                        <div class="template-header">
+                            <i class="fas fa-flask"></i>
+                            <h4>Essential Lab Tests</h4>
+                        </div>
+                        <div class="template-content">
+                            <p>Common laboratory tests for health screening and diagnosis.</p>
+                            <div class="template-services">
+                                <span class="service-tag">Blood Sugar Test</span>
+                                <span class="service-tag">Complete Blood Count</span>
+                                <span class="service-tag">Urine Analysis</span>
+                                <span class="service-tag">Cholesterol Test</span>
+                            </div>
+                        </div>
+                        <button class="use-template-btn" data-template="lab-package">
+                            Use Template
+                        </button>
+                    </div>
+
+                    <div class="template-card" data-template="pediatric-package">
+                        <div class="template-header">
+                            <i class="fas fa-baby"></i>
+                            <h4>Pediatric Care Package</h4>
+                        </div>
+                        <div class="template-content">
+                            <p>Specialized services for infant and child healthcare.</p>
+                            <div class="template-services">
+                                <span class="service-tag">Pediatric Consultation</span>
+                                <span class="service-tag">Vaccination</span>
+                                <span class="service-tag">Growth Monitoring</span>
+                                <span class="service-tag">Child Health Check</span>
+                            </div>
+                        </div>
+                        <button class="use-template-btn" data-template="pediatric-package">
+                            Use Template
+                        </button>
+                    </div>
+
+                    <div class="template-card" data-template="preventive-care">
+                        <div class="template-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Preventive Care Package</h4>
+                        </div>
+                        <div class="template-content">
+                            <p>Comprehensive preventive healthcare and screening services.</p>
+                            <div class="template-services">
+                                <span class="service-tag">Health Screening</span>
+                                <span class="service-tag">Blood Pressure Check</span>
+                                <span class="service-tag">Diabetes Screening</span>
+                                <span class="service-tag">Health Education</span>
+                            </div>
+                        </div>
+                        <button class="use-template-btn" data-template="preventive-care">
+                            Use Template
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message Toast -->
+    <div class="toast success" id="successToast" style="display: none;">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span class="toast-message">Service created successfully!</span>
+        </div>
+        <button class="toast-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Notifications Panel -->
+    <div class="notifications-panel" id="notificationsPanel">
+        <div class="notifications-header">
+            <h3 class="notifications-title">Notifications</h3>
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Clinic Owner\Notifications\notifications.html"
+                class="view-all-notifications">
+                View All
+            </a>
+        </div>
+        <div class="notifications-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-plus-circle"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>New Service Added</h5>
+                    <p>Dermatology Consultation has been successfully created</p>
+                    <span class="notification-time">5 minutes ago</span>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Service Coverage Warning</h5>
+                    <p>Minor Surgery has no doctors assigned for weekend slots</p>
+                    <span class="notification-time">15 minutes ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-edit"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>Service Price Updated</h5>
+                    <p>General Consultation pricing has been modified</p>
+                    <span class="notification-time">1 hour ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>High Demand Alert</h5>
+                    <p>Vaccination bookings are 200% above average this week</p>
+                    <span class="notification-time">2 hours ago</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

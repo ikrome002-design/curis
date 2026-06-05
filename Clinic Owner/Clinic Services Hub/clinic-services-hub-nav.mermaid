@@ -1,0 +1,204 @@
+flowchart TD
+    %% Main Entry Points
+    D[Dashboard] --> CSH[Clinic Services Hub<br/>Service Configuration Center]
+    WH[Workforce Hub] --> CSH
+    APP[Appointments] --> CSH
+    BILL[Billings & Payments] --> CSH
+    
+    %% Clinic Services Hub Main Page Layout
+    CSH --> CSH_HEADER[Header Navigation Bar]
+    CSH_HEADER --> BACK_BTN[← Back to Dashboard]
+    CSH_HEADER --> SEARCH_BAR[🔍 Global Service Search<br/>Real-time filtering]
+    CSH_HEADER --> ADD_SERVICE_BTN[+ Add New Service<br/>Primary action button]
+    
+    BACK_BTN --> D
+    
+    %% Main Service Categories Section
+    CSH --> F1[Service Categories Panel<br/>Specialty organization]
+    F1 --> F1_VIEW[Category List View<br/>Expandable sections]
+    F1_VIEW --> CONSULT_CAT[Consultations<br/>10 services]
+    F1_VIEW --> LAB_CAT[Lab Tests<br/>25 services]
+    F1_VIEW --> PROC_CAT[Medical Procedures<br/>15 services]
+    F1_VIEW --> FOLLOWUP_CAT[Follow-ups<br/>5 services]
+    
+    F1 --> F1a[Category Management Button<br/>⚙️ Manage Categories]
+    F1a --> CAT_MODAL[Category Management Modal]
+    CAT_MODAL --> CAT_LIST[Existing Categories<br/>Drag to reorder]
+    CAT_MODAL --> ADD_CAT_BTN[+ Add Category]
+    CAT_MODAL --> EDIT_CAT_BTN[✏️ Edit Category]
+    CAT_MODAL --> DEL_CAT_BTN[🗑️ Delete Category]
+    
+    ADD_CAT_BTN --> NEW_CAT_FORM[New Category Form<br/>Name, Description, Icon]
+    NEW_CAT_FORM --> SAVE_CAT[Save Category<br/>Validation check]
+    SAVE_CAT --> F1_VIEW
+    
+    %% Service Creation Flow
+    ADD_SERVICE_BTN --> F2[Service Creation Modal<br/>Multi-step form]
+    F2 --> F2a[Service Details Form]
+    F2a --> SVC_NAME[Service Name Input<br/>Required field]
+    F2a --> SVC_CAT[Category Dropdown<br/>Select from existing]
+    F2a --> SVC_SPEC[Specialty Assignment<br/>Multi-select dropdown]
+    F2a --> SVC_DUR[Duration Selector<br/>15/30/45/60/90/120 mins]
+    F2a --> SVC_DESC[Description Editor<br/>Rich text/Plain text toggle]
+    
+    F2 --> F2b[Prerequisites Setup<br/>Optional dependencies]
+    F2b --> PREREQ_TOGGLE[Enable Prerequisites<br/>Yes/No toggle]
+    PREREQ_TOGGLE --> PREREQ_SELECT[Select Required Services<br/>Searchable dropdown]
+    
+    F2a --> NEXT_PRICING[Next: Pricing →]
+    
+    %% Pricing Configuration
+    NEXT_PRICING --> F3[Pricing Configuration Panel]
+    F3 --> F3a[Fee Structure Modal]
+    F3a --> FEE_TYPE[Fee Type Selection<br/>Fixed/Variable/Insurance]
+    F3a --> BASE_FEE[Base Fee Input<br/>KES amount field]
+    F3a --> CURIS_FEE_TOGGLE[Include Curis Fee?<br/>Inclusive/Exclusive toggle]
+    
+    F3 --> F3b[Discount Settings<br/>Optional promotions]
+    F3b --> DISC_TYPE[Discount Type<br/>Percentage/Fixed amount]
+    F3b --> DISC_PERIOD[Valid Period<br/>Date range picker]
+    F3b --> DISC_CONDITIONS[Conditions<br/>New patients/Bulk booking]
+    
+    F3 --> F3c[Tax & Insurance Panel]
+    F3c --> VAT_TOGGLE[VAT Applicable<br/>16% auto-calculation]
+    F3c --> INS_TOGGLE[Insurance Coverage<br/>Yes/No toggle]
+    INS_TOGGLE --> INS_PROVIDERS[Select Providers<br/>NHIF/Jubilee/Britam/etc]
+    
+    F3a --> SAVE_SERVICE[Save & Continue →]
+    
+    %% Service Visibility Settings
+    SAVE_SERVICE --> F4[Service Publishing Settings]
+    F4 --> F4a[Status Toggle<br/>Active/Inactive switch]
+    F4a --> ACTIVE_STATE[✅ Active<br/>Available for booking]
+    F4a --> INACTIVE_STATE[⏸️ Inactive<br/>Hidden from bookings]
+    
+    F4 --> F4b[Visibility Settings]
+    F4b --> PUBLIC_TOGGLE[Public Visibility<br/>Show on patient portal]
+    F4b --> INTERNAL_TOGGLE[Internal Only<br/>Staff manual booking only]
+    F4b --> SCHEDULE_PUB[Schedule Publication<br/>Future date activation]
+    
+    %% Doctor Assignment
+    F4 --> F5[Doctor Assignment Panel]
+    F5 --> F5a[Assignment Matrix View]
+    F5a --> AVAIL_DOCS[Available Doctors List<br/>Checkbox selection]
+    F5a --> DOC_SEARCH[Search Doctors<br/>By name/specialty]
+    F5a --> BULK_ASSIGN[Bulk Assign Button<br/>Select all/none]
+    
+    F5 --> F5b[Coverage Analysis View]
+    F5b --> COVERAGE_CHART[Coverage Heatmap<br/>Doctor availability matrix]
+    F5b --> GAP_ALERT[Coverage Gaps Alert<br/>Understaffed time slots]
+    
+    F5a --> CREATE_SERVICE[Create Service Button]
+    CREATE_SERVICE --> SUCCESS_MSG[✅ Service Created Successfully]
+    SUCCESS_MSG --> CSH
+    
+    %% Service Management Tools
+    CSH --> F6[Service Management Toolbar]
+    F6 --> F6a[Advanced Filter Button<br/>🔽 Filters]
+    F6a --> FILTER_MODAL[Filter Options Modal]
+    FILTER_MODAL --> FILTER_CAT[By Category<br/>Multi-select]
+    FILTER_MODAL --> FILTER_STATUS[By Status<br/>Active/Inactive/All]
+    FILTER_MODAL --> FILTER_DOCTOR[By Doctor<br/>Assigned/Unassigned]
+    FILTER_MODAL --> FILTER_PRICE[By Price Range<br/>Min-Max slider]
+    FILTER_MODAL --> APPLY_FILTERS[Apply Filters]
+    
+    F6 --> SORT_DROPDOWN[Sort By Dropdown<br/>Multiple options]
+    SORT_DROPDOWN --> SORT_NAME[A-Z Service Name]
+    SORT_DROPDOWN --> SORT_PRICE[Price Low-High]
+    SORT_DROPDOWN --> SORT_USAGE[Most Used First]
+    SORT_DROPDOWN --> SORT_MODIFIED[Recently Modified]
+    
+    F6 --> BULK_ACTIONS[Bulk Actions Menu<br/>With selected services]
+    BULK_ACTIONS --> BULK_ACTIVATE[Activate Selected]
+    BULK_ACTIONS --> BULK_DEACTIVATE[Deactivate Selected]
+    BULK_ACTIONS --> BULK_DELETE[Delete Selected]
+    BULK_ACTIONS --> BULK_EXPORT[Export Selected]
+    
+    %% Service List View
+    CSH --> SERVICE_LIST[Service List Grid/Table View]
+    SERVICE_LIST --> SERVICE_CARD[Service Card Component<br/>Repeated for each service]
+    SERVICE_CARD --> SVC_INFO[Service Info Display<br/>Name, Category, Price, Duration]
+    SERVICE_CARD --> SVC_STATUS_BADGE[Status Badge<br/>🟢 Active / 🔴 Inactive]
+    SERVICE_CARD --> SVC_STATS[Quick Stats<br/>Bookings this month]
+    SERVICE_CARD --> SVC_ACTIONS[Action Buttons]
+    
+    SVC_ACTIONS --> EDIT_BTN[✏️ Edit]
+    SVC_ACTIONS --> CLONE_BTN[📋 Clone]
+    SVC_ACTIONS --> TOGGLE_BTN[Toggle Status]
+    SVC_ACTIONS --> DELETE_BTN[🗑️ Delete]
+    
+    EDIT_BTN --> EDIT_MODAL[Edit Service Modal<br/>Pre-filled form]
+    CLONE_BTN --> CLONE_MODAL[Clone Service Modal<br/>New name required]
+    DELETE_BTN --> DELETE_CONFIRM[Delete Confirmation<br/>⚠️ This action cannot be undone]
+    
+    %% Usage Analytics
+    CSH --> F7[Analytics Dashboard Button<br/>📊 View Service Analytics]
+    F7 --> F7a[Analytics Dashboard Modal]
+    F7a --> ANALYTICS_HEADER[Analytics Period Selector<br/>Today/Week/Month/Custom]
+    F7a --> BOOKING_CHART[Booking Frequency Chart<br/>Line graph visualization]
+    F7a --> REVENUE_CHART[Revenue by Service<br/>Bar chart display]
+    F7a --> UTILIZATION_TABLE[Service Utilization Table]
+    
+    UTILIZATION_TABLE --> TOP_SERVICES[Top 5 Services<br/>By bookings]
+    UTILIZATION_TABLE --> UNDERUSED[Underutilized Services<br/>< 5 bookings/month]
+    UTILIZATION_TABLE --> TRENDING[Trending Services<br/>↑ Growing demand]
+    
+    F7a --> EXPORT_ANALYTICS[Export Report<br/>PDF/CSV options]
+    F7a --> SCHEDULE_REPORT[Schedule Reports<br/>Weekly/Monthly email]
+    
+    %% Integration Points
+    SERVICE_CARD --> APPT_LINK[View Appointments →]
+    APPT_LINK --> APP
+    
+    SERVICE_CARD --> BILLING_LINK[View Invoices →]
+    BILLING_LINK --> BILL
+    
+    F5a --> STAFF_LINK[Manage Staff →]
+    STAFF_LINK --> WH
+    
+    %% Quick Actions Panel
+    CSH --> QUICK_ACTIONS[Quick Actions Panel<br/>Right sidebar]
+    QUICK_ACTIONS --> IMPORT_BTN[📥 Import Services<br/>CSV upload]
+    QUICK_ACTIONS --> EXPORT_ALL_BTN[📤 Export All Services]
+    QUICK_ACTIONS --> TEMPLATE_BTN[📋 Service Templates<br/>Common service presets]
+    QUICK_ACTIONS --> HELP_BTN[❓ Help & Guidelines]
+    
+    IMPORT_BTN --> IMPORT_MODAL[Import Services Modal<br/>CSV format guide]
+    TEMPLATE_BTN --> TEMPLATE_MODAL[Service Templates<br/>Pre-configured services]
+    
+    %% Validation and Error States
+    SAVE_CAT --> VALIDATION{Validation Check}
+    VALIDATION -->|Valid| SUCCESS_SAVE[✅ Saved Successfully]
+    VALIDATION -->|Invalid| ERROR_MSG[❌ Error: Fix required fields]
+    
+    SUCCESS_SAVE --> F1_VIEW
+    ERROR_MSG --> CAT_MODAL
+    
+    %% Navigation Breadcrumbs
+    CSH --> BREADCRUMB[Dashboard > Clinic Services Hub]
+    BREADCRUMB --> D
+    
+    %% Auto-save Indicator
+    EDIT_MODAL --> AUTOSAVE[Auto-saving...<br/>Every 30 seconds]
+    
+    %% Service Dependencies
+    PREREQ_SELECT --> DEP_WARNING[⚠️ Dependencies Alert<br/>This service requires: X, Y]
+    
+    %% Sync Indicators
+    CSH --> SYNC_STATUS[🔄 Syncing with Appointments<br/>Real-time updates]
+    SYNC_STATUS --> APP
+    SYNC_STATUS --> BILL
+    
+    %% Style Classes
+    classDef primary fill:#4A90E2,stroke:#2E5C8A,color:#fff
+    classDef secondary fill:#7B68EE,stroke:#4B0082,color:#fff
+    classDef success fill:#5CB85C,stroke:#357A35,color:#fff
+    classDef warning fill:#F0AD4E,stroke:#D58512,color:#fff
+    classDef danger fill:#D9534F,stroke:#AC2925,color:#fff
+    classDef modal fill:#F5F5F5,stroke:#CCCCCC,color:#333
+    
+    class CSH,ADD_SERVICE_BTN,F7 primary
+    class F1a,F6a,EDIT_BTN secondary
+    class SAVE_SERVICE,CREATE_SERVICE,SUCCESS_MSG success
+    class DELETE_BTN,DELETE_CONFIRM danger
+    class CAT_MODAL,FILTER_MODAL,F2,F3a,F7a modal

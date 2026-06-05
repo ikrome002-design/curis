@@ -1,0 +1,221 @@
+flowchart TD
+    %% Entry Point
+    ClinicOwnerLogin[Clinic Owner Login] --> FirstTimeCheck{First Time User?}
+    FirstTimeCheck -->|Yes| RegSetupMain[Registration & Setup<br/>Onboarding Hub]
+    FirstTimeCheck -->|No| Dashboard[Dashboard]
+    
+    %% Registration & Setup Main Hub
+    RegSetupMain --> ClinicIdentity[Clinic Identity Configuration]
+    RegSetupMain --> OperatingHours[Operating Hours Setup]
+    RegSetupMain --> SpecialtiesServices[Specialties & Services Definition]
+    RegSetupMain --> PaymentFrequency[Service Charge Payment Frequency]
+    RegSetupMain --> ProgressTracker[Setup Progress Tracker]
+    RegSetupMain --> PostSetupActions[Post-Setup Auto-Actions]
+    
+    %% Clinic Identity Configuration Branch
+    ClinicIdentity --> ClinicNameInput[Clinic Name Input Field]
+    ClinicNameInput --> NameValidation[Real-time Validation<br/>Uniqueness Check]
+    NameValidation --> NameAvailable[Name Available ✓]
+    NameValidation --> NameTaken[Name Taken ✗<br/>Suggest Alternatives]
+    
+    ClinicIdentity --> LogoUpload[Logo Upload Button]
+    LogoUpload --> FilePickerModal[File Picker Modal]
+    FilePickerModal --> ImagePreview[Image Preview<br/>Crop/Resize Options]
+    FilePickerModal --> FileTypeValidation[File Type Validation<br/>JPG/PNG/SVG]
+    FilePickerModal --> SizeValidation[Size Validation<br/>Max 5MB]
+    
+    ClinicIdentity --> ContactDetails[Contact Details Section]
+    ContactDetails --> PhoneInput[Phone Number Input<br/>Format Validation]
+    PhoneInput --> PhoneValidation[Real-time Phone Validation<br/>Country Code Auto-detect]
+    ContactDetails --> EmailInput[Email Address Input<br/>Format Validation]
+    EmailInput --> EmailValidation[Real-time Email Validation<br/>Domain Check]
+    
+    ClinicIdentity --> LocationSetting[Location Setting]
+    LocationSetting --> LocationModal[Location Setting Modal]
+    LocationModal --> MapIntegration[Google Maps Integration<br/>Search Bar]
+    MapIntegration --> AutoSuggestions[Auto-complete Suggestions<br/>Nearby Locations]
+    MapIntegration --> PinDrop[Pin Drop on Map<br/>Manual Adjustment]
+    LocationModal --> GeoTagging[Geo-coordinate Capture<br/>Lat/Long Storage]
+    
+    ClinicIdentity --> ClinicDescription[Clinic Description]
+    ClinicDescription --> RichTextEditor[Rich Text Editor Modal]
+    RichTextEditor --> FormattingTools[Formatting Tools<br/>Bold/Italic/Lists]
+    RichTextEditor --> CharLimit[Character Limit<br/>500 chars max]
+    
+    ClinicIdentity --> SocialLinks[Website/Social Media Links]
+    SocialLinks --> LinkValidation[URL Format Validation<br/>Optional Fields]
+    
+    %% Operating Hours Setup Branch
+    OperatingHours --> ScheduleBuilder[Dynamic Schedule Builder]
+    ScheduleBuilder --> DayByDayConfig[Day-by-Day Configuration]
+    DayByDayConfig --> WorkingHoursModal[Working Hours Modal]
+    
+    WorkingHoursModal --> MondayHours[Monday Hours Setup]
+    MondayHours --> OpeningTime[Opening Time Picker<br/>Hour/Minute Selection]
+    MondayHours --> ClosingTime[Closing Time Picker<br/>Hour/Minute Selection]
+    MondayHours --> ClosedToggle[Closed Day Toggle]
+    
+    WorkingHoursModal --> TuesdayHours[Tuesday Hours Setup]
+    WorkingHoursModal --> WednesdayHours[Wednesday Hours Setup]
+    WorkingHoursModal --> ThursdayHours[Thursday Hours Setup]
+    WorkingHoursModal --> FridayHours[Friday Hours Setup]
+    WorkingHoursModal --> SaturdayHours[Saturday Hours Setup]
+    WorkingHoursModal --> SundayHours[Sunday Hours Setup]
+    
+    WorkingHoursModal --> BreakTimesSetup[Break Times Setup]
+    BreakTimesSetup --> LunchHoursModal[Lunch Hours Configuration Modal]
+    LunchHoursModal --> BreakStart[Break Start Time]
+    LunchHoursModal --> BreakEnd[Break End Time]
+    LunchHoursModal --> ApplyToAllDays[Apply to All Days Button]
+    
+    WorkingHoursModal --> HolidayCalendar[Holiday Calendar]
+    HolidayCalendar --> HolidayModal[Holiday Management Modal]
+    HolidayModal --> MarkClosedDays[Mark Closed Days<br/>Date Picker]
+    HolidayModal --> RecurringHolidays[Recurring Holidays<br/>Annual Events]
+    HolidayModal --> CustomHolidays[Custom Holidays<br/>One-time Closures]
+    
+    ScheduleBuilder --> RepeatLogic[Repeat Logic Options]
+    RepeatLogic --> SavePreset[Save Weekly Preset]
+    RepeatLogic --> CloneToFuture[Clone to Future Weeks]
+    
+    %% Specialties & Services Definition Branch
+    SpecialtiesServices --> SpecialtySelection[Specialty Selection]
+    SpecialtySelection --> SearchableLibrary[Searchable Specialty Library]
+    SearchableLibrary --> CategoryBrowse[Browse by Category]
+    CategoryBrowse --> PrimaryCare[Primary Care]
+    CategoryBrowse --> SpecialtyClinics[Specialty Clinics]
+    CategoryBrowse --> UrgentCare[Urgent Care]
+    CategoryBrowse --> Pediatrics[Pediatric Clinics]
+    CategoryBrowse --> WomensHealth[Women's Health]
+    CategoryBrowse --> MentalHealth[Mental Health]
+    CategoryBrowse --> Dental[Dental Clinics]
+    CategoryBrowse --> Rehabilitation[Rehabilitation]
+    CategoryBrowse --> ChronicDisease[Chronic Disease]
+    CategoryBrowse --> TravelMedicine[Travel Medicine]
+    CategoryBrowse --> Corporate[Workplace Health]
+    CategoryBrowse --> Community[Community Clinics]
+    
+    SearchableLibrary --> CustomSpecialty[Add Custom Specialty Button]
+    CustomSpecialty --> CustomSpecialtyModal[Custom Specialty Modal<br/>Name/Description Input]
+    
+    SpecialtiesServices --> ServiceConfig[Service Configuration]
+    ServiceConfig --> ServiceModal[Service Configuration Modal]
+    ServiceModal --> ServiceName[Service Name Input<br/>e.g., "Initial Consultation"]
+    ServiceModal --> ServiceDuration[Duration Setting<br/>Minutes Selector]
+    ServiceModal --> ServiceFee[Fee per Service<br/>Currency Input]
+    ServiceModal --> StaffRoles[Associated Staff Roles<br/>Doctor/Lab Tech Selection]
+    ServiceModal --> ServiceDescription[Service Description<br/>Optional Field]
+    
+    ServiceConfig --> LabServicesToggle[Lab Services Toggle]
+    LabServicesToggle --> ConditionalConfig[Conditional Configuration]
+    ConditionalConfig --> LabTestCategories[Lab Test Categories Setup]
+    LabTestCategories --> SampleCollection[Sample Collection Methods<br/>Blood/Urine/Swab]
+    
+    ServiceConfig --> SmartSuggestions[Smart Service Suggestions]
+    SmartSuggestions --> BasedOnSpecialty[Based on Selected Specialty<br/>Common Services List]
+    SmartSuggestions --> QuickAdd[Quick Add Button<br/>Bulk Service Addition]
+    
+    %% Service Charge Payment Frequency Branch
+    PaymentFrequency --> BillingTerms[Billing Terms Selection]
+    BillingTerms --> FrequencyModal[Payment Frequency Modal]
+    FrequencyModal --> WeeklyOption[Weekly Payment Option]
+    FrequencyModal --> BiWeeklyOption[Bi-Weekly Payment Option]
+    FrequencyModal --> MonthlyOption[Monthly Payment Option]
+    
+    FrequencyModal --> PreviewModal[Preview Modal]
+    PreviewModal --> EstimatedDeductions[Estimated Deductions Display]
+    EstimatedDeductions --> DeductionCalc[Deduction Calculator<br/>Based on Service Prices]
+    EstimatedDeductions --> VolumeProjection[Patient Volume Projection<br/>Expected Income]
+    
+    FrequencyModal --> DynamicAlerts[Dynamic Risk/Benefit Alerts]
+    DynamicAlerts --> MonthlyAlert[Monthly Selection Alert<br/>Cash Flow Considerations]
+    DynamicAlerts --> WeeklyBenefit[Weekly Selection Benefit<br/>Regular Income Flow]
+    
+    PaymentFrequency --> AgreementConfirm[Agreement Confirmation]
+    AgreementConfirm --> TermsCheckbox[Terms Checkbox<br/>Required Validation]
+    AgreementConfirm --> FeesAcknowledge[Service Fees Acknowledgment<br/>Percentage/Fixed Display]
+    
+    %% Setup Progress Tracker Branch
+    ProgressTracker --> MultiStepBar[Multi-Step Progress Bar]
+    MultiStepBar --> StepIndicators[Step Indicators<br/>1-5 Visual Progress]
+    MultiStepBar --> CompletionPercent[Completion Percentage<br/>Real-time Update]
+    
+    ProgressTracker --> ValidationChecks[Validation Checks]
+    ValidationChecks --> RequiredFields[Required Fields Check<br/>Highlight Missing]
+    ValidationChecks --> PreventProgress[Prevent Progress<br/>Until Critical Fields Complete]
+    ValidationChecks --> ErrorMessages[Error Messages<br/>Contextual Help]
+    
+    %% Post-Setup Auto-Actions Branch
+    PostSetupActions --> AutoGenProfile[Auto-generate Clinic Profile]
+    AutoGenProfile --> ProfilePreview[Profile Preview Modal<br/>Patient-facing View]
+    ProfilePreview --> EditOption[Edit Before Publishing]
+    ProfilePreview --> PublishProfile[Publish Profile Button]
+    
+    PostSetupActions --> FirstStaffPrompt[Create First Staff Account]
+    FirstStaffPrompt --> StaffCreationModal[Staff Creation Modal]
+    StaffCreationModal --> RoleSelection[Role Selection<br/>Doctor/Receptionist]
+    StaffCreationModal --> StaffDetails[Staff Details Input<br/>Name/Email/Phone]
+    StaffCreationModal --> SendInvitation[Send Invitation Button<br/>Email/SMS Options]
+    
+    PostSetupActions --> OnboardingChecklist[Onboarding Checklist]
+    OnboardingChecklist --> ChecklistModal[Checklist Modal Display]
+    ChecklistModal --> SetupAppointments[✓ Set up Appointments]
+    ChecklistModal --> ReviewBilling[✓ Review Billing Setup]
+    ChecklistModal --> EnableNotifications[✓ Enable Patient Notifications]
+    ChecklistModal --> AddMoreStaff[✓ Add More Staff]
+    ChecklistModal --> ConfigureServices[✓ Configure More Services]
+    
+    %% Final Navigation
+    PublishProfile --> SetupComplete[Setup Complete]
+    SetupComplete --> NavigateDashboard[Navigate to Dashboard]
+    NavigateDashboard --> Dashboard
+    
+    %% Integration Points
+    
+    %% To Dashboard
+    Dashboard -.->|Initial Data| ClinicIdentity
+    AutoGenProfile -.->|Clinic Info| Dashboard
+    
+    %% To Settings
+    OperatingHours -.->|Schedule Data| Settings[Settings Module]
+    PaymentFrequency -.->|Billing Preferences| Settings
+    
+    %% To Workforce Hub
+    FirstStaffPrompt -.->|Staff Creation| WorkforceHub[Workforce Hub]
+    
+    %% To Clinic Services
+    ServiceConfig -.->|Service Data| ClinicServices[Clinic Services Hub]
+    
+    %% To Appointments
+    OperatingHours -.->|Availability Rules| Appointments[Appointments Module]
+    
+    %% To Billings & Payments
+    PaymentFrequency -.->|Fee Structure| Billings[Billings & Payments]
+    
+    %% To Notifications
+    OnboardingChecklist -.->|Setup Alerts| Notifications[Notifications Module]
+    
+    %% Skip Options
+    FirstStaffPrompt --> SkipStaff[Skip for Now]
+    SkipStaff --> SetupComplete
+    
+    %% Save & Exit
+    RegSetupMain --> SaveExit[Save & Exit Button]
+    SaveExit --> SaveProgress[Save Progress Modal<br/>Resume Later Option]
+    
+    %% Styling
+    classDef mainHub fill:#2563eb,stroke:#1e40af,stroke-width:3px,color:#fff
+    classDef subModule fill:#7c3aed,stroke:#6d28d9,stroke-width:2px,color:#fff
+    classDef modal fill:#059669,stroke:#047857,stroke-width:2px,color:#fff
+    classDef action fill:#dc2626,stroke:#b91c1c,stroke-width:2px,color:#fff
+    classDef integration fill:#f59e0b,stroke:#d97706,stroke-width:2px,stroke-dasharray: 5 5
+    classDef validation fill:#0891b2,stroke:#0e7490,stroke-width:2px,color:#fff
+    classDef complete fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
+    
+    class RegSetupMain mainHub
+    class ClinicIdentity,OperatingHours,SpecialtiesServices,PaymentFrequency,ProgressTracker,PostSetupActions subModule
+    class FilePickerModal,LocationModal,RichTextEditor,WorkingHoursModal,LunchHoursModal,HolidayModal,ServiceModal,FrequencyModal,PreviewModal,StaffCreationModal,ChecklistModal,ProfilePreview,SaveProgress modal
+    class LogoUpload,LocationSetting,SavePreset,CustomSpecialty,QuickAdd,TermsCheckbox,SendInvitation,PublishProfile,NavigateDashboard,SaveExit action
+    class Dashboard,Settings,WorkforceHub,ClinicServices,Appointments,Billings,Notifications integration
+    class NameValidation,PhoneValidation,EmailValidation,FileTypeValidation,SizeValidation,ValidationChecks,RequiredFields validation
+    class SetupComplete,NameAvailable complete

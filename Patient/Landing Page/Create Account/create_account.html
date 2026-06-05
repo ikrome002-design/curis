@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Curis Health</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="create_account.css">
+
+    <!-- Favicon links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <a
+                href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\landing_page.html">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                    alt="Curis Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <!-- Accessibility Options -->
+                <li class="accessibility-options">
+                    <button id="high-contrast-toggle" aria-label="Toggle high contrast">
+                        <i class="fas fa-adjust"></i>
+                    </button>
+
+                </li>
+                <li><a
+                        href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\Log In\log_in.html">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Account Initiation Type Selection -->
+        <section id="initiation-selection" class="initiation-container">
+            <h1>Create Your Curis Account</h1>
+            <p>How would you like to create your account?</p>
+
+            <div class="initiation-options">
+                <div class="initiation-card" data-type="self">
+                    <div class="card-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Self-Registration</h3>
+                    <p>Create your own account with full access to all features</p>
+                    <button class="initiation-btn" data-type="self">Get Started</button>
+                </div>
+
+                <div class="initiation-card" data-type="clinic">
+                    <div class="card-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>Clinic Referred</h3>
+                    <p>Your healthcare provider has created an account for you</p>
+                    <button class="initiation-btn" data-type="clinic">Activate Account</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Self-Initiated Registration Flow -->
+        <section id="self-registration" class="registration-container hidden">
+            <!-- Sales Copy -->
+            <div class="sales-copy">
+                <h1>Create Your Curis Patient Account</h1>
+                <p>Take control of your health—anytime, anywhere.</p>
+                <div class="benefits">
+                    <p>With a Curis account, you can:</p>
+                    <ul>
+                        <li>Book appointments instantly</li>
+                        <li>Access your medical records securely</li>
+                        <li>Stay connected with your doctor</li>
+                        <li>Add emergency contacts for fast response</li>
+                    </ul>
+                    <p class="tagline">Fast setup. Strong security. Total peace of mind.</p>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="form-container">
+                <form id="self-registration-form">
+                    <!-- Step indicators -->
+                    <div class="step-indicators">
+                        <div class="step active" data-step="1">Basic Info</div>
+                        <div class="step" data-step="2">Security</div>
+                        <div class="step" data-step="3">Verification</div>
+                        <div class="step" data-step="4">Legal</div>
+                    </div>
+
+                    <!-- Step 1: Basic Information -->
+                    <div class="form-step active" id="basic-info-step">
+                        <h2>Basic Information</h2>
+
+                        <div class="form-field">
+                            <label for="fullName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" required>
+                            <div class="error-message" id="fullName-error"></div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="dob">Date of Birth <span class="required">*</span></label>
+                            <input type="date" id="dob" name="dob" required>
+                            <div class="error-message" id="dob-error"></div>
+                            <div class="age-info" id="age-info"></div>
+                        </div>
+
+                        <!-- Age-specific content will be inserted here -->
+                        <div id="age-specific-content"></div>
+
+                        <div class="form-field">
+                            <label for="gender">Gender <span class="required">*</span></label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                            <div class="error-message" id="gender-error"></div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                            <div class="validation-indicator" id="phone-validation"></div>
+                            <div class="error-message" id="phoneNumber-error"></div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="validation-indicator" id="email-validation"></div>
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+
+                        <!-- Family Member Toggle (for adults) -->
+                        <div class="form-field family-section hidden" id="family-section">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="addFamilyMembers" name="addFamilyMembers">
+                                <span>Add family members to your account</span>
+                            </label>
+                            <p class="field-help">You can manage your family's health from one account</p>
+                        </div>
+
+                        <!-- Guardian Awareness (for teens) -->
+                        <div class="form-field guardian-section hidden" id="guardian-section">
+                            <label class="checkbox-label required">
+                                <input type="checkbox" id="guardianAware" name="guardianAware" required>
+                                <span>I confirm my guardian is aware of this account creation <span
+                                        class="required">*</span></span>
+                            </label>
+                            <div class="error-message" id="guardianAware-error"></div>
+                            <p class="field-help">Note: Some features will be restricted until you turn 18</p>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" id="next-to-security" class="primary-btn">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Security Information -->
+                    <div class="form-step hidden" id="security-step">
+                        <h2>Security Information</h2>
+
+                        <div class="form-field">
+                            <label for="password">Password <span class="required">*</span></label>
+                            <div class="password-input-container">
+                                <input type="password" id="password" name="password" required>
+                                <button type="button" class="toggle-password" onclick="togglePassword('password')">
+                                    <span class="eye-icon"></span>
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-indicator" id="password-strength-indicator"></div>
+                                </div>
+                                <div class="strength-text" id="password-strength-text">Password Strength</div>
+                            </div>
+                            <div class="error-message" id="password-error"></div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+                            <div class="password-input-container">
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                                <button type="button" class="toggle-password"
+                                    onclick="togglePassword('confirmPassword')">
+                                    <span class="eye-icon"></span>
+                                </button>
+                            </div>
+                            <div class="validation-indicator" id="password-match-validation"></div>
+                            <div class="error-message" id="confirmPassword-error"></div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" id="back-to-basic" class="secondary-btn">Back</button>
+                            <button type="button" id="next-to-verification" class="primary-btn">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Verification -->
+                    <div class="form-step hidden" id="verification-step">
+                        <h2>Phone & Email Verification</h2>
+
+                        <!-- Phone Verification (Required) -->
+                        <div class="verification-section">
+                            <h3>Phone Verification <span class="required">*</span></h3>
+                            <p>We'll send a verification code to <span id="phone-display"></span></p>
+
+                            <div class="verification-field">
+                                <button type="button" id="send-phone-otp" class="secondary-btn">Send Code</button>
+                                <div class="verification-status" id="phone-otp-status"></div>
+                            </div>
+
+                            <div class="verification-field hidden" id="phone-otp-container">
+                                <label for="phoneOTP">Enter Phone Verification Code</label>
+                                <input type="text" id="phoneOTP" maxlength="6" placeholder="000000">
+                                <button type="button" id="verify-phone-otp" class="primary-btn">Verify</button>
+                                <div class="timer-container">
+                                    <span id="phone-timer"></span>
+                                    <button type="button" id="resend-phone-otp" class="link-button hidden">Resend
+                                        Code</button>
+                                </div>
+                                <div class="error-message" id="phoneOTP-error"></div>
+                            </div>
+                        </div>
+
+                        <!-- Email Verification (Optional) -->
+                        <div class="verification-section">
+                            <h3>Email Verification (Optional)</h3>
+                            <p>Verify your email for additional security</p>
+
+                            <div class="verification-field">
+                                <button type="button" id="send-email-code" class="secondary-btn">Send Email
+                                    Code</button>
+                                <button type="button" id="skip-email-verification" class="link-button">Skip for
+                                    Now</button>
+                                <div class="verification-status" id="email-verification-status"></div>
+                            </div>
+
+                            <div class="verification-field hidden" id="email-code-container">
+                                <label for="emailCode">Enter Email Verification Code</label>
+                                <input type="text" id="emailCode" maxlength="6" placeholder="000000">
+                                <button type="button" id="verify-email-code" class="primary-btn">Verify</button>
+                                <div class="timer-container">
+                                    <span id="email-timer"></span>
+                                    <button type="button" id="resend-email-code" class="link-button hidden">Resend
+                                        Code</button>
+                                </div>
+                                <div class="error-message" id="emailCode-error"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" id="back-to-security" class="secondary-btn">Back</button>
+                            <button type="button" id="next-to-legal" class="primary-btn">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Legal Agreements -->
+                    <div class="form-step hidden" id="legal-step">
+                        <h2>Legal Agreements</h2>
+
+                        <div class="form-field checkbox-field">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="termsCheckbox" name="termsCheckbox" required>
+                                <span>I agree to the <button type="button" class="modal-link"
+                                        data-modal="terms-modal">Terms & Conditions</button> <span
+                                        class="required">*</span></span>
+                            </label>
+                            <div class="error-message" id="termsCheckbox-error"></div>
+                        </div>
+
+                        <div class="form-field checkbox-field">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="privacyCheckbox" name="privacyCheckbox" required>
+                                <span>I agree to the <button type="button" class="modal-link"
+                                        data-modal="privacy-modal">Privacy Policy</button> <span
+                                        class="required">*</span></span>
+                            </label>
+                            <div class="error-message" id="privacyCheckbox-error"></div>
+                        </div>
+
+                        <div class="form-field checkbox-field">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="dataPolicyCheckbox" name="dataPolicyCheckbox" required>
+                                <span>I agree to the <button type="button" class="modal-link"
+                                        data-modal="data-policy-modal">Data Policy</button> <span
+                                        class="required">*</span></span>
+                            </label>
+                            <div class="error-message" id="dataPolicyCheckbox-error"></div>
+                        </div>
+
+                        <div class="form-field checkbox-field">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="marketingConsent" name="marketingConsent">
+                                <span>I would like to receive marketing communications (Optional)</span>
+                            </label>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" id="back-to-verification" class="secondary-btn">Back</button>
+                            <button type="submit" id="create-account-btn" class="primary-btn">Create Account</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Loading Indicator -->
+                <div id="loading-indicator" class="loading-indicator hidden">
+                    <div class="spinner"></div>
+                    <p>Creating your account...</p>
+                </div>
+
+                <!-- Success Message -->
+                <div id="success-message" class="success-container hidden">
+                    <div class="success-icon">✓</div>
+                    <h2>Account Created Successfully!</h2>
+                    <p>Welcome to Curis! Your journey to better health management begins now.</p>
+                    <button id="continue-to-dashboard" class="primary-btn">Continue to Dashboard</button>
+                </div>
+            </div>
+
+            <!-- Existing User Redirect -->
+            <div class="existing-user">
+                <p>Already have an account? <a
+                        href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\Log In\log_in.html">Log
+                        In</a></p>
+            </div>
+        </section>
+
+        <!-- Clinic Referred Registration Flow -->
+        <section id="clinic-registration" class="registration-container hidden">
+            <div class="clinic-header">
+                <h1>Account Activation - Clinic Referred</h1>
+                <p>Complete the activation of your account created by your healthcare provider</p>
+            </div>
+
+            <!-- Step 1: OTP Entry -->
+            <div class="clinic-step active" id="clinic-otp-step">
+                <div class="form-container">
+                    <h2>Enter Verification Code</h2>
+                    <p>Please enter the verification code sent to your email by your healthcare provider</p>
+
+                    <div class="form-field">
+                        <label for="clinicOTP">Email Verification Code <span class="required">*</span></label>
+                        <input type="text" id="clinicOTP" maxlength="6" placeholder="000000" required>
+                        <div class="error-message" id="clinicOTP-error"></div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" id="verify-clinic-otp" class="primary-btn">Verify Code</button>
+                        <button type="button" id="resend-clinic-otp" class="link-button">Resend Code</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Account Details Review -->
+            <div class="clinic-step hidden" id="clinic-details-step">
+                <div class="form-container">
+                    <h2>Review Your Account Details</h2>
+                    <p>Please review the information provided by your healthcare provider</p>
+
+                    <div class="account-details-display">
+                        <div class="clinic-info">
+                            <h3>Created by:</h3>
+                            <p><strong>Clinic:</strong> <span id="display-clinic-name"></span></p>
+                            <p><strong>Staff Member:</strong> <span id="display-staff-name"></span></p>
+                            <p><strong>Created:</strong> <span id="display-creation-time"></span></p>
+                        </div>
+
+                        <div class="patient-info">
+                            <h3>Your Information:</h3>
+                            <p><strong>Name:</strong> <span id="display-patient-name"></span></p>
+                            <p><strong>Date of Birth:</strong> <span id="display-patient-dob"></span></p>
+                            <p><strong>Gender:</strong> <span id="display-patient-gender"></span></p>
+                            <p><strong>Phone:</strong> <span id="display-patient-phone"></span></p>
+                            <p><strong>Email:</strong> <span id="display-patient-email"></span></p>
+                        </div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" id="edit-account-details" class="secondary-btn">Edit Details</button>
+                        <button type="button" id="confirm-details" class="primary-btn">Confirm Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Security Page -->
+            <div class="clinic-step hidden" id="clinic-security-step">
+                <div class="form-container">
+                    <h2>Create Your Password</h2>
+                    <p>Set up a secure password for your account</p>
+
+                    <div class="form-field">
+                        <label for="clinicPassword">New Password <span class="required">*</span></label>
+                        <div class="password-input-container">
+                            <input type="password" id="clinicPassword" name="clinicPassword" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('clinicPassword')">
+                                <span class="eye-icon"></span>
+                            </button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-indicator" id="clinic-password-strength-indicator"></div>
+                            </div>
+                            <div class="strength-text" id="clinic-password-strength-text">Password Strength</div>
+                        </div>
+                        <div class="error-message" id="clinicPassword-error"></div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="clinicConfirmPassword">Confirm Password <span class="required">*</span></label>
+                        <div class="password-input-container">
+                            <input type="password" id="clinicConfirmPassword" name="clinicConfirmPassword" required>
+                            <button type="button" class="toggle-password"
+                                onclick="togglePassword('clinicConfirmPassword')">
+                                <span class="eye-icon"></span>
+                            </button>
+                        </div>
+                        <div class="validation-indicator" id="clinic-password-match-validation"></div>
+                        <div class="error-message" id="clinicConfirmPassword-error"></div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" id="back-to-details" class="secondary-btn">Back</button>
+                        <button type="button" id="continue-to-clinic-verification" class="primary-btn">Continue to
+                            Verification</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Verification Page -->
+            <div class="clinic-step hidden" id="clinic-verification-step">
+                <div class="form-container">
+                    <h2>Verify Your Contact Information</h2>
+                    <p>Verify your phone number and email address</p>
+
+                    <!-- Phone Verification -->
+                    <div class="verification-section">
+                        <h3>Phone Number Verification</h3>
+                        <p>Verify your phone number: <span id="clinic-phone-display"></span></p>
+
+                        <div class="verification-field">
+                            <button type="button" id="send-clinic-phone-otp" class="secondary-btn">Send Phone
+                                Code</button>
+                            <div class="verification-status" id="clinic-phone-status"></div>
+                        </div>
+
+                        <div class="verification-field hidden" id="clinic-phone-container">
+                            <label for="clinicPhoneOTP">Enter Phone Verification Code</label>
+                            <input type="text" id="clinicPhoneOTP" maxlength="6" placeholder="000000">
+                            <button type="button" id="verify-clinic-phone-otp" class="primary-btn">Verify</button>
+                            <div class="timer-container">
+                                <span id="clinic-phone-timer"></span>
+                                <button type="button" id="resend-clinic-phone-otp"
+                                    class="link-button hidden">Resend</button>
+                            </div>
+                            <div class="error-message" id="clinicPhoneOTP-error"></div>
+                        </div>
+                    </div>
+
+                    <!-- Email Verification -->
+                    <div class="verification-section">
+                        <h3>Email Address Verification</h3>
+                        <p>Verify your email address: <span id="clinic-email-display"></span></p>
+
+                        <div class="verification-field">
+                            <button type="button" id="send-clinic-email-code" class="secondary-btn">Send Email
+                                Code</button>
+                            <div class="verification-status" id="clinic-email-status"></div>
+                        </div>
+
+                        <div class="verification-field hidden" id="clinic-email-container">
+                            <label for="clinicEmailCode">Enter Email Verification Code</label>
+                            <input type="text" id="clinicEmailCode" maxlength="6" placeholder="000000">
+                            <button type="button" id="verify-clinic-email-code" class="primary-btn">Verify</button>
+                            <div class="timer-container">
+                                <span id="clinic-email-timer"></span>
+                                <button type="button" id="resend-clinic-email-code"
+                                    class="link-button hidden">Resend</button>
+                            </div>
+                            <div class="error-message" id="clinicEmailCode-error"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" id="back-to-clinic-security" class="secondary-btn">Back</button>
+                        <button type="button" id="proceed-to-clinic-legal" class="primary-btn">Proceed to Legal
+                            Agreements</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Legal Agreements Page -->
+            <div class="clinic-step hidden" id="clinic-legal-step">
+                <div class="form-container">
+                    <h2>Accept Legal Agreements</h2>
+                    <p>Please review and accept our legal agreements to complete your account activation</p>
+
+                    <div class="form-field checkbox-field">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="clinicTermsCheckbox" name="clinicTermsCheckbox" required>
+                            <span>I agree to the <button type="button" class="modal-link" data-modal="terms-modal">Terms
+                                    of Service</button> <span class="required">*</span></span>
+                        </label>
+                        <div class="error-message" id="clinicTermsCheckbox-error"></div>
+                    </div>
+
+                    <div class="form-field checkbox-field">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="clinicPrivacyCheckbox" name="clinicPrivacyCheckbox" required>
+                            <span>I agree to the <button type="button" class="modal-link"
+                                    data-modal="privacy-modal">Privacy Policy</button> <span
+                                    class="required">*</span></span>
+                        </label>
+                        <div class="error-message" id="clinicPrivacyCheckbox-error"></div>
+                    </div>
+
+                    <div class="form-field checkbox-field">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="clinicDataPolicyCheckbox" name="clinicDataPolicyCheckbox"
+                                required>
+                            <span>I agree to the <button type="button" class="modal-link"
+                                    data-modal="data-policy-modal">Data Policy</button> <span
+                                    class="required">*</span></span>
+                        </label>
+                        <div class="error-message" id="clinicDataPolicyCheckbox-error"></div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" id="back-to-clinic-verification" class="secondary-btn">Back</button>
+                        <button type="button" id="complete-activation" class="primary-btn">Complete Account
+                            Activation</button>
+                    </div>
+                </div>
+
+                <!-- Final Loading -->
+                <div id="clinic-loading-indicator" class="loading-indicator hidden">
+                    <div class="spinner"></div>
+                    <p>Activating your account...</p>
+                </div>
+
+                <!-- Activation Success -->
+                <div id="clinic-success-message" class="success-container hidden">
+                    <div class="success-icon">✓</div>
+                    <h2>Account Activated Successfully!</h2>
+                    <p>Welcome to Curis! Your account has been successfully activated.</p>
+                    <button id="continue-to-clinic-dashboard" class="primary-btn">Continue to Dashboard</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Windows -->
+    <div id="terms-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Terms & Conditions</h2>
+                <button type="button" class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Loading Terms & Conditions...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="privacy-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <button type="button" class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Loading Privacy Policy...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="data-policy-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Data Policy</h2>
+                <button type="button" class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Loading Data Policy...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Family Member Modal -->
+    <div id="family-member-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Family Members</h2>
+                <button type="button" class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="family-members-container">
+                    <!-- Family member forms will be inserted here -->
+                </div>
+                <button type="button" id="add-another-family-member" class="secondary-btn">Add Another Family
+                    Member</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancel-family-members" class="secondary-btn">Cancel</button>
+                <button type="button" id="save-family-members" class="primary-btn">Save Family Members</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Account Details Modal -->
+    <div id="edit-details-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Account Details</h2>
+                <button type="button" class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-details-form">
+                    <div class="form-field">
+                        <label for="editFullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="editFullName" name="editFullName" required>
+                        <div class="error-message" id="editFullName-error"></div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="editDOB">Date of Birth <span class="required">*</span></label>
+                        <input type="date" id="editDOB" name="editDOB" required>
+                        <div class="error-message" id="editDOB-error"></div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="editGender">Gender <span class="required">*</span></label>
+                        <select id="editGender" name="editGender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                            <option value="prefer-not-to-say">Prefer not to say</option>
+                        </select>
+                        <div class="error-message" id="editGender-error"></div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="editPhone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="editPhone" name="editPhone" required>
+                        <div class="error-message" id="editPhone-error"></div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="editEmail">Email Address <span class="required">*</span></label>
+                        <input type="email" id="editEmail" name="editEmail" required>
+                        <div class="error-message" id="editEmail-error"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancel-edit" class="secondary-btn">Cancel</button>
+                <button type="button" id="save-changes" class="primary-btn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Under 13 Modal -->
+    <div id="under-13-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Account Creation Restricted</h2>
+                <button type="button" class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>We're sorry, but accounts cannot be created for individuals under 13 years of age.</p>
+                <p>Please have a parent or guardian create an account for you.</p>
+                <div class="under-13-options">
+                    <button type="button" id="send-parent-link" class="primary-btn">Send Link to Parent</button>
+                    <button type="button" id="contact-clinic" class="secondary-btn">Contact Clinic</button>
+                </div>
+                <div id="parent-link-sent" class="confirmation-message hidden">
+                    <p>Parent link has been sent! Please ask your parent to check their email.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error/Success Modals -->
+    <div id="error-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Error</h2>
+                <button type="button" class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="error-message-text"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="primary-btn close-modal">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Dark Mode Toggle -->
+            <div class="footer-section">
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="footer-section social-media">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/@citruske" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" aria-label="X (Twitter)">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Legal Links -->
+            <div class="footer-section legal-links">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\Footer\Terms and Conditions\terms_and_conditions.html">Terms
+                            of Service</a></li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\Footer\Privacy Policy\privacy_policy.html">Privacy
+                            Policy</a></li>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\Footer\Data Policy\data_policy.html">Data
+                            Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Section -->
+            <div class="footer-section help">
+                <h3>Help</h3>
+                <ul>
+                    <li><a
+                            href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\Footer\FAQ\faq.html">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Corporate Website -->
+            <div class="footer-section corporate">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="https://citruslabs.co.ke/" target="_blank">Corporate Website</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="create_account.js"></script>
+</body>
+
+</html>

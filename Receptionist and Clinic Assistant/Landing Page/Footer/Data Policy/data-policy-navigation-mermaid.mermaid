@@ -1,0 +1,62 @@
+flowchart TD
+    DataPolicy[Curis Data Policy Home] --> Introduction[Introduction]
+    DataPolicy --> DataCollection[Data Collection]
+    DataPolicy --> DataUse[How We Use Data]
+    DataPolicy --> DataSecurity[Data Security]
+    DataPolicy --> UserRights[Data Access Rights]
+    DataPolicy --> Compliance[Compliance & Standards]
+    DataPolicy --> Contact[Contact Information]
+
+    Introduction --> AboutCuris[About Curis Platform]
+    Introduction --> PolicyScope[Policy Scope]
+    Introduction --> Definitions[Definitions of Terms]
+
+    DataCollection --> PatientData[Patient Data]
+    DataCollection --> AppointmentData[Appointment Records]
+    DataCollection --> StaffNotes[Reception & Assistant Notes]
+    DataCollection --> PaymentInfo[Payment Information]
+
+    PatientData --> PersonalDetails[Personal & Contact Info]
+    PatientData --> MedicalNotes[Basic Medical Notes]
+    PatientData --> NotificationPrefs[Notification Preferences]
+
+    AppointmentData --> BookingTimes[Appointment Timings]
+    AppointmentData --> VisitReasons[Reason for Visit]
+
+    PaymentInfo --> MPesaInfo[MPesa Payment Logs]
+    PaymentInfo --> InvoiceLogs[Invoice Records]
+
+    DataUse --> PatientSupport[Supporting Patient Services]
+    DataUse --> ScheduleManagement[Managing Appointments]
+    DataUse --> BillingSupport[Billing & Payment Coordination]
+    DataUse --> Communications[SMS & Email Reminders]
+
+    Communications --> SMSUse[Use of SMS Notifications]
+    Communications --> EmailUse[Use of Email Notices]
+    Communications --> ThirdPartyNotice[Third-Party Sharing Notice]
+
+    DataSecurity --> Storage[How Data is Stored]
+    DataSecurity --> AccessControls[Who Can Access What]
+    DataSecurity --> BreachProtocol[Breach Handling]
+
+    AccessControls --> RoleAccess[Role-Based Permissions]
+    AccessControls --> Authentication[Login Security]
+
+    UserRights --> Access[Viewing Patient Data]
+    UserRights --> Rectification[Correcting Patient Info]
+    UserRights --> Restriction[Restricted Use Requests]
+
+    Compliance --> LocalPolicies[Local Data Laws]
+    Compliance --> ClinicAudits[Internal Clinic Reviews]
+
+    Contact --> ContactMethods[How to Reach Us]
+    Contact --> DPO[Data Protection Officer Contact]
+
+    style DataPolicy fill:#f9f,stroke:#333,stroke-width:2px
+    style Introduction fill:#bbf,stroke:#333
+    style DataCollection fill:#bbf,stroke:#333
+    style DataUse fill:#bbf,stroke:#333
+    style DataSecurity fill:#bbf,stroke:#333
+    style UserRights fill:#bbf,stroke:#333
+    style Compliance fill:#bbf,stroke:#333
+    style Contact fill:#bbf,stroke:#333

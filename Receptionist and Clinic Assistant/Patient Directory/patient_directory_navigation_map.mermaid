@@ -1,0 +1,169 @@
+graph TB
+    %% Patient Directory Page Core
+    PatientDirPage[Patient Directory Page<br/>Patient Records & Engagement Hub]
+    
+    %% Main Features (Expanded to 10 Core Features)
+    PatientDirPage --> PatListView[Patient List View<br/>Searchable & Paginated]
+    PatientDirPage --> PatProfile[Patient Profile Preview<br/>Read-Only Access]
+    PatientDirPage --> ApptHistory[Appointment History<br/>Timeline View]
+    PatientDirPage --> QuickActions[Quick Actions Panel<br/>Efficient Operations]
+    PatientDirPage --> AuditProtect[Audit-Protected Access<br/>Accountability System]
+    PatientDirPage --> WalkInVerification[Walk-in Verification<br/>Identity & History Check]
+    PatientDirPage --> ContactConfirm[Contact Confirmation<br/>Verify/Update Info]
+    PatientDirPage --> FollowUpSchedule[Follow-up Scheduling<br/>Next Visit Booking]
+    PatientDirPage --> PaymentRemind[Payment Reminders<br/>Outstanding Notices]
+    PatientDirPage --> QueueCheck[Queue Checking<br/>Live Status Monitor]
+    
+    %% Patient List View Details (Enhanced)
+    PatListView --> |Click| SearchFilter[Search & Filter Interface<br/>━━━━━━━━━━━━━━━━━<br/>• Smart search bar<br/>• Filter options<br/>  - By name<br/>  - By contact<br/>  - By ID number<br/>  - By visit frequency<br/>  - By last visit date<br/>• Sort options<br/>  - Name A-Z/Z-A<br/>  - Last Visit ↓↑<br/>  - Registration Date<br/>• Pagination controls<br/>• Action icons per row<br/>━━━━━━━━━━━━━━━━━<br/>Real-time filtering]
+    
+    SearchFilter --> |Search| SearchResults[Search Results<br/>━━━━━━━━━━━━━━━━━<br/>• Patient cards<br/>• Photo/Avatar<br/>• Name & contact<br/>• Last visit date<br/>• Quick info preview<br/>• Results count<br/>• Action icons:<br/>  - Profile 👤<br/>  - Quick Actions ⚡<br/>  - Walk-in ✓<br/>  - Contact 📞<br/>  - Follow-up 📅<br/>  - Reminder 📨<br/>  - Queue 👥]
+    
+    SearchFilter --> |Advanced| AdvancedFilter[Advanced Filters<br/>━━━━━━━━━━━━━━━━━<br/>• Visit frequency<br/>  - Weekly<br/>  - Monthly<br/>  - Rarely<br/>• Registration period<br/>• Age range<br/>• Gender filter<br/>• Insurance status<br/>• Outstanding bills<br/>• Appointment status]
+    
+    SearchFilter --> |Pagination| PageControls[Pagination Controls<br/>━━━━━━━━━━━━━━━━━<br/>• Page numbers<br/>• Items per page<br/>  - 10/25/50/100<br/>• Total count<br/>• Jump to page<br/>• Load more option]
+    
+    %% Patient Profile Preview Details (Enhanced)
+    PatProfile --> |Select Patient| ProfileView[Profile Details Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Basic information<br/>  - Name & Gender<br/>  - Date of birth<br/>  - Age calculation<br/>• Contact details<br/>  - Mobile number ✓<br/>  - Email address ✓<br/>  - Alt. contact<br/>• Registration info<br/>  - Reg. date<br/>  - Patient ID<br/>• Insurance details<br/>• Emergency contact<br/>• Profile photo<br/>━━━━━━━━━━━━━━━━━<br/>Read-only view]
+    
+    ProfileView --> |View More| ExpandedInfo[Expanded Information<br/>━━━━━━━━━━━━━━━━━<br/>• Address details<br/>• Emergency contact<br/>  - Name<br/>  - Relationship<br/>  - Phone<br/>• Insurance info<br/>  - Provider<br/>  - Policy #<br/>  - Valid until<br/>• Preferred language<br/>• Special notes<br/>━━━━━━━━━━━━━━━━━<br/>Non-clinical only]
+    
+    ProfileView --> |Photo| PhotoViewer[Photo Viewer<br/>━━━━━━━━━━━━━━━━━<br/>• Full-size view<br/>• Zoom controls<br/>• Upload date<br/>• ID verification ✓<br/>• Match confirm<br/>• Close button]
+    
+    ProfileView --> |Audit Entry| ProfileAuditLog[Profile Access Log<br/>━━━━━━━━━━━━━━━━━<br/>• User ID logged<br/>• Access timestamp<br/>• View duration<br/>• IP address<br/>• Action: "View Profile"<br/>• Patient ID<br/>━━━━━━━━━━━━━━━━━<br/>Auto-logged]
+    
+    ProfileView --> |Access Denied| RestrictedAlert[Access Restricted<br/>━━━━━━━━━━━━━━━━━<br/>❌ No medical records<br/>❌ No diagnoses<br/>❌ No prescriptions<br/>❌ No lab results<br/>❌ No clinical notes<br/>❌ No doctor notes<br/>━━━━━━━━━━━━━━━━━<br/>Role limitations]
+    
+    %% Appointment History Details (Enhanced)
+    ApptHistory --> |View Timeline| HistoryTimeline[History Timeline View<br/>━━━━━━━━━━━━━━━━━<br/>• Chronological list<br/>• Past visits<br/>  - Date & time<br/>  - Doctor seen<br/>  - Status badge<br/>  - Payment status<br/>• Upcoming appts<br/>  - Scheduled<br/>  - Confirmed<br/>  - Pending<br/>• Booking source<br/>  - Reception<br/>  - Patient app<br/>• Last visit summary<br/>━━━━━━━━━━━━━━━━━<br/>Complete history]
+    
+    HistoryTimeline --> |Filter History| HistoryFilter[History Filters<br/>━━━━━━━━━━━━━━━━━<br/>• Date range<br/>• Doctor filter<br/>• Status filter<br/>  - Completed ✓<br/>  - Cancelled ✗<br/>  - No-show ⚠️<br/>  - Rescheduled 🔄<br/>• Visit type<br/>• Payment status]
+    
+    HistoryTimeline --> |View Appointment| ApptDetail[Appointment Detail<br/>━━━━━━━━━━━━━━━━━<br/>• Appointment ID<br/>• Date & time<br/>• Doctor name<br/>• Duration<br/>• Check-in time<br/>• Completion time<br/>• Payment status<br/>• Service rendered<br/>• Follow-up needed]
+    
+    HistoryTimeline --> |Doctor Link| DoctorAvailability[→ View Doctor<br/>━━━━━━━━━━━━━━━━━<br/>• Current availability<br/>• Next free slot<br/>• Schedule overview<br/>• Book with doctor<br/>• Doctor specialty]
+    
+    %% Quick Actions Panel Details (Enhanced)
+    QuickActions --> |Actions Menu| ActionsPanel[Quick Actions Menu<br/>━━━━━━━━━━━━━━━━━<br/>• Book appointment 📅<br/>• Send reminder 📨<br/>• Update contact 📝<br/>• View invoices 💰<br/>• Check queue status 👥<br/>• Walk-in verify ✓<br/>• Follow-up schedule 🔄<br/>━━━━━━━━━━━━━━━━━<br/>One-click actions]
+    
+    ActionsPanel --> |Book| BookingQuick[Quick Booking<br/>━━━━━━━━━━━━━━━━━<br/>• Patient pre-filled<br/>• Select doctor<br/>• Choose time<br/>• Service type<br/>• Confirm booking<br/>• Send confirmation<br/>→ To Appointments]
+    
+    ActionsPanel --> |Reminder| ReminderModal[Send Reminder Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Reminder type<br/>  - Appointment<br/>  - Payment<br/>  - Follow-up<br/>  - Queue position<br/>• Channel selection<br/>  - SMS 📱<br/>  - Email 📧<br/>  - WhatsApp 💬<br/>• Preview message<br/>• Send & track]
+    
+    ActionsPanel --> |Update| UpdateContact[Update Contact Form<br/>━━━━━━━━━━━━━━━━━<br/>• Phone number<br/>• Email address<br/>• Alt. contact<br/>• Address update<br/>• Verification OTP<br/>• Save changes<br/>• Audit log entry<br/>━━━━━━━━━━━━━━━━━<br/>Real-time verify]
+    
+    ActionsPanel --> |Invoices| ViewInvoices[→ Patient Invoices<br/>━━━━━━━━━━━━━━━━━<br/>• Outstanding bills<br/>• Payment history<br/>• Send reminders<br/>• Payment links<br/>→ To Billing Page]
+    
+    ActionsPanel --> |Queue| QueueStatus[Queue Status Panel<br/>━━━━━━━━━━━━━━━━━<br/>• Current position<br/>• Estimated wait<br/>• Doctor assigned<br/>• Room number<br/>• Send notification<br/>→ Queue & Flow]
+    
+    %% Walk-in Verification Details (New Enhanced Feature)
+    WalkInVerification --> |Start Verify| WalkInFlow[Walk-In Patient Flow<br/>━━━━━━━━━━━━━━━━━<br/>Step 1: Search patient<br/>  - Name/ID/Phone<br/>Step 2: Verify identity<br/>  - Photo match<br/>  - ID number check<br/>Step 3: Check history<br/>  - Past visits<br/>  - Outstanding bills<br/>Step 4: Quick check-in<br/>  - Confirm & proceed<br/>━━━━━━━━━━━━━━━━━<br/>Unscheduled patients]
+    
+    WalkInFlow --> |Search| WalkInSearch[Patient Search<br/>━━━━━━━━━━━━━━━━━<br/>• Name search<br/>• ID number<br/>• Phone lookup<br/>• Fuzzy matching<br/>• Recent visitors]
+    
+    WalkInFlow --> |Verify| IdentityVerify[Identity Verification<br/>━━━━━━━━━━━━━━━━━<br/>• Photo comparison<br/>• ID document check<br/>• Biometric match<br/>• Manual confirm<br/>• Audit log entry]
+    
+    WalkInFlow --> |History| HistoryCheck[History Check<br/>━━━━━━━━━━━━━━━━━<br/>• Last visit date<br/>• Previous doctor<br/>• Medical alerts<br/>• Payment status<br/>• Insurance valid]
+    
+    WalkInFlow --> |Check-in| QuickCheckIn[Quick Check-in<br/>━━━━━━━━━━━━━━━━━<br/>• Confirm details<br/>• Assign to queue<br/>• Select service<br/>• Notify doctor<br/>→ To Check-In Page]
+    
+    %% Contact Confirmation Details (Enhanced Feature)
+    ContactConfirm --> |Confirm| ContactVerifyFlow[Contact Confirmation Flow<br/>━━━━━━━━━━━━━━━━━<br/>• Current info display<br/>• Request update<br/>• Send OTP verify<br/>• Confirm changes<br/>• Update all systems<br/>━━━━━━━━━━━━━━━━━<br/>Real-time validation]
+    
+    ContactVerifyFlow --> |OTP| OTPVerification[OTP Verification<br/>━━━━━━━━━━━━━━━━━<br/>• Send OTP code<br/>  - Via SMS<br/>  - Via Email<br/>• Enter code<br/>• Verify match<br/>• Confirm valid<br/>• Update status]
+    
+    ContactVerifyFlow --> |Update| ContactUpdate[Contact Update<br/>━━━━━━━━━━━━━━━━━<br/>• New phone<br/>• New email<br/>• Alt. contact<br/>• Address change<br/>• Save & sync<br/>• Audit logged]
+    
+    %% Follow-up Scheduling Details (Enhanced Feature)
+    FollowUpSchedule --> |Schedule| FollowUpFlow[Follow-Up Flow Modal<br/>━━━━━━━━━━━━━━━━━<br/>• Last visit summary<br/>  - Date & doctor<br/>  - Service type<br/>• Doctor selection<br/>  - Same doctor ✓<br/>  - New doctor<br/>• Slot recommendation<br/>  - Based on availability<br/>• Book appointment<br/>• Send confirmation<br/>━━━━━━━━━━━━━━━━━<br/>Continuity of care]
+    
+    FollowUpFlow --> |View Last| LastVisitSummary[Last Visit Summary<br/>━━━━━━━━━━━━━━━━━<br/>• Visit date<br/>• Doctor seen<br/>• Services rendered<br/>• Follow-up notes<br/>• Recommended interval]
+    
+    FollowUpFlow --> |Doctor Select| DoctorSelection[Doctor Selection<br/>━━━━━━━━━━━━━━━━━<br/>• Same doctor option<br/>• Alternative doctors<br/>• Specialty match<br/>• Availability view<br/>• Queue status]
+    
+    FollowUpFlow --> |Book| FollowUpBooking[Follow-up Booking<br/>━━━━━━━━━━━━━━━━━<br/>• Selected slot<br/>• Service type<br/>• Duration estimate<br/>• Confirm booking<br/>• Multi-channel notify<br/>→ To Appointments]
+    
+    %% Payment Reminders Details (Enhanced Feature)
+    PaymentRemind --> |Send Reminder| PaymentReminderFlow[Payment Reminder Flow<br/>━━━━━━━━━━━━━━━━━<br/>• Outstanding invoices<br/>  - Select specific<br/>  - Or all pending<br/>• Channel selection<br/>  - SMS/Email/WhatsApp<br/>• Message preview<br/>  "KES [X] due<br/>  M-Pesa: [Till/Paybill]"<br/>• Embedded pay link<br/>• Send & track<br/>━━━━━━━━━━━━━━━━━<br/>Automated notices]
+    
+    PaymentReminderFlow --> |Select Bills| BillSelection[Bill Selection<br/>━━━━━━━━━━━━━━━━━<br/>• All outstanding<br/>• Specific invoices<br/>• Overdue only<br/>• Amount totals<br/>• Due dates]
+    
+    PaymentReminderFlow --> |Preview| MessagePreview[Message Preview<br/>━━━━━━━━━━━━━━━━━<br/>• Template selection<br/>• Personalization<br/>• Amount details<br/>• Payment instructions<br/>• Pay Now link<br/>• Edit option]
+    
+    PaymentReminderFlow --> |Send| ReminderDelivery[Reminder Delivery<br/>━━━━━━━━━━━━━━━━━<br/>• Send immediate<br/>• Schedule later<br/>• Track delivery<br/>• Log status<br/>• Sync billing<br/>→ To Billing Page]
+    
+    %% Queue Checking Details (New Feature)
+    QueueCheck --> |Check Status| QueueCheckPanel[Queue Status Check<br/>━━━━━━━━━━━━━━━━━<br/>• Patient position<br/>  - Current: #3<br/>  - Total in queue<br/>• Estimated wait<br/>  - Time remaining<br/>• Doctor assigned<br/>• Room number<br/>• Send notification<br/>  "You're 3rd in line"<br/>━━━━━━━━━━━━━━━━━<br/>Live monitoring]
+    
+    QueueCheckPanel --> |View Queue| LiveQueueView[Live Queue View<br/>━━━━━━━━━━━━━━━━━<br/>• Real-time position<br/>• Queue movement<br/>• Average wait time<br/>• Doctor progress<br/>• Alert thresholds]
+    
+    QueueCheckPanel --> |Notify| QueueNotification[Queue Notification<br/>━━━━━━━━━━━━━━━━━<br/>• Position update<br/>• Near turn alert<br/>• Delay notice<br/>• Room assignment<br/>• Multi-channel send]
+    
+    QueueCheckPanel --> |Manage| QueueManagement[Queue Management<br/>━━━━━━━━━━━━━━━━━<br/>• Move position<br/>• Priority flag<br/>• Hold/Resume<br/>• Transfer doctor<br/>→ Queue & Flow Page]
+    
+    %% Enhanced Audit-Protected Access
+    AuditProtect --> |All Actions| AuditLog[Comprehensive Audit System<br/>━━━━━━━━━━━━━━━━━<br/>• Action tracking<br/>  - View profile<br/>  - Edit contact<br/>  - Send message<br/>  - Book appointment<br/>  - Walk-in verify<br/>  - Queue check<br/>• User ID logged<br/>• Timestamps<br/>• IP address<br/>• Duration tracked<br/>━━━━━━━━━━━━━━━━━<br/>Immutable record]
+    
+    AuditLog --> |View Log| LogViewer[Audit Log Viewer<br/>━━━━━━━━━━━━━━━━━<br/>• Action history<br/>• Filter by date<br/>• Filter by user<br/>• Filter by patient<br/>• Filter by action<br/>• Export disabled ❌<br/>• Admin view only]
+    
+    AuditLog --> |Security| SecurityFeatures[Security Features<br/>━━━━━━━━━━━━━━━━━<br/>• No export ❌<br/>• No print ❌<br/>• No download ❌<br/>• No deletion ❌<br/>• Read-only ✓<br/>• Platform-only ✓<br/>• Blockchain ready]
+    
+    AuditLog --> |Compliance| ComplianceTrack[Compliance Tracking<br/>━━━━━━━━━━━━━━━━━<br/>• HIPAA compliant<br/>• Access patterns<br/>• Suspicious activity<br/>• Regular audits<br/>• Report generation]
+    
+    %% Use Case Scenarios (Expanded)
+    PatientDirPage --> UseCases[Common Use Cases<br/>━━━━━━━━━━━━━━━━━<br/>• Walk-in verification<br/>• Contact confirmation<br/>• Follow-up scheduling<br/>• Payment reminders<br/>• Queue checking<br/>• Emergency lookup<br/>• Insurance verify]
+    
+    UseCases --> |Emergency| EmergencyFlow[Emergency Lookup<br/>━━━━━━━━━━━━━━━━━<br/>• Quick search<br/>• Emergency contact<br/>• Medical alerts<br/>• Insurance info<br/>• Fast check-in]
+    
+    UseCases --> |Insurance| InsuranceVerify[Insurance Verification<br/>━━━━━━━━━━━━━━━━━<br/>• Policy status<br/>• Coverage check<br/>• Provider confirm<br/>• Update details<br/>• Sync billing]
+    
+    %% Enhanced Integration & Synchronization
+    PatientDirPage -.->|Sync| DashboardSync[→ Dashboard Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Patient counts<br/>• Recent searches<br/>• Quick access<br/>• Activity metrics<br/>• Alert triggers]
+    
+    PatientDirPage -.->|Sync| AppointmentSync[→ Appointments Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Booking data<br/>• History updates<br/>• Doctor schedules<br/>• Availability check<br/>• Follow-up tracking]
+    
+    PatientDirPage -.->|Sync| CheckInSync[→ Check-In Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Patient details<br/>• Photo display<br/>• Contact info<br/>• Quick check-in<br/>• Walk-in process]
+    
+    PatientDirPage -.->|Sync| BillingSync[→ Billing Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Invoice status<br/>• Payment history<br/>• Outstanding bills<br/>• Reminder logs<br/>• Payment links]
+    
+    PatientDirPage -.->|Sync| QueueSync[→ Queue Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Live positions<br/>• Wait times<br/>• Doctor assignment<br/>• Room allocation<br/>• Status updates]
+    
+    PatientDirPage -.->|Sync| InboxSync[→ Inbox Sync<br/>━━━━━━━━━━━━━━━━━<br/>• Message history<br/>• Reminder logs<br/>• Communication<br/>• Delivery status<br/>• OTP verification]
+    
+    %% Quick Search Widget (Enhanced)
+    PatListView --> QuickSearch[Quick Search Widget<br/>━━━━━━━━━━━━━━━━━<br/>• Auto-complete<br/>• Recent searches<br/>• Fuzzy matching<br/>• Phone search<br/>• ID search<br/>• Voice input 🎤]
+    
+    QuickSearch --> |Results| InstantResults[Instant Results<br/>━━━━━━━━━━━━━━━━━<br/>• Top 5 matches<br/>• Relevance score<br/>• Quick preview<br/>• Action buttons<br/>• Select patient]
+    
+    %% Navigation to Other Pages
+    PatientDirPage ==> MainNavigation[Main Navigation]
+    MainNavigation ==> Dashboard[← Dashboard]
+    MainNavigation ==> AppointmentsPage[→ Appointments]
+    MainNavigation ==> CheckInPage[→ Check-In]
+    MainNavigation ==> InboxAlertsPage[→ Inbox & Alerts]
+    MainNavigation ==> QueueFlowPage[→ Queue & Flow]
+    MainNavigation ==> BillingPayPage[→ Billings & Payments]
+    
+    %% Styling
+    classDef directoryCore fill:#6366F1,stroke:#4F46E5,stroke-width:4px,color:#fff
+    classDef feature fill:#7C3AED,stroke:#6D28D9,stroke-width:3px,color:#fff
+    classDef modal fill:#0891B2,stroke:#0E7490,stroke-width:2px,color:#fff
+    classDef process fill:#059669,stroke:#047857,stroke-width:2px,color:#fff
+    classDef sync fill:#F59E0B,stroke:#D97706,stroke-width:2px,color:#fff
+    classDef navigation fill:#EA580C,stroke:#C2410C,stroke-width:3px,color:#fff
+    classDef restricted fill:#DC2626,stroke:#B91C1C,stroke-width:2px,color:#fff
+    classDef action fill:#10B981,stroke:#059669,stroke-width:2px,color:#fff
+    classDef usecase fill:#8B5CF6,stroke:#7C3AED,stroke-width:2px,color:#fff
+    classDef verification fill:#06B6D4,stroke:#0891B2,stroke-width:2px,color:#fff
+    classDef queue fill:#F97316,stroke:#EA580C,stroke-width:2px,color:#fff
+    
+    class PatientDirPage directoryCore
+    class PatListView,PatProfile,ApptHistory,QuickActions,AuditProtect,WalkInVerification,ContactConfirm,FollowUpSchedule,PaymentRemind,QueueCheck feature
+    class SearchFilter,ProfileView,HistoryTimeline,ActionsPanel,AuditLog,WalkInFlow,ContactVerifyFlow,FollowUpFlow,PaymentReminderFlow,QueueCheckPanel modal
+    class SearchResults,AdvancedFilter,PageControls,ExpandedInfo,PhotoViewer,HistoryFilter,ApptDetail,BookingQuick,ReminderModal,UpdateContact,LogViewer,QuickSearch,InstantResults,ProfileAuditLog process
+    class DashboardSync,AppointmentSync,CheckInSync,BillingSync,InboxSync,QueueSync,DoctorAvailability,ViewInvoices sync
+    class MainNavigation,Dashboard,AppointmentsPage,CheckInPage,InboxAlertsPage,QueueFlowPage,BillingPayPage navigation
+    class RestrictedAlert,SecurityFeatures,ComplianceTrack restricted
+    class WalkInSearch,IdentityVerify,HistoryCheck,QuickCheckIn,OTPVerification,ContactUpdate verification
+    class QueueStatus,LiveQueueView,QueueNotification,QueueManagement queue
+    class UseCases,EmergencyFlow,InsuranceVerify,LastVisitSummary,DoctorSelection,FollowUpBooking,BillSelection,MessagePreview,ReminderDelivery usecase

@@ -1,0 +1,332 @@
+graph TB
+    Start([Start]) --> InitiationType{Account Initiation Type}
+    
+    %% Account Initiation Logic
+    InitiationType --> SelfInitiated[Self-Initiated Registration]
+    InitiationType --> ClinicReferred[Clinic Referred Me]
+    
+    %% Header Section
+    SelfInitiated --> Header{Header Section}
+    Header --> Logo[Curis Logo]
+    Header --> NavLinks[Navigation Links]
+    Header --> AccessibilityOptions[Accessibility Options]
+    
+    AccessibilityOptions --> HighContrast[High-Contrast Toggle]
+    AccessibilityOptions --> ScreenReader[Screen Reader Support]
+    
+    %% Self-Initiated Registration Flow
+    Header --> SelfRegForm{Self-Registration Form}
+    
+    %% Basic Information Section
+    SelfRegForm --> BasicInfo[Basic Information Section]
+    BasicInfo --> FullName[Full Name Field]
+    BasicInfo --> DOB[Date of Birth Field]
+    BasicInfo --> Gender[Gender Selection]
+    BasicInfo --> Phone[Phone Number Field]
+    BasicInfo --> Email[Email Address Field]
+    
+    %% Smart Date Picker with Age Calculation
+    DOB -->|Input| AgeCalculation{Calculate Age}
+    AgeCalculation -->|Age < 13| Under13Logic[Under 13 Logic]
+    AgeCalculation -->|Age 13-17| TeenLogic[Teen Logic]
+    AgeCalculation -->|Age 18+| AdultLogic[Adult Logic]
+    
+    %% Under 13 Logic
+    Under13Logic --> BlockRegistration[Block Registration Message]
+    BlockRegistration --> ParentPrompt[Redirect to Parent Account Prompt]
+    ParentPrompt --> SendParentLink[Send Link to Parent Button]
+    SendParentLink --> ParentLinkSent[Parent Link Sent Confirmation]
+    ParentPrompt --> ContactClinic[Contact Clinic Option]
+    
+    %% Teen Logic (13-17)
+    TeenLogic --> TeenForm[Teen Registration Form]
+    TeenForm --> TeenFields[Same Required Fields as Adults]
+    TeenForm --> GuardianAware[Guardian Awareness Checkbox]
+    TeenFields --> RestrictedAccess[Note: Restricted Data Access]
+    
+    %% Adult Logic (18+)
+    AdultLogic --> AdultForm[Adult Registration Form]
+    AdultForm --> FamilyToggle[Add Family Member Toggle]
+    FamilyToggle -->|Enabled| FamilyModal[Family Member Modal]
+    
+    %% Family Member Modal
+    FamilyModal --> FamilyForm[Family Member Form]
+    FamilyForm --> ChildName[Child's Full Name]
+    FamilyForm --> ChildDOB[Child's Date of Birth]
+    FamilyForm --> ChildGender[Child's Gender]
+    FamilyForm --> Relationship[Relationship to Patient]
+    FamilyForm --> AddAnother[Add Another Family Member]
+    FamilyForm --> SaveFamily[Save Family Members]
+    FamilyForm --> CancelFamily[Cancel]
+    
+    AddAnother --> FamilyForm
+    SaveFamily --> FamilyAdded[Family Members Added]
+    CancelFamily --> AdultForm
+    
+    %% Security Information Section for Self-Registration
+    SelfRegForm --> SecurityInfo[Security Information Section]
+    SecurityInfo --> Password[Password Field]
+    SecurityInfo --> PasswordStrength{Password Strength}
+    PasswordStrength -->|Weak| WeakIndicator[Red Strength Bar]
+    PasswordStrength -->|Medium| MediumIndicator[Yellow Strength Bar]
+    PasswordStrength -->|Strong| StrongIndicator[Green Strength Bar]
+    SecurityInfo --> ConfirmPass[Confirm Password Field]
+    SecurityInfo --> PasswordMatch{Passwords Match?}
+    PasswordMatch -->|Yes| MatchConfirmed[Verified: Shows Checkmark]
+    PasswordMatch -->|No| MatchError[Error: Passwords don't match]
+    
+    %% Phone Verification Process for Self-Registration
+    SelfRegForm --> PhoneVerification[Phone Verification Section]
+    PhoneVerification --> SendOTP[Send OTP Button]
+    SendOTP --> OTPSent[OTP Sent via SMS]
+    OTPSent --> EnterOTP[Enter OTP Field]
+    EnterOTP --> VerifyOTP[Verify OTP Button]
+    VerifyOTP --> OTPValidation{OTP Valid?}
+    OTPValidation -->|Yes| PhoneVerified[Phone Verified - Checkmark]
+    OTPValidation -->|No| OTPError[Invalid OTP Error]
+    OTPError --> ResendOTP[Resend OTP Button]
+    ResendOTP --> SendOTP
+    
+    %% Email Verification (Optional for Self-Registration)
+    SelfRegForm --> EmailVerification[Email Verification Section]
+    EmailVerification --> SendEmailCode[Send Email Code Button - Optional]
+    SendEmailCode --> EmailCodeSent[Email Code Sent]
+    EmailCodeSent --> EnterEmailCode[Enter Email Code Field]
+    EnterEmailCode --> VerifyEmailCode[Verify Email Button]
+    VerifyEmailCode --> EmailValidation{Email Code Valid?}
+    EmailValidation -->|Yes| EmailVerified[Email Verified]
+    EmailValidation -->|No| EmailCodeError[Invalid Code Error]
+    EmailVerification --> SkipEmail[Skip Email Verification]
+    
+    %% Legal Agreements Section for Self-Registration
+    SelfRegForm --> Legal{Legal Agreements Section}
+    Legal --> Terms[Terms of Service Checkbox]
+    Terms -->|Click| TermsModal[Terms of Service Modal]
+    TermsModal --> TermsContent[Full Terms Content]
+    TermsModal --> AcceptTerms[Accept Button]
+    TermsModal --> CloseTerms[Close Modal]
+    
+    Legal --> Privacy[Privacy Policy Checkbox]
+    Privacy -->|Click| PrivacyModal[Privacy Policy Modal]
+    PrivacyModal --> PrivacyContent[Full Privacy Content]
+    PrivacyModal --> AcceptPrivacy[Accept Button]
+    PrivacyModal --> ClosePrivacy[Close Modal]
+    
+    Legal --> DataPolicy[Data Policy Checkbox]
+    DataPolicy -->|Click| DataPolicyModal[Data Policy Modal]
+    DataPolicyModal --> DataPolicyContent[Full Data Policy Content]
+    DataPolicyModal --> AcceptDataPolicy[Accept Button]
+    DataPolicyModal --> CloseDataPolicy[Close Modal]
+    
+    Legal --> MarketingConsent[Marketing Communications Opt-in - Optional]
+    
+    %% Form Validation Process for Self-Registration
+    Legal --> Validation{Form Validation}
+    
+    Validation -->|Missing Required Fields| ShowErrors[Display Error Messages]
+    ShowErrors --> RequiredFieldErrors[Highlight Required Fields]
+    RequiredFieldErrors -->|Fix Errors| SelfRegForm
+    
+    Validation -->|Invalid Format| FormatErrors[Display Format Errors]
+    FormatErrors --> EmailFormatError[Email Format Error]
+    FormatErrors --> PhoneFormatError[Phone Format Error]
+    FormatErrors --> PasswordFormatError[Password Format Error]
+    FormatErrors -->|Fix Errors| SelfRegForm
+    
+    Validation -->|Unchecked Legal| LegalErrors[Display Legal Agreement Errors]
+    LegalErrors --> SelfRegForm
+    
+    Validation -->|Phone Not Verified| VerificationError[Phone Verification Required]
+    VerificationError --> PhoneVerification
+    
+    %% Submit Process for Self-Registration
+    Validation -->|All Valid| CreateButton[Create Account Button]
+    CreateButton -->|Click| SubmitForm[Submit Form]
+    SubmitForm --> LoadingIndicator[Display Loading Indicator]
+    LoadingIndicator --> AccountCreated[Account Created Successfully]
+    AccountCreated --> WelcomeMessage[Welcome Message]
+    WelcomeMessage --> PatientDashboard[Redirect to Patient Dashboard]
+    
+    %% NEW: Clinic Referred Registration Flow
+    ClinicReferred --> ClinicReferredHeader{Clinic Referred Header}
+    ClinicReferredHeader --> ClinicReferredLogo[Curis Logo]
+    ClinicReferredHeader --> ClinicReferredTitle[Account Activation - Clinic Referred]
+    
+    %% Step 1: OTP Verification
+    ClinicReferredHeader --> OTPEntry[OTP Entry Section]
+    OTPEntry --> OTPInstruction[Enter OTP received via email]
+    OTPEntry --> EmailOTPField[Email OTP Field]
+    OTPEntry --> VerifyEmailOTP[Verify OTP Button]
+    
+    VerifyEmailOTP --> EmailOTPValidation{Email OTP Valid?}
+    EmailOTPValidation -->|Yes| AccountDetailsView[View Account Details]
+    EmailOTPValidation -->|No| EmailOTPError[Invalid OTP Error]
+    EmailOTPError --> ResendEmailOTP[Resend OTP Button]
+    ResendEmailOTP --> OTPEntry
+    
+    %% Step 2: Account Details Review & Edit
+    AccountDetailsView --> AccountInfo[Account Information Display]
+    AccountInfo --> DisplayName[Patient Name (from clinic)]
+    AccountInfo --> DisplayDOB[Date of Birth (from clinic)]
+    AccountInfo --> DisplayGender[Gender (from clinic)]
+    AccountInfo --> DisplayPhone[Phone Number (from clinic)]
+    AccountInfo --> DisplayEmail[Email Address (from clinic)]
+    AccountInfo --> ClinicDetails[Clinic Information]
+    
+    ClinicDetails --> ShowClinicName[Clinic Name]
+    ClinicDetails --> ShowStaffName[Created by Staff Member]
+    ClinicDetails --> ShowCreationTime[Account Creation Time]
+    
+    AccountInfo --> EditAccountDetails[Edit Details Button]
+    AccountInfo --> ConfirmDetails[Confirm Details Button]
+    
+    %% Edit Account Details Modal
+    EditAccountDetails --> EditModal[Edit Account Details Modal]
+    EditModal --> EditName[Edit Full Name]
+    EditModal --> EditDOB[Edit Date of Birth]
+    EditModal --> EditGender[Edit Gender]
+    EditModal --> EditPhone[Edit Phone Number]
+    EditModal --> EditEmail[Edit Email Address]
+    EditModal --> SaveChanges[Save Changes Button]
+    EditModal --> CancelEdit[Cancel Edit Button]
+    
+    SaveChanges --> ChangesValidation{Changes Valid?}
+    ChangesValidation -->|Yes| ChangesSaved[Changes Saved]
+    ChangesValidation -->|No| EditErrors[Display Edit Errors]
+    EditErrors --> EditModal
+    
+    ChangesSaved --> AccountInfo
+    CancelEdit --> AccountInfo
+    
+    %% Step 3: Security Page - Password Creation
+    ConfirmDetails --> SecurityPage[Security Page]
+    SecurityPage --> SecurityTitle[Create Your Password]
+    SecurityPage --> CreatePassword[New Password Field]
+    SecurityPage --> CreatePasswordConfirm[Confirm Password Field]
+    SecurityPage --> PasswordStrengthClinic{Password Strength}
+    PasswordStrengthClinic -->|Weak| WeakIndicatorClinic[Red Strength Bar]
+    PasswordStrengthClinic -->|Medium| MediumIndicatorClinic[Yellow Strength Bar]
+    PasswordStrengthClinic -->|Strong| StrongIndicatorClinic[Green Strength Bar]
+    
+    SecurityPage --> PasswordMatchClinic{Passwords Match?}
+    PasswordMatchClinic -->|Yes| MatchConfirmedClinic[Verified: Shows Checkmark]
+    PasswordMatchClinic -->|No| MatchErrorClinic[Error: Passwords don't match]
+    
+    SecurityPage --> ContinueToVerification[Continue to Verification Button]
+    
+    %% Step 4: Phone and Email Verification
+    ContinueToVerification --> VerificationPage[Verification Page]
+    VerificationPage --> PhoneVerificationClinic[Phone Number Verification]
+    VerificationPage --> EmailVerificationClinic[Email Address Verification]
+    
+    %% Phone Verification for Clinic Referred
+    PhoneVerificationClinic --> SendPhoneOTPClinic[Send Phone OTP Button]
+    SendPhoneOTPClinic --> PhoneOTPSentClinic[OTP Sent via SMS]
+    PhoneOTPSentClinic --> EnterPhoneOTPClinic[Enter Phone OTP Field]
+    EnterPhoneOTPClinic --> VerifyPhoneOTPClinic[Verify Phone OTP Button]
+    VerifyPhoneOTPClinic --> PhoneOTPValidationClinic{Phone OTP Valid?}
+    PhoneOTPValidationClinic -->|Yes| PhoneVerifiedClinic[Phone Verified - Checkmark]
+    PhoneOTPValidationClinic -->|No| PhoneOTPErrorClinic[Invalid Phone OTP Error]
+    PhoneOTPErrorClinic --> ResendPhoneOTPClinic[Resend Phone OTP Button]
+    ResendPhoneOTPClinic --> SendPhoneOTPClinic
+    
+    %% Email Verification for Clinic Referred
+    EmailVerificationClinic --> SendEmailCodeClinic[Send Email Code Button]
+    SendEmailCodeClinic --> EmailCodeSentClinic[Email Code Sent]
+    EmailCodeSentClinic --> EnterEmailCodeClinic[Enter Email Code Field]
+    EnterEmailCodeClinic --> VerifyEmailCodeClinic[Verify Email Button]
+    VerifyEmailCodeClinic --> EmailValidationClinic{Email Code Valid?}
+    EmailValidationClinic -->|Yes| EmailVerifiedClinic[Email Verified - Checkmark]
+    EmailValidationClinic -->|No| EmailCodeErrorClinic[Invalid Email Code Error]
+    EmailCodeErrorClinic --> ResendEmailCodeClinic[Resend Email Code Button]
+    ResendEmailCodeClinic --> SendEmailCodeClinic
+    
+    VerificationPage --> ProceedToLegal[Proceed to Legal Agreements Button]
+    
+    %% Step 5: Legal Agreements Page
+    ProceedToLegal --> LegalPage[Legal Agreements Page]
+    LegalPage --> LegalTitle[Accept Legal Agreements]
+    LegalPage --> TermsOfServiceClinic[Terms of Service Checkbox]
+    LegalPage --> PrivacyPolicyClinic[Privacy Policy Checkbox]
+    LegalPage --> DataPolicyClinic[Data Policy Checkbox]
+    
+    TermsOfServiceClinic -->|Click| TermsModalClinic[Terms of Service Modal]
+    TermsModalClinic --> TermsContentClinic[Full Terms Content]
+    TermsModalClinic --> AcceptTermsClinic[Accept Button]
+    TermsModalClinic --> CloseTermsClinic[Close Modal]
+    
+    PrivacyPolicyClinic -->|Click| PrivacyModalClinic[Privacy Policy Modal]
+    PrivacyModalClinic --> PrivacyContentClinic[Full Privacy Content]
+    PrivacyModalClinic --> AcceptPrivacyClinic[Accept Button]
+    PrivacyModalClinic --> ClosePrivacyClinic[Close Modal]
+    
+    DataPolicyClinic -->|Click| DataPolicyModalClinic[Data Policy Modal]
+    DataPolicyModalClinic --> DataPolicyContentClinic[Full Data Policy Content]
+    DataPolicyModalClinic --> AcceptDataPolicyClinic[Accept Button]
+    DataPolicyModalClinic --> CloseDataPolicyClinic[Close Modal]
+    
+    LegalPage --> FinalValidation{Final Validation}
+    FinalValidation -->|Legal Agreements Not Accepted| LegalErrorsClinic[Display Legal Errors]
+    LegalErrorsClinic --> LegalPage
+    
+    FinalValidation -->|All Valid| CompleteActivation[Complete Account Activation Button]
+    CompleteActivation --> FinalLoading[Final Loading Indicator]
+    FinalLoading --> AccountActivatedClinic[Account Activated Successfully]
+    AccountActivatedClinic --> ActivationSuccessClinic[Activation Success Page]
+    ActivationSuccessClinic --> WelcomePageClinic[Welcome to Curis]
+    WelcomePageClinic --> PatientDashboardClinic[Redirect to Patient Dashboard]
+    
+    %% Error Handling for Clinic Referred
+    VerifyEmailOTP -->|Server Error| ClinicErrorPage[Error Page]
+    ContinueToVerification -->|Validation Error| SecurityErrorPage[Security Error Page]
+    ProceedToLegal -->|Verification Error| VerificationErrorPage[Verification Error Page]
+    CompleteActivation -->|Server Error| FinalErrorPage[Final Error Page]
+    
+    ClinicErrorPage --> ClinicRetryButton[Retry Button]
+    ClinicRetryButton --> OTPEntry
+    
+    SecurityErrorPage --> SecurityRetryButton[Retry Button]
+    SecurityRetryButton --> SecurityPage
+    
+    VerificationErrorPage --> VerificationRetryButton[Retry Button]
+    VerificationRetryButton --> VerificationPage
+    
+    FinalErrorPage --> FinalRetryButton[Retry Button]
+    FinalRetryButton --> LegalPage
+    
+    %% Existing User Section
+    Header --> ExistingUser[Existing User Section]
+    ExistingUser --> LoginLink[Already have an account? Login]
+    LoginLink --> LoginPage
+    
+    %% Dynamic Form Sections Display Logic
+    TeenLogic --> DynamicDisplay1[Show Guardian Awareness Checkbox]
+    AdultLogic --> DynamicDisplay2[Show Family Management Option]
+    Under13Logic --> DynamicDisplay3[Show Parent Account Prompt]
+    
+    %% Real-time Validation
+    Email --> EmailRealTime[Real-time Email Format Check]
+    Password --> PasswordRealTime[Real-time Password Strength Check]
+    Phone --> PhoneRealTime[Real-time Phone Format Check]
+    
+    %% Style Classes
+    classDef section fill:#f9f,stroke:#333,stroke-width:2px;
+    class Header,SelfRegForm,BasicInfo,SecurityInfo,PhoneVerification,EmailVerification,Legal,ClinicReferredHeader,OTPEntry,AccountDetailsView,SecurityPage,VerificationPage,LegalPage section;
+    
+    classDef ageLogic fill:#fff2cc,stroke:#d6b656,stroke-width:2px;
+    class Under13Logic,TeenLogic,AdultLogic,AgeCalculation ageLogic;
+    
+    classDef modal fill:#e6f3ff,stroke:#0066cc,stroke-width:2px;
+    class FamilyModal,TermsModal,PrivacyModal,DataPolicyModal,EditModal,TermsModalClinic,PrivacyModalClinic,DataPolicyModalClinic modal;
+    
+    classDef action fill:#cdf,stroke:#333,stroke-width:1px;
+    class CreateButton,SubmitForm,LoadingIndicator,SendOTP,VerifyOTP,SendParentLink,VerifyEmailOTP,ConfirmDetails,ContinueToVerification,ProceedToLegal,CompleteActivation action;
+    
+    classDef error fill:#fcc,stroke:#f66,stroke-width:1px;
+    class ShowErrors,FormatErrors,LegalErrors,VerificationError,ErrorPage,OTPError,EmailCodeError,EmailOTPError,EditErrors,LegalErrorsClinic,ClinicErrorPage error;
+    
+    classDef success fill:#cfc,stroke:#393,stroke-width:1px;
+    class AccountCreated,PhoneVerified,EmailVerified,MatchConfirmed,FamilyAdded,AccountDetailsView,PhoneVerifiedClinic,EmailVerifiedClinic,AccountActivatedClinic success;
+    
+    classDef clinicFlow fill:#ffebcd,stroke:#daa520,stroke-width:2px;
+    class ClinicReferred,OTPEntry,AccountDetailsView,SecurityPage,VerificationPage,LegalPage,AccountActivatedClinic clinicFlow;

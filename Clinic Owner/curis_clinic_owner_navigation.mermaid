@@ -1,0 +1,366 @@
+flowchart TD
+    A[Clinic Owner Login] --> B[Registration & Setup]
+    A --> C{First Time User?}
+    C -->|Yes| B
+    C -->|No| D[Dashboard]
+    
+    %% Registration & Setup Flow
+    B --> B1[Clinic Identity Configuration]
+    B1 --> B1a[Clinic Name Input<br/>Real-time validation]
+    B1 --> B1b[Logo Upload<br/>File picker modal]
+    B1 --> B1c[Contact Details<br/>Phone/Email format validation]
+    B1 --> B1d[Location Setting<br/>Google Maps integration]
+    B1 --> B1e[Clinic Description<br/>Rich text editor]
+    
+    B --> B2[Operating Hours Setup]
+    B2 --> B2a[Dynamic Schedule Builder<br/>Day-by-day configuration]
+    B2a --> B2a1[Working Hours Modal<br/>Time picker per day]
+    B2a --> B2a2[Break Times Setup<br/>Lunch hours configuration]
+    B2a --> B2a3[Holiday Calendar<br/>Mark closed days]
+    
+    B --> B3[Specialties & Services]
+    B3 --> B3a[Specialty Selection<br/>Searchable library]
+    B3 --> B3b[Service Configuration Modal<br/>Name, Duration, Fee]
+    B3b --> B3b1[Lab Services Toggle<br/>Conditional configuration]
+    
+    B --> B4[Payment Frequency Setup]
+    B4 --> B4a[Billing Terms Selection<br/>Weekly/Bi-weekly/Monthly]
+    B4a --> B4a1[Preview Modal<br/>Estimated deductions]
+    B4 --> B4b[Agreement Confirmation<br/>Checkbox validation]
+    
+    B --> B5[Setup Progress Tracker<br/>Multi-step completion bar]
+    B5 --> B6[Auto-generate Clinic Profile]
+    B6 --> B7[Create First Staff Account<br/>Prompt modal]
+    B7 --> D
+    
+    %% Dashboard
+    D --> D1[Performance Overview<br/>Live metrics display]
+    D1 --> D1a[Time Filter Dropdown<br/>Daily/Weekly/Monthly]
+    D1 --> D1b[Appointment Counter<br/>Real-time updates]
+    D1 --> D1c[Revenue Display<br/>Interactive charts]
+    
+    D --> D2[Financial Snapshot<br/>Charts & breakdowns]
+    D2 --> D2a[Revenue Trends Modal<br/>Line/bar graphs]
+    D2 --> D2b[Quick Link Buttons<br/>Jump to Billing]
+    
+    D --> D3[Appointments Summary<br/>Status tracker]
+    D3 --> D3a[Status Badge Legend<br/>Color-coded system]
+    
+    D --> D4[Staff Activity<br/>Performance snapshot]
+    D4 --> D4a[Top Performers Modal<br/>Weekly rankings]
+    D4 --> D4b[Activity Log Feed<br/>Real-time updates]
+    D4 --> D4c[Quick Add Staff<br/>Creation shortcut]
+    
+    D --> D5[Smart Alerts Panel<br/>System notifications]
+    D5 --> D5a[Alert Details Modal<br/>Issue breakdown]
+    
+    D --> D6[Customizable Widgets<br/>Dashboard configuration]
+    D6 --> D6a[Widget Settings Modal<br/>Add/Remove panels]
+    D6 --> D6b[Layout Customization<br/>Drag-and-drop interface]
+    
+    %% Main Navigation
+    D --> E[Workforce Hub]
+    D --> F[Clinic Services Hub]
+    D --> G[Appointments]
+    D --> H[Billings & Payments]
+    D --> I[Health Data & Records]
+    D --> J[Settings]
+    D --> K[Insights & Performance]
+    D --> L[Notifications]
+    
+    %% Workforce Hub
+    E --> E1[Staff Account Creation<br/>Doctor/Receptionist forms]
+    E1 --> E1a[Role Assignment Modal<br/>Department/Specialty selection]
+    E1 --> E1b[Credentials Setup<br/>Login generation]
+    E1 --> E1c[Invitation Send<br/>Email/SMS notification]
+    
+    E --> E2[Access Controls<br/>Role-based permissions]
+    E2 --> E2a[Permission Matrix Modal<br/>RBAC configuration]
+    E2 --> E2b[Sensitive Data Restrictions<br/>Access level settings]
+    
+    E --> E3[Activity Logs<br/>Real-time staff monitoring]
+    E3 --> E3a[Action Details Modal<br/>Timestamped entries]
+    E3 --> E3b[Filter Controls<br/>Staff/Action/Time filters]
+    
+    E --> E4[Performance Dashboard<br/>Staff metrics]
+    E4 --> E4a[Individual Staff Modal<br/>Detailed performance view]
+    E4 --> E4b[Patient Feedback Display<br/>Rating aggregation]
+    
+    E --> E5[Staff Management Actions<br/>Edit/Suspend/Remove]
+    E5 --> E5a[Quick Edit Panel<br/>Role/Contact updates]
+    E5 --> E5b[Suspension Modal<br/>Temporary account disable]
+    E5 --> E5c[Removal Confirmation<br/>Data retention warning]
+    
+    E --> E6[Search & Filter Tools<br/>Staff directory navigation]
+    E6 --> E6a[Advanced Search Modal<br/>Multi-criteria filtering]
+    
+    E --> E7[System Alerts<br/>Staff oversight notifications]
+    E7 --> E7a[Alert Action Modal<br/>Issue resolution options]
+    
+    %% Clinic Services Hub
+    F --> F1[Service Categories<br/>Specialty management]
+    F1 --> F1a[Category Management Modal<br/>Add/Edit/Delete categories]
+    F1 --> F1b[Service Grouping<br/>Logical organization]
+    
+    F --> F2[Service Creation<br/>New service configuration]
+    F2 --> F2a[Service Details Modal<br/>Name/Category/Fee/Duration]
+    F2 --> F2b[Prerequisites Setup<br/>Service dependencies]
+    
+    F --> F3[Pricing Controls<br/>Dynamic fee management]
+    F3 --> F3a[Pricing Modal<br/>Fee structure configuration]
+    F3 --> F3b[Discount Settings<br/>Promotional pricing]
+    F3 --> F3c[Tax & Insurance Toggle<br/>VAT/Coverage settings]
+    
+    F --> F4[Service Visibility<br/>Publishing controls]
+    F4 --> F4a[Visibility Toggle<br/>Active/Inactive status]
+    F4 --> F4b[Publication Settings<br/>Public/Internal availability]
+    
+    F --> F5[Doctor Assignment<br/>Service-staff mapping]
+    F5 --> F5a[Assignment Matrix Modal<br/>Doctor-service relationships]
+    F5 --> F5b[Coverage Analysis<br/>Availability visualization]
+    
+    F --> F6[Service Management Tools<br/>Search/Filter/Sort]
+    F6 --> F6a[Advanced Filter Modal<br/>Multi-criteria search]
+    
+    F --> F7[Usage Analytics<br/>Service performance tracking]
+    F7 --> F7a[Analytics Dashboard Modal<br/>Booking frequency/trends]
+    
+    %% Appointments
+    G --> G1[Scheduling Configuration<br/>Appointment rules setup]
+    G1 --> G1a[Duration Settings Modal<br/>Service-specific timing]
+    G1 --> G1b[Clinic Rules Modal<br/>Working hours/breaks]
+    G1 --> G1c[Doctor Availability<br/>Staff-specific schedules]
+    G1 --> G1d[Buffer Time Configuration<br/>Appointment spacing]
+    
+    G --> G2[Cancellation Policies<br/>Rescheduling rules]
+    G2 --> G2a[Policy Settings Modal<br/>Cut-off times/penalties]
+    G2 --> G2b[No-show Management<br/>Penalty configuration]
+    
+    G --> G3[Live Calendar View<br/>Multi-view scheduler]
+    G3 --> G3a[Calendar Filter Modal<br/>Date/Doctor/Service filters]
+    G3 --> G3b[Quick-add Appointment<br/>Manual booking modal]
+    G3 --> G3c[Appointment Details Modal<br/>Full booking information]
+    
+    G --> G4[Patient Notifications<br/>Automated reminders]
+    G4 --> G4a[Notification Settings Modal<br/>SMS/Email/App preferences]
+    G4 --> G4b[Message Templates<br/>Customizable notifications]
+    
+    G --> G5[Performance Insights<br/>Booking analytics]
+    G5 --> G5a[Booking Analytics Modal<br/>Volume/trends analysis]
+    G5 --> G5b[No-show Tracking<br/>Rate monitoring]
+    
+    G --> G6[Appointment History<br/>Audit trail]
+    G6 --> G6a[History Filter Modal<br/>Date/status filtering]
+    G6 --> G6b[Modification Log<br/>Change tracking]
+    
+    G --> G7[Doctor Assignment<br/>Workload management]
+    G7 --> G7a[Assignment Logic Modal<br/>Auto/manual allocation]
+    G7 --> G7b[Workload View<br/>Doctor availability display]
+    
+    G --> G8[Self-booking Control<br/>Patient portal settings]
+    G8 --> G8a[Booking Rules Modal<br/>Lead time/limits configuration]
+    G8 --> G8b[Restriction Settings<br/>Cancellation/rescheduling rules]
+    
+    %% Billings & Payments
+    H --> H1[Invoice Generation<br/>Automated billing]
+    H1 --> H1a[Invoice Details Modal<br/>Service breakdown display]
+    H1 --> H1b[Manual Invoice<br/>Ad-hoc billing creation]
+    H1 --> H1c[Invoice Status Tracker<br/>Paid/Pending/Overdue]
+    H1 --> H1d[Export Options<br/>PDF/CSV download]
+    
+    H --> H2[Payment Methods<br/>External payment management]
+    H2 --> H2a[Insurance Setup Modal<br/>NHIF/Private insurers]
+    H2 --> H2b[Digital Payments<br/>M-Pesa/PesaLink/Bank]
+    H2 --> H2c[Card Payments<br/>Credit/Debit/POS]
+    H2 --> H2d[Cash Payments<br/>Physical/Bank deposits]
+    H2 --> H2e[Corporate Payments<br/>Company/Employer plans]
+    H2 --> H2f[Government Payments<br/>Public health/NGO]
+    H2 --> H2g[Payment Method Editor<br/>Add/Remove/Edit methods]
+    H2 --> H2h[MFA Authentication<br/>Email confirmation required]
+    
+    H --> H3[Curis Service Charges<br/>Platform fee management]
+    H3 --> H3a[Earnings Split Display<br/>Real-time calculation]
+    H3 --> H3b[Service Fee Dashboard<br/>Payment frequency summary]
+    H3 --> H3c[Payment Processing<br/>Full/Partial payments]
+    
+    H3c --> H3c1[M-Pesa Payment Modal<br/>Payment options display]
+    H3c1 --> H3c1a[Full Payment Button<br/>Direct to confirmation]
+    H3c1 --> H3c1b[Partial Payment Button<br/>Amount input prompt]
+    
+    H3c1a --> H3c2[Transaction Confirmation<br/>Payment method selection]
+    H3c1b --> H3c2
+    H3c2 --> H3c2a[Automatic M-Pesa<br/>STK Push flow]
+    H3c2 --> H3c2b[Manual M-Pesa<br/>Paybill instructions]
+    
+    H3c2a --> H3c3[Phone Number Modal<br/>Default/Custom selection]
+    H3c3 --> H3c4[STK Push Sent<br/>Mobile payment prompt]
+    H3c4 --> H3c5[Payment Successful<br/>Auto-reconciliation]
+    
+    H3c2b --> H3c6[Payment Instructions<br/>Paybill/Account display]
+    H3c6 --> H3c7[Background Reconciliation<br/>Auto-monitoring]
+    H3c7 --> H3c5
+    
+    H3c5 --> H3c8[Receipt Generation<br/>Multi-recipient sharing]
+    
+    H --> H4[Financial Dashboard<br/>Performance KPIs]
+    H4 --> H4a[KPI Display Modal<br/>Revenue/Outstanding/Profit]
+    H4 --> H4b[Filter Controls<br/>Date/Doctor/Service filters]
+    
+    H --> H5[Outstanding Balance<br/>Unpaid invoice management]
+    H5 --> H5a[Patient Reminder Modal<br/>SMS/WhatsApp/Email/App]
+    H5 --> H5b[Manual Payment Entry<br/>Offline payment recording]
+    H5 --> H5c[Payment History<br/>Attempt tracking]
+    
+    H --> H6[Payment History<br/>Transaction audit trail]
+    H6 --> H6a[Transaction Details Modal<br/>Complete payment information]
+    H6 --> H6b[Dispute Verification<br/>Payment validation tools]
+    
+    H --> H7[Receipt Management<br/>Document generation]
+    H7 --> H7a[Receipt Download<br/>PDF generation]
+    H7 --> H7b[Receipt Delivery<br/>Email/WhatsApp/SMS]
+    H7 --> H7c[Receipt Reissue<br/>Historical document access]
+    
+    %% Health Data & Records
+    I --> I1[Patient Registration<br/>Manual/Staff entry]
+    I1 --> I1a[Registration Form Modal<br/>Structured patient data]
+    I1 --> I1b[Profile Management<br/>Editable basic information]
+    
+    I --> I2[Patient Directory<br/>Centralized patient list]
+    I2 --> I2a[Search & Filter Tools<br/>Name/Phone/ID search]
+    I2 --> I2b[Quick Actions Menu<br/>Profile/Appointments/Billing]
+    
+    I --> I3[Medical History Access<br/>High-level oversight]
+    I3 --> I3a[Record Timeline Modal<br/>Chronological medical view]
+    I3 --> I3b[Metadata Display<br/>Visit summaries/Diagnoses]
+    
+    I --> I4[Appointment Linkage<br/>Patient interaction history]
+    I4 --> I4a[Appointment History Modal<br/>Status/Date/Staff/Feedback]
+    I4 --> I4b[Billing Summary<br/>Services/Invoices/Payments]
+    
+    I --> I5[Activity Monitoring<br/>Patient engagement tracking]
+    I5 --> I5a[Activity Details Modal<br/>Visits/Cancellations/Ratings]
+    
+    I --> I6[Self-Service Sync<br/>Patient portal integration]
+    I6 --> I6a[Patient Access Modal<br/>Contact updates/Records view]
+    
+    I --> I7[Staff Relationship<br/>Patient-staff mapping]
+    I7 --> I7a[Relationship View Modal<br/>Doctor/Receptionist assignments]
+    I7 --> I7b[Workload Balance<br/>Patient load per staff]
+    
+    I --> I8[Data Export<br/>Record portability]
+    I8 --> I8a[Export Options Modal<br/>CSV/PDF filtered records]
+    
+    I --> I9[Audit Trail<br/>Access logging]
+    I9 --> I9a[Access Log Modal<br/>User/Time/Action tracking]
+    
+    %% Settings
+    J --> J1[Working Hours<br/>Clinic schedule configuration]
+    J1 --> J1a[Hours Configuration Modal<br/>Daily opening/closing times]
+    J1 --> J1b[Holiday Management<br/>Special day adjustments]
+    J1 --> J1c[Real-time Sync<br/>System-wide schedule updates]
+    
+    J --> J2[Time Zone Management<br/>Standardized scheduling]
+    J2 --> J2a[Time Zone Selection<br/>Local time configuration]
+    J2 --> J2b[DST Adjustment<br/>Automatic time changes]
+    
+    J --> J3[Notification Settings<br/>Alert management]
+    J3 --> J3a[Recipient Selection<br/>Owner/Staff/Custom combinations]
+    J3 --> J3b[Trigger Configuration<br/>Event-based notifications]
+    J3 --> J3c[Channel Management<br/>Email/SMS/In-app settings]
+    
+    J --> J4[Payment Preferences<br/>Billing configuration]
+    J4 --> J4a[Frequency Settings<br/>Weekly/Bi-weekly/Monthly]
+    J4 --> J4b[Auto-reconciliation<br/>Payment matching preferences]
+    J4 --> J4c[Payment Methods<br/>Link/Unlink options]
+    
+    J --> J5[Privacy & Permissions<br/>Access control management]
+    J5 --> J5a[Staff Access Limits<br/>Sensitive area restrictions]
+    J5 --> J5b[Permission Toggle<br/>Doctor/Receptionist access]
+    
+    J --> J6[Clinic Profile<br/>Information updates]
+    J6 --> J6a[Profile Update Modal<br/>Name/Logo/Address/Contact]
+    J6 --> J6b[Specialty Management<br/>Service category updates]
+    
+    J --> J7[Data Backup<br/>Export preferences]
+    J7 --> J7a[Backup Configuration<br/>Monthly auto-export]
+    J7 --> J7b[Format Selection<br/>CSV/PDF options]
+    J7 --> J7c[Delivery Method<br/>Email/Download preferences]
+    
+    J --> J8[Language & Localization<br/>Regional settings]
+    J8 --> J8a[Language Selection<br/>Dashboard language]
+    J8 --> J8b[Date Format<br/>Regional format adaptation]
+    
+    J --> J9[Security Options<br/>Account protection]
+    J9 --> J9a[Password Management<br/>Credential updates]
+    J9 --> J9b[Two-Factor Auth<br/>Enhanced security setup]
+    
+    J --> J10[Audit & Logging<br/>Change tracking]
+    J10 --> J10a[Change Log Modal<br/>User/Time/Action history]
+    
+    %% Insights & Performance
+    K --> K1[Financial Reports<br/>Revenue analytics]
+    K1 --> K1a[Income Overview Modal<br/>Service revenue breakdown]
+    K1 --> K1b[Service Charge Display<br/>Platform deduction tracking]
+    K1 --> K1c[Outstanding Reports<br/>Unpaid invoice analysis]
+    K1 --> K1d[Revenue by Service<br/>Category performance]
+    K1 --> K1e[Report Export<br/>CSV/PDF download]
+    
+    K --> K2[Appointment Analytics<br/>Booking insights]
+    K2 --> K2a[Booking Trends Modal<br/>Volume/Peak time analysis]
+    K2 --> K2b[Cancellation Metrics<br/>Drop-off tracking]
+    K2 --> K2c[No-show Analysis<br/>Missed appointment rates]
+    K2 --> K2d[Utilization Rate<br/>Slot efficiency tracking]
+    
+    K --> K3[Service Performance<br/>Operational analytics]
+    K3 --> K3a[Patient Retention<br/>Return vs new patients]
+    K3 --> K3b[Service Utilization<br/>Most/least used services]
+    K3 --> K3c[Revenue Correlation<br/>Earnings vs usage analysis]
+    
+    K --> K4[Staff Efficiency<br/>Performance metrics]
+    K4 --> K4a[Staff Performance Modal<br/>Appointment/Rating tracking]
+    K4 --> K4b[Response Time Analysis<br/>Action speed metrics]
+    K4 --> K4c[Action Log Overview<br/>Staff activity summary]
+    
+    K --> K5[Visual Dashboards<br/>Interactive analytics]
+    K5 --> K5a[Chart Configuration<br/>Graph type selection]
+    K5 --> K5b[Filter Tools<br/>Date/Staff/Service filters]
+    K5 --> K5c[Comparative Views<br/>Period-over-period analysis]
+    
+    K --> K6[Report Sharing<br/>Export & delivery]
+    K6 --> K6a[Export Options<br/>PDF/CSV formats]
+    K6 --> K6b[Scheduled Delivery<br/>Automated report emails]
+    
+    %% Notifications
+    L --> L1[Real-time Alerts<br/>Operational awareness]
+    L1 --> L1a[Payment Alert Modal<br/>Failed payment details]
+    L1 --> L1b[Appointment Alert<br/>New booking notifications]
+    L1 --> L1c[Billing Cycle Alert<br/>Service charge reminders]
+    
+    L --> L2[Internal Notifications<br/>Staff communication]
+    L2 --> L2a[Staff Announcements<br/>Policy/Schedule updates]
+    L2 --> L2b[Appointment Reminders<br/>Staff schedule notifications]
+    L2 --> L2c[Shift Notifications<br/>Schedule change alerts]
+    
+    L --> L3[Notification Settings<br/>Alert configuration]
+    L3 --> L3a[Preference Panel<br/>Alert type toggles]
+    L3 --> L3b[Channel Selection<br/>App/Email/SMS options]
+    L3 --> L3c[Priority Filters<br/>High/Medium/Low sorting]
+    
+    L --> L4[Notification History<br/>Alert tracking]
+    L4 --> L4a[History Search<br/>Type/Staff/Date filtering]
+    L4 --> L4b[Status Management<br/>Read/Unread/Action tags]
+    L4 --> L4c[Action Tracking<br/>Response logging]
+    
+    L --> L5[Automated Alerts<br/>System-triggered notifications]
+    L5 --> L5a[System Alert Modal<br/>Auto-generated warnings]
+    L5 --> L5b[Threshold Settings<br/>Alert trigger configuration]
+    
+    %% Navigation flows back to main sections
+    E --> D
+    F --> D
+    G --> D
+    H --> D
+    I --> D
+    J --> D
+    K --> D
+    L --> D

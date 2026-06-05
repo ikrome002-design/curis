@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags for Character Set and Viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>My Profile - Super Admin Account Center | Curis by Citrus</title>
+
+    <!-- Meta Description for SEO -->
+    <meta name="description"
+        content="Manage your Super Administrator profile settings, security, notifications, and account preferences in Curis healthcare platform.">
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS File Link -->
+    <link rel="stylesheet" href="my_profile.css">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Main Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Dashboard\dashboard.html"
+                    class="logo-link">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Curis Users\curis_users.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Curis Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Health\health.html"
+                            class="nav-link">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Health</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Compliance Hub\compliance_hub.html"
+                            class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Compliance Hub</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Notifications -->
+                <div class="notification-container">
+                    <button class="notification-btn" onclick="toggleNotifications()">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">5</span>
+                    </button>
+
+                    <!-- Notification Panel -->
+                    <div class="notification-panel hidden" id="notificationPanel">
+                        <div class="notification-header">
+                            <h3>Notifications</h3>
+                            <button class="close-btn" onclick="toggleNotifications()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="notification-list">
+                            <div class="notification-item unread">
+                                <div class="notification-icon">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <div class="notification-title">2FA Enabled Successfully</div>
+                                    <div class="notification-desc">Two-factor authentication is now active</div>
+                                    <div class="notification-time">5 minutes ago</div>
+                                </div>
+                            </div>
+                            <div class="notification-item unread">
+                                <div class="notification-icon">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <div class="notification-title">New Login from Safari/Mac</div>
+                                    <div class="notification-desc">Login detected from Mombasa office</div>
+                                    <div class="notification-time">2 hours ago</div>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-icon">
+                                    <i class="fas fa-cog"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <div class="notification-title">Profile Updated</div>
+                                    <div class="notification-desc">Your profile information has been saved</div>
+                                    <div class="notification-time">1 day ago</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notification-footer">
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Notifications\notifications.html"
+                                class="view-all-link">
+                                View All Notifications
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Profile -->
+                <div class="user-profile-container">
+                    <button class="user-profile-btn active" onclick="toggleUserDropdown()">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-image">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+
+                    <!-- User Dropdown Menu -->
+                    <div class="user-dropdown hidden" id="userDropdown">
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Settings\settings.html"
+                                    class="dropdown-link">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\landing_page.html"
+                                    class="dropdown-link">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Log Out</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <div class="dashboard-title">
+                <h1>
+                    <i class="fas fa-user-cog"></i>
+                    My Profile
+                </h1>
+                <p class="dashboard-subtitle">Super Admin Account Center - Manage your profile, security, and
+                    preferences</p>
+            </div>
+            <div class="profile-completion">
+                <div class="completion-card">
+                    <div class="completion-header">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Profile Completion</span>
+                    </div>
+                    <div class="completion-percentage">95%</div>
+                    <div class="completion-bar">
+                        <div class="completion-progress" style="width: 95%"></div>
+                    </div>
+                    <div class="completion-details">
+                        <div class="completion-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Basic Information</span>
+                        </div>
+                        <div class="completion-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Security Settings</span>
+                        </div>
+                        <div class="completion-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>2FA Enabled</span>
+                        </div>
+                        <div class="completion-item incomplete">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Emergency Contact Missing</span>
+                        </div>
+                        <div class="completion-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Notification Preferences</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Content Grid -->
+        <div class="profile-content-grid">
+            <!-- Personal Information Section -->
+            <div class="profile-section personal-info-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-user"></i>
+                        Personal Information
+                    </h2>
+                    <button class="btn-primary" onclick="openEditProfileModal()">
+                        <i class="fas fa-edit"></i>
+                        Edit Information
+                    </button>
+                </div>
+                <div class="section-content">
+                    <div class="profile-photo-section">
+                        <div class="profile-photo-container">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-100-2.png"
+                                alt="Profile Photo" class="profile-photo">
+                            <div class="photo-overlay">
+                                <button class="change-photo-btn" onclick="changeProfilePhoto()">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="photo-actions">
+                            <button class="btn-secondary small" onclick="changeProfilePhoto()">
+                                <i class="fas fa-camera"></i>
+                                Change Photo
+                            </button>
+                            <button class="btn-secondary small" onclick="removeProfilePhoto()">
+                                <i class="fas fa-times"></i>
+                                Remove Photo
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="profile-info-grid">
+                        <div class="info-group">
+                            <label>Full Name</label>
+                            <div class="info-value">Super Administrator</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Email Address</label>
+                            <div class="info-value">admin@citruslabs.co.ke</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Phone Number</label>
+                            <div class="info-value">+254 712 345 678</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Role</label>
+                            <div class="info-value">Super Administrator</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Employee ID</label>
+                            <div class="info-value">SA001</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Department</label>
+                            <div class="info-value">Platform Administration</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Office Location</label>
+                            <div class="info-value">HQ Nairobi</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Extension</label>
+                            <div class="info-value">1001</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account Settings Section -->
+            <div class="profile-section account-settings-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-cog"></i>
+                        Account Settings
+                    </h2>
+                    <button class="btn-primary" onclick="saveAccountSettings()">
+                        <i class="fas fa-save"></i>
+                        Save Preferences
+                    </button>
+                </div>
+                <div class="section-content">
+                    <div class="settings-grid">
+                        <div class="settings-group">
+                            <h4>
+                                <i class="fas fa-globe"></i>
+                                Language & Region
+                            </h4>
+                            <div class="form-group">
+                                <label>Language</label>
+                                <select id="languageSelect">
+                                    <option value="en" selected>English</option>
+                                    <option value="sw">Swahili</option>
+                                    <option value="fr">French</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Timezone</label>
+                                <select id="timezoneSelect">
+                                    <option value="GMT+3" selected>GMT+3 (East Africa Time)</option>
+                                    <option value="GMT+0">GMT+0 (UTC)</option>
+                                    <option value="GMT-5">GMT-5 (EST)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Date Format</label>
+                                <select id="dateFormatSelect">
+                                    <option value="DD/MM/YYYY" selected>DD/MM/YYYY</option>
+                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                    <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Currency</label>
+                                <select id="currencySelect">
+                                    <option value="KES" selected>KES - Kenyan Shilling</option>
+                                    <option value="USD">USD - US Dollar</option>
+                                    <option value="EUR">EUR - Euro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h4>
+                                <i class="fas fa-palette"></i>
+                                Display Preferences
+                            </h4>
+                            <div class="form-group">
+                                <label>Theme</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="theme" value="light">
+                                        <span>Light</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="theme" value="dark" checked>
+                                        <span>Dark</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox-group">
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" checked>
+                                        <span>Expanded Sidebar</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" checked>
+                                        <span>Show Notification Badge</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Display Density</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="density" value="compact">
+                                        <span>Compact</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="density" value="normal" checked>
+                                        <span>Normal</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h4>
+                                <i class="fas fa-keyboard"></i>
+                                Shortcuts & Accessibility
+                            </h4>
+                            <div class="form-group">
+                                <div class="checkbox-group">
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" checked>
+                                        <span>Enable Quick Actions</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn-secondary" onclick="viewKeyboardShortcuts()">
+                                    <i class="fas fa-keyboard"></i>
+                                    View Keyboard Shortcuts
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Settings Section -->
+            <div class="profile-section security-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-shield-alt"></i>
+                        Security & Two-Factor Authentication
+                    </h2>
+                    <div class="security-status">
+                        <span class="status-indicator secure">
+                            <i class="fas fa-check-circle"></i>
+                            Secure
+                        </span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="security-grid">
+                        <div class="security-group">
+                            <h4>
+                                <i class="fas fa-user-shield"></i>
+                                Two-Factor Authentication (2FA)
+                            </h4>
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <div class="security-label">Status</div>
+                                    <div class="security-value enabled">
+                                        <i class="fas fa-check-circle"></i>
+                                        Enabled
+                                    </div>
+                                </div>
+                                <button class="btn-primary" onclick="configure2FA()">
+                                    <i class="fas fa-cog"></i>
+                                    Configure 2FA
+                                </button>
+                            </div>
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <div class="security-label">Method</div>
+                                    <div class="security-value">Email (admin@citruslabs.co.ke)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="security-group">
+                            <h4>
+                                <i class="fas fa-question-circle"></i>
+                                Security Questions
+                            </h4>
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <div class="security-label">Questions Set</div>
+                                    <div class="security-value success">
+                                        <i class="fas fa-check-circle"></i>
+                                        3/3 Complete
+                                    </div>
+                                </div>
+                                <button class="btn-secondary" onclick="updateSecurityQuestions()">
+                                    <i class="fas fa-edit"></i>
+                                    Update Questions
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="security-group">
+                            <h4>
+                                <i class="fas fa-mobile-alt"></i>
+                                Trusted Devices
+                            </h4>
+                            <div class="trusted-devices-list">
+                                <div class="device-item current">
+                                    <div class="device-info">
+                                        <div class="device-name">
+                                            <i class="fas fa-desktop"></i>
+                                            Chrome/Windows
+                                        </div>
+                                        <div class="device-details">This Device - Current Session</div>
+                                    </div>
+                                    <span class="device-status current">Current</span>
+                                </div>
+                                <div class="device-item">
+                                    <div class="device-info">
+                                        <div class="device-name">
+                                            <i class="fas fa-laptop"></i>
+                                            Safari/Mac
+                                        </div>
+                                        <div class="device-details">Office - Last used 2 hours ago</div>
+                                    </div>
+                                    <button class="device-action" onclick="removeDevice('safari-mac')">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="btn-secondary" onclick="manageDevices()">
+                                <i class="fas fa-cog"></i>
+                                Manage Devices
+                            </button>
+                        </div>
+
+                        <div class="security-group">
+                            <h4>
+                                <i class="fas fa-bell"></i>
+                                Security Alerts
+                            </h4>
+                            <div class="checkbox-group">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span>Login from new device</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span>Suspicious activity</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox">
+                                    <span>Password changes</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity Log Section -->
+            <div class="profile-section activity-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-chart-line"></i>
+                        My Activity Log
+                    </h2>
+                    <button class="btn-primary" onclick="exportActivityLog()">
+                        <i class="fas fa-download"></i>
+                        Export Activity Log
+                    </button>
+                </div>
+                <div class="section-content">
+                    <div class="activity-filters">
+                        <div class="filter-group">
+                            <label>Date Range</label>
+                            <select id="dateRange">
+                                <option value="7" selected>Last 7 days</option>
+                                <option value="30">Last 30 days</option>
+                                <option value="90">Last 90 days</option>
+                                <option value="custom">Custom Range</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Action Type</label>
+                            <select id="actionType">
+                                <option value="all" selected>All Actions</option>
+                                <option value="login">Login/Logout</option>
+                                <option value="settings">Settings Changes</option>
+                                <option value="users">User Management</option>
+                                <option value="reports">Report Generation</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Show</label>
+                            <select id="showPerPage">
+                                <option value="25">25 per page</option>
+                                <option value="50" selected>50 per page</option>
+                                <option value="100">100 per page</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="activity-timeline">
+                        <div class="activity-item">
+                            <div class="activity-time">10:45</div>
+                            <div class="activity-icon login">
+                                <i class="fas fa-sign-in-alt"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-title">Login</div>
+                                <div class="activity-description">Dashboard Access</div>
+                                <div class="activity-meta">
+                                    <span class="activity-ip">IP: 192.168.1.100</span>
+                                    <span class="activity-location">Location: Nairobi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-time">10:30</div>
+                            <div class="activity-icon user">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-title">User Created</div>
+                                <div class="activity-description">Added Dr. Smith to the platform</div>
+                                <div class="activity-meta">
+                                    <span class="activity-ip">IP: 192.168.1.100</span>
+                                    <span class="activity-location">Location: Nairobi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-time">09:15</div>
+                            <div class="activity-icon security">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-title">Settings Changed</div>
+                                <div class="activity-description">2FA Enabled for account security</div>
+                                <div class="activity-meta">
+                                    <span class="activity-ip">IP: 192.168.1.100</span>
+                                    <span class="activity-location">Location: Nairobi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-time">Yesterday</div>
+                            <div class="activity-icon report">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-title">Report Generated</div>
+                                <div class="activity-description">Financial Report for Q4 2024</div>
+                                <div class="activity-meta">
+                                    <span class="activity-ip">IP: 192.168.1.100</span>
+                                    <span class="activity-location">Location: Nairobi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-time">2 days ago</div>
+                            <div class="activity-icon settings">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-title">Profile Updated</div>
+                                <div class="activity-description">Changed notification preferences</div>
+                                <div class="activity-meta">
+                                    <span class="activity-ip">IP: 192.168.1.100</span>
+                                    <span class="activity-location">Location: Nairobi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notification Preferences Section -->
+            <div class="profile-section notifications-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-bell"></i>
+                        Notification Preferences
+                    </h2>
+                    <button class="btn-primary" onclick="saveNotificationPreferences()">
+                        <i class="fas fa-save"></i>
+                        Save Preferences
+                    </button>
+                </div>
+                <div class="section-content">
+                    <div class="notification-groups">
+                        <div class="notification-group">
+                            <h4>
+                                <i class="fas fa-envelope"></i>
+                                Email Notifications
+                            </h4>
+                            <div class="checkbox-group">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span>Security alerts</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span>System updates</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span>User account changes</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span>Financial reports</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox">
+                                    <span>Marketing emails</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="notification-group">
+                            <h4>
+                                <i class="fas fa-sms"></i>
+                                SMS Notifications
+                            </h4>
+                            <div class="checkbox-group">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span>Critical alerts only</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span>Login attempts</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox">
+                                    <span>Daily summaries</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="notification-group">
+                            <h4>
+                                <i class="fas fa-desktop"></i>
+                                In-App Notifications
+                            </h4>
+                            <div class="checkbox-group">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span>All activities</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span>Real-time updates</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" checked>
+                                    <span>Sound alerts</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="notification-group">
+                            <h4>
+                                <i class="fas fa-calendar"></i>
+                                Report Schedule
+                            </h4>
+                            <div class="schedule-settings">
+                                <div class="form-group">
+                                    <label>Daily Summary</label>
+                                    <select>
+                                        <option value="6:00" selected>6:00 AM</option>
+                                        <option value="8:00">8:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Weekly Report</label>
+                                    <select>
+                                        <option value="monday" selected>Monday</option>
+                                        <option value="friday">Friday</option>
+                                        <option value="sunday">Sunday</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Monthly Report</label>
+                                    <select>
+                                        <option value="1" selected>1st of month</option>
+                                        <option value="15">15th of month</option>
+                                        <option value="last">Last day of month</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session Management Section -->
+            <div class="profile-section sessions-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-laptop"></i>
+                        Session Management
+                    </h2>
+                    <button class="btn-primary danger" onclick="endAllSessions()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        End All Other Sessions
+                    </button>
+                </div>
+                <div class="section-content">
+                    <div class="session-settings">
+                        <div class="settings-group">
+                            <h4>
+                                <i class="fas fa-cog"></i>
+                                Session Security
+                            </h4>
+                            <div class="form-group">
+                                <label>Session Timeout</label>
+                                <select>
+                                    <option value="1">1 hour</option>
+                                    <option value="2" selected>2 hours</option>
+                                    <option value="4">4 hours</option>
+                                    <option value="8">8 hours</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Maximum Sessions</label>
+                                <select>
+                                    <option value="1">1 session</option>
+                                    <option value="3" selected>3 sessions</option>
+                                    <option value="5">5 sessions</option>
+                                </select>
+                            </div>
+                            <div class="checkbox-group">
+                                <label class="checkbox-option">
+                                    <input type="checkbox">
+                                    <span>Remember Me (Disabled for security)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="active-sessions">
+                        <h4>
+                            <i class="fas fa-desktop"></i>
+                            Current Sessions
+                        </h4>
+                        <div class="sessions-table">
+                            <div class="session-header">
+                                <div class="session-device">Device</div>
+                                <div class="session-location">Location</div>
+                                <div class="session-time">Login Time</div>
+                                <div class="session-status">Status</div>
+                                <div class="session-actions">Actions</div>
+                            </div>
+
+                            <div class="session-row current">
+                                <div class="session-device">
+                                    <i class="fas fa-desktop"></i>
+                                    <span>Chrome/Windows</span>
+                                </div>
+                                <div class="session-location">Nairobi, Kenya</div>
+                                <div class="session-time">2 hours ago</div>
+                                <div class="session-status">
+                                    <span class="status-badge current">
+                                        <i class="fas fa-circle"></i>
+                                        Current
+                                    </span>
+                                </div>
+                                <div class="session-actions">
+                                    <span class="current-session">This Device</span>
+                                </div>
+                            </div>
+
+                            <div class="session-row active">
+                                <div class="session-device">
+                                    <i class="fas fa-laptop"></i>
+                                    <span>Safari/Mac</span>
+                                </div>
+                                <div class="session-location">Mombasa, Kenya</div>
+                                <div class="session-time">Yesterday</div>
+                                <div class="session-status">
+                                    <span class="status-badge active">
+                                        <i class="fas fa-circle"></i>
+                                        Active
+                                    </span>
+                                </div>
+                                <div class="session-actions">
+                                    <button class="btn-secondary small" onclick="endSession('safari-mac')">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        End
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="session-row idle">
+                                <div class="session-device">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>Mobile App</span>
+                                </div>
+                                <div class="session-location">Kisumu, Kenya</div>
+                                <div class="session-time">3 days ago</div>
+                                <div class="session-status">
+                                    <span class="status-badge idle">
+                                        <i class="fas fa-circle"></i>
+                                        Idle
+                                    </span>
+                                </div>
+                                <div class="session-actions">
+                                    <button class="btn-secondary small" onclick="endSession('mobile-app')">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        End
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="session-quick-actions">
+                        <button class="btn-secondary" onclick="refreshCurrentSession()">
+                            <i class="fas fa-sync-alt"></i>
+                            Refresh Current Session
+                        </button>
+                        <button class="btn-secondary" onclick="viewSessionDetails()">
+                            <i class="fas fa-eye"></i>
+                            View Session Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions Panel -->
+        <div class="quick-actions-panel">
+            <div class="panel-header">
+                <h2>
+                    <i class="fas fa-bolt"></i>
+                    Quick Profile Actions
+                </h2>
+            </div>
+            <div class="quick-actions-grid">
+                <button class="quick-action-btn" onclick="downloadMyData()">
+                    <div class="action-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <div class="action-label">Download My Data</div>
+                </button>
+                <button class="quick-action-btn" onclick="printProfile()">
+                    <div class="action-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <div class="action-label">Print Profile</div>
+                </button>
+                <button class="quick-action-btn" onclick="exportActivity()">
+                    <div class="action-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="action-label">Export Activity</div>
+                </button>
+                <button class="quick-action-btn danger" onclick="logoutAllDevices()">
+                    <div class="action-icon">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </div>
+                    <div class="action-label">Logout All Devices</div>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Edit Profile Information Modal -->
+    <div class="modal-overlay hidden" id="editProfileModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>
+                    <i class="fas fa-edit"></i>
+                    Edit Information
+                </h2>
+                <button class="modal-close" onclick="closeModal('editProfileModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <form class="edit-profile-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" value="Super Administrator" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" value="admin@citruslabs.co.ke" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" value="+254 712 345 678" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="altEmail">Alternative Email</label>
+                            <input type="email" id="altEmail" placeholder="alternative@email.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="emergencyContact">Emergency Contact</label>
+                            <input type="text" id="emergencyContact" placeholder="Name and phone number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="profilePicture">Profile Picture</label>
+                        <div class="file-upload">
+                            <input type="file" id="profilePicture" accept="image/jpeg,image/png" class="file-input">
+                            <label for="profilePicture" class="file-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                Upload New Photo (Max: 5MB, Format: JPG/PNG)
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div class="modal-actions">
+                    <button class="btn-secondary" onclick="closeModal('editProfileModal')">Cancel</button>
+                    <button class="btn-primary" onclick="saveProfileChanges()">
+                        <i class="fas fa-save"></i>
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2FA Configuration Modal -->
+    <div class="modal-overlay hidden" id="twoFactorModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>
+                    <i class="fas fa-shield-alt"></i>
+                    2FA Configuration
+                </h2>
+                <button class="modal-close" onclick="closeModal('twoFactorModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="twofa-setup">
+                    <div class="setup-section">
+                        <h4>Setup Two-Factor Authentication</h4>
+                        <div class="twofa-method">
+                            <div class="method-option selected">
+                                <input type="radio" name="twofaMethod" value="email" checked>
+                                <label>
+                                    <i class="fas fa-envelope"></i>
+                                    Work Email Only (@citruslabs.co.ke)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setup-section">
+                        <h4>Verification Email</h4>
+                        <div class="email-info">
+                            <i class="fas fa-envelope"></i>
+                            <span>Verification code sent to: admin@citruslabs.co.ke</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="verificationCode">Enter 6-digit code</label>
+                            <input type="text" id="verificationCode" placeholder="000000" maxlength="6"
+                                class="code-input">
+                        </div>
+                    </div>
+
+                    <div class="setup-section">
+                        <h4>Backup Codes</h4>
+                        <p>Generate backup codes in case you lose access to your email</p>
+                        <div class="backup-actions">
+                            <button class="btn-secondary" onclick="generateBackupCodes()">
+                                <i class="fas fa-key"></i>
+                                Generate Backup Codes
+                            </button>
+                            <button class="btn-secondary" onclick="downloadBackupCodes()">
+                                <i class="fas fa-download"></i>
+                                Download Codes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-secondary" onclick="closeModal('twoFactorModal')">Cancel</button>
+                    <button class="btn-primary" onclick="enable2FA()">
+                        <i class="fas fa-shield-alt"></i>
+                        Enable 2FA
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download Data Modal -->
+    <div class="modal-overlay hidden" id="downloadDataModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>
+                    <i class="fas fa-download"></i>
+                    Download My Data
+                </h2>
+                <button class="modal-close" onclick="closeModal('downloadDataModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="download-config">
+                    <div class="config-section">
+                        <h4>Data Package</h4>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option">
+                                <input type="checkbox" checked>
+                                <span>Profile Information</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" checked>
+                                <span>Activity Logs</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" checked>
+                                <span>Settings & Preferences</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" checked>
+                                <span>Session History</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox">
+                                <span>Audit Reports</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h4>Format</h4>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="downloadFormat" value="json">
+                                <span>JSON</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="downloadFormat" value="csv">
+                                <span>CSV</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="downloadFormat" value="pdf" checked>
+                                <span>PDF</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h4>Security</h4>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option">
+                                <input type="checkbox" checked>
+                                <span>Encrypt before download</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-secondary" onclick="closeModal('downloadDataModal')">Cancel</button>
+                    <button class="btn-primary" onclick="processDataDownload()">
+                        <i class="fas fa-download"></i>
+                        Download Package
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-btn" onclick="toggleDarkMode()">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+
+            <div class="footer-section">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" class="social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" class="social-link" title="X (Twitter)">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        class="social-link" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" class="social-link" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" class="social-link"
+                        title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <!-- Corporate Website Link -->
+                <a href="https://citruslabs.co.ke/" target="_blank" class="corporate-link">
+                    <i class="fas fa-globe"></i>
+                    <span>citruslabs.co.ke</span>
+                </a>
+            </div>
+
+            <div class="footer-section">
+                <!-- Copyright -->
+                <div class="copyright">
+                    <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript File Link -->
+    <script src="my_profile.js"></script>
+</body>
+
+</html>

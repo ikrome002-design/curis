@@ -1,0 +1,92 @@
+graph TB
+    %% Super Admin Dashboard - Central Hub
+    Dashboard["🏠 Super Admin Dashboard<br/>Real-time Platform Overview"]
+    
+    %% Dashboard Widgets
+    Dashboard --> UserWidget["📊 Real-Time User Overview<br/>Widget"]
+    Dashboard --> ApptWidget["📅 Appointment Activity<br/>Monitoring Widget"]
+    Dashboard --> FinWidget["💰 Financial Snapshot<br/>Widget"]
+    Dashboard --> HealthWidget["🔧 Platform Health &<br/>Settings Widget"]
+    Dashboard --> SecurityWidget["🔒 Security & Compliance<br/>Alerts Widget"]
+    Dashboard --> SupportWidget["🎫 Support & Feedback<br/>Quick View Widget"]
+    Dashboard --> QuickActions["⚡ Quick Actions Panel"]
+    
+    %% User Overview Widget Pop-up
+    UserWidget --> |Click| UserPopup["User Statistics Pop-up<br/>───────────────<br/>• Live User Counts by Role<br/>  - Patients: [Count]<br/>  - Doctors: [Count]<br/>  - Receptionists: [Count]<br/>  - Clinic Owners: [Count]<br/>• Status Indicators<br/>  - Active: [Count]<br/>  - Suspended: [Count]<br/>  - Pending: [Count]<br/>• Add New User Button ➕<br/>• Manage Roles Button 👥"]
+    
+    %% User Pop-up Actions
+    UserPopup --> |Add New User| AddUserForm["Add User Form<br/>───────────<br/>• Select Role<br/>• Input Details<br/>• Set Status<br/>• Submit ✓"]
+    UserPopup --> |Manage Roles| UsersPage["→ Curis Users Page"]
+    
+    %% Appointment Widget Pop-up
+    ApptWidget --> |Click| ApptPopup["Appointment Snapshot Pop-up<br/>─────────────────<br/>• Today's Total: [Count]<br/>• Status Breakdown:<br/>  - Upcoming: [Count]<br/>  - Canceled: [Count]<br/>  - Completed: [Count]<br/>• ⚠️ Force-Canceled Alerts<br/>• Doctor Availability Feed<br/>  - Online: [List]<br/>  - Offline: [List]<br/>  - Unavailable: [List]"]
+    
+    ApptPopup --> |View Details| ApptOversightPage["→ Appointment Oversight Page"]
+    
+    %% Financial Widget Pop-up
+    FinWidget --> |Click| FinPopup["Financial Details Pop-up<br/>────────────────<br/>• Revenue This Period:<br/>  - Weekly: KES [Amount]<br/>  - Bi-weekly: KES [Amount]<br/>  - Monthly: KES [Amount]<br/>• Outstanding Balances<br/>• Top 5 Owing Clinics:<br/>  1. [Clinic] - KES [Amount]<br/>  2. [Clinic] - KES [Amount]<br/>  3. [Clinic] - KES [Amount]<br/>  4. [Clinic] - KES [Amount]<br/>  5. [Clinic] - KES [Amount]<br/>• View Full Report Button 📊<br/>• Configure Charges Button ⚙️"]
+    
+    FinPopup --> |Full Report| BillingPage["→ Billings & Payments Page"]
+    FinPopup --> |Configure| ChargeConfig["Service Charge Config<br/>──────────────<br/>• Percentage: 20/25/30%<br/>• Fixed: 2000/2500/3000<br/>• Frequency Settings<br/>• Apply Changes ✓"]
+    
+    %% Platform Health Widget Pop-up
+    HealthWidget --> |Click| HealthPopup["System Status Pop-up<br/>─────────────<br/>• App Status: ✅ Running<br/>• Maintenance Mode: OFF<br/>  [Toggle Switch]<br/>• Session Timeouts:<br/>  - Patient: [Duration]<br/>  - Doctor: [Duration]<br/>  - Admin: [Duration]<br/>• Integration Status:<br/>  - SMS Gateway: ✅<br/>  - Email Gateway: ✅<br/>  - WhatsApp API: ✅"]
+    
+    HealthPopup --> |Settings| SettingsPage["→ Settings Page"]
+    HealthPopup --> |Toggle Maintenance| MaintenanceMode["Maintenance Mode<br/>────────────<br/>• Enable/Disable<br/>• Custom Message<br/>• Schedule Time<br/>• Confirm ✓"]
+    
+    %% Security Widget Pop-up
+    SecurityWidget --> |Click| SecurityPopup["Security Dashboard Pop-up<br/>──────────────────<br/>• Recent Login Attempts:<br/>  - Success: [Count]<br/>  - Failed: [Count]<br/>• Latest IPs:<br/>  - [IP Address] - [User]<br/>  - [IP Address] - [User]<br/>• ⚠️ Alerts:<br/>  - Brute-force attempts<br/>  - Unusual sessions<br/>  - Suspicious activity<br/>• View Full Logs Button 📋"]
+    
+    SecurityPopup --> |View Logs| CompliancePage["→ Compliance Hub Page"]
+    
+    %% Support Widget Pop-up
+    SupportWidget --> |Click| SupportPopup["Support Tickets Pop-up<br/>──────────────<br/>• Open Tickets: [Count]<br/>• Priority Breakdown:<br/>  - 🔴 High: [Count]<br/>  - 🟡 Medium: [Count]<br/>  - 🟢 Low: [Count]<br/>• Newest Tickets:<br/>  1. [Ticket] - [User Type]<br/>  2. [Ticket] - [User Type]<br/>  3. [Ticket] - [User Type]<br/>• View All Tickets Button 🎫"]
+    
+    SupportPopup --> |View All| TicketSystem["Support Ticket System<br/>─────────────<br/>• Full ticket list<br/>• Filter options<br/>• Assign tickets<br/>• Update status"]
+    
+    %% Quick Actions Panel
+    QuickActions --> QuickAdd["➕ Add New User"]
+    QuickActions --> QuickAppt["📅 View Appointments"]
+    QuickActions --> QuickCharges["💰 Adjust Service Charges"]
+    QuickActions --> QuickTickets["🎫 View Support Tickets"]
+    QuickActions --> QuickMaintenance["🔧 Enter Maintenance Mode"]
+    
+    %% Quick Action Destinations
+    QuickAdd --> AddUserForm
+    QuickAppt --> ApptOversightPage
+    QuickCharges --> ChargeConfig
+    QuickTickets --> TicketSystem
+    QuickMaintenance --> MaintenanceMode
+    
+    %% Main Navigation Bar
+    Dashboard --> NavBar["Main Navigation Bar"]
+    NavBar --> UsersPage
+    NavBar --> ApptOversightPage
+    NavBar --> HealthPage["Health (High-Level) Page"]
+    NavBar --> BillingPage
+    NavBar --> SettingsPage
+    NavBar --> CompliancePage
+    
+    %% Real-time Updates
+    Dashboard -.->|WebSocket/Polling| RealTimeUpdates["🔄 Real-Time Updates<br/>────────────<br/>• User count changes<br/>• New appointments<br/>• Payment notifications<br/>• Security alerts<br/>• Support tickets<br/>• System status"]
+    
+    %% Alert Banners
+    Dashboard --> AlertBanner["🚨 Alert Banner Area<br/>─────────────<br/>• Critical Issues Display<br/>• Email Gateway Down<br/>• Security Breach Detected<br/>• Maintenance Required"]
+    
+    %% Styling
+    classDef dashboard fill:#1E3A5F,stroke:#0D1B2A,stroke-width:4px,color:#fff,font-weight:bold
+    classDef widget fill:#7B2CBF,stroke:#5A189A,stroke-width:2px,color:#fff
+    classDef popup fill:#FF6B35,stroke:#C73E1D,stroke-width:2px,color:#fff
+    classDef action fill:#06A77D,stroke:#045A3F,stroke-width:2px,color:#fff
+    classDef page fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
+    classDef critical fill:#DC2626,stroke:#991B1B,stroke-width:2px,color:#fff
+    classDef realtime fill:#10B981,stroke:#059669,stroke-width:2px,color:#fff
+    
+    class Dashboard dashboard
+    class UserWidget,ApptWidget,FinWidget,HealthWidget,SecurityWidget,SupportWidget,QuickActions widget
+    class UserPopup,ApptPopup,FinPopup,HealthPopup,SecurityPopup,SupportPopup,AddUserForm,ChargeConfig,MaintenanceMode,TicketSystem popup
+    class QuickAdd,QuickAppt,QuickCharges,QuickTickets,QuickMaintenance,UserPopup,ApptPopup action
+    class UsersPage,ApptOversightPage,HealthPage,BillingPage,SettingsPage,CompliancePage,NavBar page
+    class AlertBanner critical
+    class RealTimeUpdates realtime

@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Alert Banner Area for Critical Issues -->
+    <div id="alertBanner" class="alert-banner hidden">
+        <div class="alert-content">
+            <i class="fas fa-exclamation-triangle alert-icon"></i>
+            <span id="alertMessage">System Alert: Please check system status</span>
+            <button id="closeAlert" class="alert-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Dashboard\dashboard.html"
+                    class="logo-link">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Curis Users\curis_users.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Curis Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Health\health.html"
+                            class="nav-link">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Health</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Compliance Hub\compliance_hub.html"
+                            class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Compliance Hub</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Notifications -->
+                <div class="notification-container">
+                    <button id="notificationBtn" class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                </div>
+
+                <!-- User Profile -->
+                <div class="user-profile-container">
+                    <button id="userProfileBtn" class="user-profile-btn">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-image">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- User Profile Dropdown -->
+    <div id="userProfileDropdown" class="user-dropdown hidden">
+        <ul class="dropdown-menu">
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Settings\settings.html"
+                    class="dropdown-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Landing Page\landing_page.html"
+                    class="dropdown-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Notification Panel -->
+    <div id="notificationPanel" class="notification-panel hidden">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button id="closeNotifications" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="notification-content">
+                    <p class="notification-title">New User Registration</p>
+                    <p class="notification-desc">Dr. Sarah Johnson registered as a doctor</p>
+                    <p class="notification-time">2 minutes ago</p>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="notification-content">
+                    <p class="notification-title">System Alert</p>
+                    <p class="notification-desc">High server load detected</p>
+                    <p class="notification-time">5 minutes ago</p>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-money-bill"></i>
+                </div>
+                <div class="notification-content">
+                    <p class="notification-title">Payment Received</p>
+                    <p class="notification-desc">KES. 15,000 from Nairobi Medical Center</p>
+                    <p class="notification-time">1 hour ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="notification-footer">
+            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Super Administrator\Notifications\notifications.html"
+                class="view-all-link">View All Notifications</a>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Dashboard Title Section -->
+        <section class="dashboard-header">
+            <div class="dashboard-title">
+                <h1>
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </h1>
+                <p class="dashboard-subtitle">Real-time Platform Overview</p>
+            </div>
+
+            <!-- Real-Time Status Indicator -->
+            <div class="realtime-status">
+                <div class="status-indicator active">
+                    <i class="fas fa-circle"></i>
+                    <span>Live Updates Active</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Widgets Grid -->
+        <section class="dashboard-widgets">
+            <!-- Real-Time User Overview Widget -->
+            <div class="widget user-widget" id="userWidget">
+                <div class="widget-header">
+                    <div class="widget-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="widget-title">
+                        <h3>Real-Time User Overview</h3>
+                        <p>Live user statistics and management</p>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="user-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">1,247</div>
+                            <div class="stat-label">Total Users</div>
+                        </div>
+                        <div class="stat-breakdown">
+                            <div class="breakdown-item">
+                                <i class="fas fa-user-injured"></i>
+                                <span>Patients: <strong>856</strong></span>
+                            </div>
+                            <div class="breakdown-item">
+                                <i class="fas fa-user-md"></i>
+                                <span>Doctors: <strong>142</strong></span>
+                            </div>
+                            <div class="breakdown-item">
+                                <i class="fas fa-user-pen"></i>
+                                <span>Receptionists: <strong>124</strong></span>
+                            </div>
+                            <div class="breakdown-item">
+                                <i class="fas fa-building"></i>
+                                <span>Clinic Owners: <strong>125</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-action">
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Appointment Activity Monitoring Widget -->
+            <div class="widget appointment-widget" id="appointmentWidget">
+                <div class="widget-header">
+                    <div class="widget-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="widget-title">
+                        <h3>Appointment Activity</h3>
+                        <p>Real-time appointment monitoring</p>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="appointment-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">234</div>
+                            <div class="stat-label">Today's Total</div>
+                        </div>
+                        <div class="status-grid">
+                            <div class="status-item upcoming">
+                                <i class="fas fa-clock"></i>
+                                <span>Upcoming: <strong>89</strong></span>
+                            </div>
+                            <div class="status-item completed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Completed: <strong>127</strong></span>
+                            </div>
+                            <div class="status-item canceled">
+                                <i class="fas fa-times-circle"></i>
+                                <span>Canceled: <strong>18</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-action">
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Snapshot Widget -->
+            <div class="widget financial-widget" id="financialWidget">
+                <div class="widget-header">
+                    <div class="widget-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="widget-title">
+                        <h3>Financial Snapshot</h3>
+                        <p>Revenue and billing overview</p>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="financial-stats">
+                        <div class="revenue-item">
+                            <div class="revenue-label">Monthly Revenue</div>
+                            <div class="revenue-amount">KES. 2,847,500</div>
+                        </div>
+                        <div class="financial-breakdown">
+                            <div class="breakdown-row">
+                                <span>Weekly: <strong>KES. 712,400</strong></span>
+                            </div>
+                            <div class="breakdown-row">
+                                <span>Bi-weekly: <strong>KES. 1,424,800</strong></span>
+                            </div>
+                        </div>
+                        <div class="outstanding-balance">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Outstanding: KES. 324,150</span>
+                        </div>
+                    </div>
+                    <div class="widget-action">
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platform Health & Settings Widget -->
+            <div class="widget health-widget" id="healthWidget">
+                <div class="widget-header">
+                    <div class="widget-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="widget-title">
+                        <h3>Platform Health & Settings</h3>
+                        <p>System status and configuration</p>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="health-stats">
+                        <div class="system-status">
+                            <div class="status-item healthy">
+                                <i class="fas fa-check-circle"></i>
+                                <span>App Status: Running</span>
+                            </div>
+                            <div class="status-item">
+                                <i class="fas fa-toggle-off"></i>
+                                <span>Maintenance: OFF</span>
+                            </div>
+                        </div>
+                        <div class="integration-status">
+                            <div class="integration-item">
+                                <i class="fas fa-sms"></i>
+                                <span>SMS Gateway</span>
+                                <i class="fas fa-check status-icon healthy"></i>
+                            </div>
+                            <div class="integration-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email Gateway</span>
+                                <i class="fas fa-check status-icon healthy"></i>
+                            </div>
+                            <div class="integration-item">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp API</span>
+                                <i class="fas fa-check status-icon healthy"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-action">
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security & Compliance Alerts Widget -->
+            <div class="widget security-widget" id="securityWidget">
+                <div class="widget-header">
+                    <div class="widget-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="widget-title">
+                        <h3>Security & Compliance</h3>
+                        <p>Security monitoring and alerts</p>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="security-stats">
+                        <div class="login-stats">
+                            <div class="login-item success">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Successful Logins: <strong>1,247</strong></span>
+                            </div>
+                            <div class="login-item failed">
+                                <i class="fas fa-times-circle"></i>
+                                <span>Failed Attempts: <strong>23</strong></span>
+                            </div>
+                        </div>
+                        <div class="recent-ips">
+                            <div class="ip-item">
+                                <i class="fas fa-globe"></i>
+                                <span>197.248.15.42 - Dr. Smith</span>
+                            </div>
+                            <div class="ip-item">
+                                <i class="fas fa-globe"></i>
+                                <span>41.90.123.87 - Admin User</span>
+                            </div>
+                        </div>
+                        <div class="security-alerts">
+                            <i class="fas fa-exclamation-triangle warning"></i>
+                            <span>2 Security Alerts</span>
+                        </div>
+                    </div>
+                    <div class="widget-action">
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support & Feedback Quick View Widget -->
+            <div class="widget support-widget" id="supportWidget">
+                <div class="widget-header">
+                    <div class="widget-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="widget-title">
+                        <h3>Support & Feedback</h3>
+                        <p>Customer support overview</p>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <div class="support-stats">
+                        <div class="ticket-count">
+                            <div class="count-number">47</div>
+                            <div class="count-label">Open Tickets</div>
+                        </div>
+                        <div class="priority-breakdown">
+                            <div class="priority-item high">
+                                <i class="fas fa-circle"></i>
+                                <span>High: <strong>8</strong></span>
+                            </div>
+                            <div class="priority-item medium">
+                                <i class="fas fa-circle"></i>
+                                <span>Medium: <strong>24</strong></span>
+                            </div>
+                            <div class="priority-item low">
+                                <i class="fas fa-circle"></i>
+                                <span>Low: <strong>15</strong></span>
+                            </div>
+                        </div>
+                        <div class="recent-tickets">
+                            <div class="ticket-item">
+                                <span>Login Issues - Doctor</span>
+                            </div>
+                            <div class="ticket-item">
+                                <span>Payment Error - Clinic</span>
+                            </div>
+                            <div class="ticket-item">
+                                <span>App Crash - Patient</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-action">
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions Panel -->
+        <section class="quick-actions-panel">
+            <div class="panel-header">
+                <h2>
+                    <i class="fas fa-bolt"></i>
+                    Quick Actions Panel
+                </h2>
+            </div>
+            <div class="quick-actions-grid">
+                <button class="quick-action-btn" id="quickAddUser">
+                    <div class="action-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="action-label">Add New User</div>
+                </button>
+
+                <button class="quick-action-btn" id="quickViewAppointments">
+                    <div class="action-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="action-label">View Appointments</div>
+                </button>
+
+                <button class="quick-action-btn" id="quickAdjustCharges">
+                    <div class="action-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="action-label">Adjust Service Charges</div>
+                </button>
+
+                <button class="quick-action-btn" id="quickViewTickets">
+                    <div class="action-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <div class="action-label">View Support Tickets</div>
+                </button>
+
+                <button class="quick-action-btn" id="quickMaintenance">
+                    <div class="action-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="action-label">Enter Maintenance Mode</div>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Overlays for Widget Popups -->
+
+    <!-- User Statistics Popup -->
+    <div id="userPopup" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>User Statistics Details</h2>
+                <button class="modal-close" data-modal="userPopup">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="user-statistics">
+                    <div class="live-counts">
+                        <h3>Live User Counts by Role</h3>
+                        <div class="role-stats">
+                            <div class="role-item">
+                                <i class="fas fa-user-injured"></i>
+                                <span>Patients: <strong>856</strong></span>
+                            </div>
+                            <div class="role-item">
+                                <i class="fas fa-user-md"></i>
+                                <span>Doctors: <strong>142</strong></span>
+                            </div>
+                            <div class="role-item">
+                                <i class="fas fa-user-pen"></i>
+                                <span>Receptionists: <strong>124</strong></span>
+                            </div>
+                            <div class="role-item">
+                                <i class="fas fa-building"></i>
+                                <span>Clinic Owners: <strong>125</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="status-indicators">
+                        <h3>Status Indicators</h3>
+                        <div class="status-stats">
+                            <div class="status-item active">
+                                <i class="fas fa-circle"></i>
+                                <span>Active: <strong>1,198</strong></span>
+                            </div>
+                            <div class="status-item suspended">
+                                <i class="fas fa-pause-circle"></i>
+                                <span>Suspended: <strong>32</strong></span>
+                            </div>
+                            <div class="status-item pending">
+                                <i class="fas fa-clock"></i>
+                                <span>Pending: <strong>17</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-primary" id="addNewUserBtn">
+                        <i class="fas fa-plus"></i>
+                        Add New User
+                    </button>
+                    <button class="btn-secondary" id="manageRolesBtn">
+                        <i class="fas fa-users-cog"></i>
+                        Manage Roles
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Snapshot Popup -->
+    <div id="appointmentPopup" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Appointment Snapshot Details</h2>
+                <button class="modal-close" data-modal="appointmentPopup">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="appointment-details">
+                    <div class="today-total">
+                        <h3>Today's Total: <span class="highlight">234</span></h3>
+                    </div>
+
+                    <div class="status-breakdown">
+                        <h3>Status Breakdown</h3>
+                        <div class="status-grid">
+                            <div class="status-card upcoming">
+                                <i class="fas fa-clock"></i>
+                                <div class="status-info">
+                                    <div class="status-count">89</div>
+                                    <div class="status-label">Upcoming</div>
+                                </div>
+                            </div>
+                            <div class="status-card canceled">
+                                <i class="fas fa-times-circle"></i>
+                                <div class="status-info">
+                                    <div class="status-count">18</div>
+                                    <div class="status-label">Canceled</div>
+                                </div>
+                            </div>
+                            <div class="status-card completed">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="status-info">
+                                    <div class="status-count">127</div>
+                                    <div class="status-label">Completed</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="force-canceled-alerts">
+                        <h3>
+                            <i class="fas fa-exclamation-triangle warning"></i>
+                            Force-Canceled Alerts
+                        </h3>
+                        <div class="alert-list">
+                            <div class="alert-item">
+                                <span>Dr. Johnson - 3 cancellations today</span>
+                            </div>
+                            <div class="alert-item">
+                                <span>Nairobi Clinic - System issues</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doctor-availability">
+                        <h3>Doctor Availability Feed</h3>
+                        <div class="availability-grid">
+                            <div class="availability-section online">
+                                <h4>
+                                    <i class="fas fa-circle"></i>
+                                    Online (23)
+                                </h4>
+                                <div class="doctor-list">
+                                    <div class="doctor-item">Dr. Sarah Johnson</div>
+                                    <div class="doctor-item">Dr. Michael Brown</div>
+                                    <div class="doctor-item">Dr. Emily Davis</div>
+                                    <div class="doctor-item">+20 more</div>
+                                </div>
+                            </div>
+                            <div class="availability-section offline">
+                                <h4>
+                                    <i class="fas fa-circle"></i>
+                                    Offline (89)
+                                </h4>
+                                <div class="doctor-list">
+                                    <div class="doctor-item">Dr. James Wilson</div>
+                                    <div class="doctor-item">Dr. Lisa Anderson</div>
+                                    <div class="doctor-item">+87 more</div>
+                                </div>
+                            </div>
+                            <div class="availability-section unavailable">
+                                <h4>
+                                    <i class="fas fa-circle"></i>
+                                    Unavailable (30)
+                                </h4>
+                                <div class="doctor-list">
+                                    <div class="doctor-item">Dr. Robert Taylor</div>
+                                    <div class="doctor-item">Dr. Jennifer Martinez</div>
+                                    <div class="doctor-item">+28 more</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-primary" id="viewAppointmentDetails">
+                        <i class="fas fa-eye"></i>
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Financial Details Popup -->
+    <div id="financialPopup" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Financial Details</h2>
+                <button class="modal-close" data-modal="financialPopup">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="financial-details">
+                    <div class="revenue-period">
+                        <h3>Revenue This Period</h3>
+                        <div class="revenue-breakdown">
+                            <div class="revenue-item">
+                                <span class="period">Weekly:</span>
+                                <span class="amount">KES. 712,400</span>
+                            </div>
+                            <div class="revenue-item">
+                                <span class="period">Bi-weekly:</span>
+                                <span class="amount">KES. 1,424,800</span>
+                            </div>
+                            <div class="revenue-item">
+                                <span class="period">Monthly:</span>
+                                <span class="amount">KES. 2,847,500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="outstanding-balances">
+                        <h3>Outstanding Balances: <span class="warning">KES. 324,150</span></h3>
+                    </div>
+
+                    <div class="top-owing-clinics">
+                        <h3>Top 5 Owing Clinics</h3>
+                        <div class="clinic-list">
+                            <div class="clinic-item">
+                                <span class="rank">1.</span>
+                                <span class="clinic-name">Nairobi Medical Center</span>
+                                <span class="amount">KES. 85,400</span>
+                            </div>
+                            <div class="clinic-item">
+                                <span class="rank">2.</span>
+                                <span class="clinic-name">Westlands Health Clinic</span>
+                                <span class="amount">KES. 67,200</span>
+                            </div>
+                            <div class="clinic-item">
+                                <span class="rank">3.</span>
+                                <span class="clinic-name">Karen Medical Center</span>
+                                <span class="amount">KES. 54,800</span>
+                            </div>
+                            <div class="clinic-item">
+                                <span class="rank">4.</span>
+                                <span class="clinic-name">Eastleigh Family Clinic</span>
+                                <span class="amount">KES. 43,750</span>
+                            </div>
+                            <div class="clinic-item">
+                                <span class="rank">5.</span>
+                                <span class="clinic-name">Kiambu District Hospital</span>
+                                <span class="amount">KES. 73,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-primary" id="viewFullReportBtn">
+                        <i class="fas fa-chart-bar"></i>
+                        View Full Report
+                    </button>
+                    <button class="btn-secondary" id="configureChargesBtn">
+                        <i class="fas fa-cog"></i>
+                        Configure Charges
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Status Popup -->
+    <div id="healthPopup" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>System Status Details</h2>
+                <button class="modal-close" data-modal="healthPopup">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="system-details">
+                    <div class="app-status">
+                        <h3>Application Status</h3>
+                        <div class="status-item healthy">
+                            <i class="fas fa-check-circle"></i>
+                            <span>App Status: Running</span>
+                        </div>
+                    </div>
+
+                    <div class="maintenance-mode">
+                        <h3>Maintenance Mode</h3>
+                        <div class="maintenance-control">
+                            <span>Status: OFF</span>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="maintenanceToggle" class="toggle-input">
+                                <label for="maintenanceToggle" class="toggle-label">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="session-timeouts">
+                        <h3>Session Timeouts</h3>
+                        <div class="timeout-list">
+                            <div class="timeout-item">
+                                <span>Patient:</span>
+                                <span>30 minutes</span>
+                            </div>
+                            <div class="timeout-item">
+                                <span>Doctor:</span>
+                                <span>60 minutes</span>
+                            </div>
+                            <div class="timeout-item">
+                                <span>Admin:</span>
+                                <span>120 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="integration-status">
+                        <h3>Integration Status</h3>
+                        <div class="integration-grid">
+                            <div class="integration-item healthy">
+                                <i class="fas fa-sms"></i>
+                                <span>SMS Gateway</span>
+                                <i class="fas fa-check-circle status-icon"></i>
+                            </div>
+                            <div class="integration-item healthy">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email Gateway</span>
+                                <i class="fas fa-check-circle status-icon"></i>
+                            </div>
+                            <div class="integration-item healthy">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp API</span>
+                                <i class="fas fa-check-circle status-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-primary" id="systemSettingsBtn">
+                        <i class="fas fa-cog"></i>
+                        System Settings
+                    </button>
+                    <button class="btn-secondary" id="toggleMaintenanceBtn">
+                        <i class="fas fa-tools"></i>
+                        Toggle Maintenance
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Dashboard Popup -->
+    <div id="securityPopup" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Security Dashboard</h2>
+                <button class="modal-close" data-modal="securityPopup">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="security-details">
+                    <div class="login-attempts">
+                        <h3>Recent Login Attempts</h3>
+                        <div class="attempt-stats">
+                            <div class="attempt-item success">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Success: <strong>1,247</strong></span>
+                            </div>
+                            <div class="attempt-item failed">
+                                <i class="fas fa-times-circle"></i>
+                                <span>Failed: <strong>23</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="latest-ips">
+                        <h3>Latest IP Addresses</h3>
+                        <div class="ip-list">
+                            <div class="ip-item">
+                                <i class="fas fa-globe"></i>
+                                <span class="ip">197.248.15.42</span>
+                                <span class="user">Dr. Sarah Johnson</span>
+                                <span class="time">2 min ago</span>
+                            </div>
+                            <div class="ip-item">
+                                <i class="fas fa-globe"></i>
+                                <span class="ip">41.90.123.87</span>
+                                <span class="user">Admin User</span>
+                                <span class="time">5 min ago</span>
+                            </div>
+                            <div class="ip-item">
+                                <i class="fas fa-globe"></i>
+                                <span class="ip">105.161.45.23</span>
+                                <span class="user">Dr. Michael Brown</span>
+                                <span class="time">12 min ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="security-alerts">
+                        <h3>
+                            <i class="fas fa-exclamation-triangle warning"></i>
+                            Security Alerts
+                        </h3>
+                        <div class="alert-list">
+                            <div class="alert-item high">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Brute-force attempts detected from IP 192.168.1.100</span>
+                                <span class="alert-time">15 min ago</span>
+                            </div>
+                            <div class="alert-item medium">
+                                <i class="fas fa-user-secret"></i>
+                                <span>Unusual session pattern for user: clinic_admin_001</span>
+                                <span class="alert-time">1 hour ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-primary" id="viewFullLogsBtn">
+                        <i class="fas fa-list"></i>
+                        View Full Logs
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Tickets Popup -->
+    <div id="supportPopup" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Support Tickets Overview</h2>
+                <button class="modal-close" data-modal="supportPopup">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="support-details">
+                    <div class="ticket-summary">
+                        <h3>Open Tickets: <span class="highlight">47</span></h3>
+                    </div>
+
+                    <div class="priority-breakdown">
+                        <h3>Priority Breakdown</h3>
+                        <div class="priority-grid">
+                            <div class="priority-card high">
+                                <i class="fas fa-circle"></i>
+                                <div class="priority-info">
+                                    <div class="priority-count">8</div>
+                                    <div class="priority-label">High Priority</div>
+                                </div>
+                            </div>
+                            <div class="priority-card medium">
+                                <i class="fas fa-circle"></i>
+                                <div class="priority-info">
+                                    <div class="priority-count">24</div>
+                                    <div class="priority-label">Medium Priority</div>
+                                </div>
+                            </div>
+                            <div class="priority-card low">
+                                <i class="fas fa-circle"></i>
+                                <div class="priority-info">
+                                    <div class="priority-count">15</div>
+                                    <div class="priority-label">Low Priority</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="newest-tickets">
+                        <h3>Newest Tickets</h3>
+                        <div class="ticket-list">
+                            <div class="ticket-item high">
+                                <div class="ticket-icon">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div class="ticket-info">
+                                    <div class="ticket-title">Login authentication failing</div>
+                                    <div class="ticket-meta">
+                                        <span class="user-type">Doctor</span>
+                                        <span class="ticket-time">5 min ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ticket-item medium">
+                                <div class="ticket-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="ticket-info">
+                                    <div class="ticket-title">Payment processing error</div>
+                                    <div class="ticket-meta">
+                                        <span class="user-type">Clinic Owner</span>
+                                        <span class="ticket-time">12 min ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ticket-item low">
+                                <div class="ticket-icon">
+                                    <i class="fas fa-question-circle"></i>
+                                </div>
+                                <div class="ticket-info">
+                                    <div class="ticket-title">Feature request: Dark mode</div>
+                                    <div class="ticket-meta">
+                                        <span class="user-type">Patient</span>
+                                        <span class="ticket-time">1 hour ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-primary" id="viewAllTicketsBtn">
+                        <i class="fas fa-ticket-alt"></i>
+                        View All Tickets
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Dark Mode Toggle -->
+            <div class="footer-section">
+                <button id="darkModeToggle" class="dark-mode-btn">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-section social-media">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                        class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer"
+                        class="social-link twitter">
+                        <i class="fab fa-x"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer" class="social-link facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                        class="social-link youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                        class="social-link linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Corporate Website Link -->
+            <div class="footer-section">
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer" class="corporate-link">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Corporate Website</span>
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-section copyright">
+                <p>&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

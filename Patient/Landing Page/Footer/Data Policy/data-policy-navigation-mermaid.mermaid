@@ -1,0 +1,68 @@
+flowchart TD
+    DataPolicy[Data Policy Home Page] --> Introduction[Introduction]
+    DataPolicy --> DataCollection[Data Collection]
+    DataPolicy --> DataUse[Data Use]
+    DataPolicy --> DataSecurity[Data Security]
+    DataPolicy --> UserRights[Your Rights]
+    DataPolicy --> Compliance[Compliance]
+    DataPolicy --> Contact[Contact Information]
+
+    Introduction --> AboutCuris[About Curis Platform]
+    Introduction --> PolicyScope[Scope of Policy]
+    Introduction --> Definitions[Key Definitions]
+
+    DataCollection --> PatientData[Patient Data]
+    PatientData --> PersonalInfo[Personal Information]
+    PatientData --> ContactInfo[Contact Details]
+    PatientData --> MedicalRecords[Medical History]
+    PatientData --> AppointmentData[Appointment Details]
+    PatientData --> PaymentData[Payment Information]
+
+    PaymentData --> MPesaData[M-Pesa Transactions]
+    PaymentData --> InvoiceData[Invoice Records]
+    PaymentData --> TransactionHistory[Billing History]
+
+    DataUse --> ServiceProvision[Service Provision]
+    ServiceProvision --> Appointments[Appointment Scheduling]
+    ServiceProvision --> RecordAccess[Access to Medical Records]
+    ServiceProvision --> PaymentProcessing[Payment Processing]
+
+    DataUse --> Personalization[Personalized Health Insights]
+    DataUse --> Communications[Platform Communications]
+
+    Communications --> EmailPurpose[Email Updates]
+    Communications --> SMSPurpose[SMS Notifications]
+    Communications --> DataSharing[Data Sharing with Consent]
+
+    DataSharing --> HealthPartners[Authorized Health Providers]
+    DataSharing --> LegalRequests[Legal Authorities (When Required)]
+
+    DataSecurity --> StorageMethods[Data Storage]
+    DataSecurity --> AccessControls[Access Controls]
+    DataSecurity --> Encryption[Encryption Practices]
+    DataSecurity --> RetentionPolicy[Data Retention Policy]
+    DataSecurity --> BreachProtocol[Breach Notification Protocol]
+
+    AccessControls --> RoleBased[Role-Based Access]
+    AccessControls --> Authentication[Authentication Methods]
+
+    RetentionPolicy --> ActiveData[Active Patient Records]
+    RetentionPolicy --> InactiveData[Archived Data]
+    RetentionPolicy --> DataDeletion[Deletion Request Process]
+
+    UserRights --> AccessRights[Access to Your Data]
+    UserRights --> RectificationRights[Correct Inaccuracies]
+    UserRights --> DeletionRights[Request Data Deletion]
+    UserRights --> RestrictProcessing[Limit Processing]
+    UserRights --> DataPortability[Data Portability]
+
+    AccessRights --> RequestProcess[How to Request Access]
+    AccessRights --> TimeFrame[Time Frame for Response]
+
+    Compliance --> LocalLaws[Kenyan Data Laws]
+    Compliance --> International[International Standards]
+    Compliance --> Certifications[Security Certifications]
+
+    Contact --> ContactMethods[Contact Methods]
+    Contact --> DPO[Data Protection Officer]
+    Contact --> ComplaintProcess[File a Complaint]

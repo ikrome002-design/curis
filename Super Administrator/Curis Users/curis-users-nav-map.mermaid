@@ -1,0 +1,98 @@
+graph TB
+    %% Main Curis Users Page
+    CurisUsers["👥 Curis Users Page<br/>Central User Management Hub"]
+    
+    %% Back Navigation
+    CurisUsers --> BackNav["← Back to Dashboard"]
+    BackNav --> Dashboard["🏠 Super Admin Dashboard"]
+    
+    %% User Overview Panel
+    CurisUsers --> UserOverviewPanel["📊 User Overview Panel"]
+    UserOverviewPanel --> |Click| FilterOptions["Filter & Search Options<br/>──────────────<br/>• Role Filter:<br/>  □ Patients<br/>  □ Doctors<br/>  □ Receptionists<br/>  □ Clinic Owners<br/>• Status Filter:<br/>  □ Active<br/>  □ Suspended<br/>  □ Pending<br/>• Clinic Filter:<br/>  [Select Clinic Dropdown]<br/>• Search Bar:<br/>  🔍 [Name/ID/Email]<br/>• Apply Filters Button ✓"]
+    
+    %% Key Metrics Display
+    UserOverviewPanel --> MetricsDisplay["📈 Key Metrics Display<br/>─────────────<br/>• Total Users: [Count]<br/>• By Role:<br/>  - Patients: [Count]<br/>  - Doctors: [Count]<br/>  - Receptionists: [Count]<br/>  - Clinic Owners: [Count]<br/>• By Status:<br/>  - Active: [Count] 🟢<br/>  - Suspended: [Count] 🔴<br/>  - Pending: [Count] 🟡"]
+    
+    %% User List Management
+    CurisUsers --> UserListTable["📋 User List Management Table"]
+    UserListTable --> TableView["User Table View<br/>────────────<br/>Columns:<br/>□ | User ID | Name | Role | Status | Clinic | Created | Last Login | Actions<br/>─────────────────────────────────<br/>□ | U001 | John Doe | Doctor | Active 🟢 | Clinic A | 01/01/24 | Today | ⚙️<br/>□ | U002 | Jane Smith | Patient | Suspended 🔴 | - | 02/01/24 | 5 days ago | ⚙️<br/>□ | U003 | Bob Johnson | Clinic Owner | Active 🟢 | Clinic B | 03/01/24 | Yesterday | ⚙️"]
+    
+    %% Bulk Actions
+    UserListTable --> BulkActions["🔧 Bulk Actions Panel"]
+    BulkActions --> |Select Users| BulkMenu["Bulk Actions Menu<br/>─────────────<br/>• Suspend Selected ⏸️<br/>• Activate Selected ✅<br/>• Delete Selected 🗑️<br/>• Change Roles 🔄<br/>• Export Selected 📥<br/>• Send Message 📧"]
+    
+    %% Individual User Actions
+    TableView --> |Click Actions| UserActions["User Actions Menu<br/>─────────────<br/>• View Profile 👁️<br/>• Edit Details ✏️<br/>• Change Role 🔄<br/>• Reset Password 🔑<br/>• Suspend/Activate ⏸️<br/>• Delete User 🗑️<br/>• View Activity Log 📊<br/>• Send Message 💬"]
+    
+    %% User Details Management
+    UserActions --> |View/Edit| UserProfile["User Profile Editor<br/>──────────────<br/>📷 Profile Picture<br/>• Personal Info:<br/>  - Name: [Editable]<br/>  - Email: [Editable]<br/>  - Phone: [Editable]<br/>• Account Info:<br/>  - User ID: U001<br/>  - Role: [Dropdown]<br/>  - Status: [Toggle]<br/>  - Clinic: [Dropdown]<br/>• Actions:<br/>  - Save Changes ✓<br/>  - Reset Password 🔑<br/>  - Add Note 📝"]
+    
+    %% Suspension Management
+    UserProfile --> |Suspend| SuspensionModal["Suspension Modal<br/>────────────<br/>⚠️ Suspend User Account<br/>• Reason: [Required Field]<br/>  □ Policy Violation<br/>  □ Payment Issues<br/>  □ Security Concern<br/>  □ Other: [Text Field]<br/>• Duration:<br/>  ○ Temporary: [Date Range]<br/>  ○ Indefinite<br/>• Add Notes: [Text Area]<br/>• Notify User: ☑️ Email ☑️ SMS<br/>• Confirm Suspension 🔴"]
+    
+    %% Add New User
+    CurisUsers --> AddUserButton["➕ Add New User"]
+    AddUserButton --> |Click| CreateUserForm["Create User Form<br/>─────────────<br/>• Select Role:<br/>  ○ Patient<br/>  ○ Doctor<br/>  ○ Receptionist<br/>  ○ Clinic Owner<br/>• User Details:<br/>  - Name: [Required]<br/>  - Email: [Required]<br/>  - Phone: [Required]<br/>  - Password: [Auto-generate ☑️]<br/>• Clinic Assignment:<br/>  [Select Clinic Dropdown]<br/>• Initial Status:<br/>  ○ Active<br/>  ○ Pending Verification<br/>• Create User ✓"]
+    
+    %% Batch Upload
+    AddUserButton --> |Batch| BatchUpload["Batch Upload Users<br/>─────────────<br/>📁 Upload CSV File<br/>• Download Template 📥<br/>• Select File: [Browse]<br/>• Preview Data:<br/>  [Table Preview]<br/>• Validation Results:<br/>  ✅ 45 Valid Records<br/>  ❌ 5 Errors [View]<br/>• Import Users 📤"]
+    
+    %% Role-Specific Actions
+    CurisUsers --> RoleActions["🎭 Role-Specific Actions"]
+    RoleActions --> |Clinic Owner| ClinicOwnerPanel["Clinic Owner Management<br/>──────────────────<br/>• View Staff Summary:<br/>  - Doctors: [Count]<br/>  - Receptionists: [Count]<br/>  - Active/Suspended<br/>• Manage Staff:<br/>  - Add Staff Member ➕<br/>  - Remove Staff Member ➖<br/>  - Change Permissions 🔐<br/>• Clinic Settings ⚙️"]
+    
+    RoleActions --> |Doctor/Receptionist| StaffPanel["Staff Management Panel<br/>─────────────────<br/>• Permissions:<br/>  □ View Patient Records<br/>  □ Edit Patient Records<br/>  □ Manage Appointments<br/>  □ Access Billing<br/>• Special Actions:<br/>  - Merge Patient Records 🔄<br/>  - Transfer Patients 📤<br/>• Save Permissions ✓"]
+    
+    %% User Activity & Audit Logs
+    CurisUsers --> AuditLogsButton["📊 User Activity Logs"]
+    AuditLogsButton --> |Click| AuditLogViewer["Activity Log Viewer<br/>─────────────<br/>• Filter by:<br/>  - User: [Select]<br/>  - Date Range: [From-To]<br/>  - Action Type: [Dropdown]<br/>• Log Entries:<br/>  🕐 Today 10:30 - Login Success<br/>  🕐 Today 10:45 - Updated Profile<br/>  🕐 Today 11:00 - Changed Password<br/>  🕐 Yesterday 15:30 - Suspended User<br/>• Export Logs 📥"]
+    
+    %% User Communication
+    CurisUsers --> CommButton["💬 User Communication"]
+    CommButton --> |Click| CommPanel["Communication Panel<br/>─────────────<br/>• Recipients:<br/>  ○ Individual User<br/>  ○ User Group:<br/>    □ All Doctors<br/>    □ All Patients<br/>    □ All Clinic Owners<br/>    □ Custom Selection<br/>• Message Type:<br/>  ○ Email 📧<br/>  ○ SMS 📱<br/>  ○ Both<br/>• Template: [Select Template]<br/>• Subject: [Text Field]<br/>• Message: [Text Area]<br/>• Schedule:<br/>  ○ Send Now<br/>  ○ Schedule: [Date/Time]<br/>• Send Message 📤"]
+    
+    %% Notifications Management
+    CurisUsers --> NotifManager["🔔 Notifications Management"]
+    NotifManager --> |Configure| NotifSettings["Notification Settings<br/>──────────────<br/>• Auto-Notifications:<br/>  ☑️ Account Creation<br/>  ☑️ Suspension/Activation<br/>  ☑️ Password Reset<br/>  ☑️ Role Change<br/>• Notification Channels:<br/>  ☑️ Email<br/>  ☑️ SMS<br/>  ☑️ WhatsApp<br/>• Custom Rules:<br/>  [Add Rule Button ➕]<br/>• Save Settings ✓"]
+    
+    %% User Deactivation & Deletion
+    CurisUsers --> DeactivateButton["🗑️ Deactivate/Delete Users"]
+    DeactivateButton --> |Click| DeactivateModal["Deactivation Modal<br/>─────────────<br/>⚠️ Critical Action<br/>• Action Type:<br/>  ○ Deactivate (Reversible)<br/>  ○ Delete (Permanent)<br/>• Selected Users: [List]<br/>• Data Retention:<br/>  ☑️ Preserve Medical Records<br/>  ☑️ Preserve Billing History<br/>• Confirmation:<br/>  Type 'CONFIRM': [___]<br/>• Proceed with Action 🔴"]
+    
+    %% Tab Navigation
+    CurisUsers --> TabNav["Tab Navigation"]
+    TabNav --> ActiveTab["🟢 Active Users"]
+    TabNav --> SuspendedTab["🔴 Suspended Users"]
+    TabNav --> PendingTab["🟡 Pending Verification"]
+    
+    %% Real-time Updates
+    CurisUsers -.->|WebSocket| RealTimeSync["🔄 Real-Time Updates<br/>────────────<br/>• User count changes<br/>• Status updates<br/>• New registrations<br/>• Login activity<br/>• Auto-refresh table"]
+    
+    %% Integration with Other Pages
+    CurisUsers --> MainNav["Main Navigation"]
+    MainNav --> ApptOversight["→ Appointment Oversight"]
+    MainNav --> HealthPage["→ Health (High-Level)"]
+    MainNav --> BillingPage["→ Billings & Payments"]
+    MainNav --> SettingsPage["→ Settings"]
+    MainNav --> CompliancePage["→ Compliance Hub"]
+    
+    %% Quick Access from Dashboard
+    Dashboard --> |Quick Action| CurisUsers
+    Dashboard --> |User Widget| CurisUsers
+    
+    %% Styling
+    classDef mainPage fill:#1E3A5F,stroke:#0D1B2A,stroke-width:4px,color:#fff,font-weight:bold
+    classDef panel fill:#7B2CBF,stroke:#5A189A,stroke-width:2px,color:#fff
+    classDef modal fill:#FF6B35,stroke:#C73E1D,stroke-width:2px,color:#fff
+    classDef action fill:#06A77D,stroke:#045A3F,stroke-width:2px,color:#fff
+    classDef critical fill:#DC2626,stroke:#991B1B,stroke-width:2px,color:#fff
+    classDef nav fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
+    classDef realtime fill:#10B981,stroke:#059669,stroke-width:2px,color:#fff
+    
+    class CurisUsers mainPage
+    class UserOverviewPanel,UserListTable,RoleActions,AuditLogsButton,CommButton,NotifManager,TabNav panel
+    class FilterOptions,UserProfile,SuspensionModal,CreateUserForm,BatchUpload,ClinicOwnerPanel,StaffPanel,AuditLogViewer,CommPanel,NotifSettings,DeactivateModal modal
+    class AddUserButton,BulkActions,UserActions,DeactivateButton action
+    class DeactivateModal,SuspensionModal critical
+    class MainNav,BackNav,Dashboard,ApptOversight,HealthPage,BillingPage,SettingsPage,CompliancePage nav
+    class RealTimeSync realtime

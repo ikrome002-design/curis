@@ -1,0 +1,97 @@
+#### 1. **Check-In**
+
+
+
+
+Here is a clear and structured breakdown of the dynamic MVP features and functionalities of the “Check-In” page for the Receptionists & Clinic Assistants account on the Curis by Citrus platform:
+________________________________________
+1. Check-In Page – MVP Breakdown
+
+
+a.	New Patient Registration
+•	Functionality: Capture essential personal details (name, phone number, email, ID/passport, gender, DOB).
+•	Dynamic Features:
+o	Auto-check for duplicates using phone or ID.
+o	Inline alerts if patient is already registered.
+o	Option to upload a patient photo (for ID verification or clinic badge purposes).
+o	Smart form autofill from national ID or health card (if integration is enabled).
+o	Tag referral source (walk-in, online booking, campaign).
+________________________________________
+b.	Patient Profile Updates
+•	Functionality: Edit non-clinical patient details.
+•	Dynamic Features:
+o	Update contact info, address, insurance info, emergency contact.
+o	View patient’s last appointment date and next booking (read-only).
+o	Log and timestamp every change for audit tracking.
+________________________________________
+c.	Live Patient Check-In
+•	Functionality: Mark patient as "arrived" for their scheduled appointment.
+•	Dynamic Features:
+o	Auto-detect and list patients scheduled for the day.
+o	Search by patient name, phone, or appointment ID.
+o	Check-in triggers real-time status change on dashboard and queue list.
+o	Auto-send “patient arrived” notification to assigned doctor.
+o	If patient arrives without appointment: enable “Walk-In Check-In” (auto-generate appointment).
+________________________________________
+d.	Doctor Assignment Engine
+•	Functionality: Assign checked-in patients to available doctors.
+•	Dynamic Features:
+o	View real-time doctor availability and current load.
+o	Smart suggestion engine recommends least-busy doctor based on queue.
+o	Manual override available if doctor is requested by patient.
+o	System records which receptionist assigned the patient and when.
+________________________________________
+e.	Doctor Notification System
+•	Functionality: Notify doctors that a patient is ready.
+•	Dynamic Features:
+o	In-app toast/popup on doctor’s dashboard.
+o	Optional SMS or internal notification if doctor is offline.
+o	Notification includes patient name, appointment type, and room if pre-assigned.
+________________________________________
+f.	Admin Notes (Non-Clinical)
+•	Functionality: Leave internal notes for the front-desk team.
+•	Dynamic Features:
+o	Add short notes for each patient (e.g., “Patient prefers afternoon visits”).
+o	Not visible to doctors or patients.
+o	Editable only by receptionists; timestamped logs maintained.
+________________________________________
+g.	Walk-In Conversion to Booking
+•	Functionality: For patients who arrive without prior appointment.
+•	Dynamic Features:
+o	On check-in, system creates a backdated appointment and logs the reason.
+o	Auto-tagged as “Walk-In” for reporting.
+o	Assigned to the next available doctor or manually selected.
+o	Appointment reminder triggers disabled for walk-ins.
+________________________________________
+h.	Smart Queue Integration
+•	Functionality: Seamlessly links check-in process with the live queue.
+•	Dynamic Features:
+o	After check-in, patient enters live queue system.
+o	Receptionist can reorder queue based on urgency (if allowed by clinic rules).
+o	Queue color-coded by wait time thresholds (e.g., green <15min, red >45min).
+________________________________________
+i.	Audit Trail & Role Accountability
+•	Functionality: Every check-in, update, and action is logged.
+•	Dynamic Features:
+o	Logs show: receptionist ID, action performed, timestamp.
+o	Accessible under “Activity Logs” by Clinic Owner and Admins only.
+o	Immutable for accountability.
+________________________________________
+j.	User Guidance Tools
+•	Functionality: Help new receptionists work efficiently.
+•	Dynamic Features:
+o	Step-by-step tooltips for each action (check-in, assign, notify).
+o	“Recently Used Patients” quick access sidebar.
+o	Error handling for duplicate check-ins or missed bookings.
+________________________________________
+Business Value Delivered
+
+•	Streamlines patient flow from arrival to doctor assignment.
+•	Reduces human error in scheduling and doctor overload.
+•	Empowers receptionists to manage high-volume clinics confidently.
+•	Boosts professionalism with real-time, automated communication.
+________________________________________
+
+
+
+

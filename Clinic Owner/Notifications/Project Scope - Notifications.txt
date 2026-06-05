@@ -1,0 +1,83 @@
+CLINIC OWNER - CURIS.
+
+
+---
+
+For the Minimum Viable Product (MVP) of the **Notifications** page within the **clinic account user** in *Curis by Citrus*, the focus is on providing real-time alerts, automated reminders, and communication tools that keep clinic owners, staff, and patients informed about critical updates. This page ensures timely delivery of notifications for appointments, payments, system updates, and operational activities, enhancing clinic efficiency and responsiveness. Here's a breakdown of the essential features available on this notifications page:  
+
+________________________________________  
+### **Core MVP Features of the Notifications Page**
+
+
+The “Notifications” page in the Clinic Owner’s MVP of Curis by Citrus serves as a real-time command center for operational awareness and staff communication. Below is a precise breakdown of the dynamic MVP features and functionalities for this page:
+
+________________________________________
+1. Real-Time Alert Center
+
+
+•	Failed Payment Alerts:
+o	Instant alerts for unsuccessful payment attempts from patients.
+o	Shows: Patient name, amount, payment method, reason (e.g., “Insufficient funds” or “Network timeout”).
+o	Action: Retry payment or contact patient.
+•	New Appointment Requests:
+o	Notifications when a patient books an appointment directly or via receptionist.
+o	Includes service type, requested time, and assigned doctor (if applicable).
+o	Action: Accept, reschedule, or assign doctor.
+•	Upcoming Billing Cycle Alerts:
+o	Reminders for upcoming Curis service charge deductions (weekly/bi-weekly/monthly).
+o	Shows expected deduction amount and deduction date.
+
+________________________________________
+2. Internal Clinic Notifications
+
+
+•	Staff Announcements:
+o	Send important updates (e.g., policy changes, operating hour shifts) to all or specific staff roles.
+o	Option to require staff acknowledgment (with read receipts).
+•	Appointment Reminders for Staff:
+o	Notify doctors and receptionists of upcoming appointments within the next 12 or 24 hours.
+o	Includes patient name, time, service, and any attached notes.
+•	Shift & Schedule Notifications:
+o	Alert staff of assigned shifts or changes to their appointment schedules.
+
+________________________________________
+3. Notification Settings Panel
+
+
+•	Alert Preferences Configuration:
+o	Toggle which alerts the Clinic Owner receives (payment, appointment, internal messages, billing).
+o	Choose notification channels: in-app popups, email, or SMS.
+•	Priority Filters:
+o	Sort by High (e.g., failed payments), Medium (e.g., upcoming appointments), or Low (e.g., staff messages).
+
+________________________________________
+4. Notification History Log
+
+
+•	Searchable Log:
+o	View all previous notifications with filters by type, staff, date, or patient.
+•	Status Tags:
+o	Each entry is tagged: Unread, Read, Action Required, Resolved.
+•	Action Tracking:
+o	Log actions taken on alerts (e.g., payment retried, appointment reassigned).
+
+________________________________________
+5. Automated Alerts (Triggered by System Events)
+
+
+•	Failed invoice generation or payment issue.
+•	Overbooked appointment slots.
+•	High appointment no-show rate thresholds.
+•	Staff inactivity on system for defined periods (e.g., 7 days).
+
+________________________________________
+Summary Utility of This Page
+
+
+•	Immediate Operational Visibility: Keeps the Clinic Owner updated on what needs urgent attention.
+•	Proactive Issue Resolution: Enables quick action on payment failures, appointment bottlenecks, or staff communication gaps.
+•	Streamlined Communication: Replaces manual check-ins with automated, trackable messaging.
+________________________________________
+
+
+

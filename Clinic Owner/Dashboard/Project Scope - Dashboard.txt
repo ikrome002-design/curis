@@ -1,0 +1,84 @@
+CLINIC OWNER - CURIS.
+
+
+---
+
+For the Minimum Viable Product (MVP) of the **Dashboard** page within the **clinic account user** in *Curis by Citrus*, the focus is on providing real-time insights, operational visibility, and dynamic performance tracking tools that empower clinic owners to oversee their clinic’s activities, financial health, and staff productivity. Here's a breakdown of the essential features available on this dashboard page:
+
+### **Core MVP Features of the Dashboard Page**  
+
+
+
+The Dashboard is the real-time command center for the clinic account user, offering immediate visibility into clinic operations, financial health, and staff performance. It dynamically updates based on clinic activity and data, enabling quick decision-making and daily oversight.
+
+
+a.	Clinic Performance Overview (Live Metrics)
+
+
+•	Key Figures Displayed at a Glance:
+o	Total number of appointments today/this week
+o	Revenue generated (daily, weekly, monthly filters)
+o	Outstanding payments from patients
+o	Number of new patient registrations
+•	Interactive Time Filters: Toggle between daily, weekly, monthly, or custom date ranges to adjust data display.
+
+
+b.	Revenue & Financial Snapshot
+
+
+•	Dynamic Charts: Line or bar graphs showing:
+o	Revenue trends
+o	Service charge deductions
+o	Net earnings
+•	Breakdown Cards: Show performance by category (e.g., Consultations, Prescriptions, Procedures).
+•	Quick Links: Jump to Billing & Payments or Reports directly from financial summaries.
+
+
+c.	Appointments Summary
+
+•	Live Appointment Tracker:
+o	Total scheduled today
+o	Cancelled or rescheduled today
+o	No-show rate
+•	Status Badges: Color-coded status (e.g., Green = Completed, Yellow = Pending, Red = No-show)
+
+
+d.	Staff Activity Snapshot
+
+•	Top Performing Staff This Week: Based on appointments handled, positive patient feedback, and punctuality.
+•	Activity Log Feed: Latest staff actions (e.g., “Dr. Kamau completed a consultation”, “Receptionist A confirmed 3 appointments”).
+•	Quick Add Shortcut: Button to create/manage staff users directly.
+
+
+e.	Patient Engagement Overview
+
+•	New patient registrations (daily/weekly/monthly)
+•	Most requested services
+•	Patient satisfaction alerts (e.g., if negative feedback increases)
+
+
+f.	Smart Alerts & Notifications
+
+•	System-generated alerts for:
+o	Low appointment bookings
+o	Pending payment confirmations
+o	Staff inactivity
+•	Visual badges with alert counters (e.g., 3 Payment Issues)
+
+
+g.	Customizable Widgets
+
+•	Add/Remove Widgets: Clinic owners can show/hide specific sections (e.g., hide staff view, show only revenue and appointments).
+•	Reorder Panels: Drag-and-drop to customize dashboard layout based on user preference.
+
+
+________________________________________
+Key Outcomes of the Dashboard Page
+
+
+•	Provides a centralized, real-time overview of all critical clinic operations.
+•	Promotes proactive management by highlighting issues before they escalate.
+•	Empowers clinic owners to track performance trends and adjust workflows accordingly.
+•	Serves as a launchpad to deeper pages like Reports, Billing, Staff Management, and Appointments. 
+ 
+

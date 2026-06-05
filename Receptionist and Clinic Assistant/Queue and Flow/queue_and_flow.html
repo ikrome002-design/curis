@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curis - Queue & Flow | Patient Flow Management</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="queue_and_flow.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a
+                    href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Check-In\check_in.html"
+                            class="nav-link">
+                            <i class="fas fa-user-check"></i>
+                            <span>Check-In</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Inbox and Alerts\inbox_and_alerts.html"
+                            class="nav-link">
+                            <i class="fas fa-inbox"></i>
+                            <span>Inbox & Alerts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Queue and Flow\queue_and_flow.html"
+                            class="nav-link">
+                            <i class="fas fa-list-check"></i>
+                            <span>Queue & Flow</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Patient Directory\patient_directory.html"
+                            class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Patient Directory</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Queue & Flow</h1>
+                    <p class="subtitle">Patient Flow Management</p>
+                </div>
+
+                <div class="header-right">
+                    <!-- User Profile -->
+                    <div class="user-profile" id="userProfile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="User Profile" class="profile-icon">
+                        <span class="user-name">Sarah Wanjiru</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Queue Statistics Bar -->
+            <section class="queue-stats">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-content">
+                        <span class="stat-value">18</span>
+                        <span class="stat-label">Total in Queue</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-content">
+                        <span class="stat-value">25 min</span>
+                        <span class="stat-label">Avg Wait Time</span>
+                    </div>
+                </div>
+                <div class="stat-card warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div class="stat-content">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">Overdue Patients</span>
+                    </div>
+                </div>
+                <div class="stat-card success">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="stat-content">
+                        <span class="stat-value">24</span>
+                        <span class="stat-label">Seen Today</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Queue Grid -->
+            <div class="queue-grid">
+
+                <!-- Doctor Status & Availability Panel -->
+                <section class="dashboard-card doctor-status">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user-doctor"></i> Doctor Status & Availability</h2>
+                        <button class="btn-refresh" id="refreshStatusBtn">
+                            <i class="fas fa-sync"></i> Refresh
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="doctor-status-grid">
+                            <!-- Doctor 1 -->
+                            <div class="doctor-card available">
+                                <div class="doctor-header">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Doctor" class="doctor-avatar">
+                                    <div class="doctor-info">
+                                        <h3>Dr. James Ochieng</h3>
+                                        <span class="specialty">Cardiologist</span>
+                                    </div>
+                                    <span class="status-indicator online"></span>
+                                </div>
+                                <div class="doctor-details">
+                                    <div class="detail-row">
+                                        <span class="label">Status:</span>
+                                        <span class="value status-available">
+                                            <i class="fas fa-circle"></i> Available
+                                        </span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="label">Room:</span>
+                                        <span class="value">Room 101</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="label">Queue:</span>
+                                        <span class="value">5 patients</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="label">Current:</span>
+                                        <span class="value">John Kimani (15 min)</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="label">Est. Finish:</span>
+                                        <span class="value">3:45 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Doctor 2 -->
+                            <div class="doctor-card consulting">
+                                <div class="doctor-header">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Doctor" class="doctor-avatar">
+                                    <div class="doctor-info">
+                                        <h3>Dr. Mary Kamau</h3>
+                                        <span class="specialty">Pediatrician</span>
+                                    </div>
+                                    <span class="status-indicator busy"></span>
+                                </div>
+                                <div class="doctor-details">
+                                    <div class="detail-row">
+                                        <span class="label">Status:</span>
+                                        <span class="value status-consulting">
+                                            <i class="fas fa-circle"></i> Consulting
+                                        </span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="label">Room:</span>
+                                        <span class="value">Room 102</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="label">Queue:</span>
+                                        <span class="value">8 patients</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="label">Current:</span>
+                                        <span class="value">Grace Muthoni (8 min)</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="label">Est. Finish:</span>
+                                        <span class="value">3:30 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Doctor 3 -->
+                            <div class="doctor-card on-break">
+                                <div class="doctor-header">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                        alt="Doctor" class="doctor-avatar">
+                                    <div class="doctor-info">
+                                        <h3>Dr. Peter Mutua</h3>
+                                        <span class="specialty">Orthopedic</span>
+                                    </div>
+                                    <span class="status-indicator away"></span>
+                                </div>
+                                <div class="doctor-details">
+                                    <div class="detail-row">
+                                        <span class="label">Status:</span>
+                                        <span class="value status-break">
+                                            <i class="fas fa-pause-circle"></i> On Break
+                                        </span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="label">Room:</span>
+                                        <span class="value">Room 103</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="label">Queue:</span>
+                                        <span class="value">5 patients</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="label">Resume:</span>
+                                        <span class="value">3:00 PM</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="label">Break Time:</span>
+                                        <span class="value">10 min remaining</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Live Queue Overview -->
+                <section class="dashboard-card live-queue">
+                    <div class="card-header">
+                        <h2><i class="fas fa-list-ol"></i> Live Queue Overview</h2>
+                        <div class="header-controls">
+                            <select class="queue-filter" id="doctorQueueFilter">
+                                <option value="all">All Doctors</option>
+                                <option value="dr-ochieng">Dr. James Ochieng</option>
+                                <option value="dr-kamau">Dr. Mary Kamau</option>
+                                <option value="dr-mutua">Dr. Peter Mutua</option>
+                            </select>
+                            <button class="btn-view-mode" id="viewModeBtn">
+                                <i class="fas fa-th"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- Status Color Legend -->
+                        <div class="color-legend">
+                            <span class="legend-item">
+                                <span class="color-box checked-in"></span> Checked-in
+                            </span>
+                            <span class="legend-item">
+                                <span class="color-box delayed"></span> Delayed
+                            </span>
+                            <span class="legend-item">
+                                <span class="color-box overdue"></span> Overdue
+                            </span>
+                            <span class="legend-item">
+                                <span class="color-box being-seen"></span> Being Seen
+                            </span>
+                            <span class="legend-item">
+                                <span class="color-box complete"></span> Complete
+                            </span>
+                        </div>
+
+                        <!-- Queue List -->
+                        <div class="queue-list" id="queueList">
+                            <!-- Patient 1 - Being Seen -->
+                            <div class="patient-queue-card being-seen" draggable="true">
+                                <div class="queue-position">1</div>
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Patient" class="patient-avatar">
+                                <div class="patient-info">
+                                    <h4>John Kimani</h4>
+                                    <span class="appointment-type">Consultation</span>
+                                </div>
+                                <div class="queue-details">
+                                    <div class="detail">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Check-in: 2:30 PM</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-hourglass-half"></i>
+                                        <span class="wait-time">Wait: 15 min</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-user-doctor"></i>
+                                        <span>Dr. James Ochieng</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-door-open"></i>
+                                        <span>Room 101</span>
+                                    </div>
+                                </div>
+                                <div class="status-badge being-seen">
+                                    <i class="fas fa-user-doctor"></i> Being Seen
+                                </div>
+                                <div class="queue-actions">
+                                    <button class="action-btn" title="Quick Actions">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Patient 2 - Waiting -->
+                            <div class="patient-queue-card checked-in" draggable="true">
+                                <div class="queue-position">2</div>
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Patient" class="patient-avatar">
+                                <div class="patient-info">
+                                    <h4>Grace Muthoni</h4>
+                                    <span class="appointment-type">Follow-up</span>
+                                </div>
+                                <div class="queue-details">
+                                    <div class="detail">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Check-in: 2:15 PM</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-hourglass-half"></i>
+                                        <span class="wait-time">Wait: 8 min</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-user-doctor"></i>
+                                        <span>Dr. Mary Kamau</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-door-open"></i>
+                                        <span>Room 102</span>
+                                    </div>
+                                </div>
+                                <div class="status-badge checked-in">
+                                    <i class="fas fa-check"></i> Checked-in
+                                </div>
+                                <div class="queue-actions">
+                                    <button class="action-btn" title="Quick Actions">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Patient 3 - Delayed -->
+                            <div class="patient-queue-card delayed" draggable="true">
+                                <div class="queue-position">3</div>
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Patient" class="patient-avatar">
+                                <div class="patient-info">
+                                    <h4>Peter Wachira</h4>
+                                    <span class="appointment-type">Consultation</span>
+                                </div>
+                                <div class="queue-details">
+                                    <div class="detail">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Check-in: 2:00 PM</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-hourglass-half"></i>
+                                        <span class="wait-time warning">Wait: 45 min</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-user-doctor"></i>
+                                        <span>Dr. James Ochieng</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-door-open"></i>
+                                        <span>Waiting Area</span>
+                                    </div>
+                                </div>
+                                <div class="status-badge delayed">
+                                    <i class="fas fa-exclamation-triangle"></i> Delayed
+                                </div>
+                                <div class="queue-actions">
+                                    <button class="action-btn" title="Quick Actions">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Patient 4 - Overdue -->
+                            <div class="patient-queue-card overdue" draggable="true">
+                                <div class="queue-position">4</div>
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Patient" class="patient-avatar">
+                                <div class="patient-info">
+                                    <h4>Alice Wanjiku</h4>
+                                    <span class="appointment-type">Check-up</span>
+                                </div>
+                                <div class="queue-details">
+                                    <div class="detail">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Check-in: 1:30 PM</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-hourglass-half"></i>
+                                        <span class="wait-time danger">Wait: 75 min</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-user-doctor"></i>
+                                        <span>Dr. Mary Kamau</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-door-open"></i>
+                                        <span>Waiting Area</span>
+                                    </div>
+                                </div>
+                                <div class="status-badge overdue">
+                                    <i class="fas fa-exclamation-circle"></i> Overdue
+                                </div>
+                                <div class="queue-actions">
+                                    <button class="action-btn" title="Quick Actions">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Patient 5 - Waiting -->
+                            <div class="patient-queue-card checked-in" draggable="true">
+                                <div class="queue-position">5</div>
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Patient" class="patient-avatar">
+                                <div class="patient-info">
+                                    <h4>David Maina</h4>
+                                    <span class="appointment-type">Lab Results</span>
+                                </div>
+                                <div class="queue-details">
+                                    <div class="detail">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Check-in: 2:45 PM</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-hourglass-half"></i>
+                                        <span class="wait-time">Wait: 12 min</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-user-doctor"></i>
+                                        <span>Dr. Peter Mutua</span>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-door-open"></i>
+                                        <span>Waiting Area</span>
+                                    </div>
+                                </div>
+                                <div class="status-badge checked-in">
+                                    <i class="fas fa-check"></i> Checked-in
+                                </div>
+                                <div class="queue-actions">
+                                    <button class="action-btn" title="Quick Actions">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Queue Actions & Controls -->
+                <section class="dashboard-card queue-controls">
+                    <div class="card-header">
+                        <h2><i class="fas fa-sliders-h"></i> Queue Actions & Controls</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="control-buttons">
+                            <button class="control-btn" id="reorderQueueBtn">
+                                <i class="fas fa-arrows-alt-v"></i>
+                                <span>Reorder Queue</span>
+                            </button>
+                            <button class="control-btn" id="markStatusBtn">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Mark Status</span>
+                            </button>
+                            <button class="control-btn" id="reassignDoctorBtn">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span>Reassign Doctor</span>
+                            </button>
+                            <button class="control-btn" id="priorityOverrideBtn">
+                                <i class="fas fa-star"></i>
+                                <span>Priority Override</span>
+                            </button>
+                            <button class="control-btn" id="mergeQueuesBtn">
+                                <i class="fas fa-code-branch"></i>
+                                <span>Merge/Split Queues</span>
+                            </button>
+                            <button class="control-btn" id="bulkActionsBtn">
+                                <i class="fas fa-tasks"></i>
+                                <span>Bulk Actions</span>
+                            </button>
+                        </div>
+
+                        <!-- Quick Actions Panel -->
+                        <div class="quick-actions-panel">
+                            <h3>Quick Actions</h3>
+                            <div class="quick-action-list">
+                                <button class="quick-action">
+                                    <i class="fas fa-bell"></i> Send "You're Next"
+                                </button>
+                                <button class="quick-action">
+                                    <i class="fas fa-user-doctor"></i> Move to Doctor
+                                </button>
+                                <button class="quick-action">
+                                    <i class="fas fa-check"></i> Mark Complete
+                                </button>
+                                <button class="quick-action">
+                                    <i class="fas fa-print"></i> Print Queue List
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Dynamic Wait Time Tracking -->
+                <section class="dashboard-card wait-time-tracking">
+                    <div class="card-header">
+                        <h2><i class="fas fa-stopwatch"></i> Dynamic Wait Time Tracking</h2>
+                        <span class="threshold-info">Alert threshold: 30 min</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="timer-grid">
+                            <!-- Timer Card 1 -->
+                            <div class="timer-card normal">
+                                <div class="timer-patient">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                        alt="Patient" class="timer-avatar">
+                                    <span class="timer-name">John Kimani</span>
+                                </div>
+                                <div class="timer-display">
+                                    <span class="timer-value">00:15:32</span>
+                                    <span class="timer-label">In Consultation</span>
+                                </div>
+                                <div class="timer-controls">
+                                    <button class="timer-btn pause" title="Pause">
+                                        <i class="fas fa-pause"></i>
+                                    </button>
+                                    <button class="timer-btn reset" title="Reset">
+                                        <i class="fas fa-redo"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Timer Card 2 -->
+                            <div class="timer-card warning">
+                                <div class="timer-patient">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                        alt="Patient" class="timer-avatar">
+                                    <span class="timer-name">Peter Wachira</span>
+                                </div>
+                                <div class="timer-display">
+                                    <span class="timer-value">00:45:18</span>
+                                    <span class="timer-label">Waiting</span>
+                                </div>
+                                <div class="timer-controls">
+                                    <button class="timer-btn notify" title="Notify">
+                                        <i class="fas fa-bell"></i>
+                                    </button>
+                                    <button class="timer-btn escalate" title="Escalate">
+                                        <i class="fas fa-exclamation"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Timer Card 3 -->
+                            <div class="timer-card danger">
+                                <div class="timer-patient">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                        alt="Patient" class="timer-avatar">
+                                    <span class="timer-name">Alice Wanjiku</span>
+                                </div>
+                                <div class="timer-display">
+                                    <span class="timer-value">01:15:42</span>
+                                    <span class="timer-label">Excessive Wait</span>
+                                </div>
+                                <div class="timer-controls">
+                                    <button class="timer-btn priority" title="Priority">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                    <button class="timer-btn reassign" title="Reassign">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Wait Time Analytics -->
+                        <div class="wait-analytics">
+                            <h3>Wait Time Analytics</h3>
+                            <div class="analytics-cards">
+                                <div class="analytics-card">
+                                    <span class="analytics-label">Average Wait</span>
+                                    <span class="analytics-value">25 min</span>
+                                </div>
+                                <div class="analytics-card">
+                                    <span class="analytics-label">Longest Wait</span>
+                                    <span class="analytics-value">75 min</span>
+                                </div>
+                                <div class="analytics-card">
+                                    <span class="analytics-label">Target</span>
+                                    <span class="analytics-value">&lt; 20 min</span>
+                                </div>
+                                <div class="analytics-card">
+                                    <span class="analytics-label">Bottleneck</span>
+                                    <span class="analytics-value">Lab Results</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Patient Notifications Interface -->
+                <section class="dashboard-card patient-notifications">
+                    <div class="card-header">
+                        <h2><i class="fas fa-bell"></i> Patient Notifications</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="notification-templates">
+                            <h3>Quick Messages</h3>
+                            <div class="template-grid">
+                                <button class="template-btn" data-message="you-are-next">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>You're Next</span>
+                                </button>
+                                <button class="template-btn" data-message="doctor-delayed">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Doctor Delayed</span>
+                                </button>
+                                <button class="template-btn" data-message="please-wait">
+                                    <i class="fas fa-hourglass-half"></i>
+                                    <span>Please Wait</span>
+                                </button>
+                                <button class="template-btn" data-message="ready-for-you">
+                                    <i class="fas fa-user-check"></i>
+                                    <span>Ready for You</span>
+                                </button>
+                                <button class="template-btn" data-message="room-change">
+                                    <i class="fas fa-door-open"></i>
+                                    <span>Room Change</span>
+                                </button>
+                                <button class="template-btn" data-message="custom">
+                                    <i class="fas fa-edit"></i>
+                                    <span>Custom Message</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Custom Message Composer -->
+                        <div class="custom-message-section">
+                            <h3>Send Custom Notification</h3>
+                            <div class="message-form">
+                                <select class="form-select" id="patientSelect">
+                                    <option value="">Select Patient...</option>
+                                    <option value="john-kimani">John Kimani</option>
+                                    <option value="grace-muthoni">Grace Muthoni</option>
+                                    <option value="peter-wachira">Peter Wachira</option>
+                                </select>
+                                <textarea class="form-textarea" rows="3" placeholder="Type your message..."></textarea>
+                                <div class="send-options">
+                                    <label>
+                                        <input type="checkbox" checked> In-App
+                                    </label>
+                                    <label>
+                                        <input type="checkbox"> SMS
+                                    </label>
+                                    <label>
+                                        <input type="checkbox"> Display Screen
+                                    </label>
+                                </div>
+                                <button class="btn-send">
+                                    <i class="fas fa-paper-plane"></i> Send Notification
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Queue Analytics -->
+                <section class="dashboard-card queue-analytics">
+                    <div class="card-header">
+                        <h2><i class="fas fa-chart-line"></i> Queue Analytics</h2>
+                        <button class="btn-export" id="exportAnalyticsBtn">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <!-- Performance KPIs -->
+                        <div class="kpi-grid">
+                            <div class="kpi-card">
+                                <i class="fas fa-users"></i>
+                                <div class="kpi-content">
+                                    <span class="kpi-value">18</span>
+                                    <span class="kpi-label">Current Queue</span>
+                                    <span class="kpi-trend up">
+                                        <i class="fas fa-arrow-up"></i> 12%
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="kpi-card">
+                                <i class="fas fa-clock"></i>
+                                <div class="kpi-content">
+                                    <span class="kpi-value">25 min</span>
+                                    <span class="kpi-label">Avg Wait Time</span>
+                                    <span class="kpi-trend down">
+                                        <i class="fas fa-arrow-down"></i> 5 min
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="kpi-card">
+                                <i class="fas fa-percentage"></i>
+                                <div class="kpi-content">
+                                    <span class="kpi-value">85%</span>
+                                    <span class="kpi-label">Flow Efficiency</span>
+                                    <span class="kpi-trend up">
+                                        <i class="fas fa-arrow-up"></i> 3%
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="kpi-card">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <div class="kpi-content">
+                                    <span class="kpi-value">3.2</span>
+                                    <span class="kpi-label">Patients/Hour</span>
+                                    <span class="kpi-trend neutral">
+                                        <i class="fas fa-minus"></i> Same
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Queue Volume Chart -->
+                        <div class="volume-chart">
+                            <h3>Queue Volume by Hour</h3>
+                            <div class="chart-container">
+                                <!-- Chart placeholder - would be populated by JavaScript -->
+                                <canvas id="queueVolumeChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Doctor Comparison -->
+                        <div class="doctor-comparison">
+                            <h3>Doctor Performance Comparison</h3>
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>Doctor</th>
+                                        <th>Patients Seen</th>
+                                        <th>Avg Wait</th>
+                                        <th>Avg Consultation</th>
+                                        <th>Efficiency</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Dr. James Ochieng</td>
+                                        <td>12</td>
+                                        <td>22 min</td>
+                                        <td>18 min</td>
+                                        <td><span class="efficiency high">92%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dr. Mary Kamau</td>
+                                        <td>15</td>
+                                        <td>28 min</td>
+                                        <td>15 min</td>
+                                        <td><span class="efficiency medium">85%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dr. Peter Mutua</td>
+                                        <td>9</td>
+                                        <td>35 min</td>
+                                        <td>25 min</td>
+                                        <td><span class="efficiency low">72%</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Multi-Doctor Queue Segmentation -->
+                <section class="dashboard-card multi-doctor-queues">
+                    <div class="card-header">
+                        <h2><i class="fas fa-columns"></i> Multi-Doctor Queues</h2>
+                        <button class="btn-toggle-view" id="toggleQueueViewBtn">
+                            <i class="fas fa-compress-alt"></i> Unified View
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="multi-queue-container">
+                            <!-- Dr. Ochieng Queue -->
+                            <div class="doctor-queue-column">
+                                <div class="queue-header">
+                                    <h3>Dr. James Ochieng</h3>
+                                    <span class="queue-count">5 patients</span>
+                                </div>
+                                <div class="queue-items" data-doctor="dr-ochieng">
+                                    <div class="mini-patient-card" draggable="true">
+                                        <span class="position">1</span>
+                                        <span class="name">John Kimani</span>
+                                        <span class="wait">15 min</span>
+                                    </div>
+                                    <div class="mini-patient-card" draggable="true">
+                                        <span class="position">2</span>
+                                        <span class="name">Peter Wachira</span>
+                                        <span class="wait">45 min</span>
+                                    </div>
+                                    <div class="mini-patient-card" draggable="true">
+                                        <span class="position">3</span>
+                                        <span class="name">Samuel Njoroge</span>
+                                        <span class="wait">10 min</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dr. Kamau Queue -->
+                            <div class="doctor-queue-column">
+                                <div class="queue-header">
+                                    <h3>Dr. Mary Kamau</h3>
+                                    <span class="queue-count">8 patients</span>
+                                </div>
+                                <div class="queue-items" data-doctor="dr-kamau">
+                                    <div class="mini-patient-card" draggable="true">
+                                        <span class="position">1</span>
+                                        <span class="name">Grace Muthoni</span>
+                                        <span class="wait">8 min</span>
+                                    </div>
+                                    <div class="mini-patient-card" draggable="true">
+                                        <span class="position">2</span>
+                                        <span class="name">Alice Wanjiku</span>
+                                        <span class="wait">75 min</span>
+                                    </div>
+                                    <div class="mini-patient-card" draggable="true">
+                                        <span class="position">3</span>
+                                        <span class="name">Faith Wambui</span>
+                                        <span class="wait">20 min</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dr. Mutua Queue -->
+                            <div class="doctor-queue-column">
+                                <div class="queue-header">
+                                    <h3>Dr. Peter Mutua</h3>
+                                    <span class="queue-count">5 patients</span>
+                                </div>
+                                <div class="queue-items" data-doctor="dr-mutua">
+                                    <div class="mini-patient-card" draggable="true">
+                                        <span class="position">1</span>
+                                        <span class="name">David Maina</span>
+                                        <span class="wait">12 min</span>
+                                    </div>
+                                    <div class="mini-patient-card" draggable="true">
+                                        <span class="position">2</span>
+                                        <span class="name">Johnson Kiprop</span>
+                                        <span class="wait">5 min</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Audit & Logging -->
+                <section class="dashboard-card audit-logging">
+                    <div class="card-header">
+                        <h2><i class="fas fa-file-alt"></i> Audit & Logging</h2>
+                        <div class="header-controls">
+                            <input type="date" class="date-input" id="auditStartDate">
+                            <span>to</span>
+                            <input type="date" class="date-input" id="auditEndDate">
+                            <button class="btn-filter" id="filterAuditBtn">
+                                <i class="fas fa-filter"></i> Filter
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="audit-table-wrapper">
+                            <table class="audit-table">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>Action</th>
+                                        <th>Patient</th>
+                                        <th>User</th>
+                                        <th>Details</th>
+                                        <th>Reason</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>29-09-2025 15:45:00</td>
+                                        <td>Queue Reorder</td>
+                                        <td>Alice Wanjiku</td>
+                                        <td>Sarah Wanjiru</td>
+                                        <td>Moved from position 6 to 4</td>
+                                        <td>Excessive wait time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>29-09-2025 15:30:00</td>
+                                        <td>Status Update</td>
+                                        <td>John Kimani</td>
+                                        <td>System</td>
+                                        <td>Changed to "Being Seen"</td>
+                                        <td>Auto-update</td>
+                                    </tr>
+                                    <tr>
+                                        <td>29-09-2025 15:15:00</td>
+                                        <td>Reassign Doctor</td>
+                                        <td>Peter Wachira</td>
+                                        <td>Sarah Wanjiru</td>
+                                        <td>From Dr. Mutua to Dr. Ochieng</td>
+                                        <td>Doctor on break</td>
+                                    </tr>
+                                    <tr>
+                                        <td>29-09-2025 14:45:00</td>
+                                        <td>Check-in</td>
+                                        <td>David Maina</td>
+                                        <td>Sarah Wanjiru</td>
+                                        <td>Added to queue</td>
+                                        <td>Scheduled appointment</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Export Options -->
+                        <div class="export-options">
+                            <button class="btn-export-pdf">
+                                <i class="fas fa-file-pdf"></i> Export PDF
+                            </button>
+                            <button class="btn-export-csv">
+                                <i class="fas fa-file-csv"></i> Export CSV
+                            </button>
+                            <button class="btn-generate-report">
+                                <i class="fas fa-chart-bar"></i> Generate Report
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- MODALS SECTION -->
+
+    <!-- Reorder Queue Modal -->
+    <div class="modal" id="reorderQueueModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-arrows-alt-v"></i> Reorder Queue</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="reorder-instructions">
+                    <p>Drag and drop patients to reorder the queue. Provide a reason for priority changes.</p>
+                </div>
+                <div class="reorder-list" id="reorderList">
+                    <!-- Draggable patient items would be populated here -->
+                    <div class="reorder-item" draggable="true">
+                        <span class="drag-handle"><i class="fas fa-grip-vertical"></i></span>
+                        <span class="patient-name">1. John Kimani</span>
+                        <span class="wait-time">15 min</span>
+                    </div>
+                    <div class="reorder-item" draggable="true">
+                        <span class="drag-handle"><i class="fas fa-grip-vertical"></i></span>
+                        <span class="patient-name">2. Grace Muthoni</span>
+                        <span class="wait-time">8 min</span>
+                    </div>
+                    <div class="reorder-item" draggable="true">
+                        <span class="drag-handle"><i class="fas fa-grip-vertical"></i></span>
+                        <span class="patient-name">3. Peter Wachira</span>
+                        <span class="wait-time">45 min</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Priority Reason</label>
+                    <select class="form-select">
+                        <option value="">Select reason...</option>
+                        <option value="emergency">Emergency</option>
+                        <option value="doctor-request">Doctor Request</option>
+                        <option value="excessive-wait">Excessive Wait</option>
+                        <option value="urgent-walkin">Urgent Walk-in</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Additional Notes</label>
+                    <textarea class="form-textarea" rows="2" placeholder="Optional notes..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-primary">
+                        <i class="fas fa-save"></i> Confirm Changes
+                    </button>
+                    <button class="btn-secondary" onclick="closeModal('reorderQueueModal')">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark Status Modal -->
+    <div class="modal" id="markStatusModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-check-circle"></i> Update Patient Status</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="markStatusForm">
+                    <div class="form-group">
+                        <label>Select Patient</label>
+                        <select class="form-select" required>
+                            <option value="">Choose patient...</option>
+                            <option value="john-kimani">John Kimani</option>
+                            <option value="grace-muthoni">Grace Muthoni</option>
+                            <option value="peter-wachira">Peter Wachira</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>New Status</label>
+                        <div class="status-options">
+                            <label class="status-option">
+                                <input type="radio" name="status" value="seen">
+                                <span><i class="fas fa-check"></i> Seen</span>
+                            </label>
+                            <label class="status-option">
+                                <input type="radio" name="status" value="no-show">
+                                <span><i class="fas fa-times"></i> No Show</span>
+                            </label>
+                            <label class="status-option">
+                                <input type="radio" name="status" value="deferred">
+                                <span><i class="fas fa-redo"></i> Deferred</span>
+                            </label>
+                            <label class="status-option">
+                                <input type="radio" name="status" value="complete">
+                                <span><i class="fas fa-check-double"></i> Complete</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Follow-up Action</label>
+                        <select class="form-select">
+                            <option value="">None</option>
+                            <option value="reschedule">Reschedule Appointment</option>
+                            <option value="call">Call Patient</option>
+                            <option value="message">Send Message</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes</label>
+                        <textarea class="form-textarea" rows="2" placeholder="Add any notes..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-save"></i> Update Status
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="closeModal('markStatusModal')">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reassign Doctor Modal -->
+    <div class="modal" id="reassignDoctorModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-exchange-alt"></i> Reassign Doctor</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="reassignDoctorForm">
+                    <div class="form-group">
+                        <label>Patient</label>
+                        <input type="text" class="form-input" value="Peter Wachira" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Current Doctor</label>
+                        <input type="text" class="form-input" value="Dr. James Ochieng" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Reassign To</label>
+                        <div class="doctor-selection">
+                            <div class="doctor-option">
+                                <input type="radio" name="newDoctor" id="dr-kamau" value="dr-kamau">
+                                <label for="dr-kamau">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                        alt="Doctor">
+                                    <div class="doctor-details">
+                                        <span class="doctor-name">Dr. Mary Kamau</span>
+                                        <span class="doctor-load">Queue: 8 patients | Est. wait: 35 min</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="doctor-option">
+                                <input type="radio" name="newDoctor" id="dr-mutua" value="dr-mutua">
+                                <label for="dr-mutua">
+                                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-30.png"
+                                        alt="Doctor">
+                                    <div class="doctor-details">
+                                        <span class="doctor-name">Dr. Peter Mutua</span>
+                                        <span class="doctor-load">Queue: 5 patients | Est. wait: 20 min</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Reason for Reassignment</label>
+                        <textarea class="form-textarea" rows="2" placeholder="Provide reason..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" checked> Notify patient of change
+                        </label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-check"></i> Confirm Reassignment
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="closeModal('reassignDoctorModal')">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Merge/Split Queues Modal -->
+    <div class="modal" id="mergeSplitModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-code-branch"></i> Merge/Split Queues</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="merge-split-tabs">
+                    <button class="tab-btn active" data-tab="merge">Merge Queues</button>
+                    <button class="tab-btn" data-tab="split">Split Queue</button>
+                </div>
+
+                <!-- Merge Tab Content -->
+                <div class="tab-content active" id="mergeTab">
+                    <h4>Merge Queue Options</h4>
+                    <div class="form-group">
+                        <label>Select Queues to Merge</label>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox"> Dr. James Ochieng (5 patients)
+                            </label>
+                            <label>
+                                <input type="checkbox"> Dr. Mary Kamau (8 patients)
+                            </label>
+                            <label>
+                                <input type="checkbox"> Dr. Peter Mutua (5 patients)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Merge Into</label>
+                        <select class="form-select">
+                            <option value="">Select target doctor...</option>
+                            <option value="dr-ochieng">Dr. James Ochieng</option>
+                            <option value="dr-kamau">Dr. Mary Kamau</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Reason</label>
+                        <select class="form-select">
+                            <option value="">Select reason...</option>
+                            <option value="absence">Doctor Absence</option>
+                            <option value="low-volume">Low Volume</option>
+                            <option value="efficiency">Efficiency Optimization</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Split Tab Content -->
+                <div class="tab-content" id="splitTab">
+                    <h4>Split Queue Options</h4>
+                    <div class="form-group">
+                        <label>Queue to Split</label>
+                        <select class="form-select">
+                            <option value="">Select queue...</option>
+                            <option value="dr-kamau">Dr. Mary Kamau (8 patients)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Split Criteria</label>
+                        <select class="form-select">
+                            <option value="">Select criteria...</option>
+                            <option value="specialty">By Specialty</option>
+                            <option value="urgency">By Urgency</option>
+                            <option value="appointment-type">By Appointment Type</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn-primary">
+                        <i class="fas fa-check"></i> Apply Changes
+                    </button>
+                    <button class="btn-secondary" onclick="closeModal('mergeSplitModal')">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wait Time Alert Modal -->
+    <div class="modal" id="waitAlertModal">
+        <div class="modal-content">
+            <div class="modal-header alert-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> Excessive Wait Time Alert</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="alert-info">
+                    <div class="alert-patient">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                            alt="Patient" class="alert-avatar">
+                        <div class="alert-details">
+                            <h4>Alice Wanjiku</h4>
+                            <span class="wait-info">Waiting for: <strong>75 minutes</strong></span>
+                        </div>
+                    </div>
+                    <div class="suggested-actions">
+                        <h4>Suggested Actions:</h4>
+                        <div class="action-buttons">
+                            <button class="action-btn notify">
+                                <i class="fas fa-bell"></i> Notify Patient
+                            </button>
+                            <button class="action-btn check-doctor">
+                                <i class="fas fa-user-doctor"></i> Check Doctor
+                            </button>
+                            <button class="action-btn reassign">
+                                <i class="fas fa-exchange-alt"></i> Reassign
+                            </button>
+                            <button class="action-btn priority">
+                                <i class="fas fa-star"></i> Set Priority
+                            </button>
+                            <button class="action-btn escalate">
+                                <i class="fas fa-level-up-alt"></i> Escalate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-primary" onclick="closeModal('waitAlertModal')">
+                        <i class="fas fa-check"></i> Acknowledge
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Popup -->
+    <div class="profile-popup" id="profilePopup">
+        <div class="profile-popup-content">
+            <div class="profile-header">
+                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                    alt="Profile" class="popup-profile-img">
+                <div class="profile-info">
+                    <h3>Sarah Wanjiru</h3>
+                    <p>Receptionist</p>
+                </div>
+            </div>
+            <div class="profile-menu">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\My Profile\my_profile.html"
+                    class="profile-menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Receptionist and Clinic Assistant\Landing Page\landing_page.html"
+                    class="profile-menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="fixed-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <!-- Corporate Website Link -->
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer" class="corporate-link">
+                    Visit Citrus Labs
+                </a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Copyright -->
+                <p class="copyright">© 2025 Citrus Labs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="queue_and_flow.js"></script>
+</body>
+
+</html>

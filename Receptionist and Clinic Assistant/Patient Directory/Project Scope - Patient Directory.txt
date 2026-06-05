@@ -1,0 +1,59 @@
+#### 1. **Patient Directory**
+
+
+
+
+Here is the dynamic MVP feature breakdown for the "Patient Directory" page within the Receptionists & Clinic Assistants' Curis by Citrus web app account:
+________________________________________
+Page Title: Patient Directory
+________________________________________
+Core Objective:
+Enable receptionists and clinic assistants to efficiently identify, reference, and manage basic patient data—without exposing any sensitive medical or clinical records.
+________________________________________
+Dynamic MVP Features & Functionalities:
+
+a.	Patient List View (Searchable & Paginated)
+•	Display a real-time list of all registered patients linked to the clinic.
+•	Search bar with smart filters: name, contact number, visit frequency, last appointment date.
+•	Pagination and sorting by Name | Last Visit | Registration Date.
+b.	Patient Profile Preview (Read-Only View)
+On selecting a patient from the list:
+•	Name & Gender
+•	Mobile Number & Email (if provided)
+•	Date of Birth (optional)
+•	Registration Date
+•	Profile photo/avatar (if available)
+•	Appointment history: past and upcoming visits (doctor, date, time)
+c.	Appointment History Timeline
+•	Dynamic timeline or tabbed list showing all past and scheduled appointments:
+o	Doctor’s name (clickable to view availability)
+o	Appointment date and time
+o	Status: Scheduled / Completed / Cancelled / No-show
+o	Booked via: Reception / Patient App
+d.	Quick Actions Panel
+•	Book New Appointment (auto-fills patient info into scheduling module)
+•	Resend Appointment Reminder (SMS/Email/WhatsApp)
+•	Update Contact Info (editable form for phone/email with audit logs)
+e.	Audit-Protected Access
+•	Every user action (viewing, editing contact info, etc.) is logged and timestamped for accountability.
+•	No ability to export, print, or download patient profiles—read-only within platform.
+________________________________________
+Strict Access Controls
+
+Receptionists & Assistants cannot:
+•	View or edit diagnosis, clinical notes, prescriptions, lab results, or attachments.
+•	Access mental health history, medical forms, or any records uploaded by doctors.
+________________________________________
+Use Cases
+
+•	Confirming identity of walk-in patients.
+•	Verifying contact details before sending reminders or receipts.
+•	Referencing last visit date when scheduling a follow-up.
+________________________________________
+
+
+
+
+
+
+

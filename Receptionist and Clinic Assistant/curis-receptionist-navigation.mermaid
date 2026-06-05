@@ -1,0 +1,147 @@
+graph TB
+    %% Main Login
+    Login[Login Page] --> RecepDash[Receptionist Dashboard]
+    
+    %% Dashboard and its features
+    RecepDash --> QuickAccess[Quick Access Panel]
+    RecepDash --> TaskSummary[Daily Task Summary]
+    RecepDash --> Notifications[Real-Time Notifications]
+    RecepDash --> DocAvail[Doctor Availability Status]
+    RecepDash --> PerfMetrics[Performance Metrics]
+    RecepDash --> Shortcuts[System Shortcuts Panel]
+    RecepDash --> AlertsFlags[Alerts & Flags Section]
+    
+    %% Quick Access Features
+    QuickAccess --> |Click| QAPopup[Quick Access Actions<br/>• Check-in Patient<br/>• Reschedule<br/>• Cancel<br/>• Assign to Doctor]
+    QAPopup --> |Check-in| CheckInPage
+    QAPopup --> |Reschedule| RescheduleModal
+    QAPopup --> |Cancel| CancelModal
+    QAPopup --> |Assign| AssignDocModal
+    
+    %% Task Summary Features
+    TaskSummary --> |Click| TaskDetails[Task Details View<br/>• Patient check-ins<br/>• Pending confirmations<br/>• Walk-in registrations<br/>• Unpaid invoice follow-ups]
+    
+    %% Notifications Features
+    Notifications --> |Click| NotifPopup[Notification Center<br/>• New bookings<br/>• Cancellations<br/>• Patient arrivals<br/>• Payment alerts<br/>• Custom settings]
+    
+    %% Doctor Availability
+    DocAvail --> |Hover/Click| DocQueue[Doctor Queue View<br/>• Current status<br/>• Patient queue<br/>• Consultation room]
+    
+    %% Performance Metrics
+    PerfMetrics --> |Click| MetricsDetail[Metrics Dashboard<br/>• Patients checked today<br/>• Total appointments<br/>• Completed vs pending<br/>• Payment collection]
+    
+    %% System Shortcuts
+    Shortcuts --> BookApptShort[Book Appointment]
+    Shortcuts --> CheckInShort[Check-in Patient]
+    Shortcuts --> ViewQueueShort[View Queue]
+    Shortcuts --> CreateInvShort[Create Invoice]
+    Shortcuts --> PayRemindShort[Send Payment Reminder]
+    
+    %% Main Navigation Menu
+    RecepDash --> MainNav{Main Navigation Menu}
+    MainNav --> AppointmentPage[Appointments Page]
+    MainNav --> CheckInPage[Check-In Page]
+    MainNav --> InboxPage[Inbox & Alerts Page]
+    MainNav --> QueuePage[Queue & Flow Page]
+    MainNav --> PatientDir[Patient Directory Page]
+    MainNav --> BillingPage[Billings & Payments Page]
+    
+    %% Appointments Page Features
+    AppointmentPage --> ApptList[Appointment Listings]
+    AppointmentPage --> BookAppt[Book Appointment]
+    AppointmentPage --> ManageAppt[Manage Appointments]
+    AppointmentPage --> DocSchedule[Doctor Schedules]
+    AppointmentPage --> RemindersSystem[Reminders System]
+    
+    ApptList --> |Click| ApptFilter[Filter & Search<br/>• By patient name<br/>• By doctor<br/>• By date/time<br/>• By status]
+    
+    BookAppt --> |Click| BookingModal[Booking Form<br/>• Select patient<br/>• Choose doctor<br/>• Pick time slot<br/>• Add visit reason<br/>• Auto-suggest slots]
+    
+    ManageAppt --> |Click| ManageModal[Management Actions<br/>• Confirm appointment<br/>• Reschedule<br/>• Cancel<br/>• Send notifications]
+    
+    DocSchedule --> |Click| ScheduleView[Schedule View<br/>• Real-time availability<br/>• Conflict warnings<br/>• Off-duty slots]
+    
+    RemindersSystem --> |Click| ReminderConfig[Reminder Settings<br/>• 24hr reminder<br/>• 1hr reminder<br/>• Custom reminders<br/>• Retry logic]
+    
+    %% Check-In Page Features
+    CheckInPage --> NewPatReg[New Patient Registration]
+    CheckInPage --> UpdateProfile[Patient Profile Updates]
+    CheckInPage --> LiveCheckIn[Live Check-In]
+    CheckInPage --> DocAssign[Doctor Assignment]
+    CheckInPage --> WalkInConv[Walk-In Conversion]
+    
+    NewPatReg --> |Click| RegForm[Registration Form<br/>• Personal details<br/>• Contact info<br/>• ID verification<br/>• Photo upload<br/>• Duplicate check]
+    
+    UpdateProfile --> |Click| UpdateForm[Update Form<br/>• Contact info<br/>• Address<br/>• Insurance<br/>• Emergency contact<br/>• Audit logging]
+    
+    LiveCheckIn --> |Click| CheckInModal[Check-In Process<br/>• Search patient<br/>• Mark arrived<br/>• Queue assignment<br/>• Doctor notification<br/>• Walk-in option]
+    
+    DocAssign --> |Click| AssignModal[Assignment Engine<br/>• View availability<br/>• Smart suggestions<br/>• Manual override<br/>• Load balancing]
+    
+    %% Inbox & Alerts Page Features
+    InboxPage --> AlertsFeed[Real-Time Alerts]
+    InboxPage --> InternalMsg[Internal Messaging]
+    InboxPage --> PatNotif[Patient Notifications]
+    InboxPage --> AlertHistory[Alert History]
+    InboxPage --> SmartFilters[Smart Filters]
+    
+    AlertsFeed --> |Click| AlertsView[Alerts Dashboard<br/>• Appointment alerts<br/>• Emergency broadcasts<br/>• Arrival notifications<br/>• System alerts]
+    
+    InternalMsg --> |Click| ChatInterface[Chat System<br/>• Role-based threads<br/>• Direct messages<br/>• Smart replies<br/>• Read receipts]
+    
+    PatNotif --> |Click| NotifPanel[Notification Panel<br/>• SMS sending<br/>• WhatsApp<br/>• Email<br/>• Templates<br/>• Bulk messages]
+    
+    %% Queue & Flow Page Features
+    QueuePage --> LiveQueue[Live Queue Overview]
+    QueuePage --> WaitTracking[Wait Time Tracking]
+    QueuePage --> QueueActions[Queue Actions]
+    QueuePage --> DocStatus[Doctor Status Sync]
+    QueuePage --> QueueAnalytics[Queue Analytics]
+    
+    LiveQueue --> |Click| QueueView[Queue Display<br/>• Patient list<br/>• Status indicators<br/>• Color coding<br/>• Doctor assignment]
+    
+    WaitTracking --> |Click| TimerView[Timer Dashboard<br/>• Individual timers<br/>• Excessive wait alerts<br/>• Average wait time]
+    
+    QueueActions --> |Click| ActionPanel[Queue Control<br/>• Reorder patients<br/>• Mark status<br/>• Reassign doctor<br/>• Priority handling]
+    
+    %% Patient Directory Features
+    PatientDir --> PatList[Patient List View]
+    PatientDir --> PatProfile[Patient Profiles]
+    PatientDir --> ApptHistory[Appointment History]
+    PatientDir --> QuickActions[Quick Actions]
+    
+    PatList --> |Click| SearchFilter[Search & Filter<br/>• By name<br/>• By contact<br/>• By last visit<br/>• Pagination]
+    
+    PatProfile --> |Click| ProfileView[Profile Details<br/>• Basic info<br/>• Contact details<br/>• Registration date<br/>• Photo/avatar]
+    
+    ApptHistory --> |Click| HistoryTimeline[History View<br/>• Past visits<br/>• Upcoming appointments<br/>• Status tracking<br/>• Doctor info]
+    
+    %% Billings & Payments Features
+    BillingPage --> InvoiceMgmt[Invoice Management]
+    BillingPage --> MarkPaid[Mark As Paid]
+    BillingPage --> CurisFees[Curis Service Fees]
+    BillingPage --> ReceiptIssue[Receipt Issuance]
+    BillingPage --> Outstanding[Outstanding Payments]
+    BillingPage --> PaymentLogs[Payment & Audit Logs]
+    
+    InvoiceMgmt --> |Click| InvoicePanel[Invoice Panel<br/>• View all invoices<br/>• Create new<br/>• Filter & search<br/>• Export PDF]
+    
+    MarkPaid --> |Click| PaymentForm[Payment Form<br/>• Amount received<br/>• Payment method<br/>• Transaction ref<br/>• Partial payment]
+    
+    CurisFees --> |Click| CurisPanel[Platform Fees<br/>• Fee invoices<br/>• M-Pesa payment<br/>• STK push<br/>• Payment alerts]
+    
+    ReceiptIssue --> |Click| ReceiptModal[Receipt Generation<br/>• Auto-generate<br/>• Send via SMS/Email<br/>• Print PDF<br/>• Receipt history]
+    
+    Outstanding --> |Click| FollowUpPanel[Follow-Up Actions<br/>• Overdue list<br/>• Send reminders<br/>• Message templates<br/>• Reminder logs]
+    
+    PaymentLogs --> |Click| LogsView[Audit Trail<br/>• Payment history<br/>• User actions<br/>• Export reports<br/>• Filter options]
+    
+    %% Styling
+    classDef mainPage fill:#2E86AB,stroke:#023047,stroke-width:3px,color:#fff
+    classDef feature fill:#A23B72,stroke:#780116,stroke-width:2px,color:#fff
+    classDef popup fill:#F18F01,stroke:#C73E1D,stroke-width:2px,color:#fff
+    classDef action fill:#6A994E,stroke:#386641,stroke-width:2px,color:#fff
+    
+    class RecepDash,AppointmentPage,CheckInPage,InboxPage,QueuePage,PatientDir,BillingPage mainPage
+    class QuickAccess,TaskSummary,Notifications,DocAvail,PerfMetrics,Shortcuts,AlertsFlags,ApptList,BookAppt,ManageAppt,DocSchedule,RemindersSystem,NewPatReg,UpdateProfile,LiveCheckIn,DocAssign,WalkInConv,AlertsFeed,InternalMsg,PatNotif,AlertHistory,SmartFilters,LiveQueue,WaitTracking,QueueActions,DocStatus,QueueAnalytics,PatList,PatProfile,ApptHistory,QuickActions,InvoiceMgmt,MarkPaid,CurisFees,ReceiptIssue,Outstanding,PaymentLogs feature
+    class QAPopup,TaskDetails,NotifPopup,DocQueue,MetricsDetail,ApptFilter,BookingModal,ManageModal,ScheduleView,ReminderConfig,RegForm,UpdateForm,CheckInModal,AssignModal,AlertsView,ChatInterface,NotifPanel,QueueView,TimerView,ActionPanel,SearchFilter,ProfileView,HistoryTimeline,InvoicePanel,PaymentForm,CurisPanel,ReceiptModal,FollowUpPanel,LogsView popup

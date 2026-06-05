@@ -1,0 +1,193 @@
+stateDiagram-v2
+    [*] --> LoginPage: Patient accesses login page
+
+    state LoginPage {
+        [*] --> DefaultAuthMethod
+        DefaultAuthMethod --> EmailInput
+        
+        note right of DefaultAuthMethod
+            Default method: Email + Authentication Code
+            Toggle available to switch to Email + Password
+        end note
+        
+        state EmailInput {
+            [*] --> EnteringEmail
+            EnteringEmail --> EmailValidation
+        }
+        
+        state AuthMethodToggle {
+            CodeAuth --> PasswordAuth: Switch to Password
+            PasswordAuth --> CodeAuth: Switch to Auth Code
+        }
+        
+        EmailInput --> AuthMethodToggle: After email entered
+        AuthMethodToggle --> CodeAuth: Default option
+    }
+    
+    state CodeAuth {
+        [*] --> RequestCodeButton
+        
+        note right of CodeAuth
+            Email + Authentication Code method
+            "Send Code" button
+            Real-time email validation
+        end note
+        
+        RequestCodeButton --> FormValidation: Click "Send Code"
+    }
+    
+    state PasswordAuth {
+        [*] --> PasswordInput
+        
+        note right of PasswordAuth
+            Email + Password method
+            Password field with masking
+            "Login" button
+        end note
+        
+        PasswordInput --> PasswordValidation: Click "Login"
+    }
+    
+    state FormValidation {
+        [*] --> ValidatingEmail
+        ValidatingEmail --> EmailValid
+        ValidatingEmail --> EmailInvalid
+        
+        note right of ValidatingEmail
+            Verifies email format
+            Checks if account exists
+            Displays error if invalid
+        end note
+    }
+    
+    state PasswordValidation {
+        [*] --> CheckingCredentials
+        CheckingCredentials --> CredentialsValid
+        CheckingCredentials --> CredentialsInvalid
+        
+        note right of CheckingCredentials
+            Validates email and password combination
+            Shows error if invalid
+            Limits login attempts for security
+        end note
+    }
+    
+    FormValidation --> LoginPage: Invalid email
+    FormValidation --> SendVerification: Email valid
+    
+    PasswordValidation --> LoginPage: Invalid credentials
+    PasswordValidation --> SessionCreation: Valid credentials
+    
+    state SendVerification {
+        [*] --> GeneratingCode
+        GeneratingCode --> SendingNotifications
+        SendingNotifications --> NotificationsSent
+        SendingNotifications --> SendingFailed
+        
+        note right of GeneratingCode
+            Unique 6-digit code generated
+            10-minute expiry set
+            Code sent to both email and SMS
+        end note
+    }
+    
+    SendVerification --> VerificationScreen: Notifications sent
+    SendVerification --> LoginPage: Sending failed
+    
+    state VerificationScreen {
+        [*] --> SuccessMessage
+        SuccessMessage --> CodeEntryForm
+        
+        note right of SuccessMessage
+            Confirmation message with masked email/phone
+            Instructions to check both email and SMS
+        end note
+        
+        state CodeEntryForm {
+            [*] --> CodeInput
+            CodeInput --> VerifyButton
+            CodeInput --> ResendButton
+            
+            note right of CodeInput
+                Enter 6-digit verification code
+                "Verify" button
+                "Resend Code" link (after 60s)
+                Countdown timer showing code expiry
+            end note
+        }
+    }
+    
+    VerificationScreen --> TokenValidation: Clicks "Verify"
+    VerificationScreen --> SendVerification: Clicks "Resend Code"
+    
+    state TokenValidation {
+        [*] --> ValidatingToken
+        ValidatingToken --> TokenValid
+        ValidatingToken --> TokenInvalid
+        ValidatingToken --> TokenExpired
+        
+        note right of ValidatingToken
+            Validates code accuracy and expiry
+            Ensures code is single-use
+            Shows specific error messages
+        end note
+    }
+    
+    TokenValidation --> VerificationScreen: Invalid code
+    TokenValidation --> LoginPage: Expired code
+    TokenValidation --> SessionCreation: Valid code
+    
+    state SessionCreation {
+        [*] --> EstablishingSession
+        EstablishingSession --> SettingPermissions
+        SettingPermissions --> SessionEstablished
+        
+        note right of EstablishingSession
+            Patient session initialized
+            JWT or secure token created
+            Session timeout configured
+        end note
+    }
+    
+    SessionCreation --> PatientDashboard: Redirect to dashboard
+    
+    state PatientDashboard {
+        [*] --> LoadingDashboard
+        LoadingDashboard --> DashboardReady
+        
+        note right of DashboardReady
+            View appointments
+            Access medical records
+            Communicate with doctors
+            Manage prescriptions
+        end note
+    }
+    
+    PatientDashboard --> ActiveSession
+    
+    state ActiveSession {
+        [*] --> UserActive
+        UserActive --> UserIdle
+        UserIdle --> UserActive
+        UserActive --> LogoutRequested
+        
+        note right of UserActive
+            Monitors user activity
+            Session timeout warnings
+            Auto-logout after extended inactivity
+        end note
+    }
+    
+    ActiveSession --> SessionValidation
+    
+    state SessionValidation {
+        [*] --> CheckingToken
+        CheckingToken --> SessionValid
+        CheckingToken --> SessionInvalid
+        CheckingToken --> SessionTimeout
+    }
+    
+    SessionValidation --> ActiveSession: Valid session
+    SessionValidation --> LoginPage: Invalid or timed out
+    
+    ActiveSession --> [*]: Logout complete

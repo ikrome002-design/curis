@@ -1,0 +1,119 @@
+#### 1. **My Medical Cover**
+
+
+
+
+The "My Medical Cover" page in the Curis by Citrus patient web app is a dynamic MVP module designed to streamline insurance claim submissions, enable multi-user family-based processing, and ensure automated, accurate medical documentation. Below is a clear breakdown of its dynamic functionalities and operational flow:
+________________________________________
+Dynamic MVP Features of the "My Medical Cover" Page
+
+a.	Family-Based Claim Submission Engine
+•	Multi-User Invoice Generation
+o	Patients can generate insurance-ready invoices not just for themselves but also for each linked dependent.
+o	Each invoice clearly indicates the patient/dependent name, associated clinic, service details, and attending doctor.
+•	Switch User Context
+o	Users can dynamically switch between themselves and each dependent while preparing claims. The interface adapts to the selected user, updating medical history and billing data in real time.
+•	Claim Type Selection
+o	Choose between:
+	Outpatient
+	Inpatient
+	Specialist Consultation
+	Lab Tests/Diagnostics
+	Medication
+o	Based on the type, the form auto-adjusts to require the relevant insurance fields and document attachments.
+________________________________________
+b.	Integrated Insurance Provider Directory
+•	Selectable Insurance Carriers List
+o	Dropdown menu of supported insurance providers fetched dynamically from the Curis system's master list.
+o	Each provider profile includes:
+	Name
+	Claim submission email/contact
+	Service categories covered
+	Custom claim instructions or restrictions
+•	Auto-fill Capabilities
+o	Once a provider is selected, relevant claim submission guidelines are displayed.
+o	The platform auto-fills known patient policy details if previously saved.
+________________________________________
+c.	Auto-Attachment of Medical Records
+•	Smart Document Aggregator
+o	For each selected invoice, the platform automatically attaches supporting medical documentation, such as:
+	Consultation summary
+	Doctor notes
+	Lab results
+	Prescriptions
+	Clinic name & doctor credentials
+•	Document Review Preview
+o	Patients can preview all attached documents before claim submission.
+o	Option to add external files manually (e.g., referral forms or doctor letters).
+________________________________________
+d.	Claim Submission Tracking & Status
+•	Submission Dashboard
+o	Displays list of submitted claims with:
+	Patient name
+	Dependent (if applicable)
+	Insurance provider
+	Claim amount
+	Date of submission
+________________________________________
+e.	Invoice Validation for Insurance
+•	Verification Checks
+o	Only marked-as-paid invoices can be submitted for insurance.
+o	If a patient attempts to claim using an unpaid invoice, the system blocks submission and prompts for proof of payment.
+•	Insurance-Grade Invoice Format
+o	Downloadable and shareable PDF invoices with:
+	Official clinic header
+	Patient details
+	Service breakdown
+	Amount paid
+	Invoice number
+	Doctor signature (optional)
+________________________________________
+f.	Dependent Coverage Logic
+•	Policy Number Mapping by Dependent
+o	Each dependent can have their own insurance provider and policy number.
+o	The system allows patients to save these under their profile in Profile & Settings > Dependents Info.
+•	Coverage Eligibility Indicator
+o	Visual indicator if a dependent’s insurance info is missing or if a service is not covered under their policy (based on preset clinic rules).
+________________________________________
+Security and Compliance Controls
+
+
+•	Only the primary patient (adult) can initiate and submit claims for themselves or their dependents.
+•	Claims for dependents aged 13–17 will omit sensitive details in the bundled documentation, per privacy settings.
+•	All submitted claim documents are encrypted and securely stored in the patient’s record for auditing and resubmission if needed.
+________________________________________
+Summary: Why "My Medical Cover" Is a Dynamic MVP Feature
+
+
+
+Feature  -----  Dynamic Functionality
+
+
+Multi-user claim creation  -----  Supports dependent-specific insurance claims
+Integrated provider directory  -----  Auto-fills, filters, and validation
+Smart document bundling  -----  Automatically attaches relevant health records
+Submission & tracking  -----  Status updates, alerts, and history logs
+Invoice eligibility checks  -----  Prevents unpaid invoice claims
+Security & age-based logic  -----  Controlled access and data presentation
+
+
+________________________________________
+
+
+This design ensures that patients on Curis can handle insurance claims easily, securely, and efficiently, with minimal back-and-forth between clinics and insurers, all while maintaining compliance with privacy and age-based access control.
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+

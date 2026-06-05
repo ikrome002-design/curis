@@ -1,0 +1,187 @@
+flowchart TD
+    %% Main Entry Points
+    E[Dashboard] --> K[My Profile Page]
+    F[My Appointments] --> K
+    G[My Health Care] --> K
+    H[Billings & Payments] --> K
+    I[Emergency Care] --> K
+    J[My Medical Cover] --> K
+    
+    %% My Profile Main Sections
+    K --> K1[Personal Information Section<br/>📝 Editable User Data]
+    K --> K2[Dependent Management Section<br/>👨‍👩‍👧‍👦 Family Account Control]
+    K --> K3[Password Management Section<br/>🔐 Security Control Center]
+    K --> K4[Profile Picture Section<br/>📷 Visual Identity Management]
+    K --> K5[Family Summary Section<br/>📊 Household Overview]
+    K --> K6[Activity Log Section<br/>📈 Account Activity Tracking]
+    K --> K7[Account Management Section<br/>⚙️ Account Lifecycle Control]
+    
+    %% Personal Information Details
+    K1 --> K1a[Dynamic Information Display<br/>Real-time field rendering]
+    K1a --> K1a1[Full Name Field<br/>✏️ Click to Edit<br/>📋 Identity Information]
+    K1a --> K1a2[Email Address Field<br/>✏️ Click to Edit<br/>📧 Contact Information]
+    K1a --> K1a3[Phone Number Field<br/>✏️ Click to Edit<br/>📱 Mobile Contact]
+    K1a --> K1a4[Gender Field<br/>✏️ Click to Edit<br/>👤 Personal Information]
+    K1a --> K1a5[Date of Birth Field<br/>✏️ Click to Edit<br/>🎂 Age Verification]
+    
+    %% Edit Field Pop-ups
+    K1a1 --> K1a1a[Name Edit Modal<br/>💡 Input validation<br/>✅ Save/Cancel buttons]
+    K1a2 --> K1a2a[Email Edit Modal<br/>📧 Email verification required<br/>🔐 OTP confirmation]
+    K1a3 --> K1a3a[Phone Edit Modal<br/>📱 SMS OTP verification<br/>🇰🇪 +254 format mask]
+    K1a4 --> K1a4a[Gender Selection Modal<br/>🔘 Radio button options<br/>✅ Confirm selection]
+    K1a5 --> K1a5a[DOB Date Picker Modal<br/>📅 Calendar interface<br/>🚫 Future date restrictions]
+    
+    %% Security Verification Layer
+    K1 --> K1b[Security Verification Gateway<br/>🛡️ Information Update Protection]
+    K1b --> K1b1[Phone/Email Update Verification<br/>📲 OTP/Email Confirmation Required]
+    K1b --> K1b2[Auto-format Validation Engine<br/>🔄 Real-time Input Formatting]
+    K1b2 --> K1b2a[Phone Number Mask<br/>📱 Auto-format: +254 XXX XXX XXX]
+    K1b2 --> K1b2b[Date Picker Restrictions<br/>📅 DOB Selection with Age Limits]
+    
+    %% Dependent Management Details
+    K2 --> K2a[Add New Dependent Button<br/>➕ Child Registration Workflow]
+    K2 --> K2b[Existing Dependents List<br/>📋 Child Management Interface]
+    K2 --> K2c[Privacy Rules Engine<br/>🔒 Age-based Access Control]
+    
+    %% Add Dependent Pop-up
+    K2a --> K2a1[New Dependent Form Modal<br/>📝 Name/DOB/Gender/Relationship<br/>💾 Save/Cancel buttons]
+    K2a1 --> K2a2[Eligibility Check System<br/>🔍 Under 18 Age Verification<br/>✅ Auto-validation]
+    K2a2 --> K2a3[Auto-detection Logic<br/>🤖 Under 13 = Linked-only Status<br/>📊 Access level assignment]
+    
+    %% Existing Dependents Management
+    K2b --> K2b1[View/Edit Dependent Options<br/>👁️ View Details | ✏️ Edit Info<br/>📊 Dependent Information Updates]
+    K2b --> K2b2[Removal Restrictions Check<br/>🚫 Active Appointment/Invoice Blocks<br/>⚠️ Warning if restrictions exist]
+    
+    %% Privacy Rules Implementation
+    K2c --> K2c1[13-17 Privacy Controls<br/>🔒 Sensitive Field Hiding<br/>👁️‍🗨️ Restricted parent visibility]
+    K2c --> K2c2[Platform-wide Privacy<br/>🌐 System-level Restrictions<br/>🔐 Enforced across all modules]
+    
+    %% Password Management Details
+    K3 --> K3a[Own Password Change<br/>🔑 Personal Credential Updates]
+    K3 --> K3b[Dependent Credentials<br/>👶 Teen Account Management]
+    K3 --> K3c[Two-Factor Authentication<br/>🔐 Enhanced Security (Future)]
+    
+    %% Own Password Change Flow
+    K3a --> K3a1[Current Password Verification<br/>🔒 Identity Confirmation Required]
+    K3a1 --> K3a2[New Password Setup<br/>💪 Strength Validation<br/>✅ Confirm new password]
+    
+    %% Dependent Credential Management
+    K3b --> K3b1[Teen Login Reset Options<br/>👤 13-17 Credential Management]
+    K3b1 --> K3b1a[Email Update for Teen<br/>📧 Teen Contact Change<br/>🔄 Parent authorization required]
+    K3b1 --> K3b1b[Password Reset for Teen<br/>🔑 Teen Credential Reset<br/>🔐 Secure reset link generation]
+    K3b1 --> K3b1c[Email Notification System<br/>📬 Teen Account Alert<br/>📲 Multi-channel notification]
+    
+    %% Two-Factor Authentication
+    K3c --> K3c1[2FA Toggle Switch<br/>🔘 Email/OTP Security<br/>⚙️ Enable/Disable 2FA]
+    
+    %% Profile Picture Management
+    K4 --> K4a[Upload Interface<br/>📤 Image Selection Button]
+    K4 --> K4b[Crop & Preview Tools<br/>✂️ Image Editing Interface]
+    K4 --> K4c[Default Avatar Display<br/>👤 Fallback Image System]
+    
+    %% Profile Picture Upload Flow
+    K4a --> K4a1[File Selection Modal<br/>📁 Choose file/Camera capture<br/>🖼️ Image format validation]
+    K4a1 --> K4b
+    K4b --> K4b1[Image Crop Interface<br/>✂️ Drag to crop<br/>👁️ Live preview<br/>💾 Save/Cancel options]
+    
+    %% Family Summary Details
+    K5 --> K5a[Family List View<br/>👨‍👩‍👧‍👦 All Linked Members Display]
+    K5 --> K5b[Access Level Indicators<br/>🚦 Color-coded Permissions]
+    
+    %% Family Member Display
+    K5a --> K5a1[Member Details Cards<br/>📋 Name/Age/Gender Display<br/>🖼️ Profile picture thumbnails]
+    K5a --> K5a2[Quick Switch Navigation<br/>🔄 Profile/Dashboard Navigation<br/>⚡ One-click context switch]
+    
+    %% Access Level Color Coding
+    K5b --> K5b1[Green Indicator (Under 12)<br/>🟢 Full Parent Access<br/>👨‍👩‍👧 Complete visibility & control]
+    K5b --> K5b2[Yellow Indicator (13-17)<br/>🟡 Limited Access<br/>🔒 Privacy-protected viewing]
+    K5b --> K5b3[Gray Indicator (18+)<br/>⚪ Independent Account Required<br/>🚫 No parent access]
+    
+    %% Activity Log Details
+    K6 --> K6a[Recent Activity Dashboard<br/>📈 Account Usage Summary]
+    K6 --> K6b[Traceability System<br/>🔍 Critical Change Tracking]
+    
+    %% Recent Activity Breakdown
+    K6a --> K6a1[Last Login Display<br/>🕐 Date/Time Information<br/>📱 Device type indicator]
+    K6a --> K6a2[Device Usage Tracking<br/>💻 Access Device History<br/>🌐 Browser/platform logs]
+    K6a --> K6a3[Profile Updates Log<br/>📝 Recent Changes History<br/>⏰ Timestamped modifications]
+    
+    %% Account Management Details
+    K7 --> K7a[Temporary Deactivation<br/>⏸️ Account Pause Option]
+    K7 --> K7b[Permanent Deactivation<br/>🗑️ Account Deletion]
+    K7 --> K7c[Security Measures<br/>🛡️ Verification Requirements]
+    
+    %% Temporary Deactivation Flow
+    K7a --> K7a1[Deactivation Process Modal<br/>⏸️ Account Suspension Workflow]
+    K7a --> K7a2[Reactivation Process<br/>🔄 Account Restoration Workflow]
+    
+    K7a1 --> K7a1a[Profile Inactive Status<br/>🚫 Login Restriction Applied<br/>⏸️ Account suspended]
+    K7a1 --> K7a1b[Data Storage Guarantee<br/>💾 Record Preservation<br/>🔒 Secure data retention]
+    K7a1 --> K7a1c[Access Restriction Implementation<br/>🔐 System Lockout<br/>🚫 Platform access blocked]
+    
+    K7a2 --> K7a2a[Login Verification Step<br/>🔐 Identity Confirmation<br/>📧 Email/OTP verification]
+    K7a2 --> K7a2b[Account Restoration Process<br/>🔄 Full Access Recovery<br/>✅ All features reactivated]
+    K7a2 --> K7a2c[Confirmation Alerts<br/>📬 Email/WhatsApp Notification<br/>✅ Reactivation confirmed]
+    
+    %% Permanent Deactivation Flow
+    K7b --> K7b1[Irreversible Deletion Warning<br/>⚠️ Complete Data Removal<br/>🗑️ Cannot be undone]
+    K7b --> K7b2[Dependent Impact Assessment<br/>👶 Linked Profile Deletion<br/>⚠️ Family account consequences]
+    K7b --> K7b3[Warning Prompts System<br/>⚠️ Confirmation Requirements<br/>🔄 Multiple confirmation steps]
+    K7b --> K7b4[Restriction Checks<br/>🚫 Pending Payment/Treatment Blocks<br/>⚠️ Outstanding obligations check]
+    
+    %% Security Verification Requirements
+    K7c --> K7c1[Password Verification<br/>🔒 Identity Confirmation<br/>✅ Current password required]
+    K7c --> K7c2[OTP Authentication<br/>📱 Additional Security Layer<br/>🔐 SMS/Email verification]
+    K7c --> K7c3[Final Email Confirmation<br/>📧 Permanent Deletion Warning<br/>⚠️ Last chance to cancel]
+    
+    %% Navigation Back to Other Sections
+    K --> E
+    K5a2 --> E
+    K5a2 --> F
+    K5a2 --> G
+    K5a2 --> H
+    K5a2 --> I
+    K5a2 --> J
+    
+    %% Logout & Session Management
+    K --> L[Logout & Session Management<br/>🚪 Account Security]
+    L --> L1[Logout Button<br/>🚪 Session Termination<br/>🔒 Secure logout process]
+    L --> L2[Auto-logout System<br/>⏰ Inactivity Timeout<br/>⚙️ Configurable timer]
+    L --> L3[Multi-device Support<br/>📱💻 Cross-platform Access<br/>🔄 Session synchronization]
+    
+    L --> A[Patient Portal Access<br/>🔄 Return to Login]
+    
+    %% Pop-up Modal Behaviors
+    K1a1a --> K1a1[Return to Name Field]
+    K1a2a --> K1a2[Return to Email Field]
+    K1a3a --> K1a3[Return to Phone Field]
+    K1a4a --> K1a4[Return to Gender Field]
+    K1a5a --> K1a5[Return to DOB Field]
+    K2a1 --> K2[Return to Dependent Management]
+    K4b1 --> K4[Return to Profile Picture Section]
+    K7a1a --> K7a[Return to Temporary Deactivation]
+    K7a1b --> K7a
+    K7a1c --> K7a
+    K7a2a --> K7a
+    K7a2b --> K7a
+    K7a2c --> K7a
+    
+    %% Cross-Integration Flows
+    K2b1 --> G[Link to My Health Care<br/>📋 View dependent medical records]
+    K2b1 --> F[Link to My Appointments<br/>📅 Manage dependent appointments]
+    K6a3 --> K1[Link to updated fields<br/>🔄 View recent changes]
+    
+    %% Styling for different types of elements
+    classDef mainSection fill:#E3F2FD,stroke:#1976D2,stroke-width:3px
+    classDef subSection fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px
+    classDef actionButton fill:#E8F5E8,stroke:#388E3C,stroke-width:2px
+    classDef modal fill:#FFF3E0,stroke:#F57C00,stroke-width:2px
+    classDef security fill:#FFEBEE,stroke:#D32F2F,stroke-width:2px
+    classDef navigation fill:#F1F8E9,stroke:#689F38,stroke-width:2px
+    
+    class K mainSection
+    class K1,K2,K3,K4,K5,K6,K7 subSection
+    class K1a1,K1a2,K1a3,K1a4,K1a5,K2a,K2b,K3a,K3b,K4a,K4b,K5a,K5b,K6a,K7a,K7b actionButton
+    class K1a1a,K1a2a,K1a3a,K1a4a,K1a5a,K2a1,K4a1,K4b1,K7a1,K7a2 modal
+    class K1b,K1b1,K1b2,K2c,K3a1,K3a2,K7c,K7c1,K7c2,K7c3 security
+    class E,F,G,H,I,J,L,A navigation

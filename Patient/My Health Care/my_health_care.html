@@ -1,0 +1,2405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Curis by Citrus - My Health Care for managing medical records, lab results, prescriptions, and doctor notes">
+    <title>My Health Care | Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Health Care\my_health_care.css">
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="dashboard-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis by Citrus Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Appointments\my_appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>My Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Health Care\my_health_care.html"
+                            class="nav-link">
+                            <i class="fas fa-heart-pulse"></i>
+                            <span>My Health Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Billings and Payments\billings_and_payments.html"
+                            class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billings & Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Emergency Care\emergency_care.html"
+                            class="nav-link">
+                            <i class="fas fa-ambulance"></i>
+                            <span>Emergency Care</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Medical Cover\my_medical_cover.html"
+                            class="nav-link">
+                            <i class="fas fa-shield-heart"></i>
+                            <span>My Medical Cover</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">My Health Care</h1>
+                </div>
+
+                <div class="header-right">
+                    <!-- Notifications Icon -->
+                    <div class="notification-icon">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Notifications\notifications.html"
+                            class="icon-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">5</span>
+                        </a>
+                    </div>
+
+                    <!-- User Profile Icon with Dropdown -->
+                    <div class="user-profile-dropdown">
+                        <button class="profile-btn" id="profileBtn">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                                alt="User Profile" class="profile-img">
+                        </button>
+
+                        <!-- Profile Dropdown Menu -->
+                        <div class="profile-menu" id="profileMenu">
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Profile\my_profile.html"
+                                class="profile-menu-item">
+                                <i class="fas fa-user"></i>
+                                <span>My Profile</span>
+                            </a>
+                            <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\Landing Page\landing_page.html"
+                                class="profile-menu-item logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Health Care Content -->
+            <section class="healthcare-content">
+
+                <!-- Family User Switcher -->
+                <div class="family-switcher">
+                    <div class="switcher-header">
+                        <span class="label">Viewing health records for:</span>
+                        <button class="profile-selector" id="profileSelector">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                alt="Current Profile" class="profile-avatar">
+                            <span class="profile-name">John Kamau (Self)</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+
+                    <!-- Avatar Bar for Quick Switching -->
+                    <div class="avatar-bar">
+                        <div class="avatar-item active" data-member-id="self">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                alt="John Kamau">
+                            <span class="avatar-name">John</span>
+                        </div>
+                        <div class="avatar-item" data-member-id="spouse">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                alt="Jane Kamau">
+                            <span class="avatar-name">Jane</span>
+                        </div>
+                        <div class="avatar-item" data-member-id="daughter">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                alt="Mary Kamau">
+                            <span class="avatar-name">Mary</span>
+                        </div>
+                        <div class="avatar-item" data-member-id="son">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                                alt="David Kamau">
+                            <span class="avatar-name">David</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Bar -->
+                <div class="quick-actions-bar">
+                    <button class="quick-action-btn" id="downloadAllBtn">
+                        <i class="fas fa-download"></i>
+                        <span>Download All Records</span>
+                    </button>
+                    <button class="quick-action-btn" id="printSummaryBtn">
+                        <i class="fas fa-print"></i>
+                        <span>Print Summary</span>
+                    </button>
+                    <button class="quick-action-btn" id="shareWithDoctorBtn">
+                        <i class="fas fa-share-nodes"></i>
+                        <span>Share with Doctor</span>
+                    </button>
+                    <button class="quick-action-btn" id="exportHealthSummaryBtn">
+                        <i class="fas fa-file-export"></i>
+                        <span>Export Health Summary</span>
+                    </button>
+                </div>
+
+                <!-- Global Search Bar -->
+                <div class="global-search">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="globalSearchInput" class="search-input"
+                            placeholder="Search medical records, prescriptions, lab results...">
+                        <button class="search-filter-btn" id="searchFilterBtn">
+                            <i class="fas fa-filter"></i>
+                            <span>Filters</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Main Content Tabs -->
+                <div class="content-tabs">
+                    <button class="tab-btn active" data-tab="medical-records">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Medical Records</span>
+                    </button>
+                    <button class="tab-btn" data-tab="lab-results">
+                        <i class="fas fa-flask"></i>
+                        <span>Lab Results</span>
+                    </button>
+                    <button class="tab-btn" data-tab="prescriptions">
+                        <i class="fas fa-pills"></i>
+                        <span>Prescriptions</span>
+                    </button>
+                    <button class="tab-btn" data-tab="doctor-notes">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>Doctor Notes</span>
+                    </button>
+                </div>
+
+                <!-- Tab Content Container -->
+                <div class="tab-content-container">
+
+                    <!-- Medical Records Tab -->
+                    <div class="tab-content active" id="medical-records-tab">
+
+                        <!-- Sub-tabs for Medical Records -->
+                        <div class="sub-tabs">
+                            <button class="sub-tab-btn active" data-subtab="visit-history">
+                                <i class="fas fa-clock-rotate-left"></i>
+                                Visit History Timeline
+                            </button>
+                            <button class="sub-tab-btn" data-subtab="cross-clinic">
+                                <i class="fas fa-hospital"></i>
+                                Cross-Clinic Access
+                            </button>
+                            <button class="sub-tab-btn" data-subtab="smart-highlights">
+                                <i class="fas fa-star"></i>
+                                Smart Highlighting
+                            </button>
+                        </div>
+
+                        <!-- Visit History Timeline Content -->
+                        <div class="sub-tab-content active" id="visit-history-content">
+
+                            <!-- Dynamic Filters Section -->
+                            <div class="filters-section">
+                                <button class="filter-trigger-btn" id="visitFilterBtn">
+                                    <i class="fas fa-filter"></i>
+                                    <span>Filter Visits</span>
+                                </button>
+                                <div class="active-filters" id="activeFilters">
+                                    <!-- Active filters will be displayed here dynamically -->
+                                </div>
+                            </div>
+
+                            <!-- Visit History Cards -->
+                            <div class="visits-timeline">
+
+                                <!-- Visit Entry Card 1 -->
+                                <div class="visit-card">
+                                    <div class="visit-card-header">
+                                        <div class="visit-date-badge">
+                                            <span class="date-day">28</span>
+                                            <span class="date-month">Sep</span>
+                                            <span class="date-year">2025</span>
+                                        </div>
+                                        <div class="visit-header-info">
+                                            <h3 class="visit-title">General Consultation</h3>
+                                            <div class="visit-meta">
+                                                <span class="visit-meta-item">
+                                                    <i class="fas fa-hospital"></i>
+                                                    Nairobi Health Center
+                                                </span>
+                                                <span class="visit-meta-item">
+                                                    <i class="fas fa-user-doctor"></i>
+                                                    Dr. Sarah Wanjiru
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="visit-badges">
+                                            <span class="badge badge-new">New</span>
+                                            <span class="badge badge-alert">Abnormal Result</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="visit-card-body">
+                                        <div class="visit-reason">
+                                            <strong>Reason for Visit:</strong>
+                                            <p>Follow-up for hypertension management and routine blood pressure
+                                                monitoring</p>
+                                        </div>
+
+                                        <div class="visit-details-grid">
+                                            <div class="detail-item">
+                                                <i class="fas fa-clipboard-list"></i>
+                                                <div class="detail-content">
+                                                    <span class="detail-label">Diagnosis</span>
+                                                    <span class="detail-value">Essential Hypertension</span>
+                                                </div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <i class="fas fa-vial"></i>
+                                                <div class="detail-content">
+                                                    <span class="detail-label">Tests Ordered</span>
+                                                    <span class="detail-value">Lipid Profile, Blood Glucose</span>
+                                                </div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <i class="fas fa-syringe"></i>
+                                                <div class="detail-content">
+                                                    <span class="detail-label">Procedures</span>
+                                                    <span class="detail-value">Blood Pressure Check, ECG</span>
+                                                </div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <i class="fas fa-notes-medical"></i>
+                                                <div class="detail-content">
+                                                    <span class="detail-label">Status</span>
+                                                    <span class="detail-value status-finalized">Finalized</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="visit-card-footer">
+                                        <button class="card-action-btn btn-secondary">
+                                            <i class="fas fa-eye"></i>
+                                            View Full Details
+                                        </button>
+                                        <button class="card-action-btn btn-secondary">
+                                            <i class="fas fa-file-pdf"></i>
+                                            Download Report
+                                        </button>
+                                        <button class="card-action-btn btn-primary">
+                                            <i class="fas fa-calendar-check"></i>
+                                            Book Follow-up
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Visit Entry Card 2 -->
+                                <div class="visit-card">
+                                    <div class="visit-card-header">
+                                        <div class="visit-date-badge">
+                                            <span class="date-day">15</span>
+                                            <span class="date-month">Sep</span>
+                                            <span class="date-year">2025</span>
+                                        </div>
+                                        <div class="visit-header-info">
+                                            <h3 class="visit-title">Pediatric Check-up</h3>
+                                            <div class="visit-meta">
+                                                <span class="visit-meta-item">
+                                                    <i class="fas fa-hospital"></i>
+                                                    Westlands Medical Clinic
+                                                </span>
+                                                <span class="visit-meta-item">
+                                                    <i class="fas fa-user-doctor"></i>
+                                                    Dr. James Omondi
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="visit-badges">
+                                            <span class="badge badge-dependent">Mary Kamau (Daughter)</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="visit-card-body">
+                                        <div class="visit-reason">
+                                            <strong>Reason for Visit:</strong>
+                                            <p>Annual wellness exam and vaccination update</p>
+                                        </div>
+
+                                        <div class="visit-details-grid">
+                                            <div class="detail-item">
+                                                <i class="fas fa-clipboard-list"></i>
+                                                <div class="detail-content">
+                                                    <span class="detail-label">Diagnosis</span>
+                                                    <span class="detail-value">Healthy - No concerns</span>
+                                                </div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <i class="fas fa-vial"></i>
+                                                <div class="detail-content">
+                                                    <span class="detail-label">Tests Ordered</span>
+                                                    <span class="detail-value">None</span>
+                                                </div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <i class="fas fa-syringe"></i>
+                                                <div class="detail-content">
+                                                    <span class="detail-label">Procedures</span>
+                                                    <span class="detail-value">HPV Vaccination</span>
+                                                </div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <i class="fas fa-notes-medical"></i>
+                                                <div class="detail-content">
+                                                    <span class="detail-label">Status</span>
+                                                    <span class="detail-value status-finalized">Finalized</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="visit-card-footer">
+                                        <button class="card-action-btn btn-secondary">
+                                            <i class="fas fa-eye"></i>
+                                            View Full Details
+                                        </button>
+                                        <button class="card-action-btn btn-secondary">
+                                            <i class="fas fa-file-pdf"></i>
+                                            Download Report
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Visit Entry Card 3 -->
+                                <div class="visit-card">
+                                    <div class="visit-card-header">
+                                        <div class="visit-date-badge">
+                                            <span class="date-day">02</span>
+                                            <span class="date-month">Sep</span>
+                                            <span class="date-year">2025</span>
+                                        </div>
+                                        <div class="visit-header-info">
+                                            <h3 class="visit-title">Emergency Visit</h3>
+                                            <div class="visit-meta">
+                                                <span class="visit-meta-item">
+                                                    <i class="fas fa-hospital"></i>
+                                                    Karen Hospital
+                                                </span>
+                                                <span class="visit-meta-item">
+                                                    <i class="fas fa-user-doctor"></i>
+                                                    Dr. Emily Njeri
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="visit-badges">
+                                            <span class="badge badge-urgent">Urgent Care</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="visit-card-body">
+                                        <div class="visit-reason">
+                                            <strong>Reason for Visit:</strong>
+                                            <p>Acute abdominal pain and fever</p>
+                                        </div>
+
+                                        <div class="visit-details-grid">
+                                            <div class="detail-item">
+                                                <i class="fas fa-clipboard-list"></i>
+                                                <div class="detail-content">
+                                                    <span class="detail-label">Diagnosis</span>
+                                                    <span class="detail-value">Acute Gastroenteritis</span>
+                                                </div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <i class="fas fa-vial"></i>
+                                                <div class="detail-content">
+                                                    <span class="detail-label">Tests Ordered</span>
+                                                    <span class="detail-value">Stool Culture, CBC</span>
+                                                </div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <i class="fas fa-syringe"></i>
+                                                <div class="detail-content">
+                                                    <span class="detail-label">Procedures</span>
+                                                    <span class="detail-value">IV Fluids, Antiemetics</span>
+                                                </div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <i class="fas fa-notes-medical"></i>
+                                                <div class="detail-content">
+                                                    <span class="detail-label">Status</span>
+                                                    <span class="detail-value status-finalized">Finalized</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="visit-card-footer">
+                                        <button class="card-action-btn btn-secondary">
+                                            <i class="fas fa-eye"></i>
+                                            View Full Details
+                                        </button>
+                                        <button class="card-action-btn btn-secondary">
+                                            <i class="fas fa-file-pdf"></i>
+                                            Download Report
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Load More Button -->
+                            <div class="load-more-container">
+                                <button class="btn-secondary load-more-btn">
+                                    <i class="fas fa-chevron-down"></i>
+                                    Load More Visits
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <!-- Cross-Clinic Access Content -->
+                        <div class="sub-tab-content" id="cross-clinic-content">
+
+                            <!-- Clinic Grouping -->
+                            <div class="clinic-groups">
+
+                                <!-- Clinic Group 1 -->
+                                <div class="clinic-group">
+                                    <div class="clinic-group-header">
+                                        <div class="clinic-info">
+                                            <i class="fas fa-hospital"></i>
+                                            <h3 class="clinic-name">Nairobi Health Center</h3>
+                                            <span class="visit-count">8 visits</span>
+                                        </div>
+                                        <button class="expand-clinic-btn" data-clinic="nairobi">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div class="clinic-group-content" data-clinic-content="nairobi">
+                                        <div class="clinic-doctors">
+                                            <button class="doctor-badge" data-doctor-id="wanjiru">
+                                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                                    alt="Dr. Wanjiru">
+                                                <span>Dr. Sarah Wanjiru</span>
+                                            </button>
+                                            <button class="doctor-badge" data-doctor-id="kimani">
+                                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                                    alt="Dr. Kimani">
+                                                <span>Dr. Peter Kimani</span>
+                                            </button>
+                                        </div>
+                                        <div class="clinic-visits-list">
+                                            <!-- Visits for this clinic -->
+                                            <div class="compact-visit-card">
+                                                <div class="compact-visit-date">Sep 28, 2025</div>
+                                                <div class="compact-visit-title">General Consultation</div>
+                                                <div class="compact-visit-doctor">Dr. Sarah Wanjiru</div>
+                                                <button class="compact-view-btn">View</button>
+                                            </div>
+                                            <div class="compact-visit-card">
+                                                <div class="compact-visit-date">Aug 15, 2025</div>
+                                                <div class="compact-visit-title">Blood Pressure Check</div>
+                                                <div class="compact-visit-doctor">Dr. Sarah Wanjiru</div>
+                                                <button class="compact-view-btn">View</button>
+                                            </div>
+                                            <div class="compact-visit-card">
+                                                <div class="compact-visit-date">Jul 10, 2025</div>
+                                                <div class="compact-visit-title">Follow-up Consultation</div>
+                                                <div class="compact-visit-doctor">Dr. Peter Kimani</div>
+                                                <button class="compact-view-btn">View</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Clinic Group 2 -->
+                                <div class="clinic-group">
+                                    <div class="clinic-group-header">
+                                        <div class="clinic-info">
+                                            <i class="fas fa-hospital"></i>
+                                            <h3 class="clinic-name">Westlands Medical Clinic</h3>
+                                            <span class="visit-count">5 visits</span>
+                                        </div>
+                                        <button class="expand-clinic-btn" data-clinic="westlands">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div class="clinic-group-content" data-clinic-content="westlands">
+                                        <div class="clinic-doctors">
+                                            <button class="doctor-badge" data-doctor-id="omondi">
+                                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                                    alt="Dr. Omondi">
+                                                <span>Dr. James Omondi</span>
+                                            </button>
+                                        </div>
+                                        <div class="clinic-visits-list">
+                                            <div class="compact-visit-card">
+                                                <div class="compact-visit-date">Sep 15, 2025</div>
+                                                <div class="compact-visit-title">Pediatric Check-up</div>
+                                                <div class="compact-visit-doctor">Dr. James Omondi</div>
+                                                <button class="compact-view-btn">View</button>
+                                            </div>
+                                            <div class="compact-visit-card">
+                                                <div class="compact-visit-date">Jun 20, 2025</div>
+                                                <div class="compact-visit-title">Vaccination</div>
+                                                <div class="compact-visit-doctor">Dr. James Omondi</div>
+                                                <button class="compact-view-btn">View</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Clinic Group 3 -->
+                                <div class="clinic-group">
+                                    <div class="clinic-group-header">
+                                        <div class="clinic-info">
+                                            <i class="fas fa-hospital"></i>
+                                            <h3 class="clinic-name">Karen Hospital</h3>
+                                            <span class="visit-count">2 visits</span>
+                                        </div>
+                                        <button class="expand-clinic-btn" data-clinic="karen">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div class="clinic-group-content" data-clinic-content="karen">
+                                        <div class="clinic-doctors">
+                                            <button class="doctor-badge" data-doctor-id="njeri">
+                                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                                    alt="Dr. Njeri">
+                                                <span>Dr. Emily Njeri</span>
+                                            </button>
+                                        </div>
+                                        <div class="clinic-visits-list">
+                                            <div class="compact-visit-card">
+                                                <div class="compact-visit-date">Sep 02, 2025</div>
+                                                <div class="compact-visit-title">Emergency Visit</div>
+                                                <div class="compact-visit-doctor">Dr. Emily Njeri</div>
+                                                <button class="compact-view-btn">View</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Smart Highlighting Content -->
+                        <div class="sub-tab-content" id="smart-highlights-content">
+
+                            <!-- Abnormal Results Section -->
+                            <div class="highlights-section">
+                                <h3 class="highlights-section-title">
+                                    <i class="fas fa-triangle-exclamation"></i>
+                                    Abnormal Results Requiring Attention
+                                </h3>
+                                <div class="highlight-cards">
+
+                                    <div class="highlight-card alert-card">
+                                        <div class="alert-icon">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                        </div>
+                                        <div class="highlight-content">
+                                            <h4 class="highlight-title">Elevated Cholesterol Levels</h4>
+                                            <p class="highlight-date">Lab Result from Sep 28, 2025</p>
+                                            <p class="highlight-description">Total Cholesterol: 240 mg/dL (Normal: <200
+                                                    mg/dL)</p>
+                                                    <div class="highlight-clinic">Nairobi Health Center - Dr. Sarah
+                                                        Wanjiru</div>
+                                        </div>
+                                        <button class="view-detail-btn">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="highlight-card alert-card">
+                                        <div class="alert-icon">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                        </div>
+                                        <div class="highlight-content">
+                                            <h4 class="highlight-title">High Blood Pressure Reading</h4>
+                                            <p class="highlight-date">Visit on Sep 28, 2025</p>
+                                            <p class="highlight-description">Blood Pressure: 145/95 mmHg (Normal: <120
+                                                    /80)</p>
+                                                    <div class="highlight-clinic">Nairobi Health Center - Dr. Sarah
+                                                        Wanjiru</div>
+                                        </div>
+                                        <button class="view-detail-btn">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- New Records Section -->
+                            <div class="highlights-section">
+                                <h3 class="highlights-section-title">
+                                    <i class="fas fa-star"></i>
+                                    New Records Added
+                                </h3>
+                                <div class="highlight-cards">
+
+                                    <div class="highlight-card new-card">
+                                        <div class="new-badge-large">
+                                            <i class="fas fa-sparkles"></i>
+                                            New
+                                        </div>
+                                        <div class="highlight-content">
+                                            <h4 class="highlight-title">General Consultation Report</h4>
+                                            <p class="highlight-date">Added Sep 29, 2025</p>
+                                            <p class="highlight-description">Complete visit summary with diagnosis and
+                                                treatment plan</p>
+                                            <div class="highlight-clinic">Nairobi Health Center - Dr. Sarah Wanjiru
+                                            </div>
+                                        </div>
+                                        <button class="view-detail-btn">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="highlight-card new-card">
+                                        <div class="new-badge-large">
+                                            <i class="fas fa-sparkles"></i>
+                                            New
+                                        </div>
+                                        <div class="highlight-content">
+                                            <h4 class="highlight-title">Lab Results - Lipid Profile</h4>
+                                            <p class="highlight-date">Added Sep 29, 2025</p>
+                                            <p class="highlight-description">Complete blood work results with analysis
+                                            </p>
+                                            <div class="highlight-clinic">Nairobi Health Center - Lab Department</div>
+                                        </div>
+                                        <button class="view-detail-btn">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="highlight-card new-card">
+                                        <div class="new-badge-large">
+                                            <i class="fas fa-sparkles"></i>
+                                            New
+                                        </div>
+                                        <div class="highlight-content">
+                                            <h4 class="highlight-title">Prescription Updated</h4>
+                                            <p class="highlight-date">Added Sep 28, 2025</p>
+                                            <p class="highlight-description">New medication prescribed for hypertension
+                                                management</p>
+                                            <div class="highlight-clinic">Nairobi Health Center - Dr. Sarah Wanjiru
+                                            </div>
+                                        </div>
+                                        <button class="view-detail-btn">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Lab Results Tab -->
+                    <div class="tab-content" id="lab-results-tab">
+
+                        <!-- Lab Results Header -->
+                        <div class="lab-results-header">
+                            <h2 class="section-title">Laboratory Test Results</h2>
+                            <button class="btn-primary" id="requestLabTestBtn">
+                                <i class="fas fa-flask"></i>
+                                Request Lab Test
+                            </button>
+                        </div>
+
+                        <!-- Lab Results List -->
+                        <div class="lab-results-list">
+
+                            <!-- Lab Result Card 1 -->
+                            <div class="lab-result-card">
+                                <div class="lab-result-header">
+                                    <div class="lab-result-info">
+                                        <h3 class="lab-test-name">Lipid Profile (Complete)</h3>
+                                        <div class="lab-meta">
+                                            <span class="lab-meta-item">
+                                                <i class="fas fa-calendar"></i>
+                                                September 28, 2025
+                                            </span>
+                                            <span class="lab-meta-item">
+                                                <i class="fas fa-hospital"></i>
+                                                Nairobi Health Center
+                                            </span>
+                                            <span class="lab-meta-item">
+                                                <i class="fas fa-user-doctor"></i>
+                                                Ordered by Dr. Sarah Wanjiru
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="lab-result-badges">
+                                        <span class="badge badge-new">New</span>
+                                        <span class="badge badge-alert">Abnormal</span>
+                                    </div>
+                                </div>
+
+                                <div class="lab-result-body">
+                                    <table class="lab-results-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Test Parameter</th>
+                                                <th>Result</th>
+                                                <th>Unit</th>
+                                                <th>Reference Range</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="result-abnormal">
+                                                <td>Total Cholesterol</td>
+                                                <td class="result-value">240</td>
+                                                <td>mg/dL</td>
+                                                <td>&lt;200</td>
+                                                <td><span class="status-badge status-high">High</span></td>
+                                            </tr>
+                                            <tr class="result-abnormal">
+                                                <td>LDL Cholesterol</td>
+                                                <td class="result-value">160</td>
+                                                <td>mg/dL</td>
+                                                <td>&lt;100</td>
+                                                <td><span class="status-badge status-high">High</span></td>
+                                            </tr>
+                                            <tr class="result-normal">
+                                                <td>HDL Cholesterol</td>
+                                                <td class="result-value">55</td>
+                                                <td>mg/dL</td>
+                                                <td>&gt;40</td>
+                                                <td><span class="status-badge status-normal">Normal</span></td>
+                                            </tr>
+                                            <tr class="result-normal">
+                                                <td>Triglycerides</td>
+                                                <td class="result-value">140</td>
+                                                <td>mg/dL</td>
+                                                <td>&lt;150</td>
+                                                <td><span class="status-badge status-normal">Normal</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <!-- Clinical Notes Link -->
+                                    <div class="clinical-notes-section">
+                                        <button class="clinical-notes-toggle" data-notes="lipid-profile">
+                                            <i class="fas fa-notes-medical"></i>
+                                            <span>View Doctor's Clinical Notes</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                        <div class="clinical-notes-content" id="lipid-profile-notes">
+                                            <p><strong>Doctor's Interpretation:</strong></p>
+                                            <p>Patient shows elevated total and LDL cholesterol levels. This increases
+                                                cardiovascular risk. Recommend lifestyle modifications including diet
+                                                changes and regular exercise. Consider statin therapy if levels remain
+                                                elevated after 3 months.</p>
+                                            <p><strong>Prescribed Actions:</strong></p>
+                                            <ul>
+                                                <li>Schedule follow-up in 3 months for repeat lipid panel</li>
+                                                <li>Start low-fat diet as per nutritionist guidelines</li>
+                                                <li>Increase physical activity to 150 minutes per week</li>
+                                            </ul>
+                                            <p class="notes-timestamp">
+                                                <i class="fas fa-clock"></i>
+                                                Added on Sep 29, 2025 at 2:30 PM
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lab-result-footer">
+                                    <button class="card-action-btn btn-secondary" data-pdf="lipid-profile">
+                                        <i class="fas fa-file-pdf"></i>
+                                        View PDF Report
+                                    </button>
+                                    <button class="card-action-btn btn-secondary">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                    <button class="card-action-btn btn-secondary">
+                                        <i class="fas fa-print"></i>
+                                        Print
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Lab Result Card 2 -->
+                            <div class="lab-result-card">
+                                <div class="lab-result-header">
+                                    <div class="lab-result-info">
+                                        <h3 class="lab-test-name">Complete Blood Count (CBC)</h3>
+                                        <div class="lab-meta">
+                                            <span class="lab-meta-item">
+                                                <i class="fas fa-calendar"></i>
+                                                September 2, 2025
+                                            </span>
+                                            <span class="lab-meta-item">
+                                                <i class="fas fa-hospital"></i>
+                                                Karen Hospital
+                                            </span>
+                                            <span class="lab-meta-item">
+                                                <i class="fas fa-user-doctor"></i>
+                                                Ordered by Dr. Emily Njeri
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="lab-result-badges">
+                                        <span class="badge badge-finalized">Finalized</span>
+                                    </div>
+                                </div>
+
+                                <div class="lab-result-body">
+                                    <table class="lab-results-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Test Parameter</th>
+                                                <th>Result</th>
+                                                <th>Unit</th>
+                                                <th>Reference Range</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="result-normal">
+                                                <td>White Blood Cells</td>
+                                                <td class="result-value">7.2</td>
+                                                <td>10³/µL</td>
+                                                <td>4.5-11.0</td>
+                                                <td><span class="status-badge status-normal">Normal</span></td>
+                                            </tr>
+                                            <tr class="result-normal">
+                                                <td>Red Blood Cells</td>
+                                                <td class="result-value">4.8</td>
+                                                <td>10⁶/µL</td>
+                                                <td>4.5-5.9</td>
+                                                <td><span class="status-badge status-normal">Normal</span></td>
+                                            </tr>
+                                            <tr class="result-normal">
+                                                <td>Hemoglobin</td>
+                                                <td class="result-value">14.5</td>
+                                                <td>g/dL</td>
+                                                <td>13.5-17.5</td>
+                                                <td><span class="status-badge status-normal">Normal</span></td>
+                                            </tr>
+                                            <tr class="result-normal">
+                                                <td>Platelets</td>
+                                                <td class="result-value">250</td>
+                                                <td>10³/µL</td>
+                                                <td>150-400</td>
+                                                <td><span class="status-badge status-normal">Normal</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="lab-result-footer">
+                                    <button class="card-action-btn btn-secondary">
+                                        <i class="fas fa-file-pdf"></i>
+                                        View PDF Report
+                                    </button>
+                                    <button class="card-action-btn btn-secondary">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                    <button class="card-action-btn btn-secondary">
+                                        <i class="fas fa-print"></i>
+                                        Print
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Lab Result Card 3 -->
+                            <div class="lab-result-card">
+                                <div class="lab-result-header">
+                                    <div class="lab-result-info">
+                                        <h3 class="lab-test-name">Blood Glucose (Fasting)</h3>
+                                        <div class="lab-meta">
+                                            <span class="lab-meta-item">
+                                                <i class="fas fa-calendar"></i>
+                                                August 15, 2025
+                                            </span>
+                                            <span class="lab-meta-item">
+                                                <i class="fas fa-hospital"></i>
+                                                Nairobi Health Center
+                                            </span>
+                                            <span class="lab-meta-item">
+                                                <i class="fas fa-user-doctor"></i>
+                                                Ordered by Dr. Sarah Wanjiru
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="lab-result-badges">
+                                        <span class="badge badge-finalized">Finalized</span>
+                                    </div>
+                                </div>
+
+                                <div class="lab-result-body">
+                                    <table class="lab-results-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Test Parameter</th>
+                                                <th>Result</th>
+                                                <th>Unit</th>
+                                                <th>Reference Range</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="result-normal">
+                                                <td>Fasting Blood Glucose</td>
+                                                <td class="result-value">92</td>
+                                                <td>mg/dL</td>
+                                                <td>70-100</td>
+                                                <td><span class="status-badge status-normal">Normal</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="lab-result-footer">
+                                    <button class="card-action-btn btn-secondary">
+                                        <i class="fas fa-file-pdf"></i>
+                                        View PDF Report
+                                    </button>
+                                    <button class="card-action-btn btn-secondary">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                    <button class="card-action-btn btn-secondary">
+                                        <i class="fas fa-print"></i>
+                                        Print
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Empty State (Hidden by default) -->
+                        <div class="empty-state" style="display: none;">
+                            <i class="fas fa-flask"></i>
+                            <p>No lab results available</p>
+                            <button class="btn-primary">Request Lab Test</button>
+                        </div>
+
+                    </div>
+
+                    <!-- Prescriptions Tab -->
+                    <div class="tab-content" id="prescriptions-tab">
+
+                        <!-- Prescription Sub-tabs -->
+                        <div class="prescription-tabs">
+                            <button class="prescription-tab-btn active" data-prescription-tab="current">
+                                <i class="fas fa-pills"></i>
+                                Current Medications
+                            </button>
+                            <button class="prescription-tab-btn" data-prescription-tab="past">
+                                <i class="fas fa-history"></i>
+                                Past Medications
+                            </button>
+                        </div>
+
+                        <!-- Export Prescription List Button -->
+                        <div class="prescription-header-actions">
+                            <button class="btn-secondary" id="exportPrescriptionsBtn">
+                                <i class="fas fa-file-export"></i>
+                                Export Medication List
+                            </button>
+                        </div>
+
+                        <!-- Current Medications Content -->
+                        <div class="prescription-tab-content active" id="current-medications">
+
+                            <div class="prescriptions-grid">
+
+                                <!-- Medication Card 1 -->
+                                <div class="medication-card active-medication">
+                                    <div class="medication-header">
+                                        <div class="medication-icon">
+                                            <i class="fas fa-capsules"></i>
+                                        </div>
+                                        <div class="medication-badges">
+                                            <span class="badge badge-active">Active</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="medication-body">
+                                        <h3 class="medication-name">Amlodipine 5mg</h3>
+                                        <div class="medication-dosage">
+                                            <i class="fas fa-prescription"></i>
+                                            <span>1 tablet daily</span>
+                                        </div>
+                                        <div class="medication-instructions">
+                                            <p><strong>Instructions:</strong> Take one tablet every morning with or
+                                                without food</p>
+                                        </div>
+                                        <div class="medication-meta">
+                                            <div class="meta-item">
+                                                <i class="fas fa-user-doctor"></i>
+                                                <span>Dr. Sarah Wanjiru</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <i class="fas fa-calendar"></i>
+                                                <span>Started: Sep 28, 2025</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Duration: Ongoing</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Next Dose Reminder -->
+                                        <div class="dose-reminder">
+                                            <i class="fas fa-bell"></i>
+                                            <span class="reminder-text">Next dose in 6 hours</span>
+                                        </div>
+
+                                        <!-- Medication Warnings -->
+                                        <div class="medication-warnings">
+                                            <div class="warning-item">
+                                                <i class="fas fa-triangle-exclamation"></i>
+                                                <span>Do not take with grapefruit juice</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="medication-footer">
+                                        <button class="card-action-btn btn-secondary">
+                                            <i class="fas fa-info-circle"></i>
+                                            Full Details
+                                        </button>
+                                        <button class="card-action-btn btn-primary">
+                                            <i class="fas fa-rotate"></i>
+                                            Request Refill
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Medication Card 2 -->
+                                <div class="medication-card active-medication">
+                                    <div class="medication-header">
+                                        <div class="medication-icon">
+                                            <i class="fas fa-tablets"></i>
+                                        </div>
+                                        <div class="medication-badges">
+                                            <span class="badge badge-active">Active</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="medication-body">
+                                        <h3 class="medication-name">Atorvastatin 20mg</h3>
+                                        <div class="medication-dosage">
+                                            <i class="fas fa-prescription"></i>
+                                            <span>1 tablet once daily at bedtime</span>
+                                        </div>
+                                        <div class="medication-instructions">
+                                            <p><strong>Instructions:</strong> Take one tablet at bedtime. Can be taken
+                                                with or without food</p>
+                                        </div>
+                                        <div class="medication-meta">
+                                            <div class="meta-item">
+                                                <i class="fas fa-user-doctor"></i>
+                                                <span>Dr. Sarah Wanjiru</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <i class="fas fa-calendar"></i>
+                                                <span>Started: Sep 28, 2025</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Duration: 3 months</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Next Dose Reminder -->
+                                        <div class="dose-reminder">
+                                            <i class="fas fa-bell"></i>
+                                            <span class="reminder-text">Next dose at 10:00 PM</span>
+                                        </div>
+
+                                        <!-- Medication Interactions -->
+                                        <div class="medication-warnings interaction-warning">
+                                            <div class="warning-item">
+                                                <i class="fas fa-triangle-exclamation"></i>
+                                                <span>May interact with grapefruit - avoid consumption</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="medication-footer">
+                                        <button class="card-action-btn btn-secondary">
+                                            <i class="fas fa-info-circle"></i>
+                                            Full Details
+                                        </button>
+                                        <button class="card-action-btn btn-primary">
+                                            <i class="fas fa-rotate"></i>
+                                            Request Refill
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Medication Card 3 -->
+                                <div class="medication-card active-medication">
+                                    <div class="medication-header">
+                                        <div class="medication-icon">
+                                            <i class="fas fa-syringe"></i>
+                                        </div>
+                                        <div class="medication-badges">
+                                            <span class="badge badge-active">Active</span>
+                                            <span class="badge badge-dependent">Mary Kamau</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="medication-body">
+                                        <h3 class="medication-name">Amoxicillin 250mg</h3>
+                                        <div class="medication-dosage">
+                                            <i class="fas fa-prescription"></i>
+                                            <span>1 tablet three times daily</span>
+                                        </div>
+                                        <div class="medication-instructions">
+                                            <p><strong>Instructions:</strong> Take one tablet three times daily after
+                                                meals for 7 days</p>
+                                        </div>
+                                        <div class="medication-meta">
+                                            <div class="meta-item">
+                                                <i class="fas fa-user-doctor"></i>
+                                                <span>Dr. James Omondi</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <i class="fas fa-calendar"></i>
+                                                <span>Started: Sep 15, 2025</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Duration: 7 days (3 days remaining)</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Next Dose Reminder -->
+                                        <div class="dose-reminder">
+                                            <i class="fas fa-bell"></i>
+                                            <span class="reminder-text">Next dose in 2 hours</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="medication-footer">
+                                        <button class="card-action-btn btn-secondary">
+                                            <i class="fas fa-info-circle"></i>
+                                            Full Details
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Past Medications Content -->
+                        <div class="prescription-tab-content" id="past-medications">
+
+                            <div class="prescriptions-grid">
+
+                                <!-- Past Medication Card 1 -->
+                                <div class="medication-card past-medication">
+                                    <div class="medication-header">
+                                        <div class="medication-icon inactive">
+                                            <i class="fas fa-pills"></i>
+                                        </div>
+                                        <div class="medication-badges">
+                                            <span class="badge badge-completed">Completed</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="medication-body">
+                                        <h3 class="medication-name">Paracetamol 500mg</h3>
+                                        <div class="medication-dosage">
+                                            <i class="fas fa-prescription"></i>
+                                            <span>2 tablets every 6 hours as needed</span>
+                                        </div>
+                                        <div class="medication-instructions">
+                                            <p><strong>Instructions:</strong> Take for pain relief as needed. Maximum 8
+                                                tablets in 24 hours</p>
+                                        </div>
+                                        <div class="medication-meta">
+                                            <div class="meta-item">
+                                                <i class="fas fa-user-doctor"></i>
+                                                <span>Dr. Emily Njeri</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <i class="fas fa-calendar"></i>
+                                                <span>Prescribed: Sep 02, 2025</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <i class="fas fa-calendar-check"></i>
+                                                <span>Completed: Sep 09, 2025</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="medication-footer">
+                                        <button class="card-action-btn btn-secondary">
+                                            <i class="fas fa-info-circle"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Past Medication Card 2 -->
+                                <div class="medication-card past-medication">
+                                    <div class="medication-header">
+                                        <div class="medication-icon inactive">
+                                            <i class="fas fa-tablets"></i>
+                                        </div>
+                                        <div class="medication-badges">
+                                            <span class="badge badge-completed">Completed</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="medication-body">
+                                        <h3 class="medication-name">Metronidazole 400mg</h3>
+                                        <div class="medication-dosage">
+                                            <i class="fas fa-prescription"></i>
+                                            <span>1 tablet three times daily</span>
+                                        </div>
+                                        <div class="medication-instructions">
+                                            <p><strong>Instructions:</strong> Take one tablet three times daily after
+                                                meals. Avoid alcohol during treatment</p>
+                                        </div>
+                                        <div class="medication-meta">
+                                            <div class="meta-item">
+                                                <i class="fas fa-user-doctor"></i>
+                                                <span>Dr. Emily Njeri</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <i class="fas fa-calendar"></i>
+                                                <span>Prescribed: Sep 02, 2025</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <i class="fas fa-calendar-check"></i>
+                                                <span>Completed: Sep 09, 2025</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="medication-footer">
+                                        <button class="card-action-btn btn-secondary">
+                                            <i class="fas fa-info-circle"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Empty State -->
+                        <div class="empty-state" style="display: none;">
+                            <i class="fas fa-pills"></i>
+                            <p>No prescriptions available</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Doctor Notes Tab -->
+                    <div class="tab-content" id="doctor-notes-tab">
+
+                        <div class="doctor-notes-list">
+
+                            <!-- Doctor Note Card 1 -->
+                            <div class="doctor-note-card">
+                                <div class="note-card-header">
+                                    <div class="note-header-left">
+                                        <h3 class="note-title">Hypertension Management Consultation</h3>
+                                        <div class="note-meta">
+                                            <span class="note-meta-item">
+                                                <i class="fas fa-calendar"></i>
+                                                September 28, 2025
+                                            </span>
+                                            <span class="note-meta-item">
+                                                <i class="fas fa-hospital"></i>
+                                                Nairobi Health Center
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="note-badges">
+                                        <span class="badge badge-new">New</span>
+                                        <span class="badge badge-finalized">Finalized</span>
+                                    </div>
+                                </div>
+
+                                <div class="note-card-body">
+                                    <!-- Doctor Attribution -->
+                                    <div class="doctor-attribution">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                                            alt="Dr. Sarah Wanjiru" class="doctor-avatar">
+                                        <div class="doctor-info">
+                                            <h4 class="doctor-name">Dr. Sarah Wanjiru</h4>
+                                            <p class="doctor-specialty">Cardiologist</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Structured Summary -->
+                                    <div class="note-summary">
+                                        <button class="expand-summary-btn" data-summary="note-1">
+                                            <i class="fas fa-chevron-down"></i>
+                                            <span>View Complete Summary</span>
+                                        </button>
+
+                                        <div class="summary-content expanded" id="note-1-content">
+                                            <div class="summary-section">
+                                                <h4 class="summary-section-title">
+                                                    <i class="fas fa-stethoscope"></i>
+                                                    Diagnosis
+                                                </h4>
+                                                <p>Essential Hypertension (Stage 2). Patient presents with consistently
+                                                    elevated blood pressure readings over the past 3 months. No signs of
+                                                    secondary hypertension.</p>
+                                            </div>
+
+                                            <div class="summary-section">
+                                                <h4 class="summary-section-title">
+                                                    <i class="fas fa-flask"></i>
+                                                    Tests Ordered
+                                                </h4>
+                                                <ul>
+                                                    <li>Lipid Profile (Completed - Results abnormal)</li>
+                                                    <li>Blood Glucose Fasting (Completed - Results normal)</li>
+                                                    <li>ECG (Completed - Results normal)</li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="summary-section">
+                                                <h4 class="summary-section-title">
+                                                    <i class="fas fa-syringe"></i>
+                                                    Procedures Performed
+                                                </h4>
+                                                <ul>
+                                                    <li>Blood Pressure Monitoring</li>
+                                                    <li>Electrocardiogram (ECG)</li>
+                                                    <li>Physical Examination</li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="summary-section">
+                                                <h4 class="summary-section-title">
+                                                    <i class="fas fa-notes-medical"></i>
+                                                    Clinical Notes
+                                                </h4>
+                                                <p>Patient is a 45-year-old male with a 3-month history of elevated
+                                                    blood pressure. BP today: 145/95 mmHg. Patient reports occasional
+                                                    headaches and fatigue. No chest pain or palpitations. Family history
+                                                    positive for hypertension and cardiovascular disease.</p>
+                                                <p><strong>Physical Examination:</strong> BMI 28.5 (overweight). Heart
+                                                    sounds normal, no murmurs. Lungs clear bilaterally.</p>
+                                                <p><strong>Treatment Plan:</strong> Initiated on Amlodipine 5mg daily
+                                                    and Atorvastatin 20mg at bedtime. Advised lifestyle modifications
+                                                    including DASH diet, regular exercise, and weight loss. Follow-up in
+                                                    3 months for repeat labs and BP check.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Attached Files -->
+                                    <div class="attached-files">
+                                        <h5 class="files-title">
+                                            <i class="fas fa-paperclip"></i>
+                                            Attached Documents (3)
+                                        </h5>
+                                        <div class="files-list">
+                                            <button class="file-item" data-file-type="pdf">
+                                                <i class="fas fa-file-pdf"></i>
+                                                <span class="file-name">Visit_Summary_Sep_28_2025.pdf</span>
+                                                <span class="file-size">245 KB</span>
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                            <button class="file-item" data-file-type="pdf">
+                                                <i class="fas fa-file-pdf"></i>
+                                                <span class="file-name">ECG_Report_Sep_28_2025.pdf</span>
+                                                <span class="file-size">180 KB</span>
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                            <button class="file-item" data-file-type="image">
+                                                <i class="fas fa-file-image"></i>
+                                                <span class="file-name">BP_Chart.jpg</span>
+                                                <span class="file-size">320 KB</span>
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                        <button class="download-all-btn btn-secondary">
+                                            <i class="fas fa-download"></i>
+                                            Download All Files
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="note-card-footer">
+                                    <button class="card-action-btn btn-secondary">
+                                        <i class="fas fa-print"></i>
+                                        Print Summary
+                                    </button>
+                                    <button class="card-action-btn btn-primary" data-doctor-message="wanjiru">
+                                        <i class="fas fa-comments"></i>
+                                        Message Doctor
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Doctor Note Card 2 -->
+                            <div class="doctor-note-card">
+                                <div class="note-card-header">
+                                    <div class="note-header-left">
+                                        <h3 class="note-title">Pediatric Annual Wellness Exam</h3>
+                                        <div class="note-meta">
+                                            <span class="note-meta-item">
+                                                <i class="fas fa-calendar"></i>
+                                                September 15, 2025
+                                            </span>
+                                            <span class="note-meta-item">
+                                                <i class="fas fa-hospital"></i>
+                                                Westlands Medical Clinic
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="note-badges">
+                                        <span class="badge badge-dependent">Mary Kamau (Daughter)</span>
+                                        <span class="badge badge-finalized">Finalized</span>
+                                    </div>
+                                </div>
+
+                                <div class="note-card-body">
+                                    <!-- Doctor Attribution -->
+                                    <div class="doctor-attribution">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                                            alt="Dr. James Omondi" class="doctor-avatar">
+                                        <div class="doctor-info">
+                                            <h4 class="doctor-name">Dr. James Omondi</h4>
+                                            <p class="doctor-specialty">Pediatrician</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Structured Summary -->
+                                    <div class="note-summary">
+                                        <button class="expand-summary-btn" data-summary="note-2">
+                                            <i class="fas fa-chevron-down"></i>
+                                            <span>View Complete Summary</span>
+                                        </button>
+
+                                        <div class="summary-content" id="note-2-content">
+                                            <div class="summary-section">
+                                                <h4 class="summary-section-title">
+                                                    <i class="fas fa-stethoscope"></i>
+                                                    Diagnosis
+                                                </h4>
+                                                <p>Healthy child with normal growth and development. No acute concerns.
+                                                </p>
+                                            </div>
+
+                                            <div class="summary-section">
+                                                <h4 class="summary-section-title">
+                                                    <i class="fas fa-syringe"></i>
+                                                    Procedures Performed
+                                                </h4>
+                                                <ul>
+                                                    <li>HPV Vaccination (1st dose)</li>
+                                                    <li>Growth Assessment (Height, Weight, BMI)</li>
+                                                    <li>Vision Screening</li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="summary-section">
+                                                <h4 class="summary-section-title">
+                                                    <i class="fas fa-notes-medical"></i>
+                                                    Clinical Notes
+                                                </h4>
+                                                <p>12-year-old female presenting for annual wellness exam. Height: 152
+                                                    cm (65th percentile). Weight: 42 kg (60th percentile). BMI: 18.2
+                                                    (normal). Vital signs stable. No concerns reported by parent or
+                                                    patient.</p>
+                                                <p><strong>Vaccinations:</strong> All childhood vaccinations up to date.
+                                                    Administered HPV vaccine (1st dose) today. Next dose due in 6
+                                                    months.</p>
+                                                <p><strong>Anticipatory Guidance:</strong> Discussed nutrition, physical
+                                                    activity, screen time, and adolescent development with parent and
+                                                    patient. Next annual exam in 12 months.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Attached Files -->
+                                    <div class="attached-files">
+                                        <h5 class="files-title">
+                                            <i class="fas fa-paperclip"></i>
+                                            Attached Documents (1)
+                                        </h5>
+                                        <div class="files-list">
+                                            <button class="file-item" data-file-type="pdf">
+                                                <i class="fas fa-file-pdf"></i>
+                                                <span class="file-name">Growth_Chart_Mary_Kamau.pdf</span>
+                                                <span class="file-size">156 KB</span>
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="note-card-footer">
+                                    <button class="card-action-btn btn-secondary">
+                                        <i class="fas fa-print"></i>
+                                        Print Summary
+                                    </button>
+                                    <button class="card-action-btn btn-primary" data-doctor-message="omondi">
+                                        <i class="fas fa-comments"></i>
+                                        Message Doctor
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Doctor Note Card 3 -->
+                            <div class="doctor-note-card">
+                                <div class="note-card-header">
+                                    <div class="note-header-left">
+                                        <h3 class="note-title">Emergency Department Visit - Acute Gastroenteritis</h3>
+                                        <div class="note-meta">
+                                            <span class="note-meta-item">
+                                                <i class="fas fa-calendar"></i>
+                                                September 02, 2025
+                                            </span>
+                                            <span class="note-meta-item">
+                                                <i class="fas fa-hospital"></i>
+                                                Karen Hospital
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="note-badges">
+                                        <span class="badge badge-urgent">Urgent Care</span>
+                                        <span class="badge badge-finalized">Finalized</span>
+                                    </div>
+                                </div>
+
+                                <div class="note-card-body">
+                                    <!-- Doctor Attribution -->
+                                    <div class="doctor-attribution">
+                                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                                            alt="Dr. Emily Njeri" class="doctor-avatar">
+                                        <div class="doctor-info">
+                                            <h4 class="doctor-name">Dr. Emily Njeri</h4>
+                                            <p class="doctor-specialty">Emergency Medicine Physician</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Structured Summary -->
+                                    <div class="note-summary">
+                                        <button class="expand-summary-btn" data-summary="note-3">
+                                            <i class="fas fa-chevron-down"></i>
+                                            <span>View Complete Summary</span>
+                                        </button>
+
+                                        <div class="summary-content" id="note-3-content">
+                                            <div class="summary-section">
+                                                <h4 class="summary-section-title">
+                                                    <i class="fas fa-stethoscope"></i>
+                                                    Diagnosis
+                                                </h4>
+                                                <p>Acute Gastroenteritis, likely viral in origin. Mild dehydration.</p>
+                                            </div>
+
+                                            <div class="summary-section">
+                                                <h4 class="summary-section-title">
+                                                    <i class="fas fa-flask"></i>
+                                                    Tests Ordered
+                                                </h4>
+                                                <ul>
+                                                    <li>Stool Culture (Pending)</li>
+                                                    <li>Complete Blood Count (Completed - Normal)</li>
+                                                    <li>Electrolytes Panel (Completed - Mild abnormalities)</li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="summary-section">
+                                                <h4 class="summary-section-title">
+                                                    <i class="fas fa-syringe"></i>
+                                                    Procedures Performed
+                                                </h4>
+                                                <ul>
+                                                    <li>IV Fluid Resuscitation (1 liter normal saline)</li>
+                                                    <li>Antiemetic Administration (Ondansetron 4mg IV)</li>
+                                                    <li>Symptomatic Treatment</li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="summary-section">
+                                                <h4 class="summary-section-title">
+                                                    <i class="fas fa-notes-medical"></i>
+                                                    Clinical Notes
+                                                </h4>
+                                                <p>Patient presented to ED with 24-hour history of severe abdominal
+                                                    pain, nausea, vomiting, and diarrhea. Temperature: 38.2°C. Shows
+                                                    signs of mild dehydration. Abdomen soft, diffusely tender. No
+                                                    rebound or guarding.</p>
+                                                <p><strong>Treatment:</strong> Administered IV fluids and antiemetics.
+                                                    Symptoms improved after treatment. Patient able to tolerate oral
+                                                    fluids prior to discharge.</p>
+                                                <p><strong>Discharge Instructions:</strong> Prescribed Paracetamol for
+                                                    fever, Metronidazole for presumed bacterial component. Advised rest,
+                                                    clear fluids, and gradual return to normal diet. Follow-up with
+                                                    primary care physician in 3-5 days if symptoms persist.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Attached Files -->
+                                    <div class="attached-files">
+                                        <h5 class="files-title">
+                                            <i class="fas fa-paperclip"></i>
+                                            Attached Documents (2)
+                                        </h5>
+                                        <div class="files-list">
+                                            <button class="file-item" data-file-type="pdf">
+                                                <i class="fas fa-file-pdf"></i>
+                                                <span class="file-name">ED_Discharge_Summary.pdf</span>
+                                                <span class="file-size">210 KB</span>
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                            <button class="file-item" data-file-type="pdf">
+                                                <i class="fas fa-file-pdf"></i>
+                                                <span class="file-name">Lab_Results_CBC.pdf</span>
+                                                <span class="file-size">175 KB</span>
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="note-card-footer">
+                                    <button class="card-action-btn btn-secondary">
+                                        <i class="fas fa-print"></i>
+                                        Print Summary
+                                    </button>
+                                    <button class="card-action-btn btn-primary" data-doctor-message="njeri">
+                                        <i class="fas fa-comments"></i>
+                                        Message Doctor
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Empty State -->
+                        <div class="empty-state" style="display: none;">
+                            <i class="fas fa-stethoscope"></i>
+                            <p>No doctor notes available</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="footer-center">
+                <p class="copyright">&copy; 2025 Citrus Labs. All Rights Reserved.</p>
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer"
+                    class="corporate-link">citruslabs.co.ke</a>
+            </div>
+
+            <div class="footer-right">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer" aria-label="X">
+                        <i class="fab fa-x "></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                        rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Family Profile Selector Modal -->
+    <div class="modal" id="familyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Family Member</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="family-list">
+                    <div class="family-member active" data-member-id="self">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="John Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>John Kamau</h4>
+                            <p>Self - 45 years</p>
+                        </div>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="family-member" data-member-id="spouse">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="Jane Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>Jane Kamau</h4>
+                            <p>Spouse - 42 years</p>
+                        </div>
+                    </div>
+                    <div class="family-member" data-member-id="daughter">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="Mary Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>Mary Kamau</h4>
+                            <p>Daughter - 12 years</p>
+                            <span class="privacy-note">
+                                <i class="fas fa-lock"></i>
+                                Some records may be private
+                            </span>
+                        </div>
+                    </div>
+                    <div class="family-member" data-member-id="son">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-64.png"
+                            alt="David Kamau" class="member-avatar">
+                        <div class="member-info">
+                            <h4>David Kamau</h4>
+                            <p>Son - 8 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visit Filter Modal -->
+    <div class="modal" id="visitFilterModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Filter Visit History</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="filter-form" id="visitFilterForm">
+
+                    <!-- Clinic Filter -->
+                    <div class="form-group">
+                        <label for="filterClinic">Filter by Clinic</label>
+                        <select id="filterClinic" class="form-control" multiple>
+                            <option value="all" selected>All Clinics</option>
+                            <option value="nairobi">Nairobi Health Center</option>
+                            <option value="westlands">Westlands Medical Clinic</option>
+                            <option value="karen">Karen Hospital</option>
+                        </select>
+                    </div>
+
+                    <!-- Date Range Filter -->
+                    <div class="form-group">
+                        <label>Date Range</label>
+                        <div class="date-range-inputs">
+                            <input type="date" id="filterStartDate" class="form-control" placeholder="Start Date">
+                            <span class="date-separator">to</span>
+                            <input type="date" id="filterEndDate" class="form-control" placeholder="End Date">
+                        </div>
+                    </div>
+
+                    <!-- Service Type Filter -->
+                    <div class="form-group">
+                        <label for="filterServiceType">Service Type</label>
+                        <select id="filterServiceType" class="form-control">
+                            <option value="all" selected>All Services</option>
+                            <option value="consultation">General Consultation</option>
+                            <option value="followup">Follow-up</option>
+                            <option value="emergency">Emergency Visit</option>
+                            <option value="pediatric">Pediatric Care</option>
+                            <option value="specialist">Specialist Visit</option>
+                        </select>
+                    </div>
+
+                    <!-- Doctor Filter -->
+                    <div class="form-group">
+                        <label for="filterDoctor">Filter by Doctor</label>
+                        <select id="filterDoctor" class="form-control">
+                            <option value="all" selected>All Doctors</option>
+                            <option value="wanjiru">Dr. Sarah Wanjiru</option>
+                            <option value="omondi">Dr. James Omondi</option>
+                            <option value="njeri">Dr. Emily Njeri</option>
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="clearFilters">Clear Filters</button>
+                <button class="btn-primary" id="applyFilters">Apply Filters</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Filter Modal -->
+    <div class="modal" id="searchFilterModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Search Filters</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="filter-form" id="searchFilterForm">
+
+                    <!-- Record Type Filter -->
+                    <div class="form-group">
+                        <label>Record Type</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="visits" checked>
+                                <span>Visit Records</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="labs" checked>
+                                <span>Lab Results</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="prescriptions" checked>
+                                <span>Prescriptions</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="notes" checked>
+                                <span>Doctor Notes</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Date Range -->
+                    <div class="form-group">
+                        <label>Date Range</label>
+                        <select class="form-control" id="searchDateRange">
+                            <option value="all">All Time</option>
+                            <option value="30">Last 30 Days</option>
+                            <option value="90">Last 3 Months</option>
+                            <option value="180">Last 6 Months</option>
+                            <option value="365">Last Year</option>
+                        </select>
+                    </div>
+
+                    <!-- Provider Filter -->
+                    <div class="form-group">
+                        <label>Healthcare Provider</label>
+                        <select class="form-control" id="searchProvider">
+                            <option value="all">All Providers</option>
+                            <option value="nairobi">Nairobi Health Center</option>
+                            <option value="westlands">Westlands Medical Clinic</option>
+                            <option value="karen">Karen Hospital</option>
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="applySearchFilters">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Doctor Info Modal -->
+    <div class="modal" id="doctorInfoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Doctor Information</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="doctor-profile-card">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-80.png"
+                        alt="Doctor" class="doctor-profile-img" id="doctorProfileImg">
+                    <h3 class="doctor-modal-name" id="doctorModalName">Dr. Sarah Wanjiru</h3>
+                    <p class="doctor-modal-specialty" id="doctorModalSpecialty">Cardiologist</p>
+                    <div class="doctor-modal-meta">
+                        <div class="meta-row">
+                            <i class="fas fa-hospital"></i>
+                            <span id="doctorModalClinic">Nairobi Health Center</span>
+                        </div>
+                        <div class="meta-row">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span id="doctorModalEducation">MD, University of Nairobi</span>
+                        </div>
+                        <div class="meta-row">
+                            <i class="fas fa-certificate"></i>
+                            <span id="doctorModalLicense">License: KE-MD-12345</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Close</button>
+                <button class="btn-primary" id="messageDoctorFromModal">
+                    <i class="fas fa-comments"></i>
+                    Send Message
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF Viewer Modal -->
+    <div class="modal" id="pdfViewerModal">
+        <div class="modal-content large pdf-modal">
+            <div class="modal-header">
+                <h3 id="pdfTitle">Document Viewer</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body pdf-viewer-body">
+                <div class="pdf-viewer-container">
+                    <iframe id="pdfFrame" class="pdf-frame" src=""></iframe>
+                    <div class="pdf-watermark">Curis by Citrus - Official Document</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="downloadPdfBtn">
+                    <i class="fas fa-download"></i>
+                    Download
+                </button>
+                <button class="btn-secondary" id="printPdfBtn">
+                    <i class="fas fa-print"></i>
+                    Print
+                </button>
+                <button class="btn-secondary close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Health Summary Modal -->
+    <div class="modal" id="exportHealthSummaryModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Export Health Summary</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="export-form" id="exportHealthSummaryForm">
+
+                    <!-- Date Range Selection -->
+                    <div class="form-group">
+                        <label>Select Date Range</label>
+                        <div class="quick-date-options">
+                            <button type="button" class="date-option-btn" data-range="30">Last Month</button>
+                            <button type="button" class="date-option-btn" data-range="90">Last 3 Months</button>
+                            <button type="button" class="date-option-btn" data-range="180">Last 6 Months</button>
+                            <button type="button" class="date-option-btn" data-range="365">Last Year</button>
+                            <button type="button" class="date-option-btn active" data-range="all">All Time</button>
+                        </div>
+                        <div class="custom-date-range">
+                            <label>Or specify custom range:</label>
+                            <div class="date-range-inputs">
+                                <input type="date" id="exportStartDate" class="form-control">
+                                <span class="date-separator">to</span>
+                                <input type="date" id="exportEndDate" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Provider Selection -->
+                    <div class="form-group">
+                        <label>Healthcare Providers</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="providers" value="all" checked>
+                                <span>All Providers</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="providers" value="specific">
+                                <span>Select Specific Clinics</span>
+                            </label>
+                        </div>
+                        <div class="specific-providers" id="specificProviders" style="display: none;">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="nairobi">
+                                <span>Nairobi Health Center</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="westlands">
+                                <span>Westlands Medical Clinic</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="karen">
+                                <span>Karen Hospital</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Content Customization -->
+                    <div class="form-group">
+                        <label>Include in Export</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="visits" checked>
+                                <span>Visit Summaries</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="prescriptions" checked>
+                                <span>Prescriptions</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="labs" checked>
+                                <span>Lab Results</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="notes" checked>
+                                <span>Doctor Notes</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Export Format -->
+                    <div class="form-group">
+                        <label>Export Format</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="format" value="pdf" checked>
+                                <span>
+                                    <i class="fas fa-file-pdf"></i>
+                                    PDF (Recommended)
+                                </span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="format" value="insurance">
+                                <span>
+                                    <i class="fas fa-shield-heart"></i>
+                                    Insurance-Ready Format
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="generateExport">
+                    <i class="fas fa-file-export"></i>
+                    Generate Export
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Prescriptions Modal -->
+    <div class="modal" id="exportPrescriptionsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Export Medication List</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="export-form" id="exportPrescriptionsForm">
+
+                    <!-- Date Range -->
+                    <div class="form-group">
+                        <label>Date Range</label>
+                        <div class="quick-date-options">
+                            <button type="button" class="date-option-btn active" data-range="current">Current
+                                Only</button>
+                            <button type="button" class="date-option-btn" data-range="90">Last 3 Months</button>
+                            <button type="button" class="date-option-btn" data-range="all">All Medications</button>
+                        </div>
+                    </div>
+
+                    <!-- Include Options -->
+                    <div class="form-group">
+                        <label>Include in Export</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>Medication Names & Dosages</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>Prescribing Doctor Information</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span>Instructions & Warnings</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span>Prescription Dates</span>
+                            </label>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="generatePrescriptionExport">
+                    <i class="fas fa-file-pdf"></i>
+                    Generate PDF
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Secure Messaging Modal -->
+    <div class="modal" id="messageDoctorModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Message Doctor</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <!-- Doctor Info in Message Modal -->
+                <div class="message-doctor-info">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                        alt="Doctor" class="message-doctor-avatar">
+                    <div class="message-doctor-details">
+                        <h4 class="message-doctor-name" id="messageDoctorName">Dr. Sarah Wanjiru</h4>
+                        <p class="message-doctor-specialty" id="messageDoctorSpecialty">Cardiologist</p>
+                    </div>
+                </div>
+
+                <!-- Message Thread -->
+                <div class="message-thread" id="messageThread">
+                    <div class="message-item received">
+                        <div class="message-bubble">
+                            <p>Good morning! How are you feeling today? Have you been taking your medication as
+                                prescribed?</p>
+                            <span class="message-time">Yesterday, 9:30 AM</span>
+                        </div>
+                    </div>
+                    <div class="message-item sent">
+                        <div class="message-bubble">
+                            <p>Good morning, Doctor. I'm feeling better. I've been taking the medication daily as you
+                                instructed.</p>
+                            <span class="message-time">Yesterday, 10:15 AM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Message Input -->
+                <div class="message-compose">
+                    <textarea class="message-input" id="newMessageInput"
+                        placeholder="Type your message to the doctor..." rows="3"></textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="sendMessageBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Consent Modal -->
+    <div class="modal" id="privacyConsentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Privacy Notice</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="consent-notice">
+                    <i class="fas fa-shield-halved"></i>
+                    <p>You are about to access medical records for <strong id="dependentName">Mary Kamau</strong>, who
+                        is a minor (age 12).</p>
+                    <p>Some records may be marked as private based on age-appropriate privacy settings. These records
+                        require the dependent's consent to view.</p>
+                    <div class="consent-actions">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="acknowledgeConsent">
+                            <span>I understand and acknowledge these privacy restrictions</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="proceedWithAccess" disabled>
+                    Proceed to View Records
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Access Log Modal -->
+    <div class="modal" id="accessLogModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Record Access History</h3>
+                <button class="close-modal" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="access-log-table">
+                    <thead>
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>Accessed By</th>
+                            <th>Record Type</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sep 29, 2025 2:30 PM</td>
+                            <td>Nairobi Health Center</td>
+                            <td>Visit Summary</td>
+                            <td><span class="action-badge action-add">Added</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sep 29, 2025 10:15 AM</td>
+                            <td>You (John Kamau)</td>
+                            <td>Lab Results</td>
+                            <td><span class="action-badge action-view">Viewed</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sep 28, 2025 4:20 PM</td>
+                            <td>Nairobi Health Center - Dr. Wanjiru</td>
+                            <td>Prescription</td>
+                            <td><span class="action-badge action-add">Added</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sep 28, 2025 3:45 PM</td>
+                            <td>You (John Kamau)</td>
+                            <td>Medical Records</td>
+                            <td><span class="action-badge action-view">Viewed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading health records...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- External JavaScript -->
+    <script
+        src="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Patient\My Health Care\my_health_care.js"></script>
+
+</body>
+
+</html>

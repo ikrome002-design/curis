@@ -1,0 +1,49 @@
+#### 1. **Alerts & Collaboration**
+
+
+
+
+Here’s a firm breakdown of the dynamic MVP features and functionalities within the “Collaboration & Notifications” page in the Doctor’s account on the Curis platform:
+________________________________________
+1.	Alerts & Collaboration – MVP Functionalities
+
+
+This page is the Doctor’s command center for real-time communication and workflow alerts. It ensures doctors stay in sync with clinic operations and team updates, without accessing financial or administrative controls.
+________________________________________
+a.	Real-Time Notifications Feed
+•	Automated updates triggered by system events:
+o	New appointment assigned by Receptionist or Clinic Owner
+o	Upcoming consultations within a set timeframe (e.g., 15 mins, 1 hr)
+o	Patient medical record updates by other staff (e.g., lab results added)
+•	Notification Types:
+o	Time-sensitive alerts (highlighted with urgency badges)
+o	Info-only updates (standard feed)
+•	Read/unread tracking
+•	Clear filters: All | Unread | Appointments | Records | Consultations
+________________________________________
+b.	Internal Team Collaboration Panel
+•	Commenting system embedded in medical records and appointments
+o	Tag other Doctors or the Clinic Owner using @mention
+o	Threaded replies for contextual discussions
+•	Doctor-Only Discussions (not visible to patients or receptionists)
+•	Time-stamped entries to track input history and decision flow
+________________________________________
+c.	Notification Preferences & Settings
+•	Toggle alert types (email, in-app, or push if supported)
+•	Define alert sensitivity (e.g., alert only for assigned patients or all team-wide changes)
+•	Mute notifications during non-working hours (configurable by the Clinic Owner)
+________________________________________
+d.	Quick Actions via Notifications
+•	Each alert includes:
+o	Direct link to action (e.g., join consultation, open patient file)
+o	Status indicators (e.g., "Join Now", "Awaiting Doctor Notes")
+________________________________________
+e.	Audit Trail & Mentions Log
+•	View a log of mentions, tags, and assigned discussions
+•	Helps maintain accountability and clarity in shared cases
+________________________________________
+This “Alerts & Collaboration” page enhances clinic productivity, ensures doctors never miss critical updates, and builds a secure communication flow without breaching role-based restrictions.
+
+
+
+

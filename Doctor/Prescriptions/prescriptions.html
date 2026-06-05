@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curis by Citrus - Digital Medication Management for Specialist Healthcare">
+    <title>Prescriptions - Curis by Citrus</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\favicon-32x32.png">
+    <link rel="apple-touch-icon"
+        href="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Favicon\apple-touch-icon.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="prescriptions.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html">
+                    <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                        alt="Curis Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-navigation">
+                <ul class="nav-list">
+                    <!-- Dashboard -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html"
+                            class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <!-- Appointments -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Appointments\appointments.html"
+                            class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+
+                    <!-- Patient Records -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Patient Records\patient_records.html"
+                            class="nav-link">
+                            <i class="fas fa-user-injured"></i>
+                            <span>Patient Records</span>
+                        </a>
+                    </li>
+
+                    <!-- Consultations -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Consultations\consultations.html"
+                            class="nav-link">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Consultations</span>
+                        </a>
+                    </li>
+
+                    <!-- Prescriptions - Active -->
+                    <li class="nav-item active">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Prescriptions\prescriptions.html"
+                            class="nav-link">
+                            <i class="fas fa-prescription"></i>
+                            <span>Prescriptions</span>
+                        </a>
+                    </li>
+
+                    <!-- Alerts & Collaboration -->
+                    <li class="nav-item">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Alerts and Collaboration\alerts_and_collaboration.html"
+                            class="nav-link">
+                            <i class="fas fa-bell"></i>
+                            <span>Alerts & Collaboration</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">
+                        <i class="fas fa-pills"></i>
+                        Digital Medication Management
+                    </h1>
+                    <!-- Breadcrumb Navigation -->
+                    <nav class="breadcrumb">
+                        <a
+                            href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Dashboard\dashboard.html">Dashboard</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Prescriptions</span>
+                    </nav>
+                </div>
+
+                <div class="header-right">
+                    <!-- Quick Stats -->
+                    <div class="prescription-stats">
+                        <div class="stat-badge">
+                            <i class="fas fa-file-medical"></i>
+                            <span>Today: 12</span>
+                        </div>
+                        <div class="stat-badge">
+                            <i class="fas fa-clock"></i>
+                            <span>Pending: 3</span>
+                        </div>
+                    </div>
+
+                    <!-- User Profile -->
+                    <div class="user-profile" id="userProfile">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-48.png"
+                            alt="Profile" class="profile-pic">
+                        <span class="profile-name">Dr. Sarah Wanjiru</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+
+                    <!-- Profile Dropdown Menu -->
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\My Profile\my_profile.html"
+                            class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="C:\Users\nderu\Documents\Development\Product\Curis\1.0\Users\Doctor\Landing Page\landing_page.html"
+                            class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Quick Actions Section -->
+            <section class="quick-actions-section">
+                <button class="btn-primary new-prescription-btn" id="newPrescriptionBtn">
+                    <i class="fas fa-plus-circle"></i>
+                    New Prescription
+                </button>
+                <button class="btn-secondary quick-duplicate-btn" id="quickDuplicateBtn">
+                    <i class="fas fa-copy"></i>
+                    Quick Duplicate
+                </button>
+                <button class="btn-secondary medication-db-btn" id="medicationDbBtn">
+                    <i class="fas fa-database"></i>
+                    Medication Database
+                </button>
+            </section>
+
+            <!-- Prescription History Section -->
+            <section class="prescription-history-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-history"></i>
+                        Prescription History
+                    </h2>
+                    <div class="filter-controls">
+                        <!-- Patient Filter -->
+                        <div class="filter-group">
+                            <input type="text" id="patientFilter" class="filter-input" placeholder="Search patient...">
+                            <i class="fas fa-search filter-icon"></i>
+                        </div>
+
+                        <!-- Date Filter -->
+                        <div class="filter-group">
+                            <input type="date" id="dateFrom" class="filter-date">
+                            <span>to</span>
+                            <input type="date" id="dateTo" class="filter-date">
+                        </div>
+
+                        <!-- Medication Filter -->
+                        <div class="filter-group">
+                            <input type="text" id="medicationFilter" class="filter-input"
+                                placeholder="Medication name...">
+                        </div>
+
+                        <!-- Status Filter -->
+                        <div class="filter-group">
+                            <select id="statusFilter" class="filter-select">
+                                <option value="all">All Status</option>
+                                <option value="active">Active</option>
+                                <option value="expired">Expired</option>
+                                <option value="cancelled">Cancelled</option>
+                                <option value="draft">Draft</option>
+                            </select>
+                        </div>
+
+                        <button class="btn-filter-apply">
+                            <i class="fas fa-filter"></i>
+                            Apply
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Prescription List -->
+                <div class="prescription-list">
+                    <!-- Prescription Entry 1 - Active -->
+                    <div class="prescription-entry" data-prescription-id="RX-2025-001">
+                        <div class="patient-info">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                alt="Patient" class="patient-photo">
+                            <div class="patient-details">
+                                <h4 class="patient-name">John Kamau</h4>
+                                <span class="patient-id">ID: PAT-2024-001</span>
+                            </div>
+                        </div>
+
+                        <div class="medication-info">
+                            <h4 class="medication-name">Amlodipine 5mg</h4>
+                            <div class="medication-details">
+                                <span class="dosage">
+                                    <i class="fas fa-tablets"></i>
+                                    1 tablet once daily
+                                </span>
+                                <span class="duration">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    30 days
+                                </span>
+                                <span class="route">
+                                    <i class="fas fa-mouth-open"></i>
+                                    Oral
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="prescription-meta">
+                            <span class="prescription-date">
+                                <i class="fas fa-calendar"></i>
+                                Sept 25, 2025
+                            </span>
+                            <span class="prescription-id">RX-2025-001</span>
+                        </div>
+
+                        <div class="status-badge active">
+                            <i class="fas fa-check-circle"></i>
+                            Active
+                        </div>
+
+                        <div class="prescription-actions">
+                            <button class="action-btn view-btn" data-prescription-id="RX-2025-001">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button>
+                            <button class="action-btn reissue-btn" data-prescription-id="RX-2025-001">
+                                <i class="fas fa-redo"></i>
+                                Re-issue
+                            </button>
+                            <button class="action-btn print-btn" data-prescription-id="RX-2025-001">
+                                <i class="fas fa-print"></i>
+                                Print
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Prescription Entry 2 - Active -->
+                    <div class="prescription-entry" data-prescription-id="RX-2025-002">
+                        <div class="patient-info">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                alt="Patient" class="patient-photo">
+                            <div class="patient-details">
+                                <h4 class="patient-name">Mary Wambui</h4>
+                                <span class="patient-id">ID: PAT-2024-002</span>
+                            </div>
+                        </div>
+
+                        <div class="medication-info">
+                            <h4 class="medication-name">Metformin 500mg</h4>
+                            <div class="medication-details">
+                                <span class="dosage">
+                                    <i class="fas fa-tablets"></i>
+                                    1 tablet twice daily
+                                </span>
+                                <span class="duration">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    30 days
+                                </span>
+                                <span class="route">
+                                    <i class="fas fa-mouth-open"></i>
+                                    Oral
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="prescription-meta">
+                            <span class="prescription-date">
+                                <i class="fas fa-calendar"></i>
+                                Sept 24, 2025
+                            </span>
+                            <span class="prescription-id">RX-2025-002</span>
+                        </div>
+
+                        <div class="status-badge active">
+                            <i class="fas fa-check-circle"></i>
+                            Active
+                        </div>
+
+                        <div class="prescription-actions">
+                            <button class="action-btn view-btn" data-prescription-id="RX-2025-002">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button>
+                            <button class="action-btn reissue-btn" data-prescription-id="RX-2025-002">
+                                <i class="fas fa-redo"></i>
+                                Re-issue
+                            </button>
+                            <button class="action-btn print-btn" data-prescription-id="RX-2025-002">
+                                <i class="fas fa-print"></i>
+                                Print
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Prescription Entry 3 - Expired -->
+                    <div class="prescription-entry" data-prescription-id="RX-2025-003">
+                        <div class="patient-info">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                alt="Patient" class="patient-photo">
+                            <div class="patient-details">
+                                <h4 class="patient-name">Peter Ochieng</h4>
+                                <span class="patient-id">ID: PAT-2024-003</span>
+                            </div>
+                        </div>
+
+                        <div class="medication-info">
+                            <h4 class="medication-name">Amoxicillin 500mg</h4>
+                            <div class="medication-details">
+                                <span class="dosage">
+                                    <i class="fas fa-tablets"></i>
+                                    1 capsule thrice daily
+                                </span>
+                                <span class="duration">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    7 days
+                                </span>
+                                <span class="route">
+                                    <i class="fas fa-mouth-open"></i>
+                                    Oral
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="prescription-meta">
+                            <span class="prescription-date">
+                                <i class="fas fa-calendar"></i>
+                                Sept 10, 2025
+                            </span>
+                            <span class="prescription-id">RX-2025-003</span>
+                        </div>
+
+                        <div class="status-badge expired">
+                            <i class="fas fa-times-circle"></i>
+                            Expired
+                        </div>
+
+                        <div class="prescription-actions">
+                            <button class="action-btn view-btn" data-prescription-id="RX-2025-003">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </button>
+                            <button class="action-btn reissue-btn" data-prescription-id="RX-2025-003">
+                                <i class="fas fa-redo"></i>
+                                Re-issue
+                            </button>
+                            <button class="action-btn print-btn" data-prescription-id="RX-2025-003">
+                                <i class="fas fa-print"></i>
+                                Print
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Prescription Entry 4 - Draft -->
+                    <div class="prescription-entry" data-prescription-id="RX-2025-004">
+                        <div class="patient-info">
+                            <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                alt="Patient" class="patient-photo">
+                            <div class="patient-details">
+                                <h4 class="patient-name">Grace Njeri</h4>
+                                <span class="patient-id">ID: PAT-2024-004</span>
+                            </div>
+                        </div>
+
+                        <div class="medication-info">
+                            <h4 class="medication-name">Paracetamol 500mg</h4>
+                            <div class="medication-details">
+                                <span class="dosage">
+                                    <i class="fas fa-tablets"></i>
+                                    2 tablets as needed
+                                </span>
+                                <span class="duration">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    PRN
+                                </span>
+                                <span class="route">
+                                    <i class="fas fa-mouth-open"></i>
+                                    Oral
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="prescription-meta">
+                            <span class="prescription-date">
+                                <i class="fas fa-calendar"></i>
+                                Sept 25, 2025
+                            </span>
+                            <span class="prescription-id">RX-2025-004</span>
+                        </div>
+
+                        <div class="status-badge draft">
+                            <i class="fas fa-save"></i>
+                            Draft
+                        </div>
+
+                        <div class="prescription-actions">
+                            <button class="action-btn edit-btn" data-prescription-id="RX-2025-004">
+                                <i class="fas fa-edit"></i>
+                                Edit
+                            </button>
+                            <button class="action-btn delete-draft-btn" data-prescription-id="RX-2025-004">
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                        Previous
+                    </button>
+                    <div class="page-numbers">
+                        <button class="page-number active">1</button>
+                        <button class="page-number">2</button>
+                        <button class="page-number">3</button>
+                    </div>
+                    <button class="pagination-btn">
+                        Next
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Compliance & Security Section -->
+            <section class="compliance-section">
+                <div class="compliance-header">
+                    <h3 class="compliance-title">
+                        <i class="fas fa-shield-alt"></i>
+                        Security & Compliance
+                    </h3>
+                </div>
+                <div class="compliance-grid">
+                    <div class="compliance-item">
+                        <i class="fas fa-user-lock"></i>
+                        <span>Access Control: Assigned patients only</span>
+                    </div>
+                    <div class="compliance-item">
+                        <i class="fas fa-eye"></i>
+                        <span>View own prescriptions only</span>
+                    </div>
+                    <div class="compliance-item">
+                        <i class="fas fa-ban"></i>
+                        <span>No delete rights for issued prescriptions</span>
+                    </div>
+                    <div class="compliance-item">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>All actions logged and audited</span>
+                    </div>
+                    <div class="compliance-item">
+                        <i class="fas fa-capsules"></i>
+                        <span>Controlled substances require special authorization</span>
+                    </div>
+                    <div class="compliance-item">
+                        <i class="fas fa-file-signature"></i>
+                        <span>Digital signature required for all prescriptions</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Prescription Creation Modal -->
+    <div class="modal prescription-modal" id="prescriptionModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-file-prescription"></i>
+                    Create New Prescription
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="prescription-form" id="prescriptionForm">
+                    <!-- Patient Selection Section -->
+                    <div class="form-section patient-selection">
+                        <h3 class="section-title">Patient Information</h3>
+
+                        <!-- Active Consultation Alert -->
+                        <div class="active-consultation-alert" id="activeConsultAlert" style="display: none;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Active consultation with: <strong id="activePatientName"></strong></span>
+                            <button type="button" class="btn-link-consultation">Link to Consultation</button>
+                        </div>
+
+                        <!-- Patient Search -->
+                        <div class="form-group">
+                            <label for="patientSearch">Search Patient</label>
+                            <div class="search-wrapper">
+                                <input type="text" id="patientSearch" class="form-control"
+                                    placeholder="Type patient name or ID..." autocomplete="off">
+                                <div class="search-suggestions" id="patientSuggestions">
+                                    <!-- Dynamic suggestions -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Patients -->
+                        <div class="recent-patients">
+                            <label>Recent Patients</label>
+                            <div class="recent-patient-chips">
+                                <button type="button" class="patient-chip" data-patient-id="PAT-2024-001">
+                                    John Kamau
+                                </button>
+                                <button type="button" class="patient-chip" data-patient-id="PAT-2024-002">
+                                    Mary Wambui
+                                </button>
+                                <button type="button" class="patient-chip" data-patient-id="PAT-2024-003">
+                                    Peter Ochieng
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Selected Patient Info -->
+                        <div class="selected-patient-info" id="selectedPatientInfo" style="display: none;">
+                            <div class="patient-card">
+                                <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Icons\icons8-profile-picture-40.png"
+                                    alt="Patient" class="patient-avatar">
+                                <div class="patient-data">
+                                    <h4 id="selectedPatientName">John Kamau</h4>
+                                    <span id="selectedPatientId">PAT-2024-001</span>
+                                    <span id="selectedPatientAge">45 years, Male</span>
+                                </div>
+                                <button type="button" class="change-patient-btn">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    Change
+                                </button>
+                            </div>
+
+                            <!-- Patient Alerts -->
+                            <div class="patient-alerts">
+                                <div class="allergy-alert">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <strong>Allergies:</strong>
+                                    <span>Penicillin, Latex</span>
+                                </div>
+                                <div class="condition-alert">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <strong>Chronic Conditions:</strong>
+                                    <span>Hypertension, Diabetes Type 2</span>
+                                </div>
+                                <div class="medication-alert">
+                                    <i class="fas fa-pills"></i>
+                                    <strong>Current Medications:</strong>
+                                    <span>Amlodipine 5mg, Metformin 500mg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appointment Link Section -->
+                    <div class="form-section appointment-link">
+                        <h3 class="section-title">Appointment Link (Optional)</h3>
+                        <div class="form-group">
+                            <select id="appointmentLink" class="form-control">
+                                <option value="">No appointment link</option>
+                                <option value="auto">Link to current consultation</option>
+                                <option value="APT-001">Sept 25, 2025 - 10:30 AM - Follow-up</option>
+                                <option value="APT-002">Sept 24, 2025 - 2:00 PM - Initial Consultation</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Medication Details Section -->
+                    <div class="form-section medication-details">
+                        <h3 class="section-title">Medication Details</h3>
+
+                        <!-- Medication Selection -->
+                        <div class="form-group">
+                            <label for="medicationSelect">Medication</label>
+                            <div class="medication-input-group">
+                                <input type="text" id="medicationSelect" class="form-control"
+                                    placeholder="Type to search medication...">
+                                <button type="button" class="generic-brand-toggle">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    Generic/Brand
+                                </button>
+                            </div>
+                            <div class="drug-suggestions" id="drugSuggestions">
+                                <!-- Dynamic drug suggestions -->
+                            </div>
+                        </div>
+
+                        <!-- Drug Information Panel -->
+                        <div class="drug-info-panel" id="drugInfoPanel" style="display: none;">
+                            <div class="drug-info-header">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Drug Information</span>
+                            </div>
+                            <div class="drug-info-content">
+                                <p><strong>Active Ingredient:</strong> <span id="activeIngredient">Amlodipine</span></p>
+                                <p><strong>Standard Dosage:</strong> <span id="standardDosage">5-10mg once daily</span>
+                                </p>
+                                <p><strong>Common Side Effects:</strong> <span id="sideEffects">Dizziness, edema</span>
+                                </p>
+                                <p><strong>Contraindications:</strong> <span id="contraindications">Severe
+                                        hypotension</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Dosage Input -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="strength">Strength</label>
+                                <input type="text" id="strength" class="form-control" placeholder="e.g., 500mg">
+                            </div>
+                            <div class="form-group">
+                                <label for="quantity">Quantity</label>
+                                <input type="number" id="quantity" class="form-control" placeholder="e.g., 2">
+                            </div>
+                            <div class="form-group">
+                                <label for="unit">Unit</label>
+                                <select id="unit" class="form-control">
+                                    <option value="tablets">Tablets</option>
+                                    <option value="capsules">Capsules</option>
+                                    <option value="ml">ml</option>
+                                    <option value="mg">mg</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Frequency Settings -->
+                        <div class="form-group">
+                            <label>Frequency</label>
+                            <div class="frequency-buttons">
+                                <button type="button" class="freq-btn" data-frequency="od">Once Daily (OD)</button>
+                                <button type="button" class="freq-btn" data-frequency="bd">Twice Daily (BD)</button>
+                                <button type="button" class="freq-btn" data-frequency="tds">Thrice Daily (TDS)</button>
+                                <button type="button" class="freq-btn" data-frequency="qds">Four Times Daily
+                                    (QDS)</button>
+                                <button type="button" class="freq-btn" data-frequency="prn">As Needed (PRN)</button>
+                                <button type="button" class="freq-btn" data-frequency="custom">Custom</button>
+                            </div>
+                        </div>
+
+                        <!-- Duration Input -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="duration">Duration</label>
+                                <input type="number" id="duration" class="form-control" placeholder="e.g., 30">
+                            </div>
+                            <div class="form-group">
+                                <label for="durationUnit">Unit</label>
+                                <select id="durationUnit" class="form-control">
+                                    <option value="days">Days</option>
+                                    <option value="weeks">Weeks</option>
+                                    <option value="months">Months</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="ongoing">
+                                    <label for="ongoing">Ongoing treatment</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Route Selection -->
+                        <div class="form-group">
+                            <label for="route">Route of Administration</label>
+                            <select id="route" class="form-control">
+                                <option value="oral">Oral</option>
+                                <option value="topical">Topical</option>
+                                <option value="injection">Injection</option>
+                                <option value="inhalation">Inhalation</option>
+                                <option value="sublingual">Sublingual</option>
+                                <option value="rectal">Rectal</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Additional Instructions -->
+                        <div class="form-group">
+                            <label for="instructions">Additional Instructions</label>
+                            <div class="instruction-templates">
+                                <button type="button" class="template-btn" data-template="with-food">With food</button>
+                                <button type="button" class="template-btn" data-template="before-meal">Before
+                                    meals</button>
+                                <button type="button" class="template-btn" data-template="after-meal">After
+                                    meals</button>
+                                <button type="button" class="template-btn" data-template="empty-stomach">On empty
+                                    stomach</button>
+                            </div>
+                            <textarea id="instructions" class="form-control" rows="3"
+                                placeholder="Enter additional instructions..."></textarea>
+                            <div class="language-selector">
+                                <label>Language:</label>
+                                <select id="languageSelect" class="form-control-sm">
+                                    <option value="en">English</option>
+                                    <option value="sw">Kiswahili</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary save-draft-btn">
+                    <i class="fas fa-save"></i>
+                    Save Draft
+                </button>
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary preview-prescription-btn">
+                    <i class="fas fa-eye"></i>
+                    Preview Prescription
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Schedule Modal -->
+    <div class="modal custom-schedule-modal" id="customScheduleModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-clock"></i>
+                    Custom Medication Schedule
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="timing-inputs">
+                    <h4>Specific Timing</h4>
+                    <div class="time-slots">
+                        <div class="time-slot">
+                            <label>Morning</label>
+                            <input type="time" class="form-control" value="08:00">
+                        </div>
+                        <div class="time-slot">
+                            <label>Afternoon</label>
+                            <input type="time" class="form-control" value="14:00">
+                        </div>
+                        <div class="time-slot">
+                            <label>Evening</label>
+                            <input type="time" class="form-control" value="20:00">
+                        </div>
+                        <button type="button" class="add-time-slot">
+                            <i class="fas fa-plus"></i>
+                            Add Time
+                        </button>
+                    </div>
+                </div>
+
+                <div class="meal-relation">
+                    <h4>Relation to Meals</h4>
+                    <div class="meal-options">
+                        <label class="radio-option">
+                            <input type="radio" name="mealRelation" value="before">
+                            <span>Before meals</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="mealRelation" value="with">
+                            <span>With meals</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="mealRelation" value="after">
+                            <span>After meals</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="mealRelation" value="none">
+                            <span>No specific relation</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="special-instructions">
+                    <h4>Special Instructions</h4>
+                    <textarea class="form-control" rows="3" placeholder="Additional timing notes..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary">Apply Schedule</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prescription Preview Modal -->
+    <div class="modal preview-modal" id="previewModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-file-medical"></i>
+                    Prescription Preview
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="prescription-preview">
+                    <!-- Clinic Header -->
+                    <div class="clinic-header">
+                        <img src="C:\Users\nderu\Documents\Development\Product\Curis\Technical Writings\Images\Logo\logo.png"
+                            alt="Clinic Logo" class="clinic-logo">
+                        <div class="clinic-info">
+                            <h3>Curis Medical Center</h3>
+                            <p>123 Healthcare Avenue, Nairobi, Kenya</p>
+                            <p>Tel: +254 20 1234567 | Email: info@curis.co.ke</p>
+                        </div>
+                    </div>
+
+                    <!-- Prescription Content -->
+                    <div class="prescription-content">
+                        <h4 class="prescription-title">PRESCRIPTION</h4>
+
+                        <!-- Patient Information -->
+                        <div class="preview-section">
+                            <h5>Patient Information</h5>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Name:</label>
+                                    <span id="previewPatientName">John Kamau</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>ID:</label>
+                                    <span id="previewPatientId">PAT-2024-001</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Age:</label>
+                                    <span id="previewPatientAge">45 years</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Gender:</label>
+                                    <span id="previewPatientGender">Male</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Medication Details -->
+                        <div class="preview-section">
+                            <h5>Medication Details</h5>
+                            <div class="medication-preview-box">
+                                <h4 id="previewMedication">Amlodipine 5mg</h4>
+                                <div class="medication-instructions">
+                                    <p><strong>Dosage:</strong> <span id="previewDosage">1 tablet once daily</span></p>
+                                    <p><strong>Duration:</strong> <span id="previewDuration">30 days</span></p>
+                                    <p><strong>Route:</strong> <span id="previewRoute">Oral</span></p>
+                                    <p><strong>Instructions:</strong> <span id="previewInstructions">Take with or
+                                            without food</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Doctor Information -->
+                        <div class="preview-section">
+                            <h5>Prescriber Information</h5>
+                            <div class="doctor-info">
+                                <p><strong>Doctor:</strong> Dr. Sarah Wanjiru</p>
+                                <p><strong>License No:</strong> MP-12345</p>
+                                <p><strong>Date:</strong> Sept 25, 2025</p>
+                                <p><strong>Time:</strong> 10:45 AM</p>
+                                <p><strong>Prescription ID:</strong> RX-2025-005</p>
+                            </div>
+                        </div>
+
+                        <!-- QR Code and Signature -->
+                        <div class="preview-footer">
+                            <div class="qr-code">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+                                    alt="QR Code" class="qr-code-img">
+                                <p>Scan for verification</p>
+                            </div>
+                            <div class="digital-signature">
+                                <div class="signature-line"></div>
+                                <p>Digital Signature</p>
+                                <p>Dr. Sarah Wanjiru</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary edit-prescription-btn">
+                    <i class="fas fa-edit"></i>
+                    Edit
+                </button>
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary confirm-prescription-btn">
+                    <i class="fas fa-check-circle"></i>
+                    Confirm & Issue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Medication Database Modal -->
+    <div class="modal medication-db-modal" id="medicationDbModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-database"></i>
+                    Medication Database
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Drug Categories -->
+                <div class="drug-categories">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="antibiotics">Antibiotics</button>
+                    <button class="category-btn" data-category="analgesics">Analgesics</button>
+                    <button class="category-btn" data-category="cardiovascular">Cardiovascular</button>
+                    <button class="category-btn" data-category="respiratory">Respiratory</button>
+                    <button class="category-btn" data-category="diabetes">Diabetes</button>
+                    <button class="category-btn" data-category="other">Other</button>
+                </div>
+
+                <!-- Drug Search -->
+                <div class="drug-search-bar">
+                    <input type="text" class="form-control" placeholder="Search medication...">
+                    <i class="fas fa-search"></i>
+                </div>
+
+                <!-- Drug List -->
+                <div class="drug-list">
+                    <div class="drug-item">
+                        <h4>Amlodipine</h4>
+                        <p class="drug-category">Cardiovascular</p>
+                        <p class="drug-description">Calcium channel blocker for hypertension</p>
+                        <div class="drug-dosages">
+                            <span class="dosage-option">2.5mg</span>
+                            <span class="dosage-option">5mg</span>
+                            <span class="dosage-option">10mg</span>
+                        </div>
+                    </div>
+
+                    <div class="drug-item">
+                        <h4>Amoxicillin</h4>
+                        <p class="drug-category">Antibiotics</p>
+                        <p class="drug-description">Broad-spectrum antibiotic</p>
+                        <div class="drug-dosages">
+                            <span class="dosage-option">250mg</span>
+                            <span class="dosage-option">500mg</span>
+                            <span class="dosage-option">875mg</span>
+                        </div>
+                    </div>
+
+                    <div class="drug-item">
+                        <h4>Metformin</h4>
+                        <p class="drug-category">Diabetes</p>
+                        <p class="drug-description">Oral antidiabetic medication</p>
+                        <div class="drug-dosages">
+                            <span class="dosage-option">500mg</span>
+                            <span class="dosage-option">850mg</span>
+                            <span class="dosage-option">1000mg</span>
+                        </div>
+                    </div>
+
+                    <div class="drug-item">
+                        <h4>Paracetamol</h4>
+                        <p class="drug-category">Analgesics</p>
+                        <p class="drug-description">Pain reliever and fever reducer</p>
+                        <div class="drug-dosages">
+                            <span class="dosage-option">500mg</span>
+                            <span class="dosage-option">1000mg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Duplicate Modal -->
+    <div class="modal quick-duplicate-modal" id="quickDuplicateModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-copy"></i>
+                    Quick Duplicate Prescription
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>Select Recent Prescription to Duplicate</h4>
+                <div class="recent-prescriptions-list">
+                    <!-- Recent Prescription 1 -->
+                    <div class="recent-prescription-item" data-prescription-id="RX-2025-001">
+                        <div class="prescription-info">
+                            <h5>John Kamau - Amlodipine 5mg</h5>
+                            <p>1 tablet once daily - 30 days</p>
+                            <span class="prescription-date">Sept 25, 2025</span>
+                        </div>
+                        <button class="duplicate-btn">
+                            <i class="fas fa-copy"></i>
+                            Duplicate
+                        </button>
+                    </div>
+
+                    <!-- Recent Prescription 2 -->
+                    <div class="recent-prescription-item" data-prescription-id="RX-2025-002">
+                        <div class="prescription-info">
+                            <h5>Mary Wambui - Metformin 500mg</h5>
+                            <p>1 tablet twice daily - 30 days</p>
+                            <span class="prescription-date">Sept 24, 2025</span>
+                        </div>
+                        <button class="duplicate-btn">
+                            <i class="fas fa-copy"></i>
+                            Duplicate
+                        </button>
+                    </div>
+
+                    <!-- Recent Prescription 3 -->
+                    <div class="recent-prescription-item" data-prescription-id="RX-2025-003">
+                        <div class="prescription-info">
+                            <h5>Peter Ochieng - Amoxicillin 500mg</h5>
+                            <p>1 capsule thrice daily - 7 days</p>
+                            <span class="prescription-date">Sept 10, 2025</span>
+                        </div>
+                        <button class="duplicate-btn">
+                            <i class="fas fa-copy"></i>
+                            Duplicate
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prescription Detail Modal -->
+    <div class="modal prescription-detail-modal" id="prescriptionDetailModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-file-prescription"></i>
+                    Prescription Details
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="prescription-full-details">
+                    <!-- Patient Details -->
+                    <div class="detail-section">
+                        <h4>Patient Details</h4>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <label>Name:</label>
+                                <span>John Kamau</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>ID:</label>
+                                <span>PAT-2024-001</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Age:</label>
+                                <span>45 years</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Gender:</label>
+                                <span>Male</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medication Details -->
+                    <div class="detail-section">
+                        <h4>Medication Details</h4>
+                        <div class="medication-full-info">
+                            <h5>Amlodipine 5mg</h5>
+                            <p><strong>Dosage:</strong> 1 tablet once daily</p>
+                            <p><strong>Duration:</strong> 30 days</p>
+                            <p><strong>Route:</strong> Oral</p>
+                            <p><strong>Instructions:</strong> Take with or without food. Do not stop suddenly.</p>
+                        </div>
+                    </div>
+
+                    <!-- Prescribing Information -->
+                    <div class="detail-section">
+                        <h4>Prescribing Information</h4>
+                        <div class="prescribing-info">
+                            <p><strong>Doctor:</strong> Dr. Sarah Wanjiru</p>
+                            <p><strong>License:</strong> MP-12345</p>
+                            <p><strong>Date Issued:</strong> Sept 25, 2025 - 10:45 AM</p>
+                            <p><strong>Prescription ID:</strong> RX-2025-001</p>
+                        </div>
+                    </div>
+
+                    <!-- Dispense History -->
+                    <div class="detail-section">
+                        <h4>Dispense History</h4>
+                        <div class="dispense-history">
+                            <div class="dispense-entry">
+                                <span class="dispense-date">Sept 25, 2025</span>
+                                <span class="pharmacy">City Pharmacy</span>
+                                <span class="quantity-dispensed">30 tablets</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compliance Tracking -->
+                    <div class="detail-section">
+                        <h4>Compliance Tracking</h4>
+                        <div class="compliance-info">
+                            <p><strong>Refills Used:</strong> 0 of 2</p>
+                            <p><strong>Expected End Date:</strong> Oct 25, 2025</p>
+                            <p><strong>Adherence Rate:</strong> Good (Based on refill pattern)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary print-prescription-btn">
+                    <i class="fas fa-print"></i>
+                    Print
+                </button>
+                <button class="btn-secondary reissue-prescription-btn">
+                    <i class="fas fa-redo"></i>
+                    Re-issue
+                </button>
+                <button class="btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Re-issue Modal -->
+    <div class="modal reissue-modal" id="reissueModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-redo"></i>
+                    Re-issue Prescription
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Re-issuing prescription for: <strong>John Kamau - Amlodipine 5mg</strong></p>
+
+                <div class="reissue-options">
+                    <h4>Modify Options</h4>
+                    <div class="form-group">
+                        <label>Duration</label>
+                        <input type="number" class="form-control" value="30">
+                    </div>
+                    <div class="form-group">
+                        <label>Refills</label>
+                        <input type="number" class="form-control" value="2">
+                    </div>
+                    <div class="form-group">
+                        <label>Re-issue Reason</label>
+                        <textarea class="form-control" rows="2" placeholder="Enter reason for re-issue..."
+                            required></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary confirm-reissue-btn">
+                    <i class="fas fa-check"></i>
+                    Confirm Re-issue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Duplicate Warning Modal -->
+    <div class="modal duplicate-warning-modal" id="duplicateWarningModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Duplicate Prescription Warning
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="warning-message">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>An active prescription for this medication already exists for this patient.</p>
+                    <div class="existing-prescription">
+                        <h5>Existing Prescription:</h5>
+                        <p><strong>Medication:</strong> Amlodipine 5mg</p>
+                        <p><strong>Issued:</strong> Sept 20, 2025</p>
+                        <p><strong>Status:</strong> Active</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Justification for Duplicate (Required)</label>
+                    <textarea class="form-control" rows="3"
+                        placeholder="Please provide reason for duplicate prescription..." required></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-warning override-duplicate-btn">
+                    <i class="fas fa-exclamation"></i>
+                    Override & Continue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Drug Interaction Alert Modal -->
+    <div class="modal interaction-alert-modal" id="interactionAlertModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Drug Interaction Alert
+                </h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="interaction-warning">
+                    <h4>Potential Drug Interactions Detected</h4>
+                    <div class="interaction-details">
+                        <div class="interaction-item">
+                            <span class="severity-badge moderate">Moderate</span>
+                            <p><strong>Amlodipine + Simvastatin:</strong></p>
+                            <p>May increase simvastatin levels. Consider dose adjustment.</p>
+                        </div>
+                    </div>
+
+                    <div class="interaction-actions">
+                        <p>How would you like to proceed?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel Prescription</button>
+                <button class="btn-warning proceed-with-caution-btn">
+                    <i class="fas fa-exclamation"></i>
+                    Proceed with Caution
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Dark Mode Toggle -->
+            <div class="dark-mode-toggle">
+                <button id="darkModeBtn" class="dark-mode-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/@citruske" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/LabsCitrus" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                    <i class="fab fa-x"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063778943426" target="_blank"
+                    rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@citrus-labs" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com/company/citrus-labs" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Corporate Link & Copyright -->
+            <div class="footer-info">
+                <a href="https://citruslabs.co.ke/" target="_blank" rel="noopener noreferrer"
+                    class="corporate-link">Citrus Labs</a>
+                <span class="separator">|</span>
+                <span class="copyright">© 2025 Citrus Labs. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="prescriptions.js"></script>
+</body>
+
+</html>

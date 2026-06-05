@@ -1,0 +1,30 @@
+flowchart TD
+    %% Entry Point
+    M[My Profile Page] --> M1[Personal Information Section]
+    M --> M2[Clinic Details Section]
+
+    %% Personal Information Management
+    M1 --> M1a[View Personal Info<br/>Name, Email, Phone, Address]
+    M1 --> M1b[Edit Personal Info<br/>Form with validation]
+    M1 --> M1c[Profile Photo Management]
+    M1c --> M1c1[Upload Photo<br/>Image file picker]
+    M1c --> M1c2[Preview & Save Changes]
+    M1 --> M1d[Login Credentials Management]
+    M1d --> M1d1[Change Email<br/>Verification required]
+    M1d --> M1d2[Change Password<br/>Strength check + Confirm]
+
+    %% Clinic Details & Management
+    M2 --> M2a[View Clinic Info<br/>Name, Address, Contact]
+    M2 --> M2b[Edit Clinic Info<br/>Inline editable fields]
+    M2 --> M2c[Business Hours Configuration]
+    M2c --> M2c1[Daily Schedule Picker<br/>Open/Close per day]
+    M2c --> M2c2[Break Time Setup<br/>Optional lunch break]
+    M2 --> M2d[Service Offerings Management]
+    M2d --> M2d1[Add/Edit/Delete Services]
+    M2d --> M2d2[Set Duration & Pricing]
+    M2 --> M2e[Clinic Branding Upload]
+    M2e --> M2e1[Upload Logo<br/>Preview before save]
+    M2e --> M2e2[Additional Assets<br/>Color palette or themes]
+
+    %% Navigation Back
+    M --> M3[Back to Dashboard]

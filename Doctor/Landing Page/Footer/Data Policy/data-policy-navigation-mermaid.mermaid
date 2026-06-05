@@ -1,0 +1,83 @@
+flowchart TD
+    DataPolicy[Data Policy Home Page] --> Introduction[Introduction]
+    DataPolicy --> DataCollection[Data Collection]
+    DataPolicy --> DataUse[Data Use]
+    DataPolicy --> DataSecurity[Data Security]
+    DataPolicy --> UserRights[User Rights]
+    DataPolicy --> Compliance[Compliance]
+    DataPolicy --> Contact[Contact Information]
+    
+    Introduction --> AboutCuris[About Curis Platform]
+    Introduction --> PolicyScope[Scope of Policy]
+    Introduction --> Definitions[Key Definitions]
+    
+    DataCollection --> PatientData[Patient Data]
+    DataCollection --> DoctorData[Doctor Profile Data]
+    DataCollection --> AppointmentData[Appointment Records]
+    DataCollection --> PaymentData[Payment & Billing Data]
+    
+    PatientData --> PersonalInfo[Personal Information]
+    PatientData --> MedicalHistory[Medical History]
+    PatientData --> ContactInfo[Contact Information]
+    PatientData --> Prescriptions[Prescriptions & Treatment Records]
+    
+    DoctorData --> ProfileInfo[Professional Profile]
+    DoctorData --> LicenseInfo[License & Certification Info]
+    DoctorData --> Availability[Schedule & Availability]
+    
+    AppointmentData --> BookingInfo[Booking Details]
+    AppointmentData --> VisitNotes[Consultation Notes]
+    AppointmentData --> FollowUp[Follow-Up Instructions]
+    
+    PaymentData --> MPesaIntegration[M-Pesa Integration]
+    PaymentData --> InvoiceRecords[Invoices & Receipts]
+    PaymentData --> TransactionHistory[Transaction History]
+    
+    DataUse --> ServiceDelivery[Service Delivery]
+    DataUse --> PlatformPersonalization[Platform Personalization]
+    DataUse --> Reporting[Analytics & Reporting]
+    DataUse --> Communications[System Communications]
+    
+    ServiceDelivery --> PatientManagement[Patient Management]
+    ServiceDelivery --> HealthRecords[Electronic Health Records]
+    ServiceDelivery --> Billing[Billing & Receipts]
+    
+    Communications --> EmailPurpose[Email Notifications]
+    Communications --> SMSPurpose[SMS Reminders]
+    Communications --> ThirdPartySharing[Data Sharing with Third Parties]
+    
+    ThirdPartySharing --> LabsDiagnostic[Diagnostic Labs]
+    ThirdPartySharing --> Pharmacies[Partner Pharmacies]
+    ThirdPartySharing --> LegalRequests[Legal Authorities]
+    
+    DataSecurity --> StorageMethods[Data Storage Methods]
+    DataSecurity --> AccessControls[Access Controls]
+    DataSecurity --> Encryption[Data Encryption]
+    DataSecurity --> RetentionPolicy[Data Retention Policy]
+    DataSecurity --> BreachProtocol[Data Breach Protocol]
+    
+    AccessControls --> RoleBased[Role-Based Access]
+    AccessControls --> Authentication[Authentication Methods]
+    AccessControls --> ActivityMonitoring[Activity Monitoring]
+    
+    RetentionPolicy --> ActiveData[Active User Data]
+    RetentionPolicy --> InactiveData[Inactive User Data]
+    RetentionPolicy --> DataDeletion[Data Deletion Process]
+    
+    UserRights --> AccessRights[Right to Access]
+    UserRights --> RectificationRights[Right to Rectification]
+    UserRights --> DeletionRights[Right to Deletion]
+    UserRights --> RestrictProcessing[Right to Restrict Processing]
+    UserRights --> DataPortability[Right to Data Portability]
+    
+    AccessRights --> RequestProcess[Request Process]
+    AccessRights --> TimeFrame[Response Time Frame]
+    
+    Compliance --> LocalLaws[Local Data Laws]
+    Compliance --> International[International Standards]
+    Compliance --> Certifications[Security Certifications]
+    Compliance --> Audits[Compliance Audits]
+    
+    Contact --> ContactMethods[Contact Methods]
+    Contact --> DPO[Data Protection Officer]
+    Contact --> ComplaintProcess[Complaint Process]

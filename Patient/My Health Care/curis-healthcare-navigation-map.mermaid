@@ -1,0 +1,284 @@
+flowchart TD
+    %% My Health Care Main Page
+    G[My Health Care Page] --> G_HEADER[Page Header<br/>Navigation & Context]
+    G_HEADER --> G_NAV[Navigation Bar<br/>Main menu access]
+    G_NAV --> E[Dashboard]
+    G_NAV --> F[My Appointments]
+    G_NAV --> H[Billings & Payments]
+    G_NAV --> I[Emergency Care]
+    G_NAV --> J[My Medical Cover]
+    G_NAV --> K[My Profile]
+    
+    %% Unified Medical Records Section
+    G --> G1[Unified Medical Records<br/>Comprehensive health view]
+    G1 --> G1_TABS[View Tabs<br/>Content organization]
+    G1_TABS --> G1a[Visit History Timeline<br/>Chronological visits]
+    G1_TABS --> G1b[Cross-Clinic Access<br/>Multi-provider records]
+    G1_TABS --> G1c[Smart Highlighting<br/>Important entry alerts]
+    
+    %% Visit History Timeline
+    G1a --> G1a_CARDS[Visit Entry Cards<br/>Individual visits]
+    G1a_CARDS --> G1a1[Visit Entry Details<br/>Core information]
+    G1a1 --> G1a1a[Clinic Name<br/>Provider identity]
+    G1a1 --> G1a1b[Doctor Name<br/>Attending physician]
+    G1a1 --> G1a1c[Visit Date<br/>Appointment date]
+    G1a1 --> G1a1d[Visit Reason<br/>Chief complaint]
+    
+    G1a --> G1a2[Dynamic Filters<br/>Search refinement]
+    G1a2 --> G1a2_CLICK{Filter Click}
+    G1a2_CLICK --> G1a2_MODAL[Filter Modal<br/>Multiple criteria]
+    G1a2_MODAL --> G1a2_M1[Clinic Filter<br/>Provider selection]
+    G1a2_MODAL --> G1a2_M2[Date Range<br/>Time period]
+    G1a2_MODAL --> G1a2_M3[Service Type<br/>Treatment category]
+    G1a2_MODAL --> G1a2_M4[Apply Filters<br/>Update results]
+    
+    %% Cross-Clinic Access
+    G1b --> G1b1[Clinic Grouping<br/>Provider organization]
+    G1b1 --> G1b1_EXPAND{Expand Clinic}
+    G1b1_EXPAND --> G1b1_RECORDS[Clinic Records<br/>All visits listed]
+    
+    G1b --> G1b2[Doctor Profile Badges<br/>Provider identification]
+    G1b2 --> G1b2_CLICK{Badge Click}
+    G1b2_CLICK --> G1b2_MODAL[Doctor Info Modal<br/>Provider details]
+    G1b2_MODAL --> G1b2_M1[Doctor Name<br/>Full credentials]
+    G1b2_MODAL --> G1b2_M2[Specialty<br/>Medical focus]
+    G1b2_MODAL --> G1b2_M3[Clinic Affiliation<br/>Practice location]
+    
+    %% Smart Highlighting
+    G1c --> G1c1[Abnormal Results Alert<br/>Critical indicators]
+    G1c1 --> G1c1_BADGE[Red Alert Badge<br/>Attention required]
+    G1c1 --> G1c1_CLICK{Alert Click}
+    G1c1_CLICK --> G1c1_DETAIL[Alert Details<br/>Full information]
+    
+    G1c --> G1c2[New Record Labels<br/>Recent uploads]
+    G1c2 --> G1c2_BADGE[New Badge<br/>Unread indicator]
+    G1c2 --> G1c2_AUTO[Auto-remove<br/>After viewing]
+    
+    %% Lab Results & Diagnostics
+    G --> G2[Lab Results & Diagnostics<br/>Test management]
+    G2 --> G2a[Lab Reports View<br/>Results display]
+    G2a --> G2a_TABLE[Results Table<br/>Organized data]
+    G2a_TABLE --> G2a1[Reference Ranges<br/>Normal values]
+    G2a_TABLE --> G2a2[Color-coded Results<br/>Visual indicators]
+    G2a2 --> G2a2a[Green Values<br/>Normal range]
+    G2a2 --> G2a2b[Red Values<br/>Abnormal range]
+    
+    G2a --> G2a3[PDF Preview/Download<br/>Report access]
+    G2a3 --> G2a3_CLICK{View/Download Click}
+    G2a3_CLICK --> G2a3_MODAL[PDF Viewer Modal<br/>Document display]
+    G2a3_MODAL --> G2a3_M1[Full Report View<br/>Watermarked PDF]
+    G2a3_MODAL --> G2a3_M2[Download Button<br/>Save locally]
+    G2a3_MODAL --> G2a3_M3[Print Option<br/>Physical copy]
+    
+    G2 --> G2b[Clinical Notes Link<br/>Doctor interpretations]
+    G2b --> G2b_CLICK{Notes Click}
+    G2b_CLICK --> G2b_EXPAND[Expanded Notes<br/>Full commentary]
+    G2b_EXPAND --> G2b1[Contextual Notes<br/>Test interpretation]
+    G2b_EXPAND --> G2b2[Prescribed Actions<br/>Next steps]
+    G2b_EXPAND --> G2b3[Timestamped Links<br/>Visit correlation]
+    G2b3 --> G2b3_LINK{Visit Link Click}
+    G2b3_LINK --> G1a[Visit History<br/>Related appointment]
+    
+    %% Prescription Viewer
+    G --> G3[Prescription Viewer<br/>Medication management]
+    G3 --> G3_TABS[Prescription Tabs<br/>Status organization]
+    G3_TABS --> G3a[Current Medications<br/>Active prescriptions]
+    G3_TABS --> G3b[Past Medications<br/>Expired prescriptions]
+    
+    G3a --> G3a_CARDS[Medication Cards<br/>Individual drugs]
+    G3a_CARDS --> G3a1[Medication Details<br/>Core information]
+    G3a1 --> G3a1a[Drug Name<br/>Medication title]
+    G3a1 --> G3a1b[Dosage<br/>Amount/Frequency]
+    G3a1 --> G3a1c[Instructions<br/>How to take]
+    G3a1 --> G3a1d[Prescribing Doctor<br/>Provider name]
+    
+    G3a_CARDS --> G3a2[Visual Reminders<br/>Dose timing]
+    G3a2 --> G3a2_DISPLAY[Next Dose Timer<br/>Countdown display]
+    G3a2 --> G3a2_ALERT[Dose Alert<br/>Time notification]
+    
+    G3a_CARDS --> G3a3[Medication Alerts<br/>Important notices]
+    G3a3 --> G3a3_WARNINGS[Warning Icons<br/>Caution indicators]
+    G3a3 --> G3a3_INTERACT[Interactions<br/>Drug conflicts]
+    
+    G3 --> G3c[Exportable List<br/>PDF generation]
+    G3c --> G3c_CLICK{Export Click}
+    G3c_CLICK --> G3c_MODAL[Export Modal<br/>Options selection]
+    G3c_MODAL --> G3c_M1[Date Range<br/>Period selection]
+    G3c_MODAL --> G3c_M2[Include Options<br/>Content choices]
+    G3c_MODAL --> G3c_M3[Generate PDF<br/>Create document]
+    G3c_M3 --> G3c1[Offline Reference<br/>Downloaded file]
+    G3c1 --> G3c2[Doctor Attribution<br/>Prescriber info]
+    
+    %% Doctor Notes & Summaries
+    G --> G4[Doctor Notes & Summaries<br/>Visit documentation]
+    G4 --> G4_LIST[Notes List<br/>All summaries]
+    G4_LIST --> G4a[Structured Summaries<br/>Organized notes]
+    G4a --> G4a_EXPAND{Expand Summary}
+    G4a_EXPAND --> G4a_DETAIL[Full Summary View<br/>Complete details]
+    G4a_DETAIL --> G4a_D1[Diagnosis<br/>Medical findings]
+    G4a_DETAIL --> G4a_D2[Tests Ordered<br/>Lab requests]
+    G4a_DETAIL --> G4a_D3[Procedures<br/>Treatments done]
+    G4a_DETAIL --> G4a_D4[Doctor Notes<br/>Clinical observations]
+    
+    G4_LIST --> G4b[Attached Files<br/>Supporting documents]
+    G4b --> G4b_CLICK{File Click}
+    G4b_CLICK --> G4b1[Inline Viewer<br/>Document display]
+    G4b1 --> G4b1_IMG[Image Viewer<br/>X-rays/Scans]
+    G4b1 --> G4b1_PDF[PDF Viewer<br/>Reports/Charts]
+    
+    G4b_CLICK --> G4b2[Download Options<br/>Save files]
+    G4b2 --> G4b2_SINGLE[Download File<br/>Individual save]
+    G4b2 --> G4b2_ALL[Download All<br/>Batch save]
+    
+    G4_LIST --> G4c[Doctor Attribution<br/>Provider details]
+    G4c --> G4c_NAME[Doctor Name<br/>Full credentials]
+    G4c --> G4c_CLINIC[Clinic Name<br/>Practice location]
+    
+    G4_LIST --> G4d[Secure Messaging<br/>Doctor communication]
+    G4d --> G4d_CLICK{Message Click}
+    G4d_CLICK --> G4d_MODAL[Message Modal<br/>Communication interface]
+    G4d_MODAL --> G4d_M1[Message Thread<br/>Conversation history]
+    G4d_MODAL --> G4d_M2[New Message<br/>Compose area]
+    G4d_MODAL --> G4d_M3[Send Button<br/>Submit message]
+    
+    %% Dependent Records Management
+    G --> G5[Dependent Records<br/>Family health management]
+    G5 --> G5a[Profile Switching<br/>Member selection]
+    G5a --> G5a_CLICK{Switcher Click}
+    G5a_CLICK --> G5a_DROP[Member Dropdown<br/>Family list]
+    G5a_DROP --> G5a1[Dropdown Navigation<br/>Selection method]
+    G5a1 --> G5a1_PHOTOS[Profile Photos<br/>Visual selection]
+    G5a1 --> G5a1_NAMES[Member Names<br/>Text selection]
+    G5a1 --> G5a1_SELECT{Select Member}
+    
+    G5a_CLICK --> G5a2[Avatar Bar<br/>Visual switcher]
+    G5a2 --> G5a2_AVATARS[Avatar Row<br/>Profile pictures]
+    G5a2 --> G5a2_ACTIVE[Active Indicator<br/>Selected member]
+    
+    G5a1_SELECT --> G5_REFRESH[Records Refresh<br/>Member data load]
+    G5_REFRESH --> G5_R1[Medical Records<br/>Member-specific]
+    G5_REFRESH --> G5_R2[Prescriptions<br/>Member medications]
+    G5_REFRESH --> G5_R3[Lab Results<br/>Member tests]
+    
+    G5 --> G5b[Age-based Access<br/>Privacy controls]
+    G5b --> G5b1[Under 13 Full Access<br/>Complete visibility]
+    G5b1 --> G5b1_ALL[All Records Visible<br/>No restrictions]
+    
+    G5b --> G5b2[13-17 Restricted<br/>Limited access]
+    G5b2 --> G5b2_CONSENT[Consent Required<br/>Teen privacy]
+    G5b2 --> G5b2_PROMPT[Access Prompt<br/>Permission request]
+    
+    G5b --> G5b3[Private Record Tags<br/>Restricted indicators]
+    G5b3 --> G5b3_ICON[Lock Icon<br/>Private marker]
+    G5b3 --> G5b3_HOVER[Hover Text<br/>Privacy notice]
+    
+    G5 --> G5c[Child-friendly View<br/>Simplified display]
+    G5c --> G5c_TOGGLE[View Toggle<br/>Simple/Full mode]
+    G5c --> G5c_TERMS[Simple Terms<br/>Kid-friendly language]
+    
+    %% Privacy & Consent Layer
+    G --> G6[Privacy & Consent<br/>Access control]
+    G6 --> G6a[Dynamic Consent Notices<br/>Age-based alerts]
+    G6a --> G6a_BANNER[Consent Banner<br/>Privacy notice]
+    G6a --> G6a_MODAL[Consent Modal<br/>Permission request]
+    
+    G6 --> G6b[Record Access Logs<br/>Audit trail]
+    G6b --> G6b_CLICK{View Logs Click}
+    G6b_CLICK --> G6b_MODAL[Access Log Modal<br/>History display]
+    G6b_MODAL --> G6b_M1[Access Date<br/>When accessed]
+    G6b_MODAL --> G6b_M2[Accessed By<br/>Clinic/User]
+    G6b_MODAL --> G6b_M3[Action Taken<br/>View/Edit/Add]
+    
+    G6 --> G6c[Sensitive Data Alerts<br/>New document notices]
+    G6c --> G6c_ALERT[Alert Banner<br/>New sensitive record]
+    G6c --> G6c_EMAIL[Email Notice<br/>Privacy alert]
+    
+    %% Record Export & Sharing
+    G --> G7[Record Export & Sharing<br/>Data portability]
+    G7 --> G7_BUTTON{Export Button Click}
+    G7_BUTTON --> G7a[Health Summary Generator<br/>Report builder]
+    G7a --> G7a_MODAL[Export Modal<br/>Configuration options]
+    
+    G7a_MODAL --> G7a1[Date Range Selection<br/>Time period]
+    G7a1 --> G7a1_PICKER[Date Picker<br/>Start/End dates]
+    G7a1 --> G7a1_PRESETS[Quick Options<br/>Last month/year]
+    
+    G7a_MODAL --> G7a2[Provider Selection<br/>Clinic filter]
+    G7a2 --> G7a2_ALL[All Providers<br/>Complete records]
+    G7a2 --> G7a2_SPECIFIC[Select Clinics<br/>Filtered data]
+    
+    G7a_MODAL --> G7a3[Content Customization<br/>Include/Exclude]
+    G7a3 --> G7a3_VISITS[Visit Summaries<br/>Checkbox]
+    G7a3 --> G7a3_PRESCR[Prescriptions<br/>Checkbox]
+    G7a3 --> G7a3_LABS[Lab Results<br/>Checkbox]
+    G7a3 --> G7a3_NOTES[Doctor Notes<br/>Checkbox]
+    
+    G7a_MODAL --> G7a_GENERATE{Generate Report}
+    G7a_GENERATE --> G7a_PDF[PDF Generation<br/>Creating document]
+    G7a_PDF --> G7a_DOWNLOAD[Download Ready<br/>Save file]
+    
+    G7 --> G7b[Insurance Ready Format<br/>Claim preparation]
+    G7b --> G7b_CLICK{Insurance Export Click}
+    G7b_CLICK --> G7b_MODAL[Insurance Export Modal<br/>Claim options]
+    G7b_MODAL --> G7b1[Doctor Signatures<br/>Verification included]
+    G7b_MODAL --> G7b2[Clinic Identifiers<br/>Provider credentials]
+    G7b_MODAL --> G7b_LINK{Create Claim}
+    G7b_LINK --> J[My Medical Cover<br/>Insurance claims]
+    
+    %% Real-time Sync
+    G --> G8[Real-time Sync<br/>Live updates]
+    G8 --> G8a[Instant Updates<br/>New records]
+    G8a --> G8a_NOTIF[Notification Badge<br/>New content alert]
+    G8a --> G8a_TOAST[Toast Message<br/>Update notice]
+    
+    G8 --> G8b[Status Indicators<br/>Record states]
+    G8b --> G8b_REVIEW[Under Review<br/>Pending status]
+    G8b --> G8b_FINAL[Finalized<br/>Complete status]
+    G8b --> G8b_UPDATE[Updated<br/>Modified status]
+    
+    G8 --> G8c[Multi-channel Alerts<br/>Notifications]
+    G8c --> G8c_APP[In-app Alert<br/>System notice]
+    G8c --> G8c_EMAIL[Email Alert<br/>Message sent]
+    G8c --> G8c_SMS[SMS Alert<br/>Text message]
+    
+    %% Integration Points
+    G --> G_INT[Page Integrations<br/>Cross-page links]
+    G_INT --> G_INT1[From Dashboard<br/>Entry points]
+    E4b --> G[Medical Record Link<br/>From prescription widget]
+    E2b --> G[Medical Records Card<br/>Quick access]
+    
+    G_INT --> G_INT2[To Appointments<br/>Visit links]
+    G1a1 --> F7a[Visit Details<br/>Appointment info]
+    
+    G_INT --> G_INT3[To Billing<br/>Invoice links]
+    G1a1 --> H[Associated Invoice<br/>Visit billing]
+    
+    G_INT --> G_INT4[To Insurance<br/>Claim preparation]
+    G7b --> J3[Document Bundle<br/>Auto-attachment]
+    
+    %% Quick Actions
+    G --> G_QUICK[Quick Actions Bar<br/>Common tasks]
+    G_QUICK --> G_Q1[Download All<br/>Batch export]
+    G_QUICK --> G_Q2[Print Summary<br/>Physical copy]
+    G_QUICK --> G_Q3[Share with Doctor<br/>Send records]
+    
+    %% Search Functionality
+    G --> G_SEARCH[Global Search<br/>Find records]
+    G_SEARCH --> G_S_INPUT[Search Input<br/>Query entry]
+    G_S_INPUT --> G_S_FILTERS[Search Filters<br/>Refine results]
+    G_S_FILTERS --> G_S_F1[Record Type<br/>Visit/Lab/Prescription]
+    G_S_FILTERS --> G_S_F2[Date Range<br/>Time filter]
+    G_S_FILTERS --> G_S_F3[Provider<br/>Clinic/Doctor]
+    G_S_INPUT --> G_S_RESULTS[Search Results<br/>Matching records]
+    
+    %% Loading States
+    G --> G_LOAD[Loading States<br/>Progress indicators]
+    G_LOAD --> G_L1[Initial Load<br/>Skeleton screens]
+    G_LOAD --> G_L2[Record Fetch<br/>Spinner animation]
+    G_LOAD --> G_L3[Export Progress<br/>Progress bar]
+    
+    %% Error Handling
+    G --> G_ERROR[Error States<br/>Exception handling]
+    G_ERROR --> G_E1[No Records<br/>Empty state]
+    G_ERROR --> G_E2[Load Failed<br/>Retry option]
+    G_ERROR --> G_E3[Export Failed<br/>Error message]

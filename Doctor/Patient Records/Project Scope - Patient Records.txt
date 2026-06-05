@@ -1,0 +1,75 @@
+#### 1. **Patient Records**
+
+
+
+
+Here is a clear and dynamic breakdown of the MVP features and functionalities for the "Patient Records " page within the Doctor's account on the Curis by Citrus web app:
+________________________________________
+1.	Patient Records  – Dynamic MVP Features (Doctor View)
+
+
+a.	Patient Search & Access
+•	Search bar with autocomplete for quick access to assigned patients.
+•	Filter patients by name, gender, age, or visit history.
+•	Option to view recently accessed patients for efficiency.
+________________________________________
+b.	Comprehensive Medical History View
+•	Chronological display of:
+o	Past consultations
+o	Diagnoses
+o	Prescriptions issued
+o	Medical notes
+•	Each entry is expandable for detailed viewing.
+________________________________________
+c.	Diagnosis & Clinical Notes Editor
+•	Add or update:
+o	Diagnoses
+o	Symptoms
+o	Observations
+o	Treatment plans
+•	Rich text editor with tagging for keywords (e.g., "chronic", "acute").
+________________________________________
+d.	Document & Lab Attachments
+•	Upload and attach:
+o	Lab results
+o	Scans (PDFs, images)
+o	Referral letters
+•	Documents are grouped and searchable by type/date.
+________________________________________
+e.	Prescription Overview
+•	View list of all previous prescriptions with:
+o	Medication name
+o	Dosage
+o	Duration
+o	Doctor notes
+•	Quick access to re-issue or reference old prescriptions.
+________________________________________
+f.	Allergies & Chronic Conditions Panel
+•	View and update:
+o	Known allergies
+o	Chronic conditions (e.g., diabetes, hypertension)
+•	Displays as an alert on the top of the patient’s record for quick risk awareness.
+________________________________________
+g.	Consultation Integration
+•	Quick link to start consultation if scheduled.
+•	During live consultation: access this record in split-view to update notes in real-time.
+________________________________________
+h.	Activity Timeline & Audit Log
+•	View edit history for medical records:
+o	Who modified what and when.
+o	Ensures accountability and tracking for compliance.
+________________________________________
+i.	Collaboration Comments
+•	Doctors can tag other Doctors or the Clinic Owner in notes for second opinions.
+•	Notifications are sent on mentions or comments.
+________________________________________
+j.	Security & Access Rules
+•	Doctors can only access patients assigned to them.
+•	No ability to delete patient records—only update fields they’re authorized to.
+•	All edits logged under Doctor’s ID for traceability.
+________________________________________
+These dynamic features make the Patient Records  page a centralized, secure, and highly usable interface for Doctors to provide quality care and maintain updated clinical data.
+
+
+
+
