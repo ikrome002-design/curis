@@ -1,30 +1,577 @@
-/vendor/
-node_modules/
-npm-debug.log
-yarn-error.log
+# ============================================================
+# Curis by Citrus — .gitignore
+# Governed healthcare SaaS repository
+# Stack assumption: Laravel/PHP backend + Node/Vite frontend
+# Purpose: keep source code versioned while excluding secrets,
+# tenant data, PHI, generated health records, billing artifacts,
+# audit exports, local infrastructure files, caches, and build output.
+# ============================================================
 
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
-
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
-
-# Laravel 5 & Lumen specific with changed public path
-public_html/storage
-public_html/hot
-
-storage/*.key
+# ------------------------------------------------------------
+# 1. Environment files and runtime configuration
+# ------------------------------------------------------------
 .env
-Homestead.yaml
-Homestead.json
-/.vagrant
+.env.*
+!.env.example
+!.env.testing.example
+!.env.staging.example
+!.env.production.example
+.env.backup
+.env.bak
+.env.local
+.env.development.local
+.env.test.local
+.env.staging.local
+.env.production.local
+
+# Local PHP/Laravel environment helpers
+.phpunit.result.cache
+.phpunit.cache/
+.phpactor.json
+.php-cs-fixer.cache
+.pint.cache
+
+# ------------------------------------------------------------
+# 2. Secrets, credentials, tokens, API keys, encryption keys
+# ------------------------------------------------------------
+*.key
+*.pem
+*.crt
+*.csr
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.asc
+*.gpg
+*.pgp
+*.age
+*.enc
+*.secret
+*.secrets
+*.token
+*.tokens
+*.credentials
+*.passwd
+*.password
+*.pass
+*.auth
+*.private
+*.public.key
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+known_hosts
+
+# OAuth / service account / cloud credential files
+client_secret*.json
+credentials*.json
+service-account*.json
+firebase-*.json
+google-services.json
+GoogleService-Info.plist
+aws-credentials.json
+azure-credentials.json
+gcp-credentials.json
+mpesa-credentials*.json
+mpesa-cert*.pem
+whatsapp-credentials*.json
+insurance-api-credentials*.json
+
+# Application keys, JWT keys, Passport/Sanctum/local auth secrets
+storage/*.key
+storage/oauth-*.key
+storage/jwt-*.key
+storage/passport-*.key
+bootstrap/cache/*.key
+jwt/private.pem
+jwt/public.pem
+
+# ------------------------------------------------------------
+# 3. Composer / PHP dependencies
+# ------------------------------------------------------------
+/vendor/
+composer.phar
+
+# Keep dependency lockfile committed for deploy reproducibility
+!composer.lock
+
+# ------------------------------------------------------------
+# 4. Node / frontend dependencies and package manager caches
+# ------------------------------------------------------------
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-store/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.npm/
+.pnpm/
+
+# Keep frontend lockfiles committed for reproducible builds
+!package-lock.json
+!pnpm-lock.yaml
+!yarn.lock
+!bun.lockb
+
+# ------------------------------------------------------------
+# 5. Laravel framework generated files
+# ------------------------------------------------------------
+/bootstrap/cache/*.php
+/bootstrap/cache/*.tmp
+/storage/framework/cache/*
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/storage/logs/*
+
+# Preserve Laravel directory placeholders when intentionally committed
+!/storage/framework/cache/.gitignore
+!/storage/framework/cache/data/.gitignore
+!/storage/framework/sessions/.gitignore
+!/storage/framework/testing/.gitignore
+!/storage/framework/views/.gitignore
+!/storage/logs/.gitignore
+
+# Public storage symlink should be recreated per environment
+/public/storage
+
+# ------------------------------------------------------------
+# 6. Frontend build artifacts
+# ------------------------------------------------------------
+/public/build/
+/public/hot
+/public/mix-manifest.json
+/public/js/*.map
+/public/css/*.map
+/dist/
+/build/
+/.vite/
+/.parcel-cache/
+/.next/
+/.nuxt/
+/.svelte-kit/
+/.turbo/
+/.vercel/output/
+
+# ------------------------------------------------------------
+# 7. Logs, runtime traces, diagnostics, and profiling output
+# ------------------------------------------------------------
+*.log
+*.log.*
+logs/
+log/
+runtime-logs/
+trace.log
+traces/
+*.trace
+*.profile
+*.prof
+*.xhprof
+*.blackfire
+blackfire-player.phar
+storage/debugbar/
+.phpdebugbar/
+clockwork/
+storage/clockwork/
+
+# ------------------------------------------------------------
+# 8. Healthcare PHI / PII / tenant-generated data
+# Do not commit real patient, tenant, clinical, billing, pharmacy,
+# laboratory, insurance, or audit data.
+# ------------------------------------------------------------
+/storage/app/private/
+/storage/app/public/uploads/
+/storage/app/uploads/
+/storage/app/tenants/
+/storage/app/patients/
+/storage/app/patient-records/
+/storage/app/medical-records/
+/storage/app/clinical-records/
+/storage/app/health-records/
+/storage/app/health-reports/
+/storage/app/prescriptions/
+/storage/app/lab-results/
+/storage/app/diagnostics/
+/storage/app/pharmacy/
+/storage/app/inventory/
+/storage/app/invoices/
+/storage/app/receipts/
+/storage/app/payments/
+/storage/app/reconciliation/
+/storage/app/insurance/
+/storage/app/audit/
+/storage/app/audit-exports/
+/storage/app/exports/
+/storage/app/imports/
+/storage/app/tmp/
+/storage/app/temp/
+
+# Common project-level local/generated sensitive data directories
+/uploads/
+/private-uploads/
+/tenant-data/
+/tenant-files/
+/patient-data/
+/patient-files/
+/medical-records/
+/clinical-records/
+/health-records/
+/health-reports/
+/prescriptions/
+/lab-results/
+/diagnostics/
+/pharmacy-files/
+/inventory-files/
+/billing-files/
+/invoices/generated/
+/receipts/generated/
+/reconciliation/generated/
+/audit-exports/
+/generated-reports/
+/exported-reports/
+/imported-records/
+/private-reports/
+/tmp-reports/
+
+# Generated report/document formats that are usually sensitive when produced by the app
+*.patient.pdf
+*.patient.csv
+*.patient.xlsx
+*.patient.json
+*.clinical.pdf
+*.clinical.csv
+*.clinical.xlsx
+*.clinical.json
+*.health-report.pdf
+*.health-report.csv
+*.health-report.xlsx
+*.health-report.json
+*.prescription.pdf
+*.prescription.csv
+*.prescription.xlsx
+*.lab-result.pdf
+*.lab-result.csv
+*.lab-result.xlsx
+*.receipt.pdf
+*.invoice.pdf
+*.audit.pdf
+*.audit.csv
+*.audit.xlsx
+*.reconciliation.csv
+*.reconciliation.xlsx
+
+# ------------------------------------------------------------
+# 9. Database dumps, backups, replicas, seed exports
+# ------------------------------------------------------------
+*.sql
+*.sql.gz
+*.sql.zip
+*.dump
+*.dump.gz
+*.bak
+*.backup
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
+/database/*.sqlite
+/database/*.sqlite3
+/database/dumps/
+/database/backups/
+/database/exports/
+/database/imports/
+/database/seeders/private/
+/database/seeders/real/
+/database/fixtures/private/
+/database/fixtures/real/
+/backups/
+/db-backups/
+/sql-dumps/
+/replicas/
+/snapshots/
+
+# Keep safe sample schemas/fixtures when deliberately anonymized
+!/database/fixtures/example/
+!/database/fixtures/samples/
+!/database/seeders/demo/
+!/database/seeders/samples/
+
+# ------------------------------------------------------------
+# 10. Queue, cache, search, session, and local service state
+# ------------------------------------------------------------
+.redis/
+redis-data/
+redis-dump.rdb
+dump.rdb
+.meilisearch/
+meili_data/
+.typesense/
+typesense-data/
+elasticsearch-data/
+opensearch-data/
+queue-failed-jobs.json
+horizon.json
+storage/horizon/
+storage/telescope/
+
+# ------------------------------------------------------------
+# 11. Test and coverage output
+# ------------------------------------------------------------
+/coverage/
+/html-coverage/
+/.coverage
+.coverage.*
+coverage.xml
+clover.xml
+junit.xml
+junit-*.xml
+test-results/
+test-output/
+playwright-report/
+playwright/.cache/
+cypress/videos/
+cypress/screenshots/
+.nyc_output/
 .phpunit.result.cache
 
-/public/build
-/storage/pail
-.env.backup
-.env.production
-.phpactor.json
-auth.json
+# Keep tests themselves versioned
+!/tests/
+
+# ------------------------------------------------------------
+# 12. IDE, editor, and local workspace files
+# ------------------------------------------------------------
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
+!.vscode/launch.example.json
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+.classpath
+.history/
+*.swp
+*.swo
+*~
+
+# ------------------------------------------------------------
+# 13. OS-generated files
+# ------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ------------------------------------------------------------
+# 14. Docker, local containers, and development overrides
+# ------------------------------------------------------------
+.docker/data/
+.docker/mysql/
+.docker/postgres/
+.docker/redis/
+.docker/minio/
+.docker/meilisearch/
+.docker/elasticsearch/
+.docker/tmp/
+.docker/secrets/
+docker-compose.override.yml
+docker-compose.local.yml
+docker-compose.dev.yml
+compose.override.yml
+compose.local.yml
+
+# Keep base container definitions versioned
+!Dockerfile
+!docker-compose.yml
+!compose.yml
+
+# ------------------------------------------------------------
+# 15. Infrastructure-as-code state and deployment secrets
+# ------------------------------------------------------------
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+terraform.tfvars
+terraform.tfvars.json
+crash.log
+crash.*.log
+.terragrunt-cache/
+
+# Kubernetes / Helm local secret material
+kubeconfig
+kubeconfig.*
+*.kubeconfig
+k8s/secrets/
+kubernetes/secrets/
+helm/secrets/
+*.sealedsecret.yaml
+*.secret.yaml
+*-secret.yaml
+*-secrets.yaml
+
+# Deployment/runtime files that should differ by environment
+deploy/.env*
+deploy/secrets/
+deploy/private/
+.env.deploy
+.env.server
+.env.ssh
+
+# ------------------------------------------------------------
+# 16. Cloud, storage, and object-store sync artifacts
+# ------------------------------------------------------------
+.aws/
+.gcloud/
+.azure/
+.rclone.conf
+.s3cfg
+mc-config.json
+minio-data/
+.localstack/
+serverless-state.json
+.serverless/
+.sst/
+
+# ------------------------------------------------------------
+# 17. Email, SMS, OTP, notification, and integration sandboxes
+# ------------------------------------------------------------
+mailpit-data/
+mailhog-data/
+mailtrap-data/
+smtp-dumps/
+notification-dumps/
+sms-dumps/
+otp-dumps/
+webhook-dumps/
+webhook-events/
+integration-events/
+mpesa-callbacks/
+whatsapp-callbacks/
+insurance-callbacks/
+
+# ------------------------------------------------------------
+# 18. AI / automation local artifacts
+# ------------------------------------------------------------
+.ai-cache/
+ai-cache/
+llm-cache/
+prompt-runs/
+model-runs/
+embeddings-cache/
+vector-cache/
+rag-cache/
+transcripts/
+clinical-summaries/generated/
+
+# ------------------------------------------------------------
+# 19. Temporary files and local scratch space
+# ------------------------------------------------------------
+.tmp/
+tmp/
+temp/
+.cache/
+.cache-loader/
+*.tmp
+*.temp
+*.pid
+*.pid.lock
+*.seed
+*.pidfile
+*.lock.local
+
+# ------------------------------------------------------------
+# 20. Compiled binaries and archives
+# ------------------------------------------------------------
+*.o
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.gz
+
+# Allow intentional release artifacts only when placed here
+!/releases/.gitkeep
+
+# ------------------------------------------------------------
+# 21. Documentation drafts that may contain private product/commercial data
+# Keep public docs versioned; ignore private working drafts.
+# ------------------------------------------------------------
+/docs/private/
+/docs/internal/
+/docs/drafts/
+/docs/commercial-private/
+/docs/regulatory/private/
+/docs/security/private/
+*.draft.md
+*.private.md
+*.internal.md
+
+# ------------------------------------------------------------
+# 22. Local certificates for HTTPS development
+# ------------------------------------------------------------
+certs/local/
+certificates/local/
+localhost.pem
+localhost-key.pem
+*.localhost.pem
+*.localhost-key.pem
+
+# ------------------------------------------------------------
+# 23. Production hotfix / emergency files
+# ------------------------------------------------------------
+*.orig
+*.rej
+*.patch.local
+hotfix-notes.local.md
+rollback-plan.local.md
+
+# ------------------------------------------------------------
+# 24. Curis-specific rule: commit examples, not live data
+# ------------------------------------------------------------
+# Commit these:
+# - .env.example
+# - anonymized demo seeders
+# - migrations
+# - factories
+# - tests
+# - safe UI assets
+# - public documentation
+#
+# Never commit these:
+# - patient records
+# - tenant records
+# - OTP/session material
+# - M-Pesa/API credentials
+# - insurance credentials
+# - audit exports
+# - billing receipts/invoices generated from real use
+# - database backups/dumps
+# - private deployment keys
+# ============================================================
